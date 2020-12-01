@@ -31,3 +31,6 @@ collections:
 
 cloudinary:
   cloud_name: andrewmcodes
+
+plausible:
+  domain: andrewm.codes
