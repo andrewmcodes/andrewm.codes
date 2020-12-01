@@ -14,6 +14,7 @@ emoji: 📝
 ## Content
 
 - [Dev.to](https://dev.to/andrewmcodes)
+- [Hacker News](https://news.ycombinator.com/user?id=andrewmcodes)
 
 ## Social Media
 
@@ -34,3 +35,4 @@ emoji: 📝
 ### Communities
 
 - [stackshare](https://stackshare.io/andrewmcodes)
+- [Keybase](https://keybase.io/andrewmcodes)
