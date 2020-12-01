@@ -45,9 +45,10 @@ GEM
       svg_optimizer (~> 0.2.5)
     bridgetown-paginate (0.18.6)
       bridgetown-core (= 0.18.6)
+    bridgetown-plausible-tag (0.0.1)
+      bridgetown (>= 0.15, < 2.0)
     bridgetown-seo-tag (3.0.5)
       bridgetown (>= 0.15.0, < 2.0)
-    childprocess (4.0.0)
     colorator (1.1.0)
     concurrent-ruby (1.1.7)
     erubi (1.10.0)
@@ -62,7 +63,6 @@ GEM
       activesupport (>= 5.0.0, < 7.0)
     i18n (1.8.5)
       concurrent-ruby (~> 1.0)
-    iniparse (1.5.0)
     kramdown (2.3.0)
       rexml
     kramdown-parser-gfm (1.1.0)
@@ -80,9 +80,6 @@ GEM
     multipart-post (2.1.1)
     nokogiri (1.10.10)
       mini_portile2 (~> 2.4.0)
-    overcommit (0.57.0)
-      childprocess (>= 0.6.3, < 5)
-      iniparse (~> 1.4)
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
     public_suffix (4.0.6)
@@ -112,8 +109,8 @@ DEPENDENCIES
   bridgetown (~> 0.18)
   bridgetown-feed (~> 1.0)
   bridgetown-inline-svg (~> 1.1)
+  bridgetown-plausible-tag (~> 0.0.1)
   bridgetown-seo-tag (= 3.0.5)
-  overcommit (~> 0.57.0)
 
 BUNDLED WITH
    2.1.4
