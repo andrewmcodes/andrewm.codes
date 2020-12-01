@@ -1,0 +1,13 @@
+title: 'Andrew Mason'
+tagline: andrewm.codes
+description: >-
+  Hey! I'm Andrew Mason, a Ruby on Rails software engineer. I blog about Rails, host Ruby podcasts, and ramble on Twitter about development. All saved here!
+
+author:
+  twitter: andrewmcodes
+
+twitter:
+  username: andrewmcodes
+  card: summary_large_image
+
+seo_paginator_message: '%<current>s / %<total>s | '

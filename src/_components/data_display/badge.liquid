@@ -1,0 +1,20 @@
+---
+name: Badge
+variables:
+  color:
+    - string
+  text:
+    - string
+---
+
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium leading-4 bg-{{ color | default: "gray" }}-100 text-{{ color | default: "gray" }}-800">
+  {%- if text -%}
+    {%- if href -%}
+      <a href="{{ href }}">{{ text }}</a>
+    {%- else -%}
+      {{ text }}
+    {%- endif -%}
+  {%- else -%}
+    {{ content }}
+  {%- endif -%}
+</span>

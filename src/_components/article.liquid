@@ -1,0 +1,31 @@
+---
+name: Article
+description: A blog post
+variables:
+  post:
+    - object
+mocks:
+  post:
+    date: 2020-05-01T08:21:29.290Z
+    url: "https://example.com"
+    title: "A test"
+    excerpt: "Accessibility (A11Y) testing cannot be fully automated, and requires special attention in order to ge..."
+---
+
+<div class="py-2 border-t border-gray-400">
+  <a href="{{ post.url }}" class="block">
+    <h3 class="mt-4 text-xl font-semibold leading-7 text-gray-900">
+      {{post.title}}
+    </h3>
+    <p class="mt-3 text-base leading-6 text-gray-500">
+      {{post.excerpt}}
+    </p>
+  </a>
+  <div class="flex items-center mt-6">
+    <div class="">
+      <div class="flex text-sm leading-5 text-gray-500">
+        <time datetime="{{ post.date | date: "%Y-%m-%d" }}">{{ post.date | date: "%B %d, %Y" }}</time>
+      </div>
+    </div>
+  </div>
+</div>

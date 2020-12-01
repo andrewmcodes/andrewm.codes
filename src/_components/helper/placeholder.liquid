@@ -1,0 +1,20 @@
+---
+name: Placeholder
+description: A placeholder svg
+variables:
+  width:
+    - string
+    - classes for the width of the placeholder. Defaults to w-full
+  height:
+    - string
+    - classes for the height of the placeholder. Defaults to h-48
+---
+
+{% assign width_class_names = "w-full" %}
+{% if width %}{% assign width_class_names = width %}{% endif %}
+{% assign height_class_names = "h-48" %}
+{% if height %}{% assign height_class_names = height %}{% endif %}
+
+<svg class="{{ width_class_names }} {{ height_class_names }} text-gray-200 bg-white border-2 border-gray-300 border-dashed rounded" preserveAspectRatio="none" stroke="currentColor" fill="none" viewBox="0 0 200 200">
+  <path vector-effect="non-scaling-stroke" stroke-width="2" d="M0 0l200 200M0 200L200 0"></path>
+</svg>

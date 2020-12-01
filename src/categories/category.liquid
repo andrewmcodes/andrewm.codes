@@ -1,0 +1,13 @@
+---
+layout: collections
+title: "Browse Category: :prototype-term-titleize"
+prototype:
+  term: category
+---
+
+<div class="space-y-8">
+  {% for post in paginator.documents %}
+    {% render "article", post: post, authors: site.data.authors %}
+  {% endfor %}
+  {% render "data_display/pagination", paginator: paginator %}
+</div>

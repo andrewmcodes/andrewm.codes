@@ -1,0 +1,25 @@
+---
+name: "Collection: Base"
+description: Used in collections layout
+variables:
+  emoji:
+    - string
+  title:
+    - string
+  description:
+    - string
+  collection:
+    - string
+---
+{% rendercontent "layout/container"%}
+  <div class="mt-16 mb-8 prose sm:prose-lg md:prose-xl">
+    <h1>
+      <span class="block pb-4">{{ emoji }}</span>
+      {{ title }}
+    </h1>
+    {%- if description -%}<p class="lead">{{ description }}</p>{%- endif -%}
+  </div>
+  <div class="space-y-4">
+    {{ collection }}
+  </div>
+{% endrendercontent %}

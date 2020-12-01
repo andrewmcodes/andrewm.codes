@@ -1,0 +1,16 @@
+name,author,description,url,tags,categories
+gem_actions,Andrew Mason,GitHub Action workflows for your Ruby gem,https://github.com/andrewmcodes/gem_actions,,gem
+structurely,Andrew Mason,Client for accessing Structurely's API,https://github.com/magnet-team/structurely,,gem
+arsenic,Andrew Mason,originally forked from Palkan. https://github.com/palkan/new-gem-generator,https://github.com/andrewmcodes/arsenic,,gem
+code-scanning-standard,Andrew Mason,"This gem adds a SARIF formatter to Standard, so we can export alerts as code scans inside of GitHub.",https://github.com/andrewmcodes/code-scanning-standard,,gem
+bridgetown-plausible-tag,Andrew Mason,"  A Liquid tag to add Plausible analytics to your site.",https://github.com/andrewmcodes/bridgetown-plausible-tag,bridgetown,gem
+forem_lite,Andrew Mason,A minimal API wrapper to retrieve Forem articles.,https://github.com/andrewmcodes/forem_lite/forem_lite,,gem
+bridgetown-inline-svg,Andrew Mason,A Liquid tag to inline and optimize SVG images in your HTML Supports custom DOM Attributes parameters and variables interpretation.,https://github.com/andrewmcodes/bridgetown-inline-svg,bridgetown,gem
+awesome_list_generator,Andrew Mason,Leverage Ruby and Liquid to transform data into a markdown file that you can use to easily create an 'Awesome' list that is easy for contributors to add to.,https://github.com/andrewmcodes/awesome_list_generator,,gem
+refactored_invention,Andrew Mason,This is just an experiment with releasing a gem + node package together,http://github.com/andrewmcodes/refactored_invention,,gem
+consolidated_screening_list,Andrew Mason,A Ruby client for Trade.gov's Consolidated Screening List.,https://github.com/andrewmcodes/consolidated_screening_list,,gem
+pruner,Andrew Mason,A CLI tool written in Ruby to help you remove unneeded GIT branches.,https://github.com/andrewmcodes/pruner,,gem
+dishwasher,Andrew Mason,A CLI tool written in Ruby to help you remove unneeded GitHub forks.,https://github.com/andrewmcodes/dishwasher,,gem
+andrewmcodes,Andrew Mason,Generates a gem for your andrewmcodes,https://github.com/andrewmcodes/andrewmcodes,,gem
+warm-boot,Andrew Mason,Rich cli experience to generate a new rails app,https://github.com/andrewmcodes/warm-boot,,gem
+contributor_covenant,Andrew Mason,automatically generate a contributor covenant for any project,https://github.com/andrewmcodes/contributor_covenant,,gem

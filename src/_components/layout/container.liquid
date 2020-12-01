@@ -1,0 +1,20 @@
+---
+name: Container
+description: Used in collection component and home layout
+variables:
+  full:
+    - boolean
+    - Whether the container is full width or not
+---
+
+{%- if full -%}
+  {% assign width = "w-full" %}
+{%- else -%}
+  {% assign width = "max-w-5xl" %}
+{%- endif -%}
+
+<div class="container z-10 px-4 mx-auto mb-8 sm:px-6 lg:px-8">
+  <div class="{{ width }} mx-auto">
+    {{ content }}
+  </div>
+</div>

@@ -1,0 +1,33 @@
+url: 'https://andrewm.codes'
+permalink: ordinal
+timezone: America/New_York
+
+pagination:
+  enabled: true
+
+development:
+  unpublished: true
+  url: 'http://localhost:4000'
+
+svg:
+  optimize: true
+
+defaults:
+  - scope:
+      path: ''
+    values:
+      layout: 'default'
+      image: /images/andrewm-codes-twitter-card.png
+
+collections:
+  posts:
+    output: true
+    layout: post
+    permalink: /:collection/:title/
+  projects:
+    output: true
+    layout: md
+    permalink: /:collection/:name/
+
+cloudinary:
+  cloud_name: andrewmcodes

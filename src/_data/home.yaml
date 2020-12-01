@@ -1,0 +1,52 @@
+content:
+  - name: 'Projects'
+    url: '/projects/'
+    internal: true
+  - name: 'Podcasts'
+    url: '/podcasts'
+    internal: true
+  - name: 'Posts'
+    url: '/posts/'
+    internal: true
+
+profile:
+  - name: 'About'
+    url: '/about'
+    internal: true
+  - name: 'Uses'
+    url: '/uses/'
+    internal: true
+  - name: 'Now'
+    url: '/now/'
+    internal: true
+  - name: 'Contact'
+    url: '/contact/'
+    internal: true
+
+connect:
+  - name: 'All Connections'
+    url: '/links/'
+    internal: true
+  - name: 'Twitter 🔗'
+    url: 'https://twitter.com/andrewmcodes'
+    internal: false
+  - name: 'GitHub 🔗'
+    url: 'https://github.com/andrewmcodes'
+    internal: false
+  - name: 'LinkedIn 🔗'
+    url: 'https://www.linkedin.com/in/andrew-mason/'
+    internal: false
+
+site_info:
+  - name: 'Sitemap'
+    url: '/sitemap.xml'
+    internal: true
+  - name: 'RSS Feed'
+    url: '/feed.xml'
+    internal: true
+  - name: 'Analytics 🔗'
+    url: 'https://plausible.io/andrewm.codes'
+    internal: false
+  - name: 'Status Page 🔗'
+    url: 'https://andrewmcodes.instatus.com/'
+    internal: false

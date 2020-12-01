@@ -1,0 +1,10 @@
+---
+layout: default
+---
+
+{% render "data_display/breadcrumb", page: page %}
+{% rendercontent "wrapper/content" %}
+  {% with emoji %}{{ page.emoji }}{% endwith %}
+  {% with title %}{{ page.title }}{% endwith %}
+  {% with text %}{{ content }}{% endwith %}
+{% endrendercontent %}

@@ -1,0 +1,35 @@
+- name: My Ruby Story
+  title: 'MRS 074: Andrew Mason'
+  link: https://devchat.tv/my-ruby-story/mrs-074-andrew-mason/
+  date: 2019-01-24 10:02:00.000000000 Z
+  host:
+    name: Charles Max Wood
+    link: http://charlesmaxwood.com
+- name: Rails with Jason
+  title: 'Two Docker Noobs Talk About Docker - with Andrew Mason'
+  link: https://www.codewithjason.com/rails-with-jason-podcast/andrew-mason-docker/
+  date: 2019-08-21 10:00:00.000000000 Z
+  host:
+    name: Jason Swett
+    link: https://www.codewithjason.com
+- name: Ruby Testing Podcast
+  title: '015 - Testing Q&A with Listener Andrew Mason'
+  link: https://podcasts.apple.com/us/podcast/the-ruby-testing-podcast/id1385192624?i=1000422112280
+  date: 2018-10-18 11:00:00.000000000 Z
+  host:
+    name: Jason Swett
+    link: https://www.codewithjason.com
+- name: Remote Ruby
+  title: 'Joined by Andrew Mason'
+  link: https://share.transistor.fm/s/19f4de7e
+  date: 2019-09-20 13:00:00.000000000 Z
+  host:
+    name: Chris Oliver & Jason Charnes
+    link: https://remoteruby.transistor.fm
+- name: Ruby on Rails Podcast
+  title: '320: ViewComponents in Action with Andrew Mason'
+  link: https://5by5.tv/rubyonrails/320
+  date: 2020-05-27 11:00:00.000000000 Z
+  host:
+    name: Brittany Martin
+    link: https://brittanymartin.dev

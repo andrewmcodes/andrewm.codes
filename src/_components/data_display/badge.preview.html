@@ -1,0 +1,37 @@
+{% highlight liquid %} {% raw %} {% render "data_display/badge", text: "Hello"
+%} {% render "data_display/badge", text: "Hello", color: "blue" %} {% render
+"data_display/badge", text: "Hello", color: "green" %} {% render
+"data_display/badge", text: "Hello", color: "red" %} {% render
+"data_display/badge", text: "Hello", color: "orange" %} {% render
+"data_display/badge", text: "Hello", color: "indigo" %} {% render
+"data_display/badge", text: "Hello", color: "yellow" %} {% rendercontent
+"data_display/badge", color: "blue" %}
+<svg
+  class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400"
+  fill="currentColor"
+  viewBox="0 0 8 8"
+>
+  <circle cx="4" cy="4" r="3" />
+</svg>
+Large {% endrendercontent %} {% endraw %} {% endhighlight %}
+
+<br />
+
+{% render "data_display/badge", text: "Hello" %} {% render "data_display/badge",
+text: "Hello", color: "blue" %} {% render "data_display/badge", text: "Hello",
+color: "green" %} {% render "data_display/badge", text: "Hello", color: "red" %}
+{% render "data_display/badge", text: "Hello", color: "orange" %} {% render
+"data_display/badge", text: "Hello", color: "indigo" %} {% render
+"data_display/badge", text: "Hello", color: "yellow" %}
+
+<br />
+
+{% rendercontent "data_display/badge", color: "blue" %}
+<svg
+  class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400"
+  fill="currentColor"
+  viewBox="0 0 8 8"
+>
+  <circle cx="4" cy="4" r="3" />
+</svg>
+Large {% endrendercontent %}

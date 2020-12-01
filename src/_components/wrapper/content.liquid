@@ -1,0 +1,33 @@
+---
+name: Content
+variables:
+  emoji:
+    - string
+  title:
+    - string
+  details:
+    - string
+  text:
+    - string
+---
+
+<article class="relative px-4 py-16 overflow-hidden sm:px-6 lg:px-8">
+  <div class="mx-auto max-w-prose">
+    <span class="text-5xl">
+      {{ emoji }}
+    </span>
+    <h1 class="mt-2 mb-8 text-3xl font-extrabold leading-8 text-gray-900 sm:text-4xl sm:leading-10">
+      {{ title }}
+    </h1>
+    {%- if details -%}
+      <div class="mb-4">
+        <dl>
+          {{ details }}
+        </dl>
+      </div>
+    {%- endif -%}
+    <div class="py-6 mx-auto prose border-t border-gray-200 lg:prose-lg">
+      {{ text }}
+    </div>
+  </div>
+</article>

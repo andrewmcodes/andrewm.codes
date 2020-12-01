@@ -1,0 +1,20 @@
+---
+layout: default
+---
+
+{% rendercontent "layout/container"%}
+  <div class="py-16 prose">
+    <div class="mb-8">
+      {% svg images/square_logo_dark.svg width=32 class="w-32 h-32" %}
+    </div>
+    {{ content }}
+  </div>
+
+  <div class="grid gap-4 md:grid-cols-2">
+    {% render "list/grid_links", resources: site.data.home.content, title: "🗒 Content" %}
+    {% render "list/grid_links", resources: site.data.home.profile, title: "👨‍💻 Profile" %}
+    {% render "list/grid_links", resources: site.data.home.connect, title: "👋 Connect" %}
+    {% render "list/grid_links", resources: site.data.home.site_info, title: "🕸 Site" %}
+  </div>
+
+{% endrendercontent %}

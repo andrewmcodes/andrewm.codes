@@ -1,0 +1,103 @@
+socials:
+  - name: 'devto'
+    sr: 'Dev.to'
+    url: 'https://dev.to/andrewmcodes'
+    username: andrewmcodes
+  - name: 'github'
+    sr: 'GitHub'
+    url: 'https://github.com/andrewmcodes'
+    username: 'andrewmcodes'
+  - name: 'linkedin'
+    sr: 'LinkedIn'
+    url: 'https://www.linkedin.com/in/andrew-mason/'
+    username: 'andrew-mason'
+  - name: 'twitter'
+    sr: 'Twitter'
+    url: 'https://twitter.com/andrewmcodes'
+    username: '@andrewmcodes'
+
+media:
+  - name: 'youtube'
+    sr: 'YouTube'
+    url: 'https://www.youtube.com/channel/UCr6mV_IiQqkexMarHB3701Q'
+    username:
+  - name: 'twitch'
+    sr: 'Twitch'
+    url: 'https://www.twitch.tv/andrewmcodes'
+    username: andrewmcodes
+
+contact:
+  - name: 'email'
+    sr: 'Email'
+    url: 'mailto:andrew@andrewm@@codes'
+    username: 'andrew@andrewm.codes'
+
+developer:
+  - name: 'codersrank'
+    sr: 'CodersRank'
+    url: 'https://profile.codersrank.io/user/andrewmcodes'
+    username: 'andrewmcodes'
+  - name: 'stackshare'
+    sr: 'stackshare'
+    url: 'https://stackshare.io/andrewmcodes'
+    username: 'andrewmcodes'
+  - name: sourcerer
+    sr: Sourcerer
+    url: https://sourcerer.io/andrewmcodes
+    username: andrewmcodes
+  - name: codetrace
+    sr: CodeTrace
+    url: https://codetrace.com/users/andrewmcodes
+    username: andrewmcodes
+  - name: codepend
+    sr: CodePen
+    url: https://codepen.io/andrewmcodes
+    username: andrewmcodes
+
+content:
+  - name: posts
+    sr: Posts
+    url: '/posts'
+    internal: true
+  - name: projects
+    sr: Projects
+    url: '/projects'
+    internal: true
+  - name: podcasts
+    sr: Podcasts
+    url: '/podcasts'
+    internal: true
+
+profile:
+  - name: uses
+    sr: Uses
+    url: '/uses'
+    internal: true
+  - name: support
+    sr: Support
+    url: '/support'
+    internal: true
+  - name: about
+    sr: About
+    url: '/about'
+    internal: true
+  - name: now
+    sr: Now
+    url: '/now'
+    internal: true
+  - name: contact
+    sr: Contact
+    url: '/contact'
+    internal: true
+
+site:
+  - name: rss
+    sr: RSS Feed
+    url: '/feed.xml'
+    internal: true
+  - name: status_page
+    sr: Status Page
+    url: 'https://andrewmcodes.instatus.com/'
+  - name: public_analytics
+    sr: Public Analytics
+    url: 'https://plausible.io/andrewm.codes'

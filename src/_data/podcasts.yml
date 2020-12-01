@@ -1,0 +1,9 @@
+- name: Remote Ruby
+  link: https://remoteruby.transistor.fm
+  status: active
+- name: The Ruby Blend
+  link: https://rubyblend.transistor.fm/
+  status: ended
+- name: The Ruby Rogues
+  link: http://rubyrogues.com
+  status: retired

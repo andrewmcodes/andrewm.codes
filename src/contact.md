@@ -1,0 +1,8 @@
+---
+title: Contact
+layout: md
+permalink: /contact/
+emoji: 👋
+---
+
+<iframe src="https://tally.so/embed/pnrLM3?hideTitle=1&alignLeft=1" width="100%" height="500" frameborder="0" marginheight="0" marginwidth="0"></iframe>

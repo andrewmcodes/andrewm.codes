@@ -1,0 +1,27 @@
+<div class="px-4 sm:px-6 md:px-0">
+  <div class="mt-8 space-y-4 divide-y divide-gray-200">
+    <h3 class="text-lg font-medium leading-6 text-gray-900">
+      Metadata
+    </h3>
+    <div>
+      <dl class="divide-y divide-gray-200">
+        <div class="py-4 space-y-1 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4">
+          <dt class="text-sm font-medium leading-5 text-gray-500">
+            Path
+          </dt>
+          <dd class="flex space-x-4 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2">
+            <code>{{ component.relative_path }}</code>
+          </dd>
+        </div>
+        <div class="py-4 space-y-1 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4">
+          <dt class="text-sm font-medium leading-5 text-gray-500">
+            Description
+          </dt>
+          <dd class="flex space-x-4 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2">
+            {{ component.metadata.description | markdownify }}
+          </dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+</div>

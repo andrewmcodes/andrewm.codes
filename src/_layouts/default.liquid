@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+  {%- if bridgetown.environment != "production" -%}
+    {%- assign debug = true -%}
+  {%- endif -%}
+  {% render "base/head", metadata: site.metadata, title: page.title, root_url: site.url %}
+  <body class="{% class_map debug-screens: debug, page_class: true %}">
+    <div class="flex flex-col min-h-screen mx-auto font-sans antialiased text-gray-800 bg-white">
+      {% render "base/navbar", metadata: site.metadata, page: page %}
+      <main class="flex-1">
+        {{ content }}
+      </main>
+      {%- render "newsletter" -%}
+      {%- render "base/footer", metadata: site.metadata -%}
+      {%- render "base/scripts", root_url: site.url -%}
+    </div>
+  </body>
+</html>
