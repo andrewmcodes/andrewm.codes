@@ -15,6 +15,7 @@ tags:
   - rails
 dev_to_url: 'https://dev.to/andrewmcodes/ruby-s-shovel-method-digging-deeper-5hfm'
 layout: post
+canonical_url: https://andrewm.codes/posts/rubys-shovel-method/
 ---
 
 > Heads up! This is not _actually_ a deep dive 😬
