@@ -11,7 +11,7 @@
         {{ content }}
       </main>
       {%- render "newsletter" -%}
-      {%- render "base/footer", metadata: site.metadata -%}
+      {%- render "base/footer", metadata: site.metadata, page_path: page.path -%}
       {%- render "base/scripts", root_url: site.url -%}
     </div>
   </body>

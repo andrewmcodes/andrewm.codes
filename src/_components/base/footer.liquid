@@ -3,16 +3,47 @@ name: Footer
 description: The <footer /> of the site.
 ---
 
-<footer class="flex-shrink-0 text-gray-300 bg-gray-800">
-  <div class="max-w-screen-xl px-4 py-6 mx-auto sm:px-6 md:flex md:items-center md:justify-between lg:px-8">
+<footer class="flex-shrink-0 text-gray-200 bg-gray-800">
+  <div
+    class="flex flex-col max-w-screen-xl px-4 py-6 mx-auto sm:px-6 md:flex-row md:items-center md:justify-between lg:px-8"
+  >
+    <span class="mb-4 md:mb-0">
+      Made with 💙,
+      <a
+        class="font-bold"
+        target="_blank"
+        rel="noreferrer noopener"
+        href="https://www.snowpack.dev/"
+      >
+        Snowpack</a
+      >, and
+      <a
+        class="font-bold"
+        target="_blank"
+        rel="noreferrer noopener"
+        href="https://www.bridgetownrb.com/"
+      >
+        Bridgetown</a
+      >
+    </span>
+    <a
+      target="_blank"
+      rel="noreferrer noopener"
+      href="https://github.com/andrewmcodes/andrewm-codes-website/blob/main/src/{{ page_path }}"
+    >
+      Problem? Edit this page on GitHub!
+    </a>
+  </div>
+
+  <div class="max-w-screen-xl px-4 py-6 mx-auto border-t border-gray-700 sm:px-6 md:flex md:items-center md:justify-between lg:px-8">
     <div class="flex justify-center space-x-6 md:order-2">
       {% rendercontent "layout/link", href: "https://twitter.com/andrewmcodes" %}
-        <span class="sr-only">Twitter</span>
-        {% svg images/twitter.svg width=24 class="w-6 h-6" %}
+      <span class="sr-only">Twitter</span>
+      {% svg images/twitter.svg width=24 class="w-6 h-6" %}
       {% endrendercontent %}
       {% rendercontent "layout/link", href: "https://github.com/andrewmcodes" %}
-        <span class="sr-only">GitHub</span>
-        {% svg images/github.svg width=24 class="w-6 h-6" %}
+      <span class="sr-only">GitHub</span>
+      {% svg images/github.svg width=24 class="w-6 h-6" %}
       {% endrendercontent %}
     </div>
     <div class="mt-8 md:mt-0 md:order-1">

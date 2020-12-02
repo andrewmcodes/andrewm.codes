@@ -1,7 +1,7 @@
 ---
 categories:
   - post
-title: How I Use VSCode
+title: "How I Use VS Code: 2020"
 date: '2020-11-11T01:30:15.823Z'
 excerpt: >-
   I’m about to overhaul my settings and plugins in VSCode so this is my “before”
@@ -31,15 +31,3 @@ What plugins are you really enjoying? Any new ones? Which ones do you no longer 
 Happy (VS) Coding!
 
 _[This post is also available on DEV.](https://dev.to/andrewmcodes/how-i-use-vscode-1aha)_
-
-<script>
-const parent = document.getElementsByTagName('head')[0];
-const script = document.createElement('script');
-script.type = 'text/javascript';
-script.src = 'https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.1.1/iframeResizer.min.js';
-script.charset = 'utf-8';
-script.onload = function() {
-    window.iFrameResize({}, '.liquidTag');
-};
-parent.appendChild(script);
-</script>

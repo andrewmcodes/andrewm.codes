@@ -17,6 +17,13 @@ layout: default
     {% rendercontent "data_display/description_list", title: "📅 Published" %}
       {{ page.date | date: "%B %d, %Y" }}
     {% endrendercontent %}
+    {%- if page.canonical_url -%}
+      {% rendercontent "data_display/description_list", title: "🗞 Share" %}
+        <a href="https://twitter.com/intent/tweet/?text=Great%20post%20by%20@andrewmcodes%20{{ page.canonical_url }}">
+        🐣 Share via Twitter
+      </a>
+    {% endrendercontent %}
+  {%- endif -%}
   {% endwith %}
   {% with title %}{{ page.title }}{% endwith %}
   {% with text %}{{ content }}{% endwith %}
