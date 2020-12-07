@@ -1,4 +1,4 @@
-url: 'https://andrewm.codes'
+url: "https://andrewm.codes"
 permalink: ordinal
 timezone: America/New_York
 
@@ -7,16 +7,16 @@ pagination:
 
 development:
   unpublished: true
-  url: 'http://localhost:4000'
+  url: "http://localhost:4000"
 
 svg:
   optimize: true
 
 defaults:
   - scope:
-      path: ''
+      path: ""
     values:
-      layout: 'default'
+      layout: "default"
       image: /images/andrewm-codes-twitter-card.png
 
 collections:
@@ -34,3 +34,16 @@ cloudinary:
 
 plausible:
   domain: andrewm.codes
+
+# Don't wipe Snowpack generated files (frontend & public)
+keep_files:
+  - _dist
+  - android-chrome-192x192.png
+  - android-chrome-512x512.png
+  - apple-touch-icon.png
+  - favicon-16x16.png
+  - favicon-32x32.png
+  - favicon.ico
+  - robots.txt
+  - site.webmanifest
+  - sitemap.xml
