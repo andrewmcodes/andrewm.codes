@@ -1,7 +1,5 @@
 ---
-title: 'Projects: Demos'
-layout: collections
-permalink: /projects/demos/
+title: Demos
 emoji: 🎏
 ---
 

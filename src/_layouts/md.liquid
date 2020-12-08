@@ -2,9 +2,11 @@
 layout: default
 ---
 
-{% render "data_display/breadcrumb", page: page %}
-{% rendercontent "wrapper/content" %}
-  {% with emoji %}{{ page.emoji }}{% endwith %}
-  {% with title %}{{ page.title }}{% endwith %}
-  {% with text %}{{ content }}{% endwith %}
+{% rendercontent "_v2/content", emoji: page.emoji, title: page.title, prose: true %}
+  {% with links %}
+    {%- for backlink in page.backlinks -%}
+      {% render "_v2/backlink", backlink: backlink %}
+    {%- endfor -%}
+  {% endwith %}
+  {{ content }}
 {% endrendercontent %}

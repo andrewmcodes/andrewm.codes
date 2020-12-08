@@ -1,8 +1,6 @@
 ---
 title: Tags
 layout: md
-permalink: /tags/
-heading: Tags
 emoji: 🏷
 ---
 

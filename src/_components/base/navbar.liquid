@@ -2,29 +2,126 @@
 name: Navbar
 description: The main site navigation bar.
 ---
-<div class="relative bg-blue-600">
-  <div class="px-3 py-3 mx-auto max-w-7xl sm:px-6 lg:px-8">
-    <div class="pr-16 sm:text-center sm:px-16">
-      <p class="font-medium text-white">
-        <span>
-          🚧 Site Under Construction
-        </span>
-        <span class="block sm:ml-2 sm:inline-block">
-          <a href="https://github.com/andrewmcodes/andrewm-codes-website/issues" target="_blank" rel="noreferrer noopener" class="font-bold text-white underline"> Report issue <span aria-hidden="true">&rarr;</span></a>
-        </span>
-      </p>
-    </div>
-  </div>
-</div>
-<nav class="flex-shrink-0 bg-gray-800">
-  <div class="px-2 mx-auto max-w-7xl sm:px-4 lg:px-8">
-    <div class="relative flex items-center justify-between h-16">
-      <div class="flex items-center px-2 lg:px-0 xl:w-64">
-        <a class="flex-shrink-0" aria-label="Home" href="/">
-          {% svg images/full_logo_dark.svg width=32 class="w-32 h-8" %}
+<script>
+function dropdownHandler(element) {
+    let single = element.getElementsByTagName("ul")[0];
+    single.classList.toggle("hidden");
+}
+function MenuHandler(el, val) {
+    let MainList = el.parentElement.getElementsByTagName("ul")[0];
+    let closeIcon = el.parentElement.getElementsByClassName("close-m-menu")[0];
+    let showIcon = el.parentElement.getElementsByClassName("show-m-menu")[0];
+    if (val) {
+        MainList.classList.remove("hidden");
+        el.classList.add("hidden");
+        closeIcon.classList.remove("hidden");
+    } else {
+        showIcon.classList.remove("hidden");
+        MainList.classList.add("hidden");
+        el.classList.add("hidden");
+    }
+}
+function searchHandler(element) {
+    let Input = element.parentElement.getElementsByTagName("input")[0];
+    Input.classList.toggle("w-0");
+    Input.classList.toggle("w-24");
+}
+</script>
+
+<!-- Navigation starts -->
+<nav class="w-full mx-auto bg-white shadow">
+  <div class="container flex items-center justify-between h-16 px-6 mx-auto lg:items-stretch">
+    <div class="flex items-center h-full">
+      <a href="/" class="flex items-center pr-12 border-r">
+        {% svg images/full_logo_light.svg width=32 class="w-32 h-8" %}
+      </a>
+      <ul class="items-center hidden h-full pr-12 xl:flex">
+        <a href="/posts"
+            class="flex items-center h-full mx-10 text-sm tracking-normal cursor-pointer hover:text-indigo-700 text-gry-800">
+          Posts
         </a>
+        <a href="/podcasts"
+            class="flex items-center h-full mr-10 text-sm tracking-normal cursor-pointer hover:text-indigo-700 text-gry-800">
+          Podcasts
+        </a>
+        <a href="/projects" class="flex items-center h-full text-sm tracking-normal text-gray-800 cursor-pointer hover:text-indigo-700">
+          Projects
+        </a>
+      </ul>
+    </div>
+    <div class="items-center justify-end hidden h-full xl:flex">
+      <div class="flex items-center w-full h-full">
+        <div class="flex items-center w-full h-full ">
+          <div class="relative w-full">
+            <div class="absolute inset-0 w-4 h-4 m-auto ml-3 text-gray-500">
+              {% svg images/icon/search.svg %}
+            </div>
+            <input class="w-56 py-2 pl-8 text-sm text-gray-500 bg-gray-100 border border-gray-100 rounded focus:outline-none focus:border-indigo-700"
+                   type="text"
+                   placeholder="Search" />
+          </div>
+        </div>
       </div>
-      {% render "navbar/links" %}
+    </div>
+    <div class="flex items-center visible xl:hidden">
+      <ul class="absolute top-0 left-0 right-0 z-40 hidden p-2 mt-16 bg-white border-r rounded shadow md:mt-16">
+        <li
+            class="flex py-3 mt-2 text-base leading-3 tracking-normal text-gray-600 cursor-pointer xl:hidden hover:text-indigo-700 focus:text-indigo-700 focus:outline-none">
+          <div class="flex items-center">
+            <span class="ml-2 font-bold leading-6">Dashboard</span>
+          </div>
+        </li>
+        <li class="flex flex-col justify-center py-3 text-base leading-3 tracking-normal text-gray-600 cursor-pointer xl:hidden hover:text-indigo-700 focus:text-indigo-700 focus:outline-none"
+            onclick="dropdownHandler(this)">
+          <div class="flex items-center">
+            <span class="ml-2 font-bold leading-6">Products</span>
+          </div>
+          <ul class="hidden mt-3 ml-2">
+            <li
+                class="px-3 py-3 text-sm font-normal leading-3 tracking-normal text-gray-600 cursor-pointer hover:bg-indigo-700 hover:text-white">
+              Landing Pages
+            </li>
+            <li
+                class="px-3 py-3 text-sm font-normal leading-3 tracking-normal text-gray-600 cursor-pointer hover:bg-indigo-700 hover:text-white">
+              Templates
+            </li>
+            <li
+                class="px-3 py-3 text-sm font-normal leading-3 tracking-normal text-gray-600 cursor-pointer hover:bg-indigo-700 hover:text-white">
+              Components
+            </li>
+          </ul>
+        </li>
+        <li
+            class="flex items-center py-3 text-base leading-3 tracking-normal text-gray-600 cursor-pointer xl:hidden hover:text-indigo-700 focus:text-indigo-700 focus:outline-none">
+          <span class="ml-2 font-bold leading-6">Performance</span>
+        </li>
+        <li class="flex flex-col justify-center py-3 mb-2 text-base leading-3 tracking-normal text-gray-600 cursor-pointer xl:hidden hover:text-indigo-700 focus:text-indigo-700 focus:outline-none"
+            onclick="dropdownHandler(this)">
+          <div class="flex items-center">
+            <span class="ml-2 font-bold leading-6">Deliverables</span>
+          </div>
+          <ul class="hidden mt-3 ml-2">
+            <li
+                class="px-3 py-3 text-sm font-normal leading-3 tracking-normal text-gray-600 cursor-pointer hover:bg-indigo-700 hover:text-white">
+              Landing Pages
+            </li>
+            <li
+                class="px-3 py-3 text-sm font-normal leading-3 tracking-normal text-gray-600 cursor-pointer hover:bg-indigo-700 hover:text-white">
+              Templates
+            </li>
+            <li
+                class="px-3 py-3 text-sm font-normal leading-3 tracking-normal text-gray-600 cursor-pointer hover:bg-indigo-700 hover:text-white">
+              Components
+            </li>
+          </ul>
+        </li>
+
+      </ul>
+      {% svg images/icon/menu.svg onclick="MenuHandler(this,true)" %}
+      <div class="hidden close-m-menu"
+           onclick="MenuHandler(this,false)">
+           {% svg images/icon/close.svg %}
+      </div>
     </div>
   </div>
 </nav>

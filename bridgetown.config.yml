@@ -12,22 +12,38 @@ development:
 svg:
   optimize: true
 
+collections:
+  posts:
+    output: true
+  podcasts:
+    output: true
+  projects:
+    output: true
+
 defaults:
   - scope:
       path: ""
     values:
       layout: "default"
       image: /images/andrewm-codes-twitter-card.png
-
-collections:
-  posts:
-    output: true
-    layout: post
-    permalink: /:collection/:title/
-  projects:
-    output: true
-    layout: md
-    permalink: /:collection/:name/
+  - scope:
+      path: ""
+      type: "podcasts"
+    values:
+      layout: "collections"
+      permalink: /:collection/:slug/
+      backlinks:
+        - name: Podcasts
+          url: /podcasts
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "collections"
+      permalink: /:collection/:slug/
+      backlinks:
+        - name: Projects
+          url: /projects
 
 cloudinary:
   cloud_name: andrewmcodes

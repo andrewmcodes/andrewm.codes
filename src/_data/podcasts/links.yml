@@ -1,0 +1,52 @@
+- Name: Dev.to
+  URL: 'https://dev.to/andrewmcodes'
+  Username: andrewmcodes
+  Category: Content
+- Name: GitHub
+  URL: 'https://github.com/andrewmcodes'
+  Username: andrewmcodes
+  Category: Code
+- Name: LinkedIn
+  URL: 'https://www.linkedin.com/in/andrew-mason/'
+  Username: Social Media
+  Category: null
+- Name: Twitter
+  URL: 'https://twitter.com/andrewmcodes'
+  Username: '@andrewmcodes'
+  Category: Social Media
+- Name: YouTube
+  URL: 'https://www.youtube.com/channel/UCr6mV_IiQqkexMarHB3701Q'
+  Username: ''
+  Category: Video
+- Name: Twitch
+  URL: 'https://www.twitch.tv/andrewmcodes'
+  Username: andrewmcodes
+  Category: Video
+- Name: Hacker News
+  URL: 'https://news.ycombinator.com/user?id=andrewmcodes'
+  Username: andrewmcodes
+  Category: Social Media
+- Name: CodePen
+  URL: 'https://codepen.io/andrewmcodes'
+  Username: andrewmcodes
+  Category: Code
+- Name: CodeTrace
+  URL: 'https://codetrace.com/users/andrewmcodes'
+  Username: andrewmcodes
+  Category: Code
+- Name: Sourcerer
+  URL: 'https://sourcerer.io/andrewmcodes'
+  Username: andrewmcodes
+  Category: Code
+- Name: CodersRank
+  URL: 'https://profile.codersrank.io/user/andrewmcodes'
+  Username: andrewmcodes
+  Category: Code
+- Name: stackshare
+  URL: 'https://stackshare.io/andrewmcodes'
+  Username: andrewmcodes
+  Category: Code
+- Name: Keybase
+  URL: 'https://keybase.io/andrewmcodes'
+  Username: andrewmcodes
+  Category: Social Media

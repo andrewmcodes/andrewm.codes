@@ -10,22 +10,22 @@ mocks:
     url: "https://example.com"
     title: "A test"
     excerpt: "Accessibility (A11Y) testing cannot be fully automated, and requires special attention in order to ge..."
+    thumb_img_path: "foo"
+    categories:
+      - post
 ---
 
-<div class="py-2 border-t border-gray-400">
-  <a href="{{ post.url }}" class="block">
-    <h3 class="mt-4 text-xl font-semibold leading-7 text-gray-900">
-      {{post.title}}
-    </h3>
-    <p class="mt-3 text-base leading-6 text-gray-500">
-      {{post.excerpt}}
-    </p>
-  </a>
-  <div class="flex items-center mt-6">
-    <div class="">
-      <div class="flex text-sm leading-5 text-gray-500">
-        <time datetime="{{ post.date | date: "%Y-%m-%d" }}">{{ post.date | date: "%B %d, %Y" }}</time>
-      </div>
-    </div>
+<a href="{{post.url}}" class="w-11/12 mx-auto mb-8 xl:mb-0 lg:w-1/4 xl:w-1/4 xl:mx-0 sm:w-2/5 md:w-5/12 sm:mx-auto xl:pr-4 lg:pl-4 lg:pr-0">
+  <div class="h-48 bg-cover rounded">
+      <img src="{{ post.thumb_img_path }}" alt="" class="object-cover w-full h-full overflow-hidden rounded shadow" />
   </div>
-</div>
+  <div class="px-4 pt-4 pb-5 bg-white border-b border-gray-300">
+      <a href="/categories/{{post.categories.first}}" class="flex items-center justify-center w-20 h-6 bg-blue-500 rounded-full">
+        <span class="text-xs font-normal text-white">{{ post.categories.first | titleize | prepend: "#" }}</span>
+      </a>
+      <p class="pb-4 text-xl font-semibold text-center">{{post.title}}</p>
+      <p class="text-sm text-center text-gray-600">
+        <time datetime="{{ post.date | date: "%Y-%m-%d" }}">{{ post.date | date: "%B %d, %Y" }}</time>
+      </p>
+  </div>
+</a>

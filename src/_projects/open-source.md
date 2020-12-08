@@ -1,7 +1,5 @@
 ---
-title: 'Open Source'
-layout: collections
-permalink: /projects/open-source/
+title: Open Source
 emoji: 🏗
 ---
 

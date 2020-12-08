@@ -1,0 +1,36 @@
+- Name: Ruby Testing Podcast
+  Role: guest
+  Discontinued: 'Yes'
+  URL: null
+- Name: My Ruby Story
+  Role: guest
+  Discontinued: 'No'
+  URL: 'https://devchat.tv/podcasts/my-ruby-story/'
+- Name: Rails with Jason
+  Role: guest
+  Discontinued: 'No'
+  URL: 'https://www.codewithjason.com/rails-with-jason-podcast/'
+- Name: Ruby on Rails Podcast
+  Role: guest
+  Discontinued: 'No'
+  URL: 'https://5by5.tv/rubyonrails'
+- Name: The Ruby Blend
+  Role: former host
+  Discontinued: 'Yes'
+  URL: 'https://rubyblend.transistor.fm/'
+- Name: Ruby Rogues
+  Role: former host
+  Discontinued: 'No'
+  URL: 'https://devchat.tv/podcasts/ruby-rogues/'
+- Name: Remote Ruby
+  Role: host
+  Discontinued: 'No'
+  URL: 'https://remoteruby.transistor.fm/'
+- Name: The Bike Shed
+  Role: listener
+  Discontinued: 'No'
+  URL: 'https://www.bikeshed.fm'
+- Name: Indie Hackers
+  Role: listener
+  Discontinued: 'No'
+  URL: 'https://www.indiehackers.com/'

@@ -1,0 +1,52 @@
+- title: "Dev.to"
+  url: "https://dev.to/andrewmcodes"
+  username: andrewmcodes
+  categories: Content
+- title: "GitHub"
+  url: "https://github.com/andrewmcodes"
+  username: andrewmcodes
+  categories: Code
+- title: "LinkedIn"
+  url: "https://www.linkedin.com/in/andrew-mason/"
+  username: Social Media
+  categories: null
+- title: "Twitter"
+  url: "https://twitter.com/andrewmcodes"
+  username: "@andrewmcodes"
+  categories: Social Media
+- title: "YouTube"
+  url: "https://www.youtube.com/channel/UCr6mV_IiQqkexMarHB3701Q"
+  username: ""
+  categories: Video
+- title: "Twitch"
+  url: "https://www.twitch.tv/andrewmcodes"
+  username: andrewmcodes
+  categories: Video
+- title: "Hacker News"
+  url: "https://news.ycombinator.com/user?id=andrewmcodes"
+  username: andrewmcodes
+  categories: Social Media
+- title: "CodePen"
+  url: "https://codepen.io/andrewmcodes"
+  username: andrewmcodes
+  categories: Code
+- title: "CodeTrace"
+  url: "https://codetrace.com/users/andrewmcodes"
+  username: andrewmcodes
+  categories: Code
+- title: "Sourcerer"
+  url: "https://sourcerer.io/andrewmcodes"
+  username: andrewmcodes
+  categories: Code
+- title: "CodersRank"
+  url: "https://profile.codersrank.io/user/andrewmcodes"
+  username: andrewmcodes
+  categories: Code
+- title: "stackshare"
+  url: "https://stackshare.io/andrewmcodes"
+  username: andrewmcodes
+  categories: Code
+- title: "Keybase"
+  url: "https://keybase.io/andrewmcodes"
+  username: andrewmcodes
+  categories: Social Media
