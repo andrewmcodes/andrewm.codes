@@ -1,6 +1,6 @@
 ---
 categories:
-  - post
+  - posts
 title: Stopping a runaway Rails server
 date: '2020-02-11T03:50:59.556Z'
 excerpt: >-

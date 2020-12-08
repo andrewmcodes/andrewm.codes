@@ -1,6 +1,6 @@
 ---
 categories:
-  - post
+  - posts
 title: 'Build and deploy a static site with Ruby, Bridgetown, TailwindCSS, and Netlify'
 date: '2020-05-07T03:50:01.208Z'
 excerpt: >-

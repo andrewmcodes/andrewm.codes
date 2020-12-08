@@ -1,6 +1,6 @@
 ---
 categories:
-  - post
+  - posts
 title: 'CI for Ruby on Rails: GitHub Actions'
 date: '2020-01-14T16:58:44.100Z'
 excerpt: >-

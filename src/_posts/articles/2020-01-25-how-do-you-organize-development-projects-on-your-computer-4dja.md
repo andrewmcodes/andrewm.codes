@@ -1,6 +1,6 @@
 ---
 categories:
-  - post
+  - posts
 title: How do you organize development projects on your computer?
 date: '2020-01-25T21:10:50.901Z'
 excerpt: >-

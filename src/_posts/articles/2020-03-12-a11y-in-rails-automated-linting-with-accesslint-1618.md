@@ -1,6 +1,6 @@
 ---
 categories:
-  - post
+  - posts
 title: "A11Y in Rails: Automated Linting with AccessLint\U0001F389"
 date: '2020-03-12T08:16:53.035Z'
 excerpt: >-

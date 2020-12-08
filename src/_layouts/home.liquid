@@ -2,19 +2,33 @@
 layout: default
 ---
 
-{% rendercontent "layout/container"%}
-  <div class="py-16 prose">
-    <div class="mb-8">
-      {% svg images/square_logo_dark.svg width=32 class="w-32 h-32" %}
-    </div>
-    {{ content }}
-  </div>
-
-  <div class="grid gap-4 md:grid-cols-2">
+{% rendercontent "_v2/content", prose: true %}
+  {{ content }}
+  <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
     {% render "list/grid_links", resources: site.data.home.content, title: "🗒 Content" %}
     {% render "list/grid_links", resources: site.data.home.profile, title: "👨‍💻 Profile" %}
     {% render "list/grid_links", resources: site.data.home.connect, title: "👋 Connect" %}
     {% render "list/grid_links", resources: site.data.home.site_info, title: "🕸 Site" %}
   </div>
-
+{% endrendercontent %}
+{% find posts where site.posts, categories contains "posts" %}
+{% rendercontent "_v2/content", prose: false %}
+  <div class="mb-8 content">
+    <h1>Recent Blog Posts</h1>
+  </div>
+  <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
+    {%- for post in posts limit: 4 -%}
+    <a class="col-span-1" href="{{ post.url }}">
+      <div class="h-48 bg-cover rounded">
+          <img src="{{ post.thumb_img_path }}" alt="{{ post.title }}" class="object-cover w-full h-full overflow-hidden rounded shadow" />
+      </div>
+      <div class="px-4 pt-4 pb-5">
+          <p class="pb-4 text-xl font-semibold text-center">{{ post.title }}</p>
+          <p class="text-sm text-center text-gray-600">
+            <time datetime="{{ post.date | date: "%Y-%m-%d" }}">{{ post.date | date: "%B %d, %Y" }}</time>
+          </p>
+      </div>
+    </a>
+    {%- endfor -%}
+  </div>
 {% endrendercontent %}

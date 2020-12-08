@@ -1,52 +1,60 @@
-- title: "Dev.to"
-  url: "https://dev.to/andrewmcodes"
+- name: Dev.to
+  url: 'https://dev.to/andrewmcodes'
   username: andrewmcodes
-  categories: Content
-- title: "GitHub"
-  url: "https://github.com/andrewmcodes"
+  categories: content
+- name: GitHub
+  url: 'https://github.com/andrewmcodes'
   username: andrewmcodes
-  categories: Code
-- title: "LinkedIn"
-  url: "https://www.linkedin.com/in/andrew-mason/"
-  username: Social Media
-  categories: null
-- title: "Twitter"
-  url: "https://twitter.com/andrewmcodes"
-  username: "@andrewmcodes"
-  categories: Social Media
-- title: "YouTube"
-  url: "https://www.youtube.com/channel/UCr6mV_IiQqkexMarHB3701Q"
-  username: ""
-  categories: Video
-- title: "Twitch"
-  url: "https://www.twitch.tv/andrewmcodes"
+  categories: code
+- name: LinkedIn
+  url: 'https://www.linkedin.com/in/andrew-mason/'
+  username: null
+  categories: social media
+- name: Twitter
+  url: 'https://twitter.com/andrewmcodes'
+  username: '@andrewmcodes'
+  categories: social media
+- name: YouTube
+  url: 'https://www.youtube.com/channel/UCr6mV_IiQqkexMarHB3701Q'
+  username: null
+  categories: video
+- name: Twitch
+  url: 'https://www.twitch.tv/andrewmcodes'
   username: andrewmcodes
-  categories: Video
-- title: "Hacker News"
-  url: "https://news.ycombinator.com/user?id=andrewmcodes"
+  categories: video
+- name: Hacker News
+  url: 'https://news.ycombinator.com/user?id=andrewmcodes'
   username: andrewmcodes
-  categories: Social Media
-- title: "CodePen"
-  url: "https://codepen.io/andrewmcodes"
+  categories: social media
+- name: CodePen
+  url: 'https://codepen.io/andrewmcodes'
   username: andrewmcodes
-  categories: Code
-- title: "CodeTrace"
-  url: "https://codetrace.com/users/andrewmcodes"
+  categories: code
+- name: CodeTrace
+  url: 'https://codetrace.com/users/andrewmcodes'
   username: andrewmcodes
-  categories: Code
-- title: "Sourcerer"
-  url: "https://sourcerer.io/andrewmcodes"
+  categories: code
+- name: Sourcerer
+  url: 'https://sourcerer.io/andrewmcodes'
   username: andrewmcodes
-  categories: Code
-- title: "CodersRank"
-  url: "https://profile.codersrank.io/user/andrewmcodes"
+  categories: code
+- name: CodersRank
+  url: 'https://profile.codersrank.io/user/andrewmcodes'
   username: andrewmcodes
-  categories: Code
-- title: "stackshare"
-  url: "https://stackshare.io/andrewmcodes"
+  categories: code
+- name: stackshare
+  url: 'https://stackshare.io/andrewmcodes'
   username: andrewmcodes
-  categories: Code
-- title: "Keybase"
-  url: "https://keybase.io/andrewmcodes"
+  categories: code
+- name: Keybase
+  url: 'https://keybase.io/andrewmcodes'
   username: andrewmcodes
-  categories: Social Media
+  categories: social media
+- name: GitHub Sponsors
+  url: 'https://github.com/sponsors/andrewmcodes'
+  username: andrewmcodes
+  categories: support
+- name: Buy Me A Coffee
+  url: 'https://www.buymeacoffee.com/andrewmcodes'
+  username: andrewmcodes
+  categories: support

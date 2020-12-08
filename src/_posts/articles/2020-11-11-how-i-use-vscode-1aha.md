@@ -1,6 +1,6 @@
 ---
 categories:
-  - post
+  - posts
 title: How I Use VSCode
 date: '2020-11-11T01:30:15.823Z'
 excerpt: >-

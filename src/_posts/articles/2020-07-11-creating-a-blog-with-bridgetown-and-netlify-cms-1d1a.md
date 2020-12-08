@@ -1,6 +1,6 @@
 ---
 categories:
-  - post
+  - posts
 title: Creating a blog with Bridgetown and Netlify CMS
 date: '2020-07-11T04:29:16.681Z'
 excerpt: >-

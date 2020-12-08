@@ -1,6 +1,6 @@
 ---
 categories:
-  - post
+  - posts
 title: 8 Tailwind CSS resources to help your next project takeoff
 date: '2020-08-14T02:03:30.059Z'
 excerpt: >-

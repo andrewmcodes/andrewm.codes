@@ -1,6 +1,6 @@
 ---
 categories:
-  - post
+  - posts
 title: How to set up Ruby on Rails 6 and TailwindCSS 1.1.4
 date: '2020-01-26T07:12:44.021Z'
 excerpt: >-

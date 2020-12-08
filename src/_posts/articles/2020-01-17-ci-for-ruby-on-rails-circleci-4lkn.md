@@ -1,6 +1,6 @@
 ---
 categories:
-  - post
+  - posts
 title: 'CI for Ruby on Rails: CircleCI'
 date: '2020-01-17T19:50:24.862Z'
 excerpt: >-

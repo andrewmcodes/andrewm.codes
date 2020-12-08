@@ -1,6 +1,6 @@
 ---
 categories:
-  - post
+  - posts
 title: 'Rails Coverage Tools: Coverband'
 date: '2020-02-22T06:18:25.427Z'
 excerpt: >-

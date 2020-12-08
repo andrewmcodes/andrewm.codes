@@ -1,6 +1,6 @@
 ---
 categories:
-  - post
+  - posts
 title: Instantly speed up your Rails application by self-hosting your fonts
 date: '2020-05-01T08:21:29.290Z'
 excerpt: >-

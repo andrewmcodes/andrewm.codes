@@ -1,6 +1,6 @@
 ---
 categories:
-  - post
+  - posts
 title: How to inline SVG files in your Bridgetown site
 date: '2020-07-21T20:18:38.141Z'
 excerpt: >-

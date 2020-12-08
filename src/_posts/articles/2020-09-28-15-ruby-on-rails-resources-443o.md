@@ -1,6 +1,6 @@
 ---
 categories:
-  - post
+  - posts
 title: 15 Resources I Learned Something From This Weekend
 date: '2020-09-28T00:20:58.912Z'
 excerpt: >-

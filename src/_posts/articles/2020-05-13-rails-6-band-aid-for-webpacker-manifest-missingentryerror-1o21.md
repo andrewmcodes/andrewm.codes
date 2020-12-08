@@ -1,6 +1,6 @@
 ---
 categories:
-  - post
+  - posts
 title: 'Rails 6 Band-Aid for Webpacker::Manifest::MissingEntryError'
 date: '2020-05-13T23:47:04.114Z'
 excerpt: >-

@@ -1,6 +1,6 @@
 ---
 categories:
-  - post
+  - posts
 title: Ruby on Rails Development with VS Code
 date: '2020-01-16T04:38:37.842Z'
 excerpt: >-

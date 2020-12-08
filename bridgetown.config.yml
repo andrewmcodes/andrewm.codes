@@ -44,6 +44,12 @@ defaults:
       backlinks:
         - name: Projects
           url: /projects
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      permalink: /:categories/:slug/
 
 cloudinary:
   cloud_name: andrewmcodes

@@ -1,15 +1,11 @@
 ---
+title: Notes
 layout: collections
-title: "Tag: :prototype-term-titleize"
-prototype:
-  term: tags
+emoji: 🏗
 ---
-
-<div class="space-y-8">
-  {% for post in paginator.documents %}
+{% find posts where site.posts, categories contains "notes" %}
+{%- for post in posts -%}
   {% rendercontent "_v2/list_item", url: post.url, title: post.title %}
     {% with icon %}{% svg images/icon/chevron_right.svg class="w-5 h-5 text-gray-400" %}{% endwith %}
   {% endrendercontent %}
-  {% endfor %}
-  {% render "data_display/pagination", paginator: paginator %}
-</div>
+{%- endfor -%}

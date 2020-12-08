@@ -1,6 +1,6 @@
 ---
 categories:
-  - post
+  - posts
 title: 'Rails Coverage Tools: CodeFactor'
 date: '2020-03-19T02:35:00.170Z'
 excerpt: >-

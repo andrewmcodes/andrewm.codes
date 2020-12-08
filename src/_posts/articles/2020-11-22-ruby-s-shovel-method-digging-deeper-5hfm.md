@@ -1,6 +1,6 @@
 ---
 categories:
-  - post
+  - posts
 title: "Ruby's Shovel Method: Digging Deeper"
 date: '2020-11-22T05:53:26.610Z'
 excerpt: "Heads up! This is not actually a deep dive \U0001F62C   With everything going on in the world, I almost forgo..."

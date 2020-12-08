@@ -1,6 +1,6 @@
 ---
 categories:
-  - post
+  - posts
 title: Hiding Ruby 2.7 Deprecation Warnings in Rails 6
 date: '2020-02-06T05:50:58.004Z'
 excerpt: >-

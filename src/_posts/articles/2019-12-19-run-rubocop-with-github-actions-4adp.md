@@ -1,6 +1,6 @@
 ---
 categories:
-  - post
+  - posts
 title: Run Rubocop with GitHub Actions
 date: '2019-12-19T02:10:52.680Z'
 excerpt: >-

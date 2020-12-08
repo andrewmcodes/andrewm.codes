@@ -1,6 +1,6 @@
 ---
 categories:
-  - post
+  - posts
 title: 'CI for Ruby on Rails: GitHub Actions vs. CircleCI'
 date: '2020-01-17T20:34:45.158Z'
 excerpt: >-
