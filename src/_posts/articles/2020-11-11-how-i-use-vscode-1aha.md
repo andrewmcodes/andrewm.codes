@@ -5,8 +5,8 @@ title: How I Use VSCode
 date: '2020-11-11T01:30:15.823Z'
 excerpt: >-
   I’m about to overhaul my settings and plugins in VSCode so this is my “before”
-  shot.   I recently upd...
-thumb_img_path: null
+  shot. I recently upd...
+thumb_img_path: https://res.cloudinary.com/practicaldev/image/fetch/s--iL-xKG5n--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/1btlqp6ir2ga02k3m00t.png
 comments_count: 2
 positive_reactions_count: 22
 tags:

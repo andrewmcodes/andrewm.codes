@@ -1,6 +1,6 @@
 module.exports = {
   mount: {
-    frontend: '/_dist',
+    frontend: '/_bridgetown',
     public: '/'
   },
   plugins: [

@@ -12,7 +12,8 @@
       </main>
       {%- render "newsletter" -%}
       {%- render "base/footer", metadata: site.metadata -%}
-      {%- render "base/scripts", root_url: site.url -%}
+      <script type="module" src="{{ site.url }}/_bridgetown/javascript/index.js" defer></script>
+
     </div>
   </body>
 </html>

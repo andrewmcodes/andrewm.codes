@@ -59,7 +59,7 @@ plausible:
 
 # Don't wipe Snowpack generated files (frontend & public)
 keep_files:
-  - _dist
+  - __snowpack__
   - android-chrome-192x192.png
   - android-chrome-512x512.png
   - apple-touch-icon.png
@@ -69,3 +69,4 @@ keep_files:
   - robots.txt
   - site.webmanifest
   - sitemap.xml
+  - _bridgetown
