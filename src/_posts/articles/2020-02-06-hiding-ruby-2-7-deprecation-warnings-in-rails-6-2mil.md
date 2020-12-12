@@ -24,7 +24,7 @@ layout: post
 
 If you have upgraded your Rails app to Ruby 2.7, you are probably seeing a lot of deprecation messages in your console. You should first make sure that none of these messages are coming from your code, and address them if they are! If the deprecations are coming mostly from Rails, it may be time to disable the messages and save yourself from messy terminal output.
 
-The TL;DR is that you need to use {% raw %}`RUBYOPT='-W:no-deprecated -W:no-experimental'`{% endraw %} to disable the deprecations. This will also disable experimental feature warnings as well.
+The TL;DR is that you need to use `RUBYOPT='-W:no-deprecated -W:no-experimental'` to disable the deprecations. This will also disable experimental feature warnings as well.
 
 Here are some options you have to make that happen. But first, lets create a new Rails app to experiment with!
 
@@ -34,44 +34,44 @@ You can either use the CLI or [this template](https://github.com/andrewmcodes/ra
 
 If you use the CLI, I recommend something like:
 
-{% raw %}```sh
+```sh
 rails new silence_ruby_2_7_deprecations -d postgresql --webpack=stimulus
 
-````{% endraw %}
+````
 
-## Method # 1: Using {% raw %}`dotenv-rails`{% endraw %}
+## Method # 1: Using `dotenv-rails`
 
-If you are using the [dotenv-rails](https://github.com/bkeepers/dotenv/) gem, or another method of using {% raw %}`.env`{% endraw %} files, simply add the following to your {% raw %}`.env`{% endraw %} file:
+If you are using the [dotenv-rails](https://github.com/bkeepers/dotenv/) gem, or another method of using `.env` files, simply add the following to your `.env` file:
 
-{% raw %}```sh
+```sh
 export RUBYOPT='-W:no-deprecated -W:no-experimental'
-```{% endraw %}
+```
 
 Then run the following in the root of the project:
 
-{% raw %}```sh
+```sh
 source .env
-```{% endraw %}
+```
 
 You should no longer be seeing the Ruby 2.7 deprecation warnings coming out of Rails! 🎉
 
 ## Method # 2: Prefixing commands
 
-Another option you have for ignoring the Ruby 2.7 deprecation warnings is to prefix all of your Rails commands with {% raw %}`RUBYOPT='-W:no-deprecated -W:no-experimental'`{% endraw %}.
+Another option you have for ignoring the Ruby 2.7 deprecation warnings is to prefix all of your Rails commands with `RUBYOPT='-W:no-deprecated -W:no-experimental'`.
 
 Example:
 
-- {% raw %}`rails server`{% endraw %} would become {% raw %}`RUBYOPT='-W:no-deprecated -W:no-experimental' rails server`{% endraw %}
-- {% raw %}`rails console`{% endraw %} would become {% raw %}`RUBYOPT='-W:no-deprecated -W:no-experimental' rails console`{% endraw %}
+- `rails server` would become `RUBYOPT='-W:no-deprecated -W:no-experimental' rails server`
+- `rails console` would become `RUBYOPT='-W:no-deprecated -W:no-experimental' rails console`
 - etc.
 
 This is obviously not ideal but it will work!
 
 ## Method # 3: Updating your environment
 
-If you want to disable these deprecation messages everywhere, you can add the following to your {% raw %}`~/.zshrc`{% endraw %} or {% raw %}`~/.bashrc`{% endraw %}:
+If you want to disable these deprecation messages everywhere, you can add the following to your `~/.zshrc` or `~/.bashrc`:
 
-{% raw %}`export RUBYOPT='-W:no-deprecated -W:no-experimental'`{% endraw %}
+`export RUBYOPT='-W:no-deprecated -W:no-experimental'`
 
 This will disable deprecation and experimental feature warnings for all versions of Ruby, for all projects. I have heard of this creating issues for some so you may want to be careful using this method if you work on multiple apps that aren't on Ruby 2.7.
 
@@ -81,17 +81,3 @@ Hopefully this helps! Happy coding!
 
 
 *[This post is also available on DEV.](https://dev.to/andrewmcodes/hiding-ruby-2-7-deprecation-warnings-in-rails-6-2mil)*
-
-
-<script>
-const parent = document.getElementsByTagName('head')[0];
-const script = document.createElement('script');
-script.type = 'text/javascript';
-script.src = 'https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.1.1/iframeResizer.min.js';
-script.charset = 'utf-8';
-script.onload = function() {
-    window.iFrameResize({}, '.liquidTag');
-};
-parent.appendChild(script);
-</script>
-````

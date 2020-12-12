@@ -89,7 +89,7 @@ _\* must have!_
 
 These are my global settings. For a lot of projects, I will override these settings with a workspace settings file which works great.
 
-{% raw %}```json
+```json
 {
 // TELEMETRY
 // Enable usage data and errors to be sent to a Microsoft online service.
@@ -213,11 +213,11 @@ These are my global settings. For a lot of projects, I will override these setti
     "ruby.lint": {
       // enable standard via bundler
       "standard": {
-        // Prefix the `{% endraw %}standard{% raw %}` command with `{% endraw %}bundle exec{% raw %}`
+        // Prefix the `standard` command with `bundle exec`
         "useBundler": true
       }
     },
-    // Which system to use for formatting. Use `{% endraw %}false{% raw %}` to disable or if another extension provides this feature.
+    // Which system to use for formatting. Use `false` to disable or if another extension provides this feature.
     "ruby.format": "standard",
 
     // GIT
@@ -346,11 +346,11 @@ These are my global settings. For a lot of projects, I will override these setti
 
 }
 
-````{% endraw %}
+````
 
 # Keybindings
 
-{% raw %}```json
+```json
 [
   {
     "key": "shift+alt+e",
@@ -362,13 +362,13 @@ These are my global settings. For a lot of projects, I will override these setti
     "command": "extension.railsFlipFlop"
   }
 ]
-```{% endraw %}
+```
 
 # Snippets
 
 Checkout [hopsoft/model_probe](https://github.com/hopsoft/model_probe) if you are curious about the first snippet!
 
-{% raw %}```json
+```json
 {
   "model comments": {
     "prefix": "rmc",
@@ -413,24 +413,10 @@ Checkout [hopsoft/model_probe](https://github.com/hopsoft/model_probe) if you ar
     "description": "Add erb pry binding"
   }
 }
-```{% endraw %}
+```
 
 Hopefully you can take something from my setup to add to yours!
 
 Happy coding!
 
 *[This post is also available on DEV.](https://dev.to/andrewmcodes/ruby-on-rails-development-with-vs-code-p1i)*
-
-
-<script>
-const parent = document.getElementsByTagName('head')[0];
-const script = document.createElement('script');
-script.type = 'text/javascript';
-script.src = 'https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.1.1/iframeResizer.min.js';
-script.charset = 'utf-8';
-script.onload = function() {
-    window.iFrameResize({}, '.liquidTag');
-};
-parent.appendChild(script);
-</script>
-````

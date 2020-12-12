@@ -2,10 +2,12 @@
 title: Alfred
 categories:
   - notes
-created_at: Dec 8, 2020 2:30 AM
 tags:
   - automation
-updated_at: Dec 8, 2020 2:43 AM
+slug: alfred
+date: 2020-12-12T00:22:45.405Z
 ---
+
+## Alfred
 
 Alfred Notes

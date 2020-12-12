@@ -32,14 +32,14 @@ Let's get started!
 
 For detailed instructions on getting Bridgetown set up on your local machine, take a look at the [Bridgetown Getting Started Documentation](https://www.bridgetownrb.com/docs/) and the [Bridgetown Installation Guides](https://www.bridgetownrb.com/docs/installation).
 
-The TL;DR is you need Ruby {% raw %}`>= 2.5`{% endraw %}, Bundler, Node {% raw %}`>= 10.13`{% endraw %}, Yarn, and the Bridgetown gem installed.
+The TL;DR is you need Ruby `>= 2.5`, Bundler, Node `>= 10.13`, Yarn, and the Bridgetown gem installed.
 
 You can install the gem by running the following command in your terminal:
 
-{% raw %}```bash
+```bash
 gem install bridgetown
 
-````{% endraw %}
+````
 
 As far as the other dependencies go, you don't have to use the same versions that I am as long as you meet the minimum requirements above, but this is what I am currently using:
 
@@ -54,44 +54,44 @@ The first thing we are going to do is generate a new Bridgetown site.
 
 Run the following command in your terminal:
 
-{% raw %}```bash
+```bash
 bridgetown new bridgetown-netlify-cms-starter
 cd bridgetown-netlify-cms-starter
-```{% endraw %}
+```
 
 Our new site has been generated! :tada:
 
-Let's take a look! Run {% raw %}`yarn start`{% endraw %} in your terminal and open {% raw %}`http://localhost:4000`{% endraw %} in your browser.
+Let's take a look! Run `yarn start` in your terminal and open `http://localhost:4000` in your browser.
 
 ![Alt Text](https://dev-to-uploads.s3.amazonaws.com/i/m9dg93scfne9srinnpkw.jpg)
 
 #### Optional Styling
 
-Just to make this a little prettier, I am going to add [new.css](https://newcss.net), which just adds styles to your default HTML. If you'd like to do the same, add the following in your head component at {% raw %}`src/_components/head.liquid`{% endraw %}:
+Just to make this a little prettier, I am going to add [new.css](https://newcss.net), which just adds styles to your default HTML. If you'd like to do the same, add the following in your head component at `src/_components/head.liquid`:
 
-{% raw %}```html
+```html
 <!-- src/_components/head.liquid -->
 <link rel="stylesheet" href="https://fonts.xz.style/serve/inter.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css">
-```{% endraw %}
+```
 
-And remove the contents of {% raw %}`frontend/styles/index.scss`{% endraw %}.
+And remove the contents of `frontend/styles/index.scss`.
 
 ### Adding Netlify CMS to your site
 
 _I won't be going in great depth about the specific features of Netlify CMS, I encourage taking a looking at the [Netlify CMS Documentation](https://www.netlifycms.org/docs/intro/) to learn more._
 
-We are going to create an {% raw %}`admin`{% endraw %} folder with two files: {% raw %}`index.html`{% endraw %} and {% raw %}`config.yml`{% endraw %}:
+We are going to create an `admin` folder with two files: `index.html` and `config.yml`:
 
-{% raw %}```bash
+```bash
 mkdir src/admin
 touch src/admin/index.html
 touch src/admin/config.yml
-```{% endraw %}
+```
 
-Paste the following inside of {% raw %}`src/admin/index.html`{% endraw %}:
+Paste the following inside of `src/admin/index.html`:
 
-{% raw %}```html
+```html
 <!doctype html>
 <html>
   <head>
@@ -105,11 +105,11 @@ Paste the following inside of {% raw %}`src/admin/index.html`{% endraw %}:
     <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js" type="text/javascript"></script>
   </body>
 </html>
-```{% endraw %}
+```
 
-And in {% raw %}`src/admin/config.yml`{% endraw %}
+And in `src/admin/config.yml`
 
-{% raw %}```yml
+```yml
 backend:
   name: git-gateway # required for using Github
   branch: main # the default branch you want CMS changes merged to
@@ -158,7 +158,7 @@ collections:
           - { label: Layout, name: layout, widget: hidden, default: page }
           - { label: Permalink, name: permalink, widget: string, default: '/about/' }
           - { label: Body, name: body, widget: markdown }
-```{% endraw %}
+```
 
 For more information on these config options, checkout the [Netlify CMS Configuration Options Documentation](https://www.netlifycms.org/docs/configuration-options/)
 
@@ -166,34 +166,34 @@ I decided what fields needed to be used by looking at the frontmatter in the exa
 
 For our posts, this looks like:
 
-{% raw %}```md
+```md
 ---
 layout: post
 title:  "Your First Post on Bridgetown"
 date:   2020-07-10 21:04:54 -0400
 categories: updates
 ---
-```{% endraw %}
+```
 
 and in our config for Netlify CMS:
 
-{% raw %}```yml
+```yml
 fields:
   - { label: Layout, name: layout, widget: hidden, default: post }
   - { label: Title, name: title, widget: string }
   - { label: Publish Date, name: date, widget: datetime }
   - { label: Body, name: body, widget: markdown }
-```{% endraw %}
+```
 
 I neglected to add categories, which would be [a great contribution to this repository](https://github.com/andrewmcodes/bridgetown-netlify-cms-starter) if you are interested!
 
-You should now be able to navigate to {% raw %}`http://localhost:4000/admin`{% endraw %} in your browser and see this page:
+You should now be able to navigate to `http://localhost:4000/admin` in your browser and see this page:
 
 ![Netlify CMS Admin Page](https://dev-to-uploads.s3.amazonaws.com/i/arv5vukbo7y6lr5r8zsi.jpg)
 
-In order to use the CMS locally, run {% raw %}`npx netlify-cms-proxy-server`{% endraw %} in a separate terminal window or run {% raw %}`yarn add -D netlify-cms-proxy-server`{% endraw %} and modify {% raw %}`start.js`{% endraw %}:
+In order to use the CMS locally, run `npx netlify-cms-proxy-server` in a separate terminal window or run `yarn add -D netlify-cms-proxy-server` and modify `start.js`:
 
-{% raw %}```diff
+```diff
 concurrently([
   { command: "yarn webpack-dev", name: "Webpack", prefixColor: "yellow"},
   { command: "sleep 4; yarn serve --port " + port, name: "Bridgetown", prefixColor: "green"},
@@ -204,7 +204,7 @@ concurrently([
   restartTries: 3,
   killOthers: ['failure', 'success'],
 }).then(() => { console.log("Done.");console.log('\033[0G'); }, () => {});
-```{% endraw %}
+```
 
 Now the CMS will start with the rest of your server. You can play with it locally and check for errors, but the real power is once we get this live!
 
@@ -212,29 +212,29 @@ Now the CMS will start with the rest of your server. You can play with it locall
 
 Create a new GitHub repository and push this code to your default branch. If you have the [GitHub CLI](https://github.com/cli/cli), that process would look something like:
 
-{% raw %}```bash
+```bash
 # I am using main as my default branch
 gco -b main
 git add .
 git commit -m "feat: :tada: Initial" -m "Initial commit"
 gh repo create bridgetown-netlify-cms-starter --public
 git push --set-upstream origin main
-```{% endraw %}
+```
 
 ### Create Netlify site
 
 1. Log in to Netlify
 1. Press the 'New site from Git' button
 1. Choose your repository
-1. Set your build command to {% raw %}`yarn deploy`{% endraw %}
-1. Set the publish directory to {% raw %}`output`{% endraw %}
+1. Set your build command to `yarn deploy`
+1. Set the publish directory to `output`
 1. Deploy site
 
 ![Alt Text](https://dev-to-uploads.s3.amazonaws.com/i/n0mh8jeu3wedgfz81wwt.jpg)
 
 ### Netlify Identity
 
-In order to log in to our CMS, we need to enable Netlify Identity on the {% raw %}`Identity`{% endraw %} tab for our new site.
+In order to log in to our CMS, we need to enable Netlify Identity on the `Identity` tab for our new site.
 
 #### Registration preferences
 
@@ -251,13 +251,13 @@ Enable the Git Gateway to allow Netlify to connect your site to GitHub's API, wh
 
 ### Using the CMS
 
-Navigate to your deployed site and go to the {% raw %}`/admin`{% endraw %} route. For example, the admin page for this starter is located at {% raw %}`https://bridgetown-netlify-cms-starter.netlify.app/admin`{% endraw %}
+Navigate to your deployed site and go to the `/admin` route. For example, the admin page for this starter is located at `https://bridgetown-netlify-cms-starter.netlify.app/admin`
 
 Your page should look like:
 
 ![Netlify CMS login](https://dev-to-uploads.s3.amazonaws.com/i/re1u6hkm71qy720w10l2.jpg)
 
-Click the {% raw %}`Continue with GitHub`{% endraw %} button. After you authenticate with GitHub, you should be redirected to your CMS!
+Click the `Continue with GitHub` button. After you authenticate with GitHub, you should be redirected to your CMS!
 
 ![Netlify CMS](https://dev-to-uploads.s3.amazonaws.com/i/jfdgw5nazt1bzuwadnhn.jpg)
 
@@ -267,7 +267,7 @@ __Note:__ At this point, I would go back to your site settings and set the regis
 
 From here you should be all set! You can create a new blog post, edit content on your pages, upload images, and more!
 
-After changing the index page for example, hit the {% raw %}`publish`{% endraw %} button at the top of the page and publish now.
+After changing the index page for example, hit the `publish` button at the top of the page and publish now.
 
 What this will do is add a commit to your GitHub repo with the changes and if Netlify is set to deploy your default branch (this is default behavior), the Netlify will automatically redeploy the site with the changes.
 
@@ -288,17 +288,3 @@ You can find the demo for this project [here](https://bridgetown-netlify-cms-sta
 Happy coding!
 
 *[This post is also available on DEV.](https://dev.to/andrewmcodes/creating-a-blog-with-bridgetown-and-netlify-cms-1d1a)*
-
-
-<script>
-const parent = document.getElementsByTagName('head')[0];
-const script = document.createElement('script');
-script.type = 'text/javascript';
-script.src = 'https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.1.1/iframeResizer.min.js';
-script.charset = 'utf-8';
-script.onload = function() {
-    window.iFrameResize({}, '.liquidTag');
-};
-parent.appendChild(script);
-</script>
-````

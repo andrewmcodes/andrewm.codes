@@ -4,10 +4,12 @@
   "devDependencies": {
     "@snowpack/plugin-optimize": "^0.2.10",
     "@snowpack/plugin-postcss": "^1.0.10",
+    "@tailwindcss/aspect-ratio": "^0.2.0",
+    "@tailwindcss/forms": "^0.2.1",
     "@tailwindcss/typography": "^0.3.1",
     "autoprefixer": "^10.1.0",
     "browser-sync": "^2.26.13",
-    "concurrently": "^5.32.0",
+    "concurrently": "^5.3.0",
     "imagemin-mozjpeg": "^9.0.0",
     "imagemin-optipng": "^8.0.0",
     "onchange": "^7.1.0",
@@ -16,7 +18,8 @@
     "sitemap-static": "^0.4.4",
     "snowpack": "^2.18.2",
     "snowpack-plugin-imagemin": "^1.0.0",
-    "tailwindcss": "^2.0.2"
+    "tailwindcss": "^2.0.2",
+    "tailwindcss-line-clamp": "^1.0.5"
   },
   "homepage": "https://andrewm.codes",
   "license": "MIT",

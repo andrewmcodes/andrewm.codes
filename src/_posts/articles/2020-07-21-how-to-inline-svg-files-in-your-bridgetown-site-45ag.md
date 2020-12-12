@@ -19,12 +19,12 @@ dev_to_url: >-
   https://dev.to/andrewmcodes/how-to-inline-svg-files-in-your-bridgetown-site-45ag
 layout: post
 ---
-
-This is a short tutorial to showcase how you can quickly integrate [{% raw %}`bridgetown-inline-svg`{% endraw %}](https://github.com/andrewmcodes/bridgetown-inline-svg) into your [Bridgetown](https://www.bridgetownrb.com) site to easily inline your SVG assets when you build your site.
+{% raw %}
+This is a short tutorial to showcase how you can quickly integrate [`bridgetown-inline-svg`](https://github.com/andrewmcodes/bridgetown-inline-svg) into your [Bridgetown](https://www.bridgetownrb.com) site to easily inline your SVG assets when you build your site.
 
 The code for this tutorial can be found at: [andrewmcodes/bridgetown-inline-svg-starter](https://github.com/andrewmcodes/bridgetown-inline-svg-starter)
 
-This tutorial is using version {% raw %}`1.1.0`{% endraw %} of {% raw %}`bridgetown-inline-svg`{% endraw %}. If you are already using this plugin, you may need to upgrade the gem.
+This tutorial is using version `1.1.0` of `bridgetown-inline-svg`. If you are already using this plugin, you may need to upgrade the gem.
 
 Let's get started!
 
@@ -46,14 +46,14 @@ The first thing we are going to do is generate a new Bridgetown site.
 
 Run the following command in your terminal:
 
-{% raw %}
+
 
 ```bash
 bridgetown new bridgetown-inline-svg-starter
 cd bridgetown-inline-svg-starter
 ```
 
-{% endraw %}
+
 
 Our new site has been generated! :tada:
 
@@ -104,7 +104,7 @@ My project `src/assets` folder now looks like:
 
 ## Using the plugin
 
-Let's take a look at what we have right now. Run {% raw %}`yarn start`{% endraw %} in your terminal and open {% raw %}`http://localhost:4000`{% endraw %} in your browser.
+Let's take a look at what we have right now. Run `yarn start` in your terminal and open `http://localhost:4000` in your browser.
 
 Your should see following in:
 
@@ -114,12 +114,12 @@ Your should see following in:
 
 > "Pages are the most basic building block for content.." [Bridgetown Pages Documentation](https://www.bridgetownrb.com/docs/pages)
 
-Let's add a simple full-width SVG to our home page. Add the following to {% raw %}`src/index.md`{% endraw %}, but replace my filepath with your own:
+Let's add a simple full-width SVG to our home page. Add the following to `src/index.md`, but replace my filepath with your own:
 
-{% raw %}```liquid
+```liquid
 {% svg "assets/undraw_design_components.svg" width="100%" %}
 
-````{% endraw %}
+````
 
 This will produce something like:
 
@@ -129,13 +129,13 @@ This will produce something like:
 
 > "Collections are a great way to group related content..." [Bridgetown Collections Documentation](https://www.bridgetownrb.com/docs/collections)
 
-Let's add a simple full-width SVG to the blog post Bridgetown generated for us. Add the following to {% raw %}`src/_posts/2020-07-20-welcome-to-bridgetown.md`{% endraw %} (the date prefix will be whatever date you generated the project):
+Let's add a simple full-width SVG to the blog post Bridgetown generated for us. Add the following to `src/_posts/2020-07-20-welcome-to-bridgetown.md` (the date prefix will be whatever date you generated the project):
 
-{% raw %}```liquid
+```liquid
 {% svg "assets/undraw_content_creator.svg" width="100%" height="280" %}
-```{% endraw %}
+```
 
-Navigate to the post by going to {% raw %}`http://localhost:4000/posts/`{% endraw %} and choose your post. It will look something like this:
+Navigate to the post by going to `http://localhost:4000/posts/` and choose your post. It will look something like this:
 
 ![Post page with illustration](https://dev-to-uploads.s3.amazonaws.com/i/gfd9xw5cq38rxtoohtbj.jpg)
 
@@ -143,15 +143,15 @@ Navigate to the post by going to {% raw %}`http://localhost:4000/posts/`{% endra
 
 > "A component is a reusable piece of template logic (sometimes referred to as a “partial”) that can be included in any part of the site..." [Bridgetown Components Documentation](https://www.bridgetownrb.com/docs/components)
 
-Let's add an icon to our footer component. Add the following to {% raw %}`src/_components/footer.liquid`{% endraw %}:
+Let's add an icon to our footer component. Add the following to `src/_components/footer.liquid`:
 
-{% raw %}```diff
+```diff
 <footer>
 - Contact me at {{ metadata.email }}
 + {% svg "assets/mail.svg" style="color:# 6c63ff;" height="1.5rem" %}
 + <p>{{ metadata.email }}</p>
 </footer>
-```{% endraw %}
+```
 
 Your footer should now look something like:
 
@@ -165,58 +165,58 @@ Here are a few examples based on usage above:
 
 ### Width and Height
 
-{% raw %}```liquid
+```liquid
 {% svg "path/to/my.svg" width="100%" %}
-```{% endraw %}
+```
 
-Adding {% raw %}`width="100%"`{% endraw %} as an argument will change our output to:
+Adding `width="100%"` as an argument will change our output to:
 
-{% raw %}```html
+```html
 <svg width="100%" height="100%"></svg>
-```{% endraw %}
+```
 
 Height is automatically set to match width if omitted because IE11 won't use the viewport attribute to calculate the image's aspect ratio.
 
 If you don't want the width and height to match, set both:
 
 
-{% raw %}```liquid
+```liquid
 {% svg "path/to/my.svg" width="100%" height=240 %}
-```{% endraw %}
+```
 
 produces:
 
-{% raw %}```html
+```html
 <svg width="100%" height="240"></svg>
-```{% endraw %}
+```
 
 ### Style
 
-Set or override inline styles on your SVG with the {% raw %}`style`{% endraw %} attribute:
+Set or override inline styles on your SVG with the `style` attribute:
 
-{% raw %}```liquid
+```liquid
 {% svg "path/to/my.svg" style="color:# 6c63ff;" %}
-```{% endraw %}
+```
 
 produces:
 
-{% raw %}```html
+```html
 <svg style="color:# 6c63ff;"></svg>
-```{% endraw %}
+```
 
 ### Classes
 
-Set or override CSS classes on your SVG with the {% raw %}`class`{% endraw %} attribute:
+Set or override CSS classes on your SVG with the `class` attribute:
 
-{% raw %}```liquid
+```liquid
 {% svg "path/to/my.svg" class="class-1 class-2" %}
-```{% endraw %}
+```
 
 produces:
 
-{% raw %}```html
+```html
 <svg class="class-1 class-2"></svg>
-```{% endraw %}
+```
 
 ## Wrap up
 
@@ -233,17 +233,4 @@ Check out [my website](https://www.andrewm.codes) or [sign up for my newsletter]
 Happy coding!
 
 *[This post is also available on DEV.](https://dev.to/andrewmcodes/how-to-inline-svg-files-in-your-bridgetown-site-45ag)*
-
-
-<script>
-const parent = document.getElementsByTagName('head')[0];
-const script = document.createElement('script');
-script.type = 'text/javascript';
-script.src = 'https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.1.1/iframeResizer.min.js';
-script.charset = 'utf-8';
-script.onload = function() {
-    window.iFrameResize({}, '.liquidTag');
-};
-parent.appendChild(script);
-</script>
-````
+{% endraw %}

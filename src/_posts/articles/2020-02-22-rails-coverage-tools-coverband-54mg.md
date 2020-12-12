@@ -37,9 +37,9 @@ The rest of the tutorial will assume you already have a functioning Rails app!
 
 ## Installation
 
-Add the Coverband gem to your {% raw %}`Gemfile`{% endraw %}. I personally decided to keep it in my development group, because I didn't see any value in having the dashboard available in production.
+Add the Coverband gem to your `Gemfile`. I personally decided to keep it in my development group, because I didn't see any value in having the dashboard available in production.
 
-{% raw %}```ruby
+```ruby
 
 # Gemfile
 
@@ -51,13 +51,13 @@ group :development do
 gem "coverband"
 end
 
-````{% endraw %}
+````
 
 Then run:
 
-{% raw %}```sh
+```sh
 bundle install
-```{% endraw %}
+```
 
 ## Configuration
 
@@ -65,19 +65,19 @@ bundle install
 
 Coverband stores coverage data in Redis. According to the documentation, the Redis endpoint is looked for in this order:
 
-{% raw %}```ruby
+```ruby
 ENV['COVERBAND_REDIS_URL']
 ENV['REDIS_URL']
 localhost
-```{% endraw %}
+```
 
-You can also specifically set this in a Coverband initializer file. If you are using the template that I’m using then you should be all set, otherwise make sure you are running Redis locally, bundle the {% raw %}`redis`{% endraw %} gem, and your app can access it.
+You can also specifically set this in a Coverband initializer file. If you are using the template that I’m using then you should be all set, otherwise make sure you are running Redis locally, bundle the `redis` gem, and your app can access it.
 
 ### Initializer
 
 Let's configure the gem. Create an initializer file for Coverband, which should look like the following:
 
-{% raw %}```ruby
+```ruby
 # config/coverband.rb
 
 Coverband.configure do |config|
@@ -88,7 +88,7 @@ Coverband.configure do |config|
                     "config/environments/*",
                     "lib/tasks/*",]
 end
-```{% endraw %}
+```
 
 These settings just tell Coverband to ignore our specified files and paths.
 
@@ -96,13 +96,13 @@ These settings just tell Coverband to ignore our specified files and paths.
 
 Now, lets add a route for coverband so we can view the web dashboard:
 
-{% raw %}```ruby
+```ruby
 # config/routes.rb
 
 Rails.application.routes.draw do
   mount Coverband::Reporters::Web.new, at: "/coverband" if Rails.env.development?
 end
-```{% endraw %}
+```
 
 It is worth noting that if you are running this tool in production, you should protect this route with proper authentication.
 
@@ -110,13 +110,13 @@ It is worth noting that if you are running this tool in production, you should p
 
 We should be all set to see what Coverband can provide us!
 
-Fire up the Rails server and navigate to {% raw %}`localhost:3000/coverband`{% endraw %}
+Fire up the Rails server and navigate to `localhost:3000/coverband`
 
-Alternatively, you can run the following Rake task and static files will be created in {% raw %}`coverage/`{% endraw %}. I would recommend making sure this directory is added to your {% raw %}`.gitignore`{% endraw %}.
+Alternatively, you can run the following Rake task and static files will be created in `coverage/`. I would recommend making sure this directory is added to your `.gitignore`.
 
-{% raw %}```sh
+```sh
 rake coverband:coverage
-```{% endraw %}
+```
 
 You should now be seeing is Coverband's mountable web interface to easily view Coverband reports.
 
@@ -134,11 +134,11 @@ If we click on a file with partial coverage, you should see something like:
 
 This view will highlight the lines that have been used, and those that haven't. Take care before you start ripping out code though, it's possible that you just haven't exercised that code yet.
 
-In the {% raw %}`posts_controller`{% endraw %} file in my example above, the code inside our {% raw %}`new`{% endraw %} and {% raw %}`create`{% endraw %} methods is not being used. I am going to open up the UI, and create a new post. You will notice that the coverage report looks a little different now:
+In the `posts_controller` file in my example above, the code inside our `new` and `create` methods is not being used. I am going to open up the UI, and create a new post. You will notice that the coverage report looks a little different now:
 
 ![coverband_3](https://dev-to-uploads.s3.amazonaws.com/i/smks7r65kpjlpfan8cxj.jpg)
 
-It is important to exercise some due diligence before removing code that Coverband flags. In the example above, after some investigation I realized I in fact do not need {% raw %}`config/spring.rb`{% endraw %} because I am not using {% raw %}`spring`{% endraw %} in this project. This is the power of this library, the ability to point you towards areas in your codebase that may be safe to remove; however, if I had removed the flagged code in the {% raw %}`posts_controller`{% endraw %} then I would be in some trouble.
+It is important to exercise some due diligence before removing code that Coverband flags. In the example above, after some investigation I realized I in fact do not need `config/spring.rb` because I am not using `spring` in this project. This is the power of this library, the ability to point you towards areas in your codebase that may be safe to remove; however, if I had removed the flagged code in the `posts_controller` then I would be in some trouble.
 
 ### Tracking Gems
 
@@ -146,7 +146,7 @@ It is also possible to use Coverband to track gem usage. This is still in experi
 
 To see it in action, first let's update our initializer:
 
-{% raw %}```ruby
+```ruby
 # config/initializers/coverband.rb
 
 Coverband.configure do |config|
@@ -159,22 +159,22 @@ Coverband.configure do |config|
                     "lib/tasks/*",]
 end
 
-```{% endraw %}
+```
 
 According to the docs:
 
 > When tracking gems, it is important that Coverband# start is called before the gems to be tracked are required. The best way to do this is to require coverband before Bundle.require is called
 
-So lets update {% raw %}`application.rb`{% endraw %} to make sure coverband is loaded before {% raw %}`Bundler.require`{% endraw %} is called:
+So lets update `application.rb` to make sure coverband is loaded before `Bundler.require` is called:
 
-{% raw %}```ruby
+```ruby
 # config/application.rb
 
 require "coverband"
 Bundler.require(*Rails.groups)
-```{% endraw %}
+```
 
-Restart the Rails server and you should now have a gem tab if you navigate back to {% raw %}`localhost:3000/coverband`{% endraw %}.
+Restart the Rails server and you should now have a gem tab if you navigate back to `localhost:3000/coverband`.
 
 ![coverband_4](https://dev-to-uploads.s3.amazonaws.com/i/nayxiegisac553pbk0wu.jpg)
 
@@ -182,7 +182,7 @@ This can help give you insight into gems that may be safe to remove.
 
 ### Tracking Views
 
-There is a config option to watch your views, but it was not working for me on {% raw %}`Rails 6.0.2.1`{% endraw %} and {% raw %}`Ruby 2.7`{% endraw %} so I won't go into it now.
+There is a config option to watch your views, but it was not working for me on `Rails 6.0.2.1` and `Ruby 2.7` so I won't go into it now.
 
 See [the advanced configuration documentation](https://github.com/danmayer/coverband# advanced-config) for more information.
 
@@ -200,17 +200,3 @@ Happy Coding!
 
 
 *[This post is also available on DEV.](https://dev.to/andrewmcodes/rails-coverage-tools-coverband-54mg)*
-
-
-<script>
-const parent = document.getElementsByTagName('head')[0];
-const script = document.createElement('script');
-script.type = 'text/javascript';
-script.src = 'https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.1.1/iframeResizer.min.js';
-script.charset = 'utf-8';
-script.onload = function() {
-    window.iFrameResize({}, '.liquidTag');
-};
-parent.appendChild(script);
-</script>
-````

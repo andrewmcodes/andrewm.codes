@@ -29,14 +29,14 @@ For the purpose of this tutorial, we will assume you have Ruby and the Rails gem
 
 ## Create a new Rails project
 
-{% raw %}```sh
+```sh
 rails new rails_tailwind --skip-coffee --webpack -d postgresql
 cd rails_tailwind
 rails db:create
 
-````{% endraw %}
+````
 
-This will create a new Rails project for you with webpack and Postgres configured for you and create our databases. We will not use coffeescript, which is why we add the {% raw %}`--skip-coffee`{% endraw %} flag. You can also omit the {% raw %}`-d postgresql`{% endraw %} flag if you like, but if you want to deploy to something like Heroku, I would recommend adding it. If you keep the Postgres flag, make sure you have Postgres installed and it is running. You can install Postgres on macOS by running {% raw %}`brew install postgresql && brew services start postgresql`{% endraw %}
+This will create a new Rails project for you with webpack and Postgres configured for you and create our databases. We will not use coffeescript, which is why we add the `--skip-coffee` flag. You can also omit the `-d postgresql` flag if you like, but if you want to deploy to something like Heroku, I would recommend adding it. If you keep the Postgres flag, make sure you have Postgres installed and it is running. You can install Postgres on macOS by running `brew install postgresql && brew services start postgresql`
 
 ## Running Rails and Webpack
 
@@ -44,17 +44,17 @@ You need to run the Rails server and webpack-dev-server in two terminal tabs/win
 
 For now, we will just create two terminal windows. In one window, run:
 
-{% raw %}```sh
+```sh
 rails s
-```{% endraw %}
+```
 
 and in the other:
 
-{% raw %}```sh
+```sh
 ./bin/webpack-dev-server
-```{% endraw %}
+```
 
-You should see rails welcome page if you navigate to {% raw %}`localhost:3000`{% endraw %} in your browser.
+You should see rails welcome page if you navigate to `localhost:3000` in your browser.
 
 ![rails default information page](https://guides.rubyonrails.org/images/getting_started/rails_welcome.png)
 
@@ -62,30 +62,30 @@ You should see rails welcome page if you navigate to {% raw %}`localhost:3000`{%
 
 In order to see the Tailwind styles that we will integrate later, we at minimum need a controller and view.
 
-{% raw %}```sh
+```sh
 rails generate controller Home index
-```{% endraw %}
+```
 
 You can remove the generated JS, SCSS, and helper file, we won't be needing them.
 
-{% raw %}```sh
+```sh
 rm app/helpers/home_helper.rb app/assets/javascripts/home.js app/assets/stylesheets/home.scss
-```{% endraw %}
+```
 
 ## Configure your routes
 
-Change your {% raw %}`config/routes.rb`{% endraw %} file to:
+Change your `config/routes.rb` file to:
 
-{% raw %}```rb
+```rb
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
   root 'home# index'
   resources :home, only: :index
 end
-```{% endraw %}
+```
 
-Restart your Rails server, and now you should see the following on {% raw %}`localhost:3000`{% endraw %}
+Restart your Rails server, and now you should see the following on `localhost:3000`
 
 ![home index](https://i.imgur.com/A47j9dx.png)
 
@@ -93,30 +93,30 @@ Restart your Rails server, and now you should see the following on {% raw %}`loc
 
 Run the following command in your terminal:
 
-{% raw %}```sh
+```sh
 yarn add tailwindcss --dev
-```{% endraw %}
+```
 
-This should add the Tailwind package to your {% raw %}`package.json`{% endraw %}.
+This should add the Tailwind package to your `package.json`.
 
 To create a custom config file, you can run:
 
-{% raw %}```sh
+```sh
 ./node_modules/.bin/tailwind init
-```{% endraw %}
+```
 
-This should create a {% raw %}`tailwind.config.js`{% endraw %} file at the root of your project. This file can be used to customize the Tailwind defaults. Read more [here](https://tailwindcss.com/docs/configuration)
+This should create a `tailwind.config.js` file at the root of your project. This file can be used to customize the Tailwind defaults. Read more [here](https://tailwindcss.com/docs/configuration)
 
-Next, add the following two lines to {% raw %}`postcss.config.js`{% endraw %}
+Next, add the following two lines to `postcss.config.js`
 
-{% raw %}```js
+```js
 require('tailwindcss'),
 require('autoprefixer'),
-```{% endraw %}
+```
 
-Your {% raw %}`postcss.config.js`{% endraw %} file should now look like this:
+Your `postcss.config.js` file should now look like this:
 
-{% raw %}```js
+```js
 module.exports = {
   plugins: [
     require('autoprefixer'),
@@ -131,7 +131,7 @@ module.exports = {
     })
   ]
 }
-```{% endraw %}
+```
 
 ## Configure Tailwind
 
@@ -139,55 +139,55 @@ _There are a few ways you can do this but this is my personal preference._
 
 Remove the assets folder:
 
-{% raw %}```sh
+```sh
 rm -rf app/assets
-```{% endraw %}
+```
 
-Rename the {% raw %}`app/javascript`{% endraw %} directory to {% raw %}`app/frontend`{% endraw %}:
+Rename the `app/javascript` directory to `app/frontend`:
 
-{% raw %}```sh
+```sh
 mv app/javascript app/frontend
-```{% endraw %}
+```
 
-Tell webpacker to use this new folder by changing the source_path in {% raw %}`config/webpacker.yml`{% endraw %} from: {% raw %}`source_path: app/javascript`{% endraw %} to {% raw %}`source_path: app/frontend`{% endraw %}.
+Tell webpacker to use this new folder by changing the source_path in `config/webpacker.yml` from: `source_path: app/javascript` to `source_path: app/frontend`.
 
 Next, we need to setup our stylesheets:
 
-{% raw %}```sh
+```sh
 touch app/frontend/packs/stylesheets.css
-```{% endraw %}
+```
 
-Paste the following into our new {% raw %}`stylesheets.css`{% endraw %} file. _This is straight from the [tailwind docs](https://tailwindcss.com/docs/installation# step-2-add-tailwind-to-your-css)_
+Paste the following into our new `stylesheets.css` file. _This is straight from the [tailwind docs](https://tailwindcss.com/docs/installation# step-2-add-tailwind-to-your-css)_
 
-{% raw %}```css
+```css
 @tailwind base;
 
 @tailwind components;
 
 @tailwind utilities;
-```{% endraw %}
+```
 
-Add the following line in {% raw %}`app/frontend/packs/application.js`{% endraw %}:
+Add the following line in `app/frontend/packs/application.js`:
 
-{% raw %}```js
+```js
 import './stylesheets.css'
-```{% endraw %}
+```
 
-The last step is to tell Rails to use our packs. In {% raw %}`app/views/layouts/application.html.erb`{% endraw %}, change:
+The last step is to tell Rails to use our packs. In `app/views/layouts/application.html.erb`, change:
 
-{% raw %}```erb
+```erb
 <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-```{% endraw %}
+```
 
 to:
 
-{% raw %}```erb
+```erb
 <%= stylesheet_pack_tag 'stylesheets', 'data-turbolinks-track': 'reload' %>
 <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-```{% endraw %}
+```
 
-Restart the Rails server and webpack-dev-server and you should now see the following on {% raw %}`localhost:3000`{% endraw %}
+Restart the Rails server and webpack-dev-server and you should now see the following on `localhost:3000`
 
 ![tailwind home index](https://i.imgur.com/C64oFFy.png)
 
@@ -195,42 +195,42 @@ Tailwind should now be working so lets tweak our views to see some Tailwind good
 
 ## Update views to use TailwindCSS
 
-In {% raw %}`app/views/layouts/application.html.erb`{% endraw %} change:
+In `app/views/layouts/application.html.erb` change:
 
-{% raw %}```erb
+```erb
 <body>
   <%= yield %>
 </body>
-```{% endraw %}
+```
 
 to:
 
-{% raw %}```erb
+```erb
 <body class="min-h-screen bg-gray-100">
   <div class="container mx-auto">
     <%= yield %>
   </div>
 </body>
-```{% endraw %}
+```
 
-and in {% raw %}`app/views/home/index.html.erb`{% endraw %} change:
+and in `app/views/home/index.html.erb` change:
 
-{% raw %}```erb
+```erb
 <h1>Home# index</h1>
 <p>Find me in app/views/home/index.html.erb</p>
-```{% endraw %}
+```
 
 to:
 
-{% raw %}```erb
+```erb
 <section class="py-8 text-center">
   <h1 class="mb-2 text-5xl">Ruby on Rails + TailwindCSS</h1>
   <p class="mb-8 text-xl">❤️ A match made in heaven️️ ❤️</p>
   <a href="https://tailwindcss.com" class="px-8 py-4 font-bold text-white bg-teal-500 rounded hover:bg-teal-700" target="_blank">Tailwind Docs</a>
 </section>
-```{% endraw %}
+```
 
-You should now see the following page when you navigate to {% raw %}`localhost:3000`{% endraw %}
+You should now see the following page when you navigate to `localhost:3000`
 
 ![updated tailwind home index](https://i.imgur.com/okfqCoS.png)
 
@@ -242,17 +242,3 @@ Happy coding!
 
 
 *[This post is also available on DEV.](https://dev.to/andrewmcodes/use-tailwind-css-1-0-in-your-rails-app-4pm4)*
-
-
-<script>
-const parent = document.getElementsByTagName('head')[0];
-const script = document.createElement('script');
-script.type = 'text/javascript';
-script.src = 'https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.1.1/iframeResizer.min.js';
-script.charset = 'utf-8';
-script.onload = function() {
-    window.iFrameResize({}, '.liquidTag');
-};
-parent.appendChild(script);
-</script>
-````

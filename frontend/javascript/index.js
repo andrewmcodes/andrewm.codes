@@ -41,3 +41,4 @@
 // import { startDevServer } from "snowpack"
 // const snowpack = await startDevServer()
 // snowpack.onFileChange(({ filePath }) => { console.log(filePath) })
+// import "../styles/tailwind.css"

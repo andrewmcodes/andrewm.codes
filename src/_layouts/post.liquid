@@ -3,25 +3,25 @@ layout: default
 ---
 
 {% rendercontent "_v2/content", emoji: page.emoji, title: page.title, tags: page.tags, prose: true %}
-  {% with links %}
-    <li>
-      <a
-        href="{{ page.dev_to_url }}"
-        class="underline link-item"
-        target="_blank"
-        rel="noopener">
-        {% svg images/icon/arrow_up_right.svg class="w-4 h-4" %}
-        <span>Read on Dev.to</span>
-      </a>
-    </li>
-    <li class="link-item">
-      {% svg images/icon/calendar_plus.svg class="w-4 h-4" %}
-      <span>Published at: {{ page.date | date_to_long_string }}</span>
-    </li>
-    <li class="link-item">
-      {% svg images/icon/calculator.svg class="w-4 h-4" %}
-      <span>Reading Time: {{ page.content | reading_time: 1 }} minutes</span>
-    </li>
-  {% endwith %}
-  {{ content }}
+{% with links %}
+<li>
+  <a href="{{ page.dev_to_url }}" class="underline link-item" target="_blank" rel="noopener">
+    {% svg images/icon/arrow_up_right.svg class="w-4 h-4" %}
+    <span>Read on Dev.to</span>
+  </a>
+</li>
+<li class="link-item">
+  {% svg images/icon/calendar_plus.svg class="w-4 h-4" %}
+  <span>Published at:
+    {{ page.date | date_to_long_string }}</span>
+</li>
+<li class="link-item">
+  {% svg images/icon/calculator.svg class="w-4 h-4" %}
+  <span>Reading Time:
+    {{ page.content | reading_time: 1 }}
+    minutes</span>
+</li>
+{% endwith %}
+{{ content | markdownify }}
+{%- render "newsletter" -%}
 {% endrendercontent %}

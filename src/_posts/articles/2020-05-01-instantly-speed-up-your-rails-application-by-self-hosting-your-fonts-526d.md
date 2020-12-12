@@ -36,28 +36,28 @@ This is a tutorial, but I will assume you have a basic understanding of Ruby on 
 
 ## Create a new Rails project
 
-{% raw %}```sh
+```sh
 rails new self_hosted_webfonts_demo --skip-sprockets --skip-spring
 cd self_hosted_webfonts_demo
 
-````{% endraw %}
+````
 
-I am using Rails 6.0.2.2, which comes default with Webpacker 4.2.2, but I want to take advantage of features in v5, so I am going to update the gem and node package to v5.1.1. You are not required to do this in your application, but will need to if you are following along with this tutorial. Make sure you run {% raw %}`bundle install && yarn install`{% endraw %}.
+I am using Rails 6.0.2.2, which comes default with Webpacker 4.2.2, but I want to take advantage of features in v5, so I am going to update the gem and node package to v5.1.1. You are not required to do this in your application, but will need to if you are following along with this tutorial. Make sure you run `bundle install && yarn install`.
 
-After we have upgraded webpacker, let's create a basic Welcome controller, and set the index as the root route in {% raw %}`config/routes.rb`{% endraw %}:
+After we have upgraded webpacker, let's create a basic Welcome controller, and set the index as the root route in `config/routes.rb`:
 
-{% raw %}```sh
+```sh
 bin/rails generate controller welcome index
-```{% endraw %}
+```
 
-{% raw %}```rb
+```rb
 # config/routes.rb
 
 Rails.application.routes.draw do
   get "welcome/index"
   root "welcome# index"
 end
-```{% endraw %}
+```
 
 ## Choose a font
 
@@ -65,34 +65,34 @@ Now that we have a landing page, we should snazz it up a bit with a nice font. I
 
 ![Google Fonts](https://dev-to-uploads.s3.amazonaws.com/i/6qbu8zru7kgr2a2q9f6u.png)
 
-Now that we have our fonts, let’s add the link to the head of our application in {% raw %}`app/views/layouts/application.html.erb`{% endraw %} on the line above your {% raw %}`stylesheet_link_tag`{% endraw %} (line # 7 if you are on a fresh Rails app):
+Now that we have our fonts, let’s add the link to the head of our application in `app/views/layouts/application.html.erb` on the line above your `stylesheet_link_tag` (line # 7 if you are on a fresh Rails app):
 
-{% raw %}```html
+```html
 <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
-```{% endraw %}
+```
 
-While we are here, let's change {% raw %}`stylesheet_link_tag`{% endraw %} to {% raw %}`stylesheet_pack_tag`{% endraw %} and create our application styles file:
+While we are here, let's change `stylesheet_link_tag` to `stylesheet_pack_tag` and create our application styles file:
 
-{% raw %}```diff
+```diff
 - <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track": "reload" %>
 + <%= stylesheet_pack_tag "application", media: "all", "data-turbolinks-track": "reload" %>
-```{% endraw %}
+```
 
-{% raw %}```sh
-touch `{% endraw %}app/javascript/packs/application.scss{% raw %}`
-```{% endraw %}
+```sh
+touch `app/javascript/packs/application.scss`
+```
 
-Inside of {% raw %}`application.scss`{% endraw %}, add the following CSS rules to specify the font family:
+Inside of `application.scss`, add the following CSS rules to specify the font family:
 
-{% raw %}```scss
+```scss
 // app/javascript/packs/application.scss
 
 html {
   font-family: 'Lato', sans-serif;
 }
-```{% endraw %}
+```
 
-Now if we start the Rails server ({% raw %}`bin/rails s`{% endraw %}), and navigate to {% raw %}`localhost:3000`{% endraw %}, we should see our simple landing page being rendered with our nice, new font.
+Now if we start the Rails server (`bin/rails s`), and navigate to `localhost:3000`, we should see our simple landing page being rendered with our nice, new font.
 
 ![Welcome Page](https://dev-to-uploads.s3.amazonaws.com/i/tv7nojfhjvcwl92k2iqm.png)
 
@@ -115,26 +115,26 @@ Enter the [typefaces](https://www.bricolage.io/typefaces-easiest-way-to-self-hos
 
 Since I am already hosting everything else on my server, it makes perfect sense in a Rails environment to take this approach - and it's super quick to swap out Google Fonts for this solution.
 
-A quick search on NPM for {% raw %}`typeface lato`{% endraw %} will reveal the package we are looking for, which we can easily install:
+A quick search on NPM for `typeface lato` will reveal the package we are looking for, which we can easily install:
 
-{% raw %}```sh
+```sh
 yarn add typeface-lato
-```{% endraw %}
+```
 
 Now let's remove the old way we were getting the font:
 
-{% raw %}```diff
+```diff
 - <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
-```{% endraw %}
+```
 
-And the last step is requiring the package in our {% raw %}`application.js`{% endraw %} pack:
+And the last step is requiring the package in our `application.js` pack:
 
-{% raw %}```js
+```js
 // app/javascript/packs/application.js
 require("typeface-lato")
-```{% endraw %}
+```
 
-If we fire the Rails server back up and checkout {% raw %}`localhost:3000`{% endraw %}, the font should still be Lato! A quick look at the {% raw %}`webpacker-dev-server`{% endraw %} logs will reveal that we are now self-hosting the same font styles and weights that we were before:
+If we fire the Rails server back up and checkout `localhost:3000`, the font should still be Lato! A quick look at the `webpacker-dev-server` logs will reveal that we are now self-hosting the same font styles and weights that we were before:
 
 ![webpack-dev-server logs](https://dev-to-uploads.s3.amazonaws.com/i/mvw1wsa4g015rvv2iabc.png)
 
@@ -150,7 +150,7 @@ We should be good to go! This is a simple, quick migration, which will reduce yo
 
 It is worth noting that these Lighthouse audits were run against the Rails development server, and are not a true substitute for running them in production, but should give us a good enough idea of where we are at. For more accurate results, you should run these audits in production or start the application in production mode locally.
 
-This change also positions you to make further enhancements, like requiring the fonts in a separate JavaScript pack, which will allow you to take advantage of {% raw %}`javascript_packs_with_chunks_tag`{% endraw %}. I will leave that for you to explore, but you can see an example, along with the code for this tutorial, [here](https://github.com/andrewmcodes/self_hosted_webfonts_demo).
+This change also positions you to make further enhancements, like requiring the fonts in a separate JavaScript pack, which will allow you to take advantage of `javascript_packs_with_chunks_tag`. I will leave that for you to explore, but you can see an example, along with the code for this tutorial, [here](https://github.com/andrewmcodes/self_hosted_webfonts_demo).
 
 Hopefully this was helpful! If you have taken another approach, I would be curious to hear about it in the comments.
 
@@ -158,17 +158,3 @@ Happy coding!
 
 
 *[This post is also available on DEV.](https://dev.to/andrewmcodes/instantly-speed-up-your-rails-application-by-self-hosting-your-fonts-526d)*
-
-
-<script>
-const parent = document.getElementsByTagName('head')[0];
-const script = document.createElement('script');
-script.type = 'text/javascript';
-script.src = 'https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.1.1/iframeResizer.min.js';
-script.charset = 'utf-8';
-script.onload = function() {
-    window.iFrameResize({}, '.liquidTag');
-};
-parent.appendChild(script);
-</script>
-````

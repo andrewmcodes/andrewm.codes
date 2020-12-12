@@ -2,26 +2,21 @@
 name: Head
 description: The <head /> of the site with scripts and metadata.
 ---
-
 <head>
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   {% feed_meta %}
   {% seo %}
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
-  <link rel="webmention" href="https://webmention.io/andrewm.codes/webmention" />
-  <link rel="pingback" href="https://webmention.io/andrewm.codes/xmlrpc" />
-  <link rel="modulepreload" href="/__snowpack__/env.js">
+  <link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
+  <link href="/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
+  <link href="/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
+  <link href="/site.webmanifest" rel="manifest">
+  <link href="https://webmention.io/andrewm.codes/webmention" rel="webmention"/>
+  <link href="https://webmention.io/andrewm.codes/xmlrpc" rel="pingback"/>
+  <link href="/__snowpack__/env.js" rel="modulepreload">
   <link rel="stylesheet" href="{{ "/_bridgetown/styles/index.css" | preprend: site_url }}">
-  <link rel="preload" href="https://rsms.me/inter/inter.css" as="style" />
-  <link
-    rel="stylesheet"
-    href="https://rsms.me/inter/inter.css"
-    media="print"
-    onload="this.media='all'; this.onload=null;"
-  />
+  <link rel="stylesheet" href="{{ "/_bridgetown/styles/syntax.css" | preprend: site_url }}">
+  <link as="style" href="https://rsms.me/inter/inter.css" rel="preload"/>
+  <link href="https://rsms.me/inter/inter.css" media="print" onload="this.media='all'; this.onload=null;" rel="stylesheet"/>
   {% plausible %}
 </head>

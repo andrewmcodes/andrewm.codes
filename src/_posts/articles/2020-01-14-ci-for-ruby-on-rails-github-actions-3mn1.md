@@ -18,7 +18,7 @@ tags:
 dev_to_url: 'https://dev.to/codefund/ci-for-ruby-on-rails-github-actions-3mn1'
 layout: post
 ---
-
+{% raw %}
 # CI for Ruby on Rails: GitHub Actions vs. CircleCI
 
 _This is part of a three part series where I will walk you through setting up your CI suite with GitHub Actions, CircleCI, and then comparing which you may want to use if you are setting up continuous integration for your Rails app._
@@ -27,14 +27,14 @@ _This is part of a three part series where I will walk you through setting up yo
 
 ### 1. Set the name for your action
 
-{% raw %}```yml
+```yml
 name: Run Tests & Linters
 
-````{% endraw %}
+````
 
 ### 2. Set what events should trigger the action to run
 
-{% raw %}```yml
+```yml
 name: Run Tests & Linters
 
 on:
@@ -44,17 +44,17 @@ on:
   push:
     branches:
       - master
-```{% endraw %}
+```
 
 What this says is that this action will run anytime a pull_request is updated on any branch, and also on pushes to master.
 
 ### 3. Create your job, and choose what to run the action on
 
-{% raw %}```yml
+```yml
 jobs:
   build:
     runs-on: ubuntu-latest
-```{% endraw %}
+```
 
 This tells our action we want to run the action on Ubuntu, and use the latest version GitHub has available, which is Ubuntu 18.04.
 
@@ -62,7 +62,7 @@ This tells our action we want to run the action on Ubuntu, and use the latest ve
 
 For a typical Rails app, you are probably using Redis for caching a tools like Sidekiq, and you also probably have a database. Defining services in your action allows us to use additional containers to run these types of tools.
 
-{% raw %}```yaml
+```yaml
 services:
   postgres: # The name of the service
     image: postgres:11 # A docker image
@@ -80,13 +80,13 @@ services:
     image: redis # A docker image
     ports: ['6379:6379'] # The ports that you can access the service on
     options: --entrypoint redis-server # Options for the service
-```{% endraw %}
+```
 
 ### 5. Setup dependencies and checkout the branch
 
 Here is where it got tricky for me. If you search for using GitHub actions with Rails, you will probably see something like this:
 
-{% raw %}```yml
+```yml
 - uses: actions/checkout@v1
 - name: Setup Ruby
   uses: actions/setup-ruby@v1
@@ -95,7 +95,7 @@ Here is where it got tricky for me. If you search for using GitHub actions with 
 - uses: borales/actions-yarn@v2.0.0
   with:
     cmd: install
-```{% endraw %}
+```
 
 This particular example is from my friend [Chris Oliver](https://gorails.com/episodes/github-actions-continuous-integration-ruby-on-rails), who runs [Go Rails](https://gorails.com) (check it out!!).
 
@@ -107,7 +107,7 @@ At [CodeFund](https://codefund.io), we are using Ruby 2.6.5 (about to bump to 2.
 
 I am not going to explain all of the details here, and I know I could reduce the size a bit but here is the first iteration of that image:
 
-{% raw %}```Dockerfile
+```Dockerfile
 FROM ruby:2.6.5
 
 LABEL "name"="Locomotive"
@@ -140,22 +140,22 @@ RUN  curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
      apt-get install -qq -y google-chrome-stable yarn nodejs postgresql postgresql-contrib
 
 RUN gem install bundler:2.0.2
-```{% endraw %}
+```
 
 ### 6. Use Docker container
 
-{% raw %}```yml
+```yml
 container:
       image: andrewmcodes/locomotive:v0.0.1 # my image name
       env: # additional environment variables I want to have access to
         DEFAULT_HOST: app.codefund.io
-```{% endraw %}
+```
 
 Note: If you do not set a container, all steps will run directly on the host specified, which if you remember is Ubuntu 18.04.
 
 As of now, our action looks like:
 
-{% raw %}```yml
+```yml
 name: Run Tests & Linters
 
 on:
@@ -190,16 +190,16 @@ jobs:
       image: andrewmcodes/locomotive:v0.0.1
       env:
         DEFAULT_HOST: app.codefund.io
-```{% endraw %}
+```
 
 ### 7. Add steps
 
 Now it is time to run commands inside of our container. We will start by checking out the code.
 
-{% raw %}```yml
+```yml
 steps:
   - uses: actions/checkout@v2
-```{% endraw %}
+```
 
 ### 8. Caching
 
@@ -210,7 +210,7 @@ Thankfully, GitHub provides some examples for getting started with your tools of
 
 NOTE: Individual caches are limited to 400MB and a repository can have up to 2GB of caches. Once the 2GB limit is reached, older caches will be evicted based on when the cache was last accessed. Caches that are not accessed within the last week will also be evicted.
 
-{% raw %}```yml
+```yml
  - name: Get Yarn Cache
    id: yarn-cache
    run: echo "::set-output name=dir::$(yarn cache dir)"
@@ -241,13 +241,13 @@ NOTE: Individual caches are limited to 400MB and a repository can have up to 2GB
      key: ${{ runner.os }}-assets-${{ steps.extract_branch.outputs.branch }}
      restore-keys: |
        ${{ runner.os }}-assets-
-```{% endraw %}
+```
 
 ### 9. Bundle, Yarn, and Precompile Assets
 
 Next, we will want to run Bundler and Yarn to install our dependencies if they were not restored from the cache, and precompile our assets.
 
-{% raw %}```yml
+```yml
  - name: Bundle Install
    run: bundle check || bundle install --path vendor/bundle --jobs 4 --retry 3
 
@@ -261,7 +261,7 @@ Next, we will want to run Bundler and Yarn to install our dependencies if they w
       else
         echo "No need to compile assets."
       fi
-```{% endraw %}
+```
 
 NOTE: You may be able to skip the asset compilation, that is up to you.
 
@@ -269,10 +269,10 @@ NOTE: You may be able to skip the asset compilation, that is up to you.
 
 In order to get this to work, I had to make a couple updates to some files in my project.
 
-1. {% raw %}`config/database.yml`{% endraw %}
-  Update host for test to be: {% raw %}`host: <%= ENV.fetch("PG_HOST", "localhost") %>`{% endraw %}
-2. Update {% raw %}`test/application_system_test_case.rb`{% endraw %}
-  {% raw %}```rb
+1. `config/database.yml`
+  Update host for test to be: `host: <%= ENV.fetch("PG_HOST", "localhost") %>`
+2. Update `test/application_system_test_case.rb`
+  ```rb
      require "test_helper"
 
      class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
@@ -281,22 +281,22 @@ In order to get this to work, I had to make a couple updates to some files in my
         driver_options.add_argument("--no-sandbox")
       end
     end
-  ```{% endraw %}
+  ```
 
 ### 11. Setup Database
 
 One last item we need to take care of prior to running the tests and linters is setting up our database.
 
-{% raw %}```yml
+```yml
 - name: Setup DB
       run: bin/rails db:drop db:create db:structure:load --trace
-```{% endraw %}
+```
 
 ### 12. Run Tests and Linters
 
 Now we can finally run our tests and linters.
 
-{% raw %}```yml
+```yml
 - name: Run Rails Tests
   run: |
     bin/rails test
@@ -313,13 +313,13 @@ Now we can finally run our tests and linters.
 
 - name: Prettier-Standard Check
   run: yarn run --ignore-engines prettier-standard --check 'app/**/*.js'
-```{% endraw %}
+```
 
 At this point, your action should be complete!
 
 Here is my completed action file:
 
-{% raw %}```yml
+```yml
 name: Run Tests & Linters
 
 on:
@@ -422,22 +422,9 @@ jobs:
 
     - name: Prettier-Standard Check
       run: yarn run --ignore-engines prettier-standard --check 'app/**/*.js'
-```{% endraw %}
+```
 
 As you can see, setting up GitHub Actions for your CI can be quite involved and requires a lot of initial setup. Hopefully this post will help you if you are thinking of experimenting with them on your Rails app. Check back later this week for Part 2, setting up CircleCI!
 
 *[This post is also available on DEV.](https://dev.to/codefund/ci-for-ruby-on-rails-github-actions-3mn1)*
-
-
-<script>
-const parent = document.getElementsByTagName('head')[0];
-const script = document.createElement('script');
-script.type = 'text/javascript';
-script.src = 'https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.1.1/iframeResizer.min.js';
-script.charset = 'utf-8';
-script.onload = function() {
-    window.iFrameResize({}, '.liquidTag');
-};
-parent.appendChild(script);
-</script>
-````
+{% endraw %}

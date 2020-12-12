@@ -44,26 +44,26 @@ If you'd like to build it together, let's get started!
 
 ### Setup
 
-Let's create a new Rails app and {% raw %}`cd`{% endraw %} into it:
+Let's create a new Rails app and `cd` into it:
 
-{% raw %}```sh
+```sh
 rails new codefactor_demo
 cd codefactor_demo
 
-````{% endraw %}
+````
 
 ### Create Repository
 
-Open GitHub and create a new repository. I named mine {% raw %}`codefactor_demo`{% endraw %}.
+Open GitHub and create a new repository. I named mine `codefactor_demo`.
 
 Open your command line again and let's upstream our code.
 
-{% raw %}```sh
+```sh
 git add .
 git commit -m "first commit"
 git remote add origin https://github.com/YOUR_USERNAME/codefactor_demo.git
 git push -u origin master
-```{% endraw %}
+```
 
 Your code should now be online in your repo.
 
@@ -77,7 +77,7 @@ Once logged in, you should be taken to your dashboard.
 
 ### Add Repository
 
-Let's add a new repository. From your CodeFactor dashboard, click {% raw %}`Add`{% endraw %}, next to {% raw %}`Repositories`{% endraw %}:
+Let's add a new repository. From your CodeFactor dashboard, click `Add`, next to `Repositories`:
 
 ![codefactor_dashboard_2](https://dev-to-uploads.s3.amazonaws.com/i/sjzxqhdmb7y02xask5n4.jpg)
 
@@ -85,7 +85,7 @@ You will be taken to a screen that will let you search and select your desired r
 
 ![codefactor_add_repository_3](https://dev-to-uploads.s3.amazonaws.com/i/mco0bzqakhopqvknbtng.jpg)
 
-Click the {% raw %}`Import`{% endraw %} button to import the repository.
+Click the `Import` button to import the repository.
 
 Once your repository has been imported, it will show up on your dashboard:
 
@@ -125,17 +125,3 @@ Happy coding!
 P.S. If you aren't sure how to set up ESLint, Rubocop, or the other listed linters, leave a comment or message me on [Twitter](https://twitter.com/andrewmcodes) and let me know if you'd like a post about this!
 
 *[This post is also available on DEV.](https://dev.to/andrewmcodes/rails-coverage-tools-codefactor-3ee2)*
-
-
-<script>
-const parent = document.getElementsByTagName('head')[0];
-const script = document.createElement('script');
-script.type = 'text/javascript';
-script.src = 'https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.1.1/iframeResizer.min.js';
-script.charset = 'utf-8';
-script.onload = function() {
-    window.iFrameResize({}, '.liquidTag');
-};
-parent.appendChild(script);
-</script>
-````

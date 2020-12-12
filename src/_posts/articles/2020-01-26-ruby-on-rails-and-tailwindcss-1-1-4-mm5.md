@@ -19,7 +19,7 @@ dev_to_url: 'https://dev.to/andrewmcodes/ruby-on-rails-and-tailwindcss-1-1-4-mm5
 layout: post
 ---
 
-# Tutorial
+## Tutorial
 
 For the purpose of this tutorial, we will assume you have Ruby and the Rails gem installed. Please visit the [Getting Started with Rails Guide](https://guides.rubyonrails.org/getting_started.html) if you do not.
 
@@ -36,14 +36,14 @@ I created this demo using the following:
 
 ## Create a new Rails project
 
-{% raw %}```sh
+```sh
 rails new tailwind_css_rails_demo -d postgresql
 cd tailwind_css_rails_demo
 rails db:create
 
-````{% endraw %}
+````
 
-This will create a new Ruby on Rails project with PostgreSQL configured for you. You can omit the {% raw %}`-d postgresql`{% endraw %} flag if you would prefer to use SQLite or MySQL.
+This will create a new Ruby on Rails project with PostgreSQL configured for you. You can omit the `-d postgresql` flag if you would prefer to use SQLite or MySQL.
 
 ## Running Rails and Webpack
 
@@ -51,19 +51,19 @@ I prefer to run the Rails server in one command line tab and webpack-dev-server 
 
 Let's go ahead and get the app running:
 
-{% raw %}```sh
+```sh
 # Terminal tab 1
 rails s
-```{% endraw %}
+```
 
 And webpack-dev-server:
 
-{% raw %}```sh
+```sh
 # Terminal tab 2
 ./bin/webpack-dev-server
-```{% endraw %}
+```
 
-You should now see Rails welcome page if you navigate to {% raw %}`localhost:3000`{% endraw %} in your browser.
+You should now see Rails welcome page if you navigate to `localhost:3000` in your browser.
 
 ![Rails default information page](https://guides.rubyonrails.org/images/getting_started/rails_welcome.png)
 
@@ -73,42 +73,42 @@ I personally like to see more than one record in the database for tutorials to m
 
 If you would like some records in your database, lets scaffold out a small resource:
 
-{% raw %}```sh
+```sh
 rails generate scaffold Post title:string content:text
-```{% endraw %}
+```
 
 Rails will then generate several files for us, but we will only focus on a few.
 
 Use the following command to run the generated migration:
 
-{% raw %}```sh
+```sh
 rails db:migrate
-```{% endraw %}
+```
 
-Now, lets add some seed data. Open {% raw %}`db/seeds.rb`{% endraw %} and add the following:
+Now, lets add some seed data. Open `db/seeds.rb` and add the following:
 
-{% raw %}```ruby
+```ruby
 # db/seeds.rb
 
 10.times do |n|
   Post.create!(title:  "Post title - ## {n}", content: "This is the content for the # {n.ordinalize} post.")
 end
-```{% endraw %}
+```
 
 It's not important for this tutorial for you to fully grok that code, but I would be happy to explain it in more detail if you reach out or let me know in the comments. The TL;DR is that we now have 10 unique Post records in our database.
 
-The last thing we need to do before getting to the fun part is to update our {% raw %}`config/routes.rb`{% endraw %} file to make the root path for the app the index page for posts.
+The last thing we need to do before getting to the fun part is to update our `config/routes.rb` file to make the root path for the app the index page for posts.
 
-{% raw %}```ruby
+```ruby
 # config/routes.rb
 
 Rails.application.routes.draw do
   resources :posts
   root to: "posts# index"
 end
-```{% endraw %}
+```
 
-Restart the Rails server, navigate to {% raw %}`localhost:3000`{% endraw %}, and you should see a table with our random data, with links to other CRUD actions.
+Restart the Rails server, navigate to `localhost:3000`, and you should see a table with our random data, with links to other CRUD actions.
 
 ## Install TailwindCSS
 
@@ -116,28 +116,28 @@ Now to the fun stuff.
 
 Run the following command in your terminal to install TailwindCSS
 
-{% raw %}```sh
+```sh
 yarn add tailwindcss
-```{% endraw %}
+```
 
 Let's also add the Tailwind config file:
 
-{% raw %}```sh
+```sh
 ./node_modules/.bin/tailwind init
-```{% endraw %}
+```
 
-This should create a {% raw %}`tailwind.config.js`{% endraw %} file at the root of your project. This file can be used to customize the TailwindCSS defaults, add plugins, and more. You can learn more about this from [Tailwind's docs](https://tailwindcss.com/docs/configuration)
+This should create a `tailwind.config.js` file at the root of your project. This file can be used to customize the TailwindCSS defaults, add plugins, and more. You can learn more about this from [Tailwind's docs](https://tailwindcss.com/docs/configuration)
 
 We also need to update our PostCSS config that comes default with Rails 6 with two new requires:
 
-{% raw %}```js
+```js
 require('tailwindcss'),
 require('autoprefixer'),
-```{% endraw %}
+```
 
 I have been told the best order for these requires is as I have them below, but I think just adding them to the top of your PostCSS config will work for the majority of people:
 
-{% raw %}```js
+```js
 // postcss.config.js
 
 module.exports = {
@@ -154,7 +154,7 @@ module.exports = {
     })
   ]
 }
-```{% endraw %}
+```
 
 ## Configure Tailwind
 
@@ -162,47 +162,47 @@ _There are a few ways you can do this but this is my personal preference._
 
 Remove the assets folder, we won't be needing it since we will rely fully on Webpacker:
 
-{% raw %}```sh
+```sh
 rm -rf app/assets
-```{% endraw %}
+```
 
 Create a new stylesheet file:
 
-{% raw %}```sh
+```sh
 touch app/javascript/src/application.scss
-```{% endraw %}
+```
 
-Since we are using {% raw %}`postcss-import`{% endraw %} and Webpack, the [Tailwind docs](https://tailwindcss.com/docs/installation/) instruct us to add the following to our stylesheet file:
+Since we are using `postcss-import` and Webpack, the [Tailwind docs](https://tailwindcss.com/docs/installation/) instruct us to add the following to our stylesheet file:
 
-{% raw %}```scss
+```scss
 // app/javascript/src/application.scss
 
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
-```{% endraw %}
+```
 
-We also need to add following line in {% raw %}`app/javascript/packs/application.js`{% endraw %}:
+We also need to add following line in `app/javascript/packs/application.js`:
 
-{% raw %}```js
+```js
 import '../src/application.scss'
-```{% endraw %}
+```
 
-The last step is to tell Rails to use our pack files. In {% raw %}`app/views/layouts/application.html.erb`{% endraw %}, change:
+The last step is to tell Rails to use our pack files. In `app/views/layouts/application.html.erb`, change:
 
-{% raw %}```erb
+```erb
 <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-```{% endraw %}
+```
 
 to:
 
-{% raw %}```erb
+```erb
 <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-```{% endraw %}
+```
 
-Restart the Rails server and webpack-dev-server and you should now see the following on {% raw %}`localhost:3000`{% endraw %}:
+Restart the Rails server and webpack-dev-server and you should now see the following on `localhost:3000`:
 
 ![tailwind home index](https://i.imgur.com/AaxxvBk.jpg)
 
@@ -210,47 +210,47 @@ Tailwind should now be working so lets tweak our views to see some Tailwind good
 
 ## Update views to use TailwindCSS
 
-In {% raw %}`app/views/layouts/application.html.erb`{% endraw %} change:
+In `app/views/layouts/application.html.erb` change:
 
-{% raw %}```html
+```html
 <body>
   <%= yield %>
 </body>
-```{% endraw %}
+```
 
 to:
 
-{% raw %}```html
+```html
 <body class="min-h-screen bg-gray-100">
   <div class="container mx-auto">
     <%= yield %>
   </div>
 </body>
-```{% endraw %}
+```
 
-and in {% raw %}`app/views/posts/index.html.erb`{% endraw %} lets replace the scaffolded page with the following:
+and in `app/views/posts/index.html.erb` lets replace the scaffolded page with the following:
 
-{% raw %}```html
+```html
 <p id="notice"><%= notice %></p>
-<h1 class="font-semibold text-4xl text-gray-700 my-8">Posts</h1>
-<div class="w-full xl:w-8/12 mb-12 xl:mb-0 px-4">
-  <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded">
+<h1 class="my-8 text-4xl font-semibold text-gray-700">Posts</h1>
+<div class="w-full px-4 mb-12 xl:w-8/12 xl:mb-0">
+  <div class="relative flex flex-col w-full min-w-0 mb-6 break-words bg-white rounded shadow-lg">
     <table class="items-center w-full bg-transparent border-collapse">
       <thead>
         <tr>
-          <th class="px-6 bg-gray-100 text-gray-600 align-middle border border-solid border-gray-200 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-no-wrap font-semibold text-left">Title</th>
-          <th class="px-6 bg-gray-100 text-gray-600 align-middle border border-solid border-gray-200 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-no-wrap font-semibold text-left">Content</th>
-          <th class="px-6 bg-gray-100 text-gray-600 align-middle border border-solid border-gray-200 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-no-wrap font-semibold text-left", colspan="3"></th>
+          <th class="px-6 py-3 text-xs font-semibold text-left text-gray-600 uppercase whitespace-no-wrap align-middle bg-gray-100 border border-l-0 border-r-0 border-gray-200 border-solid">Title</th>
+          <th class="px-6 py-3 text-xs font-semibold text-left text-gray-600 uppercase whitespace-no-wrap align-middle bg-gray-100 border border-l-0 border-r-0 border-gray-200 border-solid">Content</th>
+          <th class="px-6 py-3 text-xs font-semibold text-left text-gray-600 uppercase whitespace-no-wrap align-middle bg-gray-100 border border-l-0 border-r-0 border-gray-200 border-solid", colspan="3"></th>
         </tr>
       </thead>
       <tbody>
         <% @posts.each do |post| %>
           <tr>
-            <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap p-4 text-left"><%= post.title %></td>
-            <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap p-4 text-left"><%= post.content %></td>
-            <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap p-4 text-left"><%= link_to 'Show', post %></td>
-            <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap p-4 text-left"><%= link_to 'Edit', edit_post_path(post) %></td>
-            <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap p-4 text-left"><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td class="p-4 px-6 text-xs text-left whitespace-no-wrap align-middle border-t-0 border-l-0 border-r-0"><%= post.title %></td>
+            <td class="p-4 px-6 text-xs text-left whitespace-no-wrap align-middle border-t-0 border-l-0 border-r-0"><%= post.content %></td>
+            <td class="p-4 px-6 text-xs text-left whitespace-no-wrap align-middle border-t-0 border-l-0 border-r-0"><%= link_to 'Show', post %></td>
+            <td class="p-4 px-6 text-xs text-left whitespace-no-wrap align-middle border-t-0 border-l-0 border-r-0"><%= link_to 'Edit', edit_post_path(post) %></td>
+            <td class="p-4 px-6 text-xs text-left whitespace-no-wrap align-middle border-t-0 border-l-0 border-r-0"><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
           </tr>
         <% end %>
       </tbody>
@@ -258,9 +258,9 @@ and in {% raw %}`app/views/posts/index.html.erb`{% endraw %} lets replace the sc
   </div>
 </div>
 <%= link_to 'New Post', new_post_path %>
-```{% endraw %}
+```
 
-You should now see the following page when you navigate to {% raw %}`localhost:3000`{% endraw %}
+You should now see the following page when you navigate to `localhost:3000`
 
 ![updated tailwind home index](https://i.imgur.com/aiOlHht.jpg)
 
@@ -268,9 +268,9 @@ You should now see the following page when you navigate to {% raw %}`localhost:3
 
 This table looks so much better, but the classes for these elements are long and repetitive. Let's clean that up a bit by abstracting them to our scss file.
 
-Create two new classes in {% raw %}`app/javascript/src/application.scss`{% endraw %}:
+Create two new classes in `app/javascript/src/application.scss`:
 
-{% raw %}```scss
+```scss
 .table-header {
   @apply px-6 bg-gray-100 text-gray-900 align-middle border border-solid border-gray-200 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-no-wrap font-semibold text-left;
 }
@@ -278,7 +278,7 @@ Create two new classes in {% raw %}`app/javascript/src/application.scss`{% endra
 .table-content {
   @apply border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap p-4 text-left;
 }
-```{% endraw %}
+```
 
 Then in our HTML, change all of the table head and body element classes accordingly. We also darkened the header text to make the change standout.
 
@@ -296,17 +296,3 @@ Happy coding! 😄
 
 
 *[This post is also available on DEV.](https://dev.to/andrewmcodes/ruby-on-rails-and-tailwindcss-1-1-4-mm5)*
-
-
-<script>
-const parent = document.getElementsByTagName('head')[0];
-const script = document.createElement('script');
-script.type = 'text/javascript';
-script.src = 'https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.1.1/iframeResizer.min.js';
-script.charset = 'utf-8';
-script.onload = function() {
-    window.iFrameResize({}, '.liquidTag');
-};
-parent.appendChild(script);
-</script>
-````

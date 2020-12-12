@@ -4,8 +4,7 @@ categories:
 title: 'Build and deploy a static site with Ruby, Bridgetown, TailwindCSS, and Netlify'
 date: '2020-05-07T03:50:01.208Z'
 excerpt: >-
-  Demo Repository Demo Website            What is Bridgetown   According to
-  their website, Bridgetown...
+  What is Bridgetown? Ruby meets the JAMStack in this wonderful static site generator.
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--9eQfXSW6--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/xctbps1usj2v5ege60hu.jpg
 comments_count: 2
@@ -19,9 +18,7 @@ dev_to_url: >-
   https://dev.to/andrewmcodes/build-and-deploy-a-static-site-with-ruby-bridgetown-tailwindcss-and-netlify-3934
 layout: post
 ---
-
-- [Demo Repository](https://github.com/andrewmcodes/bridgetown_tailwind)
-- [Demo Website](https://bridgetown-tailwind.netlify.app)
+{% raw %}
 
 ## What is Bridgetown
 
@@ -43,7 +40,7 @@ Let's create our first static site with Bridgetown!
 
 Make sure you have Ruby, Bundler, Node, and Yarn installed. These are the versions I am using:
 
-{% raw %}```sh
+```sh
 ➜ ruby -v
 ruby 2.6.6p146 (2020-03-31 revision 67876) [x86_64-darwin19]
 
@@ -56,21 +53,21 @@ v13.11.0
 ➜ yarn -v
 1.22.4
 
-````{% endraw %}
+````
 
 ### Install Bridgetown
 
-{% raw %}```sh
+```sh
 gem install bridgetown -N
-```{% endraw %}
+```
 
 ### Create new project
 
-{% raw %}```sh
+```sh
 bridgetown new bridgetown_tailwind
 cd bridgetown_tailwind
 yarn start
-```{% endraw %}
+```
 
 You can now view your site live at http://localhost:4000/
 
@@ -78,16 +75,16 @@ You can now view your site live at http://localhost:4000/
 
 Let's add TailwindCSS to our new site:
 
-{% raw %}```sh
+```sh
 yarn add -D tailwindcss postcss-import postcss-loader
 yarn tailwind init
-```{% endraw %}
+```
 
-This will create a {% raw %}`tailwind.config.js`{% endraw %} file at the root of our directory.
+This will create a `tailwind.config.js` file at the root of our directory.
 
-We will want to run PurgeCSS on our files, so update {% raw %}`tailwind.config.js`{% endraw %} to be:
+We will want to run PurgeCSS on our files, so update `tailwind.config.js` to be:
 
-{% raw %}```js
+```js
 module.exports = {
   purge: {
     mode: 'production',
@@ -99,13 +96,13 @@ module.exports = {
   variants: {},
   plugins: [],
 }
-```{% endraw %}
+```
 
 Next, we need to update our Webpack config file to use PostCSS.
 
-In {% raw %}`webpack.config.js`{% endraw %}, change:
+In `webpack.config.js`, change:
 
-{% raw %}```js
+```js
 {
   test: /\.(s[ac]|c)ss$/,
   use: [
@@ -124,11 +121,11 @@ In {% raw %}`webpack.config.js`{% endraw %}, change:
     },
   ],
 },
-```{% endraw %}
+```
 
 to:
 
-{% raw %}```js
+```js
 {
   test: /\.(s[ac]|c)ss$/,
   use: [
@@ -158,19 +155,19 @@ to:
     },
   ],
 },
-```{% endraw %}
+```
 
 Lastly, we need to import Tailwind into our stylesheet.
 
-Open {% raw %}`./frontend/styles/index.scss`{% endraw %} and replace the default styles with:
+Open `./frontend/styles/index.scss` and replace the default styles with:
 
-{% raw %}```css
+```css
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
-```{% endraw %}
+```
 
-If we run {% raw %}`yarn start`{% endraw %} again, we should see Tailwind styles being applied!
+If we run `yarn start` again, we should see Tailwind styles being applied!
 
 ### Update styles
 
@@ -178,7 +175,7 @@ This step is optional but we can update some of our styles if we want.
 
 Here is what I did:
 
-{% raw %}```css
+```css
 // frontend/styles/index.scss
 
 body {
@@ -190,9 +187,9 @@ body {
 main {
   flex: 1;
 }
-```{% endraw %}
+```
 
-{% raw %}```html
+```html
 <!-- src/_layouts/default.html -->
 
 <!doctype html>
@@ -211,9 +208,9 @@ main {
   </body>
 </html>
 
-```{% endraw %}
+```
 
-{% raw %}```html
+```html
 <!-- src/_layouts/home.html -->
 ---
 layout: default
@@ -226,9 +223,9 @@ layout: default
     {{ content }}
   </div>
 </div>
-```{% endraw %}
+```
 
-{% raw %}```html
+```html
 <!-- src/_layouts/page.html & src/_layouts/post.html -->
 ---
 layout: default
@@ -241,9 +238,9 @@ layout: default
     {{ content }}
   </div>
 </div>
-```{% endraw %}
+```
 
-{% raw %}```html
+```html
 <!-- src/_includes/navbar.html -->
 
 <header class="text-gray-700 body-font">
@@ -259,9 +256,9 @@ layout: default
     </nav>
   </div>
 </header>
-```{% endraw %}
+```
 
-{% raw %}```html
+```html
 <!-- src/_includes/footer.html -->
 
 <footer class="text-white bg-red-500 body-font">
@@ -276,7 +273,7 @@ layout: default
     </span>
   </div>
 </footer>
-```{% endraw %}
+```
 
 If you added these styles, your homepage should now look like:
 
@@ -285,14 +282,14 @@ If you added these styles, your homepage should now look like:
 ### Deployment with Netlify
 
 1. Login to Netlify
-2. Select {% raw %}`New Site from Git`{% endraw %}
+2. Select `New Site from Git`
 ![Netlify - New Site](https://dev-to-uploads.s3.amazonaws.com/i/pemhv37uf4tq74pr7x4r.jpg)
 3. Choose your Git provider
 4. Select your repo
-5. Set your {% raw %}`Build Command`{% endraw %} to {% raw %}`yarn deploy`{% endraw %}
-6. Set your {% raw %}`Publish directory`{% endraw %} to {% raw %}`output/`{% endraw %}
+5. Set your `Build Command` to `yarn deploy`
+6. Set your `Publish directory` to `output/`
 ![Netlify - Deploy Settings](https://dev-to-uploads.s3.amazonaws.com/i/7eao24kpdn9l776nidwm.jpg)
-7. Click {% raw %}`Deploy site`{% endraw %}
+7. Click `Deploy site`
 
 Your site will deploy and you should be able to view it at the preview link that Netlify provides!
 
@@ -308,17 +305,4 @@ Happy coding!
 
 
 *[This post is also available on DEV.](https://dev.to/andrewmcodes/build-and-deploy-a-static-site-with-ruby-bridgetown-tailwindcss-and-netlify-3934)*
-
-
-<script>
-const parent = document.getElementsByTagName('head')[0];
-const script = document.createElement('script');
-script.type = 'text/javascript';
-script.src = 'https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.1.1/iframeResizer.min.js';
-script.charset = 'utf-8';
-script.onload = function() {
-    window.iFrameResize({}, '.liquidTag');
-};
-parent.appendChild(script);
-</script>
-````
+{% endraw %}

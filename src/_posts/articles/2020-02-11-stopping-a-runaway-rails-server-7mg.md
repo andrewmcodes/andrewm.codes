@@ -19,13 +19,13 @@ dev_to_url: 'https://dev.to/andrewmcodes/stopping-a-runaway-rails-server-7mg'
 layout: post
 ---
 
-_Many of us have been there. You hit {% raw %}`ctrl-c`{% endraw %} on you Ruby on Rails server, but nothing happens. No matter what keys you hit on your keyboard, the Rails server is still running, and you can't stop it. You have a runaway train on your hands._
+_Many of us have been there. You hit `ctrl-c` on you Ruby on Rails server, but nothing happens. No matter what keys you hit on your keyboard, the Rails server is still running, and you can't stop it. You have a runaway train on your hands._
 
 ## The Problem
 
 If you have ever developed with Ruby on Rails, there is a good chance you have encountered a runaway Rails server. This is basically an instance of the Ruby on Rails server that you cannot easily stop.
 
-Two examples of when you may need this is if you try to start your Rails server and get an error message that one is already running, or you get into a weird state with pry and {% raw %}`ctrl-c`{% endraw %} won't stop the server in a timely manner.
+Two examples of when you may need this is if you try to start your Rails server and get an error message that one is already running, or you get into a weird state with pry and `ctrl-c` won't stop the server in a timely manner.
 
 Regardless of how you got to this point isn't really important, you have a runaway train on your hands, and you need to stop it.
 
@@ -33,36 +33,36 @@ Here is how you can do that:
 
 ## Shutup
 
-{% raw %}`shutup`{% endraw %} is a gem to help you quickly stop a running Rails server.
+`shutup` is a gem to help you quickly stop a running Rails server.
 
 To install the gem, make sure you have Ruby installed.
 
 Type the following into your command line:
 
-{% raw %}```sh
+```sh
 gem install shutup
 
-````{% endraw %}
+````
 
 Now, whenever you have a Rails server you want to stop, just type the following in your command line to shut it down:
 
-{% raw %}```sh
+```sh
 shutup
-```{% endraw %}
+```
 
 If the command succeeded, you should see something like this:
 
-{% raw %}```sh
+```sh
 ➜ shutup
 Killed process id: 46707
-```{% endraw %}
+```
 
 If it fails, you will see:
 
-{% raw %}```sh
+```sh
 ➜ shutup
 Error reading the pid file.
-```{% endraw %}
+```
 
 ## Conclusion
 
@@ -73,17 +73,3 @@ Check it out at: [lorenzosinisi/shutup](https://github.com/lorenzosinisi/shutup)
 Happy coding!!
 
 *[This post is also available on DEV.](https://dev.to/andrewmcodes/stopping-a-runaway-rails-server-7mg)*
-
-
-<script>
-const parent = document.getElementsByTagName('head')[0];
-const script = document.createElement('script');
-script.type = 'text/javascript';
-script.src = 'https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.1.1/iframeResizer.min.js';
-script.charset = 'utf-8';
-script.onload = function() {
-    window.iFrameResize({}, '.liquidTag');
-};
-parent.appendChild(script);
-</script>
-````
