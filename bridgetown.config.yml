@@ -1,6 +1,7 @@
 url: "https://andrewm.codes"
 permalink: ordinal
 timezone: America/New_York
+destination: build
 
 pagination:
   enabled: true

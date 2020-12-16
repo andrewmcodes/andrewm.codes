@@ -25,7 +25,7 @@ module.exports = {
     out: ""
   },
   buildOptions: {
-    out: "output",
+    out: "build",
     sourceMaps: true
   }
 }
