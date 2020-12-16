@@ -1,60 +1,128 @@
 - name: Dev.to
+  category: content
+  tags: null
+  description: null
+  archived: 'No'
   url: 'https://dev.to/andrewmcodes'
-  username: andrewmcodes
-  categories: content
+  created_at: 'Dec 7, 2020 4:28 PM'
+  updated_at: 'Dec 8, 2020 5:35 AM'
 - name: GitHub
+  category: code
+  tags: null
+  description: null
+  archived: 'No'
   url: 'https://github.com/andrewmcodes'
-  username: andrewmcodes
-  categories: code
+  created_at: 'Dec 7, 2020 4:28 PM'
+  updated_at: 'Dec 7, 2020 4:38 PM'
 - name: LinkedIn
+  category: social media
+  tags: null
+  description: null
+  archived: 'No'
   url: 'https://www.linkedin.com/in/andrew-mason/'
-  username: null
-  categories: social media
+  created_at: 'Dec 7, 2020 4:28 PM'
+  updated_at: 'Dec 7, 2020 4:38 PM'
 - name: Twitter
+  category: social media
+  tags: null
+  description: null
+  archived: 'No'
   url: 'https://twitter.com/andrewmcodes'
-  username: '@andrewmcodes'
-  categories: social media
+  created_at: 'Dec 7, 2020 4:33 PM'
+  updated_at: 'Dec 7, 2020 4:38 PM'
 - name: YouTube
+  category: video
+  tags: null
+  description: null
+  archived: 'No'
   url: 'https://www.youtube.com/channel/UCr6mV_IiQqkexMarHB3701Q'
-  username: null
-  categories: video
+  created_at: 'Dec 7, 2020 4:34 PM'
+  updated_at: 'Dec 7, 2020 4:38 PM'
 - name: Twitch
+  category: video
+  tags: null
+  description: null
+  archived: 'No'
   url: 'https://www.twitch.tv/andrewmcodes'
-  username: andrewmcodes
-  categories: video
+  created_at: 'Dec 7, 2020 4:35 PM'
+  updated_at: 'Dec 8, 2020 5:35 AM'
 - name: Hacker News
+  category: social media
+  tags: null
+  description: null
+  archived: 'No'
   url: 'https://news.ycombinator.com/user?id=andrewmcodes'
-  username: andrewmcodes
-  categories: social media
+  created_at: 'Dec 7, 2020 4:35 PM'
+  updated_at: 'Dec 7, 2020 4:39 PM'
 - name: CodePen
+  category: code
+  tags: null
+  description: null
+  archived: 'No'
   url: 'https://codepen.io/andrewmcodes'
-  username: andrewmcodes
-  categories: code
+  created_at: 'Dec 7, 2020 4:36 PM'
+  updated_at: 'Dec 7, 2020 4:39 PM'
 - name: CodeTrace
+  category: code
+  tags: null
+  description: null
+  archived: 'No'
   url: 'https://codetrace.com/users/andrewmcodes'
-  username: andrewmcodes
-  categories: code
+  created_at: 'Dec 7, 2020 4:36 PM'
+  updated_at: 'Dec 7, 2020 4:39 PM'
 - name: Sourcerer
+  category: code
+  tags: null
+  description: null
+  archived: 'No'
   url: 'https://sourcerer.io/andrewmcodes'
-  username: andrewmcodes
-  categories: code
+  created_at: 'Dec 7, 2020 4:36 PM'
+  updated_at: 'Dec 7, 2020 4:39 PM'
 - name: CodersRank
+  category: code
+  tags: null
+  description: null
+  archived: 'No'
   url: 'https://profile.codersrank.io/user/andrewmcodes'
-  username: andrewmcodes
-  categories: code
+  created_at: 'Dec 7, 2020 4:36 PM'
+  updated_at: 'Dec 7, 2020 4:39 PM'
 - name: stackshare
+  category: code
+  tags: null
+  description: null
+  archived: 'No'
   url: 'https://stackshare.io/andrewmcodes'
-  username: andrewmcodes
-  categories: code
+  created_at: 'Dec 7, 2020 4:36 PM'
+  updated_at: 'Dec 8, 2020 5:35 AM'
 - name: Keybase
+  category: social media
+  tags: null
+  description: null
+  archived: 'No'
   url: 'https://keybase.io/andrewmcodes'
-  username: andrewmcodes
-  categories: social media
+  created_at: 'Dec 7, 2020 4:37 PM'
+  updated_at: 'Dec 8, 2020 5:34 AM'
 - name: GitHub Sponsors
+  category: support
+  tags: null
+  description: null
+  archived: 'No'
   url: 'https://github.com/sponsors/andrewmcodes'
-  username: andrewmcodes
-  categories: support
+  created_at: 'Dec 8, 2020 5:33 AM'
+  updated_at: 'Dec 8, 2020 5:34 AM'
 - name: Buy Me A Coffee
+  category: support
+  tags: null
+  description: null
+  archived: 'No'
   url: 'https://www.buymeacoffee.com/andrewmcodes'
-  username: andrewmcodes
-  categories: support
+  created_at: 'Dec 8, 2020 5:35 AM'
+  updated_at: 'Dec 8, 2020 5:35 AM'
+- name: How I VSCode
+  category: code
+  tags: null
+  description: null
+  archived: 'No'
+  url: 'https://howivscode.com/andrewmcodes'
+  created_at: 'Dec 8, 2020 6:33 PM'
+  updated_at: 'Dec 8, 2020 6:33 PM'

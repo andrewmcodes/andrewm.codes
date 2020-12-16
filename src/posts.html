@@ -1,17 +1,9 @@
 ---
 title: Posts
-layout: default
-emoji: 🏗
+layout: page
 subtitle: Teaching and learning in the open about design, development, and building excellent software.
+emoji: 🎙
 ---
 {%- assign posts_list = site.posts | where_exp: "post", "post.categories contains 'posts'" -%}
-<div class="flex flex-col max-w-screen-sm mx-auto justify-content">
-  <div class="flex flex-col space-y-14">
-    <div class="flex flex-col space-y-4 md:items-center md:text-center">
-      <h1>{{ page.title }}</h1>
-      <p class="text-2xl">{{ page.subtitle }}</p>
-    </div>
-    {%- render "newsletter" -%}
-    {%- render "_v2/post_list", posts: posts_list -%}
-  </div>
-</div>
+{%- render "newsletter" -%}
+{%- render "_v3/list/post", posts: posts_list -%}

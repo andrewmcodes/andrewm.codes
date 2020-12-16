@@ -1,10 +1,8 @@
 ---
 title: Uses
-layout: md
+layout: page
 emoji: 🧰
-backlinks:
-  - name: About
-    url: /about
+prose: true
 ---
 
 ## Equipment

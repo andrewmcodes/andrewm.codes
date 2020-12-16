@@ -1,0 +1,58 @@
+- name: 'MRS 074: Andrew Mason'
+  category: null
+  tags: null
+  archived: 'No'
+  description: >-
+    Charles Max Wood introduces the newest panelist for Ruby Rogues, Andrew
+    Mason. Andrew shares his background and how got into computer programming.
+    Andrew and Charles share their stories of first using ruby and the sense of
+    wonder they felt. Andrew talks about what he has done in Ruby and shares his
+    excitement to learn while on Ruby Rogues.
+  url: 'https://devchat.tv/my-ruby-story/mrs-074-andrew-mason/'
+  created_at: 'Dec 15, 2020 9:15 PM'
+  updated_at: 'Dec 15, 2020 9:21 PM'
+- name: Joined by Andrew Mason
+  category: null
+  tags: null
+  archived: 'No'
+  description: >-
+    For the second week in a row, we chat with a Ruby Rogues' panelist, Andrew
+    Mason. Andrew shares his path to programming through graphic design, as well
+    as how he joined Ruby Rogues, became involved with open source, became
+    invested in the Ruby community, and more.
+  url: 'https://share.transistor.fm/s/19f4de7e'
+  created_at: 'Dec 15, 2020 9:16 PM'
+  updated_at: 'Dec 15, 2020 9:22 PM'
+- name: Two Docker Noobs Talk About Docker - with Andrew Mason
+  category: null
+  tags: null
+  archived: 'No'
+  description: >-
+    In this episode I drag my friend Andrew Mason through a long, rambling,
+    undisciplined discussion of a number of things including me and Andrew's
+    respective experiences with Docker.
+  url: 'https://www.codewithjason.com/rails-with-jason-podcast/andrew-mason-docker/'
+  created_at: 'Dec 15, 2020 9:16 PM'
+  updated_at: 'Dec 15, 2020 9:20 PM'
+- name: 015 - Testing Q&A with Listener Andrew Mason
+  category: null
+  tags: null
+  archived: 'No'
+  description: null
+  url: >-
+    https://podcasts.apple.com/us/podcast/the-ruby-testing-podcast/id1385192624?i=1000422112280
+  created_at: 'Dec 15, 2020 9:16 PM'
+  updated_at: 'Dec 15, 2020 9:21 PM'
+- name: '320: ViewComponents in Action with Andrew Mason'
+  category: null
+  tags: null
+  archived: 'No'
+  description: >-
+    Andrew Mason is the lead developer for CodeFund, an ethical advertising
+    platform. When he is not working on CodeFund, he is podcasting on The Ruby
+    Blend or Remote Ruby, writing blog posts, or working on open source
+    projects. He and Brittany discuss his implementation of ViewComponent at
+    CodeFund.
+  url: 'https://5by5.tv/rubyonrails/320'
+  created_at: 'Dec 15, 2020 9:16 PM'
+  updated_at: 'Dec 15, 2020 9:21 PM'

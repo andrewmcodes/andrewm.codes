@@ -1,21 +1,136 @@
-- title: Joined by Andrew Mason
-  url: 'https://share.transistor.fm/s/19f4de7e'
-  role: interviewee
-  show: Remote Ruby
-- title: Two Docker Noobs Talk About Docker - with Andrew Mason
-  url: 'https://www.codewithjason.com/rails-with-jason-podcast/andrew-mason-docker/'
-  role: interviewee
-  show: Rails With Jason
-- title: '320: ViewComponents in Action with Andrew Mason'
-  url: 'https://5by5.tv/rubyonrails/320'
-  role: interviewee
-  show: Ruby on Rails Podcast
-- title: 015 - Testing Q&A with Listener Andrew Mason
+- name: 015 - Testing Q&A with Listener Andrew Mason
+  category: interview
+  tags: null
+  archived: "Yes"
+  description: null
   url: >-
     https://podcasts.apple.com/us/podcast/the-ruby-testing-podcast/id1385192624?i=1000422112280
-  role: interviewee
-  show: The Ruby Testing Podcast
-- title: 'MRS 074: Andrew Mason'
-  url: 'https://devchat.tv/my-ruby-story/mrs-074-andrew-mason/'
-  role: interviewee
-  show: My Ruby Story
+  created_at: "Dec 15, 2020 9:16 PM"
+  updated_at: "Dec 15, 2020 9:57 PM"
+- name: "320: ViewComponents in Action with Andrew Mason"
+  category: interview
+  tags: null
+  archived: "No"
+  description: >-
+    Andrew Mason is the lead developer for CodeFund, an ethical advertising
+    platform. When he is not working on CodeFund, he is podcasting on The Ruby
+    Blend or Remote Ruby, writing blog posts, or working on open source
+    projects. He and Brittany discuss his implementation of ViewComponent at
+    CodeFund.
+  url: "https://5by5.tv/rubyonrails/320"
+  created_at: "Dec 15, 2020 9:16 PM"
+  updated_at: "Dec 15, 2020 9:55 PM"
+- name: Joined by Andrew Mason
+  category: interview
+  tags: remote ruby
+  archived: "No"
+  description: >-
+    For the second week in a row, we chat with a Ruby Rogues' panelist, Andrew
+    Mason. Andrew shares his path to programming through graphic design, as well
+    as how he joined Ruby Rogues, became involved with open source, became
+    invested in the Ruby community, and more.
+  url: "https://share.transistor.fm/s/19f4de7e"
+  created_at: "Dec 15, 2020 9:16 PM"
+  updated_at: "Dec 15, 2020 9:57 PM"
+- name: "MRS 074: Andrew Mason"
+  category: interview
+  tags: null
+  archived: "No"
+  description: >-
+    Charles Max Wood introduces the newest panelist for Ruby Rogues, Andrew
+    Mason. Andrew shares his background and how got into computer programming.
+    Andrew and Charles share their stories of first using ruby and the sense of
+    wonder they felt. Andrew talks about what he has done in Ruby and shares his
+    excitement to learn while on Ruby Rogues.
+  url: "https://devchat.tv/my-ruby-story/mrs-074-andrew-mason/"
+  created_at: "Dec 15, 2020 9:15 PM"
+  updated_at: "Dec 15, 2020 9:55 PM"
+- name: Two Docker Noobs Talk About Docker - with Andrew Mason
+  category: interview
+  tags: null
+  archived: "No"
+  description: >-
+    In this episode I drag my friend Andrew Mason through a long, rambling,
+    undisciplined discussion of a number of things including me and Andrew's
+    respective experiences with Docker.
+  url: "https://www.codewithjason.com/rails-with-jason-podcast/andrew-mason-docker/"
+  created_at: "Dec 15, 2020 9:16 PM"
+  updated_at: "Dec 15, 2020 9:55 PM"
+- name: Bridgetown Ruby with Jared White
+  category: host
+  tags: remote ruby
+  archived: "No"
+  description: null
+  url: "https://remoteruby.transistor.fm/78"
+  created_at: "Dec 15, 2020 9:59 PM"
+  updated_at: "Dec 15, 2020 9:59 PM"
+- name: "Joined by Adam Wathan: TailwindCSS, Tailwind UI, and ActionView Components"
+  category: host
+  tags: remote ruby
+  archived: "No"
+  description: null
+  url: "https://remoteruby.transistor.fm/97"
+  created_at: "Dec 15, 2020 9:56 PM"
+  updated_at: "Dec 15, 2020 9:57 PM"
+- name: ViewComponent at GitHub with Joel Hawksley
+  category: host
+  tags: the ruby blend
+  archived: "Yes"
+  description: null
+  url: >-
+    https://rubyblend.transistor.fm/episodes/episode-9-viewcomponent-at-github-with-joel-hawksley
+  created_at: "Dec 15, 2020 10:00 PM"
+  updated_at: "Dec 15, 2020 10:06 PM"
+- name: 🥳 Episode 100!! Upgrading Rails with Ernesto Tagwerker
+  category: host
+  tags: remote ruby
+  archived: "No"
+  description: null
+  url: "https://remoteruby.transistor.fm/100"
+  created_at: "Dec 15, 2020 9:55 PM"
+  updated_at: "Dec 15, 2020 9:56 PM"
+- name: Open sourcing a Ruby gem with Brittany Martin
+  category: host
+  tags: the ruby blend
+  archived: "Yes"
+  description: null
+  url: >-
+    https://rubyblend.transistor.fm/episodes/episode-17-open-sourcing-a-ruby-gem-with-brittany-martin
+  created_at: "Dec 15, 2020 10:01 PM"
+  updated_at: "Dec 15, 2020 10:03 PM"
+- name: Open Source Funding and CodeFund with Eric Berry
+  category: host
+  tags: the ruby blend
+  archived: "Yes"
+  description: null
+  url: >-
+    https://rubyblend.transistor.fm/episodes/episode-11-open-source-funding-and-codefund-with-eric-berry
+  created_at: "Dec 15, 2020 10:02 PM"
+  updated_at: "Dec 15, 2020 10:03 PM"
+- name: Arming the Rebels with Rails 6 Featuring David Heinemeier Hansson
+  category: host
+  tags: ruby rogues
+  archived: "No"
+  description: null
+  url: >-
+    https://devchat.tv/ruby-rogues/rr-428-arming-the-rebels-with-rails-6-featuring-david-heinemeier-hansson/
+  created_at: "Dec 15, 2020 10:04 PM"
+  updated_at: "Dec 15, 2020 10:04 PM"
+- name: Dockerized Development Environments with Julian Fahrer
+  category: host
+  tags: ruby rogues
+  archived: "No"
+  description: null
+  url: >-
+    https://devchat.tv/ruby-rogues/rr-426-dockerized-development-environments-with-julian-fahrer/
+  created_at: "Dec 15, 2020 10:04 PM"
+  updated_at: "Dec 15, 2020 10:05 PM"
+- name: The Life and Death of a Rails App with Olivier Lacan
+  category: host
+  tags: ruby rogues
+  archived: "No"
+  description: null
+  url: >-
+    https://devchat.tv/ruby-rogues/rr-418-the-life-and-death-of-a-rails-app-with-olivier-lacan/
+  created_at: "Dec 15, 2020 10:05 PM"
+  updated_at: "Dec 15, 2020 10:05 PM"

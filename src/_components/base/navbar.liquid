@@ -29,11 +29,11 @@ function searchHandler(element) {
 </script>
 
 <!-- Navigation starts -->
-<nav class="w-full mx-auto shadow">
+<nav class="w-full mx-auto bg-gray-200 shadow dark:bg-gray-900">
   <div class="container flex items-center justify-between h-16 px-6 mx-auto lg:items-stretch">
     <div class="flex items-center h-full">
       <a href="/" class="flex items-center pr-12 border-r">
-        {% svg images/full_logo_light.svg width=32 class="w-32 h-8" %}
+        {% svg images/full_logo_dark.svg width=32 class="w-32 h-8" %}
       </a>
       <ul class="items-center hidden h-full pr-12 xl:flex">
         <a href="/posts"
@@ -44,7 +44,8 @@ function searchHandler(element) {
             class="flex items-center h-full mr-10 text-sm tracking-normal cursor-pointer hover:text-indigo-700 text-gry-800">
           Podcasts
         </a>
-        <a href="/projects" class="flex items-center h-full text-sm tracking-normal text-gray-800 cursor-pointer hover:text-indigo-700">
+        <a href="/projects"
+            class="flex items-center h-full mr-10 text-sm tracking-normal cursor-pointer hover:text-indigo-700 text-gry-800">
           Projects
         </a>
       </ul>
@@ -68,52 +69,8 @@ function searchHandler(element) {
         <li
             class="flex py-3 mt-2 text-base leading-3 tracking-normal text-gray-600 cursor-pointer xl:hidden hover:text-indigo-700 focus:text-indigo-700 focus:outline-none">
           <div class="flex items-center">
-            <span class="ml-2 font-bold leading-6">Dashboard</span>
+            <span class="ml-2 font-bold leading-6">Home</span>
           </div>
-        </li>
-        <li class="flex flex-col justify-center py-3 text-base leading-3 tracking-normal text-gray-600 cursor-pointer xl:hidden hover:text-indigo-700 focus:text-indigo-700 focus:outline-none"
-            onclick="dropdownHandler(this)">
-          <div class="flex items-center">
-            <span class="ml-2 font-bold leading-6">Products</span>
-          </div>
-          <ul class="hidden mt-3 ml-2">
-            <li
-                class="px-3 py-3 text-sm font-normal leading-3 tracking-normal text-gray-600 cursor-pointer hover:bg-indigo-700 hover:text-white">
-              Landing Pages
-            </li>
-            <li
-                class="px-3 py-3 text-sm font-normal leading-3 tracking-normal text-gray-600 cursor-pointer hover:bg-indigo-700 hover:text-white">
-              Templates
-            </li>
-            <li
-                class="px-3 py-3 text-sm font-normal leading-3 tracking-normal text-gray-600 cursor-pointer hover:bg-indigo-700 hover:text-white">
-              Components
-            </li>
-          </ul>
-        </li>
-        <li
-            class="flex items-center py-3 text-base leading-3 tracking-normal text-gray-600 cursor-pointer xl:hidden hover:text-indigo-700 focus:text-indigo-700 focus:outline-none">
-          <span class="ml-2 font-bold leading-6">Performance</span>
-        </li>
-        <li class="flex flex-col justify-center py-3 mb-2 text-base leading-3 tracking-normal text-gray-600 cursor-pointer xl:hidden hover:text-indigo-700 focus:text-indigo-700 focus:outline-none"
-            onclick="dropdownHandler(this)">
-          <div class="flex items-center">
-            <span class="ml-2 font-bold leading-6">Deliverables</span>
-          </div>
-          <ul class="hidden mt-3 ml-2">
-            <li
-                class="px-3 py-3 text-sm font-normal leading-3 tracking-normal text-gray-600 cursor-pointer hover:bg-indigo-700 hover:text-white">
-              Landing Pages
-            </li>
-            <li
-                class="px-3 py-3 text-sm font-normal leading-3 tracking-normal text-gray-600 cursor-pointer hover:bg-indigo-700 hover:text-white">
-              Templates
-            </li>
-            <li
-                class="px-3 py-3 text-sm font-normal leading-3 tracking-normal text-gray-600 cursor-pointer hover:bg-indigo-700 hover:text-white">
-              Components
-            </li>
-          </ul>
         </li>
 
       </ul>

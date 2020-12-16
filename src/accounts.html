@@ -1,13 +1,18 @@
 ---
-title: 'Accounts'
-layout: collections
-permalink: /accounts/
-emoji: 🏗
+title: Accounts
+layout: page
+subtitle: Find me around the web!
+emoji: 🎙
 ---
-{%- for account in site.data.accounts -%}
-  {% rendercontent "_v2/list_item", url: account.url, title: account.title, external: true %}
-    {% with icon %}
-      {% svg images/icon/chevron_right.svg class="w-5 h-5 text-gray-400" %}
-    {% endwith %}
-  {% endrendercontent %}
-{%- endfor -%}
+{%- assign social_media = site.data.accounts | where_exp: "a", "a.category contains 'social media'" -%}
+{%- assign support = site.data.accounts | where_exp: "a", "a.category contains 'support'" -%}
+{%- assign content = site.data.accounts | where_exp: "a", "a.category contains 'content'" -%}
+{%- assign video = site.data.accounts | where_exp: "a", "a.category contains 'video'" -%}
+{%- assign code = site.data.accounts | where_exp: "a", "a.category contains 'code'" -%}
+
+{% render "_v3/data_list", title: "Social Media", collection: social_media %}
+{% render "_v3/data_list", title: "Support", collection: support %}
+{% render "_v3/data_list", title: "Content", collection: content %}
+{% render "_v3/data_list", title: "Videos", collection: video %}
+{% render "_v3/data_list", title: "Support", collection: support %}
+{% render "_v3/data_list", title: "Code", collection: code %}

@@ -1,0 +1,27 @@
+---
+name: page
+description: description
+variables:
+  title: string
+  subtitle?: string
+  content: markdown
+  prose: boolean
+---
+
+<div class="px-4 py-32 lg:px-0">
+  <div class="flex flex-col max-w-screen-md mx-auto justify-content">
+    <div class="flex flex-col space-y-14">
+      <div class="flex flex-col space-y-4 md:items-center md:text-center">
+        <h1>{{ title }}</h1>
+        {%- if subtitle -%}
+        <p class="text-2xl">{{ subtitle }}</p>
+      {%- endif -%}
+      </div>
+      {%- if prose -%}
+        {% render "_v3/prose", content: content %}
+      {%- else -%}
+        {{ content }}
+      {%- endif -%}
+    </div>
+  </div>
+</div>

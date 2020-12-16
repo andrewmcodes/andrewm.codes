@@ -1,0 +1,14 @@
+{
+  "exportConfig": {
+    "recursiveExport": true,
+    "createPageDirectory": false,
+    "addMetadata": true,
+    "lowerPathname": true,
+    "lowerFilename": true,
+    "lineBreak": false
+  },
+  "databaseConfig": {
+    "tagsColumnName": "tags",
+    "createdTimeColumnName": "created_at"
+  }
+}

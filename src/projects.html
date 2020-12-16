@@ -1,17 +1,47 @@
 ---
 title: 'Projects'
-layout: default
+subtitle: Some of the projects I've created or worked on.
+layout: page
 permalink: /projects/
 emoji: 🏗
 ---
 
-
-{% rendercontent "_v2/page", title: page.title, subtitle: "something here" %}
-
-{% with content %}
-  {%- for project in page.projects -%}
-{{project}}
-{%- endfor -%}
-{% endwith %}
-
-{% endrendercontent %}
+{%- assign gem_list = site.data.projects | where_exp: "project", "project.category contains 'Gems'" -%}
+{%- assign extension_list = site.data.projects | where_exp: "project", "project.category contains 'Extensions'" -%}
+{%- assign demo_list = site.data.projects | where_exp: "project", "project.category contains 'Demos'" -%}
+{%- assign misc_list = site.data.projects | where_exp: "project", "project.category contains 'Misc'" -%}
+<sl-tab-group>
+  <sl-tab class="px-5 py-3 tab tab-inactive" slot="nav" panel="gems">
+    💎 Gems
+  </sl-tab>
+  <sl-tab class="px-5 py-3 tab tab-inactive" slot="nav" panel="extensions">
+    🔌 Extensions
+  </sl-tab>
+  <sl-tab class="px-5 py-3 tab tab-inactive" slot="nav" panel="demos">
+    🌱 Demos
+  </sl-tab>
+  <sl-tab class="px-5 py-3 tab tab-inactive" slot="nav" panel="misc">
+    🔀 Misc
+  </sl-tab>
+  <!-- Panel -->
+  <sl-tab-panel class="timeline-item" name="gems">
+    {%- for project in gem_list -%}
+      {% render "_v3/list/project", emoji: "💎", color: "blue-300", project: project %}
+    {%- endfor -%}
+  </sl-tab-panel>
+  <sl-tab-panel class="timeline-item" name="extensions">
+    {%- for project in extension_list -%}
+      {% render "_v3/list/project", emoji: "🔌", color: "yellow-500", project: project %}
+    {%- endfor -%}
+  </sl-tab-panel>
+  <sl-tab-panel class="timeline-item" name="demos">
+    {%- for project in demo_list -%}
+      {% render "_v3/list/project", emoji: "🌱", color: "green-300", project: project %}
+    {%- endfor -%}
+  </sl-tab-panel>
+    <sl-tab-panel class="timeline-item" name="misc">
+    {%- for project in misc_list -%}
+      {% render "_v3/list/project", emoji: "🔀", color: "blue-300", project: project %}
+    {%- endfor -%}
+  </sl-tab-panel>
+</sl-tab-group>

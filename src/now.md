@@ -1,10 +1,8 @@
 ---
 title: Now
-layout: md
+layout: page
 emoji: 📍
-backlinks:
-  - name: About
-    url: /about
+prose: true
 ---
 
 I currently work for [N2 Publishing](https://n2pub.com/) as a software developer. I also am a co-host of the Remote Ruby podcast with Chris Oliver and Jason Charnes.
