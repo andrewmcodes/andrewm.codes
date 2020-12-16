@@ -26,22 +26,22 @@ emoji: 🏗
   <!-- Panel -->
   <sl-tab-panel class="timeline-item" name="gems">
     {%- for project in gem_list -%}
-      {% render "_v3/list/project", emoji: "💎", color: "blue-300", project: project %}
+      {% render "list/project", emoji: "💎", color: "blue-300", project: project %}
     {%- endfor -%}
   </sl-tab-panel>
   <sl-tab-panel class="timeline-item" name="extensions">
     {%- for project in extension_list -%}
-      {% render "_v3/list/project", emoji: "🔌", color: "yellow-500", project: project %}
+      {% render "list/project", emoji: "🔌", color: "yellow-500", project: project %}
     {%- endfor -%}
   </sl-tab-panel>
   <sl-tab-panel class="timeline-item" name="demos">
     {%- for project in demo_list -%}
-      {% render "_v3/list/project", emoji: "🌱", color: "green-300", project: project %}
+      {% render "list/project", emoji: "🌱", color: "green-300", project: project %}
     {%- endfor -%}
   </sl-tab-panel>
     <sl-tab-panel class="timeline-item" name="misc">
     {%- for project in misc_list -%}
-      {% render "_v3/list/project", emoji: "🔀", color: "blue-300", project: project %}
+      {% render "list/project", emoji: "🔀", color: "blue-300", project: project %}
     {%- endfor -%}
   </sl-tab-panel>
 </sl-tab-group>

@@ -11,6 +11,6 @@ variables:
 <article class="flex flex-col space-y-4">
   <h3>{{ title }}</h3>
   {%- for item in collection -%}
-    {% render "_v3/list/link", name: item.name, description: item.description, url: item.url %}
+    {% render "list/link", name: item.name, description: item.description, url: item.url %}
   {%- endfor -%}
 </article>

@@ -5,4 +5,4 @@ subtitle: Some of my notes.
 emoji: 🎙
 ---
 {% find posts where site.posts, categories contains "notes" %}
-{%- render "_v3/list/post", posts: posts, no_excerpt: true -%}
+{%- render "list/post", posts: posts, no_excerpt: true -%}

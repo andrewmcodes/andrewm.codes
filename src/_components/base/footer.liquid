@@ -6,22 +6,25 @@ description: The footer of the site.
   <div class="h-px bg-gray-200 dark:bg-gray-800 timeline-stroke"></div>
   <div class="grid grid-cols-1 gap-4 p-4 py-24 bg-gray-100 sm:grid-cols-3 dark:bg-gray-900 sm:bg-gray-50 sm:dark:bg-gray-1000">
     <div class="flex flex-col space-y-4">
-      {% render "_v2/link", text: "Home", klass: "black-link" %}
-      {% render "_v2/link", text: "About", href: "/about", klass: "black-link" %}
-      {% render "_v2/link", text: "@andrewmcodes", href: "https://twitter.com", external: true, klass: "black-link" %}
+      {% render "link", text: "Home", klass: "black-link" %}
+      {% render "link", text: "About", href: "/about", klass: "black-link" %}
+      {% render "link", text: "@andrewmcodes", href: "https://twitter.com/andrewmcodes", external: true, klass: "black-link" %}
+      {% render "link", text: "Contact", href: "/contact", klass: "black-link" %}
     </div>
 
     <div class="flex flex-col space-y-4">
-      {% render "_v2/link", text: "Podcasts", href: "/posts/" klass: "black-link" %}
+      {% render "link", text: "Podcasts", href: "/podcasts/" klass: "black-link" %}
+      {% render "link", text: "Posts", href: "/posts/" klass: "black-link" %}
+      {% render "link", text: "Open Source", href: "/open-source/" klass: "black-link" %}
+      {% render "link", text: "Analytics", href: "https://plausible.io/andrewm.codes" external: true, klass: "black-link" %}
 
-      {% render "_v2/link", text: "Posts", href: "/posts/" klass: "black-link" %}
-      {% render "_v2/link", text: "AMA", href: "/ama/" klass: "black-link" %}
     </div>
 
     <div class="flex flex-col space-y-4">
-      {% render "_v2/link", text: "Bookmarks", href: "/bookmarks/" klass: "black-link" %}
-      {% render "_v2/link", text: "Uses", href: "/uses/" klass: "black-link" %}
-      {% render "_v2/link", text: "Now", href: "/now/" klass: "black-link" %}
+      {% render "link", text: "Projects", href: "/projects/" klass: "black-link" %}
+      {% render "link", text: "Uses", href: "/uses/" klass: "black-link" %}
+      {% render "link", text: "Now", href: "/now/" klass: "black-link" %}
+      {% render "link", text: "Resume", href: "/resume/" klass: "black-link" %}
     </div>
   </div>
 </footer>

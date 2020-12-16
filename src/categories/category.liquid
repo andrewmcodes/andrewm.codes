@@ -6,6 +6,6 @@ prototype:
 ---
 
 <div class="space-y-8">
-{%- render "_v3/list/post", posts: paginator.documents -%}
+{%- render "list/post", posts: paginator.documents -%}
 {% render "data_display/pagination", paginator: paginator %}
 </div>

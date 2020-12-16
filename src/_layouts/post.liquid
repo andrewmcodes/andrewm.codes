@@ -12,7 +12,7 @@ layout: default
           Reading Time: {{ page.content | reading_time: 1 }}
         </p>
       </div>
-      {% render "_v3/prose", content: page.content %}
+      {% render "prose", content: page.content %}
       {%- render "newsletter" -%}
     </div>
   </div>

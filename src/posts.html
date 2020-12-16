@@ -6,4 +6,4 @@ emoji: 🎙
 ---
 {%- assign posts_list = site.posts | where_exp: "post", "post.categories contains 'posts'" -%}
 {%- render "newsletter" -%}
-{%- render "_v3/list/post", posts: posts_list -%}
+{%- render "list/post", posts: posts_list -%}

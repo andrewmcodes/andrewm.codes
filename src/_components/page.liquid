@@ -18,7 +18,7 @@ variables:
       {%- endif -%}
       </div>
       {%- if prose -%}
-        {% render "_v3/prose", content: content %}
+        {% render "prose", content: content %}
       {%- else -%}
         {{ content }}
       {%- endif -%}

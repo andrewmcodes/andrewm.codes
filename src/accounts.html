@@ -10,9 +10,9 @@ emoji: 🎙
 {%- assign video = site.data.accounts | where_exp: "a", "a.category contains 'video'" -%}
 {%- assign code = site.data.accounts | where_exp: "a", "a.category contains 'code'" -%}
 
-{% render "_v3/data_list", title: "Social Media", collection: social_media %}
-{% render "_v3/data_list", title: "Support", collection: support %}
-{% render "_v3/data_list", title: "Content", collection: content %}
-{% render "_v3/data_list", title: "Videos", collection: video %}
-{% render "_v3/data_list", title: "Support", collection: support %}
-{% render "_v3/data_list", title: "Code", collection: code %}
+{% render "data_list", title: "Social Media", collection: social_media %}
+{% render "data_list", title: "Support", collection: support %}
+{% render "data_list", title: "Content", collection: content %}
+{% render "data_list", title: "Videos", collection: video %}
+{% render "data_list", title: "Support", collection: support %}
+{% render "data_list", title: "Code", collection: code %}
