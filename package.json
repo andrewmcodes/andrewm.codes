@@ -32,7 +32,7 @@
     "build:src": "bundle exec bridgetown build",
     "clean": "bundle exec bridgetown clean",
     "deploy": "yarn clean && BRIDGETOWN_ENV=production yarn build:src && yarn sitemap && NODE_ENV=production yarn build:frontend",
-    "sitemap": "sitemap-static --prefix=https://andrewm.codes output/ > public/sitemap.xml",
+    "sitemap": "sitemap-static --prefix=https://andrewm.codes build/ > public/sitemap.xml",
     "sync": "node sync.js",
     "start": "node start.js"
   },
