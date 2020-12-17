@@ -13,14 +13,6 @@ development:
 svg:
   optimize: true
 
-# collections:
-#   posts:
-#     output: true
-#   podcasts:
-#     output: true
-#   projects:
-#     output: true
-
 defaults:
   - scope:
       path: ""
@@ -44,17 +36,20 @@ plausible:
 # Don't wipe Snowpack generated files (frontend & public)
 keep_files:
   - __snowpack__
+  - _bridgetown
   - android-chrome-192x192.png
   - android-chrome-512x512.png
   - apple-touch-icon.png
+  - browserconfig.xml
   - favicon-16x16.png
   - favicon-32x32.png
   - favicon.ico
+  - mstile-150x150.png
   - robots.txt
   - site.webmanifest
   - sitemap.xml
-  - _bridgetown
   - web_modules
+  - safari-pinned-tab.svg
 
 webrick:
   headers:
