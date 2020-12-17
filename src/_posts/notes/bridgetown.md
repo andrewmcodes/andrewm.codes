@@ -1,6 +1,6 @@
 ---
 title: Bridgetown
-subtitle: test123
+subtitle:
 categories:
   - notes
 tags:
@@ -9,4 +9,12 @@ slug: bridgetown
 date: 2020-12-12T00:20:45.806Z
 ---
 
-## Bridgetown Notes
+## CORS
+
+```yaml
+# bridgetown.config.yml
+webrick:
+  headers:
+    Access-Control-Allow-Origin: "*"
+    Access-Control-Request-Method: "*"
+```
