@@ -3,11 +3,11 @@
   "cleanUrls": true,
   "redirects": [
     {
-      "source": "/twitter",
+      "source": "/twitter/",
       "destination": "https://twitter.com/andrewmcodes"
     },
     {
-      "source": "/github",
+      "source": "/github/",
       "destination": "https://github.com/andrewmcodes"
     }
   ]
