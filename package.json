@@ -19,8 +19,7 @@
     "snowpack": "^2.18.2",
     "snowpack-plugin-imagemin": "^1.0.0",
     "tailwindcss": "^2.0.2",
-    "tailwindcss-line-clamp": "^1.0.5",
-    "vercel-redirects": "^1.2.0"
+    "tailwindcss-line-clamp": "^1.0.5"
   },
   "homepage": "https://andrewm.codes",
   "license": "MIT",
