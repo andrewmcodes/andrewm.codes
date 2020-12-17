@@ -1,11 +1,8 @@
 ---
 title: Use Tailwind CSS 1.1 in your Rails App
 date: '2019-04-07T22:39:38.998Z'
-excerpt: >-
-  NOTICE   This tutorial is out of date and may not work for you. I have written
-  a new post ba...
-thumb_img_path: >-
-  https://res.cloudinary.com/practicaldev/image/fetch/s--R8enoZcN--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/3x0vy7vz4j7tk5s557m2.png
+excerpt: This tutorial is out of date and may not work for you. I have written a new post ba...
+thumb_img_path: 'https://res.cloudinary.com/practicaldev/image/fetch/s--R8enoZcN--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/3x0vy7vz4j7tk5s557m2.png'
 comments_count: 11
 positive_reactions_count: 41
 tags:
@@ -17,11 +14,11 @@ dev_to_url: 'https://dev.to/andrewmcodes/use-tailwind-css-1-0-in-your-rails-app-
 layout: post
 categories:
   - posts
+slug: tailwind-css-1-1-rails
+canonical_url: https://andrewm.codes/posts/tailwind-css-1-1-rails/
 ---
 
-# NOTICE
-
-This tutorial is out of date and may not work for you. I have written a new post based on my experience using Rails and TailwindCSS over the last few months that you can find [here](https://dev.to/andrewmcodes/ruby-on-rails-and-tailwindcss-1-1-4-mm5). Thanks for reading! 😄
+>This tutorial is out of date and may not work for you. I have written a new post based on my experience using Rails and TailwindCSS over the last few months that you can find [here](https://dev.to/andrewmcodes/ruby-on-rails-and-tailwindcss-1-1-4-mm5). Thanks for reading! 😄
 
 # Tutorial
 

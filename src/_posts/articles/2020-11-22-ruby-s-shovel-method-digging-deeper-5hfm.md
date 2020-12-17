@@ -1,11 +1,10 @@
 ---
 categories:
   - posts
-title: "Ruby's Shovel Method: Digging Deeper"
+title: 'Ruby''s Shovel Method: Digging Deeper'
 date: '2020-11-22T05:53:26.610Z'
 excerpt: "Heads up! This is not actually a deep dive \U0001F62C   With everything going on in the world, I almost forgo..."
-thumb_img_path: >-
-  https://res.cloudinary.com/practicaldev/image/fetch/s--5T2yr_RU--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/bcmmm6rcamq6axlhtswm.png
+thumb_img_path: 'https://res.cloudinary.com/practicaldev/image/fetch/s--5T2yr_RU--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/bcmmm6rcamq6axlhtswm.png'
 comments_count: 1
 positive_reactions_count: 13
 tags:
@@ -15,6 +14,8 @@ tags:
   - rails
 dev_to_url: 'https://dev.to/andrewmcodes/ruby-s-shovel-method-digging-deeper-5hfm'
 layout: post
+slug: ruby-shovel-method
+canonical_url: https://andrewm.codes/posts/rubys-shovel-method/
 ---
 
 > Heads up! This is not _actually_ a deep dive 😬

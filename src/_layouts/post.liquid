@@ -11,6 +11,9 @@ layout: default
           {{ page.date | date_to_string: "ordinal", "US" }} /
           Reading Time: {{ page.content | reading_time: 1 }}
         </p>
+        <a class="text-blue-600 dark:text-blue-500" href="https://twitter.com/intent/tweet/?text=Great%20post%20by%20@andrewmcodes%20{{ page.canonical_url }}">
+         🐣 Share via Twitter
+       </a>
       </div>
       {% render "prose", content: page.content %}
       {%- render "newsletter" -%}
