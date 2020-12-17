@@ -170,24 +170,3 @@ html {
     @apply flex flex-col max-w-screen-sm mx-auto justify-between;
   }
 }
-/*
-.data-list {
-  @apply grid grid-cols-1 divide-y-2 divide-gray-200 gap-y-4;
-}
-
-.formkit-alert {
-  @apply p-2 rounded-lg shadow-lg sm:p-3 bg-blue-200 text-blue-800;
-}
-
-.link-item {
-  @apply flex items-center mt-3 mr-3;
-}
-
-.content-container {
-  @apply container flex flex-col items-start justify-between px-6 pb-4 mx-auto my-6 border-b border-gray-300 lg:my-12;
-}
-
-.content {
-  @apply prose md:prose-lg lg:prose-xl;
-}
-*/
