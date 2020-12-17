@@ -21,7 +21,7 @@ date: 2020-12-17T06:21:24.476Z
 - [tailwindcss-mobile-precision](https://github.com/robksawyer/tailwindcss-mobile-precision)
   - A collection of add on media queries that allow you to make precision layouts for specific mobile (Yeah, tablet too!) devices.
 - [debug screens](https://github.com/jorenvanhee/tailwindcss-debug-screens)
-  -  Adds a component that shows the currently active screen (responsive breakpoint).
+  - Adds a component that shows the currently active screen (responsive breakpoint).
 - [tailwindcss-animations](https://github.com/benface/tailwindcss-animations)
   - Tailwind CSS plugin to generate animation utilities
 - [tailwindcss-interaction-variants](https://github.com/benface/tailwindcss-interaction-variants)
