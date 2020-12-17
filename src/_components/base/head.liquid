@@ -3,20 +3,60 @@ name: Head
 description: The <head /> of the site with scripts and metadata.
 ---
 <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
   {% feed_meta %}
+  {%- comment -%}
+     <title>Hi, I’m Andrew Mason! | Andrew Mason</title>
+    <meta property="og:title" content="Hi, I’m Andrew Mason!">
+    <meta property="og:locale" content="en_US">
+    <meta name="description" content="I’m a software engineer, podcaster, and open source developer. I’m currently building Ruby on Rails application at N2 Publishing.">
+    <meta property="og:description" content="I’m a software engineer, podcaster, and open source developer. I’m currently building Ruby on Rails application at N2 Publishing.">
+    <link rel="canonical" href="http://localhost:4001/">
+    <meta property="og:url" content="http://localhost:4001/">
+    <meta property="og:site_name" content="Andrew Mason">
+    <meta property="og:image" content="http://localhost:4001/images/andrewm-codes-twitter-card.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:image" content="http://localhost:4001/images/andrewm-codes-twitter-card.png">
+    <meta property="twitter:title" content="Hi, I’m Andrew Mason!">
+    <meta name="twitter:site" content="@andrewmcodes">
+    <meta name="twitter:creator" content="@andrewmcodes">
+  {%- endcomment -%}
   {% seo %}
+  <meta name="keywords" content="ruby, ruby on rails, tailwind css, bridgetown">
+  <meta name="robots" content="index, follow">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="language" content="English">
+  <meta name="author" content="Andrew Mason">
+  <meta name="rating" content="general">
+  <meta name="generator" content="Bridgetown">
+  <meta name="copyright" content="Andrew Mason">
+
+  <!-- Icons -->
   <link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
   <link href="/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
   <link href="/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
+
+  <!-- Manifest -->
   <link href="/site.webmanifest" rel="manifest">
+
+  <!-- Webmentions -->
   <link href="https://webmention.io/andrewm.codes/webmention" rel="webmention"/>
   <link href="https://webmention.io/andrewm.codes/xmlrpc" rel="pingback"/>
+
+  <!-- Snowpack -->
   <link href="/__snowpack__/env.js" rel="modulepreload">
+
+  <!-- Stylesheets -->
   <link rel="stylesheet" href="{{ "/_bridgetown/styles/index.css" | preprend: site_url }}">
   <link rel="stylesheet" href="{{ "/_bridgetown/styles/syntax.css" | preprend: site_url }}">
+
+  <!-- Fonts -->
   <link as="style" href="https://rsms.me/inter/inter.css" rel="preload"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.24/dist/shoelace/shoelace.css">
   <link href="https://rsms.me/inter/inter.css" media="print" onload="this.media='all'; this.onload=null;" rel="stylesheet"/>
+
+  <!-- Analytics -->
   {% plausible %}
 </head>

@@ -36,5 +36,8 @@
     "sync": "node sync.js",
     "start": "node start.js"
   },
-  "version": "0.0.0"
+  "version": "0.0.0",
+  "dependencies": {
+    "@shoelace-style/shoelace": "^2.0.0-beta.24"
+  }
 }

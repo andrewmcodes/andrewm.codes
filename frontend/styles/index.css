@@ -1,7 +1,5 @@
-/* purgecss start ignore */
 @import "tailwindcss/base";
 @import "tailwindcss/components";
-/* purgecss end ignore */
 @import "tailwindcss/utilities";
 
 html {
@@ -76,10 +74,6 @@ html {
   .tab-inactive {
     @apply text-gray-600 border-b-2 border-gray-50 dark:text-gray-400 dark:border-gray-1000 hover:text-gray-1000 dark:hover:text-gray-50 hover:border-gray-300 dark:hover:border-gray-700;
   }
-
-  .content {
-    @apply prose md:prose-lg lg:prose-xl prose-blue mx-auto;
-  }
 }
 
 /* Your own custom utilities */
@@ -134,6 +128,15 @@ html {
 
   .prose strong,
   .prose b {
+    @apply text-gray-1000 dark:text-gray-50;
+  }
+
+  .prose h1,
+  .prose h2,
+  .prose h3,
+  .prose h4,
+  .prose h5,
+  .prose h6 {
     @apply text-gray-1000 dark:text-gray-50;
   }
 

@@ -8,7 +8,7 @@ const port = 4001
 // Concurrently
 /////////////////
 concurrently([
-  { command: "yarn snowpack build --watch", name: "Snowpack", prefixColor: "yellow" },
+  { command: "NODE_ENV=development yarn snowpack build --watch", name: "Snowpack", prefixColor: "yellow" },
   { command: "sleep 4; bundle exec bridgetown serve --port " + port, name: "Bridgetown", prefixColor: "green" },
   { command: "sleep 8; yarn sync", name: "Live", prefixColor: "blue" }
 ], {

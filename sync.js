@@ -11,9 +11,16 @@ const uiPort = 4002
 browserSync.init({
   open: false,
   notify: false,
-  proxy: proxy,
+  proxy: {
+    target: proxy,
+    proxyReq: [
+      function (proxyReq) {
+        proxyReq.setHeader('Access-Control-Allow-Origin', '*');
+      }
+    ]
+  },
   port: port,
-  files: "output/index.html",
+  files: "build/index.html",
   ghostMode: {
     clicks: false,
     forms: false,

@@ -1,0 +1,6 @@
+{
+  "imports": {
+    "alpinejs": "https://cdn.skypack.dev/alpinejs@v2.8.0-1LD3gF5g2X9mzV8UZfdv",
+    "alpinejs/": "https://cdn.skypack.dev/alpinejs@v2.8.0-1LD3gF5g2X9mzV8UZfdv/"
+  }
+}

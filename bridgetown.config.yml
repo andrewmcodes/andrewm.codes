@@ -13,13 +13,13 @@ development:
 svg:
   optimize: true
 
-collections:
-  posts:
-    output: true
-  podcasts:
-    output: true
-  projects:
-    output: true
+# collections:
+#   posts:
+#     output: true
+#   podcasts:
+#     output: true
+#   projects:
+#     output: true
 
 defaults:
   - scope:
@@ -27,24 +27,24 @@ defaults:
     values:
       layout: "default"
       image: /images/andrewm-codes-twitter-card.png
-  - scope:
-      path: ""
-      type: "podcasts"
-    values:
-      layout: "collections"
-      permalink: /:collection/:slug/
-      backlinks:
-        - name: Podcasts
-          url: /podcasts
-  - scope:
-      path: ""
-      type: "projects"
-    values:
-      layout: "collections"
-      permalink: /:collection/:slug/
-      backlinks:
-        - name: Projects
-          url: /projects
+  # - scope:
+  #     path: ""
+  #     type: "podcasts"
+  #   values:
+  #     layout: "collections"
+  #     permalink: /:collection/:slug/
+  #     backlinks:
+  #       - name: Podcasts
+  #         url: /podcasts
+  # - scope:
+  #     path: ""
+  #     type: "projects"
+  #   values:
+  #     layout: "collections"
+  #     permalink: /:collection/:slug/
+  #     backlinks:
+  #       - name: Projects
+  #         url: /projects
   - scope:
       path: ""
       type: "posts"
@@ -71,3 +71,9 @@ keep_files:
   - site.webmanifest
   - sitemap.xml
   - _bridgetown
+  - web_modules
+
+webrick:
+  headers:
+    Access-Control-Allow-Origin: "*"
+    Access-Control-Request-Method: "*"
