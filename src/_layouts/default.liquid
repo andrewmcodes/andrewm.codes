@@ -1,12 +1,10 @@
 <!doctype html>
 <html lang="en">
-  {%- if bridgetown.environment != "production" -%}
-    {%- assign debug = true -%}
-  {%- endif -%}
-  {% render "base/head", metadata: site.metadata, title: page.title, root_url: site.url %}
-  <body class="{% class_map debug-screens: debug, page_class: true %}">
-    <div class="flex flex-col min-h-screen mx-auto font-sans antialiased">
+  {% render "base/head", metadata: site.metadata, title: page.title, root_url: site.url, url: page.url %}
+  <body class="font-sans antialiased">
+    <div class="flex flex-col min-h-screen mx-auto">
       {% render "base/navbar", metadata: site.metadata, page: page %}
+
       <main class="flex-1">
         {{ content }}
       </main>

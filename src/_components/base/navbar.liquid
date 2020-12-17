@@ -2,7 +2,7 @@
 name: Navbar
 description: The main site navigation bar.
 ---
-<div class="absolute z-50 w-full mx-auto text-gray-800 bg-white dark:bg-blue-600 dark:text-white">
+<div class="absolute z-50 w-full mx-auto text-gray-800 bg-white dark:bg-blue-500 dark:text-white">
 
   <div x-data="{ open: false }"
       class="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
@@ -29,10 +29,10 @@ description: The main site navigation bar.
     </div>
     <nav :class="{'flex': open, 'hidden': !open}"
         class="flex-col flex-grow hidden pb-4 md:pb-0 md:flex md:justify-end md:flex-row">
-      <a class="block px-3 py-2 text-base font-medium text-white rounded-md hover:bg-blue-100 hover:text-blue-800" href="/posts/">Blog</a>
-      <a class="block px-3 py-2 text-base font-medium text-white rounded-md hover:bg-blue-100 hover:text-blue-800" href="/podcasts">Podcasts</a>
       <a class="block px-3 py-2 text-base font-medium text-white rounded-md hover:bg-blue-100 hover:text-blue-800" href="/about/">About</a>
-      <a class="block px-3 py-2 text-base font-medium text-white rounded-md hover:bg-blue-100 hover:text-blue-800" href="/contact/">Contact</a>
+      <a class="block px-3 py-2 text-base font-medium text-white rounded-md hover:bg-blue-100 hover:text-blue-800" href="/podcasts">Podcasts</a>
+      <a class="block px-3 py-2 text-base font-medium text-white rounded-md hover:bg-blue-100 hover:text-blue-800" href="/projects/">Projects</a>
+      <a class="block px-3 py-2 text-base font-medium text-white rounded-md hover:bg-blue-100 hover:text-blue-800" href="/posts/">Blog Posts</a>
     </nav>
   </div>
 </div>

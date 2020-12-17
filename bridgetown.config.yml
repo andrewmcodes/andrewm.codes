@@ -27,24 +27,7 @@ defaults:
     values:
       layout: "default"
       image: /images/andrewm-codes-twitter-card.png
-  # - scope:
-  #     path: ""
-  #     type: "podcasts"
-  #   values:
-  #     layout: "collections"
-  #     permalink: /:collection/:slug/
-  #     backlinks:
-  #       - name: Podcasts
-  #         url: /podcasts
-  # - scope:
-  #     path: ""
-  #     type: "projects"
-  #   values:
-  #     layout: "collections"
-  #     permalink: /:collection/:slug/
-  #     backlinks:
-  #       - name: Projects
-  #         url: /projects
+
   - scope:
       path: ""
       type: "posts"

@@ -6,7 +6,7 @@ description: The <head /> of the site with scripts and metadata.
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
-  {% feed_meta %}
+
   {%- comment -%}
      <title>Hi, I’m Andrew Mason! | Andrew Mason</title>
     <meta property="og:title" content="Hi, I’m Andrew Mason!">
@@ -41,6 +41,9 @@ description: The <head /> of the site with scripts and metadata.
   <!-- Manifest -->
   <link href="/site.webmanifest" rel="manifest">
 
+  <!-- Feed -->
+  {% feed_meta %}
+
   <!-- Webmentions -->
   <link href="https://webmention.io/andrewm.codes/webmention" rel="webmention"/>
   <link href="https://webmention.io/andrewm.codes/xmlrpc" rel="pingback"/>
@@ -54,7 +57,9 @@ description: The <head /> of the site with scripts and metadata.
 
   <!-- Fonts -->
   <link as="style" href="https://rsms.me/inter/inter.css" rel="preload"/>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.24/dist/shoelace/shoelace.css">
+  {%- if url == "/projects/" -%}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.24/dist/shoelace/shoelace.css">
+  {%- endif -%}
   <link href="https://rsms.me/inter/inter.css" media="print" onload="this.media='all'; this.onload=null;" rel="stylesheet"/>
 
   <!-- Analytics -->
