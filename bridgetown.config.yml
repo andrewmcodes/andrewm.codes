@@ -1,36 +1,57 @@
-url: 'https://andrewm.codes'
+url: "https://andrewm.codes"
 permalink: ordinal
 timezone: America/New_York
+destination: build
 
 pagination:
   enabled: true
 
 development:
   unpublished: true
-  url: 'http://localhost:4000'
+  url: "http://localhost:4000"
 
 svg:
   optimize: true
 
 defaults:
   - scope:
-      path: ''
+      path: ""
     values:
-      layout: 'default'
+      layout: "default"
       image: /images/andrewm-codes-twitter-card.png
 
-collections:
-  posts:
-    output: true
-    layout: post
-    permalink: /:collection/:title/
-  projects:
-    output: true
-    layout: md
-    permalink: /:collection/:name/
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      permalink: /:categories/:slug/
 
 cloudinary:
   cloud_name: andrewmcodes
 
 plausible:
   domain: andrewm.codes
+
+# Don't wipe Snowpack generated files (frontend & public)
+keep_files:
+  - __snowpack__
+  - _bridgetown
+  - android-chrome-192x192.png
+  - android-chrome-512x512.png
+  - apple-touch-icon.png
+  - browserconfig.xml
+  - favicon-16x16.png
+  - favicon-32x32.png
+  - favicon.ico
+  - mstile-150x150.png
+  - robots.txt
+  - site.webmanifest
+  - sitemap.xml
+  - web_modules
+  - safari-pinned-tab.svg
+
+webrick:
+  headers:
+    Access-Control-Allow-Origin: "*"
+    Access-Control-Request-Method: "*"

@@ -1,0 +1,18 @@
+---
+name: post list
+description: some posts
+variables:
+  posts: object
+---
+
+<div class="flex flex-col space-y-8">
+  {%- for post in posts -%}
+    <div class="flex flex-col space-y-2">
+      <a class="text-blue-600 dark:text-blue-500" href="{{ post.url }}">{{ post.title }}</a>
+      {%- unless no_excerpt -%}
+        <p class="clamp-2">{{ post.excerpt }}</p>
+      {%- endunless -%}
+      <p class="p-small">{{ post.date | date_to_string: "ordinal", "US" }}</p>
+    </div>
+  {%- endfor -%}
+</div>

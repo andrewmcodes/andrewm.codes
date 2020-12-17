@@ -1,40 +1,8 @@
-// Burger menus
-document.addEventListener('DOMContentLoaded', function () {
-  // open
-  const burger = document.querySelectorAll('.navbar-burger')
-  const menu = document.querySelectorAll('.navbar-menu')
+import { SlButton, SlDrawer, SlTab, SlTabGroup, SlTabPanel } from 'https://cdn.skypack.dev/@shoelace-style/shoelace';
+import alpinejs from 'https://cdn.skypack.dev/alpinejs';
 
-  if (burger.length && menu.length) {
-    for (var i = 0; i < burger.length; i++) {
-      burger[i].addEventListener('click', function () {
-        for (var j = 0; j < menu.length; j++) {
-          menu[j].classList.toggle('hidden')
-        }
-      })
-    }
-  }
-
-  // close
-  const close = document.querySelectorAll('.navbar-close')
-  const backdrop = document.querySelectorAll('.navbar-backdrop')
-
-  if (close.length) {
-    for (var i = 0; i < close.length; i++) {
-      close[i].addEventListener('click', function () {
-        for (var j = 0; j < menu.length; j++) {
-          menu[j].classList.toggle('hidden')
-        }
-      })
-    }
-  }
-
-  if (backdrop.length) {
-    for (var i = 0; i < backdrop.length; i++) {
-      backdrop[i].addEventListener('click', function () {
-        for (var j = 0; j < menu.length; j++) {
-          menu[j].classList.toggle('hidden')
-        }
-      })
-    }
-  }
-})
+customElements.define('sl-button', SlButton);
+customElements.define('sl-drawer', SlDrawer);
+customElements.define('sl-tab-group', SlTabGroup);
+customElements.define('sl-tab', SlTab)
+customElements.define('sl-tab-panel', SlTabPanel)

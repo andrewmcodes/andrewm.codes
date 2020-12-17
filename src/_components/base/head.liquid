@@ -2,26 +2,50 @@
 name: Head
 description: The <head /> of the site with scripts and metadata.
 ---
-
 <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  {% feed_meta %}
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
   {% seo %}
+  <meta name="keywords" content="ruby, ruby on rails, tailwind css, bridgetown">
+  <meta name="robots" content="index, follow">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="language" content="English">
+  <meta name="author" content="Andrew Mason">
+  <meta name="rating" content="general">
+  <meta name="generator" content="Bridgetown">
+  <meta name="copyright" content="Andrew Mason">
+
+  <!-- Favicons -->
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
-  <link rel="webmention" href="https://webmention.io/andrewm.codes/webmention" />
-  <link rel="pingback" href="https://webmention.io/andrewm.codes/xmlrpc" />
-  <link rel="modulepreload" href="/__snowpack__/env.js">
-  <link rel="stylesheet" href="/dist/styles/index.css">
-  <link rel="preload" href="https://rsms.me/inter/inter.css" as="style" />
-  <link
-    rel="stylesheet"
-    href="https://rsms.me/inter/inter.css"
-    media="print"
-    onload="this.media='all'; this.onload=null;"
-  />
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#1a202c">
+  <meta name="msapplication-TileColor" content="#1a202c">
+  <meta name="theme-color" content="#1a202c">
+
+  <!-- Feed -->
+  {% feed_meta %}
+
+  <!-- Webmentions -->
+  <link href="https://webmention.io/andrewm.codes/webmention" rel="webmention"/>
+  <link href="https://webmention.io/andrewm.codes/xmlrpc" rel="pingback"/>
+
+  <!-- Snowpack -->
+  <link href="/__snowpack__/env.js" rel="modulepreload">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="{{ "/_bridgetown/styles/index.css" | preprend: site_url }}">
+  <link rel="stylesheet" href="{{ "/_bridgetown/styles/syntax.css" | preprend: site_url }}">
+
+  <!-- Fonts -->
+  <link as="style" href="https://rsms.me/inter/inter.css" rel="preload"/>
+  {%- if url == "/projects/" -%}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.24/dist/shoelace/shoelace.css">
+  {%- endif -%}
+  <link href="https://rsms.me/inter/inter.css" media="print" onload="this.media='all'; this.onload=null;" rel="stylesheet"/>
+
+  <!-- Analytics -->
   {% plausible %}
 </head>

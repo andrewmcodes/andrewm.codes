@@ -1,7 +1,6 @@
 module.exports = {
   mount: {
-    frontend: '/dist',
-    output: '/',
+    frontend: '/_bridgetown',
     public: '/'
   },
   plugins: [
@@ -22,6 +21,11 @@ module.exports = {
     ]
   ],
   installOptions: {},
-  devOptions: {},
-  buildOptions: {}
+  devOptions: {
+    out: ""
+  },
+  buildOptions: {
+    out: "build",
+    sourceMaps: true
+  }
 }

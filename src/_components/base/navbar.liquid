@@ -2,29 +2,36 @@
 name: Navbar
 description: The main site navigation bar.
 ---
-<div class="relative bg-blue-600">
-  <div class="px-3 py-3 mx-auto max-w-7xl sm:px-6 lg:px-8">
-    <div class="pr-16 sm:text-center sm:px-16">
-      <p class="font-medium text-white">
-        <span>
-          🚧 Site Under Construction
-        </span>
-        <span class="block sm:ml-2 sm:inline-block">
-          <a href="https://github.com/andrewmcodes/andrewm-codes-website/issues" target="_blank" rel="noreferrer noopener" class="font-bold text-white underline"> Report issue <span aria-hidden="true">&rarr;</span></a>
-        </span>
-      </p>
+<div class="absolute z-50 w-full mx-auto text-white bg-blue-600 dark:bg-blue-500">
+  <div x-data="{ open: false }"
+      class="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
+    <div class="flex flex-row items-center justify-between p-4">
+      <a href="/"
+        class="">
+        {% svg images/full_logo_dark.svg width=32 class="w-32 h-8" %}
+      </a>
+      <button class="rounded-lg md:hidden focus:outline-none focus:shadow-outline"
+              @click="open = !open">
+        <svg fill="currentColor"
+            viewBox="0 0 20 20"
+            class="w-6 h-6">
+          <path x-show="!open"
+                fill-rule="evenodd"
+                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
+                clip-rule="evenodd"></path>
+          <path x-show="open"
+                fill-rule="evenodd"
+                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                clip-rule="evenodd"></path>
+        </svg>
+      </button>
     </div>
+    <nav :class="{'flex': open, 'hidden': !open}"
+        class="flex-col flex-grow hidden pb-4 md:pb-0 md:flex md:justify-end md:flex-row">
+      <a class="block px-3 py-2 text-base font-medium text-white rounded-md hover:bg-blue-100 hover:text-blue-800" href="/about/">About</a>
+      <a class="block px-3 py-2 text-base font-medium text-white rounded-md hover:bg-blue-100 hover:text-blue-800" href="/podcasts">Podcasts</a>
+      <a class="block px-3 py-2 text-base font-medium text-white rounded-md hover:bg-blue-100 hover:text-blue-800" href="/projects/">Projects</a>
+      <a class="block px-3 py-2 text-base font-medium text-white rounded-md hover:bg-blue-100 hover:text-blue-800" href="/posts/">Blog Posts</a>
+    </nav>
   </div>
 </div>
-<nav class="flex-shrink-0 bg-gray-800">
-  <div class="px-2 mx-auto max-w-7xl sm:px-4 lg:px-8">
-    <div class="relative flex items-center justify-between h-16">
-      <div class="flex items-center px-2 lg:px-0 xl:w-64">
-        <a class="flex-shrink-0" aria-label="Home" href="/">
-          {% svg images/full_logo_dark.svg width=32 class="w-32 h-8" %}
-        </a>
-      </div>
-      {% render "navbar/links" %}
-    </div>
-  </div>
-</nav>

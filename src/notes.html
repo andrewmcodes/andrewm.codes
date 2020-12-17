@@ -1,0 +1,8 @@
+---
+title: Notes
+layout: page
+subtitle: Some of my notes.
+emoji: 🎙
+---
+{% find posts where site.posts, categories contains "notes" %}
+{%- render "list/post", posts: posts, no_excerpt: true -%}

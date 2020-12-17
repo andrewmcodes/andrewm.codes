@@ -1,212 +1,172 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
-.data-list {
-  @apply grid grid-cols-1 divide-y-2 divide-gray-200 gap-y-4;
-}
-
-.formkit-alert {
-  @apply p-2 rounded-lg shadow-lg sm:p-3 bg-blue-200 text-blue-800;
+html {
+  @apply text-base bg-gray-50 dark:bg-gray-1000;
 }
 
-.highlight,
-pre.highlight {
-  background: #282c34;
-  color: #abb2bf;
+/* Write your own custom component styles here */
+@layer components {
+  p,
+  ul,
+  ol,
+  li {
+    @apply text-gray-1000 dark:text-gray-50;
+  }
+
+  a {
+    @apply font-semibold;
+  }
+
+  h6 {
+    @apply text-base font-bold text-gray-1000 dark:text-gray-50;
+  }
+
+  h5 {
+    @apply text-lg font-bold text-gray-1000 dark:text-gray-50;
+  }
+
+  h4 {
+    @apply text-xl font-bold text-gray-1000 dark:text-gray-50;
+  }
+
+  h3 {
+    @apply text-2xl font-bold text-gray-1000 dark:text-gray-50;
+  }
+
+  h2 {
+    @apply text-3xl font-extrabold text-gray-1000 dark:text-gray-50;
+  }
+
+  h1 {
+    @apply text-4xl font-extrabold text-gray-1000 dark:text-gray-50;
+  }
+
+  .btn {
+    @apply flex items-center justify-center px-4 py-2 space-x-2 text-sm font-medium transition-shadow bg-white border rounded shadow-sm hover:border-gray-300 dark:border-gray-800 dark:bg-gray-800 dark:hover:bg-gray-700 dark:hover:border-gray-600 focus:outline-none text-primary;
+  }
+
+  .btn-primary {
+    @apply text-white bg-blue-500 border-none hover:bg-blue-600 dark:hover:bg-blue-400;
+  }
+
+  .btn-outline {
+    @apply bg-white bg-opacity-0 shadow-none hover:bg-opacity-20 hover:shadow-none;
+  }
+
+  .btn-large {
+    @apply px-6 py-3 font-semibold rounded-md;
+  }
+
+  .tabbed-navigation::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tab {
+    @apply flex flex-none md:justify-center md:flex-auto flex-nowrap;
+  }
+
+  .tab-active {
+    @apply border-b-2 text-gray-1000 dark:text-gray-50 border-gray-1000 dark:border-white hover:text-gray-1000 dark:hover:text-gray-50;
+  }
+
+  .tab-inactive {
+    @apply text-gray-600 border-b-2 border-gray-50 dark:text-gray-400 dark:border-gray-1000 hover:text-gray-1000 dark:hover:text-gray-50 hover:border-gray-300 dark:hover:border-gray-700;
+  }
 }
-.highlight pre {
-  background: #282c34;
-}
-.highlight .hll {
-  background: #282c34;
-}
-.highlight .c {
-  color: #5c6370;
-  font-style: italic;
-}
-.highlight .err {
-  color: #960050;
-  background-color: #1e0010;
-}
-.highlight .k {
-  color: #c678dd;
-}
-.highlight .l {
-  color: #98c379;
-}
-.highlight .n {
-  color: #abb2bf;
-}
-.highlight .o {
-  color: #abb2bf;
-}
-.highlight .p {
-  color: #abb2bf;
-}
-.highlight .cm {
-  color: #5c6370;
-  font-style: italic;
-}
-.highlight .cp {
-  color: #5c6370;
-  font-style: italic;
-}
-.highlight .c1 {
-  color: #5c6370;
-  font-style: italic;
-}
-.highlight .cs {
-  color: #5c6370;
-  font-style: italic;
-}
-.highlight .ge {
-  font-style: italic;
-}
-.highlight .gs {
-  font-weight: 700;
-}
-.highlight .kc {
-  color: #c678dd;
-}
-.highlight .kd {
-  color: #c678dd;
-}
-.highlight .kn {
-  color: #c678dd;
-}
-.highlight .kp {
-  color: #c678dd;
-}
-.highlight .kr {
-  color: #c678dd;
-}
-.highlight .kt {
-  color: #c678dd;
-}
-.highlight .ld {
-  color: #98c379;
-}
-.highlight .m {
-  color: #d19a66;
-}
-.highlight .s {
-  color: #98c379;
-}
-.highlight .na {
-  color: #d19a66;
-}
-.highlight .nb {
-  color: #e5c07b;
-}
-.highlight .nc {
-  color: #e5c07b;
-}
-.highlight .no {
-  color: #e5c07b;
-}
-.highlight .nd {
-  color: #e5c07b;
-}
-.highlight .ni {
-  color: #e5c07b;
-}
-.highlight .ne {
-  color: #e5c07b;
-}
-.highlight .nf {
-  color: #abb2bf;
-}
-.highlight .nl {
-  color: #e5c07b;
-}
-.highlight .nn {
-  color: #abb2bf;
-}
-.highlight .nx {
-  color: #abb2bf;
-}
-.highlight .py {
-  color: #e5c07b;
-}
-.highlight .nt {
-  color: #e06c75;
-}
-.highlight .nv {
-  color: #e5c07b;
-}
-.highlight .ow {
-  font-weight: 700;
-}
-.highlight .w {
-  color: #f8f8f2;
-}
-.highlight .mf {
-  color: #d19a66;
-}
-.highlight .mh {
-  color: #d19a66;
-}
-.highlight .mi {
-  color: #d19a66;
-}
-.highlight .mo {
-  color: #d19a66;
-}
-.highlight .sb {
-  color: #98c379;
-}
-.highlight .sc {
-  color: #98c379;
-}
-.highlight .sd {
-  color: #98c379;
-}
-.highlight .s2 {
-  color: #98c379;
-}
-.highlight .se {
-  color: #98c379;
-}
-.highlight .sh {
-  color: #98c379;
-}
-.highlight .si {
-  color: #98c379;
-}
-.highlight .sx {
-  color: #98c379;
-}
-.highlight .sr {
-  color: #56b6c2;
-}
-.highlight .s1 {
-  color: #98c379;
-}
-.highlight .ss {
-  color: #56b6c2;
-}
-.highlight .bp {
-  color: #e5c07b;
-}
-.highlight .vc {
-  color: #e5c07b;
-}
-.highlight .vg {
-  color: #e5c07b;
-}
-.highlight .vi {
-  color: #e06c75;
-}
-.highlight .il {
-  color: #d19a66;
-}
-.highlight .gu {
-  color: #75715e;
-}
-.highlight .gd {
-  color: #f92672;
-}
-.highlight .gi {
-  color: #a6e22e;
+
+/* Your own custom utilities */
+@layer utilities {
+  .text-primary {
+    @apply text-gray-1000 dark:text-gray-50;
+  }
+
+  .text-secondary {
+    @apply text-gray-800 dark:text-gray-200;
+  }
+
+  .text-tertiary {
+    @apply text-gray-600 dark:text-gray-400;
+  }
+
+  .divider-gray {
+    @apply text-gray-300 dark:text-gray-700;
+  }
+
+  .bg-divider-gray {
+    @apply bg-gray-300 dark:bg-gray-700;
+  }
+
+  .page-subtitle {
+    @apply text-xl;
+  }
+
+  .p-small {
+    @apply text-sm text-gray-600 dark:text-gray-400;
+  }
+
+  .black-link {
+    @apply text-gray-1000 dark:text-gray-100 hover:underline visited:text-gray-1000 dark:hover:text-gray-50 dark:visited:text-gray-100;
+  }
+
+  .nav-label a {
+    @apply text-gray-1000 dark:text-gray-50 hover:text-blue-500 dark:hover:text-blue-300 hover:bg-blue-500 hover:bg-opacity-10;
+  }
+
+  .nav-label.active a {
+    @apply text-blue-500 bg-blue-500 dark:text-blue-300 bg-opacity-10;
+  }
+
+  .prose blockquote {
+    @apply border-l-2 border-gray-200 text-gray-1000 dark:text-gray-50 dark:border-gray-800;
+  }
+
+  .prose a {
+    @apply dark:text-blue-500;
+  }
+
+  .prose strong,
+  .prose b {
+    @apply text-gray-1000 dark:text-gray-50;
+  }
+
+  .prose h1,
+  .prose h2,
+  .prose h3,
+  .prose h4,
+  .prose h5,
+  .prose h6 {
+    @apply text-gray-1000 dark:text-gray-50;
+  }
+
+  .prose pre {
+    @apply bg-gray-100 border border-gray-200 dark:border-gray-700 dark:bg-gray-800;
+  }
+
+  /* this is needed to avoid HN comments from overflowing off the right edge of the screen */
+  .prose p {
+    @apply break-words;
+    word-break: break-word;
+  }
+
+  .prose p + p {
+    margin-top: 0;
+  }
+
+  .prose code {
+    @apply text-gray-800 dark:text-gray-200 px-1 py-0.5 border border-gray-100 dark:border-gray-800 rounded-md bg-gray-100 dark:bg-gray-900;
+  }
+
+  .timeline-inset {
+    @apply ml-16 md:ml-0;
+  }
+
+  .timeline-full-width {
+    @apply -ml-16 md:ml-0;
+  }
+
+  .centered-column {
+    @apply flex flex-col max-w-screen-sm mx-auto justify-between;
+  }
 }

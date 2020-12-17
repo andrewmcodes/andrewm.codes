@@ -1,7 +1,25 @@
 ---
 layout: home
+title: Hi, I'm Andrew Mason!
+subtitle: I'm a software engineer, podcaster, and open source developer. I'm currently building Ruby on Rails application at N2 Publishing.
+prose: true
 ---
 
-# Hi, I'm Andrew Mason!
+## Directory
 
-> Software engineer at N2 Publishing, co-host of [Remote Ruby](https://remoteruby.transistor.fm), Rubyist, Open Sourcer, and Surfer.
+- [👤 About](/about/)
+- [🔌 Accounts](/accounts/)
+- [📫️ Contact](/contact/)
+- [📔 Notes](/notes/)
+- [📍 Now](/now/)
+- [🤝 Open Source](/open-source/)
+- [🎙️ Podcasts](/podcasts/)
+- [✍ Posts](/posts/)
+- [🏗️ Projects](/projects/)
+- [📄 Resume](/resume/)
+- [💻️ Uses](/uses/)
+
+## Meta
+
+- [📈 Analytics](https://plausible.io/andrewm.codes)
+- [🧵 Feed](/feed.xml)

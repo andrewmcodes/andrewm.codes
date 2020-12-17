@@ -1,0 +1,153 @@
+- name: .github
+  category: Misc
+  tags: github
+  archived: 'No'
+  description: My default community health files
+  url: 'https://github.com/andrewmcodes/.github'
+  created_at: 'Dec 15, 2020 5:02 PM'
+  updated_at: 'Dec 15, 2020 5:17 PM'
+- name: andrewmcodes
+  category: Gems
+  tags: cli
+  archived: 'No'
+  description: Generates a gem for your andrewmcodes
+  url: 'https://github.com/andrewmcodes/andrewmcodes'
+  created_at: 'Dec 15, 2020 5:02 PM'
+  updated_at: 'Dec 15, 2020 5:22 PM'
+- name: arsenic
+  category: Gems
+  tags: null
+  archived: 'No'
+  description: 'originally forked from Palkan. https://github.com/palkan/new-gem-generator'
+  url: 'https://github.com/andrewmcodes/arsenic'
+  created_at: 'Dec 15, 2020 5:02 PM'
+  updated_at: 'Dec 15, 2020 5:22 PM'
+- name: awesome_list_generator
+  category: Gems
+  tags: gem
+  archived: 'No'
+  description: >-
+    Leverage Ruby and Liquid to transform data into a markdown file that you can
+    use to easily create an 'Awesome' list that is easy for contributors to add
+    to.
+  url: 'https://github.com/andrewmcodes/awesome_list_generator'
+  created_at: 'Dec 15, 2020 5:02 PM'
+  updated_at: 'Dec 15, 2020 5:22 PM'
+- name: Bridgetown Blogging Extension Pack
+  category: Extensions
+  tags: 'bridgetown, vs code'
+  archived: 'No'
+  description: >-
+    A collection of extensions to enhance content curation and creation for VS
+    Code + Bridgetown.
+  url: 'https://github.com/bt-rb/vscode-blogging-extension-pack'
+  created_at: 'Dec 15, 2020 5:02 PM'
+  updated_at: 'Dec 15, 2020 5:22 PM'
+- name: bridgetown-inline-svg
+  category: Gems
+  tags: bridgetown
+  archived: 'No'
+  description: >-
+    A Liquid tag to inline and optimize SVG images in your HTML Supports custom
+    DOM Attributes parameters and variables interpretation.
+  url: 'https://github.com/andrewmcodes/bridgetown-inline-svg'
+  created_at: 'Dec 15, 2020 5:02 PM'
+  updated_at: 'Dec 15, 2020 5:22 PM'
+- name: bridgetown-plausible-tag
+  category: Gems
+  tags: bridgetown
+  archived: 'No'
+  description: '  A Liquid tag to add Plausible analytics to your site.'
+  url: 'https://github.com/andrewmcodes/bridgetown-plausible-tag'
+  created_at: 'Dec 15, 2020 5:02 PM'
+  updated_at: 'Dec 15, 2020 5:22 PM'
+- name: code-scanning-standard
+  category: Gems
+  tags: null
+  archived: 'No'
+  description: >-
+    This gem adds a SARIF formatter to Standard, so we can export alerts as code
+    scans inside of GitHub.
+  url: 'https://github.com/andrewmcodes/code-scanning-standard'
+  created_at: 'Dec 15, 2020 5:02 PM'
+  updated_at: 'Dec 15, 2020 5:22 PM'
+- name: consolidated_screening_list
+  category: Gems
+  tags: null
+  archived: 'No'
+  description: A Ruby client for Trade.gov's Consolidated Screening List.
+  url: 'https://github.com/andrewmcodes/consolidated_screening_list'
+  created_at: 'Dec 15, 2020 5:02 PM'
+  updated_at: 'Dec 15, 2020 5:22 PM'
+- name: contributor_covenant
+  category: Gems
+  tags: null
+  archived: 'No'
+  description: automatically generate a contributor covenant for any project
+  url: 'https://github.com/andrewmcodes/contributor_covenant'
+  created_at: 'Dec 15, 2020 5:02 PM'
+  updated_at: 'Dec 15, 2020 5:22 PM'
+- name: dishwasher
+  category: Gems
+  tags: 'cli, github'
+  archived: 'No'
+  description: A CLI tool written in Ruby to help you remove unneeded GitHub forks.
+  url: 'https://github.com/andrewmcodes/dishwasher'
+  created_at: 'Dec 15, 2020 5:02 PM'
+  updated_at: 'Dec 15, 2020 5:22 PM'
+- name: forem_lite
+  category: Gems
+  tags: api
+  archived: 'No'
+  description: A minimal API wrapper to retrieve Forem articles.
+  url: 'https://github.com/andrewmcodes/forem_lite/forem_lite'
+  created_at: 'Dec 15, 2020 5:02 PM'
+  updated_at: 'Dec 15, 2020 5:22 PM'
+- name: gem_actions
+  category: Gems
+  tags: null
+  archived: 'No'
+  description: GitHub Action workflows for your Ruby gem
+  url: 'https://github.com/andrewmcodes/gem_actions'
+  created_at: 'Dec 15, 2020 5:02 PM'
+  updated_at: 'Dec 15, 2020 5:22 PM'
+- name: pruner
+  category: Gems
+  tags: null
+  archived: 'No'
+  description: A CLI tool written in Ruby to help you remove unneeded GIT branches.
+  url: 'https://github.com/andrewmcodes/pruner'
+  created_at: 'Dec 15, 2020 5:02 PM'
+  updated_at: 'Dec 15, 2020 5:22 PM'
+- name: refactored_invention
+  category: Gems
+  tags: null
+  archived: 'Yes'
+  description: This is just an experiment with releasing a gem + node package together
+  url: 'http://github.com/andrewmcodes/refactored_invention'
+  created_at: 'Dec 15, 2020 5:02 PM'
+  updated_at: 'Dec 15, 2020 5:22 PM'
+- name: structurely
+  category: Gems
+  tags: null
+  archived: 'No'
+  description: Client for accessing Structurely's API
+  url: 'https://github.com/magnet-team/structurely'
+  created_at: 'Dec 15, 2020 5:02 PM'
+  updated_at: 'Dec 15, 2020 5:22 PM'
+- name: warm-boot
+  category: Gems
+  tags: null
+  archived: 'Yes'
+  description: Rich cli experience to generate a new rails app
+  url: 'https://github.com/andrewmcodes/warm-boot'
+  created_at: 'Dec 15, 2020 5:02 PM'
+  updated_at: 'Dec 15, 2020 5:22 PM'
+- name: Coverband Gem
+  category: Demos
+  tags: rails
+  archived: 'No'
+  description: A demo of how to use the coverband gem in a Ruby on Rails app.
+  url: 'https://github.com/andrewmcodes/rails_coverage_tools'
+  created_at: 'Dec 15, 2020 5:14 PM'
+  updated_at: 'Dec 15, 2020 5:21 PM'

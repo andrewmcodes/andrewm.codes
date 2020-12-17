@@ -1,0 +1,18 @@
+---
+title: Accounts
+layout: page
+subtitle: Find me around the web!
+emoji: 🎙
+---
+{%- assign social_media = site.data.accounts | where_exp: "a", "a.category contains 'social media'" -%}
+{%- assign support = site.data.accounts | where_exp: "a", "a.category contains 'support'" -%}
+{%- assign content = site.data.accounts | where_exp: "a", "a.category contains 'content'" -%}
+{%- assign video = site.data.accounts | where_exp: "a", "a.category contains 'video'" -%}
+{%- assign code = site.data.accounts | where_exp: "a", "a.category contains 'code'" -%}
+
+{% render "data_list", title: "Social Media", collection: social_media %}
+{% render "data_list", title: "Support", collection: support %}
+{% render "data_list", title: "Content", collection: content %}
+{% render "data_list", title: "Videos", collection: video %}
+{% render "data_list", title: "Support", collection: support %}
+{% render "data_list", title: "Code", collection: code %}

@@ -1,8 +1,9 @@
 ---
 title: Contact
-layout: md
+layout: page
 permalink: /contact/
 emoji: 👋
+prose: true
 ---
 
-<iframe src="https://tally.so/embed/pnrLM3?hideTitle=1&alignLeft=1" width="100%" height="500" frameborder="0" marginheight="0" marginwidth="0"></iframe>
+Email: andrew @ this domain

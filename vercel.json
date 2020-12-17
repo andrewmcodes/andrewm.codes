@@ -1,0 +1,14 @@
+{
+  "trailingSlash": true,
+  "cleanUrls": true,
+  "redirects": [
+    {
+      "source": "/twitter/",
+      "destination": "https://twitter.com/andrewmcodes"
+    },
+    {
+      "source": "/github/",
+      "destination": "https://github.com/andrewmcodes"
+    }
+  ]
+}

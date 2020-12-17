@@ -1,0 +1,9 @@
+---
+title: Posts
+layout: page
+subtitle: Teaching and learning in the open about design, development, and building excellent software.
+emoji: 🎙
+---
+{%- assign posts_list = site.posts | where_exp: "post", "post.categories contains 'posts'" -%}
+{%- render "newsletter" -%}
+{%- render "list/post", posts: posts_list -%}

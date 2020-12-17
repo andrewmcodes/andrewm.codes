@@ -2,22 +2,21 @@
 layout: default
 ---
 
-{% render "data_display/breadcrumb", page: page %}
-{% rendercontent "wrapper/content" %}
-  {% with emoji %}📝{% endwith %}
-  {% with details %}
-    {% rendercontent "data_display/description_list", title: "🏷 Tags" %}
-      <div class="flex">
-        {% for tag in page.tags %}
-          {%- assign relative_path = "/tags/" | append: tag -%}
-          {% render "data_display/badge", color: "blue", text: tag, href: relative_path %}
-        {% endfor %}
+<div class="px-4 py-32 lg:px-0">
+  <div class="flex flex-col max-w-screen-md mx-auto justify-content">
+    <div class="flex flex-col space-y-14">
+      <div class="flex flex-col space-y-4">
+        <h1>{{ page.title }}</h1>
+        <p class="p-small">
+          {{ page.date | date_to_string: "ordinal", "US" }} /
+          Reading Time: {{ page.content | reading_time: 1 }}
+        </p>
+        <a class="text-blue-600 dark:text-blue-500" href="https://twitter.com/intent/tweet/?text=Great%20post%20by%20@andrewmcodes%20{{ page.canonical_url }}">
+         🐣 Share via Twitter
+       </a>
       </div>
-    {% endrendercontent %}
-    {% rendercontent "data_display/description_list", title: "📅 Published" %}
-      {{ page.date | date: "%B %d, %Y" }}
-    {% endrendercontent %}
-  {% endwith %}
-  {% with title %}{{ page.title }}{% endwith %}
-  {% with text %}{{ content }}{% endwith %}
-{% endrendercontent %}
+      {% render "prose", content: page.content %}
+      {%- render "newsletter" -%}
+    </div>
+  </div>
+</div>
