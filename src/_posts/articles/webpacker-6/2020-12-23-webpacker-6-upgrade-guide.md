@@ -81,7 +81,7 @@ Unfortunately you will quickly realize that your upgrade is not finished if you 
 
 Webpacker 6 requires you to add the [appropriate Webpack loaders][5] yourself, which is a breaking change from previous versions.
 
-We will tackle that [in the next article!]({% link \_posts/articles/webpacker-6/2020-12-23-webpacker-6-css-loader.md %})
+We will tackle that [in the next article!]({% link _posts/articles/webpacker-6/2020-12-23-webpacker-6-css-loader.md %})
 
 [1]:	https://github.com/rails/webpacker/releases "Webpacker"
 [2]:	https://devcenter.heroku.com/articles/procfile
