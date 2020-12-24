@@ -12,7 +12,13 @@ variables:
       {%- unless no_excerpt -%}
         <p class="clamp-2">{{ post.excerpt }}</p>
       {%- endunless -%}
-      <p class="p-small">{{ post.date | date_to_string: "ordinal", "US" }}</p>
+      <p class="p-small">
+        {{ post.date | date_to_string: "ordinal", "US" }}
+        {%- if post.series -%}
+          &nbsp; | Type: Series
+        {%- endif -%}
+
+      </p>
     </div>
   {%- endfor -%}
 </div>
