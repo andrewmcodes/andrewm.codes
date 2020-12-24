@@ -19,7 +19,9 @@ order: 3
 canonical_url: https://andrewm.codes/posts/webpacker-6/css-loaders/
 ---
 
-In order to process `.css` files with Webpacker 6, you need to add [css-loader][1], [style-loader][2], and [mini-css-extract-plugin][3].
+>**This page has changed since first posted**, refer to the changelog at the bottom.
+
+In order to process `.css` files with Webpacker 6, you need to add [css-loader][1], [style-loader][2], and [mini-css-extract-plugin][3]. We can also get minification out of the box by adding [css-minimizer-webpack-plugin][4].
 
 ## Install
 
@@ -84,6 +86,11 @@ p {
 
 Reload your browser and your styles should be applied now, and the Webpacker loader error should be gone.
 
+## Changelog
+
+- [chore: add css-minimizer-webpack-plugin](https://github.com/andrewmcodes/andrewm-codes-website/pull/12/commits/6b50b3e1a08236a09cd836c97066ddd4e3b76eed)
+
 [1]:	(https://webpack.js.org/loaders/css-loader/
 [2]:	https://webpack.js.org/loaders/style-loader/ "style-loader"
 [3]:	https://github.com/webpack-contrib/mini-css-extract-plugin "mini-css-extract-plugin"
+[4]:	https://webpack.js.org/plugins/css-minimizer-webpack-plugin "css-minimizer-webpack-plugin"
