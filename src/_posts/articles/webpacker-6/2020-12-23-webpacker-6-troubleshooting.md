@@ -16,6 +16,7 @@ categories:
   - posts
   - webpacker-6
 order: 7
+canonical_url: https://andrewm.codes/posts/webpacker-6/troubleshooting-guide/
 ---
 
 ## Locating the Issue

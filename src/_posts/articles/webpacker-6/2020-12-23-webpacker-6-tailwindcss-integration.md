@@ -16,6 +16,7 @@ categories:
   - posts
   - webpacker-6
 order: 6
+canonical_url: https://andrewm.codes/posts/webpacker-6/tailwindcss-integration/
 ---
 
 In order to add Tailwind CSS 2.0 to your Rails 6 + Webpacker 6 application, you need PostCSS set up, plus a few additional steps.

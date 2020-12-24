@@ -16,6 +16,7 @@ categories:
   - posts
   - webpacker-6
 order: 5
+canonical_url: https://andrewm.codes/posts/webpacker-6/sass-loaders/
 ---
 
 In order to process `.scss` and `.sass` files with Webpacker 6, you need to add [sass-loader and sass][1].

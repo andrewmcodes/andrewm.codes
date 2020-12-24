@@ -16,6 +16,7 @@ categories:
   - posts
   - webpacker-6
 order: 4
+canonical_url: https://andrewm.codes/posts/webpacker-6/postcss-loaders/
 ---
 
 In order to process `.pcss` files with Webpacker 6, you need to add [postcss-loader][1]. I am also going to add PostCSS 8 support.

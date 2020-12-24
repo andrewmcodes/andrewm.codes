@@ -2,12 +2,12 @@ url: "https://andrewm.codes"
 permalink: ordinal
 timezone: America/New_York
 destination: build
+unpublished: true
 
 pagination:
   enabled: true
 
 development:
-  unpublished: true
   url: "http://localhost:4000"
 
 svg:

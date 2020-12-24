@@ -16,6 +16,7 @@ categories:
   - posts
   - webpacker-6
 order: 3
+canonical_url: https://andrewm.codes/posts/webpacker-6/css-loaders/
 ---
 
 In order to process `.css` files with Webpacker 6, you need to add [css-loader][1], [style-loader][2], and [mini-css-extract-plugin][3].

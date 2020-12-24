@@ -8,14 +8,15 @@ tags:
   - tutorial
   - webpacker
   - ruby
-coverimage: https://res.cloudinary.com/practicaldev/image/fetch/s--9KOpvZCa--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/10lu5ml7jlx9atv0q757.png
-canonical_url: null
+coverimage: https://res.cloudinary.com/practicaldev/image/fetch/s--9KOpvZCa--/c\_imagga\_scale,f\_auto,fl\_progressive,h\_420,q\_auto,w\_1000/https://dev-to-uploads.s3.amazonaws.com/i/10lu5ml7jlx9atv0q757.png
+canonical\_url: null
 date: 2020-12-23T23:11:47.520Z
 slug: upgrade-guide
 categories:
   - posts
   - webpacker-6
 order: 1
+canonical_url: https://andrewm.codes/posts/webpacker-6/upgrade-guide/
 ---
 
 In this article, we will walkthrough how to upgrade to the latest version of [Webpacker][1], which is, at the time of writing,  `6.0.0.beta.1`.

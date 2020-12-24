@@ -9,7 +9,7 @@ tags:
   - webpacker
   - ruby
 coverimage: https://res.cloudinary.com/practicaldev/image/fetch/s--9KOpvZCa--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/10lu5ml7jlx9atv0q757.png
-canonical_url: null
+canonical_url: https://andrewm.codes/posts/webpacker-6/tutorial-setup-guide/
 date: 2020-12-23T22:25:26.185Z
 slug: tutorial-setup-guide
 categories:
