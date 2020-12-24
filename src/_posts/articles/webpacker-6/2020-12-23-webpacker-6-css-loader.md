@@ -24,7 +24,7 @@ In order to process `.css` files with Webpacker 6, you need to add [css-loader][
 ## Install
 
 ```bash
-yarn add css-loader style-loader mini-css-extract-plugin
+yarn add css-loader style-loader mini-css-extract-plugin css-minimizer-webpack-plugin
 ```
 
 ## Usage
