@@ -19,7 +19,7 @@ order: 1
 canonical_url: https://andrewm.codes/posts/webpacker-6/upgrade-guide/
 ---
 
-In this article, we will walkthrough how to upgrade to the latest version of [Webpacker][1], which is, at the time of writing,  `6.0.0.beta.1`.
+In this article, we will walkthrough how to upgrade to the latest version of [Webpacker][1], which is, at the time of writing,  `6.0.0.beta.2`.
 
 Our upgrade process will begin with updating the Webpacker libraries, then we will update our configs and templates, and end up verifying that our new setup is working.
 
@@ -33,10 +33,10 @@ Update the gem in your `Gemfile`:
 # Gemfile
 
 - gem 'webpacker', '~> 5.0'
-+ gem 'webpacker', '~> 6.0.0.beta.1'
++ gem 'webpacker', '~> 6.0.0.beta.2'
 ```
 
-Next, run `bundle install` to install the new gem version. If all goes well, you should see `Using webpacker 6.0.0.beta.1 (was 5.2.1)` in the install output.
+Next, run `bundle install` to install the new gem version. If all goes well, you should see `Using webpacker 6.0.0.beta.2 (was 5.2.1)` in the install output.
 
 ## Installing in our Application
 
