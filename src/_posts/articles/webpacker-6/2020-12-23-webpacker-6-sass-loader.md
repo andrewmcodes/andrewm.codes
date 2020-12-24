@@ -98,5 +98,3 @@ main {
 Reload your browser and your styles should be applied now, and the Webpacker loader error should be gone.
 
 [1]:	https://webpack.js.org/loaders/sass-loader/
-
-#rails #tutorial #webpacker #scss

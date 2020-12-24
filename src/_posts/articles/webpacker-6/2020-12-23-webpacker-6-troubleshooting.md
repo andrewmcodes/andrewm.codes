@@ -19,6 +19,10 @@ order: 7
 canonical_url: https://andrewm.codes/posts/webpacker-6/troubleshooting-guide/
 ---
 
+A (growing) collection of tools and techniques for debugging your Webpack(er) setup.
+
+I highly recommend reading the [SurviveJS - Webpack 5 ebook for a real deep dive!][2].
+
 ## Locating the Issue
 
 Use the network tab in your browser to view the CSS that’s being sent to the browser for clues.
@@ -38,3 +42,4 @@ To avoid these errors, import your styles into your JS pack vs. using `style-loa
 - [Webpack-Dashboard][1]
 
 [1]: https://github.com/FormidableLabs/webpack-dashboard "Webpack-Dashboard"
+[2]: https://survivejs.com/webpack/foreword/ "SurviveJS - Webpack 5 ebook for a real deep dive!"
