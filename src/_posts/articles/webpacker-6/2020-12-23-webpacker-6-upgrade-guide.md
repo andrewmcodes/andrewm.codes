@@ -8,9 +8,9 @@ tags:
   - tutorial
   - webpacker
   - ruby
-coverimage: https://res.cloudinary.com/practicaldev/image/fetch/s--9KOpvZCa--/c\_imagga\_scale,f\_auto,fl\_progressive,h\_420,q\_auto,w\_1000/https://dev-to-uploads.s3.amazonaws.com/i/10lu5ml7jlx9atv0q757.png
-canonical\_url: null
-date: 2020-12-23T23:11:47.520Z
+coverimage: https://res.cloudinary.com/practicaldev/image/fetch/s--9KOpvZCa--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/10lu5ml7jlx9atv0q757.png
+canonical_url: null
+date: 2020-12-24T20:45:38.786Z
 slug: upgrade-guide
 categories:
   - posts
@@ -19,7 +19,9 @@ order: 1
 canonical_url: https://andrewm.codes/posts/webpacker-6/upgrade-guide/
 ---
 
-In this article, we will walkthrough how to upgrade to the latest version of [Webpacker][1], which is, at the time of writing,  `6.0.0.beta.1`.
+>**This page has changed since first posted**, refer to the changelog at the bottom.
+
+In this article, we will walkthrough how to upgrade to the latest version of [Webpacker][1], which is, at the time of writing,  `6.0.0.beta.2`.
 
 Our upgrade process will begin with updating the Webpacker libraries, then we will update our configs and templates, and end up verifying that our new setup is working.
 
@@ -33,10 +35,10 @@ Update the gem in your `Gemfile`:
 # Gemfile
 
 - gem 'webpacker', '~> 5.0'
-+ gem 'webpacker', '~> 6.0.0.beta.1'
++ gem 'webpacker', '~> 6.0.0.beta.2'
 ```
 
-Next, run `bundle install` to install the new gem version. If all goes well, you should see `Using webpacker 6.0.0.beta.1 (was 5.2.1)` in the install output.
+Next, run `bundle install` to install the new gem version. If all goes well, you should see `Using webpacker 6.0.0.beta.2 (was 5.2.1)` in the install output.
 
 ## Installing in our Application
 
@@ -83,6 +85,10 @@ Unfortunately you will quickly realize that your upgrade is not finished if you 
 Webpacker 6 requires you to add the [appropriate Webpack loaders][5] yourself, which is a breaking change from previous versions.
 
 We will tackle that [in the next article!]({% link _posts/articles/webpacker-6/2020-12-23-webpacker-6-css-loader.md %})
+
+## Changelog
+
+- [feat: updates for webpacker v6.0.0.beta.2](https://github.com/andrewmcodes/andrewm-codes-website/pull/11)
 
 [1]:	https://github.com/rails/webpacker/releases "Webpacker"
 [2]:	https://devcenter.heroku.com/articles/procfile
