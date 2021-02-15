@@ -13,6 +13,10 @@
     {
       "source": "/github/",
       "destination": "https://github.com/andrewmcodes"
+    },
+    {
+      "source": "/view-source",
+      "destination": "https://github.com/andrewmcodes/andrewm-codes-website"
     }
   ]
 }

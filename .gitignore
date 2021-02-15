@@ -41,3 +41,5 @@ build
 tmp
 _bridgetown
 .snowpack
+
+.vercel
