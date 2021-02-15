@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <%= render "head" %>
+    <link rel="stylesheet" type="text/css" href="<%= absolute_url('styles/index.css') %>">
+    <noscript><link rel="stylesheet" type="text/css" href="<%= absolute_url('styles/syntax.css') %>"></noscript>
+    <script type="module" src="<%= absolute_url 'scripts/turbolinks.js' %>"></script>
+  </head>
+  <body class="flex flex-col min-h-screen w-full antialiased <%= class_map "debug-screens": Bridgetown.env.development? %>">
+    <a href="#main" class="sr-only">skip to main content</a>
+    <%= render "nav", links: site.data.links.select { |l| l if l.nav } %>
+    <main class="flex-1 w-full px-4 mt-16" role="main" id="main" tabindex="-1">
+      <%= yield %>
+    </main>
+    <%= render "substack" %>
+    <%= render "footer" %>
+    <script>
+      (function() {
+          var cssFa = document.createElement('link');
+          cssFa.href = '<%= absolute_url "styles/syntax.css" %>';
+          cssFa.rel = 'stylesheet';
+          cssFa.type = 'text/css';
+          document.getElementsByTagName('head')[0].appendChild(cssFa);
+      })();
+    </script>
+    <script type="module" src="<%= absolute_url 'scripts/index.js' %>" defer></script>
+  </body>
+</html>

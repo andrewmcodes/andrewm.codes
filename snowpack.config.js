@@ -1,31 +1,55 @@
+// Snowpack Configuration File
+// See all supported options: https://www.snowpack.dev/#configuration
+
+/** @type {import("snowpack").SnowpackUserConfig } */
 module.exports = {
   mount: {
-    frontend: '/_bridgetown',
-    public: '/'
+    _bridgetown: { url: "/", static: true, resolve: false },
+    static: { url: "/", static: true, resolve: false },
+    "frontend/scripts": { url: "/scripts" },
+    "frontend/styles": { url: "/styles" },
   },
   plugins: [
+    "@snowpack/plugin-dotenv",
+    "@snowpack/plugin-postcss",
     [
-      '@snowpack/plugin-build-script',
-      { cmd: 'postcss', input: ['.css'], output: ['.css'] }
-    ],
-    ['@snowpack/plugin-optimize'],
-    [
-      'snowpack-plugin-imagemin',
+      "@snowpack/plugin-run-script",
       {
-        include: ['**/*.jpg', '**/*.png'],
-        plugins: [
-          require('imagemin-mozjpeg')({ quality: 90, progressive: true }),
-          require('imagemin-optipng')({ optimizationLevel: 7 })
-        ]
-      }
-    ]
+        name: "bridgetown",
+        cmd: "bin/bridgetown build",
+        watch: "$1 --watch --quiet",
+      },
+    ],
+    [
+      "snowpack-plugin-minify-html",
+      {
+        htmlMinifierOptions: {
+          // https://github.com/kangax/html-minifier#readme
+          collapseWhitespace: true,
+          removeComments: true,
+          removeEmptyAttributes: true,
+          sortAttributes: true,
+        },
+      },
+    ],
   ],
-  installOptions: {},
-  devOptions: {
-    out: ""
+  packageOptions: {
+    NODE_ENV: true,
+    source: "remote",
   },
   buildOptions: {
+    clean: true,
     out: "build",
-    sourceMaps: true
-  }
+  },
+  devOptions: {
+    open: "none",
+    hmrDelay: 1100,
+  },
+  optimize: {
+    preload: false,
+    bundle: false,
+    manifest: true,
+    minify: true,
+    target: "es2018",
+  },
 }

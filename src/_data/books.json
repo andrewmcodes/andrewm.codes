@@ -1,0 +1,89 @@
+[
+  {
+    "id": 1,
+    "name": "Refactoring UI",
+    "url": "https://refactoringui.com/",
+    "audio": false,
+    "stars": 5,
+    "created_at": "2021-02-10T01:18:42.031Z",
+    "updated_at": "2021-02-10T02:31:47.762Z",
+    "authors": "Adam Wathan & Steve Schoger",
+    "image": {
+      "id": "25",
+      "name": "refactoring_ui.jpg",
+      "alternativeText": "",
+      "caption": "",
+      "width": "318",
+      "height": "409",
+      "formats": {
+        "thumbnail": {
+          "name": "thumbnail_refactoring_ui.jpg",
+          "hash": "thumbnail_refactoring_ui_23c2f73b66",
+          "ext": ".jpg",
+          "mime": "image/jpeg",
+          "width": 121,
+          "height": 156,
+          "size": 2.97,
+          "path": null,
+          "url": "https://res.cloudinary.com/andrewmcodes/image/upload/v1612919887/thumbnail_refactoring_ui_23c2f73b66.jpg",
+          "provider_metadata": { "public_id": "thumbnail_refactoring_ui_23c2f73b66", "resource_type": "image" }
+        }
+      },
+      "hash": "refactoring_ui_23c2f73b66",
+      "ext": ".jpg",
+      "mime": "image/jpeg",
+      "size": 12.13,
+      "url": "https://res.cloudinary.com/andrewmcodes/image/upload/v1612919886/refactoring_ui_23c2f73b66.jpg",
+      "previewUrl": null,
+      "provider": "cloudinary",
+      "provider_metadata": { "public_id": "refactoring_ui_23c2f73b66", "resource_type": "image" },
+      "created_at": "2021-02-10T01:18:07.553Z",
+      "updated_at": "2021-02-10T01:18:07.728Z"
+    }
+  },
+  {
+    "id": 2,
+    "name": "It Doesn't Have to Be Crazy at Work",
+    "url": "https://www.amazon.com/Doesnt-Have-Be-Crazy-Work/dp/0062874780?tag=andrewmcodes-20",
+    "audio": true,
+    "stars": 5,
+    "created_at": "2021-02-10T02:34:27.403Z",
+    "updated_at": "2021-02-10T02:34:27.606Z",
+    "authors": "Jason Fried & David Heinemeier Hansson",
+    "image": {
+      "id": "26",
+      "name": "it_doesnt_have_to_be_crazy_at_work.jpg",
+      "alternativeText": "",
+      "caption": "",
+      "width": "331",
+      "height": "499",
+      "formats": {
+        "thumbnail": {
+          "name": "thumbnail_it_doesnt_have_to_be_crazy_at_work.jpg",
+          "hash": "thumbnail_it_doesnt_have_to_be_crazy_at_work_0d600ffb65",
+          "ext": ".jpg",
+          "mime": "image/jpeg",
+          "width": 103,
+          "height": 156,
+          "size": 5.75,
+          "path": null,
+          "url": "https://res.cloudinary.com/andrewmcodes/image/upload/v1612924430/thumbnail_it_doesnt_have_to_be_crazy_at_work_0d600ffb65.jpg",
+          "provider_metadata": {
+            "public_id": "thumbnail_it_doesnt_have_to_be_crazy_at_work_0d600ffb65",
+            "resource_type": "image"
+          }
+        }
+      },
+      "hash": "it_doesnt_have_to_be_crazy_at_work_0d600ffb65",
+      "ext": ".jpg",
+      "mime": "image/jpeg",
+      "size": 28.12,
+      "url": "https://res.cloudinary.com/andrewmcodes/image/upload/v1612924429/it_doesnt_have_to_be_crazy_at_work_0d600ffb65.jpg",
+      "previewUrl": null,
+      "provider": "cloudinary",
+      "provider_metadata": { "public_id": "it_doesnt_have_to_be_crazy_at_work_0d600ffb65", "resource_type": "image" },
+      "created_at": "2021-02-10T02:33:50.678Z",
+      "updated_at": "2021-02-10T02:33:50.852Z"
+    }
+  }
+]

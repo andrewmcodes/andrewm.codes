@@ -1,57 +1,21 @@
-url: "https://andrewm.codes"
-permalink: ordinal
-timezone: America/New_York
-destination: build
-unpublished: true
-
-pagination:
-  enabled: true
-
+destination: _bridgetown
 development:
-  url: "http://localhost:4000"
-
-svg:
-  optimize: true
+  url: "http://localhost:8080"
+  graphql_endpoint: http://localhost:1337/graphql
+url: "https://andrewm.codes"
+graphql_endpoint: https://andrewmcodes.herokuapp.com/graphql
+lsi: true
+permalink: simple
+template_engine: erb
+timezone: America/New_York
+keep_files: [".placeholder"]
 
 defaults:
   - scope:
       path: ""
     values:
       layout: "default"
-      image: /images/andrewm-codes-twitter-card.png
-
-  - scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: "post"
-      permalink: /:categories/:slug/
-
-cloudinary:
-  cloud_name: andrewmcodes
+      image: /images/twitter-card.png
 
 plausible:
   domain: andrewm.codes
-
-# Don't wipe Snowpack generated files (frontend & public)
-keep_files:
-  - __snowpack__
-  - _bridgetown
-  - android-chrome-192x192.png
-  - android-chrome-512x512.png
-  - apple-touch-icon.png
-  - browserconfig.xml
-  - favicon-16x16.png
-  - favicon-32x32.png
-  - favicon.ico
-  - mstile-150x150.png
-  - robots.txt
-  - site.webmanifest
-  - sitemap.xml
-  - web_modules
-  - safari-pinned-tab.svg
-
-webrick:
-  headers:
-    Access-Control-Allow-Origin: "*"
-    Access-Control-Request-Method: "*"

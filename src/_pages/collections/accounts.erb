@@ -1,0 +1,10 @@
+---
+title: Accounts
+description: Find me around the web!
+permalink: /accounts/
+---
+<div class="grid grid-cols-1 gap-2 mt-16 md:grid-cols-3 place-content-center">
+  <% site.data.accounts.each do |account| %>
+    <%= render MediaObjectComponent.new(image: account&.icon&.url, name: account.title, url: account.url) %>
+  <% end %>
+</div>

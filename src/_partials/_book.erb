@@ -1,0 +1,21 @@
+<a class="card-media" href="<%= book.url || "#" %>" target="_blank" rel="nooopener noreferrer">
+  <card-img>
+    <% if book.image %>
+      <img alt="<%= book.name %> icon" src="<%= book.image.formats.thumbnail.url.to_s %>" class="w-16">
+    <% end %>
+  </card-img>
+  <card-body>
+    <card-title>
+      <%= book.name %>
+    </card-title>
+    <% if book.authors %>
+      <card-content>
+        <%= book.authors %>
+      </card-content>
+    <% end %>
+    <card-footer class="space-x-4 text-gray-50">
+      <%= render RatingComponent.new rating: book.stars %>
+      <%= render "svg/audio.svg" %>
+    </card-footer>
+  </card-body>
+</a>

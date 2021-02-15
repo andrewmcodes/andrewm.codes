@@ -1,0 +1,14 @@
+---
+permalink: /api/v1/podcasts.json
+---
+[
+  <%
+    site.data[:podcasts].each_with_index do |podcast, index|
+      last_item = index == site.data[:podcasts].count - 1
+  %>
+  {
+    "title": <%= jsonify podcast.name.strip %>,
+    "url": "<%= absolute_url podcast.url %>"
+  }<%= "," unless last_item %>
+  <% end %>
+]

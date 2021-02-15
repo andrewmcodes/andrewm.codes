@@ -1,0 +1,37 @@
+---
+layout: default
+---
+<div class="flex flex-col max-w-screen-sm mx-auto my-8 space-y-8 lg:my-16 lg:space-y-16 justify-content">
+  <%= render PageBannerComponent.new(
+      title: page.data.title,
+    ) %>
+  <article class="prose md:prose-lg lg:prose-xl">
+
+    <div class="mt-5 border-t border-gray-200 dark:border-gray-700">
+      <dl>
+        <d>
+          <dt>Published At:</dt>
+          <dd><%= date_to_string page.data.published_at, "ordinal", "US" %></dd>
+        </d>
+        <d>
+          <dt>Tags:</dt>
+          <dd><%= page.data.tags.map { "##{_1}"}.join(', ') %></dd>
+        </d>
+        <% if page.next_doc %>
+          <d>
+            <dt>Next:</dt>
+            <dd><a href="<%= page.next_doc&.url %>"><%= page.next_doc&.title %></a></dd>
+          </d>
+        <% end %>
+        <% if page.previous_doc %>
+          <d>
+            <dt>Previous:</dt>
+            <dd><a href="<%= page.previous_doc&.url %>"><%= page.previous_doc&.title %></a></dd>
+          </d>
+        <% end %>
+      </dl>
+    </div>
+    <%= yield %>
+    <a href="/blog/" class="btn btn-outline">View All Articles</a>
+  </article>
+</div>

@@ -1,0 +1,19 @@
+---
+title: AMA
+description: Ask me anything!
+permalink: /ama/
+---
+<stack>
+  <% site.data.amas.each do |ama| %>
+    <card-media>
+      <card-body>
+        <card-title>
+          #<%= ama.id %> - <%= ama.question %>
+        </card-title>
+        <card-content>
+          <%= markdownify ama.answer %>
+        </card-content>
+      </card-body>
+    </card-media>
+  <% end %>
+</stack>

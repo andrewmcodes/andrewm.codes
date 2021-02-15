@@ -1,0 +1,8 @@
+_bridgetown
+.bridgetown-cache
+.bridgetown-webpack
+output
+node_modules
+web_modules
+build
+.snowpack

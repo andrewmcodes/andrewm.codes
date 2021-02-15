@@ -1,0 +1,9 @@
+---
+layout: default
+---
+<div class="flex flex-col max-w-screen-sm mx-auto my-8 space-y-8 lg:my-16 lg:space-y-16 justify-content">
+  <%= render PageBannerComponent.new title: page.data.title, description: page.data.description %>
+  <article class="my-8 prose lg:my-16 md:prose-lg lg:prose-xl">
+    <%= yield %>
+  </article>
+</div>
