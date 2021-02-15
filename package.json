@@ -58,7 +58,6 @@
     "tailwindcss": "^2.0.2",
     "tailwindcss-debug-screens": "^2.0.0",
     "tailwindcss-line-clamp": "^1.0.5",
-    "vercel": "^21.2.3",
     "workbox-cli": "^6.1.0"
   },
   "dependencies": {

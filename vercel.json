@@ -1,6 +1,9 @@
 {
   "cleanUrls": true,
   "trailingSlash": true,
+  "github": {
+    "enabled": true
+  },
   "redirects": [
     {
       "source": "/contact/",
