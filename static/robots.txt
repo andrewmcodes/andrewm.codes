@@ -1,0 +1,6 @@
+# www.robotstxt.org
+
+User-agent: *
+Disallow: /build.txt
+
+Sitemap: https://andrewm.codes/sitemap.xml

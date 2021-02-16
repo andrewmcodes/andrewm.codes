@@ -1,0 +1,8 @@
+_bridgetown
+.bridgetown-cache
+.bridgetown-webpack
+output
+node_modules
+build
+src/_feed/htaccess.erb
+.snowpack

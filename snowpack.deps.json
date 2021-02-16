@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "alpinejs": "^2.8.0",
+    "turbolinks": "^5.2.0"
+  },
+  "lock": {
+    "alpinejs#^2.8.0": "alpinejs@v2.8.0-1LD3gF5g2X9mzV8UZfdv",
+    "turbolinks#^5.2.0": "turbolinks@v5.2.0-2LUNRijzwSWtzXepBHKc"
+  }
+}

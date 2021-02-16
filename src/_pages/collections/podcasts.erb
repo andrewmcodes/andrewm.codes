@@ -1,0 +1,10 @@
+---
+title: Podcasts
+description: I have hosted a number of podcasts and been interviewed on others.
+permalink: /podcasts/
+---
+<stack>
+  <% site.data.podcasts.reverse.each do |podcast| %>
+    <%= render "podcast", podcast: podcast %>
+  <% end %>
+</stack>

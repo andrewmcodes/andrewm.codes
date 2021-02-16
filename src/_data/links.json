@@ -1,0 +1,142 @@
+[
+  {
+    "id": 2,
+    "name": "Blog",
+    "url": "/blog/",
+    "footer": true,
+    "nav": true,
+    "published_at": "2021-02-10T04:16:25.571Z",
+    "created_at": "2021-02-10T04:16:23.792Z",
+    "updated_at": "2021-02-10T04:16:25.771Z"
+  },
+  {
+    "id": 12,
+    "name": "Resume",
+    "url": "/resume/",
+    "footer": false,
+    "nav": false,
+    "published_at": "2021-02-10T04:19:15.806Z",
+    "created_at": "2021-02-10T04:19:14.106Z",
+    "updated_at": "2021-02-10T04:19:16.006Z"
+  },
+  {
+    "id": 13,
+    "name": "Privacy Policy",
+    "url": "/privacy-policy/",
+    "footer": true,
+    "nav": false,
+    "published_at": "2021-02-10T04:19:41.601Z",
+    "created_at": "2021-02-10T04:19:38.817Z",
+    "updated_at": "2021-02-10T04:19:41.817Z"
+  },
+  {
+    "id": 1,
+    "name": "About",
+    "url": "/about/",
+    "footer": true,
+    "nav": true,
+    "published_at": "2021-02-10T04:16:10.290Z",
+    "created_at": "2021-02-10T04:15:45.016Z",
+    "updated_at": "2021-02-12T03:33:18.094Z"
+  },
+  {
+    "id": 6,
+    "name": "Projects",
+    "url": "/projects/",
+    "footer": false,
+    "nav": true,
+    "published_at": "2021-02-10T04:17:26.645Z",
+    "created_at": "2021-02-10T04:17:24.682Z",
+    "updated_at": "2021-02-12T03:38:37.952Z"
+  },
+  {
+    "id": 7,
+    "name": "Podcasts",
+    "url": "/podcasts/",
+    "footer": false,
+    "nav": true,
+    "published_at": "2021-02-10T04:17:56.744Z",
+    "created_at": "2021-02-10T04:17:54.631Z",
+    "updated_at": "2021-02-12T03:38:38.335Z"
+  },
+  {
+    "id": 8,
+    "name": "Bookshelf",
+    "url": "/bookshelf/",
+    "footer": false,
+    "nav": true,
+    "published_at": "2021-02-10T04:18:11.020Z",
+    "created_at": "2021-02-10T04:18:08.781Z",
+    "updated_at": "2021-02-12T03:38:38.718Z"
+  },
+  {
+    "id": 10,
+    "name": "AMA",
+    "url": "/ama/",
+    "footer": false,
+    "nav": true,
+    "published_at": "2021-02-10T04:18:43.641Z",
+    "created_at": "2021-02-10T04:18:32.340Z",
+    "updated_at": "2021-02-12T03:38:39.107Z"
+  },
+  {
+    "id": 9,
+    "name": "Accounts",
+    "url": "/accounts/",
+    "footer": false,
+    "nav": false,
+    "published_at": "2021-02-10T04:18:25.334Z",
+    "created_at": "2021-02-10T04:18:20.466Z",
+    "updated_at": "2021-02-12T03:38:40.407Z"
+  },
+  {
+    "id": 3,
+    "name": "Now",
+    "url": "/now/",
+    "footer": false,
+    "nav": false,
+    "published_at": "2021-02-10T04:16:40.892Z",
+    "created_at": "2021-02-10T04:16:39.125Z",
+    "updated_at": "2021-02-12T03:38:40.811Z"
+  },
+  {
+    "id": 5,
+    "name": "Stack",
+    "url": "/stack/",
+    "footer": false,
+    "nav": false,
+    "published_at": "2021-02-10T04:18:38.773Z",
+    "created_at": "2021-02-10T04:17:06.876Z",
+    "updated_at": "2021-02-12T03:38:41.209Z"
+  },
+  {
+    "id": 4,
+    "name": "Uses",
+    "url": "/uses/",
+    "footer": false,
+    "nav": false,
+    "published_at": "2021-02-10T04:16:55.699Z",
+    "created_at": "2021-02-10T04:16:53.958Z",
+    "updated_at": "2021-02-12T03:38:41.597Z"
+  },
+  {
+    "id": 11,
+    "name": "Support",
+    "url": "/support/",
+    "footer": false,
+    "nav": false,
+    "published_at": "2021-02-10T04:19:01.417Z",
+    "created_at": "2021-02-10T04:18:59.717Z",
+    "updated_at": "2021-02-12T03:38:42.025Z"
+  },
+  {
+    "id": 14,
+    "name": "RSS",
+    "url": "/feed.xml",
+    "footer": true,
+    "nav": false,
+    "published_at": "2021-02-10T05:13:02.879Z",
+    "created_at": "2021-02-10T05:12:58.903Z",
+    "updated_at": "2021-02-12T03:38:42.454Z"
+  }
+]

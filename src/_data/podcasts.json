@@ -1,0 +1,255 @@
+[
+  {
+    "id": 5,
+    "name": "My Ruby Story",
+    "description": "A weekly exploration into the people who make Ruby what it is.",
+    "active": true,
+    "created_at": "2021-02-10T03:14:10.146Z",
+    "updated_at": "2021-02-12T04:36:41.977Z",
+    "url": "http://devchat.tv/my-ruby-story",
+    "image": {
+      "id": "34",
+      "name": "my-ruby-story.png",
+      "alternativeText": "",
+      "caption": "",
+      "width": "128",
+      "height": "128",
+      "formats": null,
+      "hash": "my_ruby_story_9578818e94",
+      "ext": ".png",
+      "mime": "image/png",
+      "size": 23.06,
+      "url": "https://res.cloudinary.com/andrewmcodes/image/upload/v1613101423/my_ruby_story_9578818e94.png",
+      "previewUrl": null,
+      "provider": "cloudinary",
+      "provider_metadata": { "public_id": "my_ruby_story_9578818e94", "resource_type": "image" },
+      "created_at": "2021-02-12T03:43:43.707Z",
+      "updated_at": "2021-02-12T03:43:43.830Z"
+    },
+    "podcast_episodes": [
+      {
+        "id": 2,
+        "name": "MRS 074: Andrew Mason",
+        "url": "https://devchat.tv/my-ruby-story/mrs-074-andrew-mason/",
+        "published_at": "2021-02-10T03:08:56.286Z",
+        "created_at": "2021-02-10T03:08:54.415Z",
+        "updated_at": "2021-02-10T03:08:56.491Z",
+        "interview": true
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Rails with Jason",
+    "description": "On Rails with Jason I talk with Rails developers about how they work with Rails. Guests include people like Ben Orenstein and Noel Rappin.",
+    "active": true,
+    "created_at": "2021-02-09T21:20:46.238Z",
+    "updated_at": "2021-02-12T04:36:52.532Z",
+    "url": "https://www.codewithjason.com/rails-with-jason-podcast/",
+    "image": {
+      "id": "35",
+      "name": "rails-with-jason.png",
+      "alternativeText": "",
+      "caption": "",
+      "width": "128",
+      "height": "128",
+      "formats": null,
+      "hash": "rails_with_jason_1789a4190e",
+      "ext": ".png",
+      "mime": "image/png",
+      "size": 3.88,
+      "url": "https://res.cloudinary.com/andrewmcodes/image/upload/v1613101423/rails_with_jason_1789a4190e.png",
+      "previewUrl": null,
+      "provider": "cloudinary",
+      "provider_metadata": { "public_id": "rails_with_jason_1789a4190e", "resource_type": "image" },
+      "created_at": "2021-02-12T03:43:43.736Z",
+      "updated_at": "2021-02-12T03:43:43.856Z"
+    },
+    "podcast_episodes": [
+      {
+        "id": 1,
+        "name": "Two Docker Noobs Talk About Docker - with Andrew Mason",
+        "url": "https://www.codewithjason.com/rails-with-jason-podcast/andrew-mason-docker/",
+        "published_at": "2021-02-10T03:08:27.051Z",
+        "created_at": "2021-02-10T03:08:21.162Z",
+        "updated_at": "2021-02-10T03:08:27.263Z",
+        "interview": true
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Ruby on Rails Podcast",
+    "description": "The Ruby on Rails Podcast, a weekly conversation about Ruby on Rails,open source software, and the programming profession. Hosted by Brittany Martin.",
+    "active": true,
+    "created_at": "2021-02-10T03:14:51.137Z",
+    "updated_at": "2021-02-12T04:37:13.049Z",
+    "url": "https://5by5.tv/rubyonrails",
+    "image": {
+      "id": "38",
+      "name": "ruby-on-rails-podcast.png",
+      "alternativeText": "",
+      "caption": "",
+      "width": "128",
+      "height": "128",
+      "formats": null,
+      "hash": "ruby_on_rails_podcast_5cd1ed84b9",
+      "ext": ".png",
+      "mime": "image/png",
+      "size": 11.15,
+      "url": "https://res.cloudinary.com/andrewmcodes/image/upload/v1613101423/ruby_on_rails_podcast_5cd1ed84b9.png",
+      "previewUrl": null,
+      "provider": "cloudinary",
+      "provider_metadata": { "public_id": "ruby_on_rails_podcast_5cd1ed84b9", "resource_type": "image" },
+      "created_at": "2021-02-12T03:43:44.160Z",
+      "updated_at": "2021-02-12T03:43:44.276Z"
+    },
+    "podcast_episodes": [
+      {
+        "id": 4,
+        "name": "320: ViewComponents in Action with Andrew Mason",
+        "url": "https://5by5.tv/rubyonrails/320",
+        "published_at": "2021-02-10T03:09:42.226Z",
+        "created_at": "2021-02-10T03:09:40.570Z",
+        "updated_at": "2021-02-10T03:09:42.425Z",
+        "interview": true
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Ruby Rogues",
+    "description": "A weekly discussion by Ruby developers about programming, life, and careers.",
+    "active": true,
+    "created_at": "2021-02-10T03:13:33.743Z",
+    "updated_at": "2021-02-12T04:37:23.850Z",
+    "url": "http://rubyrogues.com/",
+    "image": {
+      "id": "37",
+      "name": "ruby-rogues.png",
+      "alternativeText": "",
+      "caption": "",
+      "width": "128",
+      "height": "128",
+      "formats": null,
+      "hash": "ruby_rogues_f37549690d",
+      "ext": ".png",
+      "mime": "image/png",
+      "size": 18.51,
+      "url": "https://res.cloudinary.com/andrewmcodes/image/upload/v1613101423/ruby_rogues_f37549690d.png",
+      "previewUrl": null,
+      "provider": "cloudinary",
+      "provider_metadata": { "public_id": "ruby_rogues_f37549690d", "resource_type": "image" },
+      "created_at": "2021-02-12T03:43:43.796Z",
+      "updated_at": "2021-02-12T03:43:43.920Z"
+    },
+    "podcast_episodes": []
+  },
+  {
+    "id": 7,
+    "name": "Ruby Testing Podcast",
+    "description": "A podcast about Ruby Testing from Jason Swett",
+    "active": false,
+    "created_at": "2021-02-10T03:15:44.818Z",
+    "updated_at": "2021-02-12T04:37:33.935Z",
+    "url": "https://www.codewithjason.com/ruby-testing-podcast/",
+    "image": {
+      "id": "33",
+      "name": "ruby-testing-podcast.png",
+      "alternativeText": "",
+      "caption": "",
+      "width": "128",
+      "height": "128",
+      "formats": null,
+      "hash": "ruby_testing_podcast_368b3a9f41",
+      "ext": ".png",
+      "mime": "image/png",
+      "size": 16.36,
+      "url": "https://res.cloudinary.com/andrewmcodes/image/upload/v1613101423/ruby_testing_podcast_368b3a9f41.png",
+      "previewUrl": null,
+      "provider": "cloudinary",
+      "provider_metadata": { "public_id": "ruby_testing_podcast_368b3a9f41", "resource_type": "image" },
+      "created_at": "2021-02-12T03:43:43.704Z",
+      "updated_at": "2021-02-12T03:43:43.834Z"
+    },
+    "podcast_episodes": [
+      {
+        "id": 5,
+        "name": "015 - Testing Q&A with Listener Andrew Mason",
+        "url": "https://podcasts.apple.com/us/podcast/the-ruby-testing-podcast/id1385192624?i=1000422112280",
+        "published_at": "2021-02-10T03:10:10.705Z",
+        "created_at": "2021-02-10T03:09:58.881Z",
+        "updated_at": "2021-02-10T03:10:10.916Z",
+        "interview": true
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "The Ruby Blend",
+    "description": "The Ruby Blend is a Ruby focused podcast bringing you panel discussions, guest interviews, and much more to keep you up to date on what’s happening in the Ruby development community mixed with sprinkles from other developer communities.",
+    "active": false,
+    "created_at": "2021-02-10T03:16:15.452Z",
+    "updated_at": "2021-02-12T04:37:43.516Z",
+    "url": "https://rubyblend.transistor.fm/",
+    "image": {
+      "id": "39",
+      "name": "the-ruby-blend.png",
+      "alternativeText": "",
+      "caption": "",
+      "width": "128",
+      "height": "128",
+      "formats": null,
+      "hash": "the_ruby_blend_c91aeb7733",
+      "ext": ".png",
+      "mime": "image/png",
+      "size": 12.33,
+      "url": "https://res.cloudinary.com/andrewmcodes/image/upload/v1613101424/the_ruby_blend_c91aeb7733.png",
+      "previewUrl": null,
+      "provider": "cloudinary",
+      "provider_metadata": { "public_id": "the_ruby_blend_c91aeb7733", "resource_type": "image" },
+      "created_at": "2021-02-12T03:43:44.579Z",
+      "updated_at": "2021-02-12T03:43:44.712Z"
+    },
+    "podcast_episodes": []
+  },
+  {
+    "id": 3,
+    "name": "Remote Ruby",
+    "description": "Three Rubyists having conversations and interviewing others about Ruby and web development.",
+    "active": true,
+    "created_at": "2021-02-10T03:12:24.367Z",
+    "updated_at": "2021-02-12T04:43:46.210Z",
+    "url": "https://remoteruby.transistor.fm",
+    "image": {
+      "id": "36",
+      "name": "remote-ruby.png",
+      "alternativeText": "",
+      "caption": "",
+      "width": "128",
+      "height": "128",
+      "formats": null,
+      "hash": "remote_ruby_5eaad99a87",
+      "ext": ".png",
+      "mime": "image/png",
+      "size": 5.08,
+      "url": "https://res.cloudinary.com/andrewmcodes/image/upload/v1613101423/remote_ruby_5eaad99a87.png",
+      "previewUrl": null,
+      "provider": "cloudinary",
+      "provider_metadata": { "public_id": "remote_ruby_5eaad99a87", "resource_type": "image" },
+      "created_at": "2021-02-12T03:43:43.763Z",
+      "updated_at": "2021-02-12T03:43:43.892Z"
+    },
+    "podcast_episodes": [
+      {
+        "id": 3,
+        "name": "Joined by Andrew Mason",
+        "url": "https://share.transistor.fm/s/19f4de7e",
+        "published_at": "2021-02-10T03:09:21.937Z",
+        "created_at": "2021-02-10T03:09:20.159Z",
+        "updated_at": "2021-02-10T03:09:22.140Z",
+        "interview": true
+      }
+    ]
+  }
+]

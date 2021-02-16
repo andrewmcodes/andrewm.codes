@@ -1,9 +1,7 @@
-output
+_bridgetown
 .bridgetown-cache
-.bridgetown-metadata
 .bridgetown-webpack
+output
 node_modules
-__tmp__
-*.liquid
-.yml
 build
+.snowpack

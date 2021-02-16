@@ -1,0 +1,10 @@
+---
+title: Projects
+description: Some of the projects I have created or contribute to.
+permalink: /projects/
+---
+<stack>
+  <% (site.data.projects + site.data.repositories).each do |project| %>
+    <%= render "project", project: project %>
+  <% end %>
+</stack>

@@ -1,0 +1,6 @@
+---
+permalink: feed/.htaccess
+eleventyExcludeFromCollections: true
+---
+# For Apache, to show `<%= site.metadata.feed.filename %>` when browsing to directory /feed/ (hide the file!)
+DirectoryIndex <%= site.metadata.feed.filename %>

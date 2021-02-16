@@ -1,0 +1,10 @@
+---
+title: Stack
+description: My favorite tools and software.
+permalink: /stack/
+---
+<stack>
+  <% site.data.resources.each do |project| %>
+    <%= render "project", project: project %>
+  <% end %>
+</stack>

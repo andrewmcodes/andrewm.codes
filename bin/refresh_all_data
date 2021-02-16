@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+ruby "lib/account.rb"
+ruby "lib/ama.rb"
+ruby "lib/article.rb"
+ruby "lib/book.rb"
+ruby "lib/page.rb"
+ruby "lib/podcast_episode.rb"
+ruby "lib/podcast.rb"
+ruby "lib/project.rb"
+ruby "lib/repository.rb"
+ruby "lib/resource.rb"
+ruby "lib/link.rb"
+yarn prettier --write .

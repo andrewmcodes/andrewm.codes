@@ -1,0 +1,10 @@
+---
+layout: default
+---
+<div class="flex flex-col max-w-screen-sm mx-auto my-8 space-y-8 lg:my-16 lg:space-y-16 justify-content">
+  <img src="https://res.cloudinary.com/andrewmcodes/image/upload/c_scale,q_auto,r_30,w_192/v1613199598/twitter-avatar.png" class="w-32 h-32 md:mx-auto">
+  <%= render PageBannerComponent.new title: page.data.title, description: page.data.description %>
+  <article class="my-8 prose lg:my-16 md:prose-lg lg:prose-xl">
+    <%= yield %>
+  </article>
+</div>

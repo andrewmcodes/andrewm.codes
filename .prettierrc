@@ -1,0 +1,8 @@
+{
+  "rubySingleQuote": false,
+  "semi": false,
+  "singleQuote": false,
+  "printWidth": 120,
+  "rubyToProc": true,
+  "arrowParens": "always"
+}

@@ -1,0 +1,10 @@
+---
+title: Bookshelf
+description: Some books I've read
+permalink: /bookshelf/
+---
+<stack>
+  <% site.data.books.each do |book| %>
+    <%= render "book", book: book %>
+  <% end %>
+</stack>

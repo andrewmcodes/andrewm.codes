@@ -1,13 +1,26 @@
+---
 title: Andrew Mason
+url: https://andrewm.codes
+domain: andrewm.codes
 tagline: andrewm.codes
 description: >-
   Hey! I'm Andrew Mason, a Ruby on Rails software engineer. I blog about Rails, host Ruby podcasts, and ramble on Twitter about development. All saved here!
+keywords: "ruby, ruby on rails, tailwind css, bridgetown"
+theme_color: "#3b83f6"
+feed:
+  subtitle: RSS Feed for andrewm.codes
+  filename: feed.xml
+  path: /feed/feed.xml
+  id: "https://andrewm.codes"
+
+json_feed:
+  path: /feed/feed.json
+  url: https://andrewm.codes/feed/feed.json
 
 author:
+  name: Andrew Mason
   twitter: andrewmcodes
 
 twitter:
   username: andrewmcodes
   card: summary_large_image
-
-seo_paginator_message: "%<current>s / %<total>s | "
