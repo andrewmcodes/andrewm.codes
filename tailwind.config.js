@@ -16,7 +16,7 @@ module.exports = {
         "btn",
         "btn-outline",
         "btn-primary",
-        "btn-large"
+        "btn-large",
       ],
     },
   },
