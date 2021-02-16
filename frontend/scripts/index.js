@@ -3,6 +3,16 @@ import "alpinejs"
 import * as Turbo from "@hotwired/turbo"
 
 Turbo.setProgressBarDelay(1)
+
+window.addEventListener('turbo:load', (event) => {
+  document.querySelectorAll('.prose h1, .prose h2, .prose h3, .prose h4').forEach((headerEl) => {
+    const linkEl = document.createElement('a');
+    linkEl.setAttribute('href', '#' + headerEl.id);
+    linkEl.innerText = ' #';
+    headerEl.appendChild(linkEl);
+  });
+});
+
 // const env = document.querySelector("body").dataset.env
 
 // // Check that service workers are supported
