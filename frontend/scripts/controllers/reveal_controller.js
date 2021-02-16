@@ -1,5 +1,5 @@
 import Reveal from "stimulus-reveal-controller"
-import { useClickOutside } from 'stimulus-use'
+import { useClickOutside } from "stimulus-use"
 
 export default class extends Reveal {
   connect() {
