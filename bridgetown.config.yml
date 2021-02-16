@@ -23,3 +23,4 @@ plausible:
 webrick:
   headers:
     Access-Control-Allow-Origin: "https://andrewmcodes.substack.com/"
+    X-Frame-Options: "ALLOW-FROM https://andrewmcodes.substack.com/"
