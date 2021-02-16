@@ -13,8 +13,8 @@
     <%= render "nav", links: site.data.links.select { |l| l if l.nav } %>
     <main class="flex-1 w-full px-4 mt-16" role="main" id="main" tabindex="-1">
       <%= yield %>
+      <%= render "newsletter" %>
     </main>
-    <%= render "substack" %>
     <%= render "footer" %>
     <script>
       (function() {
