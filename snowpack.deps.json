@@ -1,10 +1,10 @@
 {
   "dependencies": {
-    "alpinejs": "^2.8.0",
-    "turbolinks": "^5.2.0"
+    "": "hotwired/turbo",
+    "alpinejs": "^2.8.0"
   },
   "lock": {
-    "alpinejs#^2.8.0": "alpinejs@v2.8.0-1LD3gF5g2X9mzV8UZfdv",
-    "turbolinks#^5.2.0": "turbolinks@v5.2.0-2LUNRijzwSWtzXepBHKc"
+    "#hotwired/turbo": "@hotwired/turbo@v7.0.0-beta.4-TQFv5Y2xd4hn2VnTxVul",
+    "alpinejs#^2.8.0": "alpinejs@v2.8.0-1LD3gF5g2X9mzV8UZfdv"
   }
 }

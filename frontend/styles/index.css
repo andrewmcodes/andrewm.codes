@@ -143,7 +143,7 @@ html {
 
 /* Your own custom utilities */
 @layer utilities {
-  .turbolinks-progress-bar {
+  .turbo-progress-bar {
     @apply h-1 bg-blue-500 absolute top-0 z-50;
   }
 

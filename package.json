@@ -62,7 +62,7 @@
     "workbox-cli": "^6.1.0"
   },
   "dependencies": {
-    "alpinejs": "^2.8.0",
-    "turbolinks": "^5.2.0"
+    "@hotwired/turbo": "^7.0.0-beta.4",
+    "alpinejs": "^2.8.0"
   }
 }
