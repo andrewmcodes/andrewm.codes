@@ -1,5 +1,8 @@
-import "alpinejs"
+import 'alpine-turbo-drive-adapter'
+import 'alpinejs';
+import * as Turbo from "@hotwired/turbo";
 
+Turbo.setProgressBarDelay(1)
 // const env = document.querySelector("body").dataset.env
 
 // // Check that service workers are supported
