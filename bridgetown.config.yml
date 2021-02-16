@@ -19,3 +19,7 @@ defaults:
 
 plausible:
   domain: andrewm.codes
+
+webrick:
+  headers:
+    Access-Control-Allow-Origin: "https://andrewmcodes.substack.com/"
