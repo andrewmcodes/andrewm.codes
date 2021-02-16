@@ -14,8 +14,14 @@
       </card-content>
     <% end %>
     <card-footer class="space-x-4 text-gray-50">
-      <%= render RatingComponent.new rating: book.stars %>
-      <%= render "svg/audio.svg" %>
+      <% if book.complete %>
+        <%= render RatingComponent.new rating: book.stars %>
+      <% else %>
+        <%= render BadgeComponent.new(title: "WIP", tone: "info") %>
+      <% end %>
+      <% if book.audio %>
+        <%= render "svg/audio.svg" %>
+      <% end %>
     </card-footer>
   </card-body>
 </a>
