@@ -18,15 +18,6 @@
     "updated_at": "2021-02-10T22:51:26.975Z"
   },
   {
-    "id": "5",
-    "content": "## Data gathered & cookies tracked\n\n- There should not be any cookies getting tracked - and please let me know if you see otherwise.\n- As far as data gathered, I am using [Plausible Analytics](https://plausible.io/), which is a GDPR, CCPA and cookie law compliant site analytics tool. I don't care who you are, I just am curious how you are using the site, so that is why I chose a privacy focused tool and for that reason, I have [made my analytics dashboard public](https://plausible.io/andrewm.codes) so that you can see exactly what is being gathered.\n\nRead [Plausible's data policy](https://plausible.io/data-policy) to learn exactly what is being gathered, but know that it is not anything personally identifiable nor your IP address.\n\n## Data you send to us voluntarily via our contact forms\n\nThis website may collect the following information via its contact and enquiry form features (use of these features is optional):\n\n- Name\n- Email Address\n\n## How we use this data\n\nWe are collecting this data solely to allow me to follow up with you via email whether that is directly if you use the contact form or indirectly via my newsletter. We will not share your personal information with or sell it to third-party marketers.\n\nI treat your data the way I would want you to treat mine. As soon as it is unneeded for contacting your or adding you to the newsletter it is deleted, and left in the hands of third party services.\n\n## Third-party Service Providers\n\nWe may use the following third-party service providers named below to process and store your data. We will not share your personal information with any other third-party unless we have your permission or the law requires us to.\n\n- ConvertKit, which we use to manage email marketing subscriber lists and send emails to our subscribers. [Read their privacy policy.](https://convertkit.com/privacy)\n- Netlify, which hosts this website. [Read their privacy policy.](https://www.netlify.com/privacy/)\n\n## How to make a request about your data\n\nYou can contact us to ask us what data we hold about you, who has access to it and how it is being used. We will also delete any data about you that we hold if you ask us to.\n\nJust to be clear, this data would either be in the form of a submitted contact form, which I delete after reading, or in the form of your email address in ConvertKit, which I will happily remove - no questions asked. To make a request regarding data, please contact me via the [contact form](/contact).",
-    "title": "Privacy Policy",
-    "description": "The privacy policy for this site.",
-    "published_at": "2021-02-10T22:51:33.528Z",
-    "created_at": "+053060-06-08T20:24:27.000Z",
-    "updated_at": "2021-02-10T22:51:33.667Z"
-  },
-  {
     "id": "6",
     "content": "> Contact me if you’d like a copy of my resume.\n",
     "title": "Resume",
@@ -52,5 +43,14 @@
     "published_at": "2021-02-10T22:52:09.605Z",
     "created_at": "+053059-07-17T21:07:19.000Z",
     "updated_at": "2021-02-10T22:52:09.734Z"
+  },
+  {
+    "id": "5",
+    "content": "## Data gathered & cookies tracked\n\n- There should not be any cookies getting tracked - and please let me know if you see otherwise.\n- As far as data gathered, I am using [Plausible Analytics](https://plausible.io/), which is a GDPR, CCPA and cookie law compliant site analytics tool. I don't care who you are, I just am curious how you are using the site, so that is why I chose a privacy focused tool and for that reason, I have [made my analytics dashboard public](https://plausible.io/andrewm.codes) so that you can see exactly what is being gathered.\n\nRead [Plausible's data policy](https://plausible.io/data-policy) to learn exactly what is being gathered, but know that it is not anything personally identifiable nor your IP address.\n\n## Third-party Service Providers\n\nWe may use the following third-party service providers named below to process and store your data. We will not share your personal information with any other third-party unless we have your permission or the law requires us to.\n\n- Substack, which we use to manage email marketing subscriber lists and send emails to our subscribers. [Read their privacy policy.](https://substack.com/privacy)\n- Vercel, which hosts this website. [Read their privacy policy.](https://vercel.com/legal/privacy-policy)\n\n## How to make a request about your data\n\nYou can contact us to ask us what data we hold about you, who has access to it and how it is being used. We will also delete any data about you that we hold if you ask us to.",
+    "title": "Privacy Policy",
+    "description": "The privacy policy for this site.",
+    "published_at": "2021-02-10T22:51:33.528Z",
+    "created_at": "+053060-06-08T20:24:27.000Z",
+    "updated_at": "2021-02-16T00:55:17.536Z"
   }
 ]

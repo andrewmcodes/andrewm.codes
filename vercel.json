@@ -21,6 +21,10 @@
     {
       "source": "/substack/",
       "destination": "https://andrewmcodes.substack.com/embed"
+    },
+    {
+      "source": "/setapp/",
+      "destination": "https://go.setapp.com/invite/3sztpuuq"
     }
   ]
 }
