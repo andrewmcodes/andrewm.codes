@@ -4,6 +4,7 @@ class LearnMoreComponent < ApplicationComponent
   def render_in(view_context)
     <<~HTML
       <a class="inline-block" href="#{href}">
+        <span class="sr-only">Learn More</span>
         <svg
           class="inline"
           xmlns="http://www.w3.org/2000/svg"

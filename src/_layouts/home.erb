@@ -4,6 +4,10 @@ layout: default
 <div class="flex flex-col max-w-screen-sm mx-auto my-8 space-y-8 lg:my-16 lg:space-y-16 justify-content">
   <img alt="@andrewmcodes avatar" width="160" height="160" src="https://res.cloudinary.com/andrewmcodes/image/upload/c_scale,q_auto,r_30,w_160/v1613199598/twitter-avatar.png" class="w-32 h-32 md:mx-auto">
   <%= render PageBannerComponent.new title: page.data.title, description: page.data.description %>
+  <div class="flex justify-start space-x-4 lg:justify-center">
+    <a href="https://andrewmcodes.substack.com" rel="noopener" class="block btn btn-outline btn-large">Subscribe to my Newsletter</a>
+    <a href="/blog/" class="block btn btn-primary btn-large">View my Blog</a>
+  </div>
   <article class="my-8 prose lg:my-16 md:prose-lg lg:prose-xl">
     <%= yield %>
   </article>
