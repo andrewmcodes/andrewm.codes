@@ -15,11 +15,11 @@
       "destination": "https://github.com/andrewmcodes"
     },
     {
-      "source": "/view-source",
+      "source": "/view-source/",
       "destination": "https://github.com/andrewmcodes/andrewm-codes-website"
     },
     {
-      "source": "/substack",
+      "source": "/substack/",
       "destination": "https://andrewmcodes.substack.com/embed"
     }
   ]
