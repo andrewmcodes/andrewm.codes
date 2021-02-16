@@ -1,5 +1,5 @@
 import Reveal from "stimulus-reveal-controller"
-import { useClickOutside } from 'stimulus-use'
+import { useClickOutside } from "stimulus-use"
 
 export default class extends Reveal {
   connect() {
@@ -7,7 +7,7 @@ export default class extends Reveal {
     useClickOutside(this)
   }
 
-  clickOutside(event) {
+  clickOutside() {
     if (this.item === undefined) {
       this.itemTargets[0].classList.add(this.class)
       this.itemTargets[1].classList.remove(this.class)
