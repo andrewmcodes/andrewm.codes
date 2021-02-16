@@ -75,7 +75,7 @@ html {
 
   card-media,
   .card-media {
-    @apply flex p-2 md:p-4 group;
+    @apply flex py-2 md:py-4 group;
   }
 
   card-img,
@@ -133,7 +133,7 @@ html {
   }
 
   .btn-outline {
-    @apply bg-white bg-opacity-0 shadow-none hover:bg-opacity-20 hover:shadow-none;
+    @apply border-gray-900 dark:border-gray-50 dark:text-gray-50 text-gray-900 bg-opacity-0 shadow-none hover:bg-opacity-20 hover:shadow-none;
   }
 
   .btn-large {
