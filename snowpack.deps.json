@@ -1,10 +1,12 @@
 {
   "dependencies": {
     "": "hotwired/turbo",
-    "alpinejs": "^2.8.0"
+    "stimulus": "^2.0.0",
+    "stimulus-reveal-controller": "^2.0.0"
   },
   "lock": {
     "#hotwired/turbo": "@hotwired/turbo@v7.0.0-beta.4-TQFv5Y2xd4hn2VnTxVul",
-    "alpinejs#^2.8.0": "alpinejs@v2.8.0-1LD3gF5g2X9mzV8UZfdv"
+    "stimulus#^2.0.0": "stimulus@v2.0.0-rUjblCyZFBBTf2SNn4wP",
+    "stimulus-reveal-controller#^2.0.0": "stimulus-reveal-controller@v2.0.0-HT7AQQU6nqrgLrmzrTxM"
   }
 }
