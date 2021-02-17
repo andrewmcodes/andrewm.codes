@@ -1,9 +1,7 @@
-<% title = capture do %><%= page&.data[:title] || site.metadata.title %><% end %>
-<% description = capture do %><%= page&.data[:description] || site.metadata.description %><% end %>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 <meta name="theme-color" content="<%= site.metadata.theme_color %>">
-<title><%= title %> | andrewm.codes</title>
+<title><%= title(page) %></title>
 <% unless Bridgetown.env.development? %>
   <link rel="preconnect" href="/" crossorigin>
   <link rel="preload" as="style" crossorigin="" href="<%= absolute_url 'styles/index.css' %>">
@@ -11,23 +9,23 @@
   <link rel="preload" as="font" crossorigin="" href="<%= absolute_url '/fonts/Inter.var.woff2' %>">
   <link rel="preload" as="font" crossorigin="" href="<%= absolute_url '/fonts/JetBrainsMono-Regular.woff2' %>">
 <% end %>
-<meta content="<%= description %>" name="description">
+<meta content="<%= description(page) %>" name="description">
 <meta content="<%= absolute_url page.data.image %>" name="twitter:image">
-<meta content="<%= title %>" itemprop="name">
-<meta content="<%= description %>" itemprop="description">
+<meta content="<%= title(page) %>" itemprop="name">
+<meta content="<%= description(page) %>" itemprop="description">
 <meta content="<%= absolute_url page.data.image %>" itemprop="image">
 <meta content="en_US" property="og:locale">
 <meta content="article" property="og:type">
 <meta content="<%= absolute_url page.url %>" property="og:url">
 <meta content="<%= site.metadata.domain %>" property="og:site_name">
-<meta content="<%= title %>" property="og:title">
-<meta content="<%= description %>" property="og:description">
+<meta content="<%= title(page) %>" property="og:title">
+<meta content="<%= description(page) %>" property="og:description">
 <meta content="<%= absolute_url page.data.image %>" property="og:image">
 <meta content="andrewm.codes social image" property="og:image:alt">
 <meta content="summary_large_image" name="twitter:card">
-<meta content="<%= title %> | andrewm.codes" name="twitter:title">
+<meta content="<%= title(page) %> | andrewm.codes" name="twitter:title">
 <meta content="<%= absolute_url page.data.image %>" name="twitter:image">
-<meta content="<%= description %>" name="twitter:description">
+<meta content="<%= description(page) %>" name="twitter:description">
 <meta content="@<%= site.metadata.twitter.username %>" name="twitter:description">
 <meta content="@<%= site.metadata.twitter.username %>" name="twitter:creator">
 <meta content="on" name="twitter:dnt">

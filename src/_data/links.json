@@ -100,16 +100,6 @@
     "updated_at": "2021-02-12T03:38:40.811Z"
   },
   {
-    "id": 5,
-    "name": "Stack",
-    "url": "/stack/",
-    "footer": false,
-    "nav": false,
-    "published_at": "2021-02-10T04:18:38.773Z",
-    "created_at": "2021-02-10T04:17:06.876Z",
-    "updated_at": "2021-02-12T03:38:41.209Z"
-  },
-  {
     "id": 4,
     "name": "Uses",
     "url": "/uses/",
@@ -138,5 +128,25 @@
     "published_at": "2021-02-10T05:13:02.879Z",
     "created_at": "2021-02-10T05:12:58.903Z",
     "updated_at": "2021-02-12T03:38:42.454Z"
+  },
+  {
+    "id": 5,
+    "name": "Stack",
+    "url": "/stack/",
+    "footer": false,
+    "nav": true,
+    "published_at": "2021-02-10T04:18:38.773Z",
+    "created_at": "2021-02-10T04:17:06.876Z",
+    "updated_at": "2021-02-17T05:17:50.545Z"
+  },
+  {
+    "id": 15,
+    "name": "JSON Feed",
+    "url": "/feed.json",
+    "footer": true,
+    "nav": false,
+    "published_at": "2021-02-17T05:19:10.758Z",
+    "created_at": "2021-02-17T05:18:12.734Z",
+    "updated_at": "2021-02-17T05:19:10.901Z"
   }
 ]
