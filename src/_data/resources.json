@@ -589,5 +589,84 @@
       "created_at": "2021-02-16T04:06:39.667Z",
       "updated_at": "2021-02-16T04:06:39.784Z"
     }
+  },
+  {
+    "id": "10",
+    "title": null,
+    "description": "CleanMyMac X replaces dozens of optimization tools for macOS: a cleaner, a performance monitor, a malware remover.",
+    "url": "https://macpaw.com/cleanmymac",
+    "published_at": "2021-02-18T04:34:28.371Z",
+    "created_at": "2021-02-18T04:34:26.550Z",
+    "updated_at": "2021-02-18T04:34:28.408Z",
+    "type": "App",
+    "name": "CleanMyMac X",
+    "image": {
+      "id": "53",
+      "name": "clean_my_mac.png",
+      "alternativeText": "",
+      "caption": "",
+      "width": "1024",
+      "height": "1024",
+      "formats": {
+        "thumbnail": {
+          "name": "thumbnail_clean_my_mac.png",
+          "hash": "thumbnail_clean_my_mac_9ae6ad6eda",
+          "ext": ".png",
+          "mime": "image/png",
+          "width": 156,
+          "height": 156,
+          "size": 20.42,
+          "path": null,
+          "url": "https://res.cloudinary.com/andrewmcodes/image/upload/v1613604797/thumbnail_clean_my_mac_9ae6ad6eda.png",
+          "provider_metadata": { "public_id": "thumbnail_clean_my_mac_9ae6ad6eda", "resource_type": "image" }
+        },
+        "large": {
+          "name": "large_clean_my_mac.png",
+          "hash": "large_clean_my_mac_9ae6ad6eda",
+          "ext": ".png",
+          "mime": "image/png",
+          "width": 1000,
+          "height": 1000,
+          "size": 631.6,
+          "path": null,
+          "url": "https://res.cloudinary.com/andrewmcodes/image/upload/v1613604799/large_clean_my_mac_9ae6ad6eda.png",
+          "provider_metadata": { "public_id": "large_clean_my_mac_9ae6ad6eda", "resource_type": "image" }
+        },
+        "medium": {
+          "name": "medium_clean_my_mac.png",
+          "hash": "medium_clean_my_mac_9ae6ad6eda",
+          "ext": ".png",
+          "mime": "image/png",
+          "width": 750,
+          "height": 750,
+          "size": 338.69,
+          "path": null,
+          "url": "https://res.cloudinary.com/andrewmcodes/image/upload/v1613604799/medium_clean_my_mac_9ae6ad6eda.png",
+          "provider_metadata": { "public_id": "medium_clean_my_mac_9ae6ad6eda", "resource_type": "image" }
+        },
+        "small": {
+          "name": "small_clean_my_mac.png",
+          "hash": "small_clean_my_mac_9ae6ad6eda",
+          "ext": ".png",
+          "mime": "image/png",
+          "width": 500,
+          "height": 500,
+          "size": 145.74,
+          "path": null,
+          "url": "https://res.cloudinary.com/andrewmcodes/image/upload/v1613604800/small_clean_my_mac_9ae6ad6eda.png",
+          "provider_metadata": { "public_id": "small_clean_my_mac_9ae6ad6eda", "resource_type": "image" }
+        }
+      },
+      "hash": "clean_my_mac_9ae6ad6eda",
+      "ext": ".png",
+      "mime": "image/png",
+      "size": 414.97,
+      "url": "https://res.cloudinary.com/andrewmcodes/image/upload/v1613604797/clean_my_mac_9ae6ad6eda.png",
+      "previewUrl": null,
+      "provider": "cloudinary",
+      "provider_metadata": { "public_id": "clean_my_mac_9ae6ad6eda", "resource_type": "image" },
+      "created_at": "2021-02-18T04:33:20.466Z",
+      "updated_at": "2021-02-18T04:33:20.500Z"
+    }
   }
 ]
