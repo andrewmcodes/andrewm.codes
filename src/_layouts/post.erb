@@ -10,6 +10,10 @@ layout: default
     <div class="mt-5 border-t border-gray-200 dark:border-gray-700">
       <dl>
         <d>
+          <dt>Share:</dt>
+          <dd><a href="<%= page.url %>" on-click="share">Please consider sharing 🙏</a></dd>
+        </d>
+        <d>
           <dt>Published At:</dt>
           <dd><%= date_to_string page.data.published_at, "ordinal", "US" %></dd>
         </d>
@@ -34,4 +38,9 @@ layout: default
     <%= yield %>
     <a href="/blog/" class="btn btn-outline">View All Articles</a>
   </article>
-</div>
+
+<share-widget>
+  <button on-click="share" aria-label="Share" href="<%= page.url %>" class="p-4 bg-blue-400 rounded-lg hover:bg-blue-500">
+    <div></div>
+  </button>
+</share-widget>

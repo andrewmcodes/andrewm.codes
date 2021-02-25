@@ -1,25 +1,55 @@
 {
-  "name": "digital-garden",
+  "name": "andrewm.codes",
   "version": "1.0.0",
   "private": true,
+  "description": "The personal blog of Andrew Mason",
+  "homepage": "https://andrewm.codes/",
+  "bugs": {
+    "url": "https://github.com/andrewmcodes/andrewm-codes-website/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:andrewmcodes/andrewm-codes-website.git"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Andrew Mason",
+    "email": "support@andrewm.codes"
+  },
   "main": "index.js",
   "scripts": {
+    "build": "NODE_ENV=production BRIDGETOWN_ENV=production run-s build:snowpack",
+    "build:snowpack": "snowpack build",
     "clean": "bin/bridgetown clean",
     "dev": "NODE_ENV=development BRIDGETOWN_ENV=development run-s dev:*",
     "dev:snowpack": "snowpack dev",
-    "build": "NODE_ENV=production BRIDGETOWN_ENV=production run-s build:snowpack",
-    "build:snowpack": "snowpack build",
-    "build:sw": "workbox generateSW",
-    "lint": "run-s lint:*",
-    "lint:eslint": "eslint --ext .js frontend/",
-    "lint:stylelint": "stylelint frontend/**/*.css",
     "format": "run-s format:*",
-    "format:eslint": "eslint --ext .js frontend/ --fix",
-    "format:stylelint": "stylelint frontend/**/*.css --fix",
+    "format:eslint": "eslint --ext .js assets/ --fix",
     "format:prettier": "prettier --write .",
-    "validate": "run-s build lint",
+    "format:stylelint": "stylelint assets/**/*.css --fix",
+    "lint": "run-s lint:*",
+    "lint:eslint": "eslint --ext .js assets/",
+    "lint:stylelint": "stylelint assets/**/*.css",
     "setup": "yarn && yarn run validate",
-    "start": "yarn dev"
+    "start": "yarn dev",
+    "validate": "run-s build lint"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "*.{css}": "stylelint --fix",
+    "*.{js}": "eslint --fix",
+    "*.{yml,rb,json,md}": "prettier --write"
+  },
+  "dependencies": {
+    "@hotwired/turbo": "^7.0.0-beta.4",
+    "stimulus": "^2.0.0",
+    "stimulus-reveal-controller": "^2.0.0",
+    "stimulus-use": "^0.23.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^11.0.0",
@@ -58,13 +88,10 @@
     "tailwindcss": "^2.0.3",
     "tailwindcss-debug-screens": "^2.0.0",
     "tailwindcss-line-clamp": "^1.0.5",
-    "vercel": "^21.2.3",
-    "workbox-cli": "^6.1.0"
+    "vercel": "^21.2.3"
   },
-  "dependencies": {
-    "@hotwired/turbo": "^7.0.0-beta.4",
-    "stimulus": "^2.0.0",
-    "stimulus-reveal-controller": "^2.0.0",
-    "stimulus-use": "^0.23.0"
+  "engines": {
+    "node": "14.x.x",
+    "npm": "6.x.x"
   }
 }

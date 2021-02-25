@@ -22,12 +22,11 @@
     url("/fonts/JetBrainsMono-Regular.woff2") format("woff2");
 }
 
-html {
-  @apply text-base bg-gray-50 dark:bg-gray-1000;
-}
-
-/* Write your own custom component styles here */
 @layer components {
+  html {
+    @apply text-base bg-gray-50 dark:bg-gray-1000;
+  }
+
   p,
   ul,
   ol,
@@ -64,7 +63,7 @@ html {
   }
 
   stack {
-    @apply flex flex-col mt-16 divide-y divide-gray-500 dark:divide-gray-700 space-y-2;
+    @apply flex flex-col mt-16 space-y-2 divide-y divide-gray-500 dark:divide-gray-700;
   }
 
   /* Card */
@@ -95,7 +94,7 @@ html {
 
   card-content,
   .card-content {
-    @apply mt-1 block dark:text-gray-300 font-normal;
+    @apply block mt-1 font-normal dark:text-gray-300;
   }
 
   card-footer,
@@ -133,18 +132,39 @@ html {
   }
 
   .btn-outline {
-    @apply border-gray-900 dark:border-gray-50 dark:text-gray-50 text-gray-900 bg-opacity-0 shadow-none hover:bg-opacity-20 hover:shadow-none;
+    @apply text-gray-900 bg-opacity-0 border-gray-900 shadow-none dark:border-gray-50 dark:text-gray-50 hover:bg-opacity-20 hover:shadow-none;
   }
 
   .btn-large {
     @apply px-6 py-3 font-semibold rounded-md;
+  }
+
+  share-widget {
+    @apply fixed bottom-5 right-5 opacity-90;
+  }
+
+  share-widget div {
+    background-image: url("/icons/share.svg");
+    @apply w-8 h-8 bg-center bg-no-repeat;
+  }
+
+  .apple share-widget div {
+    background-image: url("/icons/share-apple.svg");
+  }
+
+  share-widget button {
+    @apply m-0;
+  }
+
+  share-widget button:active {
+    @apply transform scale-75;
   }
 }
 
 /* Your own custom utilities */
 @layer utilities {
   .turbo-progress-bar {
-    @apply h-1 bg-blue-500 absolute top-0 z-50;
+    @apply absolute top-0 z-50 h-1 bg-blue-500;
   }
 
   .prose blockquote {
