@@ -43,7 +43,7 @@
   "lint-staged": {
     "*.{css}": "stylelint --fix",
     "*.{js}": "eslint --fix",
-    "*.{yml,rb,json,md,svg}": "prettier --write"
+    "*.{yml,rb,json,md}": "prettier --write"
   },
   "dependencies": {
     "@hotwired/turbo": "^7.0.0-beta.4",
