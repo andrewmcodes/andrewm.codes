@@ -5,9 +5,7 @@
 module.exports = {
   mount: {
     _bridgetown: { url: "/", static: true, resolve: false },
-    static: { url: "/", static: true, resolve: false },
-    "frontend/scripts": { url: "/scripts" },
-    "frontend/styles": { url: "/styles" },
+    assets: "/",
   },
   plugins: [
     "@snowpack/plugin-dotenv",
@@ -24,7 +22,6 @@ module.exports = {
       "snowpack-plugin-minify-html",
       {
         htmlMinifierOptions: {
-          // https://github.com/kangax/html-minifier#readme
           collapseWhitespace: true,
           removeComments: true,
           removeEmptyAttributes: true,

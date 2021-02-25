@@ -3,7 +3,7 @@ const defaultTheme = require("tailwindcss/defaultTheme")
 
 module.exports = {
   purge: {
-    content: ["./frontend/**/*.js", "./src/**/*.html", "./src/**/*.md", "./src/**/*.erb", "./src/_components/**/*.rb"],
+    content: ["./assets/**/*.js", "./src/**/*.html", "./src/**/*.md", "./src/**/*.erb", "./src/_components/**/*.rb"],
     options: {
       safelist: [
         "text-blue-500",

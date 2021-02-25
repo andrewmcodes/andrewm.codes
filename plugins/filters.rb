@@ -33,6 +33,14 @@ module MyFilters
           end
     }.to_json
   end
+
+  def icon(name)
+    <<~HTML
+      <svg class="icon icon--#{name}" role="img" aria-hidden="true" width="24" height="24">
+        <use xlink:href="#icon-#{name}"></use>
+      </svg>
+    HTML
+  end
 end
 
 Liquid::Template.register_filter MyFilters

@@ -9,13 +9,12 @@
     "dev:snowpack": "snowpack dev",
     "build": "NODE_ENV=production BRIDGETOWN_ENV=production run-s build:snowpack",
     "build:snowpack": "snowpack build",
-    "build:sw": "workbox generateSW",
     "lint": "run-s lint:*",
-    "lint:eslint": "eslint --ext .js frontend/",
-    "lint:stylelint": "stylelint frontend/**/*.css",
+    "lint:eslint": "eslint --ext .js assets/",
+    "lint:stylelint": "stylelint assets/**/*.css",
     "format": "run-s format:*",
-    "format:eslint": "eslint --ext .js frontend/ --fix",
-    "format:stylelint": "stylelint frontend/**/*.css --fix",
+    "format:eslint": "eslint --ext .js assets/ --fix",
+    "format:stylelint": "stylelint assets/**/*.css --fix",
     "format:prettier": "prettier --write .",
     "validate": "run-s build lint",
     "setup": "yarn && yarn run validate",
@@ -58,8 +57,7 @@
     "tailwindcss": "^2.0.3",
     "tailwindcss-debug-screens": "^2.0.0",
     "tailwindcss-line-clamp": "^1.0.5",
-    "vercel": "^21.2.3",
-    "workbox-cli": "^6.1.0"
+    "vercel": "^21.2.3"
   },
   "dependencies": {
     "@hotwired/turbo": "^7.0.0-beta.4",
