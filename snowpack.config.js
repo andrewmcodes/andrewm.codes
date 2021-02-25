@@ -43,7 +43,6 @@ module.exports = {
     hmrDelay: 1100,
   },
   optimize: {
-    preload: false,
     bundle: false,
     manifest: true,
     minify: true,
