@@ -43,7 +43,7 @@ module.exports = {
       mono: ["JetBrains Mono", ...defaultTheme.fontFamily.mono],
     },
     extend: {
-      typography: (theme) => ({
+      typography: () => ({
         DEFAULT: {
           css: {
             blockQuote: {

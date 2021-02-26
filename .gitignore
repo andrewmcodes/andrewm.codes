@@ -43,3 +43,4 @@ _bridgetown
 .snowpack
 
 .vercel
+.eslintcache

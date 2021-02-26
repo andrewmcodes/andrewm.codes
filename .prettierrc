@@ -1,8 +1,9 @@
 {
+  "arrowParens": "always",
+  "printWidth": 120,
   "rubySingleQuote": false,
+  "rubyToProc": true,
   "semi": false,
   "singleQuote": false,
-  "printWidth": 120,
-  "rubyToProc": true,
-  "arrowParens": "always"
+  "trailingComma": "all"
 }

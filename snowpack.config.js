@@ -43,9 +43,9 @@ module.exports = {
     hmrDelay: 1100,
   },
   optimize: {
-    bundle: false,
+    bundle: true,
     manifest: true,
     minify: true,
-    target: "es2018",
+    target: "es2020",
   },
 }
