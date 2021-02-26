@@ -5,3 +5,4 @@ output
 node_modules
 build
 .snowpack
+vendor
