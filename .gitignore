@@ -44,3 +44,4 @@ _bridgetown
 
 .vercel
 .eslintcache
+.husky

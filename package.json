@@ -41,7 +41,8 @@
     "lint:eslint": "eslint --ext .js,.html . --cache",
     "lint:stylelint": "stylelint assets/**/*.css",
     "start": "yarn dev",
-    "validate": "run-s build lint"
+    "validate": "run-s build lint",
+    "postinstall": "husky install"
   },
   "dependencies": {
     "@hotwired/turbo": "^7.0.0-beta.4",
