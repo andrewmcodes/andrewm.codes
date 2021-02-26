@@ -28,9 +28,9 @@ module MyFilters
               title: post.data.title,
               content_html: post.content,
               date_published: DateTime.rfc3339(post.data.published_at).to_s,
-              url: post.url
+              url: post.url,
             }
-          end
+          end,
     }.to_json
   end
 

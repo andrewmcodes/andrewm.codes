@@ -8,7 +8,6 @@ lsi: true
 permalink: simple
 template_engine: erb
 timezone: America/New_York
-keep_files: [".placeholder"]
 
 defaults:
   - scope:

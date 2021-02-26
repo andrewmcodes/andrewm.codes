@@ -1,12 +1,16 @@
 <!doctype html>
 <html lang="en-us">
   <head>
-    <%= render "head" %>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><%= title page %></title>
+    <%= render "preloads" %>
+    <%= render "meta" %>
     <link rel="stylesheet" type="text/css" data-turbo-track="reload" href="<%= absolute_url('styles/index.css') %>">
     <noscript>
       <link rel="stylesheet" data-turbo-track="reload" type="text/css" href="<%= absolute_url('styles/syntax.css') %>">
     </noscript>
-    <script type="module" data-turbo-track="reload" src="<%= absolute_url 'scripts/index.js' %>" defer></script>
   </head>
   <body class="flex flex-col min-h-screen w-full antialiased <%= class_map "debug-screens": Bridgetown.env.development? %>">
     <a href="#main" class="sr-only">skip to main content</a>
@@ -16,6 +20,7 @@
       <%= render "newsletter" %>
     </main>
     <%= render "footer" %>
+    <script type="module" data-turbo-track="reload" src="<%= absolute_url 'scripts/index.js' %>" defer></script>
     <script data-turbo="false">
       (function() {
           var cssFa = document.createElement('link');
