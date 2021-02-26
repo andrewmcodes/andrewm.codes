@@ -4,5 +4,5 @@ _bridgetown
 output
 node_modules
 build
-src/_feed/htaccess.erb
 .snowpack
+vendor
