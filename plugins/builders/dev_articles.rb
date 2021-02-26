@@ -8,8 +8,7 @@ class LoadPostsFromJson < SiteBuilder
       .each do |data|
         next unless data["published_at"]
         doc "#{Bridgetown::Utils.slugify(data["title"])}.md" do
-          front_matter data
-          image data["cover_image"]
+          front_matter data.except("url")
           slug Bridgetown::Utils.slugify(data["title"]).to_s
           categories "blog"
           tags data["tag_list"]

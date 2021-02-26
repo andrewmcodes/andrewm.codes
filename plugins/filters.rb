@@ -41,6 +41,12 @@ module MyFilters
       </svg>
     HTML
   end
+
+  def web_mentions_by_url
+    site.data.web_mentions.children.group_by do |mention|
+      mention["wm-target"].delete_prefix("https://andrewm.codes")
+    end.transform_values { _1.flatten }
+  end
 end
 
 Liquid::Template.register_filter MyFilters

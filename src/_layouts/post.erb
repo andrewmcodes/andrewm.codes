@@ -9,6 +9,14 @@ layout: default
 
     <div class="mt-5 border-t border-gray-200 dark:border-gray-700">
       <dl>
+        <% if web_mentions_by_url.fetch(page.url, []).any? %>
+          <d>
+            <dt>Web Mention #:</dt>
+            <dd>
+              <%= web_mentions_by_url[page.url].count %>
+            </dd>
+          </d>
+        <% end %>
         <d>
           <dt>Share:</dt>
           <dd><a href="<%= page.url %>" on-click="share">Please consider sharing 🙏</a></dd>
@@ -33,6 +41,7 @@ layout: default
             <dd><a href="<%= page.previous_doc&.url %>"><%= page.previous_doc&.title %></a></dd>
           </d>
         <% end %>
+
       </dl>
     </div>
     <%= yield %>

@@ -1,0 +1,378 @@
+{
+  "type": "feed",
+  "name": "Webmentions",
+  "children": [
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Chris Blunt",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/e1d8b4f825113a2dc52f1f8573b94a431ddaeddc5e60010d4e349888bc0ace36.jpg",
+        "url": "https://twitter.com/cblunt"
+      },
+      "url": "https://twitter.com/andrewmcodes/status/1364923863482646528#favorited-by-17463750",
+      "published": null,
+      "wm-received": "2021-02-25T23:51:49Z",
+      "wm-id": 1047471,
+      "wm-source": "https://brid.gy/like/twitter/andrewmcodes/1364923863482646528/17463750",
+      "wm-target": "https://andrewm.codes/blog/how-to-install-ruby-on-rails-6-1-with-asdf-on-macos-big-sur/",
+      "like-of": "https://andrewm.codes/blog/how-to-install-ruby-on-rails-6-1-with-asdf-on-macos-big-sur/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Benjamin ☕",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/b2eff69aabeeb11caae99070e6c983ceda360e216e4430a168ebeddfadf13496.jpg",
+        "url": "https://twitter.com/hargettly"
+      },
+      "url": "https://twitter.com/andrewmcodes/status/1364923863482646528#favorited-by-1159456606691778563",
+      "published": null,
+      "wm-received": "2021-02-25T22:13:46Z",
+      "wm-id": 1047388,
+      "wm-source": "https://brid.gy/like/twitter/andrewmcodes/1364923863482646528/1159456606691778563",
+      "wm-target": "https://andrewm.codes/blog/how-to-install-ruby-on-rails-6-1-with-asdf-on-macos-big-sur/",
+      "like-of": "https://andrewm.codes/blog/how-to-install-ruby-on-rails-6-1-with-asdf-on-macos-big-sur/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Oleh Kupriianov",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/c5f0b6d97641fe9de3bbfc2f8241211d273b0da696d92dcdd97d68148893709b.jpg",
+        "url": "https://twitter.com/tysh_pysh"
+      },
+      "url": "https://twitter.com/andrewmcodes/status/1364923863482646528#favorited-by-965180220583137280",
+      "published": null,
+      "wm-received": "2021-02-25T22:13:43Z",
+      "wm-id": 1047387,
+      "wm-source": "https://brid.gy/like/twitter/andrewmcodes/1364923863482646528/965180220583137280",
+      "wm-target": "https://andrewm.codes/blog/how-to-install-ruby-on-rails-6-1-with-asdf-on-macos-big-sur/",
+      "like-of": "https://andrewm.codes/blog/how-to-install-ruby-on-rails-6-1-with-asdf-on-macos-big-sur/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Greg Kolodziejczyk",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/f36b0bcc292fc1fd8d3289bb8157eba31f6d92476715ddbdda83ea70208d130c.jpg",
+        "url": "https://twitter.com/grkcodes"
+      },
+      "url": "https://twitter.com/andrewmcodes/status/1364923863482646528#favorited-by-16604507",
+      "published": null,
+      "wm-received": "2021-02-25T21:04:54Z",
+      "wm-id": 1047355,
+      "wm-source": "https://brid.gy/like/twitter/andrewmcodes/1364923863482646528/16604507",
+      "wm-target": "https://andrewm.codes/blog/how-to-install-ruby-on-rails-6-1-with-asdf-on-macos-big-sur/",
+      "like-of": "https://andrewm.codes/blog/how-to-install-ruby-on-rails-6-1-with-asdf-on-macos-big-sur/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Cody",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/85883b9a86d5e5457ed277d1593ff2e64b238ae9adf90178d1300218d5b6c888.jpg",
+        "url": "https://twitter.com/codybaldwin"
+      },
+      "url": "https://twitter.com/andrewmcodes/status/1364923863482646528#favorited-by-7111982",
+      "published": null,
+      "wm-received": "2021-02-25T21:04:51Z",
+      "wm-id": 1047354,
+      "wm-source": "https://brid.gy/like/twitter/andrewmcodes/1364923863482646528/7111982",
+      "wm-target": "https://andrewm.codes/blog/how-to-install-ruby-on-rails-6-1-with-asdf-on-macos-big-sur/",
+      "like-of": "https://andrewm.codes/blog/how-to-install-ruby-on-rails-6-1-with-asdf-on-macos-big-sur/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Konnor Rogers",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/82f9c472b2a904c1fc6228b92dfff0a3c4721473a14eefd79c8b829e178a4ef4.jpg",
+        "url": "https://twitter.com/RogersKonnor"
+      },
+      "url": "https://twitter.com/RogersKonnor/status/1365027440054132736",
+      "published": "2021-02-25T19:54:37+00:00",
+      "wm-received": "2021-02-25T19:55:22Z",
+      "wm-id": 1047322,
+      "wm-source": "https://brid.gy/post/twitter/andrewmcodes/1365027440054132736",
+      "wm-target": "https://andrewm.codes/blog/how-to-install-ruby-on-rails-6-1-with-asdf-on-macos-big-sur/",
+      "content": {
+        "html": "<a href=\"https://twitter.com/andrewmcodes\">@andrewmcodes</a> hey, its me.\n\n<a href=\"https://andrewm.codes/blog/how-to-install-ruby-on-rails-6-1-with-asdf-on-macos-big-sur/\">andrewm.codes/blog/how-to-in…</a>",
+        "text": "@andrewmcodes hey, its me.\n\nandrewm.codes/blog/how-to-in…"
+      },
+      "mention-of": "https://andrewm.codes/blog/how-to-install-ruby-on-rails-6-1-with-asdf-on-macos-big-sur/",
+      "wm-property": "mention-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Frankyston Lins (FlyntTv)",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/1ebb248c1b4899b359171add14f08f6f87b195e67287bf0e7df0fffef45cd820.jpg",
+        "url": "https://twitter.com/frankyston"
+      },
+      "url": "https://twitter.com/frankyston/status/1364927956284497926",
+      "published": "2021-02-25T13:19:18+00:00",
+      "wm-received": "2021-02-25T19:41:25Z",
+      "wm-id": 1047317,
+      "wm-source": "https://brid.gy/repost/twitter/andrewmcodes/1364923863482646528/1364927956284497926",
+      "wm-target": "https://andrewm.codes/blog/how-to-install-ruby-on-rails-6-1-with-asdf-on-macos-big-sur/",
+      "content": {
+        "html": "📝\n\nI went all in on asdf and wrote up a quick tutorial showing how easy it is to get a Rails 6.1 app with Ruby 3, Webpacker, &amp; Postgres",
+        "text": "📝\n\nI went all in on asdf and wrote up a quick tutorial showing how easy it is to get a Rails 6.1 app with Ruby 3, Webpacker, & Postgres"
+      },
+      "repost-of": "https://andrewm.codes/blog/how-to-install-ruby-on-rails-6-1-with-asdf-on-macos-big-sur/",
+      "wm-property": "repost-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Pascal Wengerter",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/cf614c0f773153b1a0d6615b184940444bd34365fbd5ff0a3f8180a6f4fdfc05.jpg",
+        "url": "https://twitter.com/pascalwengerter"
+      },
+      "url": "https://twitter.com/pascalwengerter/status/1364931954911674371",
+      "published": "2021-02-25T13:35:11+00:00",
+      "wm-received": "2021-02-25T19:41:25Z",
+      "wm-id": 1047318,
+      "wm-source": "https://brid.gy/post/twitter/andrewmcodes/1364931954911674371",
+      "wm-target": "https://andrewm.codes/blog/how-to-install-ruby-on-rails-6-1-with-asdf-on-macos-big-sur/",
+      "content": {
+        "html": "As if he knew I've been looking for exactly this 😅🤯\n<a class=\"u-mention\" href=\"https://andrewm.codes/blog/how-to-install-ruby-on-rails-6-1-with-asdf-on-macos-big-sur/\"></a>",
+        "text": "As if he knew I've been looking for exactly this 😅🤯"
+      },
+      "mention-of": "https://andrewm.codes/blog/how-to-install-ruby-on-rails-6-1-with-asdf-on-macos-big-sur/",
+      "wm-property": "mention-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Wolfgang Rittner",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/00cdcbfeeceb939e6eb7b40ff95193298a779b6521f730a737b5a26844043ae1.jpg",
+        "url": "https://twitter.com/wolfgangrittner"
+      },
+      "url": "https://twitter.com/andrewmcodes/status/1364923863482646528#favorited-by-34216522",
+      "published": null,
+      "wm-received": "2021-02-25T19:41:24Z",
+      "wm-id": 1047316,
+      "wm-source": "https://brid.gy/like/twitter/andrewmcodes/1364923863482646528/34216522",
+      "wm-target": "https://andrewm.codes/blog/how-to-install-ruby-on-rails-6-1-with-asdf-on-macos-big-sur/",
+      "like-of": "https://andrewm.codes/blog/how-to-install-ruby-on-rails-6-1-with-asdf-on-macos-big-sur/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Vincent Thelang",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/a1458d8a199e22b54017c1f7896352d0dbfaa303eef235146045c5de287c5f74.jpg",
+        "url": "https://twitter.com/VincentThelang"
+      },
+      "url": "https://twitter.com/andrewmcodes/status/1364923863482646528#favorited-by-843393498",
+      "published": null,
+      "wm-received": "2021-02-25T19:41:23Z",
+      "wm-id": 1047315,
+      "wm-source": "https://brid.gy/like/twitter/andrewmcodes/1364923863482646528/843393498",
+      "wm-target": "https://andrewm.codes/blog/how-to-install-ruby-on-rails-6-1-with-asdf-on-macos-big-sur/",
+      "like-of": "https://andrewm.codes/blog/how-to-install-ruby-on-rails-6-1-with-asdf-on-macos-big-sur/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Srinath",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/cde26d40acce6165f7a8d7b227a3d660b11a451bad564f2a287cf92e57756935.jpg",
+        "url": "https://twitter.com/vsrnth"
+      },
+      "url": "https://twitter.com/andrewmcodes/status/1364923863482646528#favorited-by-2870452211",
+      "published": null,
+      "wm-received": "2021-02-25T19:41:22Z",
+      "wm-id": 1047313,
+      "wm-source": "https://brid.gy/like/twitter/andrewmcodes/1364923863482646528/2870452211",
+      "wm-target": "https://andrewm.codes/blog/how-to-install-ruby-on-rails-6-1-with-asdf-on-macos-big-sur/",
+      "like-of": "https://andrewm.codes/blog/how-to-install-ruby-on-rails-6-1-with-asdf-on-macos-big-sur/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Gustavo Valenzuela",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/9acb623d40a2d6c9d2fa0218db426f7f6f3ecb13698b187a7509b766d68f423d.jpg",
+        "url": "https://twitter.com/GV1180"
+      },
+      "url": "https://twitter.com/andrewmcodes/status/1364923863482646528#favorited-by-277304272",
+      "published": null,
+      "wm-received": "2021-02-25T19:41:22Z",
+      "wm-id": 1047314,
+      "wm-source": "https://brid.gy/like/twitter/andrewmcodes/1364923863482646528/277304272",
+      "wm-target": "https://andrewm.codes/blog/how-to-install-ruby-on-rails-6-1-with-asdf-on-macos-big-sur/",
+      "like-of": "https://andrewm.codes/blog/how-to-install-ruby-on-rails-6-1-with-asdf-on-macos-big-sur/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Jared White",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/48e06d3378c3c9228498f6ec2a0eab9d7db8e8f58bf45a4e03f7bc3dfd948e6b.jpg",
+        "url": "https://twitter.com/jaredcwhite"
+      },
+      "url": "https://twitter.com/andrewmcodes/status/1364923863482646528#favorited-by-18657020",
+      "published": null,
+      "wm-received": "2021-02-25T19:41:21Z",
+      "wm-id": 1047311,
+      "wm-source": "https://brid.gy/like/twitter/andrewmcodes/1364923863482646528/18657020",
+      "wm-target": "https://andrewm.codes/blog/how-to-install-ruby-on-rails-6-1-with-asdf-on-macos-big-sur/",
+      "like-of": "https://andrewm.codes/blog/how-to-install-ruby-on-rails-6-1-with-asdf-on-macos-big-sur/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Benjamin Curtis",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/58fb79506a99ea50ec9214bef6e1773014e6eaa085ffc0ba59147fcf082b955e.jpg",
+        "url": "https://twitter.com/stympy"
+      },
+      "url": "https://twitter.com/andrewmcodes/status/1364923863482646528#favorited-by-14734363",
+      "published": null,
+      "wm-received": "2021-02-25T19:41:21Z",
+      "wm-id": 1047312,
+      "wm-source": "https://brid.gy/like/twitter/andrewmcodes/1364923863482646528/14734363",
+      "wm-target": "https://andrewm.codes/blog/how-to-install-ruby-on-rails-6-1-with-asdf-on-macos-big-sur/",
+      "like-of": "https://andrewm.codes/blog/how-to-install-ruby-on-rails-6-1-with-asdf-on-macos-big-sur/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Collin",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/e9f021ce092a61efff42e60dd585656620168ab3fad922ff83d22c1062c51931.jpg",
+        "url": "https://twitter.com/collin_jilbert"
+      },
+      "url": "https://twitter.com/andrewmcodes/status/1364923863482646528#favorited-by-1199000473807867904",
+      "published": null,
+      "wm-received": "2021-02-25T19:41:20Z",
+      "wm-id": 1047309,
+      "wm-source": "https://brid.gy/like/twitter/andrewmcodes/1364923863482646528/1199000473807867904",
+      "wm-target": "https://andrewm.codes/blog/how-to-install-ruby-on-rails-6-1-with-asdf-on-macos-big-sur/",
+      "like-of": "https://andrewm.codes/blog/how-to-install-ruby-on-rails-6-1-with-asdf-on-macos-big-sur/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Adrian Valenzuela",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/1afd8ad3cceb78f77ff4aa8f4bf16b3f08cbb868f6d43b9e75ac95217b3b1459.jpg",
+        "url": "https://twitter.com/adrianvalenz_"
+      },
+      "url": "https://twitter.com/andrewmcodes/status/1364923863482646528#favorited-by-19677959",
+      "published": null,
+      "wm-received": "2021-02-25T19:41:20Z",
+      "wm-id": 1047310,
+      "wm-source": "https://brid.gy/like/twitter/andrewmcodes/1364923863482646528/19677959",
+      "wm-target": "https://andrewm.codes/blog/how-to-install-ruby-on-rails-6-1-with-asdf-on-macos-big-sur/",
+      "like-of": "https://andrewm.codes/blog/how-to-install-ruby-on-rails-6-1-with-asdf-on-macos-big-sur/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Frankyston Lins (FlyntTv)",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/1ebb248c1b4899b359171add14f08f6f87b195e67287bf0e7df0fffef45cd820.jpg",
+        "url": "https://twitter.com/frankyston"
+      },
+      "url": "https://twitter.com/andrewmcodes/status/1364923863482646528#favorited-by-94371616",
+      "published": null,
+      "wm-received": "2021-02-25T19:41:19Z",
+      "wm-id": 1047308,
+      "wm-source": "https://brid.gy/like/twitter/andrewmcodes/1364923863482646528/94371616",
+      "wm-target": "https://andrewm.codes/blog/how-to-install-ruby-on-rails-6-1-with-asdf-on-macos-big-sur/",
+      "like-of": "https://andrewm.codes/blog/how-to-install-ruby-on-rails-6-1-with-asdf-on-macos-big-sur/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Señor 朱利安 Cheal 🏳️‍🌈 🌮",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/539a5621f6d57c9824b7afba6491dcc67cc6b0cb5c3fecda2c8ef21c69939d82.jpg",
+        "url": "https://twitter.com/juliancheal"
+      },
+      "url": "https://twitter.com/andrewmcodes/status/1364923863482646528#favorited-by-951511",
+      "published": null,
+      "wm-received": "2021-02-25T19:41:18Z",
+      "wm-id": 1047307,
+      "wm-source": "https://brid.gy/like/twitter/andrewmcodes/1364923863482646528/951511",
+      "wm-target": "https://andrewm.codes/blog/how-to-install-ruby-on-rails-6-1-with-asdf-on-macos-big-sur/",
+      "like-of": "https://andrewm.codes/blog/how-to-install-ruby-on-rails-6-1-with-asdf-on-macos-big-sur/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Mikel Kew",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/097cea5a9bc95a937ba7673a8fcf4a25e1c176a837e257af788eeda8ad4df76e.jpg",
+        "url": "https://twitter.com/MikelKew"
+      },
+      "url": "https://twitter.com/andrewmcodes/status/1364923863482646528#favorited-by-2326234676",
+      "published": null,
+      "wm-received": "2021-02-25T19:41:17Z",
+      "wm-id": 1047305,
+      "wm-source": "https://brid.gy/like/twitter/andrewmcodes/1364923863482646528/2326234676",
+      "wm-target": "https://andrewm.codes/blog/how-to-install-ruby-on-rails-6-1-with-asdf-on-macos-big-sur/",
+      "like-of": "https://andrewm.codes/blog/how-to-install-ruby-on-rails-6-1-with-asdf-on-macos-big-sur/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Marco Roth",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/131924fd18f25e31faeb6ee1b51d0df1b857c48f87f8e5556cfaf0e07d051d13.jpg",
+        "url": "https://twitter.com/marcoroth_"
+      },
+      "url": "https://twitter.com/andrewmcodes/status/1364923863482646528#favorited-by-422477383",
+      "published": null,
+      "wm-received": "2021-02-25T19:41:17Z",
+      "wm-id": 1047306,
+      "wm-source": "https://brid.gy/like/twitter/andrewmcodes/1364923863482646528/422477383",
+      "wm-target": "https://andrewm.codes/blog/how-to-install-ruby-on-rails-6-1-with-asdf-on-macos-big-sur/",
+      "like-of": "https://andrewm.codes/blog/how-to-install-ruby-on-rails-6-1-with-asdf-on-macos-big-sur/",
+      "wm-property": "like-of",
+      "wm-private": false
+    }
+  ]
+}
