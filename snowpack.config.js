@@ -9,7 +9,6 @@ module.exports = {
   },
   plugins: [
     "@snowpack/plugin-dotenv",
-    "@snowpack/plugin-postcss",
     [
       "@snowpack/plugin-run-script",
       {
@@ -18,6 +17,7 @@ module.exports = {
         watch: "$1 --watch --quiet",
       },
     ],
+    "@snowpack/plugin-postcss",
     [
       "snowpack-plugin-minify-html",
       {
@@ -43,7 +43,7 @@ module.exports = {
     hmrDelay: 1100,
   },
   optimize: {
-    bundle: true,
+    bundle: false,
     manifest: true,
     minify: true,
     target: "es2020",
