@@ -2,11 +2,31 @@
 title: Andrew Mason
 url: https://andrewm.codes
 domain: andrewm.codes
-tagline: andrewm.codes
-description: >-
-  Hey! I'm Andrew Mason, a Ruby on Rails software engineer. I blog about Rails, host Ruby podcasts, and ramble on Twitter about development. All saved here!
+repo: https://github.com/andrewmcodes/andrewm-codes-website
+description: Andrew Mason is a professional full-stack Ruby on Rails developer and host of the RemoteRuby podcast.
 keywords: "ruby, ruby on rails, tailwind css, bridgetown"
 theme_color: "#3b83f6"
+lang: en
+locale: en_US
+
+author:
+  name: Andrew Mason
+  email: support@andrewm.codes
+  avatar: https://res.cloudinary.com/andrewmcodes/image/upload/c_scale,q_auto,r_30,w_160/v1613199598/twitter-avatar.png
+  social:
+    twitter:
+      name: "@andrewmcodes"
+      url: https://twitter.com/andrewmcodes
+    github:
+      name: andrewmcodes
+      url: https://github.com/andrewmcodes
+    codepen:
+      name: andrewmcodes
+      url: https://codepen.io/andrewmcodes
+    dribbble:
+      name: andrewmcodes
+      url: https://dribbble.com/andrewmcodes
+
 feed:
   subtitle: RSS Feed for andrewm.codes
   filename: feed.xml
@@ -16,11 +36,3 @@ feed:
 json_feed:
   path: /feed/feed.json
   url: https://andrewm.codes/feed/feed.json
-
-author:
-  name: Andrew Mason
-  twitter: andrewmcodes
-
-twitter:
-  username: andrewmcodes
-  card: summary_large_image
