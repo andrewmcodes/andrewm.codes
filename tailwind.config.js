@@ -43,32 +43,10 @@ module.exports = {
       mono: ["JetBrains Mono", ...defaultTheme.fontFamily.mono],
     },
     extend: {
-      typography: () => ({
-        DEFAULT: {
-          css: {
-            blockQuote: {
-              fontWeight: "400",
-            },
-            img: {
-              borderRadius: "8px",
-            },
-            h4: {
-              fontSize: "1.5rem",
-              fontWeight: "800",
-            },
-            h5: {
-              fontSize: "1.3rem",
-              marginTop: "2.5rem",
-              marginBottom: "-0.75rem",
-            },
-            a: {
-              fontWeight: "600",
-            },
-          },
-        },
-      }),
       colors: {
-        "gray-1000": "#050505",
+        gray: {
+          1000: "#050505",
+        },
       },
     },
   },
