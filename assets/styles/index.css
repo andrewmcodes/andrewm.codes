@@ -170,6 +170,7 @@
     h6,
     table,
     strong,
+    li,
     b {
       @apply text-gray-1000 dark:text-gray-100;
     }
