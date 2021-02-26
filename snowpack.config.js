@@ -9,7 +9,6 @@ module.exports = {
   },
   plugins: [
     "@snowpack/plugin-dotenv",
-    "@snowpack/plugin-postcss",
     [
       "@snowpack/plugin-run-script",
       {
@@ -18,6 +17,7 @@ module.exports = {
         watch: "$1 --watch --quiet",
       },
     ],
+    "@snowpack/plugin-postcss",
     [
       "snowpack-plugin-minify-html",
       {
