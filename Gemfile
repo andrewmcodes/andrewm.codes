@@ -6,11 +6,18 @@ gem "classifier-reborn", "~> 2.2"
 gem "htmlbeautifier", "~> 1.3", group: :development
 
 group :bridgetown_plugins do
-  gem "pry"
   gem "opt_struct", "~> 1.1"
   gem "httparty"
   gem "graphtown", "~> 1.0"
   gem "sanitize", "~> 5.2"
   gem "bridgetown-feed", "~> 1.1"
   gem "bridgetown-plausible"
+  gem "dry-struct"
+end
+
+group :development, :test do
+  gem "pry"
+  gem "gqli"
+  gem 'dotenv', '~> 2.7', '>= 2.7.6'
+  gem 'contentful-management'
 end
