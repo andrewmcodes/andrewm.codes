@@ -1,0 +1,14 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title><%= title page %></title>
+  <%= render "preloads" %>
+  <%= render "meta" %>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" data-turbo-track="reload" href="<%= absolute_url('styles/index.css') %>">
+  <noscript>
+    <link rel="stylesheet" data-turbo-track="reload" type="text/css" href="<%= absolute_url('styles/syntax.css') %>">
+  </noscript>
+  <script type="module" data-turbo-track="reload" src="<%= absolute_url 'scripts/index.js' %>"></script>
+</head>

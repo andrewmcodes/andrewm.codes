@@ -46,7 +46,7 @@ module.exports = {
       3: 3,
     },
     fontFamily: {
-      sans: ["Inter var", ...defaultTheme.fontFamily.sans],
+      sans: ["Inter", ...defaultTheme.fontFamily.sans],
       mono: ["JetBrains Mono", ...defaultTheme.fontFamily.mono],
     },
     extend: {
