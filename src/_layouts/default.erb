@@ -16,6 +16,7 @@
   <body class="flex flex-col min-h-screen w-full antialiased <%= class_map "debug-screens": Bridgetown.env.development? %>">
     <a href="#main" class="sr-only">skip to main content</a>
     <%= render "nav", links: site.data.links.select { |l| l if l.nav } %>
+    <%= render "alert" %>
     <main class="flex-1 w-full px-4 mt-16" role="main" id="main">
       <%= yield %>
       <%= render "newsletter" %>

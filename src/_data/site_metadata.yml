@@ -12,7 +12,7 @@ locale: en_US
 author:
   name: Andrew Mason
   email: support@andrewm.codes
-  avatar: https://res.cloudinary.com/andrewmcodes/image/upload/c_scale,q_auto,r_30,w_160/v1613199598/twitter-avatar.png
+  avatar: https://res.cloudinary.com/andrewmcodes/image/upload/c_fill,h_160,q_auto,r_0,w_160/v1615329977/andrewm.codes/twitter_avatar.webp
   social:
     twitter:
       name: "@andrewmcodes"
