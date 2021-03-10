@@ -1,7 +1,6 @@
 <%# Preloads in Production %>
 <% unless Bridgetown.env.development? %>
   <link rel="preconnect" href="/" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
   <link rel="preload" as="style" href="<%= absolute_url 'styles/index.css' %>" crossorigin>
-  <link rel="preload" as="font" type="font/woff2" href="<%= absolute_url 'fonts/Inter.var.woff2' %>" crossorigin>
-  <link rel="preload" as="font" type="font/woff2" href="<%= absolute_url 'fonts/JetBrainsMono-Regular.woff2' %>" crossorigin>
 <% end %>
