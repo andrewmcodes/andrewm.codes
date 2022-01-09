@@ -33,14 +33,10 @@ yarn-debug.log*
 .pnp.js
 # Yarn Integrity file
 .yarn-integrity
-build
-.env.production
 
-.bridgetown/**/*
-!.bridgetown/.placeholder
-tmp
-_bridgetown
-.snowpack
+# Added
+.bridgetown-build
+.obsidian
+src/templates
 
 .vercel
-.eslintcache

@@ -1,0 +1,17 @@
+---
+permalink: /manifest.webmanifest
+layout: none
+---
+{
+  "name": "<%= site.metadata.title %>",
+  "short_name": "<%= site.data.authors.andrew.name %>",
+  "description": "<%= site.metadata.description %>",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "<%= site.metadata.background_color %>",
+  "theme_color": "<%= site.metadata.theme_color %>",
+  "icons": [
+    { "src": "/icon-192.png", "type": "image/png", "sizes": "192x192" },
+    { "src": "/icon-512.png", "type": "image/png", "sizes": "512x512" }
+  ]
+}

@@ -1,0 +1,12 @@
+fix: true
+parallel: true
+format: progress
+
+ignore:
+  - ".bridgetown-build/**/*"
+  - "node_modules/**/*"
+  - ".github/**/*"
+  - ".obsidian/**/*"
+  - ".vscode/**/*"
+  - "src/**/*":
+      - Layout/LeadingCommentSpace
