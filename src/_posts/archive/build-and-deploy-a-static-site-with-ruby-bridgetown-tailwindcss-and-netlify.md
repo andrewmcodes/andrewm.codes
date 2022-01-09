@@ -1,8 +1,8 @@
 ---
-series: ''
+series: null
 featured: false
 title: 'Build and deploy a static site with Ruby, Bridgetown, TailwindCSS, and Netlify'
-description: Heads up! This post is a bit outdated.    Demo Repository Demo Website            What is Bridgetown...
+description: Heads up! This post is a bit outdated.
 urls:
   dev_to: 'https://dev.to/andrewmcodes/build-and-deploy-a-static-site-with-ruby-bridgetown-tailwindcss-and-netlify-3934'
 tags:

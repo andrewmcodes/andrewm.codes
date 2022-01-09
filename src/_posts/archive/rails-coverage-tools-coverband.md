@@ -1,5 +1,5 @@
 ---
-series: ''
+series: null
 featured: false
 title: 'Rails Coverage Tools: Coverband'
 description: 'Coverband   According to their documentation, Coverband is:   A gem to measure production co...'

@@ -10,18 +10,16 @@
 
   <div class="flex flex-col space-y-4">
     <dl class="space-y-4">
-      <% resource.taxonomies.series.terms.each do |term| %>
-        <div class="space-y-2">
-          <dt class="text-sm text-skin-muted">
-            Tags
-          </dt>
-          <dd class="flex space-x-2 text-sm text-skin">
-            <% resource.taxonomies.tag.terms.each do |term| %>
-              <%= render Badge.new(href: "/tags/#{term.label}/").with_content(term.label) %>
-            <% end if resource.taxonomies.tag %>
-          </dd>
-        </div>
-      <% end %>
+      <div class="space-y-2">
+        <dt class="text-sm text-skin-muted">
+          Tags
+        </dt>
+        <dd class="flex space-x-2 text-sm text-skin">
+          <% resource.taxonomies.tag.terms.each do |term| %>
+            <%= render Badge.new(href: "/tags/#{term.label}/").with_content(term.label) %>
+          <% end if resource.taxonomies.tag %>
+        </dd>
+      </div>
       <% resource.taxonomies.series.terms.each do |term| %>
         <div class="space-y-2">
           <dt class="text-sm text-skin-muted">

@@ -1,5 +1,5 @@
 ---
-series: ''
+series: null
 featured: false
 title: Creating a blog with Bridgetown and Netlify CMS
 description: This is a quick tutorial to showcase how you can quickly integrate Netlify CMS into your Bridgetown s...

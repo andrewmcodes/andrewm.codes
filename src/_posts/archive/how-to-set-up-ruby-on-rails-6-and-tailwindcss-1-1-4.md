@@ -1,5 +1,5 @@
 ---
-series: ''
+series: null
 featured: false
 title: How to set up Ruby on Rails 6 and TailwindCSS 1.1.4
 description: 'Tutorial   For the purpose of this tutorial, we will assume you have Ruby and the Rails gem...'

@@ -1,5 +1,5 @@
 ---
-series: ''
+series: null
 featured: false
 title: 15 Resources I Learned Something From This Weekend
 description: I wanted to get a lot of writing done this weekend but unfortunately I had to take care of a cranky a...

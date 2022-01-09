@@ -1,5 +1,5 @@
 ---
-series: ''
+series: null
 featured: false
 title: 'Redesigning my website '
 description: My personal website - andrewm.codes has gone through many iterations over the years. Some may view my...

@@ -1,5 +1,5 @@
 ---
-series: ''
+series: null
 featured: false
 title: Use Tailwind CSS 1.1 in your Rails App
 description: How to install Tailwind CSS 1.1 in a Ruby on Rails app.

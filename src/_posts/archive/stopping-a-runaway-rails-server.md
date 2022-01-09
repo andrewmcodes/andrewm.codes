@@ -1,5 +1,5 @@
 ---
-series: ''
+series: null
 featured: false
 title: Stopping a runaway Rails server
 description: 'Many of us have been there. You hit ctrl-c on you Ruby on Rails server, but nothing happens. No matte...'

@@ -1,5 +1,5 @@
 ---
-series: ''
+series: null
 featured: true
 title: 'Rails 6 Band-Aid for Webpacker::Manifest::MissingEntryError'
 description: 'At CodeFund, we try to keep our dependencies, including Rails, as up to date as possible. We upgraded...'

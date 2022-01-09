@@ -1,5 +1,5 @@
 ---
-series: ''
+series: null
 featured: false
 title: gem install mysql2
 description: I've come across this error several times throughout my development career so I figured it was finall...
@@ -12,7 +12,7 @@ tags:
   - gem
 categories: tutorial
 date: '2020-12-11T12:20:02Z'
-lastmod: '2022-01-09T13:35:44.555Z'
+lastmod: '2022-01-09T18:41:43.738Z'
 ---
 
 I've come across this error several times throughout my development career so I figured it was finally time to write it down.

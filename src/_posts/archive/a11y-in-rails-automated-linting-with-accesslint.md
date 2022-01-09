@@ -1,5 +1,5 @@
 ---
-series: ''
+series: null
 featured: false
 title: "A11Y in Rails: Automated Linting with AccessLint\U0001F389"
 description: 'Accessibility (A11Y) testing cannot be fully automated, and requires special attention in order to ge...'

@@ -1,5 +1,5 @@
 ---
-series: ''
+series: null
 featured: false
 title: How to Unhide Desktop Icons on macOS
 description: 'If your desktop icons dissapear, you may need to toggle the desktop on via the command line.'
@@ -9,7 +9,7 @@ tags:
   - alfred
 category: til
 date: '2021-06-05T11:22:38-07:00'
-lastmod: '2022-01-09T13:45:03.917Z'
+lastmod: '2022-01-09T18:39:05.301Z'
 ---
 
 One day I realized all of the desktop icons on my 2019 MacBook Pro were missing, but still visible in Finder. I thought maybe it was a bug in Big Sur 11.4 but I eventually found the solution.

@@ -1,5 +1,5 @@
 ---
-series: ''
+series: null
 featured: false
 title: 'Rails Coverage Tools: CodeFactor'
 description: 'CodeFactor   According to their documentation:   CodeFactor instantly performs Code Review w...'

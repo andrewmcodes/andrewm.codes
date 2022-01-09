@@ -1,5 +1,5 @@
 ---
-series: ''
+series: null
 featured: false
 title: Automating Ruby Gem Releases with GitHub Actions
 description: 'Whether you are a gem maintaining machine or new to the world of authoring gems, this tutorial is for...'

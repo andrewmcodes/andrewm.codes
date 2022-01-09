@@ -1,8 +1,8 @@
 ---
-series: ''
+series: ci-for-ror
 featured: false
 title: 'CI for Ruby on Rails: GitHub Actions vs. CircleCI'
-description: 'CI for Ruby on Rails: GitHub Actions vs. CircleCI   This is part of a three part series wher...'
+description: 'CI for Ruby on Rails: GitHub Actions vs. CircleCI.'
 urls:
   dev_to: 'https://dev.to/codefund/ci-for-ruby-on-rails-github-actions-vs-circleci-524p'
 tags:
@@ -12,10 +12,8 @@ tags:
   - github
 categories: tutorial
 date: '2020-01-17T06:57:38Z'
-lastmod: '2022-01-09T13:40:38.388Z'
+lastmod: '2022-01-09T18:40:11.097Z'
 ---
-
-# CI for Ruby on Rails: GitHub Actions vs. CircleCI
 
 _This is part of a three part series where I will walk you through setting up your CI suite with GitHub Actions, CircleCI, and then comparing which you may want to use if you are setting up continuous integration for your Rails app._
 

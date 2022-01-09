@@ -1,5 +1,5 @@
 ---
-series: ''
+series: ci-for-ror
 featured: false
 title: 'CI for Ruby on Rails: CircleCI'
 description: 'CI for Ruby on Rails: GitHub Actions vs. CircleCI   This is part of a three part series wher...'
@@ -12,7 +12,7 @@ tags:
   - circleci
 categories: tutorial
 date: '2020-01-17T06:51:53Z'
-lastmod: '2022-01-09T13:35:38.103Z'
+lastmod: '2022-01-09T18:39:45.286Z'
 ---
 
 _This is part of a three part series where I will walk you through setting up your CI suite with GitHub Actions, CircleCI, and then comparing which you may want to use if you are setting up continuous integration for your Rails app._

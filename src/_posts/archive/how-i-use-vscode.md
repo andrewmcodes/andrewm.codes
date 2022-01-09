@@ -1,5 +1,5 @@
 ---
-series: ''
+series: null
 featured: false
 title: How I Use VSCode
 description: I’m about to overhaul my settings and plugins in VSCode so this is my “before” shot.   I recently upd...

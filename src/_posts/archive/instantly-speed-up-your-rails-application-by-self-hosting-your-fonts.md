@@ -1,5 +1,5 @@
 ---
-series: ''
+series: null
 featured: false
 title: Instantly speed up your Rails application by self-hosting your fonts
 description: Instantly speed up your Rails application by self-hosting your fonts   A font can make or br...

@@ -1,5 +1,5 @@
 ---
-series: ''
+series: null
 featured: false
 title: 8 Tailwind CSS resources to help your next project takeoff
 description: 'Let''s face it, no matter whether its our first or hundredth time, staring at a blank Tailwind CSS is...'

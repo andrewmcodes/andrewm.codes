@@ -1,5 +1,5 @@
 ---
-series: ''
+series: null
 featured: false
 title: How to inline SVG files in your Bridgetown site
 description: This is a short tutorial to showcase how you can quickly integrate bridgetown-inline-svg into your Br...
