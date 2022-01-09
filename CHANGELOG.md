@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.0.1](https://github.com/andrewmcodes/andrewm-codes-website/compare/v2.0.0...v2.0.1) (2022-01-09)
+
+
+### Bug Fixes
+
+* use bridgetown url in production ([#65](https://github.com/andrewmcodes/andrewm-codes-website/issues/65)) ([a3d2c5a](https://github.com/andrewmcodes/andrewm-codes-website/commit/a3d2c5afa941889e682aa07b7533d200616afd29)), closes [#64](https://github.com/andrewmcodes/andrewm-codes-website/issues/64)
+
 ## [2.0.0](https://github.com/andrewmcodes/andrewm-codes-website/compare/v1.0.0...v2.0.0) (2022-01-09)
 
 
