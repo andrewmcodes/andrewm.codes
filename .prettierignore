@@ -1,8 +1,10 @@
-_bridgetown
-.bridgetown-cache
-.bridgetown-webpack
+src/_posts/archive/**/*.md
 output
+.bridgetown-build
+.obsidian
+.vercel
 node_modules
-build
-.snowpack
-vendor
+.vscode
+.husky
+Gemfile
+yarn.lock

@@ -1,8 +1,0 @@
-/* TEAM */
-	Name: Andrew Mason
-	Site: https://andrewm.codes
-	Twitter: @andrewmcodes
-  GitHub: @andrewmcodes
-
-/* SITE */
-  Doctype: HTML5

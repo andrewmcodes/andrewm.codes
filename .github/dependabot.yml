@@ -1,15 +1,18 @@
----
 version: 2
 updates:
-  - package-ecosystem: "github-actions"
+  # Yarn
+  - package-ecosystem: "npm"
     directory: "/"
     schedule:
-      interval: "daily"
-  - package-ecosystem: npm
-    directory: "/javascript"
+      interval: "weekly"
+    open-pull-requests-limit: 3
+    assignees:
+      - andrewmcodes
+  # Bundler
+  - package-ecosystem: "bundler"
+    directory: "/"
     schedule:
-      interval: daily
-  - package-ecosystem: bundler
-    directory: "/ruby"
-    schedule:
-      interval: weekly
+      interval: "weekly"
+    open-pull-requests-limit: 3
+    assignees:
+      - andrewmcodes

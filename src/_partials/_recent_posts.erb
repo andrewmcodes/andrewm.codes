@@ -1,0 +1,8 @@
+<%= render ListComponent.new do |l| %>
+  <% collections.posts.resources.take(3).each do |post| %>
+    <%= l.post(
+      url: post.relative_url,
+      title: post.data.title,
+    )%>
+  <% end %>
+<% end %>

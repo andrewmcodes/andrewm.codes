@@ -1,0 +1,16 @@
+---
+permalink: /sitemap.xml
+layout: none
+no_index: true
+---
+
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <% site.resources.find_all{ |r| !r.data.no_index && r.layout }.each do |resource| %>
+    <% lastmod = resource.data.lastmod || resource.data.date || Time.now.to_s %>
+    <url>
+        <loc><%= resource.absolute_url %></loc>
+        <lastmod><%= Bridgetown::Utils.parse_date(lastmod).strftime("%Y-%m-%d") %></lastmod>
+    </url>
+  <% end %>
+</urlset>

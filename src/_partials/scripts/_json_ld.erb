@@ -1,0 +1,21 @@
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org"
+    "@type": "BlogPosting",
+    "@id": "<%= url %>",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "<%= url %>"
+    },
+    "headline": "<%= title %>",
+    "description": "<%= description %>",
+    "url": "<%= url %>",
+    "author": {
+      "@type": "Person",
+      "name": "<%= site.data.authors.andrew.name %>",
+      "url": "<%= site.metadata.url %>"
+    },
+    "dateModified": "<%= lastmod %>",
+    "datePublished": "<%= date %>"
+  }
+</script>

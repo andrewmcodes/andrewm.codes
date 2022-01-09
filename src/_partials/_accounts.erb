@@ -1,0 +1,11 @@
+<%= render Container.new do %>
+  <%= render ListComponent.new do |l| %>
+    <% site.data.raindrop.accounts.items.each do |account| %>
+      <%= l.tile(
+            url: account.link,
+            title: account.title,
+            image: account&.cover,
+            clamp: false) %>
+    <% end %>
+  <% end %>
+<% end %>

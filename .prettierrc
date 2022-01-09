@@ -1,9 +1,1 @@
-{
-  "arrowParens": "always",
-  "printWidth": 120,
-  "rubySingleQuote": false,
-  "rubyToProc": true,
-  "semi": false,
-  "singleQuote": false,
-  "trailingComma": "all"
-}
+"@andrewmcodes/prettier-config"

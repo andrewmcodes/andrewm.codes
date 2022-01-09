@@ -1,38 +1,44 @@
----
-title: Andrew Mason
-url: https://andrewm.codes
-domain: andrewm.codes
-repo: https://github.com/andrewmcodes/andrewm-codes-website
-description: Andrew Mason is a professional full-stack Ruby on Rails developer and host of the RemoteRuby podcast.
-keywords: "ruby, ruby on rails, tailwind css, bridgetown"
-theme_color: "#3b83f6"
-lang: en
-locale: en_US
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.metadata.title }}, {{ site.metadata.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.metadata.myvariable }}.
 
-author:
-  name: Andrew Mason
-  email: support@andrewm.codes
-  avatar: https://res.cloudinary.com/andrewmcodes/image/upload/c_fill,h_160,q_auto,r_0,w_160/v1615329977/andrewm.codes/twitter_avatar.webp
-  social:
-    twitter:
-      name: "@andrewmcodes"
-      url: https://twitter.com/andrewmcodes
-    github:
-      name: andrewmcodes
-      url: https://github.com/andrewmcodes
-    codepen:
-      name: andrewmcodes
-      url: https://codepen.io/andrewmcodes
-    dribbble:
-      name: andrewmcodes
-      url: https://dribbble.com/andrewmcodes
+version: 0.0.1
+
+charset: utf-8
+lang: en
+direction: ltr
+
+domain: andrewm.codes
+url: https://andrewm.codes/
+repo: andrewmcodes/andrewm-codes-website
+
+title: Andrew Mason
+tagline: " « andrewm.codes"
+description: >-
+  Full stack Ruby on Rails software engineer, podcaster, and creator, living in Phoenix.
+
+theme_color:
+  light: "#fafafa"
+  dark: "#171717"
 
 feed:
   subtitle: RSS Feed for andrewm.codes
   filename: feed.xml
-  path: /feed/feed.xml
+  path: /feed.xml
   id: "https://andrewm.codes"
 
 json_feed:
-  path: /feed/feed.json
-  url: https://andrewm.codes/feed/feed.json
+  path: /feed.json
+  url: https://andrewm.codes/feed.json
+
+twitter:
+  username: "@andrewmcodes"
+  card: "summary_large_image"
+  url: https://twitter.com/andrewmcodes/
+
+alert:
+  level: warning
+  message: >-
+    Site is under renovation and you may experience weirdness.

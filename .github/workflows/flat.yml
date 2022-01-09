@@ -1,0 +1,30 @@
+name: data
+on:
+  schedule:
+    - cron: 0 0 * * *
+  workflow_dispatch: {}
+  push:
+    paths:
+      - .github/workflows/flat.yml
+jobs:
+  scheduled:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup deno
+        uses: denoland/setup-deno@main
+        with:
+          deno-version: v1.x
+      - name: Check out repo
+        uses: actions/checkout@v2
+      - name: Fetch data
+        uses: githubocto/flat@v3
+        with:
+          http_url: https://api.raindrop.io/rest/v1/raindrops/17535508
+          downloaded_filename: src/_data/raindrop/accounts.json
+          authorization: Bearer ${{ secrets.RAINDROP_TOKEN }}
+      - name: Fetch data
+        uses: githubocto/flat@v3
+        with:
+          http_url: https://api.raindrop.io/rest/v1/raindrops/22341884
+          downloaded_filename: src/_data/raindrop/reading_list.json
+          authorization: Bearer ${{ secrets.RAINDROP_TOKEN }}
