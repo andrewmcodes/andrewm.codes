@@ -46,7 +46,7 @@
   "scripts": {
     "prepare": "husky install",
     "start": "NODE_ENV=development yarn watch:snowpack",
-    "build": "yarn build:bridgetown && NODE_ENV=production yarn build:snowpack",
+    "build": "BRIDGETOWN_ENV=production yarn build:bridgetown && BRIDGETOWN_ENV=production NODE_ENV=production yarn build:snowpack",
     "format": "yarn format:ruby && yarn format:prettier",
     "clean": "bundle exec bridgetown clean && rm -rf output",
     "update": "yarn update:cssdb && yarn update:deps",

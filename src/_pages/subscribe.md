@@ -20,7 +20,7 @@ lastmod: "2022-01-09T17:08:50.538Z"
 - [Ruby Radar](https://rubyradar.dev)
 - [Personal Newsletter](https://newsletter.andrewm.codes)
 
-## Elsewhere
+## Accounts
 
 Elsewhere, you can usually find me as `andrewmcodes`. Here are some places I am active:
 

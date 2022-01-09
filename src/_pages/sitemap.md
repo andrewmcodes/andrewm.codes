@@ -4,32 +4,33 @@ description: Information about this website.
 permalink: /sitemap/
 no_index: false
 date: "2021-12-20T21:27:36-07:00"
-lastmod: "2022-01-09T14:25:51.858Z"
+lastmod: "2022-01-09T18:32:47.186Z"
 ---
 
 ## Collections
 
-- [Posts](/posts/)
+- [Accounts](/subscribe/#accounts)
+- [CFPs](/speaking/#cfps)
 - [Podcasts](/podcasts/)
+- [Posts](/posts/)
+- [Reading List](/reading-list/)
 
 ## Pages
 
 - [Home](/)
 - [About](/about/)
-- [Subscribe](/subscribe/)
 - [Newsletter](/newsletter/)
+- [Privacy Policy](/privacy/)
 - [Projects](/projects/)
 - [Speaking](/speaking/)
+- [Subscribe](/subscribe/)
 - [Uses](/uses/)
-- [Privacy Policy](/privacy/)
 
 ## Meta
 
 - [404](/404/)
 - [Sitemap](/sitemap/)
 - [Analytics](/analytics/)
-- [Sitemap (XML)](/sitemap.xml)
-- [Robots](/robots.txt)
 
 ---
 
