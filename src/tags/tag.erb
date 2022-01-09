@@ -1,0 +1,15 @@
+---
+layout: page
+title: "Tag: :prototype-term"
+prototype:
+  term: tag
+  collection: posts
+---
+
+<%= render Container.new do %>
+  <%= render ListComponent.new do |l| %>
+    <% paginator.resources.each do |post| %>
+      <%= l.post(url: post.relative_url, title: post.data.title, description: post.data.description) %>
+    <% end %>
+  <% end %>
+<% end %>

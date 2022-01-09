@@ -1,0 +1,37 @@
+{
+  "result": true,
+  "items": [
+    {
+      "excerpt": "New tagged article on Inoreader. How to Debug Ruby Performance Issues Using Profiling - https://ift.tt/3q8ImNR",
+      "type": "article",
+      "cover": "https://res.cloudinary.com/practicaldev/image/fetch/s--1JNRTJed--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://user-images.githubusercontent.com/23323466/135726784-0c367d3f-c9e5-4e3f-91be-761d4d6d21b1.gif",
+      "tags": ["Ruby Blogs", "ruby", "2022-public-reading-list"],
+      "removed": false,
+      "_id": 350221109,
+      "link": "https://dev.to/ryan_perry_aa806d7a49198e/how-to-debug-ruby-performance-issues-using-profiling-2210",
+      "collection": { "$ref": "collections", "$id": 22341884, "$db": "" },
+      "title": "How to Debug Ruby Performance Issues Using Profiling",
+      "created": "2022-01-09T17:04:00.000Z",
+      "media": [
+        {
+          "type": "image",
+          "link": "https://res.cloudinary.com/practicaldev/image/fetch/s--1JNRTJed--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://user-images.githubusercontent.com/23323466/135726784-0c367d3f-c9e5-4e3f-91be-761d4d6d21b1.gif"
+        }
+      ],
+      "user": { "$ref": "users", "$id": 533255, "$db": "" },
+      "lastUpdate": "2022-01-09T17:04:52.647Z",
+      "domain": "dev.to",
+      "creatorRef": {
+        "avatar": "https://up.raindrop.io/user/avatars/533/255/A5274595_33_DC_403_C_B4_C3_EB_3707_F01423.jpeg",
+        "_id": 533255,
+        "name": "andrewmcodes",
+        "email": ""
+      },
+      "sort": 350221109,
+      "cache": { "status": "ready", "size": 2414466, "created": "2022-01-09T17:32:37.596Z" },
+      "collectionId": 22341884
+    }
+  ],
+  "count": 1,
+  "collectionId": 22341884
+}

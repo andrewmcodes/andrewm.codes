@@ -1,0 +1,8 @@
+<%= render ListComponent.new do |l| %>
+  <% site.data.jobs.each do |hist| %>
+    <%= l.item do %>
+      <%= render Heading.new(level: 3).with_content(hist.title) %>
+      <%= render Text.new(skin: :muted).with_content([hist.company_name, hist.timeline].join(" // ")) %>
+    <% end %>
+  <% end %>
+<% end %>

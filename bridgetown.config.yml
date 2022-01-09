@@ -1,20 +1,47 @@
-destination: _bridgetown
-development:
-  url: "http://localhost:8080"
-  graphql_endpoint: http://localhost:1337/graphql
-url: "https://andrewm.codes"
-graphql_endpoint: https://andrewmcodes.herokuapp.com/graphql
-lsi: true
-permalink: simple
-template_engine: erb
-timezone: America/New_York
+# https://www.bridgetownrb.com/docs/resources
 
-defaults:
-  - scope:
-      path: ""
-    values:
-      layout: "default"
-      image: /images/twitter-card.png
+url: "andrewm.codes"
+timezone: America/Phoenix
+destination: ".bridgetown-build"
+template_engine: erb
+permalink: simple
+content_engine: resource
+
+collections:
+  newsletter:
+    output: true
+    permalink: "/:slug/"
+  pages:
+    permalink: "/:slug/"
+  posts:
+    permalink: "/:slug/"
+    sort_by: date
+    sort_direction: descending
+  podcasts:
+    output: false
+    relations:
+      has_many: podcast_episodes
+  podcast_episodes:
+    output: false
+    relations:
+      belongs_to: podcast
+  cfps:
+    output: true
+    permalink: pretty
+
+taxonomies:
+  series:
+    key: series
+    title: "Series"
+
+development:
+  url: localhost:8080
+
+cloudinary:
+  cloud_name: andrewmcodes
+
+pagination:
+  enabled: true
 
 plausible:
   domain: andrewm.codes

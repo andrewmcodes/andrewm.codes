@@ -1,0 +1,15 @@
+- title: Projects
+  description: A list of projects that I have some level of involvement with.
+  url: /projects/
+- title: Podcasts
+  description: I currently host RemoteRuby and have guested on several other podcasts.
+  url: /podcasts/
+- title: Speaking
+  description: A list of my CFPs and details of my public speaking adventures.
+  url: /podcasts/
+- title: Remote Ruby
+  description: A podcast for Rubyists that I co-host with Jason Charnes and Chris Oliver.
+  url: https://remoteruby.transistor.fm
+- title: Ruby Radar Newsletter
+  description: A weekly, hand-curated Ruby newsletter showcasing articles, videos, gems, and more that I create with Collin Jilbert.
+  url: https://rubyradar.dev

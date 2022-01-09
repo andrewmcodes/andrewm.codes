@@ -1,16 +1,23 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
+#
+# To install a plugin, run bundle add and specify the group
+# "bridgetown_plugins". For example:
+#
+#   bundle add some-new-plugin -g bridgetown_plugins
+#
 
-gem "bridgetown", "~> 0.19.3"
-gem "classifier-reborn", "~> 2.2"
-gem "htmlbeautifier", "~> 1.3", group: :development
+gem "bridgetown", "~> 0.21.5"
+
+group :development do
+  gem "debug", "~> 1.4"
+  gem "standard", "~> 1.5.0"
+  gem "solargraph", "~> 0.44.2"
+end
 
 group :bridgetown_plugins do
-  gem "pry"
-  gem "opt_struct", "~> 1.1"
-  gem "httparty"
-  gem "graphtown", "~> 1.0"
-  gem "sanitize", "~> 5.2"
-  gem "bridgetown-feed", "~> 1.1"
-  gem "bridgetown-plausible"
+  gem "bridgetown-view-component", "~> 0.7.0"
+  gem "bridgetown-svg-inliner", "~> 1.0"
+  gem "bridgetown-cloudinary", "~> 1.2"
+  gem "bridgetown-plausible", "~> 1.0.2"
 end

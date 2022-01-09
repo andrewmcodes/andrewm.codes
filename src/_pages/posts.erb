@@ -1,0 +1,15 @@
+---
+title: "Posts"
+description: "posts"
+permalink: /posts/
+no_index: false
+layout: page
+---
+
+<%= render Container.new do %>
+  <%= render ListComponent.new do |l| %>
+    <% collections.posts.resources.each do |post| %>
+      <%= l.post(url: post.relative_url, title: post.data.title, description: post.data.description) %>
+    <% end %>
+  <% end %>
+<% end %>

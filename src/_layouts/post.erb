@@ -1,46 +1,59 @@
----
-layout: default
----
-<div class="flex flex-col max-w-screen-sm mx-auto my-8 space-y-8 lg:my-16 lg:space-y-16 justify-content">
-  <%= render PageBannerComponent.new(
-      title: page.data.title,
-    ) %>
-  <article class="prose md:prose-lg lg:prose-xl">
+---<%
+{ layout: :default }
+%>---
 
-    <div class="mt-5 border-t border-gray-200 dark:border-gray-700">
-      <dl>
-        <d>
-          <dt>Share:</dt>
-          <dd><a href="<%= page.url %>" on-click="share">Please consider sharing 🙏</a></dd>
-        </d>
-        <d>
-          <dt>Published At:</dt>
-          <dd><%= date_to_string page.data.published_at, "ordinal", "US" %></dd>
-        </d>
-        <d>
-          <dt>Tags:</dt>
-          <dd><%= page.data.tags.map { "##{_1}"}.join(', ') %></dd>
-        </d>
-        <% if page.next_doc %>
-          <d>
-            <dt>Next:</dt>
-            <dd><a href="<%= page.next_doc&.url %>"><%= page.next_doc&.title %></a></dd>
-          </d>
-        <% end %>
-        <% if page.previous_doc %>
-          <d>
-            <dt>Previous:</dt>
-            <dd><a href="<%= page.previous_doc&.url %>"><%= page.previous_doc&.title %></a></dd>
-          </d>
-        <% end %>
-      </dl>
-    </div>
-    <%= yield %>
-    <a href="/blog/" class="btn btn-outline">View All Articles</a>
-  </article>
+<%= render Container.new(as: :article) do %>
+  <%= render 'post_header' %>
+  <%= render Divider.new %>
+  <%= render Markdown.new.with_content(yield) %>
+  <%= render Divider.new %>
 
-<share-widget>
-  <button on-click="share" aria-label="Share" href="<%= page.url %>" class="p-4 bg-blue-400 rounded-lg hover:bg-blue-500">
-    <div></div>
-  </button>
-</share-widget>
+  <div class="flex flex-col space-y-4">
+    <dl class="space-y-4">
+      <div class="space-y-2">
+        <dt class="text-sm text-skin-muted">
+          Tags
+        </dt>
+        <dd class="flex space-x-2 text-sm text-skin">
+          <% resource.taxonomies.tag.terms.each do |term| %>
+            <%= render Badge.new(href: "/tags/#{term.label}/").with_content(term.label) %>
+          <% end if resource.taxonomies.tag %>
+        </dd>
+      </div>
+      <% resource.taxonomies.series.terms.each do |term| %>
+        <div class="space-y-2">
+          <dt class="text-sm text-skin-muted">
+            Series
+          </dt>
+          <dd class="text-sm text-skin">
+            <%= render Badge.new(href: "/series/#{term.label}/").with_content(term.label.to_s) %>
+          </dd>
+        </div>
+      <% end %>
+    </dl>
+      <%= render Divider.new %>
+
+    <dl class="grid grid-cols-2 ">
+    <% details = [
+        ['Reading Time', "#{reading_time(resource.content)} min read"],
+        ['Word Count', "#{number_of_words(resource.content)} words"],
+        ['Published On', date_to_string(resource.data.date, "ordinal", "US")],
+        ['Updated On', date_to_string(resource.data.lastmod, "ordinal", "US")],
+        ['Discuss', render(Link.new(href: twitter_discuss_url(resource)).with_content("on Twitter↗"))],
+        ['Questions', render(Link.new(href: "/ama/").with_content("on GitHub Discussions↗"))],
+      ] %>
+      <% details << ['Next', render(Link.new(href: resource.next_resource.relative_url).with_content(resource.next_resource&.data&.title || '→'))] if resource.next_resource && resource.next_resource.collection.label == "posts" %>
+      <% details << ['Previous', render(Link.new(href: resource.previous_resource.relative_url).with_content(resource.previous_resource&.data&.title || '→'))] if resource.previous_resource && resource.previous_resource.collection.label == "posts" %>
+      <% details.reverse.each do |label, value| %>
+        <div class="py-4 sm:grid sm:grid-cols-3 sm:gap-2">
+        <dt class="text-sm text-skin-muted">
+            <%= label %>
+          </dt>
+          <dd class="mt-1 text-sm text-skin sm:mt-0 sm:col-span-2">
+            <%= value %>
+          </dd>
+      </div>
+      <% end %>
+    </dl>
+  </div>
+<% end %>
