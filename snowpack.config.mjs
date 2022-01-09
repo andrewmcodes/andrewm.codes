@@ -24,7 +24,7 @@ export default {
   },
   buildOptions: {
     clean: true,
-    out: "output",
+    out: "build",
     sourcemap: true
   },
   optimize: {
