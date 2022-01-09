@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.0.0](https://github.com/andrewmcodes/andrewm-codes-website/compare/v1.0.0...v2.0.0) (2022-01-09)
+
+
+### ⚠ BREAKING CHANGES
+
+* merge in v2.0.0 aka Canary (#55)
+
+### Features
+
+* merge in v2.0.0 aka Canary ([#55](https://github.com/andrewmcodes/andrewm-codes-website/issues/55)) ([e4906b2](https://github.com/andrewmcodes/andrewm-codes-website/commit/e4906b2b381fdfcdcf166430c4e90499b65cf022))
+
 ## 1.0.0 (2022-01-09)
 
 
