@@ -1,5 +1,6 @@
 <% title = resource.data.title || site.metadata.title %>
 <% title_with_tagline = title + site.metadata.tagline %>
+<% title_with_tagline = "🔥 #{title_with_tagline}" if Bridgetown.env.development? %>
 <% description = resource.data.description || site.metadata.description %>
 <% url = absolute_url resource.relative_url %>
 <% article_layout = resource.respond_to?(:layout) && (resource.layout.label == "article" || resource.layout.label == "post") %>
