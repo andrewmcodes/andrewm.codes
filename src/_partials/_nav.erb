@@ -37,7 +37,7 @@
     </div>
     <div class="flex flex-wrap justify-center py-4 space-x-6 md:hidden">
       <% site.data.navigation.navbar.each do |nav| %>
-        <%= render Link.new(href: nav.url, classes: "align-middle py-4 px-2 sm:px-0 sm:py-0", key: nav.title).with_content(nav.title) %>
+        <%= render Link.new(href: nav.url, classes: "align-middle py-4 px-1.5 sm:px-0 sm:py-0", key: nav.title).with_content(nav.title) %>
       <% end %>
     </div>
   </nav>
