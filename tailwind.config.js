@@ -30,6 +30,7 @@ module.exports = {
       },
       borderColor: {
         skin: {
+          DEFAULT: "var(--divider)",
           divider: "var(--divider)",
           primary: "var(--primary)"
         }

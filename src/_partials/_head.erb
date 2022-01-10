@@ -1,5 +1,6 @@
 <% title = resource.data.title || site.metadata.title %>
 <% title_with_tagline = title + site.metadata.tagline %>
+<% title_with_tagline = "🔥 #{title_with_tagline}" if Bridgetown.env.development? %>
 <% description = resource.data.description || site.metadata.description %>
 <% url = absolute_url resource.relative_url %>
 <% article_layout = resource.respond_to?(:layout) && (resource.layout.label == "article" || resource.layout.label == "post") %>
@@ -38,9 +39,9 @@
   <meta content="Bridgetown" name="generator">
   <meta name="referrer" content="no-referrer-when-downgrade">
   <%# Links %>
-  <link rel="icon" type="image/svg+xml" href="<%= absolute_url "favicon.svg?v=#{site.metadata.version}" %>">
-  <link rel="icon" type="image/png" href="<%= absolute_url "favicon.png?v=#{site.metadata.version}" %>">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=<%= site.metadata.version %>">
+  <link rel="icon" type="image/svg+xml" href="<%= absolute_url "favicon.svg" %>">
+  <link rel="icon" type="image/png" href="<%= absolute_url "favicon.png" %>">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#007aff">
   <meta name="msapplication-TileColor" content="<%= site.metadata.theme_color.light %>">
