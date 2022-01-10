@@ -23,7 +23,10 @@
                                 document.documentElement.classList.add('dark');
                             }
                         },
-                    }" class="inline-block px-2 py-1 border border-transparent rounded-md focus:outline-none hover:text-skin-primary" @click="toggle">
+                    }"
+                    class="inline-block px-2 py-1 border border-transparent rounded-md focus:outline-none hover:text-skin-primary"
+                    @click="toggle"
+                    aria-label="Toggle Darkmode">
           <%= svg "/images/theme.svg", class: "" %>
         </button>
         <%= render Link.new(href: site.metadata.twitter.url) do %>
@@ -34,7 +37,7 @@
     </div>
     <div class="flex flex-wrap justify-center py-4 space-x-6 md:hidden">
       <% site.data.navigation.navbar.each do |nav| %>
-        <%= render Link.new(href: nav.url, classes: "align-middle", key: nav.title).with_content(nav.title) %>
+        <%= render Link.new(href: nav.url, classes: "align-middle py-4 px-2 sm:px-0 sm:py-0", key: nav.title).with_content(nav.title) %>
       <% end %>
     </div>
   </nav>

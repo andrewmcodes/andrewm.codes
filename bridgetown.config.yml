@@ -1,6 +1,6 @@
 # https://www.bridgetownrb.com/docs/resources
 
-url: "andrewm.codes"
+url: "https://andrewm.codes"
 timezone: America/Phoenix
 destination: ".bridgetown-build"
 template_engine: erb
@@ -35,7 +35,7 @@ taxonomies:
     title: "Series"
 
 development:
-  url: localhost:8080
+  url: http://localhost:8080
 
 cloudinary:
   cloud_name: andrewmcodes

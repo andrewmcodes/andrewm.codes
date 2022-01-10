@@ -1,3 +1,7 @@
+---
+lastmod: "2022-01-10T04:11:08.445Z"
+---
+
 # Changelog
 
 ### [2.0.1](https://github.com/andrewmcodes/andrewm-codes-website/compare/v2.0.0...v2.0.1) (2022-01-09)
