@@ -6,10 +6,9 @@ lastmod: "2022-01-10T04:11:08.445Z"
 
 ## [2.1.0](https://github.com/andrewmcodes/andrewm-codes-website/compare/v2.0.1...v2.1.0) (2022-01-10)
 
-
 ### Features
 
-* add correct headers ([#68](https://github.com/andrewmcodes/andrewm-codes-website/issues/68)) ([05cec55](https://github.com/andrewmcodes/andrewm-codes-website/commit/05cec55f3dc2db65c99632042af169ac870bfcd9))
+- add correct headers ([#68](https://github.com/andrewmcodes/andrewm-codes-website/issues/68)) ([05cec55](https://github.com/andrewmcodes/andrewm-codes-website/commit/05cec55f3dc2db65c99632042af169ac870bfcd9))
 
 ### [2.0.1](https://github.com/andrewmcodes/andrewm-codes-website/compare/v2.0.0...v2.0.1) (2022-01-09)
 
