@@ -23,6 +23,8 @@ collections:
       has_many: podcast_episodes
   podcast_episodes:
     output: false
+    sort_by: published_on
+    sort_direction: descending
     relations:
       belongs_to: podcast
   cfps:
