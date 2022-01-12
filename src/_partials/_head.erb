@@ -51,11 +51,7 @@
   <link rel="webmention" href="https://webmention.io/<%= site.metadata.domain %>/webmention" />
   <link rel="pingback" href="https://webmention.io/<%= site.metadata.domain %>/xmlrpc" />
   <%# Stylesheets %>
-  <% if Bridgetown.env.development? %>
-    <link rel="stylesheet" href="/_dist/styles/index.css?v=<%= site.metadata.version %>">
-  <% else %>
-    <link rel="stylesheet" href="/_dist/styles/index.css?v=<%= site.metadata.version %>" media="print" onload="this.media='all'">
-  <% end %>
+  <link rel="stylesheet" href="/_dist/styles/index.css?v=<%= site.metadata.version %>">
   <link rel="manifest" href="<%= absolute_url 'manifest.json' %>">
   <link rel="alternate" href="<%= absolute_url 'feed.xml' %>" type="application/atom+xml" title="<%= site.metadata.title %>">
   <link rel="me" href="https://andrewm.codes" type="text/html">
