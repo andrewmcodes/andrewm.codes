@@ -6,10 +6,9 @@ lastmod: "2022-01-10T04:11:08.445Z"
 
 ## [2.2.0](https://github.com/andrewmcodes/andrewm-codes-website/compare/v2.1.0...v2.2.0) (2022-01-10)
 
-
 ### Features
 
-* Add rubber duck show ([#70](https://github.com/andrewmcodes/andrewm-codes-website/issues/70)) ([daf102a](https://github.com/andrewmcodes/andrewm-codes-website/commit/daf102a6642381b63bedb86f3448026b5ca640f2))
+- Add rubber duck show ([#70](https://github.com/andrewmcodes/andrewm-codes-website/issues/70)) ([daf102a](https://github.com/andrewmcodes/andrewm-codes-website/commit/daf102a6642381b63bedb86f3448026b5ca640f2))
 
 ## [2.1.0](https://github.com/andrewmcodes/andrewm-codes-website/compare/v2.0.1...v2.1.0) (2022-01-10)
 
