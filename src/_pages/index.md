@@ -3,7 +3,7 @@ layout: home
 title: Andrew Mason
 no_index: false
 date: "2021-12-20T20:17:41-07:00"
-lastmod: "2022-01-09T16:56:37.002Z"
+lastmod: "2022-01-12T01:26:54.227Z"
 ---
 
 <div class="not-prose lead">
@@ -11,7 +11,7 @@ lastmod: "2022-01-09T16:56:37.002Z"
   <span>is a software engineer, podcaster, and creator.</span>
 </div>
 
-This website is my home on the web and part of my digital brain. This is where I publish tutorials, tips, and more about Ruby, Ruby on Rails, developer tooling, and more. It is constantly evolving as I explore new ideas so don't be surprised to find a few unfinished features lying around.
+This website is my home on the web and part of my digital brain. This is where I [publish tutorials, tips, and more](/posts/) about Ruby, Ruby on Rails, developer tooling, and more. It is constantly evolving as I explore new ideas so don't be surprised to find a few unfinished features lying around.
 
 [Learn More About Me →](/about/)
 

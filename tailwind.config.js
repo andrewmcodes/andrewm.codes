@@ -29,6 +29,11 @@ module.exports = {
           nav: "var(--nav-bg)"
         }
       },
+      textDecorationColor: {
+        skin: {
+          primary: "var(--primary)"
+        }
+      },
       borderColor: {
         skin: {
           DEFAULT: "var(--divider)",
