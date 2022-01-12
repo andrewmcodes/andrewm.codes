@@ -27,11 +27,11 @@
                     class="inline-block px-2 py-1 border border-transparent rounded-md focus:outline-none hover:text-skin-primary"
                     @click="toggle"
                     aria-label="Toggle Darkmode">
-          <%= svg "/images/theme.svg", class: "" %>
+          <%= svg "/images/theme.svg", class: "", width: 20, height: 20 %>
         </button>
         <%= render Link.new(href: site.metadata.twitter.url) do %>
           <span class="sr-only">Twitter</span>
-          <%= svg "/images/twitter.svg", class: "text-[#1DA1F2] w-5 h-5", "aria-hidden": true %>
+          <%= svg "/images/twitter.svg", class: "text-[#1DA1F2] w-5 h-5", "aria-hidden": true, width: 20, height: 20 %>
         <% end %>
       </div>
     </div>
