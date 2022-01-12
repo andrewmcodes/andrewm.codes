@@ -25,6 +25,7 @@ module.exports = {
           code: "var(--code)",
           inverted: "var(--page-inverted)",
           primary: "var(--primary-dark)",
+          "primary-light": "var(--primary-light)",
           nav: "var(--nav-bg)"
         }
       },
