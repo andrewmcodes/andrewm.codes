@@ -13,12 +13,12 @@ tags:
 categories:
   - tutorial
 date: '2020-07-21T00:52:25Z'
-lastmod: '2022-01-12T00:35:28.869Z'
+lastmod: '2022-01-12T00:43:42.015Z'
 ---
 
 A short tutorial on how to use [bridgetown-svg-inliner](https://github.com/ayushn21/bridgetown-svg-inliner) to inline SVG assets on your [Bridgetown](https://bridgetownrb.com) website.
 
-Previously this post was about [andrewmcodes/bridgetown-inline-svg](https://github.com/andrewmcodes/bridgetown-inline-svg) but that plugin has since been put into maintenance mode in favor of this MIT licensed library by [Ayush Newatia.](https://twitter.com/ayushn21?s=21)
+Previously this post was about [andrewmcodes/bridgetown-inline-svg](https://github.com/andrewmcodes/bridgetown-inline-svg) but that plugin has since been put into maintenance mode in favor of this MIT licensed library by [Ayush Newatia.](https://twitter.com/ayushn21)
 
 ## Prerequisites
 
@@ -66,7 +66,8 @@ For example, this snippet:
 ```
 
 ```liquid
-{% svg "/images/icon.svg", width: "100%", class: "foo" %}
+<!-- ERB -->
+{% svg "/images/icon.svg", class: "foo", width: "100%" %}
 ```
 
 will result in the following HTML:
