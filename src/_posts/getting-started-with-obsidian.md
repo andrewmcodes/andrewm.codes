@@ -9,8 +9,14 @@ tags:
   - notes
 category: tutorial
 date: "2022-01-14T04:46:23.056Z"
-lastmod: "2022-01-14T04:47:23.095Z"
+lastmod: "2022-01-14T06:40:45.822Z"
 ---
+
+## Quick Start
+
+TL;DR I built a [template vault](https://github.com/andrewmcodes/obsidian-beginner-vault-template) based on the settings and instructions in this post.
+
+[Create your own vault from the template](https://github.com/andrewmcodes/obsidian-beginner-vault-template/generate) and then follow the instructions on the README to get started. Continue reading for the breakdown of what I think is a good default setup in Obsidian without any third-party plugins.
 
 ## Install
 
@@ -26,15 +32,18 @@ brew install --cask obsidian
 
 Once installed, opening Obsidian for the first time will land you on the [vault creator](https://help.obsidian.md/User+interface/Vault+switcher#Create+new+vaults) where you can create a new vault, open a folder in Obsidian as a vault, or open the [help vault where you can find the documentation.](https://help.obsidian.md/Obsidian/Index)
 
-![[20220113_182236_Obsidian_SplashScreen.png]]
+![Obsidian Splash Screen](https://res.cloudinary.com/andrewmcodes/image/upload/v1642138668/posts/getting-started-with-obsidian/20220113_182236_Obsidian_SplashScreen_tr5ytn.png)
+
 Create a new vault and then enter in the name and choose a location.
-![[20220113_182436_Obsidian_NewVault.png]]
+![Obsidian Create New Vault](https://res.cloudinary.com/andrewmcodes/image/upload/v1642138668/posts/getting-started-with-obsidian/20220113_182436_Obsidian_NewVault_1_mukbs7.png)
+
 When your vault opens for the first time, you may be prompted to [turn on Live Preview](https://help.obsidian.md/Live+preview+update) which I suggest doing.
 
-![[20220113_182456_Obsidian_LivePreviewModal.png]]
+![Live Preview Modal](https://res.cloudinary.com/andrewmcodes/image/upload/v1642138668/posts/getting-started-with-obsidian/20220113_182456_Obsidian_LivePreviewModal_qekx9c.png)
+
 Your new vault should now be ready for notes to be added.
 
-![[20220114015141Z_Obsidian_simple-obsidian-vault-template - Obsidian v0.13.19.png]]
+![Simple Obsidian Vault](https://res.cloudinary.com/andrewmcodes/image/upload/v1642138668/posts/getting-started-with-obsidian/20220114015141Z_Obsidian_simple-obsidian-vault-template_-_Obsidian_v0.13.19_snrawj.png)
 
 ## Setup
 
@@ -83,6 +92,8 @@ The first thing I do after creating a new Obsidian vault is to create the follow
 
 ### Hotkeys
 
+I have modified some of the important hotkeys to better match VS Code's defaults since that is the text editor that I am most familiar with. Click the `Restore default` icon if you'd like to revert a specific hotkey to Obsidian's default hotkeys.
+
 | Description                           | Shortcut    |
 | ------------------------------------- | ----------- |
 | Command palette: Open command palette | ⌘⇧P         |
@@ -119,13 +130,13 @@ The first thing I do after creating a new Obsidian vault is to create the follow
 
 ## Core Plugin Options
 
-### [Templates](https://help.obsidian.md/Plugins/Templates)
+### Templates
 
 | Setting                  | Value               |
 | ------------------------ | ------------------- |
 | Template folder location | `_assets/templates` |
 
-### [Daily notes](https://help.obsidian.md/Plugins/Daily+notes)
+### Daily notes
 
 #### Daily Note Template
 
