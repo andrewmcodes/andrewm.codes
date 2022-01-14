@@ -9,7 +9,7 @@ tags:
   - notes
 category: tutorial
 date: "2022-01-14T06:49:07.800Z"
-lastmod: "2022-01-14T06:52:10.445Z"
+lastmod: "2022-01-14T07:32:02.050Z"
 ---
 
 ## Quick Start
@@ -99,13 +99,13 @@ I have modified some of the important hotkeys to better match VS Code's defaults
 | Command palette: Open command palette | ⌘⇧P         |
 | Delete current file                   | ⌘⇧Backspace |
 | Delete paragraph                      | ⌘⇧D         |
-| Edit file title                       | ⇧⌥T         |
+| Edit file title                       | ⌘⌥T         |
 | Focus on editor                       | ⌘1          |
 | Quick switcher: Open quick switcher   | ⌘P          |
 | Split horizontally                    | ⌘\          |
 | Split vertically                      | ⌘⇧\         |
-| Swap line down                        | ⇧⌥↑         |
-| Swap line up                          | ⇧⌥↓         |
+| Swap line down                        | ⇧⌥↓         |
+| Swap line up                          | ⇧⌥↑         |
 
 ### Core plugins
 
