@@ -1,6 +1,6 @@
 ---
 series: webpacker-6
-featured: true
+featured: false
 title: 'Webpacker 6: Upgrade Guide'
 description: 'This page has changed since first posted, refer to the changelog at the bottom.   In this article, w...'
 urls:
@@ -12,7 +12,7 @@ tags:
   - tutorial
 categories: tutorial
 date: '2020-12-23T22:07:10Z'
-lastmod: '2022-01-09T13:40:25.392Z'
+lastmod: '2022-01-14T06:50:16.095Z'
 ---
 
 > **This page has changed since first posted**, refer to the changelog at the bottom.

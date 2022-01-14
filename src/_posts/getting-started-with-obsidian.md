@@ -1,15 +1,15 @@
 ---
 series: null
-featured: false
+featured: true
 title: Getting Started with Obsidian
-description: "The beginners guide to using Obsidian, an advanced markdown note taking app."
+description: "A beginners guide to setting up Obsidian, an advanced markdown note taking app, for the first time."
 tags:
   - obsidian
   - macos
   - notes
 category: tutorial
-date: "2022-01-14T04:46:23.056Z"
-lastmod: "2022-01-14T06:40:45.822Z"
+date: "2022-01-14T06:49:07.800Z"
+lastmod: "2022-01-14T06:52:10.445Z"
 ---
 
 ## Quick Start
@@ -165,3 +165,16 @@ Create a new template titled `t_daily` under `_assets/templates`. Refer to the [
 | Description                | Shortcut |
 | -------------------------- | -------- |
 | Templates: Insert template | ⌘⌥I      |
+
+## Important Documentation
+
+I would suggest starting with these documentation pages:
+
+- [Creating Notes Documentation](https://help.obsidian.md/How+to/Create+notes)
+- [Embedding Files Documentation](https://help.obsidian.md/How+to/Embed+files)
+- [Block Level Linking Documentation](https://help.obsidian.md/How+to/Link+to+blocks)
+- [YAML Front Matter Documentation](https://help.obsidian.md/Advanced+topics/YAML+front+matter)
+
+## Wrap Up
+
+This post is still growing so expect some changes. Also, don't forget to check out the [GitHub repo for the template!](https://github.com/andrewmcodes/obsidian-beginner-vault-template)
