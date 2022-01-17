@@ -22,7 +22,7 @@
     "vercel"
   ],
   "dependencies": {
-    "alpinejs": "^3.7.1"
+    "alpinejs": "^3.8.1"
   },
   "devDependencies": {
     "@andrewmcodes/prettier-config": "^1.0.0",
