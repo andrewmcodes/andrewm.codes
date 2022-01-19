@@ -9,7 +9,7 @@ task default: :deploy
 # Standard set of tasks, which you can customize if you wish:
 #
 desc "Build the Bridgetown site for deployment"
-task deploy: [:clean, "frontend:build"] do
+task deploy: [:clean, "snowpack:build"] do
   Bridgetown::Commands::Build.start
 end
 
@@ -24,18 +24,50 @@ task :clean do
   Bridgetown::Commands::Clean.start
 end
 
-# namespace :frontend do
-#   desc "Build the frontend with esbuild for deployment"
-#   task :build do
-#     sh "yarn run esbuild"
-#   end
+namespace :snowpack do
+  desc "Build the frontend with esbuild for deployment"
+  task :build do
+    sh "yarn run snowpack build"
+  end
 
-#   desc "Watch the frontend with esbuild during development"
-#   task :dev do
-#     sh "yarn run esbuild-dev"
-#   rescue Interrupt
-#   end
-# end
+  desc "Watch the frontend with esbuild during development"
+  task :watch do
+    sh "yarn run snowpack dev"
+  rescue Interrupt
+  end
+end
+
+desc "Runs the format commands"
+task format: ["format:standard", "format:prettier"]
+
+namespace :format do
+  desc "Format with Standard"
+  task :standard do
+    sh "bin/standardrb"
+  end
+
+  desc "Format with Prettier"
+  task :prettier do
+    sh "yarn prettier --write ."
+  rescue Interrupt
+  end
+end
+
+desc "Runs the update commands"
+task update: ["update:cssdb", "update:yarn"]
+
+namespace :update do
+  desc "Update browserlists db"
+  task :cssdb do
+    sh "npx browserslist@latest --update-db"
+  end
+
+  desc "Update yarn dependencies"
+  task :yarn do
+    sh "yarn upgrade-interactive --latest && yarn upgrade"
+  rescue Interrupt
+  end
+end
 
 #
 # Add your own Rake tasks here! You can use `environment` as a prerequisite

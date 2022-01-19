@@ -4,8 +4,8 @@ const runBridgetown = [
   "@snowpack/plugin-run-script",
   {
     name: "bridgetown",
-    cmd: "yarn build:bridgetown",
-    watch: "yarn watch:bridgetown"
+    cmd: "bin/bridgetown build",
+    watch: "bin/bridgetown build --watch"
   }
 ]
 
