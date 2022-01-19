@@ -8,6 +8,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 #
 
 gem "bridgetown", "~> 1.0.0.beta1"
+gem "puma", "~> 5.5"
 
 group :development do
   gem "debug", "~> 1.4"

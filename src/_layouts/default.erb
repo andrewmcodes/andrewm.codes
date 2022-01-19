@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="h-full" data-env="<%= Bridgetown.env %>">
+<html lang="<%= site.locale %>" class="h-full" data-env="<%= Bridgetown.env %>">
   <%= render "head" %>
   <body class="h-full font-sans bg-skin text-skin <%= class_map "debug-screens": Bridgetown.env.development? %>">
     <%= render Alert.new(level: site.metadata.alert.level).with_content(site.metadata.alert.message) if site.metadata.alert.level %>
@@ -10,6 +10,5 @@
       </main>
       <%= render "footer" %>
     </div>
-    <script type="module" src="/_dist/javascript/index.js?v=<%= site.metadata.version %>"></script>
   </body>
 </html>

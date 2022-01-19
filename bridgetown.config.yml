@@ -2,7 +2,7 @@
 
 url: "https://andrewm.codes"
 timezone: America/Phoenix
-destination: ".bridgetown-build"
+destination: "output"
 template_engine: erb
 permalink: simple
 content_engine: resource

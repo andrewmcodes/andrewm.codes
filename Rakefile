@@ -24,18 +24,18 @@ task :clean do
   Bridgetown::Commands::Clean.start
 end
 
-# namespace :frontend do
-#   desc "Build the frontend with esbuild for deployment"
-#   task :build do
-#     sh "yarn run esbuild"
-#   end
+namespace :frontend do
+  desc "Build the frontend with esbuild for deployment"
+  task :build do
+    sh "yarn run esbuild"
+  end
 
-#   desc "Watch the frontend with esbuild during development"
-#   task :dev do
-#     sh "yarn run esbuild-dev"
-#   rescue Interrupt
-#   end
-# end
+  desc "Watch the frontend with esbuild during development"
+  task :dev do
+    sh "yarn run esbuild-dev"
+  rescue Interrupt
+  end
+end
 
 #
 # Add your own Rake tasks here! You can use `environment` as a prerequisite
