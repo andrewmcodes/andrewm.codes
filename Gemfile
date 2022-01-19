@@ -7,7 +7,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 #   bundle add some-new-plugin -g bridgetown_plugins
 #
 
-gem "bridgetown", "~> 0.21.5"
+gem "bridgetown", "~> 1.0.0.beta1"
+gem "puma", "~> 5.5"
 
 group :development do
   gem "debug", "~> 1.4"
@@ -20,4 +21,5 @@ group :bridgetown_plugins do
   gem "bridgetown-svg-inliner", "~> 1.0"
   gem "bridgetown-cloudinary", "~> 1.2"
   gem "bridgetown-plausible", "~> 1.0.2"
+  gem "view_component", "< 2.48"
 end

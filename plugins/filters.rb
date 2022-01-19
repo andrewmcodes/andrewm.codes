@@ -1,4 +1,4 @@
-module MyFilters
+module Filters
   #
   # Build OG Image URL with mugshotbot
   #
@@ -50,4 +50,4 @@ module MyFilters
   end
 end
 
-Bridgetown::RubyTemplateView::Helpers.include MyFilters
+Bridgetown::RubyTemplateView::Helpers.include Filters
