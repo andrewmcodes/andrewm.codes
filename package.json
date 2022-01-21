@@ -61,6 +61,6 @@
     "*.rb": "yarn format:ruby"
   },
   "dependencies": {
-    "caniuse-lite": "^1.0.30001300"
+    "@hotwired/turbo": "^7.1.0"
   }
 }
