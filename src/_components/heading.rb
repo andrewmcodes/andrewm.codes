@@ -20,7 +20,7 @@ class Heading < BoxComponent
   def heading_classes(operator)
     case operator
     when "h1"
-      "text-3xl font-semibold tracking-tight leading-normal"
+      "text-4xl font-bold tracking-tight leading-normal"
     when "h2"
       "text-2xl font-semibold"
     when "h3"

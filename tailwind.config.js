@@ -48,8 +48,8 @@ module.exports = {
       },
       fontFamily: {
         ...fontFamily,
-        sans: ["iA Writer Quattro", ...fontFamily.sans],
-        mono: ["iA Writer Quattro", ...fontFamily.mono]
+        sans: ["IBM Plex Sans", ...fontFamily.sans]
+        // mono: ["IBM Plex Sans", ...fontFamily.mono]
       },
       typography: _theme => ({
         DEFAULT: {
