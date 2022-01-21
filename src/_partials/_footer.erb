@@ -11,7 +11,7 @@
       <% site.data.navigation.social.each do |nav| %>
         <%= render Link.new(href: nav.url) do %>
           <span class="sr-only"><%= nav.title %></span>
-          <%= svg "/images/#{nav.title}.svg", class: "text-skin-primary w-5 h-5", "aria-hidden": true, width: 20, height: 20 %>
+          <%= svg "/assets/#{nav.title}.svg", class: "text-skin-primary w-5 h-5", "aria-hidden": true, width: 20, height: 20 %>
         <% end %>
       <% end %>
     </div>

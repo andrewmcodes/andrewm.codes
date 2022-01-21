@@ -10,3 +10,4 @@ yarn.lock
 
 src/_posts/archive/**/*.md
 src/_data/raindrop/**/*.json
+build

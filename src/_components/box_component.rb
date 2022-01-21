@@ -1,6 +1,7 @@
 class BoxComponent < BaseComponent
   def initialize(**opts)
     @opts = opts
+    @site = Bridgetown::Current.site
     post_initialize(**opts)
   end
 
@@ -16,7 +17,7 @@ class BoxComponent < BaseComponent
     nil
   end
 
-  attr_accessor :opts
+  attr_accessor :opts, :site
 
   private
 
