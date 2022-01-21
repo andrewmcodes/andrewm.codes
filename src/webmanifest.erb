@@ -1,5 +1,5 @@
 ---
-permalink: /manifest.webmanifest
+permalink: /site.webmanifest
 layout: none
 ---
 {
@@ -11,7 +11,7 @@ layout: none
   "background_color": "<%= site.metadata.background_color %>",
   "theme_color": "<%= site.metadata.theme_color %>",
   "icons": [
-    { "src": "/icon-192.png", "type": "image/png", "sizes": "192x192" },
-    { "src": "/icon-512.png", "type": "image/png", "sizes": "512x512" }
+    { "src": "<%= absolute_url "/assets/images/android-chrome-192x192.png" %>", "type": "image/png", "sizes": "192x192" },
+    { "src": "<%= absolute_url "/assets/images/android-chrome-512x512.png" %>", "type": "image/png", "sizes": "512x512" }
   ]
 }
