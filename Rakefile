@@ -9,7 +9,7 @@ task default: :deploy
 # Standard set of tasks, which you can customize if you wish:
 #
 desc "Build the Bridgetown site for deployment"
-task deploy: [:clean, "snowpack:build"] do
+task deploy: [:clean, "frontend:build"] do
   Bridgetown::Commands::Build.start
 end
 
@@ -22,19 +22,6 @@ end
 desc "Runs the clean command"
 task :clean do
   Bridgetown::Commands::Clean.start
-end
-
-namespace :snowpack do
-  desc "Build the frontend with esbuild for deployment"
-  task :build do
-    sh "yarn run snowpack build"
-  end
-
-  desc "Watch the frontend with esbuild during development"
-  task :watch do
-    sh "yarn run snowpack dev"
-  rescue Interrupt
-  end
 end
 
 desc "Runs the format commands"
