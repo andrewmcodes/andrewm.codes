@@ -16,7 +16,11 @@ class Markdown < BoxComponent
       prose-pre:bg-skin-code
       prose-pre:px-2
       prose-neutral
-      prose-headings:text-skin-primary
+      prose-a:text-skin-primary
+      prose-a:no-underline
+      hover:prose-a:underline
+      hover:prose-a:underline-offset-2
+      prose-blockquote:border-skin-primary
     ]
 
     class_list.flatten.join(" ")

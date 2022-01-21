@@ -13,6 +13,7 @@ class Link < BoxComponent
   def classes
     class_list = opts[:classes]&.split(" ") || []
     class_list << opts.fetch(:hover, "hover:text-skin-primary")
+    class_list << opts.fetch(:weight, "font-semibold")
     class_list << "text-skin-primary" if opts[:active]
 
     cleanup_keys :hover, :active
