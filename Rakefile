@@ -24,6 +24,19 @@ task :clean do
   Bridgetown::Commands::Clean.start
 end
 
+namespace :frontend do
+  desc "Build the frontend with esbuild for deployment"
+  task :build do
+    sh "yarn run esbuild"
+  end
+
+  desc "Watch the frontend with esbuild during development"
+  task :dev do
+    sh "yarn run esbuild-dev"
+  rescue Interrupt
+  end
+end
+
 desc "Runs the format commands"
 task format: ["format:standard", "format:prettier"]
 

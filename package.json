@@ -21,38 +21,35 @@
     "tailwind-css",
     "vercel"
   ],
-  "dependencies": {
-    "alpinejs": "^3.7.1"
-  },
   "devDependencies": {
     "@andrewmcodes/prettier-config": "^1.0.0",
-    "@commitlint/cli": "^16.0.2",
+    "@commitlint/cli": "^16.1.0",
     "@commitlint/config-conventional": "^16.0.0",
     "@tailwindcss/aspect-ratio": "^0.4.0",
     "@tailwindcss/forms": "^0.4.0",
-    "@tailwindcss/line-clamp": "^0.3.0",
+    "@tailwindcss/line-clamp": "^0.3.1",
     "@tailwindcss/typography": "^0.5.0",
     "autoprefixer": "^10.4.2",
+    "esbuild": "^0.14.12",
+    "glob": "^7.2.0",
     "husky": "^7.0.4",
-    "lint-staged": "^12.1.7",
+    "lint-staged": "^12.2.2",
     "postcss": "^8.4.5",
+    "postcss-import": "^14.0.2",
+    "postcss-load-config": "^3.1.1",
     "prettier": "^2.5.1",
-    "tailwindcss": "^3.0.12",
+    "tailwindcss": "^3.0.15",
     "tailwindcss-debug-screens": "^2.2.1"
   },
   "scripts": {
+    "esbuild": "node esbuild.config.js --minify",
+    "esbuild-dev": "node esbuild.config.js --watch",
     "prepare": "husky install",
     "start": "bin/bridgetown start",
-    "build": "BRIDGETOWN_ENV=production bin/bridgetown build",
+    "build": "BRIDGETOWN_ENV=production bin/bridgetown deploy",
     "format": "yarn format:ruby && yarn format:prettier",
-    "clean": "bundle exec bridgetown clean && rm -rf output",
-    "update": "yarn update:cssdb && yarn update:deps",
-    "build:bridgetown": "bundle exec bridgetown build",
     "format:prettier": "prettier --write .",
-    "format:ruby": "bundle exec standardrb",
-    "update:cssdb": "npx browserslist@latest --update-db",
-    "update:deps": "yarn upgrade-interactive --latest && yarn upgrade",
-    "watch:bridgetown": "bundle exec bridgetown build --watch --quiet"
+    "format:ruby": "bundle exec standardrb"
   },
   "private": true,
   "license": "MIT",
@@ -62,5 +59,8 @@
   "lint-staged": {
     "*.{js,md,yml,json}": "yarn format:prettier",
     "*.rb": "yarn format:ruby"
+  },
+  "dependencies": {
+    "caniuse-lite": "^1.0.30001300"
   }
 }
