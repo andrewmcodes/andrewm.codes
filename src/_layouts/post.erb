@@ -1,38 +1,40 @@
 ---<%
 { layout: :default }
 %>---
-
+<%= render Alert.new(level: :info).with_content("Layout: #{layout.label}") if Bridgetown.env.development? %>
 <%= render Container.new(as: :article) do %>
   <%= render 'post_header' %>
   <%= render Divider.new %>
-  <%= render Markdown.new.with_content(yield) %>
+  <%= render ContentBlock.new.with_content(content) %>
   <%= render Divider.new %>
 
   <div class="flex flex-col space-y-4">
     <dl class="space-y-4">
-      <div class="space-y-2">
-        <dt class="text-sm text-skin-muted">
-          Tags
-        </dt>
-        <dd class="flex space-x-2 text-sm text-skin">
-          <% resource.taxonomies.tag.terms.each do |term| %>
-            <%= render Badge.new(href: "/tags/#{term.label}/").with_content(term.label) %>
-          <% end if resource.taxonomies.tag %>
-        </dd>
-      </div>
-      <% resource.taxonomies.series.terms.each do |term| %>
+      <% if resource.taxonomies.tag.terms.any? %>
         <div class="space-y-2">
-          <dt class="text-sm text-skin-muted">
+          <dt class="text-sm text-zinc-700 dark:text-zinc-400">
+            Tags
+          </dt>
+          <dd class="flex space-x-2 text-sm text-zinc-900 dark:text-zinc-50">
+            <% resource.taxonomies.tag.terms.each do |term| %>
+              <%= render Badge.new(href: "/tags/#{term.label}/").with_content(term.label) %>
+            <% end %>
+          </dd>
+        </div>
+      <% end %>
+      <% if resource.taxonomies.series.terms.any? %>
+        <div class="space-y-2">
+          <dt class="text-sm text-zinc-700 dark:text-zinc-400">
             Series
           </dt>
-          <dd class="text-sm text-skin">
+          <dd class="text-sm text-zinc-900 dark:text-zinc-50">
+          <% resource.taxonomies.series.terms.each do |term| %>
             <%= render Badge.new(href: "/series/#{term.label}/").with_content(term.label.to_s) %>
+          <% end %>
           </dd>
         </div>
       <% end %>
     </dl>
-      <%= render Divider.new %>
-
     <dl class="grid grid-cols-2 ">
     <% details = [
         ['Reading Time', "#{reading_time(resource.content)} min read"],
@@ -46,10 +48,10 @@
       <% details << ['Previous', render(Link.new(href: resource.previous_resource.relative_url).with_content(resource.previous_resource&.data&.title || '→'))] if resource.previous_resource && resource.previous_resource.collection.label == "posts" %>
       <% details.reverse.each do |label, value| %>
         <div class="py-4 sm:grid sm:grid-cols-3 sm:gap-2">
-        <dt class="text-sm text-skin-muted">
+        <dt class="text-sm text-zinc-700 dark:text-zinc-300">
             <%= label %>
           </dt>
-          <dd class="mt-1 text-sm text-skin sm:mt-0 sm:col-span-2">
+          <dd class="mt-1 text-sm text-zinc-900 dark:text-zinc-50 sm:mt-0 sm:col-span-2">
             <%= value %>
           </dd>
       </div>

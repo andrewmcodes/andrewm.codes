@@ -1,8 +1,8 @@
 ---<%
 { layout: :default }
 %>---
-
+<%= render Alert.new(level: :info).with_content("Layout: #{layout.label}") if Bridgetown.env.development? %>
 <%= render Container.new(classes: "space-y-8") do %>
   <%= render Heading.new.with_content(resource.data.title) %>
-  <%= yield %>
+  <%= content %>
 <% end %>

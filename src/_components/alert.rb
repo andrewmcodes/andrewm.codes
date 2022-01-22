@@ -18,7 +18,7 @@ class Alert < BoxComponent
     when :error
       "px-4 py-3 text-sm text-red-700 bg-red-500 rounded-md dark:text-red-400 bg-opacity-10"
     else
-      "px-4 py-3 text-sm text-blue-700 bg-blue-500 rounded-md dark:text-blue-400 bg-opacity-10"
+      "px-4 py-3 text-sm text-sky-700 bg-sky-500 rounded-md dark:text-sky-400 bg-opacity-10"
     end
   end
 end

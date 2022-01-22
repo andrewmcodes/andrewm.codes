@@ -1,9 +1,9 @@
-<%= render Container.new(as: :footer, classes: "border-t border-skin-divider mt-12 text-skin-muted px-4") do %>
+<%= render Container.new(as: :footer, classes: "border-t border-skin-divider mt-12 text-zinc-700 dark:text-zinc-300 px-4") do %>
   <div class="py-8 mx-auto space-y-8 overflow-hidden">
     <nav class="flex flex-wrap justify-center -mx-5 -my-2" aria-label="Footer">
       <% site.data.navigation.footer.each do |nav| %>
         <div class="px-5 py-2">
-          <%= render Link.new(href: nav.url, classes: "text-skin-muted text-sm").with_content(nav.title) %>
+          <%= render Link.new(href: nav.url, classes: "text-zinc-700 dark:text-zinc-300 text-sm").with_content(nav.title) %>
         </div>
       <% end %>
     </nav>
@@ -11,7 +11,7 @@
       <% site.data.navigation.social.each do |nav| %>
         <%= render Link.new(href: nav.url) do %>
           <span class="sr-only"><%= nav.title %></span>
-          <%= svg "/assets/#{nav.title}.svg", class: "text-skin-primary w-5 h-5", "aria-hidden": true, width: 20, height: 20 %>
+          <%= svg "/assets/#{nav.title}.svg", class: "text-sky-500 dark:text-pink-600 w-5 h-5", "aria-hidden": true, width: 20, height: 20 %>
         <% end %>
       <% end %>
     </div>

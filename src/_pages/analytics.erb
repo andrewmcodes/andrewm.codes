@@ -1,15 +1,17 @@
----
-title: "Analytics"
-description: "This website's public analytics, powered by Plausible Analytics."
-permalink: /analytics/
-no_index: false
-layout: page
----
+---<%
+{
+  layout: :page,
+  title: "Analytics",
+  description: "This website's public analytics, powered by Plausible Analytics.",
+  permalink: "/analytics/",
+  no_index: false
+}
+%>---
 
 <%= render Container.new do %>
   <iframe
     plausible-embed
-    src="https://plausible.io/share/andrewm.codes?auth=2SBV2_gEDkHzw6O5npQT8&embed=true&theme=light"
+    src="https://plausible.io/share/andrewm.codes?auth=2SBV2_gEDkHzw6O5npQT8&embed=true"
     scrolling="no"
     frameborder="0"
     loading="lazy"

@@ -3,11 +3,10 @@ class Text < BoxComponent
 
   def classes
     class_list = opts[:classes]&.split(" ") || []
-    class_list << (opts[:align]&.to_s || "left").prepend("text-") && opts.delete(:align)
+    class_list << opts.fetch(:align, "text-left")
     class_list << "truncate" && opts.delete(:truncate) if opts[:truncate]
-    class_list << "text-skin#{opts[:skin]&.to_s&.prepend("-")}" && opts.delete(:skin)
 
-    cleanup_keys :align, :truncate, :skin
+    cleanup_keys :align, :truncate
     class_list.join(" ")
   end
 

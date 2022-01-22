@@ -15,7 +15,7 @@ class Badge < BoxComponent
 
   def classes
     class_list = opts[:classes]&.split(" ") || []
-    class_list << "inline-flex items-center px-2.5 py-0.5 rounded-md text-sm bg-skin-page text-skin-muted border-skin-divider border-2"
+    class_list << "inline-flex items-center px-2 py-1 rounded text-sm font-medium bg-zinc-800 text-zinc-100 leading-none"
 
     class_list.join(" ")
   end

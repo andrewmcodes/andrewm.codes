@@ -1,18 +1,18 @@
 ---
-series: ""
+series: null
 featured: false
-title: "Hiding Ruby 2.7 Deprecation Warnings in Rails 6"
-description: "Hiding Ruby 2.7 Deprecation Warnings in Rails 6   If you have upgraded your Rails app to Rub..."
+title: Hiding Ruby 2.7 Deprecation Warnings in Rails 6
+description: Hiding Ruby 2.7 Deprecation Warnings in Rails 6   If you have upgraded your Rails app to Rub...
 urls:
-  dev_to: https://dev.to/andrewmcodes/hiding-ruby-2-7-deprecation-warnings-in-rails-6-2mil
+  dev_to: 'https://dev.to/andrewmcodes/hiding-ruby-2-7-deprecation-warnings-in-rails-6-2mil'
 tags:
-- ruby
-- rails
-- beginners
-- tutorial
+  - ruby
+  - rails
+  - beginners
+  - tutorial
 categories: tutorial
-date: "2020-02-06T05:47:17Z"
-lastmod: "2020-02-06T05:56:02Z"
+date: '2020-02-06T05:47:17Z'
+lastmod: '2022-01-22T07:59:41.395Z'
 ---
 
 If you have upgraded your Rails app to Ruby 2.7, you are probably seeing a lot of deprecation messages in your console. You should first make sure that none of these messages are coming from your code, and address them if they are! If the deprecations are coming mostly from Rails, it may be time to disable the messages and save yourself from messy terminal output.
