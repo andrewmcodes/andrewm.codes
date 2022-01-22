@@ -21,5 +21,5 @@ group :bridgetown_plugins do
   gem "bridgetown-svg-inliner", "~> 1.0"
   gem "bridgetown-cloudinary", "~> 1.2"
   gem "bridgetown-plausible", "~> 1.0.2"
-  gem "view_component", "< 2.48"
+  gem "view_component", "< 2.47"
 end
