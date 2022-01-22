@@ -12,8 +12,8 @@ gem "puma", "~> 5.5"
 
 group :development do
   gem "debug", "~> 1.4"
-  gem "standard", "~> 1.6.0"
-  gem "solargraph", "~> 0.44.2"
+  gem "standard", "~> 1.7"
+  gem "solargraph", "~> 0.44"
 end
 
 group :bridgetown_plugins do
