@@ -10,9 +10,9 @@ tags:
   - webpacker
   - tutorial
   - debugging
-categories: tutorial
+categories: archived
 date: '2020-12-23T22:16:57Z'
-lastmod: '2022-01-09T13:38:36.310Z'
+lastmod: '2022-01-22T02:21:04.739Z'
 ---
 
 A (growing) collection of tools and techniques for debugging your Webpack(er) setup.

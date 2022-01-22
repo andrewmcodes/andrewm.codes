@@ -10,9 +10,9 @@ tags:
   - ruby
   - webpacker
   - tutorial
-categories: tutorial
+categories: archived
 date: '2020-12-23T22:07:10Z'
-lastmod: '2022-01-14T06:50:16.095Z'
+lastmod: '2022-01-22T02:20:46.229Z'
 ---
 
 > **This page has changed since first posted**, refer to the changelog at the bottom.

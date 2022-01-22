@@ -1,21 +1,19 @@
 ---
-series: "webpacker-6"
+series: webpacker-6
 featured: false
-title: "Webpacker 6: CSS Loaders"
-description: "This page has changed since first posted, refer to the changelog at the bottom.   In order to proces..."
+title: 'Webpacker 6: CSS Loaders'
+description: 'Processing CSS files with Webpacker 6 requires css-loader, style-loader, and mini-css-extract-plugin to be installed.'
 urls:
-  dev_to: https://dev.to/andrewmcodes/webpacker-6-css-loaders-28hb
+  dev_to: 'https://dev.to/andrewmcodes/webpacker-6-css-loaders-28hb'
 tags:
-- rails
-- webpacker
--  tutorial
--  css
-categories: tutorial
-date: "2020-12-23T22:12:55Z"
-lastmod: "2021-02-17T04:19:34Z"
+  - rails
+  - webpacker
+  - tutorial
+  - css
+categories: archived
+date: '2020-12-23T22:12:55Z'
+lastmod: '2022-01-22T02:22:16.732Z'
 ---
-
-> **This page has changed since first posted**, refer to the changelog at the bottom.
 
 In order to process `.css` files with Webpacker 6, you need to add [css-loader][1], [style-loader][2], and [mini-css-extract-plugin][3].
 

@@ -10,9 +10,9 @@ tags:
   - rails
   - tutorial
   - circleci
-categories: tutorial
+categories: archived
 date: '2020-01-17T06:51:53Z'
-lastmod: '2022-01-09T18:39:45.286Z'
+lastmod: '2022-01-22T02:23:18.636Z'
 ---
 
 _This is part of a three part series where I will walk you through setting up your CI suite with GitHub Actions, CircleCI, and then comparing which you may want to use if you are setting up continuous integration for your Rails app._

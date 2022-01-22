@@ -7,7 +7,6 @@ no_index: false
 
 <h2>Shows</h2>
 
-<%= render Container.new do %>
   <%= render ListComponent.new do |l| %>
     <% site.collections.podcasts.resources.find_all { |e| e.data.status }.each do |podcast| %>
       <%= l.tile(
@@ -19,11 +18,9 @@ no_index: false
         ) %>
     <% end %>
   <% end %>
-<% end %>
 
 <h2>Guest Episodes</h2>
 
-<%= render Container.new do %>
   <%= render ListComponent.new do |l| %>
     <% site.collections.podcast_episodes.resources.find_all { |e| e.data.role == "guest" }.each do |episode| %>
       <%= l.tile(
@@ -35,7 +32,6 @@ no_index: false
         ) %>
     <% end %>
   <% end %>
-<% end %>
 
 <h2>More Speaking</h2>
 

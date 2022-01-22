@@ -5,9 +5,11 @@
 <%= render Container.new(as: :article) do %>
   <%= render 'post_header' %>
   <%= render Divider.new %>
+  <% if resource.taxonomies.category&.terms&.first&.label == "archived" %>
+    <%= render Alert.new(level: :error, classes: "mb-4").with_content("This post is no longer receiving updates and may be out of date with the latest versions of any mentioned libraries or tools.") %>
+  <% end %>
   <%= render Markdown.new.with_content(yield) %>
   <%= render Divider.new %>
-
   <div class="flex flex-col space-y-4">
     <dl class="space-y-4">
       <div class="space-y-2">

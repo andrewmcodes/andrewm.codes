@@ -10,9 +10,9 @@ tags:
   - css
   - webdev
   - beginners
-categories: tutorial
+categories: archived
 date: '2020-08-14T01:40:05Z'
-lastmod: '2022-01-09T13:33:07.031Z'
+lastmod: '2022-01-22T02:22:32.534Z'
 ---
 
 Let's face it, no matter whether its our first or hundredth time, staring at a blank Tailwind CSS is intimidating. The enormity of the task at hand starts to crash over you as the excitement begins to build. Here are eight resources that I reach for first when I need to move quickly or want inspiration that may prove helpful to you.

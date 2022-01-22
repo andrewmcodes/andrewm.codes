@@ -10,9 +10,9 @@ tags:
   - webpacker
   - tutorial
   - postcss
-categories: tutorial
+categories: archived
 date: '2020-12-23T22:14:19Z'
-lastmod: '2022-01-09T13:38:40.819Z'
+lastmod: '2022-01-22T02:21:18.364Z'
 ---
 
 In order to process `.pcss` files with Webpacker 6, you need to add [postcss-loader][1]. I am also going to add PostCSS 8 support.

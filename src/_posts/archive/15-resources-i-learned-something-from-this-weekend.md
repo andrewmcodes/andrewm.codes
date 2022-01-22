@@ -10,9 +10,9 @@ tags:
   - podcast
   - rails
   - resources
-categories: tutorial
+categories: archived
 date: '2020-09-28T00:05:16Z'
-lastmod: '2022-01-09T13:34:35.717Z'
+lastmod: '2022-01-22T02:22:49.136Z'
 ---
 
 I wanted to get a lot of writing done this weekend but unfortunately I had to take care of a cranky app instead.

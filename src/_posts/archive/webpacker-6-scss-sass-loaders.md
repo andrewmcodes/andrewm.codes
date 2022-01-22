@@ -10,9 +10,9 @@ tags:
   - webpacker
   - tutorial
   - sass
-categories: tutorial
+categories: archived
 date: '2020-12-23T22:15:46Z'
-lastmod: '2022-01-09T13:35:58.207Z'
+lastmod: '2022-01-22T02:21:13.878Z'
 ---
 
 In order to process `.scss` and `.sass` files with Webpacker 6, you need to add [sass-loader and sass][1].

@@ -10,9 +10,9 @@ tags:
   - beginners
   - bridgetown
   - cms
-categories: tutorial
+categories: archived
 date: '2020-07-11T04:19:55Z'
-lastmod: '2022-01-09T13:39:22.956Z'
+lastmod: '2022-01-22T02:23:32.779Z'
 ---
 
 This is a quick tutorial to showcase how you can quickly integrate Netlify CMS into your [Bridgetown](https://www.bridgetownrb.com) site.

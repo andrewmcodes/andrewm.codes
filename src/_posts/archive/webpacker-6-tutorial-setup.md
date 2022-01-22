@@ -10,9 +10,9 @@ tags:
   - ruby
   - tutorial
   - webpacker
-categories: tutorial
+categories: archived
 date: '2020-12-23T22:00:26Z'
-lastmod: '2022-01-09T13:40:16.636Z'
+lastmod: '2022-01-22T02:20:53.923Z'
 ---
 
 Before we start the upgrade process for Webpacker 6, we are going to create a small demo application for us to work on.
