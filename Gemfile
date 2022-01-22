@@ -22,4 +22,5 @@ group :bridgetown_plugins do
   gem "bridgetown-cloudinary", "~> 1.2"
   gem "bridgetown-plausible", "~> 1.0.2"
   gem "view_component", "< 2.47"
+  gem "bridgetown-feed", "~> 2.1.0"
 end

@@ -4,7 +4,7 @@
 <% description = resource.data.description || site.metadata.description %>
 <% url = absolute_url resource.relative_url %>
 <% article_layout = resource.respond_to?(:layout) && (resource.layout.label == "article" || resource.layout.label == "post") %>
-<% cover = og_image(url: url) %>
+<% cover = resource.respond_to?(:image) ? resource.image : og_image(url: url) %>
 <% type = article_layout ? "article" : "website" %>
 
 <head>
@@ -25,6 +25,7 @@
   <meta property="og:url" content="<%= url %>">
   <meta property="og:site_name" content="<%= site.metadata.title %>">
   <%# Twitter %>
+  <%= feed_meta %>
   <meta name="twitter:title" content="<%= title %>">
   <meta name="twitter:card" content="<%= site.metadata.twitter.card %>">
   <meta name="twitter:site" content="<%= site.metadata.twitter.username %>">
