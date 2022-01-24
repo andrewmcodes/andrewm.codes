@@ -226,7 +226,7 @@ GEM
       unf_ext
     unf_ext (0.0.8)
     unicode-display_width (1.8.0)
-    view_component (2.46.0)
+    view_component (2.48.0)
       activesupport (>= 5.0.0, < 8.0)
       method_source (~> 1.0)
     webrick (1.7.0)
@@ -249,7 +249,7 @@ DEPENDENCIES
   puma (~> 5.5)
   solargraph (~> 0.44)
   standard (~> 1.7)
-  view_component (< 2.47)
+  view_component (< 2.49)
 
 BUNDLED WITH
    2.3.4
