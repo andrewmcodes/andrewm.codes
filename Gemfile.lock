@@ -198,7 +198,7 @@ GEM
       activesupport (>= 6.0)
       erubi (>= 1.10)
       tilt (~> 2.0)
-    solargraph (0.44.2)
+    solargraph (0.44.3)
       backport (~> 1.2)
       benchmark
       bundler (>= 1.17.2)
