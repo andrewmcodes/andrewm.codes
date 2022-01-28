@@ -4,7 +4,7 @@ description: Information about this website.
 permalink: /sitemap/
 no_index: false
 date: "2021-12-20T21:27:36-07:00"
-lastmod: "2022-01-09T18:32:47.186Z"
+lastmod: "2022-01-22T10:10:41.711Z"
 ---
 
 ## Collections
@@ -31,6 +31,7 @@ lastmod: "2022-01-09T18:32:47.186Z"
 - [404](/404/)
 - [Sitemap](/sitemap/)
 - [Analytics](/analytics/)
+- [Experiments](/experiments/)
 
 ---
 
