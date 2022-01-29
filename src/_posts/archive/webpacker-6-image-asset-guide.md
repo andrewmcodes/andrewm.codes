@@ -1,18 +1,18 @@
 ---
-series: "webpacker-6"
+series: webpacker-6
 featured: false
-title: "Webpacker 6: Image Asset Guide"
-description: "In order to use your images and SVG files with Webpacker 6, you need to put them in the correct place..."
+title: 'Webpacker 6: Image Asset Guide'
+description: 'In order to use your images and SVG files with Webpacker 6, you need to put them in the correct place...'
 urls:
-  dev_to: https://dev.to/andrewmcodes/webpacker-6-image-asset-guide-42hn
+  dev_to: 'https://dev.to/andrewmcodes/webpacker-6-image-asset-guide-42hn'
 tags:
-- rails
-- webpacker
-- tutorial
-- svg
+  - rails
+  - webpacker
+  - tutorial
+  - svg
 categories: tutorial
-date: "2020-12-24T22:44:46Z"
-lastmod: "2021-02-17T04:18:36Z"
+date: '2020-12-24T22:44:46Z'
+last_modified_at: '2022-01-29T17:01:41.591Z'
 ---
 
 In order to use your images and SVG files with Webpacker 6, you need to put them in the correct place and import them into your context.

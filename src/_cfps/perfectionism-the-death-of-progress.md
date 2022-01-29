@@ -1,13 +1,13 @@
 ---
 title: "Perfectionism: The Death of Progress"
-description: "My rejected CFP for RailsConf 2019"
+description: My rejected CFP for RailsConf 2019
 conferences:
   - name: RailsConf 2019
     status: rejected
 urls:
-  speakerline: https://speakerline.io/proposals/7651
+  speakerline: "https://speakerline.io/proposals/7651"
 date: "2020-01-15T01:40:05Z"
-lastmod: "2019-01-25T04:22:00Z"
+last_modified_at: "2022-01-29T17:01:41.407Z"
 ---
 
 ## Abstract

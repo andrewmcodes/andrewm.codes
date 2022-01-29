@@ -4,7 +4,7 @@ description: "Ruby on Rails software engineer, podcaster, and creator."
 permalink: /about/
 no_index: false
 date: "2021-12-20T20:18:17-07:00"
-lastmod: "2022-01-29T16:53:55.658Z"
+last_modified_at: "2022-01-29T17:01:41.509Z"
 ---
 
 <%= render Image.new(src: site.metadata.picture, alt: site.metadata.name, classes: "h-20 w-20 rounded-full shadow-md") %>

@@ -2,7 +2,7 @@
 title: Speaking
 description: "Conference talks, CFPs, and podcast appearances by Andrew Mason"
 permalink: /speaking/
-lastmod: "2022-01-09T17:11:53.434Z"
+last_modified_at: "2022-01-29T17:01:41.383Z"
 ---
 
 ## Podcasts

@@ -1,10 +1,10 @@
 ---
-title: "Uses"
-description: "The gear I use"
-permalink: "/uses/"
+title: Uses
+description: The gear I use
+permalink: /uses/
 no_index: false
 date: "2021-12-20T20:43:39-07:00"
-lastmod: "2021-12-20T20:43:39-07:00"
+last_modified_at: "2022-01-29T17:01:41.388Z"
 ---
 
 ## Gear

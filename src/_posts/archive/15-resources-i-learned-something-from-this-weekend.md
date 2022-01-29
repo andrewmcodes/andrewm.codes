@@ -12,7 +12,7 @@ tags:
   - resources
 categories: tutorial
 date: '2020-09-28T00:05:16Z'
-lastmod: '2022-01-09T13:34:35.717Z'
+last_modified_at: '2022-01-29T17:01:48.527Z'
 ---
 
 I wanted to get a lot of writing done this weekend but unfortunately I had to take care of a cranky app instead.

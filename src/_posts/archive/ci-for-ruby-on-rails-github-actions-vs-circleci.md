@@ -12,7 +12,7 @@ tags:
   - github
 categories: tutorial
 date: '2020-01-17T06:57:38Z'
-lastmod: '2022-01-09T18:40:11.097Z'
+last_modified_at: '2022-01-29T17:01:41.431Z'
 ---
 
 _This is part of a three part series where I will walk you through setting up your CI suite with GitHub Actions, CircleCI, and then comparing which you may want to use if you are setting up continuous integration for your Rails app._

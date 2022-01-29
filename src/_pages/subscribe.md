@@ -4,7 +4,7 @@ description: "Subscribe to my newsletters, RSS feeds, and follow me on Twitter @
 permalink: /subscribe/
 no_index: false
 date: "2021-12-20T21:27:36-07:00"
-lastmod: "2022-01-09T17:08:50.538Z"
+last_modified_at: "2022-01-29T17:01:41.429Z"
 ---
 
 ## RSS Feeds

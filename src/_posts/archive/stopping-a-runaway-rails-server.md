@@ -12,7 +12,7 @@ tags:
   - gems
 categories: tutorial
 date: '2020-02-11T03:43:19Z'
-lastmod: '2022-01-09T13:34:05.908Z'
+last_modified_at: '2022-01-29T17:01:41.574Z'
 ---
 
 _Many of us have been there. You hit `ctrl-c` on you Ruby on Rails server, but nothing happens. No matter what keys you hit on your keyboard, the Rails server is still running, and you can't stop it. You have a runaway train on your hands._

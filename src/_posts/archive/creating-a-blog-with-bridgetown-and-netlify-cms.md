@@ -12,7 +12,7 @@ tags:
   - cms
 categories: tutorial
 date: '2020-07-11T04:19:55Z'
-lastmod: '2022-01-09T13:39:22.956Z'
+last_modified_at: '2022-01-29T17:01:41.512Z'
 ---
 
 This is a quick tutorial to showcase how you can quickly integrate Netlify CMS into your [Bridgetown](https://www.bridgetownrb.com) site.

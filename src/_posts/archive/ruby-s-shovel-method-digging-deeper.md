@@ -12,7 +12,7 @@ tags:
   - rails
 categories: tutorial
 date: '2020-11-22T05:53:26Z'
-lastmod: '2022-01-22T07:59:42.954Z'
+last_modified_at: '2022-01-29T17:01:41.436Z'
 ---
 
 > Heads up! This is not _actually_ a deep dive 😬

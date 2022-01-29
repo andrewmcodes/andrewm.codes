@@ -43,7 +43,7 @@
         ['Reading Time', "#{reading_time(resource.content)} min read"],
         ['Word Count', "#{number_of_words(resource.content)} words"],
         ['Published On', date_to_string(resource.data.date, "ordinal", "US")],
-        ['Updated On', date_to_string(resource.data.lastmod, "ordinal", "US")],
+        ['Updated On', date_to_string(resource.data.last_modified_at, "ordinal", "US")],
         ['Discuss', render(Link.new(href: twitter_discuss_url(resource)).with_content("on Twitter↗"))],
         ['Questions', render(Link.new(href: "/ama/").with_content("on GitHub Discussions↗"))],
       ] %>

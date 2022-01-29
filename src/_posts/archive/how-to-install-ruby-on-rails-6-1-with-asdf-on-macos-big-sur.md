@@ -12,7 +12,7 @@ tags:
   - beginners
 categories: tutorial
 date: '2021-02-25T00:38:27Z'
-lastmod: '2022-01-22T07:59:44.454Z'
+last_modified_at: '2022-01-29T17:01:41.571Z'
 ---
 
 Ruby and Ruby on Rails have an outdated reputation of being difficult to set up, and some jump on this point to push their full stack JavaScript fantasies. In 2021, however, this doesn’t have to be an issue with the correct tool.

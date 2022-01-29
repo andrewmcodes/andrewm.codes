@@ -12,7 +12,7 @@ tags:
   - webpacker
 categories: tutorial
 date: '2020-12-23T22:00:26Z'
-lastmod: '2022-01-09T13:40:16.636Z'
+last_modified_at: '2022-01-29T17:01:41.554Z'
 ---
 
 Before we start the upgrade process for Webpacker 6, we are going to create a small demo application for us to work on.

@@ -12,7 +12,7 @@ tags:
   - debugging
 categories: tutorial
 date: '2020-12-23T22:16:57Z'
-lastmod: '2022-01-09T13:38:36.310Z'
+last_modified_at: '2022-01-29T17:01:41.560Z'
 ---
 
 A (growing) collection of tools and techniques for debugging your Webpack(er) setup.

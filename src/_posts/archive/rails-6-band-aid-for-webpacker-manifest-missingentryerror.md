@@ -12,7 +12,7 @@ tags:
   - testing
 categories: tutorial
 date: '2020-05-13T23:20:04Z'
-lastmod: '2022-01-09T13:34:55.021Z'
+last_modified_at: '2022-01-29T17:01:41.492Z'
 ---
 
 At [CodeFund](https://codefund.io), we try to keep our dependencies, including Rails, as up to date as possible. We upgraded to Rails 6 a few months ago, and I've pretty much forgotten any issues we ran into during the upgrade. For what it's worth, the upgrade was very smooth, but there was one issue we ran into that was lost in my memories before a friend showed me a familiar error message today:

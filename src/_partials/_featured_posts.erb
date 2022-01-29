@@ -3,7 +3,7 @@
     <%= l.post(
       url: post.relative_url,
       title: post.data.title,
-      description: [post.data.categories.join.titleize, date_to_string(post.data.lastmod, "ordinal", "us")].join(" / ")
+      description: [post.data.categories.join.titleize, date_to_string(post.data.last_modified_at, "ordinal", "us")].join(" / ")
     )%>
   <% end %>
 <% end %>

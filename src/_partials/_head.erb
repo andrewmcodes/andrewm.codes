@@ -67,7 +67,7 @@
         description: description,
         url: url,
         date: (resource.data.date || DateTime.current),
-        lastmod: (resource.data.lastmod || DateTime.current) %>
+        last_modified_at: (resource.data.last_modified_at || DateTime.current) %>
     <meta property="article:published_time" content="<%= resource.data.date || DateTime.current %>" />
   <% end %>
   <%# Analytics %>

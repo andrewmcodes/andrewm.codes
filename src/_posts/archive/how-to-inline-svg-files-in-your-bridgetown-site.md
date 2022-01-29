@@ -13,7 +13,7 @@ tags:
 categories:
   - tutorial
 date: '2020-07-21T00:52:25Z'
-lastmod: '2022-01-12T00:43:42.015Z'
+last_modified_at: '2022-01-29T17:01:41.583Z'
 ---
 
 A short tutorial on how to use [bridgetown-svg-inliner](https://github.com/ayushn21/bridgetown-svg-inliner) to inline SVG assets on your [Bridgetown](https://bridgetownrb.com) website.

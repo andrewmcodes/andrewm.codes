@@ -12,7 +12,7 @@ tags:
   - discuss
 categories: tutorial
 date: '2020-11-11T01:30:15Z'
-lastmod: '2022-01-09T13:35:10.580Z'
+last_modified_at: '2022-01-29T17:01:41.479Z'
 ---
 
 I’m about to overhaul my settings and plugins in VSCode so this is my “before” shot.

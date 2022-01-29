@@ -3,7 +3,7 @@ layout: home
 title: Andrew Mason
 no_index: false
 date: "2021-12-20T20:17:41-07:00"
-lastmod: "2022-01-09T16:56:37.002Z"
+last_modified_at: "2022-01-29T17:01:41.385Z"
 ---
 
 <div class="not-prose lead">

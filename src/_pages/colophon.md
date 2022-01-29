@@ -4,7 +4,7 @@ description: A bit about how this site was made.
 permalink: /colophon/
 no_index: false
 date: "2022-01-29T12:27:25.003Z"
-lastmod: "2022-01-29T13:02:53.320Z"
+last_modified_at: "2022-01-29T17:01:41.381Z"
 ---
 
 ## Typography

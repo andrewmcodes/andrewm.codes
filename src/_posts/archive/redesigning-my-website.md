@@ -12,7 +12,7 @@ tags:
   - strapi
 categories: tutorial
 date: '2021-02-17T03:07:25Z'
-lastmod: '2022-01-09T13:39:38.068Z'
+last_modified_at: '2022-01-29T17:01:41.593Z'
 ---
 
 My personal website - [andrewm.codes](https://andrewm.codes/) has gone through many iterations over the years. Some may view my constant tinkering as a waste of time, and it probably is, but I've come to realize that I really enjoy using it as a playground to test new technologies and new ideas. The problem with this approach though is that it continually became an excuse for not writing actual content. With this iteration of the site, I decided to put content creation first and tinkering second.
