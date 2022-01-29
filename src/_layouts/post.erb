@@ -3,9 +3,8 @@
 %>---
 <%= render Container.new(as: :article) do %>
 
-  <div class="flex flex-col space-y-4">
+  <%= render Columns.new do %>
     <%= render Heading.new(classes: "break-words").with_content(resource.data.title) %>
-
     <div class="flex flex-wrap items-center justify-between -mt-4 -ml-4 sm:flex-nowrap">
       <div class="mt-4 ml-4">
         <div class="flex items-center">
@@ -27,13 +26,13 @@
         </a>
       </div>
     </div>
-  </div>
+  <% end %>
 
   <%= render Divider.new(variant: :colorful) %>
   <%= render ContentBlock.new.with_content(content) %>
   <%= render Divider.new %>
 
-  <div class="flex flex-col space-y-4">
+  <%= render Columns.new do %>
     <dl class="space-y-4">
       <% if resource.taxonomies.tag.terms.any? %>
         <div class="space-y-2">
@@ -82,5 +81,5 @@
       </div>
       <% end %>
     </dl>
-  </div>
+  <% end %>
 <% end %>
