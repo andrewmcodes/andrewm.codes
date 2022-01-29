@@ -9,7 +9,6 @@
   <body class="h-full font-sans <%= layout.data.colors %> <%= class_map "debug-screens": Bridgetown.env.development? %>">
     <%= render "nav" %>
     <div class="flex flex-col min-h-full mt-16">
-    <%= render Alert.new(level: site.metadata.alert.level).with_content(site.metadata.alert.message) if site.metadata.alert.level %>
     <%= render Alert.new(level: :info).with_content("Layout: #{resource.data&.layout&.to_s}") if Bridgetown.env.development? %>
       <main class="flex flex-col px-4 mt-12 grow">
         <%= content %>

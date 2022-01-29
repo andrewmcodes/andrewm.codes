@@ -32,7 +32,16 @@
           <% end %>
         </div>
       </div>
-      <div class="flex items-center">
+      <div class="flex items-center space-x-4">
+        <div class="flex-shrink-0">
+          <%= render IconLink.new(
+            href: site.metadata.twitter.url,
+            alt: site.metadata.twitter.username) do |i| %>
+            <% i.icon do %>
+              <%= svg "/assets/twitter.svg", class: "hover:text-[#1d9cf0] text-[#1DA1F2] w-5 h-5", "aria-hidden": true, width: 20, height: 20 %>
+            <% end %>
+        <% end %>
+        </div>
         <div class="flex-shrink-0">
           <%= render "theme_toggle" %>
         </div>
