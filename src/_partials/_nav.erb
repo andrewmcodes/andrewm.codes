@@ -10,7 +10,7 @@
           <button
             @click="toggle"
             type="button"
-            class="inline-flex items-center justify-center p-2 rounded-md text-zinc-400 hover:text-zinc-50 hover:bg-zinc-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+            class="inline-flex items-center justify-center p-2 rounded-md text-zinc-700 dark:text-zinc-300 hover:bg-zinc-300 hover:text-zinc-800 dark:hover:bg-zinc-700 dark:hover:text-zinc-300 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-zinc-50 dark:focus:ring-zinc-900"
             aria-controls="mobile-menu"
             aria-expanded="false"
           >
@@ -23,30 +23,18 @@
           class="hidden md:ml-6 md:flex md:items-center md:space-x-4">
           <!-- Current: "bg-zinc-900 text-white", Default: "text-zinc-300 hover:bg-zinc-700 hover:text-white" -->
           <% site.data.navigation.navbar.each do |nav| %>
-            <%= render Link.new(href: nav.url, classes: "px-3 py-2 text-sm lg:text-base font-medium text-zinc-800 bg-zinc-100 dark:text-zinc-100 dark:bg-zinc-800 rounded-md", key: nav.title).with_content(nav.title) %>
+            <%= render Link.new(
+              href: nav.url,
+              classes: "px-3 py-2 text-sm lg:text-base font-medium text-zinc-700 dark:text-zinc-300 rounded-md",
+              hover: "hover:bg-zinc-300 hover:text-zinc-800 dark:hover:bg-zinc-700 dark:hover:text-zinc-300",
+              active: (resource.relative_url == nav.url),
+              key: nav.title).with_content(nav.title) %>
           <% end %>
         </div>
       </div>
       <div class="flex items-center">
         <div class="flex-shrink-0">
-          <button x-data="{
-                            toggleDarkMode: () => {
-                                if (localStorage.theme === 'dark') {
-                                    localStorage.theme = 'light';
-                                    document.documentElement.classList.remove('dark');
-                                } else {
-                                    localStorage.theme = 'dark';
-                                    document.documentElement.classList.add('dark');
-                                }
-                            },
-                        }"
-                    @click="toggleDarkMode"
-                    aria-label="Toggle Darkmode"
-                    type="button"
-                    class="relative inline-flex items-center px-1.5 py-1.5 text-sm font-medium text-zinc-50 bg-zinc-700 border border-transparent rounded-md shadow-sm hover:bg-zinc-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-zinc-800 focus:ring-sky-500">
-            <%= svg "/assets/theme.svg", class: "w-5 h-5", width: 20, height: 20
-            %>
-          </button>
+          <%= render "theme_toggle" %>
         </div>
       </div>
     </div>
@@ -58,7 +46,8 @@
       <% site.data.navigation.navbar.each do |nav| %>
         <%= render Link.new(
               href: nav.url,
-              classes: "block px-3 py-2 text-base font-medium rounded-md text-zinc-800 dark:text-zinc-300 hover:bg-zinc-700 hover:text-zinc-100",
+              classes: "block px-3 py-2 text-base font-medium rounded-md text-zinc-700 dark:text-zinc-300",
+              hover: "hover:bg-zinc-300 hover:text-zinc-800 dark:hover:bg-zinc-700 dark:hover:text-zinc-300",
               key: nav.title
             ).with_content(nav.title) %>
       <% end %>

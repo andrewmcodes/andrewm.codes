@@ -14,7 +14,7 @@ class Link < BoxComponent
     class_list = opts[:classes]&.split(" ") || []
     class_list << opts.fetch(:hover, "hover:text-sky-500 dark:hover:text-pink-500")
     class_list << opts.fetch(:weight, "font-semibold")
-    class_list << "text-sky-500 dark:hover:text-pink-500" if opts[:active]
+    class_list << "!text-sky-500 dark:!text-pink-500" if opts[:active]
 
     cleanup_keys :hover, :active
 
