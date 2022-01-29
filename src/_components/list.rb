@@ -8,7 +8,7 @@ class List < BoxComponent
   def classes
     class_list = opts[:classes]&.split(" ") || []
     class_list << opts.fetch(:divide, "divide-y divide-zinc-300 dark:divide-zinc-700")
-    class_list << "not-prose list-none pl-0"
+    class_list << "not-prose list-none pl-0 space-y-4 flex flex-col"
     class_list.join(" ")
   end
 

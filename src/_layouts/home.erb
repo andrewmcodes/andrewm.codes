@@ -3,4 +3,10 @@
 %>---
 <%= render Container.new(as: :section) do %>
   <%= render ContentBlock.new.with_content(content) %>
+  <div class="flex items-end justify-between gap-4 mb-6 not-prose">
+    <%= render Heading.new(level: 2).with_content("Recent Posts") %>
+    <%= render Link.new(button: true, href: "/posts/").with_content("View All") %>
+  </div>
+
+  <%= render "recent_posts" %>
 <% end %>
