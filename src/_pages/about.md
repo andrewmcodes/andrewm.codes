@@ -4,10 +4,10 @@ description: "Ruby on Rails software engineer, podcaster, and creator."
 permalink: /about/
 no_index: false
 date: "2021-12-20T20:18:17-07:00"
-lastmod: "2022-01-09T09:04:05.044Z"
+lastmod: "2022-01-29T16:53:55.658Z"
 ---
 
-<%= render Image.new(src: site.data.authors.andrew.picture, alt: site.data.authors.andrew.name, classes: "h-20 w-20 rounded-full shadow-md") %>
+<%= render Image.new(src: site.metadata.picture, alt: site.metadata.name, classes: "h-20 w-20 rounded-full shadow-md") %>
 
 Hey, I'm Andrew. I am developer, podcaster, and creator in the Ruby community. I work at The N2 Company building Ruby on Rails applications as a software developer.
 

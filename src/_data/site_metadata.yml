@@ -43,3 +43,10 @@ alert:
   level:
   message: >-
     Site is under renovation and you may experience weirdness.
+
+author:
+  name: Andrew Mason
+  picture: https://res.cloudinary.com/andrewmcodes/image/upload/c_scale,h_80,w_80/v1/andrewm.codes/avatar-bw.jpg
+  twitter: andrewmcodes
+  uri: https://andrewm.codes/
+  github: andrewmcodes
