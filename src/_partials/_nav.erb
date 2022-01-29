@@ -1,4 +1,4 @@
-<nav class="bg-zinc-100 dark:bg-zinc-800" x-data="{
+<nav class="z-20 bg-zinc-100 dark:bg-zinc-800" x-data="{
       open: false,
       get isOpen() { return this.open },
       toggle() { this.open = ! this.open },
@@ -10,7 +10,7 @@
           <button
             @click="toggle"
             type="button"
-            class="inline-flex items-center justify-center p-2 rounded-md text-zinc-400 hover:text-white hover:bg-zinc-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+            class="inline-flex items-center justify-center p-2 rounded-md text-zinc-400 hover:text-zinc-50 hover:bg-zinc-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
             aria-controls="mobile-menu"
             aria-expanded="false"
           >
@@ -23,7 +23,7 @@
           class="hidden md:ml-6 md:flex md:items-center md:space-x-4">
           <!-- Current: "bg-zinc-900 text-white", Default: "text-zinc-300 hover:bg-zinc-700 hover:text-white" -->
           <% site.data.navigation.navbar.each do |nav| %>
-            <%= render Link.new(href: nav.url, classes: "px-3 py-2 text-sm font-medium text-white rounded-md bg-zinc-900", key: nav.title).with_content(nav.title) %>
+            <%= render Link.new(href: nav.url, classes: "px-3 py-2 text-sm lg:text-base font-medium text-zinc-800 bg-zinc-100 dark:text-zinc-100 dark:bg-zinc-800 rounded-md", key: nav.title).with_content(nav.title) %>
           <% end %>
         </div>
       </div>
@@ -43,7 +43,7 @@
                     @click="toggleDarkMode"
                     aria-label="Toggle Darkmode"
                     type="button"
-                    class="relative inline-flex items-center px-1.5 py-1.5 text-sm font-medium text-white bg-zinc-700 border border-transparent rounded-md shadow-sm hover:bg-zinc-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-zinc-800 focus:ring-sky-500">
+                    class="relative inline-flex items-center px-1.5 py-1.5 text-sm font-medium text-zinc-50 bg-zinc-700 border border-transparent rounded-md shadow-sm hover:bg-zinc-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-zinc-800 focus:ring-sky-500">
             <%= svg "/assets/theme.svg", class: "w-5 h-5", width: 20, height: 20
             %>
           </button>
@@ -51,14 +51,14 @@
       </div>
     </div>
   </div>
-  <div x-cloak class="md:hidden" id="mobile-menu" x-show="isOpen">
+  <div x-cloak class="relative shadow-sm md:hidden" id="mobile-menu" x-show="isOpen">
     <div
-      class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+      class="absolute w-full px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-zinc-100 dark:bg-zinc-800">
       <!-- Current: "bg-zinc-900 text-white", Default: "text-zinc-300 hover:bg-zinc-700 hover:text-white" -->
       <% site.data.navigation.navbar.each do |nav| %>
         <%= render Link.new(
               href: nav.url,
-              classes: "block px-3 py-2 text-base font-medium rounded-md text-zinc-300 hover:bg-zinc-700 hover:text-white",
+              classes: "block px-3 py-2 text-base font-medium rounded-md text-zinc-800 dark:text-zinc-300 hover:bg-zinc-700 hover:text-zinc-100",
               key: nav.title
             ).with_content(nav.title) %>
       <% end %>
