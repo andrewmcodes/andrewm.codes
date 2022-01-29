@@ -5,4 +5,6 @@
   <%= render Link.new(href: "/").with_content(svg("/assets/logo.svg", class: "text-sky-500 dark:text-pink-500 w-24 mb-8")) if resource.data.render_logo %>
   <%= render Heading.new.with_content(resource.data.title) %>
   <%= render ContentBlock.new.with_content(content) %>
+  <%= resource.data.last_modified_at %>
+  edit on github
 <% end %>

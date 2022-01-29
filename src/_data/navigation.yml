@@ -7,6 +7,8 @@ navbar:
     url: /subscribe/
   - title: Speaking
     url: /speaking/
+  - title: Projects
+    url: /projects/
   - title: Posts
     url: /posts/
 footer:
@@ -26,20 +28,12 @@ footer:
     url: /newsletter/
   - title: Uses
     url: /uses/
-  - title: Notes↗
-    url: https://notes.andrewm.codes/
-  - title: Speaking
-    url: /speaking/
   - title: Colophon
     url: /colophon/
-  - title: Projects
-    url: /projects/
   - title: Subscribe
     url: /subscribe/
   - title: JSON Feed
     url: /feed.json
-  - title: RSS Feed
-    url: /feed.xml
 social:
   - title: github
     url: https://github.com/andrewmcodes

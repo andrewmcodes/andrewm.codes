@@ -11,6 +11,6 @@ class Image < BoxComponent
   end
 
   def as
-    opts[:as] || :img
+    opts.fetch(:as, :img)
   end
 end

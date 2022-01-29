@@ -1,7 +1,12 @@
-<%= render Container.new do %>
-  <%= render ListComponent.new do |l| %>
-    <% collections.cfps.resources.each do |cfp| %>
-      <%= l.post(url: cfp.relative_url, title: cfp.data.title, description: cfp.data.description) %>
+<%= render List.new(classes: "-mx-4") do %>
+  <% collections.cfps.resources.each do |post| %>
+    <%= render DataItem.new(href: post.relative_url) do |i| %>
+      <% i.title do %>
+        <%= render Heading.new(level: 3).with_content(post.data.title) %>
+      <% end %>
+      <% i.description do %>
+        <%= render Text.new(class: "line-clamp-2 text-sm text-gray-700 dark:text-gray-300").with_content(post.data.description) %>
+      <% end %>
     <% end %>
   <% end %>
 <% end %>
