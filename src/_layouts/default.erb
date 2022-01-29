@@ -9,8 +9,8 @@
   <body class="h-full font-sans <%= layout.data.colors %> <%= class_map "debug-screens": Bridgetown.env.development? %>">
     <%= render "nav" %>
     <%= render Columns.new(classes: "min-h-full mt-16", spacing: "space-y-16") do %>
-      <%= render Alert.new(level: :info).with_content("Layout: #{resource.data&.layout&.to_s}") if Bridgetown.env.development? %>
-      <%= render Columns.new(classes: "grow", as: :main) do %>
+      <%#= render Alert.new(level: :info, classes: "-mb-8").with_content("Layout: #{resource.data&.layout&.to_s}") if Bridgetown.env.development? %>
+      <%= render Columns.new(classes: "grow mt-16", as: :main) do %>
         <%= content %>
       <% end %>
       <%= render "footer" %>
