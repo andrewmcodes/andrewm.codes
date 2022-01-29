@@ -4,9 +4,9 @@ const { watch } = require("chokidar")
 const MODE = process.env["BRIDGETOWN_ENV"] || "production"
 const outputFolder = "build"
 const esbuildOptions = {}
-const watcher = watch(["./src/**/*.*{html,md,erb,rb}", "./frontend/javascript/*.js*", "./frontend/styles/*.*css*"])
 
 if (MODE === "development") {
+  const watcher = watch(["./src/**/*.*{html,md,erb,rb}", "./frontend/javascript/*.js*", "./frontend/styles/*.*css*"])
   watcher
     .on("ready", () => {
       console.log("esbuild: initial development build")
