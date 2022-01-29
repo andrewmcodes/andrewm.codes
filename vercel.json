@@ -3,6 +3,10 @@
   "trailingSlash": true,
   "redirects": [
     {
+      "source": "/privacy/",
+      "destination": "/colophone/"
+    },
+    {
       "source": "/now/",
       "destination": "/about/#now"
     },
