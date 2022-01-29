@@ -1,4 +1,6 @@
 navbar:
+  - title: Home
+    url: /
   - title: About
     url: /about/
   - title: Subscribe
@@ -8,6 +10,8 @@ navbar:
   - title: Posts
     url: /posts/
 footer:
+  - title: Home
+    url: /
   - title: Sitemap
     url: /sitemap/
   - title: AMA

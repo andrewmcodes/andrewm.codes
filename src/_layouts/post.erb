@@ -1,7 +1,6 @@
 ---<%
 { layout: :default }
 %>---
-<%= render Alert.new(level: :info).with_content("Layout: #{layout.label}") if Bridgetown.env.development? %>
 <%= render Container.new(as: :article) do %>
   <%= render 'post_header' %>
   <%= render Divider.new %>
