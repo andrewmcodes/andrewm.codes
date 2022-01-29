@@ -1,27 +1,22 @@
 const build = require("./config/esbuild.defaults.js")
+const { watch } = require("chokidar")
 
-// Update this if you need to configure a destination folder other than `output`
+const MODE = process.env["BRIDGETOWN_ENV"] || "production"
 const outputFolder = "build"
-
-// You can customize this as you wish, perhaps to add new esbuild plugins.
-//
-// Eg:
-//
-//  ```
-//  const path = require("path")
-//  const esbuildCopy = require('esbuild-plugin-copy').default
-//  const esbuildOptions = {
-//    plugins: [
-//      esbuildCopy({
-//        assets: {
-//          from: [path.resolve(__dirname, 'node_modules/somepackage/files/*')],
-//          to: [path.resolve(__dirname, 'output/_bridgetown/somepackage/files')],
-//        },
-//        verbose: false
-//      }),
-//    ]
-//  }
-//  ```
 const esbuildOptions = {}
+const watcher = watch(["./src/**/*.*{html,md,erb,rb}", "./frontend/javascript/*.js*", "./frontend/styles/*.*css*"])
 
-build(outputFolder, esbuildOptions)
+if (MODE === "development") {
+  watcher
+    .on("ready", () => {
+      console.log("esbuild: initial development build")
+      build(outputFolder, esbuildOptions)
+    })
+    .on("change", path => {
+      console.log(`esbuild: file ${path} has been changed`)
+      build(outputFolder, esbuildOptions)
+    })
+} else {
+  console.log("esbuild: production build")
+  build(outputFolder, esbuildOptions)
+}

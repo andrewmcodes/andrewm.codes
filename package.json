@@ -30,6 +30,7 @@
     "@tailwindcss/line-clamp": "^0.3.1",
     "@tailwindcss/typography": "^0.5.0",
     "autoprefixer": "^10.4.2",
+    "chokidar": "^3.5.3",
     "esbuild": "^0.14.12",
     "glob": "^7.2.0",
     "husky": "^7.0.4",
@@ -46,7 +47,7 @@
     "esbuild-dev": "node esbuild.config.js --watch",
     "prepare": "husky install",
     "start": "bin/bridgetown start",
-    "build": "BRIDGETOWN_ENV=production bin/bridgetown deploy",
+    "build": "bin/bridgetown deploy",
     "format": "yarn format:ruby && yarn format:prettier",
     "format:prettier": "prettier --write .",
     "format:ruby": "bundle exec standardrb"

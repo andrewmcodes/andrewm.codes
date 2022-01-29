@@ -27,11 +27,13 @@ end
 namespace :frontend do
   desc "Build the frontend with esbuild for deployment"
   task :build do
+    ENV["BRIDGETOWN_ENV"] = "production"
     sh "yarn run esbuild"
   end
 
   desc "Watch the frontend with esbuild during development"
   task :dev do
+    ENV["BRIDGETOWN_ENV"] = "development"
     sh "yarn run esbuild-dev"
   rescue Interrupt
   end
