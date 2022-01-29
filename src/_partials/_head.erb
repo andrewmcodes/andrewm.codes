@@ -36,7 +36,7 @@
   <% if resource.data.no_index %>
     <meta name="robots" content="noindex"/>
   <% end %>
-  <meta name="author" content="<%= site.metadata.name %>">
+  <meta name="author" content="<%= site.metadata.author.name %>">
   <meta content="Bridgetown" name="generator">
   <meta name="referrer" content="no-referrer-when-downgrade">
   <link rel="stylesheet" href="<%= webpack_path :css %>" data-turbo-track="reload" />
