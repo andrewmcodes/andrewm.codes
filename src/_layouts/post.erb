@@ -29,7 +29,7 @@
     </div>
   </div>
 
-  <%= render Divider.new %>
+  <%= render Divider.new(variant: :colorful) %>
   <%= render ContentBlock.new.with_content(content) %>
   <%= render Divider.new %>
 
@@ -69,8 +69,8 @@
         ['Discuss', render(Link.new(href: twitter_discuss_url(resource)).with_content("on Twitter↗"))],
         ['Questions', render(Link.new(href: "/ama/").with_content("on GitHub Discussions↗"))],
       ] %>
-      <% details << ['Next', render(Link.new(href: resource.next_resource.relative_url).with_content(resource.next_resource&.data&.title || '→'))] if resource.next_resource && resource.next_resource.collection.label == "posts" %>
-      <% details << ['Previous', render(Link.new(href: resource.previous_resource.relative_url).with_content(resource.previous_resource&.data&.title || '→'))] if resource.previous_resource && resource.previous_resource.collection.label == "posts" %>
+      <%# details << ['Next', render(Link.new(href: resource.next_resource.relative_url).with_content(resource.next_resource&.data&.title || '→'))] if resource.next_resource && resource.next_resource.collection.label == "posts" %>
+      <%# details << ['Previous', render(Link.new(href: resource.previous_resource.relative_url).with_content(resource.previous_resource&.data&.title || '→'))] if resource.previous_resource && resource.previous_resource.collection.label == "posts" %>
       <% details.reverse.each do |label, value| %>
         <div class="py-4 sm:grid sm:grid-cols-3 sm:gap-2">
         <dt class="text-sm text-zinc-700 dark:text-zinc-300">
