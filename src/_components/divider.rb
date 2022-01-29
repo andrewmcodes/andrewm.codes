@@ -1,5 +1,5 @@
 class Divider < BoxComponent
-  COLORFUL_CLASSES = "border-t-0 my-8 flex h-1 w-[calc(100%+4rem)] bg-gradient-to-r from-sky-500 via-purple-500 to-pink-500 sm:mx-0 sm:w-full".freeze
+  COLORFUL_CLASSES = "border-t-0 my-8 flex h-1 w-100 bg-gradient-to-r from-sky-500 via-purple-500 to-pink-500 sm:mx-0 sm:w-full".freeze
   DEFAULT_BORDER = "border-t-1 border-zinc-300 dark:border-zinc-700".freeze
   DEFAULT_SPACING = "my-6".freeze
 

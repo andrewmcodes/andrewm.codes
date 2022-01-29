@@ -4,12 +4,12 @@ description: A bit about how this site was made.
 permalink: /colophon/
 no_index: false
 date: "2022-01-29T12:27:25.003Z"
-last_modified_at: "2022-01-29T17:01:41.381Z"
+last_modified_at: "2022-01-29T22:35:16.442Z"
 ---
 
 ## Typography
 
-I am using [IBM Plex Sans][1] on this site, a nice variable font. For markdown pages, I am using [the Tailwind CSS typography plugin][2] with a few modifications.
+I am using [IBM Plex Sans][1] on this site, a nice variable font, that I am self hosting. For markdown pages, I am using [the Tailwind CSS typography plugin][2] with a few modifications.
 
 ## Technologies
 
