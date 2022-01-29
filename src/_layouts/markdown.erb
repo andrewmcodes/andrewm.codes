@@ -4,7 +4,9 @@
 <%= render Container.new(as: :article, classes: "space-y-8") do %>
   <%= render Link.new(href: "/").with_content(svg("/assets/logo.svg", class: "text-sky-500 dark:text-pink-500 w-24 mb-8")) if resource.data.render_logo %>
   <%= render Heading.new.with_content(resource.data.title) %>
+  <%= render Divider.new(variant: :colorful) %>
   <%= render ContentBlock.new.with_content(content) %>
+  <%= render Divider.new(variant: :colorful) %>
   <%= resource.data.last_modified_at %>
   edit on github
 <% end %>

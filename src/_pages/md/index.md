@@ -3,7 +3,7 @@ layout: home
 title: Andrew Mason
 no_index: false
 date: "2021-12-20T20:17:41-07:00"
-last_modified_at: "2022-01-29T17:01:41.385Z"
+last_modified_at: "2022-01-29T18:46:59.722Z"
 ---
 
 <div class="not-prose lead">
@@ -15,19 +15,15 @@ This website is my home on the web and part of my digital brain. This is where I
 
 [Learn More About Me →](/about/)
 
-## Featured Posts
+## Recent Posts
 
-<%= render "featured_posts" %>
+<%= render "recent_posts" %>
 
 [View All →](/posts/)
 
 ## Creating
 
 <%= render "creating" %>
-
-## Recent Posts
-
-<%= render "recent_posts" %>
 
 ## Newsletter
 

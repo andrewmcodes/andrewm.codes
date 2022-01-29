@@ -4,7 +4,7 @@ description: Information about this website.
 permalink: /sitemap/
 no_index: false
 date: "2021-12-20T21:27:36-07:00"
-last_modified_at: "2022-01-29T17:01:41.390Z"
+last_modified_at: "2022-01-29T18:38:22.950Z"
 ---
 
 ## Collections
@@ -17,7 +17,7 @@ last_modified_at: "2022-01-29T17:01:41.390Z"
 
 ## Pages
 
-- [Home](/)
+- [Home](..)
 - [About](/about/)
 - [Newsletter](/newsletter/)
 - [Colophon](/colophon/)
