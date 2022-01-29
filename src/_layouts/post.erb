@@ -5,38 +5,17 @@
 
   <%= render Columns.new do %>
     <%= render Heading.new(classes: "break-words").with_content(resource.data.title) %>
-    <div class="flex flex-wrap items-center justify-between -mt-4 -ml-4 sm:flex-nowrap">
-      <div class="mt-4 ml-4">
-        <div class="flex items-center">
-          <div class="flex-shrink-0">
-            <%= render Image.new(src: site.data.authors.andrew.picture, alt: site.data.authors.andrew.name, classes: "h-8 w-8 rounded-full", width: 64, height: 64) %>
-          </div>
-          <div class="ml-4">
-            <%= render Heading.new(level: 4, as: :h2).with_content(site.data.authors.andrew.name) %>
-            <p class="text-sm text-skin-muted">
-              Updated <%= date_to_string resource.data.lastmod, "ordinal", "US" %>
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="flex flex-shrink-0 mt-4 ml-4">
-        <a href="<%= twitter_share_url(resource) %>" class="relative inline-flex items-center px-4 py-2 ml-3 text-sm font-medium border rounded-md shadow-sm border-skin-divider text-skin-inverted bg-skin-primary hover:bg-skin-primary-light focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
-          <%= svg "/assets/twitter.svg", class: "w-4 h-4 -ml-1 mr-2" %>
-          <span>Share</span>
-        </a>
-      </div>
-    </div>
   <% end %>
 
   <%= render Divider.new(variant: :colorful) %>
   <%= render ContentBlock.new.with_content(content) %>
-  <%= render Divider.new %>
+  <%= render Divider.new(variant: :colorful) %>
 
   <%= render Columns.new do %>
     <dl class="space-y-4">
       <% if resource.taxonomies.tag.terms.any? %>
         <div class="space-y-2">
-          <dt class="text-sm text-zinc-700 dark:text-zinc-500">
+          <dt class="text-sm text-zinc-500">
             Tags
           </dt>
           <dd class="flex space-x-2 text-sm text-zinc-900 dark:text-zinc-50">
@@ -48,7 +27,7 @@
       <% end %>
       <% if resource.taxonomies.series.terms.any? %>
         <div class="space-y-2">
-          <dt class="text-sm text-zinc-700 dark:text-zinc-500">
+          <dt class="text-sm text-zinc-500">
             Series
           </dt>
           <dd class="text-sm text-zinc-900 dark:text-zinc-50">
@@ -72,7 +51,7 @@
       <%# details << ['Previous', render(Link.new(href: resource.previous_resource.relative_url).with_content(resource.previous_resource&.data&.title || '→'))] if resource.previous_resource && resource.previous_resource.collection.label == "posts" %>
       <% details.reverse.each do |label, value| %>
         <div class="py-4 sm:grid sm:grid-cols-3 sm:gap-2">
-        <dt class="text-sm text-zinc-700 dark:text-zinc-300">
+        <dt class="text-sm text-zinc-500">
             <%= label %>
           </dt>
           <dd class="mt-1 text-sm text-zinc-900 dark:text-zinc-50 sm:mt-0 sm:col-span-2">
