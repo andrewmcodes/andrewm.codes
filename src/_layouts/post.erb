@@ -1,13 +1,12 @@
 ---<%
 { layout: :default }
 %>---
-<%= render Container.new(as: :article) do %>
-
+<%= render Container.new(as: :article, class: "space-y-12") do %>
   <%= render Stack.new do %>
     <div class="flex items-center pb-2 text-zinc-700 dark:text-zinc-300">
-      <%= render Link.new(href: site.metadata.twitter.url, classes: "flex items-center", weight: "font-medium", hover: "hover:text-sky-500 dark:hover:text-pink-500") do %>
-        <%= render Image.new(src: site.metadata.author.picture, classes: "w-6 h-6 rounded-full") %>
-        <p class="ml-2 text-sm">@andrewmcodes</p>
+      <%= render Link.new(href: site.metadata.twitter.url, classes: "flex items-center align-middle", weight: "font-medium", hover: "hover:text-sky-500 dark:hover:text-pink-500") do %>
+        <%= render Image.new(src: site.metadata.author.picture, classes: "w-6 h-6 rounded-full mr-4") %>
+        <%= render Text.new.with_content(render Secondary.new(class: "h-full").with_content("#{site.metadata.twitter.username}")) %>
       <% end %>
     </div>
     <%= render Heading.new(classes: "break-words").with_content(resource.data.title) %>
@@ -18,32 +17,7 @@
   <%= render Divider.new(variant: :colorful) %>
 
   <%= render Stack.new do %>
-    <dl class="space-y-4">
-      <% if resource.taxonomies.tag.terms.any? %>
-        <div class="space-y-2">
-          <dt class="text-sm text-zinc-500">
-            Tags
-          </dt>
-          <dd class="flex space-x-2 text-sm text-zinc-900 dark:text-zinc-50">
-            <% resource.taxonomies.tag.terms.each do |term| %>
-              <%= render Link.new(href: "/tags/{term.url}/").with_content(term.label) %>
-            <% end %>
-          </dd>
-        </div>
-      <% end %>
-      <% if resource.taxonomies.series.terms.any? %>
-        <div class="space-y-2">
-          <dt class="text-sm text-zinc-500">
-            Series
-          </dt>
-          <dd class="text-sm text-zinc-900 dark:text-zinc-50">
-          <% resource.taxonomies.series.terms.each do |term| %>
-            <%= render Link.new(href: "/series/{term.url}/").with_content(term.label) %>
-          <% end %>
-          </dd>
-        </div>
-      <% end %>
-    </dl>
+
     <dl class="grid grid-cols-2 ">
     <% details = [
         ['Reading Time', "#{reading_time(resource.content)} min read"],
@@ -57,13 +31,13 @@
       <%# details << ['Previous', render(Link.new(href: resource.previous_resource.relative_url).with_content(resource.previous_resource&.data&.title || '→'))] if resource.previous_resource && resource.previous_resource.collection.label == "posts" %>
       <% details.reverse.each do |label, value| %>
         <div class="py-4 sm:grid sm:grid-cols-3 sm:gap-2">
-        <dt class="text-sm text-zinc-500">
+          <dt class="text-sm text-zinc-500">
             <%= label %>
           </dt>
           <dd class="mt-1 text-sm text-zinc-900 dark:text-zinc-50 sm:mt-0 sm:col-span-2">
             <%= value %>
           </dd>
-      </div>
+        </div>
       <% end %>
     </dl>
   <% end %>
