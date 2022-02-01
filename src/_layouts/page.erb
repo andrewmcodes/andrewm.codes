@@ -2,6 +2,7 @@
 { layout: :default }
 %>---
 <%= render Container.new(spacing: "space-y-8") do %>
-  <%= render Heading.new(classes: "px-4").with_content(resource.data.title) %>
+  <%= render Heading.new.with_content(resource.data.title) %>
+  <%= render Divider.new(variant: :colorful) %>
   <%= content %>
 <% end %>

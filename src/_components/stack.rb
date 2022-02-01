@@ -1,4 +1,4 @@
-class Columns < BoxComponent
+class Stack < BoxComponent
   private
 
   def classes
