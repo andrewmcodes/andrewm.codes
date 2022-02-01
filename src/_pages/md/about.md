@@ -4,7 +4,7 @@ description: "Ruby on Rails software engineer, podcaster, and creator."
 permalink: /about/
 no_index: false
 date: "2021-12-20T20:18:17-07:00"
-last_modified_at: "2022-01-29T22:15:53.447Z"
+last_modified_at: "2022-02-01T11:59:10.612Z"
 ---
 
 <%= render Image.new(src: site.metadata.author.picture, alt: site.metadata.author.name, classes: "h-20 w-20 rounded-full shadow-md") %>
@@ -22,3 +22,5 @@ You can find me on [Twitter](https://twitter.com/andrewmcodes), where I share re
 ## Work History
 
 <%= render "work_history" %>
+
+## Contact

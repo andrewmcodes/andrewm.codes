@@ -5,17 +5,18 @@
 <%= render Image.new(src: site.metadata.author.picture, alt: site.metadata.author.name, classes: "h-20 w-20 rounded-full shadow-md") %>
 
   <div class="mt-8 not-prose lead">
-    <h1 class="inline-block m-0 font-semibold">Andrew Mason</h1>
-    <span>is a software engineer, podcaster, and creator.</span>
+    <%= render Heading.new.with_content("Andrew Mason") %>
   </div>
   <%= render ContentBlock.new.with_content(content) %>
   <div class="flex items-end justify-between gap-4 mt-8 mb-4 not-prose">
     <%= render Heading.new(level: 2).with_content("Recent Posts") %>
     <%= render Link.new(button: true, href: "/posts/").with_content("View All") %>
   </div>
-  <%= render "recent_posts" %>
-  <%= render Heading.new(level: 2, classes: "mt-12").with_content("Creating") %>
-  <%= render "creating" %>
+  <%= render Text.new(small: true) do %>
+    <%= render Secondary.new.with_content("This is where I publish tutorials, tips, and more about Ruby, Ruby on Rails, developer tooling, and more.") %>
+  <% end %>
+  <%= render "recent_posts", amount: 4 %>
+
   <%= render Heading.new(level: 2, classes: "mt-12").with_content("Newsletter") %>
   <%= render "newsletter_form" %>
 <% end %>

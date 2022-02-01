@@ -5,8 +5,8 @@ navbar:
     url: /site/components/
   - title: About
     url: /about/
-  - title: Subscribe
-    url: /subscribe/
+  - title: Follow
+    url: /follow/
   - title: Speaking
     url: /speaking/
   - title: Projects
@@ -32,8 +32,8 @@ footer:
     url: /uses/
   - title: Site
     url: /site/
-  - title: Subscribe
-    url: /subscribe/
+  - title: Follow
+    url: /follow/
   - title: JSON Feed
     url: /feed.json
 social:

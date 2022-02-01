@@ -3,7 +3,7 @@
 %>---
 <%= render Container.new(as: :article) do %>
   <%= render Stack.new do %>
-
+    <%= render Link.new(href: "/posts/", classes: "mb-8").with_content(render Secondary.new.with_content("<- Back")) %>
     <%= render Heading.new(classes: "break-words").with_content(resource.data.title) %>
     <div class="flex items-center space-x-4 text-zinc-700 dark:text-zinc-300">
       <%= render Link.new(href: site.metadata.twitter.url, classes: "flex items-center align-middle", weight: "font-medium", hover: "hover:text-sky-500 dark:hover:text-pink-500") do %>
@@ -21,27 +21,12 @@
   <%= render ContentBlock.new.with_content(content) %>
   <%= render Divider.new(variant: :colorful) %>
 
-  <%= render Stack.new do %>
+  <div class="flex items-end justify-between gap-4 mt-4 not-prose">
+      <%= render Heading.new(level: 2).with_content("Recent Posts") %>
+      <%= render Link.new(button: true, href: "/posts/").with_content("View All") %>
+    </div>
+  <%= render Stack.new(classes: "bg-zinc-800 mt-4 px-4 pb-4") do %>
 
-    <dl class="grid grid-cols-2 ">
-    <% details = [
-        ['Published On', date_to_string(resource.data.date, "ordinal", "US")],
-        ['Updated On', date_to_string(resource.data.last_modified_at, "ordinal", "US")],
-        # ['Discuss', render(Link.new(href: twitter_discuss_url(resource)).with_content("on Twitter↗"))],
-        # ['Questions', render(Link.new(href: "/ama/").with_content("on GitHub Discussions↗"))],
-      ] %>
-      <%# details << ['Next', render(Link.new(href: resource.next_resource.relative_url).with_content(resource.next_resource&.data&.title || '→'))] if resource.next_resource && resource.next_resource.collection.label == "posts" %>
-      <%# details << ['Previous', render(Link.new(href: resource.previous_resource.relative_url).with_content(resource.previous_resource&.data&.title || '→'))] if resource.previous_resource && resource.previous_resource.collection.label == "posts" %>
-      <% details.reverse.each do |label, value| %>
-        <div class="py-4 sm:grid sm:grid-cols-3 sm:gap-2">
-          <dt class="text-sm text-zinc-500">
-            <%= label %>
-          </dt>
-          <dd class="mt-1 text-sm text-zinc-900 dark:text-zinc-50 sm:mt-0 sm:col-span-2">
-            <%= value %>
-          </dd>
-        </div>
-      <% end %>
-    </dl>
+    <%= render "recent_posts", amount: 2 %>
   <% end %>
 <% end %>

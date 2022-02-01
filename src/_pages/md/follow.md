@@ -1,10 +1,10 @@
 ---
-title: Subscribe
+title: Follow
 description: "Subscribe to my newsletters, RSS feeds, and follow me on Twitter @andrewmcodes"
-permalink: /subscribe/
+permalink: /follow/
 no_index: false
 date: "2021-12-20T21:27:36-07:00"
-last_modified_at: "2022-01-29T17:01:41.429Z"
+last_modified_at: "2022-02-01T12:00:34.154Z"
 ---
 
 ## RSS Feeds
@@ -20,7 +20,7 @@ last_modified_at: "2022-01-29T17:01:41.429Z"
 - [Ruby Radar](https://rubyradar.dev)
 - [Personal Newsletter](https://newsletter.andrewm.codes)
 
-## Accounts
+## Elsewhere
 
 Elsewhere, you can usually find me as `andrewmcodes`. Here are some places I am active:
 

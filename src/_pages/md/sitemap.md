@@ -4,12 +4,12 @@ description: Information about this website.
 permalink: /sitemap/
 no_index: false
 date: "2021-12-20T21:27:36-07:00"
-last_modified_at: "2022-02-01T10:16:06.081Z"
+last_modified_at: "2022-02-01T12:00:44.469Z"
 ---
 
 ## Collections
 
-- [Accounts](/subscribe/#accounts)
+- [Accounts](/follow/#elsewhere)
 - [CFPs](/cfps/)
 - [Podcasts](/podcasts/)
 - [Posts](/posts/)
@@ -23,7 +23,7 @@ last_modified_at: "2022-02-01T10:16:06.081Z"
 - [Site](/site/)
 - [Projects](/projects/)
 - [Speaking](/speaking/)
-- [Subscribe](/subscribe/)
+- [Follow](/follow/)
 - [Uses](/uses/)
 
 ## Meta
