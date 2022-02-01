@@ -12,9 +12,7 @@
     <%= render Heading.new(level: 2).with_content("Recent Posts") %>
     <%= render Link.new(button: true, href: "/posts/").with_content("View All") %>
   </div>
-  <%= render Text.new(small: true) do %>
-    <%= render Secondary.new.with_content("This is where I publish tutorials, tips, and more about Ruby, Ruby on Rails, developer tooling, and more.") %>
-  <% end %>
+
   <%= render "recent_posts", amount: 4 %>
 
   <%= render Heading.new(level: 2, classes: "mt-12").with_content("Newsletter") %>

@@ -4,12 +4,10 @@ description: "Ruby on Rails software engineer, podcaster, and creator."
 permalink: /about/
 no_index: false
 date: "2021-12-20T20:18:17-07:00"
-last_modified_at: "2022-02-01T11:59:10.612Z"
+last_modified_at: "2022-02-01T12:38:32.697Z"
 ---
 
-<%= render Image.new(src: site.metadata.author.picture, alt: site.metadata.author.name, classes: "h-20 w-20 rounded-full shadow-md") %>
-
-Hey, I'm Andrew. I am developer, podcaster, and creator in the Ruby community. I work at The N2 Company building Ruby on Rails applications as a software developer.
+Hey, I'm Andrew. I am developer, podcaster, and creator in the Ruby community.
 
 I've been on [lots of podcasts over the years](/podcasts/), and am currently the co-host of [Remote Ruby](https://remoteruby.com).
 
@@ -24,3 +22,5 @@ You can find me on [Twitter](https://twitter.com/andrewmcodes), where I share re
 <%= render "work_history" %>
 
 ## Contact
+
+Want to get in touch? You can email me at `andrew[at]andrewm.codes` or [shoot me a DM on Twitter](https://twitter.com/andrewmcodes/).
