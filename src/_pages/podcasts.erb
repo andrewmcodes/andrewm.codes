@@ -7,10 +7,9 @@ no_index: false
 
 <h2>Shows</h2>
 
-<%= render Container.new do %>
-  <%= render ListComponent.new do |l| %>
+  <%= render List.new do %>
     <% site.collections.podcasts.resources.find_all { |e| e.data.status }.each do |podcast| %>
-      <%= l.tile(
+      <%= render ListTile.new(
           url: podcast.data.website_url,
           title: [podcast.data.title, podcast.data.status].join(" - "),
           description: podcast.data.description.to_s,
@@ -19,14 +18,12 @@ no_index: false
         ) %>
     <% end %>
   <% end %>
-<% end %>
 
 <h2>Guest Episodes</h2>
 
-<%= render Container.new do %>
-  <%= render ListComponent.new do |l| %>
+  <%= render List.new do %>
     <% site.collections.podcast_episodes.resources.find_all { |e| e.data.role == "guest" }.each do |episode| %>
-      <%= l.tile(
+      <%= render ListTile.new(
           url: episode.data.website_url,
           title: episode.data.title,
           description: episode.data.description.to_s,
@@ -35,7 +32,6 @@ no_index: false
         ) %>
     <% end %>
   <% end %>
-<% end %>
 
 <h2>More Speaking</h2>
 

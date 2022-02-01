@@ -1,21 +1,15 @@
----
-title: 2022 Reading List
-description: Documenting some of the articles I read online to share with others.
-permalink: /reading-list/
-no_index: false
-last_modified_at: '2022-01-09T17:10:35.676Z'
-layout: page
----
+---<%
+{
+  layout: :page,
+  title: "2022 Reading List",
+  description: "Documenting some of the articles I read online to share with others.",
+  permalink: "/reading-list/",
+  no_index: false,
+}
+%>---
 
-<%= render Container.new do %>
-  <%= render ListComponent.new do |l| %>
-    <% site.data.raindrop.reading_list.items.each do |item| %>
-      <%= l.tile(
-            url: item.link,
-            title: item.title,
-            image: item&.cover,
-            description: item.link,
-            clamp: false) %>
-    <% end %>
+<%= render List.new do %>
+  <% site.data.raindrop.reading_list.items.each do |item| %>
+    <%= render ListTile.new(url: item.link, title: item.title, image: item&.cover, description: item.link, clamp: false) %>
   <% end %>
 <% end %>
