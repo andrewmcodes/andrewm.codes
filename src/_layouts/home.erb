@@ -2,19 +2,6 @@
 { layout: :default }
 %>---
 <%= render Container.new(as: :section) do %>
-<%= render Image.new(src: site.metadata.author.picture, alt: site.metadata.author.name, classes: "h-20 w-20 rounded-full shadow-md") %>
-
-  <div class="mt-8 not-prose lead">
-    <%= render Heading.new.with_content("Andrew Mason") %>
-  </div>
-  <%= render ContentBlock.new.with_content(content) %>
-  <div class="flex items-end justify-between gap-4 mt-8 mb-4 not-prose">
-    <%= render Heading.new(level: 2).with_content("Recent Posts") %>
-    <%= render Link.new(button: true, href: "/posts/").with_content("View All") %>
-  </div>
-
-  <%= render "recent_posts", amount: 4 %>
-
-  <%= render Heading.new(level: 2, classes: "mt-12").with_content("Newsletter") %>
-  <%= render "newsletter_form" %>
+<%= render Image.new(src: site.metadata.author.picture, alt: site.metadata.author.name, classes: "h-20 w-20 rounded-full shadow-md", loading: "eager" ) %>
+<%= render ContentBlock.new.with_content(content) %>
 <% end %>
