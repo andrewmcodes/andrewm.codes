@@ -9,7 +9,9 @@ class Link < BoxComponent
     class_list << opts.fetch(:weight, "font-semibold")
     class_list << "!text-sky-500 dark:!text-pink-500" if opts[:active]
 
-    button_link? ? BUTTON_LINK_CLASSES : class_list
+    list = button_link? ? BUTTON_LINK_CLASSES : class_list
+    list = [] if variant == :none
+    list
   end
 
   def button_link?

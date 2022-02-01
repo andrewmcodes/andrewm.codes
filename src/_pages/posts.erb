@@ -7,17 +7,5 @@ layout: page
 ---
 
 <%= render List.new do %>
-  <% collections.posts.resources.each do |post| %>
-    <%= render DataItem.new(href: post.relative_url) do |i| %>
-      <% i.title do %>
-        <%= render Heading.new(level: 3).with_content(post.data.title) %>
-      <% end %>
-      <% i.subtitle do %>
-        <%= render Text.new(class: "text-sm font-medium text-gray-500 truncate").with_content("Reading Time: #{reading_time(post.content)} min#{'s' if reading_time(post.content) > 1}") %>
-      <% end %>
-      <% i.description do %>
-        <%= render Text.new(class: "line-clamp-2 text-sm text-gray-700 dark:text-gray-300").with_content(post.data.description) %>
-      <% end %>
-    <% end %>
-  <% end %>
+  <%= render(PostComponent.with_collection(collections.posts.resources)) %>
 <% end %>
