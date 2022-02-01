@@ -1,14 +1,11 @@
 class Columns < BoxComponent
   private
 
-  BASE_CLASSES = %(flex flex-col).freeze
-  DEFAULT_SPACING = "space-y-4".freeze
-
   def classes
-    class_list = opts[:classes]&.split(" ") || []
-    class_list << BASE_CLASSES
-    class_list << opts.fetch(:spacing, DEFAULT_SPACING)
+    [opts.fetch(:spacing, DEFAULT_SPACE_Y), DEFAULT_FLEX_COL]
+  end
 
-    class_list.flatten.join(" ")
+  def remove_options
+    [:spacing]
   end
 end

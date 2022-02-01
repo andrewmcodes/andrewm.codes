@@ -1,0 +1,16 @@
+---<%
+{
+  layout: :page,
+  title: "Components",
+  description: "Showcasing the various components that are available on this site.",
+  permalink: "/components/",
+  no_index: true,
+}
+%>---
+
+<hr>
+Content Block
+<%= render ContentBlock.new.with_content(resource.data.description) %>
+<hr>
+Alert
+<%= render Alert.new(variant: :warning).with_content("Layout: #{resource.layout.label}")  %>

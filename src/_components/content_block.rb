@@ -2,8 +2,7 @@ class ContentBlock < BoxComponent
   private
 
   def classes
-    class_list = opts[:classes]&.split(" ") || []
-    class_list << %w[
+    %w[
       after:prose-code:content-['']
       before:prose-code:content-['']
       dark:prose-invert
@@ -24,13 +23,5 @@ class ContentBlock < BoxComponent
       prose-blockquote:border-sky-500
       dark:prose-blockquote:border-pink-500
     ]
-
-    class_list.flatten.join(" ")
-  end
-
-  def as
-    h_level = opts.fetch(:as, :div)
-    opts.delete(:as)
-    h_level
   end
 end

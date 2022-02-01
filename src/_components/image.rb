@@ -1,16 +1,11 @@
 class Image < BoxComponent
-  def post_initialize(**opts)
+  private
+
+  def add_options
     opts[:loading] ||= "lazy"
   end
 
-  private
-
-  def classes
-    class_list = opts[:classes]&.split(" ") || []
-    class_list.join(" ")
-  end
-
-  def as
-    opts.fetch(:as, :img)
+  def default_tag
+    :img
   end
 end

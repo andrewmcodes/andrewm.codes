@@ -1,6 +1,8 @@
 navbar:
   - title: Home
     url: /
+  - title: Components
+    url: /components/
   - title: About
     url: /about/
   - title: Subscribe

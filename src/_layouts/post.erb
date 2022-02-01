@@ -26,7 +26,7 @@
           </dt>
           <dd class="flex space-x-2 text-sm text-zinc-900 dark:text-zinc-50">
             <% resource.taxonomies.tag.terms.each do |term| %>
-              <%= render Badge.new(href: "/tags/#{term.label}/").with_content(term.label) %>
+              <%= render Link.new(href: "/tags/{term.url}/").with_content(term.label) %>
             <% end %>
           </dd>
         </div>
@@ -38,7 +38,7 @@
           </dt>
           <dd class="text-sm text-zinc-900 dark:text-zinc-50">
           <% resource.taxonomies.series.terms.each do |term| %>
-            <%= render Badge.new(href: "/series/#{term.label}/").with_content(term.label.to_s) %>
+            <%= render Link.new(href: "/series/{term.url}/").with_content(term.label) %>
           <% end %>
           </dd>
         </div>

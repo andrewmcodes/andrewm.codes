@@ -1,19 +1,14 @@
 class Alert < BoxComponent
   private
 
-  BASE_CLASSES = %(px-4 py-3 text-sm).freeze
+  BASE_CLASSES = %(py-3 text-sm).freeze
 
   def classes
-    class_list = opts[:classes]&.split(" ") || []
-    class_list << level_classes(opts.fetch(:level, :info).to_sym)
-    class_list << BASE_CLASSES
-
-    cleanup_keys :level
-    class_list.flatten.join(" ")
+    [variant_classes(variant), BASE_CLASSES, DEFAULT_PX]
   end
 
-  def level_classes(level)
-    case level
+  def variant_classes(name)
+    case name
     when :success
       "text-green-700 bg-green-500 rounded-md dark:text-green-400 bg-opacity-10"
     when :warning
