@@ -2,7 +2,9 @@
 { layout: :default }
 %>---
 <%= render Container.new(as: :section) do %>
-  <div class="not-prose lead">
+<%= render Image.new(src: site.metadata.author.picture, alt: site.metadata.author.name, classes: "h-20 w-20 rounded-full shadow-md") %>
+
+  <div class="mt-8 not-prose lead">
     <h1 class="inline-block m-0 font-semibold">Andrew Mason</h1>
     <span>is a software engineer, podcaster, and creator.</span>
   </div>

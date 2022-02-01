@@ -4,7 +4,11 @@
   "redirects": [
     {
       "source": "/privacy/",
-      "destination": "/colophone/"
+      "destination": "/site/"
+    },
+    {
+      "source": "/analytics/",
+      "destination": "/site/analytics/"
     },
     {
       "source": "/now/",

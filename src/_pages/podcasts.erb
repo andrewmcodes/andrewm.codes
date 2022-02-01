@@ -5,34 +5,30 @@ permalink: "/podcasts/"
 no_index: false
 ---
 
-<h2>Shows</h2>
-
-  <%= render List.new do %>
-    <% site.collections.podcasts.resources.find_all { |e| e.data.status }.each do |podcast| %>
-      <%= render ListTile.new(
-          url: podcast.data.website_url,
-          title: [podcast.data.title, podcast.data.status].join(" - "),
-          description: podcast.data.description.to_s,
-          image: podcast.data&.image_url,
-          clamp: false
-        ) %>
-    <% end %>
+<%= render Heading.new(level: 2).with_content("Currently Hosting") %>
+<%= render List.new do %>
+  <% site.collections.podcasts.resources.find_all { |e| e.data.status }.each do |podcast| %>
+    <%= render ListTile.new(
+        url: podcast.data.website_url,
+        title: [podcast.data.title, podcast.data.status].join(" - "),
+        description: podcast.data.description.to_s,
+        image: podcast.data&.image_url,
+        clamp: false
+      ) %>
   <% end %>
+<% end %>
 
-<h2>Guest Episodes</h2>
-
-  <%= render List.new do %>
-    <% site.collections.podcast_episodes.resources.find_all { |e| e.data.role == "guest" }.each do |episode| %>
-      <%= render ListTile.new(
-          url: episode.data.website_url,
-          title: episode.data.title,
-          description: episode.data.description.to_s,
-          image: episode.relations.podcast&.data&.image_url,
-          clamp: false
-        ) %>
-    <% end %>
+<%= render Heading.new(level: 2).with_content("Guest Episodes") %>
+<%= render List.new do %>
+  <% site.collections.podcast_episodes.resources.find_all { |e| e.data.role == "guest" }.each do |episode| %>
+    <%= render ListTile.new(
+        url: episode.data.website_url,
+        title: episode.data.title,
+        description: episode.data.description.to_s,
+        image: episode.relations.podcast&.data&.image_url,
+        clamp: false
+      ) %>
   <% end %>
+<% end %>
 
-<h2>More Speaking</h2>
-
-<p>You can find more information about my <a href="/speaking/">public speaking over here.</a></p>
+<%= render Heading.new(level: 2).with_content("More Speaking") %>

@@ -2,7 +2,7 @@ navbar:
   - title: Home
     url: /
   - title: Components
-    url: /components/
+    url: /site/components/
   - title: About
     url: /about/
   - title: Subscribe
@@ -30,8 +30,8 @@ footer:
     url: /newsletter/
   - title: Uses
     url: /uses/
-  - title: Colophon
-    url: /colophon/
+  - title: Site
+    url: /site/
   - title: Subscribe
     url: /subscribe/
   - title: JSON Feed

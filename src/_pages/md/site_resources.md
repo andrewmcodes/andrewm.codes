@@ -1,10 +1,10 @@
 ---
-title: Colophon
+title: Site
 description: A bit about how this site was made.
-permalink: /colophon/
+permalink: /site/
 no_index: false
 date: "2022-01-29T12:27:25.003Z"
-last_modified_at: "2022-01-29T22:35:16.442Z"
+last_modified_at: "2022-02-01T10:12:11.311Z"
 ---
 
 ## Typography
@@ -51,7 +51,7 @@ You can contact me to ask me what data I hold about you, which is probably an em
 [12]: https://vercel.com/
 [13]: https://www.cloudflare.com
 [14]: https://plausible.io/
-[15]: /analytics/
+[15]: /site/analytics/
 [16]: https://www.getrevue.co
 [17]: https://www.getrevue.co/terms
 [18]: https://www.getrevue.co/privacy
