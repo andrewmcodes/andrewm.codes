@@ -1,18 +1,16 @@
 navbar:
   - title: Home
     url: /
-  - title: Components
-    url: /site/components/
   - title: About
     url: /about/
-  - title: Follow
-    url: /follow/
   - title: Speaking
     url: /speaking/
   - title: Projects
     url: /projects/
   - title: Posts
     url: /posts/
+  - title: Follow Me
+    url: /follow/
 footer:
   - title: Home
     url: /

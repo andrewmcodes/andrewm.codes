@@ -14,14 +14,14 @@ domain: andrewm.codes
 url: https://andrewm.codes/
 repo: andrewmcodes/andrewm-codes-website
 
-title: Andrew Mason
-tagline: " | andrewm.codes"
+title: Andrew Mason — Ruby on Rails Software Engineer
+tagline: " — andrewm.codes"
 description: >-
-  Full stack Ruby on Rails software engineer, podcaster, and creator, living in Phoenix.
+  Andrew Mason is a full stack Ruby on Rails software engineer, podcaster, and creator currently working remotely from Phoenix, Arizona.
 
 theme_color:
-  light: "#fafafa"
-  dark: "#171717"
+  light: "#f4f4f5"
+  dark: "#27272a"
 
 feed:
   subtitle: RSS Feed for andrewm.codes

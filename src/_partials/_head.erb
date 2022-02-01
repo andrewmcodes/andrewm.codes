@@ -12,7 +12,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="theme-color" content="<%= site.metadata.theme_color.light %>" media="(prefers-color-scheme: light)" />
   <meta name="theme-color" content="<%= site.metadata.theme_color.dark %>" media="(prefers-color-scheme: dark)" />
-  <title><%= title_with_tagline %></title>
+  <title><%= resource.respond_to?(:layout) && resource.layout.label.to_s == "home" ? title : title_with_tagline %></title>
   <meta name="description" content="<%= description %>">
   <%= render "preloads" %>
   <%= render "scripts/dark_mode" %>

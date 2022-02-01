@@ -1,14 +1,14 @@
 ---
 layout: home
-title: Andrew Mason
+title: Andrew Mason — Ruby on Rails Software Engineer
 no_index: false
 date: "2021-12-20T20:17:41-07:00"
-last_modified_at: "2022-02-01T14:57:56.625Z"
+last_modified_at: "2022-02-01T20:57:31.488Z"
 ---
 
 # Andrew Mason
 
-This website is my home on the web and part of my digital brain. It is constantly evolving as I explore new ideas so don't be surprised to find a few unfinished features lying around.
+Full Stack Ruby on Rails Software Engineer, Podcaster, and Creator. This is my personal website where I document my journey as a full stack developer and publish tutorials for myself and others on things I've learned along the way.
 
 [Learn More About Me <span aria-hidden="true">&rarr;</span>](/about/)
 
@@ -17,12 +17,6 @@ This website is my home on the web and part of my digital brain. It is constantl
 <%= render "recent_posts", amount: 4 %>
 
 [View All Posts <span aria-hidden="true">&rarr;</span>](/posts/)
-
-## Something
-
-- Projects
-- Podcasts
-- Follow
 
 ## Newsletter
 

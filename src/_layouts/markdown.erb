@@ -7,6 +7,7 @@
   <%= render Divider.new(variant: :colorful) %>
   <%= render ContentBlock.new.with_content(content) %>
   <%= render Divider.new(variant: :colorful) %>
-  <%= resource.data.last_modified_at %>
-  edit on github
+  <%= render Text.new(small: true) do %>
+    <%= render Secondary.new.with_content("Last Updated: #{date_to_string(resource.data.last_modified_at, 'ordinal', 'US')}") %>
+  <% end %>
 <% end %>
