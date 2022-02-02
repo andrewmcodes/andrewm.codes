@@ -4,6 +4,35 @@ lastmod: "2022-01-10T04:11:08.445Z"
 
 # Changelog
 
+## [3.0.0](https://github.com/andrewmcodes/andrewm-codes-website/compare/v2.2.0...v3.0.0) (2022-02-02)
+
+
+### ⚠ BREAKING CHANGES
+
+* switch from snowpack to esbuild (#85)
+
+### Features
+
+* add 'Getting Started with Obsidian' ([#79](https://github.com/andrewmcodes/andrewm-codes-website/issues/79)) ([dc1586e](https://github.com/andrewmcodes/andrewm-codes-website/commit/dc1586e49e88bb9f42e8b289f6f350a2643eb43c))
+* add new podcast episode with drew ([49dc52d](https://github.com/andrewmcodes/andrewm-codes-website/commit/49dc52d93739604953ddaaaac097b558bd58de83))
+* add turbo ([#86](https://github.com/andrewmcodes/andrewm-codes-website/issues/86)) ([c7ee00f](https://github.com/andrewmcodes/andrewm-codes-website/commit/c7ee00f26be5a7ccc7011cee1aab12c0e60e1a6b))
+* change font to improve loading ([#87](https://github.com/andrewmcodes/andrewm-codes-website/issues/87)) ([0d206f1](https://github.com/andrewmcodes/andrewm-codes-website/commit/0d206f1270e1d1e779c8bafb51dab3ec023a8d66))
+* switch from snowpack to esbuild ([#85](https://github.com/andrewmcodes/andrewm-codes-website/issues/85)) ([b27dbb2](https://github.com/andrewmcodes/andrewm-codes-website/commit/b27dbb25f7f38f8ae39532402122fd40745b3dbb))
+* upgrade bridgetown to 1.0.0.beta1 ([#83](https://github.com/andrewmcodes/andrewm-codes-website/issues/83)) ([5a7ba19](https://github.com/andrewmcodes/andrewm-codes-website/commit/5a7ba19ba70390c9c3464fe4b6e1d9066d217520))
+
+
+### Bug Fixes
+
+* get Tailwind's JIT working ([453509d](https://github.com/andrewmcodes/andrewm-codes-website/commit/453509d621d4252cbdc1553192c7aff16a681850))
+* move watcher into deploy condition ([d07f452](https://github.com/andrewmcodes/andrewm-codes-website/commit/d07f4527ec7da4799d7eff743d72f2586fcc5ad1))
+* update button styles to not have invisible text ([#74](https://github.com/andrewmcodes/andrewm-codes-website/issues/74)) ([1ee6c7c](https://github.com/andrewmcodes/andrewm-codes-website/commit/1ee6c7c838ab080e42b51421e9c991f66258705f))
+* use bridgetown-feed plugin ([323924c](https://github.com/andrewmcodes/andrewm-codes-website/commit/323924ce3653045ef7791d672af0305eae02ecba)), closes [#88](https://github.com/andrewmcodes/andrewm-codes-website/issues/88)
+
+
+### Performance Improvements
+
+* update cache headers  ([#78](https://github.com/andrewmcodes/andrewm-codes-website/issues/78)) ([d507cf3](https://github.com/andrewmcodes/andrewm-codes-website/commit/d507cf30b08214c31263ad934098d7547ed15a75))
+
 ## [2.2.0](https://github.com/andrewmcodes/andrewm-codes-website/compare/v2.1.0...v2.2.0) (2022-01-10)
 
 ### Features
