@@ -3,8 +3,8 @@
 %>---
 <%= render Container.new(as: :article) do %>
   <%= render Stack.new do %>
-    <%= render Link.new(href: "/posts/", classes: "mb-4 md:mb-8").with_content(render Secondary.new.with_content("← Back")) if resource.collection.label == "posts" %>
-    <%= render Link.new(href: "/cfps/", classes: "mb-4 md:mb-8").with_content(render Secondary.new.with_content("← Back")) if resource.collection.label == "cfps" %>
+    <%= render Link.new(href: "/posts/", classes: "mb-4").with_content(render Secondary.new.with_content("← Back")) if resource.collection.label == "posts" %>
+    <%= render Link.new(href: "/cfps/", classes: "mb-4").with_content(render Secondary.new.with_content("← Back")) if resource.collection.label == "cfps" %>
     <%= render Heading.new(classes: "break-words").with_content(resource.data.title) %>
     <div class="flex items-center">
       <div class="flex-shrink-0">
@@ -21,8 +21,20 @@
   <%= render Divider.new(variant: :colorful) %>
   <%= render ContentBlock.new.with_content(content) %>
   <%= render Divider.new(variant: :colorful) %>
-  <%= render Heading.new(level: 2).with_content("Recent Posts") %>
-  <%= render Stack.new(classes: "dark:bg-zinc-800 bg-zinc-100 mt-4 px-4") do %>
-    <%= render "recent_posts", amount: 2 %>
+  <% if resource.collection.label == "posts" %>
+    <%= render ContentBlock.new do %>
+      <p class="italic">Thanks for reading! You can discuss this post using one of the links below. Additionally, it would mean a lot if you shared this post with others!</p>
+      <ul>
+        <li><%= render Link.new(href: twitter_share_url(resource), classes: "after:content-['_↗']").with_content("Share on Twitter") %></li>
+        <li><%= render Link.new(href: twitter_discuss_url(resource), classes: "after:content-['_↗']").with_content("Discuss on Twitter") %></li>
+        <li><%= render Link.new(href: "/ama/", classes: "after:content-['_↗']").with_content("Discuss on GitHub") %></li>
+      </ul>
+    <% end %>
+    <div class="pt-8">
+      <%= render Heading.new(level: 2).with_content("Recent Posts") %>
+      <%= render Stack.new do %>
+        <%= render "recent_posts", amount: 2 %>
+      <% end %>
+    </div>
   <% end %>
 <% end %>

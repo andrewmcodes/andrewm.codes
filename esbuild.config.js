@@ -7,6 +7,7 @@ const esbuildOptions = {}
 
 build(outputFolder, esbuildOptions)
 
+// WARNING: DO NOT COPY THIS FILE IT DOESN'T WORK CORRECTLY
 if (MODE === "development") {
   const watcher = watch(["./src/**/*.*{html,md,erb,rb}", "./frontend/javascript/*.js*", "./frontend/styles/*.*css*"])
 

@@ -4,20 +4,20 @@ description: Information about this website.
 permalink: /sitemap/
 no_index: false
 date: "2021-12-20T21:27:36-07:00"
-last_modified_at: "2022-02-01T12:00:44.469Z"
+last_modified_at: "2022-02-02T14:53:39.927Z"
 ---
 
 ## Collections
 
-- [Accounts](/follow/#elsewhere)
-- [CFPs](/cfps/)
-- [Podcasts](/podcasts/)
 - [Posts](/posts/)
+- [Podcasts](/podcasts/)
+- [CFPs](/cfps/)
+- [Accounts](/follow/#elsewhere)
 - [Reading List](/reading-list/)
 
 ## Pages
 
-- [Home](..)
+- [Home](/)
 - [About](/about/)
 - [Newsletter](/newsletter/)
 - [Site](/site/)

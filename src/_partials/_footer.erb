@@ -7,6 +7,9 @@
         </div>
       <% end %>
     </nav>
+    <p class="text-sm text-center">
+      <%= render Link.new(href: github_edit_url(resource), classes: "after:content-['_↗']").with_content("Edit on GitHub") %>
+    </p>
     <div class="flex justify-center space-x-6">
       <% site.data.navigation.social.each do |nav| %>
         <%= render IconLink.new(href: nav.url, alt: nav.title, classes: "text-zinc-700 dark:text-zinc-300", hover: "text-pink-500 dark:text-sky-400") do |i| %>

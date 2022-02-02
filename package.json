@@ -47,7 +47,7 @@
     "esbuild-dev": "node esbuild.config.js --watch",
     "prepare": "husky install",
     "start": "bin/bridgetown start",
-    "build": "bin/bridgetown deploy",
+    "build": "BRIDGETOWN_ENV=production bin/bridgetown deploy",
     "format": "yarn format:ruby && yarn format:prettier",
     "format:prettier": "prettier --write .",
     "format:ruby": "bundle exec standardrb"
