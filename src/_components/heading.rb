@@ -26,7 +26,7 @@ class Heading < BoxComponent
     when 1
       "text-4xl font-bold tracking-tight leading-normal"
     when 2
-      "text-2xl font-semibold"
+      "text-2xl font-bold"
     when 3
       "font-semibold tracking-wide break-words text-md"
     when 4

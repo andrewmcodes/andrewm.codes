@@ -3,7 +3,7 @@ layout: home
 title: Andrew Mason — Ruby on Rails Software Engineer
 no_index: false
 date: "2021-12-20T20:17:41-07:00"
-last_modified_at: "2022-02-02T11:33:07.147Z"
+last_modified_at: "2022-02-02T12:41:20.488Z"
 ---
 
 # Andrew Mason

@@ -15,7 +15,7 @@
          type="email"
          name="member[email]"
          id="member_email"
-         class="block w-full px-4 py-3 rounded-md shadow-sm"
+         class="block w-full px-4 py-3 rounded-md shadow-sm dark:bg-zinc-900 dark:focus:ring-pink-500 dark:focus:border-pink-500 focus:ring-sky-500 focus:border-sky-500"
         >
       </div>
       <input
@@ -23,7 +23,7 @@
         value="Subscribe"
         name="member[subscribe]"
         id="member_submit"
-        class="flex items-center justify-center flex-none px-4 py-2 leading-none transition-all border rounded-md shadow-xs cursor-pointer hover:border-transparent bg-skin-primary hover:bg-skin-primary-light border-skin-primary text-skin-inverted hover:shadow-sm"
+        class="flex items-center justify-center flex-none px-4 py-2 font-semibold leading-none transition-all border rounded-md shadow-xs cursor-pointer hover:border-transparent bg-sky-500 hover:bg-sky-400 border-sky-500 text-sky-50 hover:text-sky-100 dark:bg-pink-600 dark:hover:bg-pink-700 dark:border-pink-600 dark:text-pink-100 dark:hover:text-pink-50 hover:shadow-sm"
       />
     </div>
     <%= render ContentBlock.new(classes: "text-xs") do %>
