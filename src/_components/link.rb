@@ -25,7 +25,7 @@ class Link < BoxComponent
   end
 
   def remove_options
-    [:weight, :hover, :active]
+    [:weight, :hover, :active, :external]
   end
 
   def default_tag
