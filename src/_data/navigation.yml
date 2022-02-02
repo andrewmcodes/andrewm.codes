@@ -24,14 +24,8 @@ footer:
     url: /podcasts/
   - title: Newsletter
     url: /newsletter/
-  - title: Uses
-    url: /uses/
   - title: Site
     url: /site/
-  - title: Follow
-    url: /follow/
-  - title: JSON Feed
-    url: /feed.json
 social:
   - title: github
     url: https://github.com/andrewmcodes
@@ -41,5 +35,7 @@ social:
     url: https://linkedin.com/in/andrew-mason/
   - title: dribbble
     url: https://dribbble.com/andrewmcodes
+  - title: json_feed
+    url: /feed.json
   - title: rss
     url: /feed.xml

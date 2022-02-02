@@ -1,16 +1,20 @@
----
-title: "Podcasts"
-description: "Podcasts"
-permalink: "/podcasts/"
-no_index: false
----
+---<%
+{
+  layout: :page,
+  title: "Podcasts",
+  description: "A collection of the podcasts I've hosted and others that I have guested on.",
+  permalink: "/podcasts/",
+  no_index: false,
+}
+%>---
 
-<%= render Heading.new(level: 2).with_content("Currently Hosting") %>
+
+<%= render Heading.new(level: 2, classes: "mt-8 mb-6").with_content("Currently Hosting") %>
 <%= render List.new do %>
-  <% site.collections.podcasts.resources.find_all { |e| e.data.status }.each do |podcast| %>
+  <% site.collections.podcasts.resources.find_all { |e| e.data.status == "Active" }.each do |podcast| %>
     <%= render ListTile.new(
         url: podcast.data.website_url,
-        title: [podcast.data.title, podcast.data.status].join(" - "),
+        title: podcast.data.title,
         description: podcast.data.description.to_s,
         image: podcast.data&.image_url,
         clamp: false
@@ -18,7 +22,7 @@ no_index: false
   <% end %>
 <% end %>
 
-<%= render Heading.new(level: 2).with_content("Guest Episodes") %>
+<%= render Heading.new(level: 2, classes: "mt-8 mb-6").with_content("Guest Episodes") %>
 <%= render List.new do %>
   <% site.collections.podcast_episodes.resources.find_all { |e| e.data.role == "guest" }.each do |episode| %>
     <%= render ListTile.new(
@@ -31,4 +35,15 @@ no_index: false
   <% end %>
 <% end %>
 
-<%= render Heading.new(level: 2).with_content("More Speaking") %>
+<%= render Heading.new(level: 2, classes: "mt-8 mb-6").with_content("Previously Hosting") %>
+<%= render List.new do %>
+  <% site.collections.podcasts.resources.find_all { |e| e.data.status == "Inactive" }.each do |podcast| %>
+    <%= render ListTile.new(
+        url: podcast.data.website_url,
+        title: podcast.data.title,
+        description: podcast.data.description.to_s,
+        image: podcast.data&.image_url,
+        clamp: false
+      ) %>
+  <% end %>
+<% end %>

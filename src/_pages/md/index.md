@@ -3,7 +3,7 @@ layout: home
 title: Andrew Mason — Ruby on Rails Software Engineer
 no_index: false
 date: "2021-12-20T20:17:41-07:00"
-last_modified_at: "2022-02-01T21:17:51.735Z"
+last_modified_at: "2022-02-02T11:33:07.147Z"
 ---
 
 # Andrew Mason
@@ -20,11 +20,15 @@ Full Stack Ruby on Rails Software Engineer, Podcaster, and Creator. This is my p
 
 ## Resources
 
-- Uses
-- Newsletter
-- Reading List
-- Podcasts
-- Follow
+- Some of my [projects are documented here.](/projects/)
+- [Podcasts](/podcasts/) are the main way I interact with the community.
+- All [conferences](/speaking#conferences), [livestreams](/speaking#livestreams/), and [videos](/speaking#videos) are loosely [documented here.](/speaking/)
+- [Tracking articles](/reading-list/) that I have read in 2022.
+- [Subscribe to my newsletter](/newsletter/) or check out [Ruby Radar.](https://rubyradar.dev)
+- You can find me all over the web, [follow me!](/follow/)
+- Want to know the gear that I am using? [I gotchu.](/uses/)
+
+[View the Sitemap <span aria-hidden="true">&rarr;</span>](/posts/)
 
 ## Newsletter
 
