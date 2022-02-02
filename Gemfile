@@ -7,7 +7,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 #   bundle add some-new-plugin -g bridgetown_plugins
 #
 
-gem "bridgetown", "~> 1.0.0.beta1"
+gem "bridgetown", "~> 1.0.0.beta2"
 gem "puma", "~> 5.6"
 
 group :development do
