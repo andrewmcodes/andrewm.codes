@@ -4,15 +4,15 @@ description: Information about this website.
 permalink: /sitemap/
 no_index: false
 date: "2021-12-20T21:27:36-07:00"
-lastmod: "2022-01-09T18:32:47.186Z"
+last_modified_at: "2022-02-02T14:53:39.927Z"
 ---
 
 ## Collections
 
-- [Accounts](/subscribe/#accounts)
-- [CFPs](/speaking/#cfps)
-- [Podcasts](/podcasts/)
 - [Posts](/posts/)
+- [Podcasts](/podcasts/)
+- [CFPs](/cfps/)
+- [Accounts](/follow/#elsewhere)
 - [Reading List](/reading-list/)
 
 ## Pages
@@ -20,20 +20,20 @@ lastmod: "2022-01-09T18:32:47.186Z"
 - [Home](/)
 - [About](/about/)
 - [Newsletter](/newsletter/)
-- [Privacy Policy](/privacy/)
+- [Site](/site/)
 - [Projects](/projects/)
 - [Speaking](/speaking/)
-- [Subscribe](/subscribe/)
+- [Follow](/follow/)
 - [Uses](/uses/)
 
 ## Meta
 
 - [404](/404/)
 - [Sitemap](/sitemap/)
-- [Analytics](/analytics/)
 
----
+## Site Resources
 
-- Bridgetown Version: <%= Bridgetown::VERSION %>
-- Bridgetown Env: <%= Bridgetown.env %>
-- Vercel Env: <%= ENV.fetch "VERCEL_ENV", "nil" %>
+- [Analytics](/site/analytics/)
+- [Experiments](/site/experiments/)
+- [Components](/site/components/)
+- [Dashboard](/site/dashboard/)

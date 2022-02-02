@@ -1,8 +1,9 @@
-<%= render ListComponent.new do |l| %>
-  <% site.data.jobs.each do |hist| %>
-    <%= l.item do %>
-      <%= render Heading.new(level: 3).with_content(hist.title) %>
-      <%= render Text.new(skin: :muted).with_content([hist.company_name, hist.timeline].join(" // ")) %>
-    <% end %>
-  <% end %>
+
+<% site.data.jobs.each do |hist| %>
+  <a target="_blank" rel="noopener noreferrer" href="<%= hist.url %>" class="flex items-center space-x-4 font-normal overflow-none group">
+    <strong class="flex-none font-medium text-zinc-800 group-hover:text-pink-500 group-hover:underline dark:text-zinc-50 dark:group-hover:text-sky-400"><%= hist.company_name %></strong>
+    <span class="w-full border-t border-dashed border-zinc-300 shrink dark:border-zinc-700"></span>
+    <span class="flex-none hidden sm:inline-flex text-zinc-700 dark:text-zinc-300"><%= hist.title %></span>
+    <span class="flex-none text-zinc-500"><%= hist.timeline %></span>
+  </a>
 <% end %>

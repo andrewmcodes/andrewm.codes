@@ -166,3 +166,9 @@
     font-style: italic;
   }
 }
+
+@layer utilities {
+  [x-cloak] {
+    @apply hidden;
+  }
+}

@@ -12,7 +12,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="theme-color" content="<%= site.metadata.theme_color.light %>" media="(prefers-color-scheme: light)" />
   <meta name="theme-color" content="<%= site.metadata.theme_color.dark %>" media="(prefers-color-scheme: dark)" />
-  <title><%= title_with_tagline %></title>
+  <title><%= resource.respond_to?(:layout) && resource.layout.label.to_s == "home" ? title : title_with_tagline %></title>
   <meta name="description" content="<%= description %>">
   <%= render "preloads" %>
   <%= render "scripts/dark_mode" %>
@@ -36,14 +36,13 @@
   <% if resource.data.no_index %>
     <meta name="robots" content="noindex"/>
   <% end %>
-  <meta name="author" content="<%= site.data.authors.andrew.name %>">
+  <meta name="author" content="<%= site.metadata.author.name %>">
   <meta content="Bridgetown" name="generator">
   <meta name="referrer" content="no-referrer-when-downgrade">
   <link rel="stylesheet" href="<%= webpack_path :css %>" data-turbo-track="reload" />
   <script src="<%= webpack_path :js %>" defer data-turbo-track="reload"></script>
   <%= live_reload_dev_js %>
   <script defer src="https://unpkg.com/alpinejs@3.8.1/dist/cdn.min.js"></script>
-
   <%# Links %>
   <link rel="icon" type="image/svg+xml" href="<%= absolute_url "/assets/icons/favicon.svg" %>">
   <link rel="icon" type="image/png" href="<%= absolute_url "/assets/images/favicon.png" %>">
@@ -52,7 +51,10 @@
   <link rel="mask-icon" href="<%= absolute_url "/assets/icons/safari-pinned-tab.svg" %>" color="#007aff">
   <meta name="msapplication-TileColor" content="<%= site.metadata.theme_color.light %>">
   <meta name="theme-color" content="<%= site.metadata.theme_color.light %>">
-  <link href="<%= url %>" rel="canonical">
+  <%# Not a great fix but will catch some of the issues until I decide a better way to handle this. %>
+  <% unless resource.data.pagination_info %>
+    <link href="<%= url %>" rel="canonical">
+  <% end %>
   <%# Webmentions %>
   <link rel="webmention" href="https://webmention.io/<%= site.metadata.domain %>/webmention" />
   <link rel="pingback" href="https://webmention.io/<%= site.metadata.domain %>/xmlrpc" />
@@ -68,7 +70,7 @@
         description: description,
         url: url,
         date: (resource.data.date || DateTime.current),
-        lastmod: (resource.data.lastmod || DateTime.current) %>
+        last_modified_at: (resource.data.last_modified_at || DateTime.current) %>
     <meta property="article:published_time" content="<%= resource.data.date || DateTime.current %>" />
   <% end %>
   <%# Analytics %>

@@ -10,6 +10,6 @@ class ListComponent < BaseComponent
   end
 
   def divide_classes
-    @divide ? "divide-y divide-skin-base space-y-2" : ""
+    @divide ? "divide-y divide-zinc-300 dark:divide-zinc-700 space-y-2" : ""
   end
 end

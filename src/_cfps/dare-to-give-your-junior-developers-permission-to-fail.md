@@ -1,13 +1,13 @@
 ---
-title: "Dare To Give Your Junior Developers Permission To Fail"
-description: "My rejected CFP for RailsConf 2020"
+title: Dare To Give Your Junior Developers Permission To Fail
+description: My rejected CFP for RailsConf 2020
 conferences:
   - name: RailsConf 2020
     status: rejected
 urls:
-  speakerline: https://speakerline.io/proposals/7652
+  speakerline: "https://speakerline.io/proposals/7652"
 date: "2020-02-01T01:40:05Z"
-lastmod: "2020-02-15T04:22:00Z"
+last_modified_at: "2022-01-29T17:01:41.408Z"
 ---
 
 ## Abstract

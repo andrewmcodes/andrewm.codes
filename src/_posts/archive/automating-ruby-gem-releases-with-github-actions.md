@@ -12,7 +12,7 @@ tags:
   - gem
 categories: tutorial
 date: '2021-02-20T00:33:07Z'
-lastmod: '2022-01-09T13:40:07.140Z'
+last_modified_at: '2022-01-29T17:01:41.562Z'
 ---
 
 Whether you are a gem maintaining machine or new to the world of authoring gems, this tutorial is for you. Adhereing to SemVer and keeping an updated changelog are both important components in well maintained open source, but they are also a pain at times. This tutorial will walk you through a simple way to create a release process that automates the small, but important, parts of maintaining a Ruby gem.

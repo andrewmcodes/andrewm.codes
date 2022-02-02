@@ -1,9 +1,0 @@
-<%= render ListComponent.new do |l| %>
-  <% site.data.creating.each do |c| %>
-    <%= l.post(
-      url: c.url,
-      title: c.title + " →",
-      description: c.description
-    )%>
-  <% end %>
-<% end %>

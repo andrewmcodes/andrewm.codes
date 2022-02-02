@@ -1,20 +1,30 @@
-<%= render Container.new(as: :footer, classes: "border-t border-skin-divider mt-12 text-skin-muted px-4") do %>
+<%= render Container.new(as: :footer, classes: "border-t border-skin-divider mt-12 text-zinc-700 dark:text-zinc-300 px-4") do %>
   <div class="py-8 mx-auto space-y-8 overflow-hidden">
     <nav class="flex flex-wrap justify-center -mx-5 -my-2" aria-label="Footer">
       <% site.data.navigation.footer.each do |nav| %>
         <div class="px-5 py-2">
-          <%= render Link.new(href: nav.url, classes: "text-skin-muted text-sm").with_content(nav.title) %>
+          <%= render Link.new(href: nav.url, classes: "text-zinc-700 dark:text-zinc-300 text-sm").with_content(nav.title) %>
         </div>
       <% end %>
     </nav>
+    <p class="text-sm text-center">
+      <%= render Link.new(href: github_edit_url(resource), classes: "after:content-['_↗']").with_content("Edit on GitHub") %>
+    </p>
     <div class="flex justify-center space-x-6">
       <% site.data.navigation.social.each do |nav| %>
-        <%= render Link.new(href: nav.url) do %>
-          <span class="sr-only"><%= nav.title %></span>
-          <%= svg "/assets/#{nav.title}.svg", class: "text-skin-primary w-5 h-5", "aria-hidden": true, width: 20, height: 20 %>
+        <%= render IconLink.new(href: nav.url, alt: nav.title, classes: "text-zinc-700 dark:text-zinc-300", hover: "text-pink-500 dark:text-sky-400") do |i| %>
+          <% i.icon do %>
+            <%= svg "/assets/#{nav.title}.svg", class: "w-5 h-5", "aria-hidden": true, width: 20, height: 20 %>
+          <% end %>
         <% end %>
       <% end %>
     </div>
-    <p class="text-xs text-center">&copy; 2022 Andrew Mason. All rights reserved. Except as otherwise noted, the content of this page is licensed under the <%= render Link.new(href: "https://creativecommons.org/licenses/by/4.0/").with_content("Creative Commons Attribution 4.0 License") %>, and code samples are licensed under the <%= render Link.new(href: "https://github.com/#{site.metadata.repo}/blob/main/LICENSE.md").with_content("MIT License") %>.</p>
+    <p class="text-xs text-center">&copy; 2022 Andrew Mason. All rights reserved. Except as otherwise noted, the content
+    of this page is licensed under the
+    <%= render Link.new(href: "https://creativecommons.org/licenses/by/4.0/", external: true).with_content("Creative Commons Attribution 4.0 License") %>
+    , and code samples are licensed under the
+    <%= render Link.new(href: "https://github.com/#{site.metadata.repo}/blob/main/LICENSE.md", external: true).with_content("MIT License.") %>
+    Learn more at <%= render Link.new(href: "/site/").with_content(" /site/") %>
+    </p>
   </div>
 <% end %>

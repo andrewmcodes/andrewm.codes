@@ -1,7 +1,7 @@
 <%= render Container.new do %>
-  <%= render ListComponent.new do |l| %>
+  <%= render List.new do %>
     <% site.data.raindrop.accounts.items.each do |account| %>
-      <%= l.tile(
+      <%= render ListTile.new(
             url: account.link,
             title: account.title,
             image: account&.cover,

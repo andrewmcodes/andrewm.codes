@@ -1,12 +1,12 @@
 const { fontFamily } = require("tailwindcss/defaultTheme")
 
 module.exports = {
-  content: ["./src/**/*.{md,rb,erb,html}", "./frontend/javascript/**/*.js"],
+  content: ["./src/**/*.*{md,rb,erb,html}", "./frontend/javascript/**/*.js"],
   darkMode: "class",
   theme: {
     container: {
-      center: true,
-      padding: "1rem"
+      center: true
+      // padding: "1rem"
     },
     extend: {
       textColor: {

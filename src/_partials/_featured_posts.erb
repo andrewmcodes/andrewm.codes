@@ -1,9 +1,0 @@
-<%= render ListComponent.new do |l| %>
-  <% collections.posts.resources.find_all { |x| x.data.featured }.each do |post| %>
-    <%= l.post(
-      url: post.relative_url,
-      title: post.data.title,
-      description: [post.data.categories.join.titleize, date_to_string(post.data.lastmod, "ordinal", "us")].join(" / ")
-    )%>
-  <% end %>
-<% end %>

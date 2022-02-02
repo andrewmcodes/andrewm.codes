@@ -12,7 +12,7 @@ tags:
   - gem
 categories: tutorial
 date: '2020-12-11T12:20:02Z'
-lastmod: '2022-01-09T18:41:43.738Z'
+last_modified_at: '2022-01-29T17:01:41.577Z'
 ---
 
 I've come across this error several times throughout my development career so I figured it was finally time to write it down.

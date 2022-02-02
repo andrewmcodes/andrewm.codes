@@ -1,0 +1,13 @@
+---<%
+{
+  layout: :page,
+  title: "Dashboard",
+  description: "This website's public dashboard.",
+  permalink: "/site/dashboard/",
+  no_index: false
+}
+%>---
+
+- Bridgetown Version: <%= Bridgetown::VERSION %>
+- Bridgetown Env: <%= Bridgetown.env %>
+- Vercel Env: <%= ENV.fetch "VERCEL_ENV", "nil" %>

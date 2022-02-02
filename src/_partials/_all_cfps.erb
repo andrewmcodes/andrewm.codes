@@ -1,7 +1,0 @@
-<%= render Container.new do %>
-  <%= render ListComponent.new do |l| %>
-    <% collections.cfps.resources.each do |cfp| %>
-      <%= l.post(url: cfp.relative_url, title: cfp.data.title, description: cfp.data.description) %>
-    <% end %>
-  <% end %>
-<% end %>

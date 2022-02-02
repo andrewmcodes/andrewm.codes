@@ -2,30 +2,34 @@ class Heading < BoxComponent
   private
 
   def classes
-    class_list = opts[:classes]&.split(" ") || []
-    class_list << (opts[:align] || "left").prepend("text-") && opts.delete(:align)
+    class_list = []
+    class_list << opts.fetch(:align, "text-left")
     class_list << "truncate" if opts[:truncate]
-    class_list << "text-skin#{opts[:skin]&.to_s&.prepend("-")}" && opts.delete(:skin)
-    operator = opts[:level] && opts[:as] && "h#{opts[:level]}" != opts[:as] ? "h#{opts[:level]}" : as
-    class_list << heading_classes(operator) unless opts[:override_classes]
-
-    cleanup_keys :align, :truncate, :slin, :level, :override_classes
-    class_list.join(" ")
+    class_list << level_classes(level)
+    class_list
   end
 
-  def as
-    opts[:as] || "h#{opts[:level] || 1}"
+  def default_tag
+    "h#{level}".to_sym
   end
 
-  def heading_classes(operator)
-    case operator
-    when "h1"
+  def remove_options
+    [:align, :truncate, :level]
+  end
+
+  def level
+    @level ||= opts.fetch(:level, 1)
+  end
+
+  def level_classes(i)
+    case i
+    when 1
       "text-4xl font-bold tracking-tight leading-normal"
-    when "h2"
-      "text-2xl font-semibold"
-    when "h3"
-      "font-semibold tracking-wide break-words dark:font-normal text-md"
-    when "h4"
+    when 2
+      "text-2xl font-bold"
+    when 3
+      "font-semibold tracking-wide break-words text-md"
+    when 4
       "break-words text-md"
     else
       "text-base font-semibold"

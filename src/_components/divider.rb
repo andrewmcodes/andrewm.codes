@@ -1,16 +1,22 @@
 class Divider < BoxComponent
+  DIVIDER_COLORFUL_CLASSES = "border-t-0 flex h-1 w-100 bg-gradient-to-r from-pink-500 via-fuchsia-500 to-sky-400 sm:mx-0 sm:w-full".freeze
+  DEFAULT_DIVIDER_CLASSES = "border-t-1 border-zinc-300 dark:border-zinc-700".freeze
+  DEFAULT_DIVIDER_MY = "my-6".freeze
+
   private
 
   def classes
-    class_list = opts[:classes]&.split(" ") || []
-    class_list << opts.fetch(:border, "border-t-1 border-skin-divider")
-    class_list << opts.fetch("spacing", "my-6")
-
-    cleanup_keys :spacing, :border
-    class_list.join(" ")
+    [
+      variant == :colorful ? DIVIDER_COLORFUL_CLASSES : DEFAULT_DIVIDER_CLASSES,
+      opts.fetch(:spacing, DEFAULT_DIVIDER_MY)
+    ]
   end
 
-  def as
+  def remove_options
+    [:spacing, :border]
+  end
+
+  def default_tag
     :hr
   end
 end

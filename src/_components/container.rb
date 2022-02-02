@@ -2,12 +2,11 @@ class Container < BoxComponent
   private
 
   def classes
-    class_list = opts[:classes]&.split(" ") || []
-    class_list << "w-full mx-auto max-w-prose"
-    class_list.join(" ")
+    # opts.fetch(:spacing, DEFAULT_PX),
+    [DEFAULT_PROSE_CONTAINER]
   end
 
-  def as
-    opts[:as] || :div
+  def remove_options
+    [:spacing]
   end
 end

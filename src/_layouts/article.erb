@@ -1,9 +1,0 @@
----<%
-{ layout: :default }
-%>---
-
-<%= render Container.new(as: :article, classes: "space-y-8") do %>
-  <%= render Link.new(href: "/").with_content(svg("/assets/logo.svg", class: "text-skin-primary w-24 mb-8")) if resource.data.render_logo %>
-  <%= render Heading.new.with_content(resource.data.title) %>
-  <%= render Markdown.new.with_content(yield) %>
-<% end %>

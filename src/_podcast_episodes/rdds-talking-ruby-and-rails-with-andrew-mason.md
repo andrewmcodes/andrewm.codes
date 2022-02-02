@@ -6,5 +6,5 @@ website_url: "https://www.rubberduckdevshow.com/episodes/24-talking-ruby-rails-w
 crosspost: false
 role: guest
 published_on: "2022-01-05"
-lastmod: "2022-01-10T05:23:40.792Z"
+last_modified_at: "2022-01-29T17:01:41.296Z"
 ---

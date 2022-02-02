@@ -3,6 +3,14 @@
   "trailingSlash": true,
   "redirects": [
     {
+      "source": "/privacy/",
+      "destination": "/site/"
+    },
+    {
+      "source": "/analytics/",
+      "destination": "/site/analytics/"
+    },
+    {
       "source": "/now/",
       "destination": "/about/#now"
     },

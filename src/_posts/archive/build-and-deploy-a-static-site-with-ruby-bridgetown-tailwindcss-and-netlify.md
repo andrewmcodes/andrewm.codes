@@ -12,7 +12,7 @@ tags:
   - bridgetown
 categories: tutorial
 date: '2020-05-07T03:44:16Z'
-lastmod: '2022-01-09T13:39:57.598Z'
+last_modified_at: '2022-01-29T17:01:41.580Z'
 ---
 
 > **Heads up!** This post is a bit outdated.

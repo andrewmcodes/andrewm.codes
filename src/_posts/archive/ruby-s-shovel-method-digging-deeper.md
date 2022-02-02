@@ -1,18 +1,18 @@
 ---
-series: ""
+series: null
 featured: false
-title: "Ruby's Shovel Method: Digging Deeper"
-description: "Heads up! This is not actually a deep dive 😬   With everything going on in the world, I almost forgo..."
+title: 'Ruby''s Shovel Method: Digging Deeper'
+description: "Heads up! This is not actually a deep dive \U0001F62C   With everything going on in the world, I almost forgo..."
 urls:
-  dev_to: https://dev.to/andrewmcodes/ruby-s-shovel-method-digging-deeper-5hfm
+  dev_to: 'https://dev.to/andrewmcodes/ruby-s-shovel-method-digging-deeper-5hfm'
 tags:
-- ruby
-- devjournal
-- tutorial
-- rails
+  - ruby
+  - devjournal
+  - tutorial
+  - rails
 categories: tutorial
-date: "2020-11-22T05:53:26Z"
-lastmod: "2021-02-17T04:21:16Z"
+date: '2020-11-22T05:53:26Z'
+last_modified_at: '2022-01-29T17:01:41.436Z'
 ---
 
 > Heads up! This is not _actually_ a deep dive 😬

@@ -4,7 +4,7 @@ class BaseComponent < ViewComponent::Base
 
   private
 
-  def cleanup_keys(*keys)
+  def delete_keys(keys)
     opts.delete_if { |k, v| keys.include? k }
   end
 end

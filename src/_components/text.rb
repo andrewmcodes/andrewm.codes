@@ -2,16 +2,19 @@ class Text < BoxComponent
   private
 
   def classes
-    class_list = opts[:classes]&.split(" ") || []
-    class_list << (opts[:align]&.to_s || "left").prepend("text-") && opts.delete(:align)
-    class_list << "truncate" && opts.delete(:truncate) if opts[:truncate]
-    class_list << "text-skin#{opts[:skin]&.to_s&.prepend("-")}" && opts.delete(:skin)
-
-    cleanup_keys :align, :truncate, :skin
-    class_list.join(" ")
+    [
+      opts.fetch(:align, "text-left"),
+      ("truncate" if opts[:truncate]),
+      ("line-clamp-2" if opts[:truncate]),
+      ("text-sm" if opts[:small])
+    ]
   end
 
-  def as
-    opts.fetch(:as, :p)
+  def remove_options
+    [:align, :truncate]
+  end
+
+  def default_tag
+    :p
   end
 end

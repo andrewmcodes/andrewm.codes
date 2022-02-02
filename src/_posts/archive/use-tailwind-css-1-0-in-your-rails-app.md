@@ -11,7 +11,7 @@ tags:
   - webpacker
 categories: archived
 date: '2019-04-07T03:07:25Z'
-lastmod: '2022-01-09T13:41:12.670Z'
+last_modified_at: '2022-01-29T17:01:41.556Z'
 ---
 
 For the purpose of this tutorial, we will assume you have Ruby and the Rails gem installed. Please visit the [Getting Started with Rails Guide](https://guides.rubyonrails.org/getting_started.html) if you do not.

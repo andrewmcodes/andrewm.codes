@@ -1,59 +1,40 @@
 ---<%
 { layout: :default }
 %>---
-
 <%= render Container.new(as: :article) do %>
-  <%= render 'post_header' %>
-  <%= render Divider.new %>
-  <%= render Markdown.new.with_content(yield) %>
-  <%= render Divider.new %>
-
-  <div class="flex flex-col space-y-4">
-    <dl class="space-y-4">
-      <div class="space-y-2">
-        <dt class="text-sm text-skin-muted">
-          Tags
-        </dt>
-        <dd class="flex space-x-2 text-sm text-skin">
-          <% resource.taxonomies.tag.terms.each do |term| %>
-            <%= render Badge.new(href: "/tags/#{term.label}/").with_content(term.label) %>
-          <% end if resource.taxonomies.tag %>
-        </dd>
+  <%= render Stack.new do %>
+    <%= render Link.new(href: "/posts/", classes: "mb-4").with_content(render Secondary.new.with_content("← Back")) if resource.collection.label == "posts" %>
+    <%= render Link.new(href: "/cfps/", classes: "mb-4").with_content(render Secondary.new.with_content("← Back")) if resource.collection.label == "cfps" %>
+    <%= render Heading.new(classes: "break-words").with_content(resource.data.title) %>
+    <div class="flex items-center">
+      <div class="flex-shrink-0">
+        <%= render Image.new(src: "/assets/images/main-avatar.png", alt: site.metadata.author.name, classes: "h-8 w-8 rounded-full", width: 64, height: 64) %>
       </div>
-      <% resource.taxonomies.series.terms.each do |term| %>
-        <div class="space-y-2">
-          <dt class="text-sm text-skin-muted">
-            Series
-          </dt>
-          <dd class="text-sm text-skin">
-            <%= render Badge.new(href: "/series/#{term.label}/").with_content(term.label.to_s) %>
-          </dd>
-        </div>
-      <% end %>
-    </dl>
-      <%= render Divider.new %>
-
-    <dl class="grid grid-cols-2 ">
-    <% details = [
-        ['Reading Time', "#{reading_time(resource.content)} min read"],
-        ['Word Count', "#{number_of_words(resource.content)} words"],
-        ['Published On', date_to_string(resource.data.date, "ordinal", "US")],
-        ['Updated On', date_to_string(resource.data.lastmod, "ordinal", "US")],
-        ['Discuss', render(Link.new(href: twitter_discuss_url(resource)).with_content("on Twitter↗"))],
-        ['Questions', render(Link.new(href: "/ama/").with_content("on GitHub Discussions↗"))],
-      ] %>
-      <% details << ['Next', render(Link.new(href: resource.next_resource.relative_url).with_content(resource.next_resource&.data&.title || '→'))] if resource.next_resource && resource.next_resource.collection.label == "posts" %>
-      <% details << ['Previous', render(Link.new(href: resource.previous_resource.relative_url).with_content(resource.previous_resource&.data&.title || '→'))] if resource.previous_resource && resource.previous_resource.collection.label == "posts" %>
-      <% details.reverse.each do |label, value| %>
-        <div class="py-4 sm:grid sm:grid-cols-3 sm:gap-2">
-        <dt class="text-sm text-skin-muted">
-            <%= label %>
-          </dt>
-          <dd class="mt-1 text-sm text-skin sm:mt-0 sm:col-span-2">
-            <%= value %>
-          </dd>
+      <div class="ml-4">
+        <%= render Heading.new(level: 4, as: :h2).with_content(site.metadata.author.name) %>
+        <p class="text-sm text-skin-muted">
+          Published <%= date_to_string resource.data.date, "ordinal", "US" %>
+        </p>
       </div>
+    </div>
+  <% end %>
+  <%= render Divider.new(variant: :colorful) %>
+  <%= render ContentBlock.new.with_content(content) %>
+  <%= render Divider.new(variant: :colorful) %>
+  <% if resource.collection.label == "posts" %>
+    <%= render ContentBlock.new do %>
+      <p class="italic">Thanks for reading! You can discuss this post using one of the links below. Additionally, it would mean a lot if you shared this post with others!</p>
+      <ul>
+        <li><%= render Link.new(href: twitter_share_url(resource), classes: "after:content-['_↗']").with_content("Share on Twitter") %></li>
+        <li><%= render Link.new(href: twitter_discuss_url(resource), classes: "after:content-['_↗']").with_content("Discuss on Twitter") %></li>
+        <li><%= render Link.new(href: "/ama/", classes: "after:content-['_↗']").with_content("Discuss on GitHub") %></li>
+      </ul>
+    <% end %>
+    <div class="pt-8">
+      <%= render Heading.new(level: 2).with_content("Recent Posts") %>
+      <%= render Stack.new do %>
+        <%= render "recent_posts", amount: 2 %>
       <% end %>
-    </dl>
-  </div>
+    </div>
+  <% end %>
 <% end %>

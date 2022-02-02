@@ -1,44 +1,65 @@
-<header class="bg-skin-nav">
-  <nav class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8" aria-label="Top">
-    <div class="flex items-center justify-between w-full py-4 border-b border-skin-divider md:border-none">
-      <div class="flex items-center">
-        <a href="/">
-          <span class="sr-only">Andrew Mason</span>
-          <%= render Image.new(src: site.data.authors.andrew.picture, alt: site.data.authors.andrew.name, classes: "shadow-inner h-8 w-auto rounded-full inline-block", loading: "eager", width: 32, height: 32) %>
-        </a>
-        <div class="hidden ml-10 space-x-4 md:block">
+<nav class="fixed top-0 z-20 w-full bg-zinc-100/90 dark:bg-zinc-800/90 drop-shadow" x-data="{
+      open: false,
+      get isOpen() { return this.open },
+      toggle() { this.open = ! this.open },
+    }">
+  <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+    <div class="flex justify-between h-16">
+      <div class="flex">
+        <div class="flex items-center mr-2 -ml-2 md:hidden">
+          <button
+            @click="toggle"
+            type="button"
+            class="inline-flex items-center justify-center p-2 rounded-md text-zinc-700 dark:text-zinc-300 hover:bg-zinc-300 hover:text-zinc-800 dark:hover:bg-zinc-700 dark:hover:text-zinc-300 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-zinc-50 dark:focus:ring-zinc-900"
+            aria-controls="mobile-menu"
+            aria-expanded="false"
+          >
+            <span class="sr-only">Open main menu</span>
+            <%= svg "/assets/svg/menu.svg", classes: "block w-6 h-6", "x-show": "!isOpen" %>
+            <%= svg "/assets/svg/x.svg", classes: "hidden w-6 h-6", "x-show": "isOpen", "x-cloak": "true" %>
+          </button>
+        </div>
+        <div
+          class="hidden md:ml-6 md:flex md:items-center md:space-x-4">
+          <!-- Current: "bg-zinc-900 text-white", Default: "text-zinc-300 hover:bg-zinc-700 hover:text-white" -->
           <% site.data.navigation.navbar.each do |nav| %>
-            <%= render Link.new(href: nav.url, classes: "align-middle", key: nav.title).with_content(nav.title) %>
+            <%= render Link.new(
+              href: nav.url,
+              classes: "px-3 py-2 text-sm lg:text-base font-medium text-zinc-700 dark:text-zinc-300 rounded-md",
+              hover: "hover:bg-zinc-300 hover:text-zinc-800 dark:hover:bg-zinc-700 dark:hover:text-zinc-300",
+              active: (resource.relative_url == nav.url),
+              key: nav.title).with_content(nav.title) %>
           <% end %>
         </div>
       </div>
-      <div class="flex items-center ml-10 space-x-4">
-        <button x-data="{
-                        toggle: () => {
-                            if (localStorage.theme === 'dark') {
-                                localStorage.theme = 'light';
-                                document.documentElement.classList.remove('dark');
-                            } else {
-                                localStorage.theme = 'dark';
-                                document.documentElement.classList.add('dark');
-                            }
-                        },
-                    }"
-                    class="inline-block px-2 py-1 border border-transparent rounded-md focus:outline-none hover:text-skin-primary"
-                    @click="toggle"
-                    aria-label="Toggle Darkmode">
-          <%= svg "/assets/theme.svg", class: "", width: 20, height: 20 %>
-        </button>
-        <%= render Link.new(href: site.metadata.twitter.url) do %>
-          <span class="sr-only">Twitter</span>
-          <%= svg "/assets/twitter.svg", class: "text-[#1DA1F2] w-5 h-5", "aria-hidden": true, width: 20, height: 20 %>
+      <div class="flex items-center space-x-4">
+        <div class="flex-shrink-0">
+          <%= render IconLink.new(
+            href: site.metadata.twitter.url,
+            alt: site.metadata.twitter.username) do |i| %>
+            <% i.icon do %>
+              <%= svg "/assets/twitter.svg", class: "hover:text-[#1d9cf0] text-[#1DA1F2] w-5 h-5", "aria-hidden": true, width: 20, height: 20 %>
+            <% end %>
         <% end %>
+        </div>
+        <div class="flex-shrink-0">
+          <%= render "theme_toggle" %>
+        </div>
       </div>
     </div>
-    <div class="flex flex-wrap justify-center py-4 space-x-6 md:hidden">
+  </div>
+  <div x-cloak class="relative shadow-sm md:hidden" id="mobile-menu" x-show="isOpen">
+    <div
+      class="absolute w-full px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-zinc-100 dark:bg-zinc-800">
+      <!-- Current: "bg-zinc-900 text-white", Default: "text-zinc-300 hover:bg-zinc-700 hover:text-white" -->
       <% site.data.navigation.navbar.each do |nav| %>
-        <%= render Link.new(href: nav.url, classes: "align-middle py-4 px-1.5 sm:px-0 sm:py-0", key: nav.title).with_content(nav.title) %>
+        <%= render Link.new(
+              href: nav.url,
+              classes: "block px-3 py-2 text-base font-medium rounded-md text-zinc-700 dark:text-zinc-300",
+              hover: "hover:bg-zinc-300 hover:text-zinc-800 dark:hover:bg-zinc-700 dark:hover:text-zinc-300",
+              key: nav.title
+            ).with_content(nav.title) %>
       <% end %>
     </div>
-  </nav>
-</header>
+  </div>
+</nav>

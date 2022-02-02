@@ -1,14 +1,14 @@
-<li class="flex py-4">
-  <div class="self-center flex-shrink-0 mr-4">
+<li class="flex py-4 space-x-4">
+  <div class="self-center flex-shrink-0">
     <% if image %>
-      <%= render Image.new(src: image, classes: "h-8 rounded", loading: "lazy", width: 32, height: 32) %>
+      <%= render Image.new(src: image, classes: "h-8 w-auto rounded", loading: "lazy", width: 32, height: 32) %>
     <% else %>
       <svg class="w-16 h-16 text-gray-300 bg-white border border-gray-300" preserveAspectRatio="none" stroke="currentColor" fill="none" viewBox="0 0 200 200" aria-hidden="true">
         <path vector-effect="non-scaling-stroke" stroke-width="1" d="M0 0l200 200M0 200L200 0" />
       </svg>
     <% end %>
   </div>
-  <div class="relative focus-within:ring-2 focus-within:ring-slate-500">
+  <div class="relative focus-within:ring-2 focus-within:ring-sky-400">
     <h3 class="font-semibold tracking-wide dark:font-normal text-md text-skin">
       <a href="<%= url %>" class="hover:underline focus:outline-none">
         <span class="absolute inset-0" aria-hidden="true"></span>

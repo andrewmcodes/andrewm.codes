@@ -1,41 +1,31 @@
 navbar:
+  - title: Home
+    url: /
   - title: About
     url: /about/
-  - title: Subscribe
-    url: /subscribe/
   - title: Speaking
     url: /speaking/
+  - title: Projects
+    url: /projects/
   - title: Posts
     url: /posts/
+  - title: Follow Me
+    url: /follow/
 footer:
+  - title: Home
+    url: /
   - title: Sitemap
     url: /sitemap/
   - title: AMA
     url: /ama/
-  - title: Reading List
-    url: /reading-list/
   - title: Posts
     url: /posts/
   - title: Podcasts
     url: /podcasts/
   - title: Newsletter
     url: /newsletter/
-  - title: Uses
-    url: /uses/
-  - title: Notes↗
-    url: https://notes.andrewm.codes/
-  - title: Speaking
-    url: /speaking/
-  - title: Privacy Policy
-    url: /privacy/
-  - title: Projects
-    url: /projects/
-  - title: Subscribe
-    url: /subscribe/
-  - title: JSON Feed
-    url: /feed.json
-  - title: RSS Feed
-    url: /feed.xml
+  - title: Colophon
+    url: /site/
 social:
   - title: github
     url: https://github.com/andrewmcodes
@@ -45,5 +35,7 @@ social:
     url: https://linkedin.com/in/andrew-mason/
   - title: dribbble
     url: https://dribbble.com/andrewmcodes
+  - title: json_feed
+    url: /feed.json
   - title: rss
     url: /feed.xml

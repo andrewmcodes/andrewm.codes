@@ -1,0 +1,15 @@
+<li class="pt-4">
+  <div class="relative space-y-2 focus-within:ring-2 focus-within:ring-pink-500 dark:focus-within:ring-sky-400">
+    <h3 class="font-semibold text-zinc-900 dark:text-zinc-50">
+      <%= render Link.new(href: post.relative_url, classes: "focus:outline-none") do %>
+        <span class="absolute inset-0" aria-hidden="true"></span>
+        <%= title %>
+      <% end %>
+    </h3>
+    <% if description %>
+      <%= render Text.new(small: true, truncate: true) do %>
+        <%= render Secondary.new.with_content(description) %>
+      <% end %>
+    <% end %>
+  </div>
+</li>

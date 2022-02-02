@@ -6,10 +6,6 @@ prototype:
   collection: posts
 ---
 
-<%= render Container.new do %>
-  <%= render ListComponent.new do |l| %>
-    <% paginator.resources.each do |post| %>
-      <%= l.post(url: post.relative_url, title: post.data.title, description: post.data.description) %>
-    <% end %>
-  <% end %>
+<%= render List.new do %>
+  <%= render(PostComponent.with_collection(paginator.resources)) %>
 <% end %>

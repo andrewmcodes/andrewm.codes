@@ -1,10 +1,10 @@
 ---
-title: "Projects"
-description: "Projects"
-permalink: "/projects/"
+title: Projects
+description: Projects
+permalink: /projects/
 no_index: false
 date: "2021-12-20T20:18:17-07:00"
-lastmod: "2021-12-20T20:18:17-07:00"
+last_modified_at: "2022-01-29T17:01:41.445Z"
 ---
 
 I am a big believer of [building in public](https://www.swyx.io/learn-in-public/), which I do over on [GitHub](https://github.com/andrewmcodes). I have built a few gems, which you can find on [RubyGems](https://rubygems.org/profiles/andrewmcodes), and even some Node packages, which are on [npm](https://www.npmjs.com/~k0d3n1nja).
