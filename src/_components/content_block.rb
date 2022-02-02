@@ -22,6 +22,9 @@ class ContentBlock < BoxComponent
       hover:prose-a:underline-offset-2
       prose-blockquote:border-pink-500
       dark:prose-blockquote:border-sky-400
+      prose-blockquote:bg-pink-100/20
+      dark:prose-blockquote:bg-sky-900/10
+      prose-blockquote:not-italic
     ]
   end
 end
