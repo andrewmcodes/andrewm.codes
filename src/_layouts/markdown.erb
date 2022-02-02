@@ -2,7 +2,7 @@
 { layout: :default }
 %>---
 <%= render Container.new(as: :article, classes: "space-y-8") do %>
-  <%= render Link.new(href: "/").with_content(svg("/assets/logo.svg", class: "text-sky-500 dark:text-pink-500 w-24 mb-8")) if resource.data.render_logo %>
+  <%= render Link.new(href: "/").with_content(svg("/assets/logo.svg", class: "text-pink-500 dark:text-sky-400 w-24 mb-8")) if resource.data.render_logo %>
   <%= render Heading.new.with_content(resource.data.title) %>
   <%= render Divider.new(variant: :colorful) %>
   <%= render ContentBlock.new.with_content(content) %>

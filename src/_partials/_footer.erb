@@ -9,9 +9,9 @@
     </nav>
     <div class="flex justify-center space-x-6">
       <% site.data.navigation.social.each do |nav| %>
-        <%= render IconLink.new(href: nav.url, alt: nav.title) do |i| %>
+        <%= render IconLink.new(href: nav.url, alt: nav.title, classes: "text-zinc-700 dark:text-zinc-300", hover: "text-pink-500 dark:text-sky-400") do |i| %>
           <% i.icon do %>
-            <%= svg "/assets/#{nav.title}.svg", class: "text-sky-500 dark:text-pink-600 w-5 h-5", "aria-hidden": true, width: 20, height: 20 %>
+            <%= svg "/assets/#{nav.title}.svg", class: "w-5 h-5", "aria-hidden": true, width: 20, height: 20 %>
           <% end %>
         <% end %>
       <% end %>

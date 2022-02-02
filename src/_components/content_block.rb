@@ -15,13 +15,13 @@ class ContentBlock < BoxComponent
       prose-pre:bg-zinc-800
       prose-pre:px-2
       prose-zinc
-      prose-a:text-sky-500
-      dark:prose-a:text-pink-500
+      prose-a:text-pink-500
+      dark:prose-a:text-sky-400
       prose-a:no-underline
       hover:prose-a:underline
       hover:prose-a:underline-offset-2
-      prose-blockquote:border-sky-500
-      dark:prose-blockquote:border-pink-500
+      prose-blockquote:border-pink-500
+      dark:prose-blockquote:border-sky-400
     ]
   end
 end

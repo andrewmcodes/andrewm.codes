@@ -16,7 +16,7 @@ class Alert < BoxComponent
     when :error
       "text-red-700 bg-red-500 rounded-md dark:text-red-400 bg-opacity-10"
     else
-      "text-sky-700 bg-sky-500 rounded-md dark:text-sky-400 bg-opacity-10"
+      "text-pink-700 bg-pink-500 rounded-md dark:text-pink-400 bg-opacity-10"
     end
   end
 end
