@@ -3,7 +3,7 @@
 %>---
 <%= render Container.new(as: :article) do %>
   <%= render Stack.new do %>
-    <%= render Link.new(href: "/posts/", classes: "mb-8").with_content(render Secondary.new.with_content("<- Back")) %>
+    <%= render Link.new(href: "/posts/", classes: "mb-8").with_content(render Secondary.new.with_content("← Back")) %>
     <%= render Heading.new(classes: "break-words").with_content(resource.data.title) %>
     <div class="flex flex-wrap items-center space-x-1 sm:space-x-4 text-zinc-700 dark:text-zinc-300">
       <%= render Link.new(href: site.metadata.twitter.url, classes: "flex items-center align-middle", weight: "font-medium", hover: "hover:text-sky-500 dark:hover:text-pink-500") do %>
