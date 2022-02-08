@@ -4,13 +4,14 @@ description: Information about this website.
 permalink: /sitemap/
 no_index: false
 date: "2021-12-20T21:27:36-07:00"
-last_modified_at: "2022-02-02T14:53:39.927Z"
+last_modified_at: "2022-02-08T00:18:51.036Z"
 ---
 
 ## Collections
 
 - [Posts](/posts/)
 - [Podcasts](/podcasts/)
+- [Snippets](/snippets/)
 - [CFPs](/cfps/)
 - [Accounts](/follow/#elsewhere)
 - [Reading List](/reading-list/)

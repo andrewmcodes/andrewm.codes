@@ -1,0 +1,13 @@
+---<%
+{
+  layout: :page,
+  title: "Snippets",
+  description: "A collection of snippets that I have found helpful.",
+  permalink: "/snippets/",
+  no_index: false,
+}
+%>---
+
+<%= render List.new do %>
+  <%= render(PostComponent.with_collection(collections.snippets.resources)) %>
+<% end %>

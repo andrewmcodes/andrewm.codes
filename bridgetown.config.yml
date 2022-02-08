@@ -30,6 +30,11 @@ collections:
   cfps:
     output: true
     permalink: pretty
+  snippets:
+    output: true
+    permalink: "/snippets/:slug/"
+    sort_by: date
+    sort_direction: descending
 
 taxonomies:
   series:

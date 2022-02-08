@@ -21,15 +21,17 @@
   <%= render Divider.new(variant: :colorful) %>
   <%= render ContentBlock.new.with_content(content) %>
   <%= render Divider.new(variant: :colorful) %>
+
+  <%= render ContentBlock.new do %>
+    <p class="italic">Thanks for reading! You can discuss this post using one of the links below. Additionally, it would mean a lot if you shared this post with others!</p>
+    <ul>
+      <li><%= render Link.new(href: twitter_share_url(resource), classes: "after:content-['_↗']").with_content("Share on Twitter") %></li>
+      <li><%= render Link.new(href: twitter_discuss_url(resource), classes: "after:content-['_↗']").with_content("Discuss on Twitter") %></li>
+      <li><%= render Link.new(href: "/ama/", classes: "after:content-['_↗']").with_content("Discuss on GitHub") %></li>
+    </ul>
+  <% end %>
+
   <% if resource.collection.label == "posts" %>
-    <%= render ContentBlock.new do %>
-      <p class="italic">Thanks for reading! You can discuss this post using one of the links below. Additionally, it would mean a lot if you shared this post with others!</p>
-      <ul>
-        <li><%= render Link.new(href: twitter_share_url(resource), classes: "after:content-['_↗']").with_content("Share on Twitter") %></li>
-        <li><%= render Link.new(href: twitter_discuss_url(resource), classes: "after:content-['_↗']").with_content("Discuss on Twitter") %></li>
-        <li><%= render Link.new(href: "/ama/", classes: "after:content-['_↗']").with_content("Discuss on GitHub") %></li>
-      </ul>
-    <% end %>
     <div class="pt-8">
       <%= render Heading.new(level: 2).with_content("Recent Posts") %>
       <%= render Stack.new do %>
