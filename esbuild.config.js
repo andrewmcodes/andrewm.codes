@@ -24,3 +24,17 @@ build(outputFolder, esbuildOptions)
 //     })
 //   // watcher.close()
 // }
+
+//  const path = require("path")
+//  const esbuildCopy = require('esbuild-plugin-copy').default
+//  const esbuildOptions = {
+//    plugins: [
+//      esbuildCopy({
+//        assets: {
+//          from: [path.resolve(__dirname, 'node_modules/somepackage/files/*')],
+//          to: [path.resolve(__dirname, 'output/_bridgetown/somepackage/files')],
+//        },
+//        verbose: false
+//      }),
+//    ]
+//  }
