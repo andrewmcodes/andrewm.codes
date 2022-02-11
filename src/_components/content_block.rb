@@ -15,7 +15,7 @@ class ContentBlock < BoxComponent
       prose-pre:bg-zinc-800
       prose-pre:px-2
       prose-zinc
-      prose-a:text-pink-500
+      prose-a:text-rose-500
       dark:prose-a:text-sky-400
       prose-a:no-underline
       hover:prose-a:underline

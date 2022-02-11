@@ -9,7 +9,7 @@ task default: :deploy
 # Standard set of tasks, which you can customize if you wish:
 #
 desc "Build the Bridgetown site for deployment"
-task deploy: [:clean, "frontend:build"] do
+task deploy: [:clean, "tailwind:build", "frontend:build"] do
   Bridgetown::Commands::Build.start
 end
 
@@ -28,13 +28,34 @@ namespace :frontend do
   desc "Build the frontend with esbuild for deployment"
   task :build do
     ENV["BRIDGETOWN_ENV"] = "production"
+
+    Rake::Task["tailwind:build"].execute
     sh "yarn run esbuild"
   end
 
   desc "Watch the frontend with esbuild during development"
   task :dev do
     ENV["BRIDGETOWN_ENV"] = "development"
+    server_pid = fork { Rake::Task["tailwind:dev"].execute }
     sh "yarn run esbuild-dev"
+    Process.kill "SIGTERM", server_pid
+    sleep 1 # give processes time to clean up
+    puts
+  rescue Interrupt
+  end
+end
+
+namespace :tailwind do
+  desc "Build the CSS with Tailwind"
+  task :build do
+    ENV["NODE_ENV"] = "production"
+    sh "yarn tailwindcss -i ./frontend/styles/main.css -o ./frontend/styles/index.css --minify"
+  end
+
+  desc "Watch the frontend with esbuild during development"
+  task :dev do
+    ENV["NODE_ENV"] = "development"
+    sh "yarn tailwindcss -i ./frontend/styles/main.css -o ./frontend/styles/index.css --watch"
   rescue Interrupt
   end
 end

@@ -7,9 +7,9 @@ tags:
   - zsh
   - macos
   - alfred
-category: til
+categories: til
 date: '2021-06-05T11:22:38-07:00'
-last_modified_at: '2022-01-29T17:01:41.558Z'
+last_modified_at: '2022-02-08T02:18:47.187Z'
 ---
 
 One day I realized all of the desktop icons on my 2019 MacBook Pro were missing, but still visible in Finder. I thought maybe it was a bug in Big Sur 11.4 but I eventually found the solution.

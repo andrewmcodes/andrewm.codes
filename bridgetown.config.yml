@@ -8,9 +8,6 @@ permalink: simple
 content_engine: resource
 
 collections:
-  newsletter:
-    output: true
-    permalink: "/:slug/"
   pages:
     permalink: "/:slug/"
   posts:

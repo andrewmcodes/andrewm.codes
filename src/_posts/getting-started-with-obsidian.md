@@ -7,9 +7,9 @@ tags:
   - obsidian
   - macos
   - notes
-category: tutorial
+categories: tutorial
 date: "2022-01-14T06:49:07.800Z"
-last_modified_at: "2022-01-29T17:01:41.394Z"
+last_modified_at: "2022-02-08T02:18:42.389Z"
 ---
 
 ## Quick Start

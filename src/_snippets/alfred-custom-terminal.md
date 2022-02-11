@@ -5,9 +5,9 @@ tags:
   - warp
   - macos
   - archipelago
-category: alfred
+categories: alfred
 date: "2022-01-14T06:49:07.800Z"
-last_modified_at: "2022-02-08T01:31:09.158Z"
+last_modified_at: "2022-02-08T02:18:35.929Z"
 ---
 
 ```applescript

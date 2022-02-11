@@ -1,4 +1,5 @@
 # Bridgetown
+build
 output
 .bridgetown-cache
 .bridgetown-metadata
@@ -34,10 +35,5 @@ yarn-debug.log*
 # Yarn Integrity file
 .yarn-integrity
 
-# Added
-.bridgetown-build
-.obsidian
-src/templates
-
+# Vercel
 .vercel
-build
