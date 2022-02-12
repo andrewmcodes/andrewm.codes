@@ -9,7 +9,7 @@ tags:
   - notes
 categories: blog
 date: "2022-02-12T23:16:36.604Z"
-last_modified_at: "2022-02-12T23:17:33.989Z"
+last_modified_at: "2022-02-12T23:27:23.185Z"
 ---
 
 Every time you encounter an old note, or any note, it is a good time ask yourself:
@@ -32,13 +32,13 @@ You will write more.
 
 Don't let your pride get in your way and convince you that the removal of the code means anything more than it no longer serves its purpose in the codebase.
 
-It's 1's and 0's vibrating on metal.
+**It's 1's and 0's vibrating on metal.**
 
 The second you decide that it represents your worth you discount all the amazing code you have yet to write. There is a good bet that if you had to rewrite it, you'd do it differently.
 
 The code is not important, the lessons you learned while building it are though and they aren't going anywhere. The code's purpose has been served. It was once needed but now it no longer is.
 
-> "By acknowledging their contribution and letting them go with gratitude, you will be able to truly put the things you own, and your life, in order."
+> By acknowledging their contribution and letting them go with gratitude, you will be able to truly put the things you own, and your life, in order.
 > \- Marie Kondo.
 
 Much like code, your notes should be created with a particular goal in mind and when they no longer serve that goal, it is time to thank them and delete them.
