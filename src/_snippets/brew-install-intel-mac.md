@@ -1,5 +1,5 @@
 ---
-title: Install Brew on a Mac Intel
+title: Install Brew on an Intel Mac
 description: How to install Homebrew on macOS Monterey with an Intel chip.
 tags:
   - install
@@ -7,7 +7,7 @@ tags:
   - intel
 categories: brew
 date: "2022-02-26T02:02:01.852Z"
-last_modified_at: "2022-02-26T02:03:00.013Z"
+last_modified_at: "2022-02-26T02:19:06.341Z"
 ---
 
 ```sh
