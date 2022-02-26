@@ -7,7 +7,7 @@ tags:
   - m1
 categories: brew
 date: "2022-02-26T02:02:01.852Z"
-last_modified_at: "2022-02-26T02:21:37.665Z"
+last_modified_at: "2022-02-26T02:24:21.213Z"
 ---
 
 ```sh
@@ -29,4 +29,4 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 
 [^1]: If you are not using the M1 chip, [use this snippet instead](/snippets/brew-install-intel-mac/)
 [^1]: [Homebrew Documentation](https://docs.brew.sh)
-[^2]: [Homebrew Documentation: Configuring Completions in zsh](https://docs.brew.sh/Shell-Completion#configuring-completions-in-zsh)
+[^3]: [Homebrew Documentation: Configuring Completions in zsh](https://docs.brew.sh/Shell-Completion#configuring-completions-in-zsh)
