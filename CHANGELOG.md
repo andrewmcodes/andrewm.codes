@@ -4,6 +4,21 @@ lastmod: "2022-01-10T04:11:08.445Z"
 
 # Changelog
 
+## [3.1.0](https://github.com/andrewmcodes/andrewm-codes-website/compare/v3.0.0...v3.1.0) (2022-02-27)
+
+
+### Features
+
+* add snippets ([#105](https://github.com/andrewmcodes/andrewm-codes-website/issues/105)) ([a945faa](https://github.com/andrewmcodes/andrewm-codes-website/commit/a945faa52766d25944b5d8b79f2672f9af8196a6))
+* add snippets for installing homebrew on a M1 and Intel Mac ([#122](https://github.com/andrewmcodes/andrewm-codes-website/issues/122)) ([b8c3e6d](https://github.com/andrewmcodes/andrewm-codes-website/commit/b8c3e6d6e1d29e19f83fd124eaf27b661a2c6ff2))
+* publish Stop Hoarding Notes ([#110](https://github.com/andrewmcodes/andrewm-codes-website/issues/110)) ([bac6f5c](https://github.com/andrewmcodes/andrewm-codes-website/commit/bac6f5ccd4da65096a548766071f0bc5ff9d46df))
+* **snippets:** add `Enable Repeating Keys in VS Code on macOS` ([#128](https://github.com/andrewmcodes/andrewm-codes-website/issues/128)) ([4c70833](https://github.com/andrewmcodes/andrewm-codes-website/commit/4c708330f8ab887ec08a8240ca007349ddff53a7))
+
+
+### Bug Fixes
+
+* use Tailwind CLI to trigger esbuild for JIT mode ([f0cb8f8](https://github.com/andrewmcodes/andrewm-codes-website/commit/f0cb8f864fd30f4bcffcbf55ad160ff6c99516b3))
+
 ## [3.0.0](https://github.com/andrewmcodes/andrewm-codes-website/compare/v2.2.0...v3.0.0) (2022-02-02)
 
 ### ⚠ BREAKING CHANGES
