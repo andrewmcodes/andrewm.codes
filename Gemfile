@@ -7,20 +7,20 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 #   bundle add some-new-plugin -g bridgetown_plugins
 #
 
-gem "bridgetown", "~> 1.0.0.beta3"
+gem "bridgetown", "~> 1.0.0"
 gem "puma", "~> 5.6"
 
 group :development do
   gem "debug", "~> 1.4"
-  gem "standard", "~> 1.7"
+  gem "standard", "~> 1.8"
   gem "solargraph", "~> 0.44"
 end
 
 group :bridgetown_plugins do
-  gem "bridgetown-view-component", "~> 0.7.0"
+  gem "bridgetown-view-component", "~> 1.0.0"
   gem "bridgetown-svg-inliner", "~> 1.0"
   gem "bridgetown-cloudinary", "~> 1.2"
   gem "bridgetown-plausible", "~> 1.0.2"
-  gem "view_component", "< 2.47"
+  gem "view_component", "~> 2.51"
   gem "bridgetown-feed", "~> 2.1.0"
 end
