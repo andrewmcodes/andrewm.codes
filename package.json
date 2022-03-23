@@ -30,7 +30,6 @@
     "@tailwindcss/line-clamp": "^0.3.1",
     "@tailwindcss/typography": "^0.5.2",
     "autoprefixer": "^10.4.4",
-    "chokidar": "^3.5.3",
     "esbuild": "^0.14.27",
     "glob": "^7.2.0",
     "husky": "^7.0.4",
