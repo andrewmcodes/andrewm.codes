@@ -7,7 +7,7 @@ tags:
   - intel
 categories: brew
 date: "2022-02-26T02:02:01.852Z"
-last_modified_at: "2022-02-26T02:19:06.341Z"
+last_modified_at: "2022-04-02T23:18:18-07:00"
 ---
 
 ```sh
