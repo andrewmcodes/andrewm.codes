@@ -30,7 +30,7 @@
     "@tailwindcss/line-clamp": "^0.3.1",
     "@tailwindcss/typography": "^0.5.2",
     "autoprefixer": "^10.4.4",
-    "esbuild": "^0.14.28",
+    "esbuild": "^0.14.36",
     "glob": "^7.2.0",
     "husky": "^7.0.4",
     "lint-staged": "^12.3.7",
