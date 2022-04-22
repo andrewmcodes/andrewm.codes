@@ -33,7 +33,7 @@
     "esbuild": "^0.14.38",
     "glob": "^8.0.1",
     "husky": "^7.0.4",
-    "lint-staged": "^12.3.7",
+    "lint-staged": "^12.4.0",
     "postcss": "^8.4.12",
     "postcss-import": "^14.1.0",
     "postcss-load-config": "^3.1.4",
