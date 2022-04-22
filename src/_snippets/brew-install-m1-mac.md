@@ -7,7 +7,7 @@ tags:
   - m1
 categories: brew
 date: "2022-02-26T02:02:01.852Z"
-last_modified_at: "2022-02-26T02:26:53.855Z"
+last_modified_at: "2022-04-02T23:18:18-07:00"
 ---
 
 ```sh
@@ -20,10 +20,11 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 
 1. Run `uname -m` in the Terminal of your choice and verify it outputs `arm64`[^1]
 2. Run the command above[^2]
-3. After the installation completes, run `brew doctor`
-4. If the output of `brew doctor` is `Your system is ready to brew.`, you are done
-5. If `brew doctor` returns issues, resolve them according to the provided instructions
-6. You may want to set up Homebrew's shell-completion[^3] at this time
+3. If you have not installed the Xcode Command Line Tools, brew will automatically install them for you
+4. After the installation completes, run `brew doctor`
+5. If the output of `brew doctor` is `Your system is ready to brew.`, you are done
+6. If `brew doctor` returns issues, resolve them according to the provided instructions
+7. You may want to set up Homebrew's shell-completion[^3] at this time
 
 ---
 

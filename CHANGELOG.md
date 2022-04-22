@@ -6,12 +6,11 @@ lastmod: "2022-01-10T04:11:08.445Z"
 
 ## [3.2.0](https://github.com/andrewmcodes/andrewm-codes-website/compare/v3.1.0...v3.2.0) (2022-03-30)
 
-
 ### Features
 
-* add "Create Repository from Current Directory with the GitHub CLI" ([#146](https://github.com/andrewmcodes/andrewm-codes-website/issues/146)) ([334be17](https://github.com/andrewmcodes/andrewm-codes-website/commit/334be1745a8bc54c22afb813f1f4d42190fa2dd8))
-* add "How to Deploy Your Bridgetown Site to Github Pages" ([#141](https://github.com/andrewmcodes/andrewm-codes-website/issues/141)) ([5fe6fbb](https://github.com/andrewmcodes/andrewm-codes-website/commit/5fe6fbbd08e230f1ea795ab1fee15b3df2da579c))
-* Upgrade Bridgetown to v1.0 ([#139](https://github.com/andrewmcodes/andrewm-codes-website/issues/139)) ([edadced](https://github.com/andrewmcodes/andrewm-codes-website/commit/edadcedfc5b48f3d06db997ce06b7db01d7d7314))
+- add "Create Repository from Current Directory with the GitHub CLI" ([#146](https://github.com/andrewmcodes/andrewm-codes-website/issues/146)) ([334be17](https://github.com/andrewmcodes/andrewm-codes-website/commit/334be1745a8bc54c22afb813f1f4d42190fa2dd8))
+- add "How to Deploy Your Bridgetown Site to Github Pages" ([#141](https://github.com/andrewmcodes/andrewm-codes-website/issues/141)) ([5fe6fbb](https://github.com/andrewmcodes/andrewm-codes-website/commit/5fe6fbbd08e230f1ea795ab1fee15b3df2da579c))
+- Upgrade Bridgetown to v1.0 ([#139](https://github.com/andrewmcodes/andrewm-codes-website/issues/139)) ([edadced](https://github.com/andrewmcodes/andrewm-codes-website/commit/edadcedfc5b48f3d06db997ce06b7db01d7d7314))
 
 ## [3.1.0](https://github.com/andrewmcodes/andrewm-codes-website/compare/v3.0.0...v3.1.0) (2022-02-27)
 
