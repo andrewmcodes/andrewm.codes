@@ -7,7 +7,7 @@ port ENV.fetch("BRIDGETOWN_PORT", 4000)
 # You can adjust the number of workers (separate processes) and threads
 # (per process) based on your production system
 #
-if ENV["BRIDGETOWN_ENV"] == "production"
+if ENV["BRIDGETOWN_ENV"] == 'production'
   workers ENV.fetch("BRIDGETOWN_CONCURRENCY", 4)
 end
 
