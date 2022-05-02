@@ -12,7 +12,7 @@ gem "puma", "~> 5.6"
 
 group :development do
   gem "debug", "~> 1.5"
-  gem "standard", "~> 1.10"
+  gem "standard", "~> 1.11"
   gem "solargraph", "~> 0.44"
 end
 
