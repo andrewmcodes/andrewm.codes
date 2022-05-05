@@ -4,6 +4,13 @@ lastmod: "2022-01-10T04:11:08.445Z"
 
 # Changelog
 
+## [3.3.0](https://github.com/andrewmcodes/andrewm-codes-website/compare/v3.2.0...v3.3.0) (2022-05-05)
+
+
+### Features
+
+* add twitter-avatar ([#182](https://github.com/andrewmcodes/andrewm-codes-website/issues/182)) ([3ff3ad8](https://github.com/andrewmcodes/andrewm-codes-website/commit/3ff3ad883b2aaf2bcd73880ef49cf5a961679c54))
+
 ## [3.2.0](https://github.com/andrewmcodes/andrewm-codes-website/compare/v3.1.0...v3.2.0) (2022-03-30)
 
 ### Features
