@@ -32,7 +32,7 @@
     "autoprefixer": "^10.4.7",
     "esbuild": "^0.14.38",
     "glob": "^8.0.1",
-    "husky": "^7.0.4",
+    "husky": "^8.0.0",
     "lint-staged": "^12.4.1",
     "postcss": "^8.4.13",
     "postcss-import": "^14.1.0",
