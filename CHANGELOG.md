@@ -4,6 +4,13 @@ lastmod: "2022-01-10T04:11:08.445Z"
 
 # Changelog
 
+## [3.4.0](https://github.com/andrewmcodes/andrewm-codes-website/compare/v3.3.0...v3.4.0) (2022-05-12)
+
+
+### Features
+
+* add Minimalist Habit Tracker Template for Obsidian post ([#186](https://github.com/andrewmcodes/andrewm-codes-website/issues/186)) ([0b64c1a](https://github.com/andrewmcodes/andrewm-codes-website/commit/0b64c1ae6b74d9eda922f41f6aa64a11daf61a17))
+
 ## [3.3.0](https://github.com/andrewmcodes/andrewm-codes-website/compare/v3.2.0...v3.3.0) (2022-05-05)
 
 
