@@ -5,7 +5,7 @@ gem "bridgetown", "~> 1.0.0"
 gem "puma", "~> 5.6"
 
 group :development do
-  gem "standard", "~> 1.11"
+  gem "standard", "~> 1.12"
   gem "solargraph", "~> 0.44"
 end
 
