@@ -28,7 +28,7 @@ I recently redesigned the website, which is a never ending process for me, so yo
 - [Tracking articles](/reading-list/) that I have read in 2022.
 - [Subscribe to my newsletter](/newsletter/) or check out [Ruby Radar.](https://rubyradar.dev)
 - You can find me all over the web, [follow me!](/follow/)
-- Want to know the gear that I am using? [I gotchu.](/uses/)
+- My [Uses page](/uses/) has more information on the gear I am using daily.
 
 [View the Sitemap <span aria-hidden="true">&rarr;</span>](/posts/)
 
