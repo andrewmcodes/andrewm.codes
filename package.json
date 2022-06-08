@@ -23,7 +23,7 @@
   ],
   "devDependencies": {
     "@andrewmcodes/prettier-config": "^1.0.0",
-    "@commitlint/cli": "^17.0.1",
+    "@commitlint/cli": "^17.0.2",
     "@commitlint/config-conventional": "^17.0.0",
     "@tailwindcss/aspect-ratio": "^0.4.0",
     "@tailwindcss/forms": "^0.5.2",
@@ -33,7 +33,7 @@
     "esbuild": "^0.14.42",
     "glob": "^8.0.3",
     "husky": "^8.0.1",
-    "lint-staged": "^12.4.2",
+    "lint-staged": "^13.0.1",
     "postcss": "^8.4.14",
     "postcss-import": "^14.1.0",
     "postcss-load-config": "^3.1.4",
