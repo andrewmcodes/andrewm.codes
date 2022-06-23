@@ -1,19 +1,20 @@
 ---
-series: null
-featured: false
 title: Use Tailwind CSS 1.1 in your Rails App
 description: How to install Tailwind CSS 1.1 in a Ruby on Rails app.
-urls:
-  dev_to: 'https://dev.to/andrewmcodes/use-tailwind-css-1-0-in-your-rails-app-4pm4'
 tags:
-  - tailwind-css
-  - rails
-  - webpacker
-categories: archived
+- tailwind-css
+- rails
+- webpacker
+categories:
+- archived
 date: '2019-04-07T03:07:25Z'
 last_modified_at: '2022-01-29T17:01:41.556Z'
+urls:
+  dev_to: https://dev.to/andrewmcodes/use-tailwind-css-1-0-in-your-rails-app-4pm4
 ---
 
+> This tutorial is not compatible with the latest versions of Rails & Tailwind CSS.
+ 
 For the purpose of this tutorial, we will assume you have Ruby and the Rails gem installed. Please visit the [Getting Started with Rails Guide](https://guides.rubyonrails.org/getting_started.html) if you do not.
 
 ## Create a new Rails project
@@ -211,7 +212,7 @@ to:
 ```erb
 <section class="py-8 text-center">
   <h1 class="mb-2 text-5xl">Ruby on Rails + TailwindCSS</h1>
-  <p class="mb-8 text-xl">❤️ A match made in heaven️️ ❤️</p>
+  <p class="mb-8 text-xl"> A match made in heaven </p>
   <a href="https://tailwindcss.com" class="px-8 py-4 font-bold text-white bg-teal-500 rounded hover:bg-teal-700" target="_blank">Tailwind Docs</a>
 </section>
 ```
