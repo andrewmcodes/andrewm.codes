@@ -4,6 +4,13 @@ lastmod: "2022-01-10T04:11:08.445Z"
 
 # Changelog
 
+## [3.4.1](https://github.com/andrewmcodes/andrewm-codes-website/compare/v3.4.0...v3.4.1) (2022-09-09)
+
+
+### Bug Fixes
+
+* make JSON-LD valid ([756a12c](https://github.com/andrewmcodes/andrewm-codes-website/commit/756a12cf91a5d50709bf19838f092e6a4530615e))
+
 ## [3.4.0](https://github.com/andrewmcodes/andrewm-codes-website/compare/v3.3.0...v3.4.0) (2022-05-26)
 
 
