@@ -1,0 +1,25 @@
+---
+---
+
+import { Meta, Story } from "@storybook/addon-docs"
+
+<Meta title="Components/Figure" component="Figure" />
+
+# Figure
+
+<Story name="Default">
+  {`<%= render Figure.new do |c| %>
+  <% c.with_image(cid: "v1666073663/posts/twitter-avatar/20220505050712Z_BlackMagic.so2", alt: "BlackMagic.so Profile Progress Bar Twitter Tool") %>
+  <% c.with_caption.with_content("This is the caption for the image above!") %>
+<% end %>
+`}
+</Story>
+
+## Code
+
+```ruby
+<%%= render Figure.new do |c| %>
+  <%% c.with_image(cid: "v1666073663/posts/twitter-avatar/20220505050712Z_BlackMagic.so2", alt: "BlackMagic.so Profile Progress Bar Twitter Tool") %>
+  <%% c.with_caption.with_content("This is the caption for the image above!") %>
+<%% end %>
+```

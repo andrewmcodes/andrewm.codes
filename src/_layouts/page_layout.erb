@@ -1,0 +1,15 @@
+---
+layout: default
+---
+
+<%= render Container.new do %>
+  <%= render Spacer.new(y: :xxl) do %>
+    <%= render Spacer.new(as: :header, y: :sm, class_name: "max-w-2xl") do %>
+      <%= render Heading.new(weight: :semibold).with_content(data.title) %>
+      <%= render Text.new(size: :lg) do %>
+        <%= data.intro || data.description %>
+      <% end %>
+    <% end %>
+    <%= render Box.new.with_content(content) %>
+  <% end %>
+<% end %>

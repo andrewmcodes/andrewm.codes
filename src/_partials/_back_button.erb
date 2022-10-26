@@ -1,0 +1,25 @@
+<a
+  href="<%= relative_url(resource.data.back&.path || '/posts') %>"
+  aria-label="Go back to <%= resource.data.back&.title || "posts" %>"
+  class="
+    group
+    mb-8
+    flex
+    h-10
+    w-10
+    items-center
+    justify-center
+    rounded-full
+    slate-bg
+    transition
+    lg:absolute
+    lg:-left-5
+    lg:mb-0
+    lg:-mt-2
+    xl:-top-1.5
+    xl:left-0
+    xl:mt-0
+  "
+  >
+  <%= render Icon.new(name: :arrow_left, class_name: "h-4 w-4 stroke-radix-slate11 transition group-hover:stroke-radix-slate12") %>
+</a>

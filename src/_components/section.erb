@@ -1,0 +1,9 @@
+<section
+  aria-labelledby="<%= id %>"
+  class="md:border-l md:slate-border md:pl-6"
+>
+  <div class="grid max-w-3xl grid-cols-1 items-baseline gap-y-8 md:grid-cols-4">
+    <%= render Heading.new(variant: :section_sm, id: id).with_content(title) %>
+    <div class="md:col-span-3"><%= children %></div>
+  </div>
+</section>

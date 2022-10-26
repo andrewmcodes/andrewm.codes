@@ -1,0 +1,8 @@
+<%= render Box.new(**helper_opts) do %>
+  <% if decorate? %>
+    <span class="absolute inset-y-0 left-0 flex items-center" aria-hidden="true">
+      <span class="h-4 w-0.5 rounded-full bg-radix-slate6"></span>
+    </span>
+  <% end %>
+  <%= children %>
+<% end %>

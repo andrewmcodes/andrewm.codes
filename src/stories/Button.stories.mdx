@@ -1,0 +1,97 @@
+---
+---
+
+import { Meta, Story } from "@storybook/addon-docs"
+
+<Meta
+  title="Components/Button"
+  component="Button"
+  argTypes={{
+    href: {
+      control: { type: "text" }
+    },
+    variant: {
+      options: ["default"],
+      control: { type: "select" }
+    },
+    size: {
+      options: ["default", "lg"],
+      control: { type: "select" }
+    }
+  }}
+/>
+
+# Buttons
+
+There are two sizes of avatars.
+
+<Story
+  name="Default"
+  args={{
+    href: "#",
+    variant: "default",
+    size: "default"
+  }}
+>
+  {`<%= render Button.new(href: "#").with_content("Button") %>`}
+</Story>
+
+<Story
+  name="Text Variant"
+  args={{
+    href: "#",
+    variant: "text",
+    size: "default"
+  }}
+>
+  {`<%= render Button.new(href: "#", variant: :text).with_content("Button") %>`}
+</Story>
+
+<Story
+  name="Leading & Trailing Icon"
+  args={{
+    href: "#",
+    variant: "default",
+    size: "default"
+  }}
+>
+  {`<%= render Button.new(href: "#") do |c| %>
+      <% c.with_leading_icon(name: :arrow_right) %>
+      <% c.with_text.with_content("Button") %>
+      <% c.with_trailing_icon(name: :arrow_right) %>
+    <% end %>`}
+</Story>
+
+<Story
+  name="Trailing Icon"
+  args={{
+    href: "#",
+    variant: "default",
+    size: "default"
+  }}
+>
+  {`<%= render Button.new(href: "#") do |c| %>
+      <% c.with_text.with_content("Button") %>
+      <% c.with_trailing_icon(name: :arrow_right) %>
+    <% end %>`}
+</Story>
+
+<Story
+  name="Leading Icon"
+  args={{
+    href: "#",
+    variant: "default",
+    size: "default"
+  }}
+>
+  {`<%= render Button.new(href: "#") do |c| %>
+      <% c.with_leading_icon(name: :arrow_right) %>
+      <% c.with_text.with_content("Button") %>
+    <% end %>`}
+</Story>
+
+## Code
+
+```ruby
+<%%= render Avatar.new(size: :lg) %>
+```

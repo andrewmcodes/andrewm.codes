@@ -1,15 +1,12 @@
 ---
-series: null
-featured: true
 title: Getting Started with Obsidian
 description: "A beginners guide to setting up Obsidian, an advanced markdown note taking app, for the first time."
 tags:
   - obsidian
   - macos
   - notes
-categories: tutorial
-date: "2022-01-14T06:49:07.800Z"
-last_modified_at: "2022-02-08T02:18:42.389Z"
+category: tutorial
+date: 2022-01-14T06:49:07.800Z
 ---
 
 ## Quick Start

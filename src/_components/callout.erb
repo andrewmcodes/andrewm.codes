@@ -1,0 +1,9 @@
+<%= render Box.new(**helper_opts) do %>
+  <%= render Icon.new(name: icon, class: "mt-[.325rem] w-[1.125rem] h-[1.125rem] flex-none") if title %>
+  <div class="flex-auto ml-4">
+    <% if title %>
+      <%= render Title.new(as: :p, class_name: "mt-0 mb-2").with_content(title) %>
+    <% end %>
+    <%= render Prose.new(variant: opts.fetch(:variant, :default), class_name: "[&_p:first-child]:!mt-2 [&_p:last-child]:!mb-0").with_content(markdownify(content)) %>
+  </div>
+<% end %>

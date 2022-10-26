@@ -1,0 +1,5 @@
+<%= render Section.new(**helper_opts) do %>
+  <%= render Spacer.new(as: :ul, role: :list, size: :lg) do %>
+    <%= children %>
+  <% end %>
+<% end %>

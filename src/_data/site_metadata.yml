@@ -4,49 +4,87 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.metadata.myvariable }}.
 
-version: 0.0.1
-
-charset: utf-8
-lang: en
-direction: ltr
-
-domain: andrewm.codes
-url: https://andrewm.codes/
-repo: andrewmcodes/andrewm-codes-website
-
-title: Andrew Mason — Ruby on Rails Software Engineer
-tagline: " — andrewm.codes"
+charset: "utf-8"
+viewport: "width=device-width, initial-scale=1.0"
+title: Andrew Mason
+long_title: Andrew Mason // Senior Full Stack Ruby Developer
+sitename: andrewm.codes
+tagline: // Andrew Mason
+repo: andrewmcodes/website-v6
 description: >-
-  Andrew Mason is a full stack Ruby on Rails software engineer, podcaster, and creator currently working remotely from Phoenix, Arizona.
-
+  Andrew Mason is a senior full stack software engineer, content creator, and Rubyist. Currently a senior product developer at Podia based in Phoenix, Arizona.
 theme_color:
-  light: "#f4f4f5"
-  dark: "#27272a"
-
-feed:
-  subtitle: RSS Feed for andrewm.codes
-  filename: feed.xml
-  path: /feed.xml
-  id: "https://andrewm.codes"
-
-json_feed:
-  path: /feed.json
-  url: https://andrewm.codes/feed.json
-
-twitter:
-  username: "@andrewmcodes"
-  card: "summary_large_image"
-  url: https://twitter.com/andrewmcodes/
-
-# Add a level to display the alert
-alert:
-  level:
-  message: >-
-    Site is under renovation and you may experience weirdness.
-
+  light: "#0091FF"
+  dark: "#0091FF"
+generator: Bridgetown
+image: "/public/share.jpeg"
 author:
+  company: Podia
+  job_title: Senior Product Developer
   name: Andrew Mason
-  picture: https://res.cloudinary.com/andrewmcodes/image/upload/c_scale,h_80,w_80/v1/andrewm.codes/avatar-bw.jpg
   twitter: andrewmcodes
-  uri: https://andrewm.codes/
-  github: andrewmcodes
+  avatar: https://res.cloudinary.com/andrewmcodes/image/upload/w_128,c_fill,ar_1:1,g_auto,r_max/v1665648326/andrewm.codes/profile-gradient-1.png
+  avatar_sm: https://res.cloudinary.com/andrewmcodes/image/upload/w_36,c_fill,ar_1:1,g_auto,r_max/v1665648326/andrewm.codes/profile-gradient-1.png
+  twitter_avatar: https://res.cloudinary.com/andrewmcodes/image/upload/w_64,c_fill,ar_1:1,g_auto,r_max/v1625490523/andrewm.codes/avatar-bw.png
+  # Gradient https://images.unsplash.com/photo-1550859492-d5da9d8e45f3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTl8fGdyYWRpZW50fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=100
+nav:
+  desktop:
+    - title: About
+      href: /about/
+    - title: Podcasts
+      href: /podcasts/
+    - title: Projects
+      href: /projects/
+    - title: Speaking
+      href: /speaking/
+    - title: Uses
+      href: /uses/
+  footer:
+    meta:
+      - title: Changelog
+        href: https://github.com/andrewmcodes/website-v6/blob/main/CHANGELOG.md
+      - title: Dashboard
+        href: /dashboard/
+      - title: Analytics
+        href: /analytics/
+    pages:
+      - title: Home
+        href: /
+      - title: About
+        href: /about/
+      - title: Podcasts
+        href: /podcasts/
+      - title: Uses
+        href: /uses/
+    resources:
+      - title: Posts
+        href: /posts/
+      - title: Projects
+        href: /projects/
+      - title: Speaking
+        href: /speaking/
+      - title: Newsletter
+        href: /newsletter/
+    categories:
+      - title: Tutorials
+        href: /posts/tutorial/
+      - title: Snippets
+        href: /posts/snippet/
+      - title: Blog
+        href: /posts/blog/
+      - title: CFPs
+        href: /posts/conference-proposal/
+
+  mobile:
+    - title: About
+      href: /about/
+    - title: Podcasts
+      href: /podcasts/
+    - title: Projects
+      href: /projects/
+    - title: Speaking
+      href: /speaking/
+    - title: Uses
+      href: /uses/
+    - title: Posts
+      href: /posts/

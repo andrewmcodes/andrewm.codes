@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Twitter",
+    "href": "https://twitter.com/andrewmcodes",
+    "featured": true
+  },
+  {
+    "title": "Discord",
+    "href": "#",
+    "featured": true
+  },
+  {
+    "title": "GitHub",
+    "href": "https://github.com/andrewmcodes",
+    "featured": true
+  },
+  {
+    "title": "LinkedIn",
+    "href": "https://www.linkedin.com/in/andrew-mason",
+    "featured": true
+  },
+  {
+    "title": "YouTube",
+    "href": "https://www.youtube.com/channel/UCr6mV_IiQqkexMarHB3701Q"
+  }
+]

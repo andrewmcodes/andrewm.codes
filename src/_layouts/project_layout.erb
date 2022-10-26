@@ -1,0 +1,14 @@
+---
+layout: default
+---
+
+<%= render Container.new do %>
+  <%= render Spacer.new(y: :md) do %>
+    <%= render Spacer.new(as: :header, y: :md, class_name: "max-w-2xl") do %>
+      <%= render Heading.new(variant: :headline).with_content(data.title) %>
+    <% end %>
+    <%= render Prose.new(class_name: "max-w-prose") do %>
+      <%= content %>
+    <% end %>
+  <% end %>
+<% end %>

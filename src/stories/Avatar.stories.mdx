@@ -1,0 +1,48 @@
+---
+---
+
+import { Meta, Story } from "@storybook/addon-docs"
+
+<Meta
+  title="Components/Avatar"
+  component="Avatar"
+  argTypes={{
+    variant: {
+      options: ["default"],
+      control: { type: "select" }
+    },
+    size: {
+      options: ["default", "lg"],
+      control: { type: "select" }
+    }
+  }}
+/>
+
+# Avatars
+
+There are two sizes of avatars.
+
+<Story
+  name="Default"
+  args={{
+    variant: "default",
+    size: "default"
+  }}
+>
+  {`<%= render Avatar.new %>`}
+</Story>
+
+<Story
+  name="Large"
+  args={{
+    size: "lg"
+  }}
+>
+  {`<%= render Avatar.new(size: :lg) %>`}
+</Story>
+
+## Code
+
+```ruby
+<%%= render Avatar.new(size: :lg) %>
+```

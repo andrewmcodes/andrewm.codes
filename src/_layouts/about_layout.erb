@@ -1,0 +1,26 @@
+---
+layout: default
+---
+<%= render GridLayout.new do |c| %>
+  <% c.with_featured_image do %>
+    <div class="max-w-sm px-2.5 lg:max-w-none">
+      <%= render ResponsiveImage.new(file: resource.data.display_image, loading: :eager, class_name: "aspect-square rotate-3 rounded-2xl bg-radix-slate2 object-cover") %>
+    </div>
+  <% end %>
+  <% c.with_body do %>
+    <%= render Heading.new(class_name: "mt-8").with_content(resource.data.title) %>
+    <%= render Prose.new.with_content(content) %>
+  <% end %>
+  <% c.with_details do %>
+    <%= render Spacer.new(as: :ul, role: "list", y: :xs) do %>
+      <% site.data.social_links.each do |link| %>
+        <li>
+          <%= render Link.new(href: link[:href], class_name: "group flex text-sm font-medium text-radix-slate11 transition items-center") do %>
+            <%= render Icon.new(name: link[:title].downcase, class_name: "w-4 h-4 flex-none text-radix-slate11 transition group-hover:text-radix-blue11") %>
+            <%= render Text.new(as: :span, class_name: "ml-3 group-hover:text-radix-blue11").with_content(link[:title]) %>
+          <% end %>
+        </li>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>

@@ -1,0 +1,19 @@
+---
+title: Uses
+description: "This is a living document of the software, tools, and hardware I use as a software engineer in my personal and professional life."
+---
+
+<%= render Spacer.new(y: :xxl) do %>
+  <% site.data.tools.group_by {|h| h[:category]}.each do |k,v| %>
+    <%= render ToolsSection.new(title: k.titleize) do %>
+      <%= render Spacer.new(y: :xl) do %>
+        <% v.each do |tool| %>
+          <%= render Tool.new(
+          title: tool[:title],
+          description: tool[:description]
+        ) %>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>

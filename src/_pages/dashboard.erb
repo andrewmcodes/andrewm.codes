@@ -1,0 +1,83 @@
+---
+title: "Dashboard"
+description: Some basic information about the site, generated at build, that I use for debugging.
+---
+
+<%= render(Prose.new) do %>
+  <h2>Deploy ENV</h2>
+  <dl>
+    <dt>Bridgetown ENV:</dt>
+    <dd><%= Bridgetown.env %></dd>
+
+    <dt>Bridgetown Version:</dt>
+    <dd><%= Bridgetown::VERSION %></dd>
+
+    <dt>Ruby Version:</dt>
+    <dd><%= RUBY_VERSION %></dd>
+
+    <dt>Node ENV:</dt>
+    <dd><%= ENV["NODE_ENV"] %></dd>
+
+    <dt>RACK_ENV:</dt>
+    <dd><%= ENV["RACK_ENV"] %></dd>
+
+    <dt>VERCEL</dt>
+    <dd><%= ENV["VERCEL"] == 1 ? "true" : "false" %></dd>
+
+    <dt>CI</dt>
+    <dd><%= ENV["CI"] == 1 ? "true" : "false" %></dd>
+
+    <dt>VERCEL_ENV</dt>
+    <dd><%= ENV["VERCEL_ENV"] %></dd>
+
+    <dt>VERCEL_URL</dt>
+    <dd><%= ENV["VERCEL_URL"] %></dd>
+
+    <dt>VERCEL_GIT_COMMIT_REF</dt>
+    <dd><%= ENV["VERCEL_GIT_COMMIT_REF"] %></dd>
+
+    <dt>VERCEL_GIT_COMMIT_SHA</dt>
+    <dd><%= ENV["VERCEL_GIT_COMMIT_SHA"] %></dd>
+
+    <dt>VERCEL_GIT_COMMIT_AUTHOR_NAME</dt>
+    <dd><%= ENV["VERCEL_GIT_COMMIT_AUTHOR_NAME"] %></dd>
+
+    <dt>VERCEL_GIT_PREVIOUS_SHA</dt>
+    <dd><%= ENV["VERCEL_GIT_PREVIOUS_SHA"] %></dd>
+
+    <dt>VERCEL_GIT_COMMIT_MESSAGE</dt>
+    <dd><%= ENV["VERCEL_GIT_COMMIT_MESSAGE"] %></dd>
+  </dl>
+
+  <h2>Config</h2>
+  <%#= site.config.keys %>
+  <dl>
+    <dt>URL</dt>
+    <dd><%= site.config.url %></dd>
+    <dt>permalink</dt>
+    <dd><%= site.config.permalink %></dd>
+    <dt>timezone</dt>
+    <dd><%= site.config.timezone %></dd>
+    <dt>template_engine</dt>
+    <dd><%= site.config.template_engine %></dd>
+    <dt>highlighter</dt>
+    <dd><%= site.config.highlighter %></dd>
+    <dt>collections</dt>
+    <dd><%= site.config.collections.keys %></dd>
+    <dt>taxonomies</dt>
+    <dd><%= site.config.taxonomies.keys %></dd>
+  </dl>
+
+  <h2>Alpine.js</h2>
+  <div x-data @foo="alert('Button Was Clicked!')">
+    <button
+      @click="$event.target.dispatchEvent(new CustomEvent('foo', { bubbles: true }))"
+    >Button</button>
+  </div>
+
+  <h2>Cloudinary</h2>
+  <h3>ResponsiveImage</h3>
+  <%= render ResponsiveImage.new(file: "v1654659913/andrewm.codes/cardinals-game-selfie_cp2igx.png") %>
+  <h3>cloudinary_img</h3>
+  <%== cloudinary_img("foo", "v1640109906/andrewm.codes/cardinals-game-selfie_cp2igx", :small) %>
+<% end %>

@@ -1,0 +1,17 @@
+---
+layout: page_layout
+title: "Tag: :prototype-term"
+noindex: true
+prototype:
+  collection: posts
+  term: tags
+---
+
+
+<div class="md:border-l md:border-radix-slate6 md:pl-6">
+  <%= render Spacer.new(y: :xl, class_name: "flex max-w-3xl flex-col") do %>
+    <% paginator.resources.each do |post| %>
+      <%= render Article.new(resource: post) %>
+    <% end %>
+  <% end %>
+</div>

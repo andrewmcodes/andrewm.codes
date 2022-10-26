@@ -1,0 +1,10 @@
+<div
+  x-popover:panel
+  x-cloak
+  x-transition.origin.top.left
+  class="<%= helper_opts[:class] %>"
+>
+  <% items.each do |item| %>
+    <%= item %>
+  <% end %>
+</div>

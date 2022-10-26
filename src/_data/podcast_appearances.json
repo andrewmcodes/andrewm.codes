@@ -1,0 +1,67 @@
+[
+  {
+    "image_url": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts115/v4/fb/c8/51/fbc85159-127b-250a-7db4-ab7bd5c62d1f/mza_17321773806686077359.jpg/320x320bb.png",
+    "author": "Jason Swett",
+    "episode_number": 99,
+    "feedURL": "https://feeds.simplecast.com/OJHaPCqO",
+    "id": "1464180320",
+    "title": "Rails with Jason",
+    "store_url": "https://podcasts.apple.com/us/podcast/rails-with-jason/id1464180320?uo=4"
+  },
+  {
+    "image_url": "https://is4-ssl.mzstatic.com/image/thumb/Podcasts126/v4/4e/c6/1d/4ec61de8-9188-899d-a3c4-2bf5b3eb3ff3/mza_16969094118513558280.jpg/320x320bb.png",
+    "author": "Devchat.tv",
+    "episode_number": 103,
+    "feedURL": "https://feeds.feedwrench.com/my-ruby-story.rss",
+    "id": "1237404328",
+    "title": "My Ruby Story",
+    "store_url": "https://podcasts.apple.com/us/podcast/my-ruby-story/id1237404328?uo=4"
+  },
+  {
+    "image_url": "https://is5-ssl.mzstatic.com/image/thumb/Podcasts125/v4/06/3e/8a/063e8af0-0f82-08cc-1eb2-5f491d15a4db/mza_7789685193854663331.jpg/320x320bb.png",
+    "author": "Brittany Martin and Brian Mariani",
+    "episode_number": 396,
+    "feedURL": "https://feeds.fireside.fm/therubyonrailspodcast/rss",
+    "id": "840890158",
+    "title": "The Ruby on Rails Podcast",
+    "store_url": "https://podcasts.apple.com/us/podcast/the-ruby-on-rails-podcast/id840890158?uo=4"
+  },
+  {
+    "image_url": "https://is4-ssl.mzstatic.com/image/thumb/Podcasts125/v4/4a/77/58/4a775869-9fb3-01da-998d-ad4ad9254048/mza_7712122053420997836.jpg/320x320bb.png",
+    "author": "Chris & Creston",
+    "episode_number": 24,
+    "feedURL": "https://anchor.fm/s/69991e20/podcast/rss",
+    "id": "1588331747",
+    "title": "Rubber Duck Dev Show",
+    "store_url": "https://podcasts.apple.com/us/podcast/rubber-duck-dev-show/id1588331747?uo=4"
+  },
+  {
+    "image_url": "https://is5-ssl.mzstatic.com/image/thumb/Podcasts116/v4/75/5b/e4/755be41e-8bde-3604-2456-87d2346edc1e/mza_5021851496692573150.jpeg/320x320bb.png",
+    "author": "Drew Bragg",
+    "episode_number": 1,
+    "feedURL": "https://feeds.buzzsprout.com/1927628.rss",
+    "id": "1608027128",
+    "title": "Code and the Coding Coders who Code it",
+    "store_url": "https://podcasts.apple.com/us/podcast/code-and-the-coding-coders-who-code-it/id1608027128?uo=4"
+  },
+  {
+    "apple_store_id": 1493009674,
+    "apple_store_url": "https://podcasts.apple.com/us/podcast/computer-science-just-the-useful-bits/id1493009674?uo=4",
+    "artist": "Noah Gibbs",
+    "episode_count": 26,
+    "feed_url": "https://anchor.fm/s/11c2aba8/podcast/rss",
+    "genre": "Technology",
+    "image_url": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts115/v4/b0/4d/94/b04d94d4-1e1a-10bc-1655-ae5c667bb889/mza_3345826263582728635.jpg/320x320bb.png",
+    "title": "Computer Science: Just the Useful Bits"
+  },
+  {
+    "apple_store_id": 1397042613,
+    "apple_store_url": "https://podcasts.apple.com/us/podcast/remote-ruby/id1397042613?uo=4",
+    "artist": "Jason Charnes, Chris Oliver, Andrew Mason",
+    "episode_count": 201,
+    "feed_url": "https://feeds.transistor.fm/remote-ruby",
+    "genre": "How To",
+    "image_url": "https://is5-ssl.mzstatic.com/image/thumb/Podcasts115/v4/07/fa/9b/07fa9b0a-4da7-6592-1e6f-17fefe6d0a8a/mza_17789155398922817.jpg/320x320bb.png",
+    "title": "Remote Ruby"
+  }
+]

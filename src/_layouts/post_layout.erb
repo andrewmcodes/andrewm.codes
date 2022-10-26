@@ -1,0 +1,89 @@
+---
+layout: default
+---
+<%= render GridLayout.new do |c| %>
+  <% c.with_body do %>
+    <%# header %>
+    <%= render "back_button", resource: resource %>
+    <%= render Spacer.new(as: :header, y: :md, class_name: "max-w-2xl") do %>
+      <%= render Heading.new(variant: :headline).with_content(data.title) %>
+      <%= render Stack.new(direction: :row, gap: :md, items: :center, class_name: "lg:hidden") do %>
+        <%= render Stack.new(direction: :row, gap: :sm, items: :center) do %>
+          <%= render Icon.new(name: :person, class_name: "flex-none") %>
+          <%= render Link.new(variant: :primary).with_content(site.metadata.author.name) %>
+        <% end %>
+        <%= render Stack.new(direction: :row, gap: :sm, items: :center) do %>
+          <%= render Icon.new(name: :timer, class_name: "flex-none") %>
+          <%= render Text.new(size: :sm).with_content("#{reading_time(resource.content)} min read") %>
+        <% end %>
+        <%= render Stack.new(direction: :row, gap: :sm, items: :center) do %>
+          <%= render Icon.new(name: :calendar, class_name: "flex-none") %>
+          <%= render Text.new(size: :sm) do %>
+            <%= render TimeComponent.new(date: data.date) %>
+          <% end %>
+        <% end %>
+      <% end %>
+    <% end %>
+    <%# Body %>
+    <%= render Prose.new(class_name: "max-w-prose mt-16 lg:mt-0") do %>
+      <% if data.status.to_s == "archived" %>
+        <%= render Callout.new(variant: :warning, title: "Last updated over a year ago").with_content("If this is a technical post some information might be out of date. If something is terribly broken, let me know and I will decide whether to update the article accordingly or archive it.") %>
+      <% end %>
+      <%= content %>
+      <%= render Stack.new(y: :sm) do %>
+        <%= render Button.new(href: "#") do |c| %>
+          <% c.with_leading_icon(name: :share) %>
+          <% c.with_text.with_content("Share") %>
+        <% end %>
+        <%= render Stack.new(direction: :row, gap: :sm, class_name: "flex-wrap") do %>
+          <% data.tags.each do |tag| %>
+            <%= render Button.new(href: "/tags/#{tag}", size: :xs, variant: :primary_outline).with_content("##{tag}") %>
+          <% end %>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+  <%# Details %>
+  <% c.with_details do %>
+    <%= render Spacer.new(as: :div, y: :xs) do %>
+      <dl class="gap-4 grid grid-cols-2 lg:grid-cols-1">
+        <div>
+          <%= render Title.new(as: :dt, variant: :strong, size: :sm, class_name: "sm:w-40 sm:flex-shrink-0").with_content("Reading time") %>
+          <%= render Text.new(as: :dd, size: :sm, color: :muted, class_name: "mt-1 sm:col-span-2").with_content("#{reading_time(resource.content)} minute(s)") %>
+        </div>
+        <% if data.date %>
+        <div>
+          <%= render Title.new(as: :dt, variant: :strong, size: :sm, class_name: "sm:w-40 sm:flex-shrink-0").with_content("Published on") %>
+          <%= render Text.new(as: :dd, size: :sm, color: :muted, class_name: "mt-1 sm:col-span-2") do %>
+            <%= render TimeComponent.new(date: data.date) %>
+          <% end %>
+        </div>
+        <% end %>
+        <% if data.last_modified_at %>
+        <div>
+          <%= render Title.new(as: :dt, variant: :strong, size: :sm, class_name: "sm:w-40 sm:flex-shrink-0").with_content("Updated on") %>
+          <%= render Text.new(as: :dd, size: :sm, color: :muted, class_name: "mt-1 sm:col-span-2") do %>
+            <%= render TimeComponent.new(date: data.last_modified_at) %>
+          <% end %>
+        </div>
+        <% end %>
+      </dl>
+    <% end %>
+    <%= render Spacer.new(as: :div, y: :xs, class_name: "mt-4 pt-4 border-t slate-border") do %>
+      <% [
+        { title: "Discuss on Twitter", icon: :twitter, href: twitter_discuss_url(resource) },
+        { title: "Contribute on GitHub", icon: :github, href: github_edit_url(resource) },
+        { title: "Questions on Discord", icon: :discord, href: "#" },
+        { title: "Subscribe to RSS Feed", icon: :rss, href: "/feed.xml" },
+        { title: "Subscribe to JSON Feed", icon: :json_feed, href: "/feed.json" },
+      ].each do |link| %>
+        <%= render Stack.new(direction: :row, gap: :sm, items: :center) do %>
+          <%= render Link.new(variant: :muted, href: link[:href], class_name: "flex items-center gap-x-2") do |c| %>
+            <% c.with_leading_icon(name: link[:icon], class_name: "flex-none") %>
+            <%= link[:title] %>
+          <% end %>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>

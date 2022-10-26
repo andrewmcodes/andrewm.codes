@@ -1,0 +1,45 @@
+---
+---
+
+import { Meta } from "@storybook/addon-docs"
+
+<Meta title="docs/Color" />
+
+## Radix Colors
+
+I am using the [Radix Color System](https://radixcolor.com/) and really enjoying it.
+
+### Tailwind Plugin
+
+Under the hood, this is implemented with the [radix-colors-for-tailwind](https://github.com/samrobbins85/radix-colors-for-tailwind) plugin.
+
+#### Provided Classes
+
+- `color-bg`
+  - If you do `color-bg` e.g. `blue-bg`, you will get a background color of step 3, this follows the pattern explained here. If you want to make this interactive, instead use the class `color-bg-int`, and you will also have states for hover and focus.
+- `color-cta`
+  - Following a similar pattern, `color-cta` will give you a background color of step 4 for a darker look, and similarly gives you the option of `color-cta-int` to have hover and focus states
+- `color-border`
+  - If you want to add borders to your components, you can use the `color-border` pattern, this uses step 6 by default, but will use step 7 if you do `color-border-int`
+- `color-solid`
+  - If you want solid backgrounds to your components rather than the lighter ones provided by the other classes, then you can use `color-solid`, giving you a background of step 9, again, there's a `color-solid-int` option that also gives you a hover state at step 10
+
+### Color Scale
+
+The documentation for the steps is [here.](https://www.radix-ui.com/docs/colors/palette-composition/understanding-the-scale#use-cases)
+
+- Steps 1-2: Backgrounds
+  - Step 1 is for the main background
+  - Step 2 is for subtle component backgrounds like cards and code blocks
+- Steps 3-5: Component backgrounds
+  - Step 3 is for normal states.
+  - Step 4 is for hover states.
+  - Step 5 is for pressed or selected states.
+- Steps 6-8: Border colors
+  - Step 6 is designed for subtle borders on components which are not interactive. For example sidebars, headers, cards, alerts, and separators.
+  - Step 7 is designed for borders on interactive components, but can also be used for focus rings.
+  - Step 8 is designed for borders on interactive components in their hover state.
+- Steps 9-10: Solid backgrounds
+  - Step 9 has the highest chroma of all steps in the scale
+    - Can be used for site, section, header, component backgrounds as well as graphics, overlays, shadows, and accent borders.
+  - Step 10 is designed for component hover states, where step 9 is the component's normal state background.

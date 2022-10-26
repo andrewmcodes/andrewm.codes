@@ -1,0 +1,64 @@
+---
+---
+
+import { Meta, Story } from "@storybook/addon-docs"
+
+<Meta
+  title="Components/Text"
+  component="Text"
+  argTypes={{
+    size: {
+      options: ["default", "sm"],
+      control: { type: "select" }
+    },
+    variant: {
+      options: ["default", "strong"],
+      control: { type: "select" }
+    }
+  }}
+/>
+
+# Text
+
+<Story
+  name="Default"
+  args={{
+    size: "default",
+    variant: "default"
+  }}
+>
+  {`<%= render Text.new.with_content("Default text") %>`}
+</Story>
+
+<Story
+  name="Small"
+  args={{
+    size: "sm",
+    variant: "default"
+  }}
+>
+  {`<%= render Text.new(size: :sm).with_content("Small text") %>`}
+</Story>
+
+<Story
+  name="strong"
+  args={{
+    size: "default",
+    variant: "strong"
+  }}
+>
+  {`<%= render Text.new(variant: :strong).with_content("strong text") %>`}
+</Story>
+
+## Code
+
+```ruby
+<%%= render Text.new(size: :sm, variant: :strong) %>
+```
+
+## Options
+
+| Option    | Value    | Description                   |
+| --------- | -------- | ----------------------------- |
+| `size`    | `Symbol` | The size of the text          |
+| `variant` | `Symbol` | The color variant of the text |

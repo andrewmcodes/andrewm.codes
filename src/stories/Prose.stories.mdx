@@ -1,0 +1,121 @@
+---
+---
+
+import { Meta, Story } from "@storybook/addon-docs"
+
+<Meta title="Components/Prose" component="Prose" />
+
+# Prose
+
+<Story name="Default">
+  {`<%= render Prose.new.with_content("the inside of the prose container transformed with @tailwindcss/typography") %>`}
+</Story>
+
+<Story name="Blockquote">
+  {`<%= render Prose.new do %>
+    <blockquote>
+      <p>A Webpack-aware, Ruby-powered static site generator for the modern Jamstack era.</p>
+    </blockquote>
+    <% end %>
+  `}
+</Story>
+
+<Story name="Code Block">
+  {`<%= render Prose.new do %>
+    <pre><code class="language-sh">gem install bridgetown -N</code></pre>
+    <% end %>
+  `}
+</Story>
+
+<Story name="Code Inline">
+  {`<%= render Prose.new do %>
+    <p><code>./frontend/styles/index.scss</code></p>
+    <% end %>
+  `}
+</Story>
+
+<Story name="Link">
+  {`<%= render Prose.new do %>
+    <a href="#">This is a link</a>
+    <% end %>
+  `}
+</Story>
+
+<Story name="List Unordered">
+  {`<%= render Prose.new do %>
+      <ul>
+        <li>
+          <p>I often do this thing where list items have headings.</p>
+          <p>For some reason I think this looks cool which is unfortunate because it's pretty annoying to get the styles right.</p>
+          <p>I often have two or three paragraphs in these list items, too, so the hard part is getting the spacing between the paragraphs, list item heading, and separate list items to all make sense. Pretty tough honestly, you could make a strong argument that you just shouldn't write this way.</p>
+        </li>
+        <li>
+          <p><strong>Since this is a list, I need at least two items.</strong></p>
+          <p>I explained what I'm doing already in the previous list item, but a list wouldn't be a list if it only had one item, and we really want this to look realistic. That's why I've added this second list item so I actually have something to look at when writing the styles.</p>
+        </li>
+        <li>
+          <p><strong>It's not a bad idea to add a third item either.</strong></p>
+          <p>I think it probably would've been fine to just use two items but three is definitely not worse, and since I seem to be having no trouble making up arbitrary things to type, I might as well include it.</p>
+        </li>
+      </ul>
+    <% end %>
+  `}
+</Story>
+
+<Story name="Figure">
+  {`<%= render Prose.new do %>
+      <figure>
+        <img src="https://images.unsplash.com/photo-1556740758-90de374c12ad?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1000&amp;q=80" alt="" />
+        <figcaption>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</figcaption>
+      </figure>
+    <% end %>
+  `}
+</Story>
+
+<Story name="Table">
+  {`<%= render Prose.new do %>
+            <table>
+        <thead>
+          <tr>
+            <th>Wrestler</th>
+            <th>Origin</th>
+            <th>Finisher</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Bret "The Hitman" Hart</td>
+            <td>Calgary, AB</td>
+            <td>Sharpshooter</td>
+          </tr>
+          <tr>
+            <td>Stone Cold Steve Austin</td>
+            <td>Austin, TX</td>
+            <td>Stone Cold Stunner</td>
+          </tr>
+          <tr>
+            <td>Randy Savage</td>
+            <td>Sarasota, FL</td>
+            <td>Elbow Drop</td>
+          </tr>
+          <tr>
+            <td>Vader</td>
+            <td>Boulder, CO</td>
+            <td>Vader Bomb</td>
+          </tr>
+          <tr>
+            <td>Razor Ramon</td>
+            <td>Chuluota, FL</td>
+            <td>Razor's Edge</td>
+          </tr>
+        </tbody>
+      </table>
+    <% end %>
+  `}
+</Story>
+
+## Code
+
+```ruby
+<%%= render Tool.new(title: "Tool title", description: "The description of the tool") %>
+```

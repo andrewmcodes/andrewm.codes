@@ -1,19 +1,35 @@
----<%
-{
-  colors: "bg-zinc-50 text-zinc-900 dark:bg-zinc-900 dark:text-zinc-50"
-}
-%>---
+---
+html_classes: "h-full selection:bg-[#7654ff] selection:text-radix-violet12"
+body_classes: "antialiased bg-radix-slate1 text-radix-slate11"
+---
+
 <!DOCTYPE html>
-<html lang="en" class="h-full" data-env="<%= Bridgetown.env %>">
-  <%= render "head" %>
-  <body class="h-full font-sans <%= layout.data.colors %> <%= class_map "debug-screens": Bridgetown.env.development? %>">
-    <%= render "nav" %>
-    <%= render Stack.new(classes: "min-h-full mt-16", spacing: "space-y-16") do %>
-      <%= render Alert.new(variant: :error, classes: "-mb-8").with_content("Layout: #{resource.data&.layout&.to_s}") if Bridgetown.env.development? %>
-      <%= render Stack.new(classes: "grow mt-16 px-4", as: :main, tabindex: "-1") do %>
-        <%= content %>
-      <% end %>
-      <%= render "footer" %>
-    <% end %>
+<html
+  lang="<%= site.locale %>"
+  class="<%= layout.data.html_classes %>"
+  x-data
+  :class="$store.darkMode.on && 'dark'"
+>
+  <head>
+    <%= render "head", metadata: site.metadata, title: data.title %>
+  </head>
+  <body
+    class="
+      <%= layout.data.body_classes %>
+      <%= class_map("debug-screens": Bridgetown.env.development?) %>
+    "
+  >
+
+    <div
+      class="grid grid-rows-[auto_1fr_auto] min-h-screen"
+      x-data
+      x-bind:x-on:turbolinks:load="console.log('Turbolinks load event fired')"
+      x-bind:x-on:turbolinks:visit="console.log('Turbolinks visit event fired')"
+      x-bind:x-on:alpine:initialized="console.log('Alpine initialized')"
+    >
+      <%= render "nav" %>
+      <main class="py-12 lg:pt-24 min-w-0"><%= yield %></main>
+      <%= render "footer", metadata: site.metadata %>
+    </div>
   </body>
 </html>

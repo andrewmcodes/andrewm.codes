@@ -1,0 +1,19 @@
+---
+permalink: /404.html
+layout: default
+title: Page not found
+description: The page you are looking for could not be found.
+---
+
+<%= render Container.new do %>
+  <%= render Spacer.new(y: :xl) do %>
+    <%= render Spacer.new(as: :header, y: :md, class_name: "max-w-2xl") do %>
+      <%= render Heading.new.with_content(data.title) %>
+      <%= render Text.new(leading: :loose).with_content(data.description) %>
+    <% end %>
+    <%= render Button.new(href: absolute_url("/")) do |c| %>
+      <% c.with_text.with_content("Go home") %>
+      <% c.with_trailing_icon(name: :arrow_right) %>
+    <% end %>
+  <% end %>
+<% end %>

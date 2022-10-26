@@ -1,0 +1,53 @@
+---
+---
+
+import { Meta, Story } from "@storybook/addon-docs"
+
+<Meta
+  title="Components/Icon"
+  component="Icon"
+  argTypes={{
+    name: {
+      control: { type: "text" }
+    },
+    class_name: {
+      control: { type: "text" }
+    }
+  }}
+/>
+
+# Icons
+
+There are three main headings types.
+
+<Story
+  name="Default"
+  args={{
+    name: "check",
+    class_name: ""
+  }}
+>
+  {`<%= render Icon.new(name: "check") %>`}
+</Story>
+
+<Story
+  name="With Classes"
+  args={{
+    name: "check",
+    class_name: "w-8 h-8"
+  }}
+>
+  {`<%= render Icon.new(name: "check", class_name: "w-8 h-8") %>`}
+</Story>
+
+## Code
+
+```ruby
+<%%= render Icon.new(name: "check", class_name: "w-5 h-5") %>
+```
+
+## Options
+
+The first argument is the name of the icon in `src/assets/icons`
+
+All passed in options are passed to the `<svg>` tag.

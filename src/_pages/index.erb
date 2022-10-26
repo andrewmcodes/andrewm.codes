@@ -1,0 +1,67 @@
+---
+layout: default
+page_title: Senior Software Engineer, Content Creator, and Rubyist.
+image: "/public/share.jpeg"
+---
+
+<%= render Container.new(class_name: "mt-4") do %>
+  <%= render Avatar.new(size: :lg) %>
+  <div class="max-w-2xl space-y-6">
+    <%= render Title.new(class_name: "mt-6", size: :display, ) do %>
+      <%= resource.data.page_title %>
+    <% end %>
+    <%= render Prose.new do %>
+      <%= render Text.new(size: :lg, class_name: "leading-8") do %>
+        Hi! I'm Andrew Mason (<a href="https://twitter.com/andrewmcodes">@andrewmcodes</a>) - currently a senior product developer at Podia. I am the co-host of
+        the
+        <a href="">Remote Ruby</a>
+        and
+        <a href="">Ruby for All</a>
+        podcasts, and co-editor of the
+        <a href="">Ruby Radar newsletter</a>
+        on the weekend.
+      <% end %>
+      <%= render Text.new(size: :lg) do %>
+        I'm a Rubyist, and
+        <%= render Link.new(href: "/projects/").with_content("I love to build things") %>
+        and share what I've learned with others through
+        <%= render Link.new(href: "/posts/").with_content("writing") %>,
+        <%= render Link.new(href: "/speaking/").with_content("speaking") %>
+        , and
+        <%= render Link.new(href: "/podcasts/").with_content("podcasting.") %>
+
+      <% end %>
+    <% end %>
+  </div>
+  <div class="mt-8 flex gap-6 lg:gap-x-8">
+    <% site.data.social_links.find_all { _1.featured == true }.each do |link| %>
+      <%= render IconLink.new(href: link.href, title: link.title) do |c| %>
+        <% c.with_icon(name: link.title.downcase, class_name: "w-5 h-5") %>
+      <% end %>
+    <% end %>
+  </div>
+<% end %>
+
+<%= render Container.new(class_name: "mt-24 md:mt-28") do %>
+  <div
+    class="
+      mx-auto
+      grid
+      max-w-xl
+      grid-cols-1
+      gap-y-16
+      lg:max-w-none
+      lg:grid-cols-2
+    "
+  >
+    <div class="flex flex-col gap-16">
+      <% collections.posts.resources.take(5).each do |post| %>
+        <%= render Article.new(resource: post) %>
+      <% end %>
+    </div>
+    <div class="space-y-10 lg:pl-16 xl:pl-24">
+      <%= render "radar_signup" %>
+      <%= render "resume" %>
+    </div>
+  </div>
+<% end %>

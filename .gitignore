@@ -1,14 +1,15 @@
 # Bridgetown
-build
 output
 .bridgetown-cache
 .bridgetown-metadata
 .bridgetown-webpack
+.routes.json
 
 # Dependency folders
 node_modules
 bower_components
 vendor
+tmp
 
 # Caches
 .sass-cache
@@ -35,5 +36,9 @@ yarn-debug.log*
 # Yarn Integrity file
 .yarn-integrity
 
-# Vercel
+frontend/styles/jit-refresh.css
+.torchlight-cache
 .vercel
+.frontmatter
+hint-report
+tmp

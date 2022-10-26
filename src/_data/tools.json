@@ -1,0 +1,79 @@
+[
+  {
+    "category": "workstation",
+    "description": "I have been using a Mac since college and don't see myself ever changing. My personal laptop is beginning to show it's age sitting next to the M1 Mac I use for work, so I am currently thinking about upgrading it.",
+    "link": "https://everymac.com/systems/apple/macbook_pro/specs/macbook-pro-core-i9-2.3-eight-core-15-mid-2019-touch-bar-specs.html",
+    "referral_link": null,
+    "title": "Apple MacBook Pro 15-Inch “Core i9” 2.3 Touch/2019"
+  },
+  {
+    "category": "workstation",
+    "description": "I started getting wrist pain back in 2020 and this keyboard was one of the keys to fixing it. The split design is great for ergonomics and I keep it split, tilted up with a palm rest. I also have the trackpoint and key cluster modules.",
+    "link": "https://ultimatehackingkeyboard.com/",
+    "referral_link": null,
+    "title": "Ultimate Hacking Keyboard v1"
+  },
+  {
+    "category": "workstation",
+    "description": "Along with the keyboard, I bought this mouse for wrist pain and was extremely happy with it. The design seems weird, but it's very comfortable. I have bought this for parents and friends who aren't programmers as well and they all love it.",
+    "link": "https://www.logitech.com/en-us/products/mice/mx-vertical-ergonomic-mouse.910-005447.html",
+    "referral_link": null,
+    "title": "Logitech MX Vertical Ergonomic Wireless Mouse"
+  },
+  {
+    "category": "workstation",
+    "description": "Yep, I'm the massive monitor guy. I have two 34\" monitors, one horizontal and the other vertical on the side. I have played with different monitor setups, but this is the one that works best for me currently.",
+    "link": "https://www.logitech.com/en-us/products/mice/mx-vertical-ergonomic-mouse.910-005447.html",
+    "referral_link": null,
+    "title": "2x LG 34 Inch UltraWide Monitors"
+  },
+  {
+    "category": "development_tools",
+    "description": "VS Code was released while I was in college and I have been using it ever since. I have tried other editors, but I always come back to VS Code. I have tried the JetBrains IDEs, but I prefer the lightweight nature of VS Code for most things, and will use the JetBrains IDEs for larger projects.",
+    "link": "https://code.visualstudio.com",
+    "referral_link": null,
+    "title": "VS Code"
+  },
+  {
+    "category": "development_tools",
+    "description": "I picked up the Warp terminal not too long ago and have recently switched to it full time. My favorite features are being able to share blocks of code, a command palette, AI powered command suggestions, and built in workflows for tons of languages and tools.",
+    "link": "https://www.warp.dev",
+    "referral_link": "https://app.warp.dev/referral/2W6LEL",
+    "title": "Warp"
+  },
+  {
+    "category": "productivity",
+    "description": "It may not be as flashy as Raycast but it's incredibly powerful and I use it every day. Definitely upgrade to the Powerpack! I have a ton of custom workflows and scripts that I have built over the years and it's a great way to quickly access them along with an excellent spotlight replacement.",
+    "link": "https://www.alfredapp.com",
+    "referral_link": null,
+    "title": "Alfred"
+  },
+  {
+    "category": "productivity",
+    "description": "One of my all time favorite apps that I talk about to anyone who will listen. Obsidian is the first note taking app that ever stuck for my ADHD brain and I have become quite the power user.",
+    "link": "https://obsidian.md",
+    "referral_link": null,
+    "title": "Obsidian"
+  },
+  {
+    "category": "productivity",
+    "description": "A pomodoro timer that I actually enjoy using every day. Session is backed by analytics, which provides you losts of data to help you improve your productivity. This app really helps me site down and focus on the task at hand.",
+    "link": "https://www.stayinsession.com",
+    "referral_link": "https://go.setapp.com/invite/3sztpuuq",
+    "title": "Session"
+  },
+  {
+    "category": "design",
+    "description": "I have extensive experience with Photoshop and Illustrator, but I have been using Figma since joining Podia and have been loving it. The component composition features are great and the community is fantastic for sharing plugins and tools.",
+    "link": "https://www.figma.com",
+    "referral_link": null,
+    "title": "Figma"
+  },
+  {
+    "category": "design",
+    "description": "After one too many icon library downloads, I discovered Nucleo and have used it off and on ever since. It's a solid icon app after trying several others and I also purchased their icon set which has saved me lots of time over the years.",
+    "link": "https://nucleoapp.com",
+    "referral_link": "https://nucleoapp.com/?ref=11689",
+    "title": "Nucleo"
+  }
+]

@@ -1,49 +1,37 @@
----<%
-{
-  layout: :page,
-  title: "Podcasts",
-  description: "A collection of the podcasts I've hosted and others that I have guested on.",
-  permalink: "/podcasts/",
-  no_index: false,
-}
-%>---
+---
+title: Podcasts
+description: "I have been actively podcasting in the Ruby community for over four years and am currently the co-host of Remote Ruby and Ruby for All."
+active_heading: "Hosting"
+interviews_heading: "Appearances"
+preconnect_urls: ["https://is1-ssl.mzstatic.com", "https://is4-ssl.mzstatic.com", "https://is5-ssl.mzstatic.com"]
+---
 
+<% podcasts = site.data.podcasts.group_by { |a| a[:status] } %>
 
-<%= render Heading.new(level: 2, classes: "mt-8 mb-6").with_content("Currently Hosting") %>
-<%= render List.new do %>
-  <% site.collections.podcasts.resources.find_all { |e| e.data.status == "Active" }.each do |podcast| %>
-    <%= render ListTile.new(
-        url: podcast.data.website_url,
-        title: podcast.data.title,
-        description: podcast.data.description.to_s,
-        image: podcast.data&.image_url,
-        clamp: false
-      ) %>
+<%= render Spacer.new(y: :xxl) do %>
+  <%= render Box.new(as: :section, "aria-labelledby": slugify(data.active_heading)) do %>
+    <%= render Stack.new(y: :md) do %>
+      <%= render Heading.new(variant: :section, id: slugify(data.active_heading)).with_content(data.active_heading) %>
+        <%= render Box.new(class_name: "mx-auto grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 ") do %>
+          <% podcasts["active"].each do |podcast| %>
+            <%= render "podcast_card", podcast: podcast %>
+          <% end %>
+
+          <% podcasts["inactive"].each do |podcast| %>
+            <%= render "podcast_card", podcast: podcast %>
+          <% end %>
+        <% end %>
+    <% end %>
   <% end %>
-<% end %>
 
-<%= render Heading.new(level: 2, classes: "mt-8 mb-6").with_content("Guest Episodes") %>
-<%= render List.new do %>
-  <% site.collections.podcast_episodes.resources.find_all { |e| e.data.role == "guest" }.each do |episode| %>
-    <%= render ListTile.new(
-        url: episode.data.website_url,
-        title: episode.data.title,
-        description: episode.data.description.to_s,
-        image: episode.relations.podcast&.data&.image_url,
-        clamp: false
-      ) %>
-  <% end %>
-<% end %>
-
-<%= render Heading.new(level: 2, classes: "mt-8 mb-6").with_content("Previously Hosting") %>
-<%= render List.new do %>
-  <% site.collections.podcasts.resources.find_all { |e| e.data.status == "Inactive" }.each do |podcast| %>
-    <%= render ListTile.new(
-        url: podcast.data.website_url,
-        title: podcast.data.title,
-        description: podcast.data.description.to_s,
-        image: podcast.data&.image_url,
-        clamp: false
-      ) %>
+  <%= render Box.new(as: :section, "aria-labelledby": slugify(data.interviews_heading)) do %>
+    <%= render Stack.new(y: :md) do %>
+      <%= render Heading.new(variant: :section, id: slugify(data.interviews_heading)).with_content(data.interviews_heading) %>
+        <%= render Box.new(class_name: "mx-auto grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4") do %>
+          <% site.data.podcast_appearances.each do |podcast| %>
+            <%= render "podcast_card", podcast: podcast %>
+          <% end %>
+        <% end %>
+    <% end %>
   <% end %>
 <% end %>

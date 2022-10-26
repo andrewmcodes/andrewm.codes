@@ -1,0 +1,15 @@
+<% meta_tags_data.each do |data| %>
+  <%= tag.meta(**data) %>
+<% end %>
+
+<% asset_links_data.each do |data| %>
+  <%= tag.link(**data) %>
+<% end %>
+
+<% extra_links_data.each do |data| %>
+  <%= tag.link(**data) %>
+<% end %>
+
+<script type="application/ld+json">
+<%= raw json_ld %>
+</script>

@@ -1,0 +1,45 @@
+---
+---
+
+import { Meta, Story } from "@storybook/addon-docs"
+
+<Meta
+  title="Components/Image"
+  component="Image"
+  argTypes={{
+    src: {
+      control: { type: "text" }
+    },
+    alt: {
+      control: { type: "text" }
+    }
+  }}
+/>
+
+# Image
+
+<Story
+  name="Default"
+  args={{
+    src: "https://res.cloudinary.com/andrewmcodes/image/upload/w_64,c_fill,ar_1:1,g_auto,r_max/v1625490523/andrewm.codes/avatar-bw.png",
+    alt: "Andrew Mason"
+  }}
+>
+  {`<%= render Image.new(
+      src: "https://res.cloudinary.com/andrewmcodes/image/upload/w_64,c_fill,ar_1:1,g_auto,r_max/v1625490523/andrewm.codes/avatar-bw.png",
+      alt: "Andrew Mason"
+    ) %>`}
+</Story>
+
+## Code
+
+```ruby
+<%%= render Image.new(src: src, alt: "Foo") %>
+```
+
+## Options
+
+| Option | Value | Description        |
+| ------ | ----- | ------------------ |
+| `src`  |       | The image src      |
+| `alt`  |       | The image alt text |

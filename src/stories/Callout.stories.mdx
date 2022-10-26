@@ -1,0 +1,75 @@
+---
+---
+
+import { Meta, Story } from "@storybook/addon-docs"
+
+<Meta
+  title="Components/Callout"
+  component="Callout"
+  argTypes={{
+    variant: {
+      options: ["info", "note", "warning"],
+      control: { type: "select" }
+    },
+    title: {
+      control: { type: "text" }
+    }
+  }}
+/>
+
+# Callout
+
+<Story
+  name="Default"
+  args={{
+    variant: "",
+    title: ""
+  }}
+>
+  {`<%= render Callout.new.with_content("The default callout component color is cyan.") %>`}
+</Story>
+
+<Story
+  name="Info"
+  args={{
+    variant: "info",
+    title: "Custom info title"
+  }}
+>
+  {`<%= render Callout.new(variant: :info, title: "Custom info title").with_content("callout component type is 'info'.") %>`}
+</Story>
+
+<Story
+  name="Error"
+  args={{
+    variant: "error",
+    title: "Custom error title"
+  }}
+>
+  {`<%= render Callout.new(variant: :error, title: "Custom error title").with_content("callout component type is 'error'.") %>`}
+</Story>
+
+<Story
+  name="Warning"
+  args={{
+    variant: "warning",
+    title: ""
+  }}
+>
+  {`<%= render Callout.new(variant: :warning).with_content("callout component type is 'warning'.") %>`}
+</Story>
+
+## Code
+
+```ruby
+<%%= render Callout.new(variant: :info, title: "Custom Title") do %>
+variants: info, note, warning
+<%% end %>
+```
+
+## Options
+
+| Option    | Value                     | Description                  |
+| --------- | ------------------------- | ---------------------------- |
+| `variant` | `info`, `note`, `warning` | The type of callout.         |
+| `title`   | `String`                  | Custom title of the callout. |

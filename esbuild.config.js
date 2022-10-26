@@ -1,7 +1,23 @@
 const build = require("./config/esbuild.defaults.js")
+const { BuildPlugin } = require("@datadog/build-plugin/dist/esbuild")
 
-// Update this if you need to configure a destination folder other than `output`
-const outputFolder = "build"
+const outputFolder = "output"
+
+/**
+ * @typedef { import("esbuild").BuildOptions } BuildOptions
+ * @type {BuildOptions}
+ */
+const esbuildOptions = {
+  target: "esnext",
+  minifySyntax: true,
+  plugins: [
+    BuildPlugin({
+      disabled: process.env.WATCH === "true"
+    })
+  ]
+}
+
+build(outputFolder, esbuildOptions)
 
 // You can customize this as you wish, perhaps to add new esbuild plugins.
 //
@@ -26,6 +42,3 @@ const outputFolder = "build"
 // ```
 // const esbuildOptions = { publicPath: "/my_subfolder/_bridgetown/static" }
 // ```
-const esbuildOptions = {}
-
-build(outputFolder, esbuildOptions)

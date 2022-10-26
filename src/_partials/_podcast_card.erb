@@ -1,0 +1,7 @@
+<%= render Stack.new(class_name: "max-w-xs") do %>
+  <%= render Image.new(src: podcast.image_url, alt: podcast.title, class_name: "object-cover object-center rounded-t-lg h-64 w-full #{'grayscale' if podcast.status && podcast.status == "inactive"}", width: 128, height: 128) %>
+  <%= render Card.new(variant: :elevated, class_name: "rounded-t-none") do %>
+    <%= render Heading.new(as: :h2, variant: :title, class_name: "").with_content(podcast.title) %>
+    <%= render Card::Description.new.with_content(podcast.description) if podcast.description %>
+  <% end %>
+<% end %>

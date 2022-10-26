@@ -1,0 +1,37 @@
+<%= render Card.new(variant: :elevated) do %>
+  <%= render Stack.new(y: :xs, class_name: "w-full") do %>
+    <%= render Card::Title.new do %>
+      <%= render Stack.new(direction: :row, x: :sm, items: :center) do %>
+        <%= render Icon.new(name: :email, class_name: "flex-none") %>
+        <span class="block">Stay up to date with Ruby Radar</span>
+      <% end %>
+    <% end %>
+    <%= render Card::Description.new.with_content("Get the Sunday morning Ruby news delivered straight to your inbox.") %>
+    <%= render Stack.new(direction: :row, x: :sm) do %>
+      <input
+        type="email"
+        placeholder="Email address"
+        aria-label="Email address"
+        required
+        class="
+          min-w-0
+          flex-auto
+          appearance-none
+          rounded-md
+          border
+          border-radix-slate7
+          bg-radix-slate2
+          px-3
+          py-[calc(theme(spacing.2)-1px)]
+          placeholder:text-radix-slate11
+          focus:border-radix-slate8
+          focus:outline-none
+          focus:ring-2
+          focus:ring-radix-blue7
+          sm:text-sm
+        "
+      >
+      <%= render Button.new(type: "submit", class_name: "flex-none").with_content("Join") %>
+    <% end %>
+  <% end %>
+<% end %>

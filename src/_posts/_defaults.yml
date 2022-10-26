@@ -1,2 +1,7 @@
-layout: post
-author: andrew
+---
+layout: post_layout
+back:
+  path: "/posts/"
+  title: "posts"
+---
+

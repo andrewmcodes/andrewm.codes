@@ -1,0 +1,40 @@
+{
+  "css.validate": false,
+  "less.validate": false,
+  "scss.validate": false,
+  "solargraph.useBundler": true,
+  "[erb]": {
+    "editor.formatOnSave": false
+  },
+  "[tailwindcss]": {
+    "editor.defaultFormatter": "",
+    "editor.formatOnSave": true
+  },
+  "[md]": {
+    "editor.formatOnSave": false
+  },
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+  "workbench.colorCustomizations": {
+    "activityBar.activeBackground": "#61bcbb",
+    "activityBar.background": "#61bcbb",
+    "activityBar.foreground": "#15202b",
+    "activityBar.inactiveForeground": "#15202b99",
+    "activityBarBadge.background": "#b24cb3",
+    "activityBarBadge.foreground": "#e7e7e7",
+    "commandCenter.border": "#15202b99",
+    "sash.hoverBorder": "#61bcbb",
+    "statusBar.background": "#46a4a3",
+    "statusBar.foreground": "#15202b",
+    "statusBarItem.hoverBackground": "#37807f",
+    "statusBarItem.remoteBackground": "#46a4a3",
+    "statusBarItem.remoteForeground": "#15202b",
+    "titleBar.activeBackground": "#46a4a3",
+    "titleBar.activeForeground": "#15202b",
+    "titleBar.inactiveBackground": "#46a4a399",
+    "titleBar.inactiveForeground": "#15202b99"
+  },
+  "peacock.color": "#46a4a3",
+  "stylelint.validate": ["css", "scss", "tailwind CSS", "postcss"]
+}

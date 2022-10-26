@@ -1,51 +1,35 @@
-# https://www.bridgetownrb.com/docs/resources
+# Most settings are now in `config/initializers.rb`!
+# A list of all available configuration options can be found here:
+# https://www.bridgetownrb.com/docs/configuration/options
+#
 
-url: "https://andrewm.codes"
-timezone: America/Phoenix
-destination: "build"
-template_engine: erb
-permalink: simple
-content_engine: resource
+# url: "" # the base hostname & protocol for your site, e.g. https://example.com
+# permalink: pretty
+# template_engine: erb
+# base_path: "/"
+# timezone: America/Los_Angeles
+# pagination:
+#   enabled: true
+permalink: "/:path.*/"
 
 collections:
-  pages:
-    permalink: "/:slug/"
-  posts:
-    permalink: "/:slug/"
-    sort_by: date
-    sort_direction: descending
-  podcasts:
-    output: false
-    relations:
-      has_many: podcast_episodes
-  podcast_episodes:
-    output: false
-    sort_by: published_on
-    sort_direction: descending
-    relations:
-      belongs_to: podcast
-  cfps:
+  projects:
+    permalink: /:collection/:path.*
     output: true
-    permalink: pretty
-  snippets:
+  newsletter:
+    permalink: /:collection/:path.*
     output: true
-    permalink: "/snippets/:slug/"
-    sort_by: date
-    sort_direction: descending
-
-taxonomies:
-  series:
-    key: series
-    title: "Series"
-
-development:
-  url: http://localhost:8080
-
-cloudinary:
-  cloud_name: andrewmcodes
 
 pagination:
   enabled: true
 
-plausible:
-  domain: andrewm.codes
+# feed:
+#   categories:
+#     - news
+#     - updates
+
+production:
+  exclude:
+    - "stories"
+    - "assets/icons"
+  url: "https://andrewm.codes"

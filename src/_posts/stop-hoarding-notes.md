@@ -1,15 +1,13 @@
 ---
-series: null
-featured: true
 title: Stop Hoarding Notes
-description: My ideas on why you should become just as comfortable deleting notes as you do code
+description: My ideas on why you should become just as comfortable deleting notes as you do
+  code
 tags:
   - obsidian
   - ideas
   - notes
-categories: blog
-date: "2022-02-12T23:16:36.604Z"
-last_modified_at: "2022-02-12T23:27:23.185Z"
+category: blog
+date: 2022-02-12T23:16:36.604Z
 ---
 
 Every time you encounter an old note, or any note, it is a good time ask yourself:

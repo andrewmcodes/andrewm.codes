@@ -1,37 +1,46 @@
 module Filters
-  #
-  # Build OG Image URL with mugshotbot
-  #
-  # @param [String] mode The color mode: 'dark' or 'light'
-  # @param [String] color Hex value of the primary color.
-  # @param [String] pattern The mugshotbot pattern
-  # @param [String] url The URL to build the image for
-  #
-  # @return [String] The mugshotbot image URL based on the supplied parameters
-  #
-  def og_image(mode: "light", color: "007aff", pattern: "diagonal_lines", url: "andrewm.codes/")
-    "https://mugshotbot.com/m?mode=#{mode}&color=#{color}&pattern=#{pattern}&hide_watermark=true&url=#{url}"
+  def post?(resource)
+    resource.try(:collection) && resource.collection.label == "posts"
+  end
+
+  def project?(resource)
+    resource.try(:collection) && resource.collection.label == "projects"
+  end
+
+  def home?(resource)
+    resource&.relative_url == "/"
+  end
+
+  def build_title(resource)
+    return resource.data.title if resource.data.title && resource.relative_url != "/"
+    return site.metadata.long_title if resource.relative_url == "/"
+
+    "#{site.metadata.title} #{site.metadata.tagline}"
+  end
+
+  def parse_date(date)
+    Bridgetown::Utils.parse_date(date)
+  end
+
+  def in_last_year?(date)
+    (Time.now - date) / 31536000 < 1
   end
 
   #
   # Build Twitter Intent URL for sharing the page
-  #
   # @param [Bridgetown::Resource] resource The page resource
-  #
   # @return [String] The escaped Twitter Intent URL
   #
   def twitter_share_url(resource)
     title = uri_escape resource.data.title
-    url = resource.absolute_url
+    url = uri_escape resource.absolute_url
 
-    "https://mobile.twitter.com/intent/tweet/?text=#{title}%20by%20@andrewmcodes%20#{url}"
+    "https://mobile.twitter.com/intent/tweet/?text=#{title}%20by%20@andrewmcodes&url=#{url}"
   end
 
   #
   # Build Twitter Search Query URL for searching for the page on Twitter
-  #
   # @param [Bridgetown::Resource] resource The page resource
-  #
   # @return [String] The escaped Twitter Search Query URL
   #
   def twitter_discuss_url(resource)
@@ -40,9 +49,7 @@ module Filters
 
   #
   # Build GitHub URL for mapping the current page to a file in GitHub
-  #
   # @param [Bridgetown::Resource] resource The page resource
-  #
   # @return [String] A link to the current page in GitHub
   #
   def github_edit_url(resource)

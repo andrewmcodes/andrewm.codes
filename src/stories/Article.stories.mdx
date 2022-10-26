@@ -1,0 +1,37 @@
+---
+---
+
+import { Meta, Story } from "@storybook/addon-docs"
+
+<Meta
+  title="Components/Article"
+  component="Article"
+  argTypes={{
+    resource: {
+      control: { type: "text" }
+    }
+  }}
+/>
+
+# Article
+
+<Story
+  name="Default"
+  args={{
+    resource: "collections.posts.resources.first"
+  }}
+>
+  {`<%= render Article.new(resource: collections.posts.resources.first) %>`}
+</Story>
+
+## Code
+
+```ruby
+<%%= render Article.new(resource: nil) %>
+```
+
+## Options
+
+| Option     | Value | Description       |
+| ---------- | ----- | ----------------- |
+| `resource` |       | The post resource |

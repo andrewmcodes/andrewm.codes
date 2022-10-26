@@ -1,50 +1,61 @@
 {
   "cleanUrls": true,
   "trailingSlash": true,
+  "github": {
+    "enabled": true
+  },
   "redirects": [
-    {
-      "source": "/privacy/",
-      "destination": "/site/"
-    },
-    {
-      "source": "/analytics/",
-      "destination": "/site/analytics/"
-    },
-    {
-      "source": "/now/",
-      "destination": "/about/#now"
-    },
-    {
-      "source": "/contact/",
-      "destination": "/accounts/"
-    },
     {
       "source": "/twitter/",
       "destination": "https://twitter.com/andrewmcodes"
     },
     {
-      "source": "/github/",
-      "destination": "https://github.com/andrewmcodes"
+      "source": "/source/",
+      "destination": "https://github.com/andrewmcodes/andrewm.codes"
     },
     {
-      "source": "/source/",
-      "destination": "https://github.com/andrewmcodes/andrewm-codes-website"
+      "source": "/404/",
+      "destination": "/404.html"
+    },
+    {
+      "source": "/500/",
+      "destination": "/500.html"
+    },
+    {
+      "source": "/github/:path*",
+      "destination": "https://github.com/andrewmcodes/:path*"
     },
     {
       "source": "/r/setapp/",
       "destination": "https://go.setapp.com/invite/3sztpuuq"
     },
     {
-      "source": "/resume/",
-      "destination": "/resume-20211221.pdf"
+      "source": "/blog/webpacker-6-image-asset-guide/",
+      "destination": "/webpacker-6/"
     },
     {
-      "source": "/ama/",
-      "destination": "https://github.com/andrewmcodes/andrewm-codes-website/discussions/categories/ama"
+      "source": "/blog/webpacker-6-scss-sass-loaders/",
+      "destination": "/webpacker-6/"
     },
     {
-      "source": "/404/",
-      "destination": "/404.html"
+      "source": "/blog/webpacker-6-postcss-loaders/",
+      "destination": "/webpacker-6/"
+    },
+    {
+      "source": "/blog/webpacker-6-css-loaders/",
+      "destination": "/webpacker-6/"
+    },
+    {
+      "source": "/blog/webpacker-6-tailwind-css-2-0-integration/",
+      "destination": "/webpacker-6/"
+    },
+    {
+      "source": "/blog/webpacker-6-upgrade-guide/",
+      "destination": "/webpacker-6/"
+    },
+    {
+      "source": "/blog/webpacker-6-tutorial-setup/",
+      "destination": "/webpacker-6/"
     }
   ],
   "headers": [

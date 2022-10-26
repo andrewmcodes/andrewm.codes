@@ -12,7 +12,7 @@ if ENV["BRIDGETOWN_ENV"] == "production"
 end
 
 max_threads_count = ENV.fetch("BRIDGETOWN_MAX_THREADS", 5)
-min_threads_count = ENV.fetch("BRIDGETOWN_MIN_THREADS", max_threads_count)
+min_threads_count = ENV.fetch("BRIDGETOWN_MIN_THREADS") { max_threads_count }
 threads min_threads_count, max_threads_count
 
 # Preload the application for maximum performance

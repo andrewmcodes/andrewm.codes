@@ -1,8 +1,0 @@
----<%
-{ layout: :default }
-%>---
-<%= render Container.new do %>
-  <%= render Heading.new.with_content(resource.data.title) %>
-  <%= render Divider.new(variant: :colorful) %>
-  <%= content %>
-<% end %>

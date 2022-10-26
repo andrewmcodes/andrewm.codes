@@ -1,11 +1,12 @@
 ---
-title: "Posts"
-description: "posts"
-permalink: /posts/
-no_index: false
-layout: page
+title: All Posts
+description: "A collection of tutorials, snippets, thoughts, and other things I've written."
 ---
 
-<%= render List.new do %>
-  <%= render(PostComponent.with_collection(collections.posts.resources)) %>
-<% end %>
+<div class="md:border-l md:border-radix-slate6 md:pl-6">
+  <%= render Stack.new(y: :xl, class_name: "max-w-3xl") do %>
+    <% collections.posts.resources.each do |post| %>
+      <%= render Article.new(resource: post) %>
+    <% end %>
+  <% end %>
+</div>

@@ -1,0 +1,15 @@
+<%= render Box.new(as: tag_name, **helper_opts) do %>
+  <% if leading_icon || trailing_icon %>
+    <% if leading_icon %>
+      <%= leading_icon %>
+    <% end %>
+    <% if text %>
+      <span><%= text %></span>
+    <% end %>
+    <% if trailing_icon %>
+      <%= trailing_icon %>
+    <% end %>
+  <% else %>
+    <%= children %>
+  <% end %>
+<% end %>

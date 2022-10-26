@@ -1,0 +1,30 @@
+[
+  {
+    "image_url": "https://is2-ssl.mzstatic.com/image/thumb/Podcasts122/v4/9e/b0/86/9eb08600-81c4-73cb-2a0d-932ff502fcb6/mza_17657079968743109430.jpg/320x320bb.png",
+    "website_url": "https://www.rubyforall.com",
+    "status": "active",
+    "description": "I co-host Ruby for All alongside Julie J, a podcast catered to junior web developers. Each week we break down topics to help Juniors get hired and succeed as Rubyists. ",
+    "title": "Ruby for All"
+  },
+  {
+    "image_url": "https://is5-ssl.mzstatic.com/image/thumb/Podcasts115/v4/07/fa/9b/07fa9b0a-4da7-6592-1e6f-17fefe6d0a8a/mza_17789155398922817.jpg/320x320bb.png",
+    "website_url": "https://remoteruby.com",
+    "status": "active",
+    "description": "I co-host the Remote Ruby podcast with Chris Oliver and Jason Charnes, where we interview brilliant people in the community and discuss current events in the Ruby ecosystem.",
+    "title": "Remote Ruby"
+  },
+  {
+    "description": "For the first half of 2020, I co-hosted The Ruby Blend alongside Nate Hopkins and Ron Cooke. We ended the show in September, 2020.",
+    "title": "The Ruby Blend",
+    "status": "inactive",
+    "website_url": "https://rubyblend.transistor.fm",
+    "image_url": "https://is4-ssl.mzstatic.com/image/thumb/Podcasts115/v4/b8/fb/82/b8fb8284-fd41-36f3-a337-3135678e3c52/mza_10820088760982892855.jpg/320x320bb.png"
+  },
+  {
+    "title": "Ruby Rogues",
+    "description": "I joined Ruby Rogues as a panelist in late 2018 and stayed until the end of 2019. This is where I got my start in podcasting and began making friends in the community.",
+    "status": "inactive",
+    "website_url": "https://devchat.tv/ruby-rogues",
+    "image_url": "https://is2-ssl.mzstatic.com/image/thumb/Podcasts116/v4/81/3a/e5/813ae59e-4ab1-e5d6-73a4-c841f8c7c262/mza_16306534093688878770.jpg/320x320bb.png"
+  }
+]

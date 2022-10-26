@@ -1,0 +1,101 @@
+[
+  {
+    "category": "conference",
+    "title": "Start Your Ruby Podcast Today!",
+    "date": "2022-05-19",
+    "url": "youtube.com/watch?v=Y6QVKq3iM5s",
+    "cta": "Watch video",
+    "event": "RailsConf 2022",
+    "description": "Talk I gave with Jason Charnes and Chris Oliver going through the lessons and advice we had for starting and maintaining a successful podcast."
+  },
+  {
+    "category": "panel",
+    "title": "Podcast Panel from Railsconf 2022",
+    "date": "2022-05-17",
+    "url": "https://remoteruby.com/182",
+    "cta": "Listen to podcast",
+    "event": "RailsConf 2022",
+    "description": "Railsconf is back in person! We sat down live to record awith Jemma Issroff, Brittany Martin, Robby Russel, Andrew Culver, Nicholas Schwaderer, and Colleen Schnettler to discuss everything Ruby on Rails."
+  },
+  {
+    "category": "podcast",
+    "title": "Episode 1 - Andrew Mason",
+    "date": "2022-02-01",
+    "url": "https://www.buzzsprout.com/1927628/9957746-episode-1-andrew-mason",
+    "cta": "Listen to podcast",
+    "event": "Code and the Coding Coders who Code it",
+    "description": "I join Drew Bragg for the first episode of his new podcast to discuss ADHD, workflows, Bridgetown, and more."
+  },
+  {
+    "category": "livestream",
+    "title": "Special Guests: Andrew Mason and Collin Jilbert! ",
+    "date": "2022-07-20",
+    "url": "https://www.youtube.com/watch?v=9HVEuIlf5RA",
+    "cta": "Watch livestream",
+    "event": "Rubber Duck Dev Show",
+    "description": "Collin Jilbert and I join the Rubber Duck Dev duo to talk "
+  },
+  {
+    "category": "livestream",
+    "title": "Special Guest: Andrew Mason!",
+    "date": "2022-01-05",
+    "url": "https://www.youtube.com/watch?v=8SEcHvOXCwo",
+    "cta": "Watch livestream",
+    "description": "A chill convo about the Remote Ruby podcast, Ruby Radar and other Ruby goodness!",
+    "event": "Rubber Duck Dev Show"
+  },
+  {
+    "category": "podcast",
+    "title": "ViewComponents in Action with Andrew Mason",
+    "date": "2020-05-27",
+    "url": "https://www.therubyonrailspodcast.com/320",
+    "cta": "Listen to podcast",
+    "event": "The Ruby on Rails Podcast",
+    "description": "I join Brittany Martin for a conversation primarily focused on how I was implementing ViewComponent at CodeFund."
+  },
+  {
+    "category": "podcast",
+    "title": "Joined by Andrew Mason",
+    "date": "2019-09-20",
+    "url": "https://share.transistor.fm/s/19f4de7e",
+    "cta": "Listen to podcast",
+    "event": "Remote Ruby",
+    "description": "I share my path to programming through graphic design, as well as how I joined Ruby Rogues, became involved with open source, became invested in the Ruby community, and more."
+  },
+  {
+    "category": "podcast",
+    "title": "Two Docker Noobs Talk About Docker",
+    "date": "2019-08-21",
+    "url": "https://www.codewithjason.com/podcast/9478304-011-two-docker-noobs-talk-about-docker-with-andrew-mason/",
+    "cta": "Listen to podcast",
+    "description": "A long, rambling, undisciplined discussion of a number of things including Jason Swett's and I's respective experiences with Docker.",
+    "event": "The Code with Jason Podcast"
+  },
+  {
+    "category": "podcast",
+    "title": "MRS 074: Andrew Mason",
+    "date": "2019-01-24",
+    "url": "https://podcasts.apple.com/us/podcast/episode-74-mrs-074-andrew-mason/id1237404328?i=1000428406734",
+    "cta": "Listen to podcast",
+    "description": "I am introduced as the newest panelist for Ruby Rogues and share my background and how I got into computer programming.",
+    "event": "My Ruby Story"
+  },
+  {
+    "category": "podcast",
+    "title": "Testing Q&A with Listener Andrew Mason",
+    "date": "2018-10-18",
+    "url": "https://www.codewithjason.com/ruby-testing-podcast/",
+    "cta": "",
+    "event": "Ruby Testing Podcast",
+    "description": "As a listener and junior Rails developer, I come on the show to ask some questions about Rails testing."
+  },
+  {
+    "title": "Andrew Mason: I Expected College To Be Basically Boot Camp",
+    "category": "podcast",
+    "date": "2022-06-21",
+    "url": "https://justtheusefulbits.com/jtub/andrew-mason-i-expected-college-to-be-basically-boot-camp/",
+    "cta": "Listen to podcast",
+    "event": "Computer Science: Just the Useful Bits",
+    "description": "Noah Gibbs and I talk about the prison and court systems, why FTP is a terrible protocol, reading code, ADHD and a lot more."
+  }
+]

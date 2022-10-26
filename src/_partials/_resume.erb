@@ -1,0 +1,40 @@
+<%= render Card.new(variant: :elevated) do %>
+  <%= render Card::Title.new do %>
+    <%= render Stack.new(direction: :row, x: :sm, items: :center) do %>
+      <%= render Icon.new(name: :briefcase, class_name: "flex-none") %>
+      <span class="block">Work</span>
+    <% end %>
+  <% end %>
+  <%= render Spacer.new(as: :ol, y: :sm, class_name: "mt-6 w-full") do %>
+    <% site.data.experience.each do |role| %>
+      <%= render Stack.new(as: :li, gap: :sm, direction: :row) do %>
+        <%= render ImageRing.new do %>
+          <%= render Image.new(cid: role.image_url, alt: role[:company], class_name: "w-7 h-7 rounded-full") %>
+        <% end %>
+        <dl class="flex flex-auto flex-wrap gap-x-2">
+          <dt class="sr-only">Company</dt>
+          <dd class="w-full flex-none text-sm font-medium text-radix-slate12">
+            <%= role[:company] %>
+          </dd>
+          <dt class="sr-only">Role</dt>
+          <dd class="text-xs text-radix-slate11">
+            <%= role[:title] %>
+          </dd>
+          <dt class="sr-only">Date</dt>
+          <dd
+            class="ml-auto text-xs text-radix-slate11"
+            aria-label="<%= role[:start_year] %> until <%= role[:end_year] %>"
+          >
+            <time dateTime="<%= role[:start_year] %>">
+              <%= role[:start_year] %>
+            </time>
+            <span aria-hidden="true">—</span>
+            <time dateTime="<%= role[:end_year] %>">
+              <%= role[:end_year] %>
+            </time>
+          </dd>
+        </dl>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>

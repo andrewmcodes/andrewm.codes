@@ -1,0 +1,171 @@
+---
+---
+
+import { Meta, Story } from "@storybook/addon-docs"
+
+<Meta
+  title="Components/Card"
+  component="Card"
+  argTypes={{
+    href: {
+      control: { type: "text" }
+    },
+    variant: {
+      options: ["default"],
+      control: { type: "select" }
+    }
+  }}
+/>
+
+# Cards
+
+There are two sizes of avatars.
+
+<Story
+  name="Default"
+  args={{
+    href: "#",
+    variant: "default",
+    size: "default"
+  }}
+>
+  {`<%= render Card.new.with_content("Card") %>`}
+</Story>
+
+<Story
+  name="Simple"
+  args={{
+    href: "#",
+    variant: "default",
+    size: "default"
+  }}
+>
+  {`<%= render Card.new do %>
+      <%= render Card::Title.new.with_content("Card Title") %>
+      <%= render Card::Description.new.with_content("The description of the card") %>
+    <% end %>`}
+</Story>
+
+<Story
+  name="elevated"
+  args={{
+    href: "#",
+    variant: "elevated",
+    size: "default"
+  }}
+>
+  {`<%= render Card.new(variant: :elevated) do %>
+      <%= render Card::Title.new.with_content("Card Title") %>
+      <%= render Card::Description.new.with_content("The description of the card") %>
+    <% end %>`}
+</Story>
+
+<Story
+  name="Border"
+  args={{
+    href: "#",
+    variant: "outline",
+    size: "default"
+  }}
+>
+  {`<%= render Card.new(variant: :outlined) do %>
+      <%= render Card::Title.new.with_content("Card Title") %>
+      <%= render Card::Description.new.with_content("The description of the card") %>
+    <% end %>`}
+</Story>
+
+<Story
+  name="Simple Link"
+  args={{
+    href: "#",
+    variant: "default",
+    size: "default"
+  }}
+>
+  {`<%= render Card.new do %>
+      <%= render Card::Title.new(href: "#").with_content("Card Title") %>
+      <%= render Card::Description.new.with_content("The description of the card") %>
+    <% end %>`}
+</Story>
+
+---
+
+<Story
+  name="Title"
+  args={{
+    href: "#",
+    variant: "default",
+    size: "default"
+  }}
+>
+  {`<%= render Card.new(class_name: "w-40") do %>
+    <%= render Card::Title.new.with_content("Card Title") %>
+  <% end %>`}
+</Story>
+
+<Story
+  name="Title Link"
+  args={{
+    href: "#",
+    variant: "default",
+    size: "default"
+  }}
+>
+  {`<%= render Card.new(class_name: "w-40") do %>
+    <%= render Card::Title.new(href: "#").with_content("Card Link Title") %>
+  <% end %>`}
+</Story>
+
+<Story
+  name="Eyebrow"
+  args={{
+    variant: "default",
+    size: "default"
+  }}
+>
+  {`<%= render Card.new(class_name: "w-40") do %>
+    <%= render Card::Eyebrow.new.with_content("Card Eyebrow") %>
+  <% end %>`}
+</Story>
+
+<Story
+  name="Eyebrow Decorated"
+  args={{
+    variant: "default",
+    size: "default"
+  }}
+>
+  {`<%= render Card.new(class_name: "w-40") do %>
+    <%= render Card::Eyebrow.new(decorate: true).with_content("Card Eyebrow") %>
+  <% end %>`}
+</Story>
+
+<Story
+  name="Description"
+  args={{
+    variant: "default",
+    size: "default"
+  }}
+>
+  {`<%= render Card.new(class_name: "w-40") do %>
+    <%= render Card::Description.new.with_content("Card Description") %>
+  <% end %>`}
+</Story>
+
+<Story
+  name="CTA"
+  args={{
+    variant: "default",
+    size: "default"
+  }}
+>
+  {`<%= render Card.new(class_name: "w-40") do %>
+    <%= render Card::Cta.new.with_content("Card Cta") %>
+  <% end %>`}
+</Story>
+
+## Code
+
+```ruby
+<%%= render Avatar.new(size: :lg) %>
+```

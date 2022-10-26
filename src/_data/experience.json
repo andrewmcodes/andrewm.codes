@@ -1,0 +1,52 @@
+[
+  {
+    "company": "Podia",
+    "title": "Sr. Product Developer",
+    "start_year": "2022",
+    "start_date": "02/2022",
+    "end_date": "Present",
+    "end_year": "Present",
+    "url": "https://podia.com",
+    "image_url": "v1664957248/companies/podia"
+  },
+  {
+    "company": "The N2 Company",
+    "title": "Software Developer",
+    "start_year": "2020",
+    "start_date": "11/2020",
+    "end_year": "2022",
+    "end_date": "01/2022",
+    "url": "https://n2co.com/",
+    "image_url": "v1664957245/companies/n2"
+  },
+  {
+    "company": "Realvolve, Inc",
+    "title": "Software Engineer",
+    "start_year": "2020",
+    "end_year": "2020",
+    "start_date": "08/2020",
+    "end_date": "11/2020",
+    "url": "https://www.realvolve.com/",
+    "image_url": "v1664957250/companies/realvolve"
+  },
+  {
+    "company": "CodeFund",
+    "title": "Software Engineer",
+    "start_year": "2019",
+    "end_year": "2020",
+    "start_date": "10/2019",
+    "end_date": "06/2020",
+    "url": "https://github.com/gitcoinco/code_fund_ads",
+    "image_url": "v1664957242/companies/codefund"
+  },
+  {
+    "company": "The N2 Company",
+    "title": "Software Engineer",
+    "start_year": "2018",
+    "end_year": "2019",
+    "start_date": "05/2018",
+    "end_date": "10/2019",
+    "url": "https://n2co.com/",
+    "image_url": "v1664957245/companies/n2"
+  }
+]

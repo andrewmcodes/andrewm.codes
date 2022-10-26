@@ -1,0 +1,11 @@
+<figure class="not-prose space-y-2">
+  <div class="aspect-w-12 aspect-h-7 lg:aspect-none">
+    <%= image %>
+  </div>
+  <% if caption %>
+    <figcaption class="flex text-sm text-radix-slate11 items-center space-x-4">
+      <%= render Icon.new(name: :camera) %>
+      <%= render Text.new(as: :span, size: :sm, font: :mono).with_content(caption) %>
+    </figcaption>
+  <% end %>
+</figure>

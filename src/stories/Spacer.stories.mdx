@@ -1,0 +1,62 @@
+---
+---
+
+import { Meta, Story } from "@storybook/addon-docs"
+
+<Meta
+  title="Components/Spacer"
+  component="Spacer"
+  argTypes={{
+    y: {
+      options: ["default", "lg", "xl"],
+      control: { type: "select" }
+    }
+  }}
+/>
+
+# Spacer
+
+<Story
+  name="Default"
+  args={{
+    y: "default"
+  }}
+>
+  {`<%= render Spacer.new do %>
+      <div class="bg-gray-200 h-6 w-6 p-4">Content</div>
+      <div class="bg-gray-200 h-6 w-6 p-4">Content</div>
+    <% end %>
+  `}
+</Story>
+
+<Story
+  name="lg"
+  args={{
+    y: "lg"
+  }}
+>
+  {`<%= render Spacer.new(y: :xl) do %>
+      <div class="bg-gray-200 h-6 w-6 p-4">Content</div>
+      <div class="bg-gray-200 h-6 w-6 p-4">Content</div>
+    <% end %>
+  `}
+</Story>
+
+<Story
+  name="xl"
+  args={{
+    y: "xl"
+  }}
+>
+  {`<%= render Spacer.new(y: :xxl) do %>
+      <div class="bg-gray-200 h-6 w-6 p-4">Content</div>
+      <div class="bg-gray-200 h-6 w-6 p-4">Content</div>
+    <% end %>
+  `}
+</Story>
+
+## Code
+
+```ruby
+<%%= render Spacer.new(y: :xl).with_content("foo") %>
+```

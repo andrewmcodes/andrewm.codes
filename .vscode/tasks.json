@@ -1,0 +1,62 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "ngrok: start",
+      "type": "shell",
+      "command": "ngrok http 4000",
+      "presentation": {
+        "reveal": "never",
+        "revealProblems": "onProblem",
+        "panel": "shared",
+        "clear": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "bridgetown: build",
+      "type": "shell",
+      "command": "bin/bridgetown build",
+      "presentation": {
+        "revealProblems": "onProblem",
+        "panel": "shared",
+        "clear": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "bridgetown: start",
+      "type": "shell",
+      "command": "bin/bridgetown start",
+      "presentation": {
+        "revealProblems": "onProblem",
+        "reveal": "always",
+        "panel": "dedicated",
+        "clear": true
+      },
+      "problemMatcher": {
+        "fileLocation": [
+          "relative",
+          "${workspaceFolder}"
+        ],
+        "pattern": {
+          "regexp": "terminated",
+          "message": 3
+        }
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "type": "npm",
+      "script": "storybook:start",
+      "problemMatcher": [],
+      "label": "npm: storybook start",
+      "detail": "start-storybook -p 6006"
+    }
+  ]
+}

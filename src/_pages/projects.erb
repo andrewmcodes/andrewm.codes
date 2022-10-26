@@ -1,0 +1,48 @@
+---
+title: Projects
+description: "I've worked on tons of little projects over the years, most of them open-source, and this is where I am beginning to track them."
+---
+<%= render Spacer.new(y: :lg) do %>
+  <ul class="grid grid-cols-1 sm:grid-cols-2 gap-y-8 sm:gap-12">
+    <% site.collections.projects.resources.each do |project| %>
+      <%= render Card.new(as: :li, variant: :filled_link, spacing: :tile) do %>
+        <%= render Link.new(href: relative_url(project)) do %>
+          <%= render Heading.new(as: :h2, variant: :title).with_content(project.data.title) %>
+        <% end %>
+        <%= render Card::Description.new.with_content(project.data.description) %>
+        <%= render Stack.new(direction: :row, justify: :between, items: :center, class_name: "w-full mt-4") do %>
+          <%= render Stack.new(direction: :row, items: :center, x: :sm) do %>
+            <%= render IconLink.new(href: "https://github.com/#{project.data.repo}", title: project.data.title) do |c| %>
+              <% c.with_icon(name: :github) %>
+            <% end %>
+            <% if project.data.website_url %>
+              <%= render IconLink.new(href: project.data.website_url, title: project.data.title) do |c| %>
+                <% c.with_icon(name: :globe) %>
+              <% end %>
+            <% end %>
+            <% if project.data.npm %>
+              <%= render IconLink.new(href: project.data.npm.url, title: project.data.npm.label) do |c| %>
+                <% c.with_icon(name: :npm) %>
+              <% end %>
+            <% end %>
+          <% end %>
+          <%= render Link.new(href: relative_url(project)) do %>
+            <%= render Card::Cta.new(mt: :none).with_content("Learn more") %>
+          <% end %>
+        <% end %>
+      <% end %>
+    <% end %>
+  </ul>
+
+  <%= render Stack.new(y: :lg) do %>
+    <%= render Title.new().with_content("Misc") %>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-y-8 sm:gap-12">
+      <%= render Card.new() do %>
+        <% coc = site.collections.pages.resources.find { _1.data.title == "Code of Conduct" } %>
+        <%= render Card::Title.new(as: :h3, href: relative_url(coc)).with_content(coc.data.title) %>
+        <%= render Card::Description.new.with_content(coc.data.description) if coc.data.description %>
+        <%= render Card::Cta.new(icon: :external).with_content("Read more") %>
+      <% end %>
+    </div>
+  <% end %>
+<% end %>

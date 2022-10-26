@@ -1,0 +1,72 @@
+---
+---
+
+import { Meta, Story } from "@storybook/addon-docs"
+
+<Meta
+  title="Components/Heading"
+  component="Heading"
+  argTypes={{
+    size: {
+      options: ['default', 'sm'],
+      control: { type: 'select' }
+    },
+    variant: {
+      options: ['default', 'muted'],
+      control: { type: 'select' }
+    },
+    weight: {
+      options: ['default', 'medium', 'semibold', 'bold'],
+      control: { type: 'select' }
+    }
+    tracking: {
+      options: ['default', 'tight'],
+      control: { type: 'select' }
+    }
+  }}
+/>
+
+# Heading
+
+<Story
+  name="Default"
+  args={{
+    size: "default",
+    variant: "default"
+  }}
+>
+  {`<%= render Heading.new.with_content("Default Heading") %>`}
+</Story>
+
+<Story
+  name="Small"
+  args={{
+    size: "sm",
+    variant: "default"
+  }}
+>
+  {`<%= render Heading.new(size: :sm).with_content("Small Heading") %>`}
+</Story>
+
+<Story
+  name="Muted"
+  args={{
+    size: "default",
+    variant: "muted"
+  }}
+>
+  {`<%= render Heading.new(variant: :muted).with_content("Muted Heading") %>`}
+</Story>
+
+## Code
+
+```ruby
+<%%= render Heading.new(size: :sm, variant: :muted) %>
+```
+
+## Options
+
+| Option    | Value    | Description                      |
+| --------- | -------- | -------------------------------- |
+| `size`    | `Symbol` | The size of the Heading          |
+| `variant` | `Symbol` | The color variant of the Heading |

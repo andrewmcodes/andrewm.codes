@@ -1,0 +1,9 @@
+<%= render Box.new(as: :article, class_name: "md:grid md:grid-cols-4 md:items-baseline") do %>
+  <%= render Card.new(class_name: "md:col-span-3") do %>
+    <%= render Card::Title.new(href: resource.relative_url).with_content(resource.data.title) %>
+    <%= render Card::Eyebrow.new(as: :time, datetime: date_to_xmlschema(resource.data.date), class_name: "md:hidden", decorate: true).with_content(resource.data.date.strftime("%B %-d, %Y")) %>
+    <%= render Card::Description.new.with_content(resource.data.description) if resource.data.description %>
+    <%= render Card::Cta.new.with_content("Read article") %>
+  <% end %>
+  <%= render Card::Eyebrow.new(as: :time, datetime: date_to_xmlschema(resource.data.date), class_name: "mt-1 hidden md:block").with_content(resource.data.date.strftime("%B %-d, %Y")) %>
+<% end %>

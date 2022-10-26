@@ -1,0 +1,8 @@
+<%= render Card.new(as: :li) do %>
+  <%= render Card::Title.new do %>
+    <%= title %>
+  <% end %>
+  <%= render Card::Description.new do %>
+    <%= description %>
+  <% end %>
+<% end %>

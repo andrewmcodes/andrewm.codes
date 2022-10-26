@@ -1,0 +1,28 @@
+<%= render Container.new do %>
+  <div
+    class="
+      grid
+      grid-cols-1
+      gap-y-16
+      lg:grid-cols-3
+      lg:grid-rows-[auto_1fr]
+      lg:gap-y-12
+    "
+  >
+    <% if featured_image %>
+      <div class="lg:pl-20">
+        <%= featured_image %>
+      </div>
+    <% end %>
+    <div class="lg:order-first lg:row-span-2 lg:col-span-2">
+      <div class="max-w-prose">
+        <%= body %>
+      </div>
+    </div>
+    <% if details %>
+      <div class="lg:pl-20">
+        <%= details %>
+      </div>
+    <% end %>
+  </div>
+<% end %>

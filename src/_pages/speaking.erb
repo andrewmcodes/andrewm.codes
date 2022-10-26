@@ -1,0 +1,21 @@
+---
+title: Speaking
+description: "I love talking about topics I'm passionate about. If you'd like me to speak at your conference, meetup, or event, please get in touch."
+---
+
+<%= render Spacer.new(y: :xxl) do %>
+  <% site.data.appearances.group_by { |a| a[:category] }.each do |category, appearances| %>
+    <%= render Section.new(title: category.titleize) do %>
+      <%= render Spacer.new(y: :xl) do %>
+        <% appearances.each do |appearance| %>
+          <%= render Card.new(as: :article) do %>
+            <%= render Card::Title.new(as: :h3, href: appearance.url).with_content(appearance.title) %>
+            <%= render Card::Eyebrow.new(decorate: true).with_content(appearance.event) if appearance.event %>
+            <%= render Card::Description.new.with_content(appearance.description) if appearance.description %>
+            <%= render Card::Cta.new(icon: :external).with_content(appearance.cta) if appearance.cta %>
+          <% end %>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>

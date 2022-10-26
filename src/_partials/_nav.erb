@@ -1,65 +1,47 @@
-<nav class="fixed top-0 z-20 w-full bg-zinc-100/90 dark:bg-zinc-800/90 drop-shadow" x-data="{
-      open: false,
-      get isOpen() { return this.open },
-      toggle() { this.open = ! this.open },
-    }">
-  <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-    <div class="flex justify-between h-16">
-      <div class="flex">
-        <div class="flex items-center mr-2 -ml-2 md:hidden">
-          <button
-            @click="toggle"
-            type="button"
-            class="inline-flex items-center justify-center p-2 rounded-md text-zinc-700 dark:text-zinc-300 hover:bg-zinc-300 hover:text-zinc-800 dark:hover:bg-zinc-700 dark:hover:text-zinc-300 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-zinc-50 dark:focus:ring-zinc-900"
-            aria-controls="mobile-menu"
-            aria-expanded="false"
-          >
-            <span class="sr-only">Open main menu</span>
-            <%= svg "/assets/svg/menu.svg", classes: "block w-6 h-6", "x-show": "!isOpen" %>
-            <%= svg "/assets/svg/x.svg", classes: "hidden w-6 h-6", "x-show": "isOpen", "x-cloak": "true" %>
-          </button>
-        </div>
-        <div
-          class="hidden md:ml-6 md:flex md:items-center md:space-x-4">
-          <!-- Current: "bg-zinc-900 text-white", Default: "text-zinc-300 hover:bg-zinc-700 hover:text-white" -->
-          <% site.data.navigation.navbar.each do |nav| %>
-            <%= render Link.new(
-              href: nav.url,
-              classes: "px-3 py-2 text-sm lg:text-base font-medium text-zinc-700 dark:text-zinc-300 rounded-md",
-              hover: "hover:bg-zinc-300 hover:text-zinc-800 dark:hover:bg-zinc-700 dark:hover:text-zinc-300",
-              active: (resource.relative_url == nav.url),
-              key: nav.title).with_content(nav.title) %>
+<header x-data class="z-50 flex flex-col <%= class_map("border-b slate-border": !home?(resource)) %>" >
+  <div class="top-0 z-10 pt-6 pb-4">
+    <%= render Container.new(class_name: "w-full") do %>
+      <div class="flex gap-4 items-center">
+        <div class="flex flex-1">
+          <% if !home?(resource) %>
+            <%= render Avatar.new %>
           <% end %>
         </div>
-      </div>
-      <div class="flex items-center space-x-4">
-        <div class="flex-shrink-0">
-          <%= render IconLink.new(
-            href: site.metadata.twitter.url,
-            alt: site.metadata.twitter.username) do |i| %>
-            <% i.icon do %>
-              <%= svg "/assets/twitter.svg", class: "hover:text-[#1d9cf0] text-[#1DA1F2] w-5 h-5", "aria-hidden": true, width: 20, height: 20 %>
+        <div class="sm:flex-1 sm:justify-end sm:space-x-2 hidden sm:flex">
+         <% site.metadata.nav.desktop.each do |data| %>
+            <%= render Button.new(variant: :text, href: data.href, class_name: "") do |c| %>
+              <% c.with_text.with_content(data.title) %>
             <% end %>
+          <% end %>
+          <%= render Button.new(variant: :text, href: "/posts/", class_name: "", "data-turbo-preload": true ) do |c| %>
+            <% c.with_text.with_content("Posts") %>
+          <% end %>
+        </div>
+        <%= render Stack.new(direction: :row, justify: :end, class_name: "bg-radix-slate3 rounded-md") do %>
+          <%= render Button.new(variant: :default, href: "https://twitter.com/andrewmcodes", class_name: "h-10") do |c| %>
+            <%= render Icon.new(name: :twitter, class_name: "") %>
+          <% end %>
+          <div class="pointer-events-auto" data-turbo-permanent>
+            <%= render Button.new(variant: :default, type: :button, "aria-label": "Toggle dark mode", "@click": "$store.darkMode.toggle()", class_name: "h-10") do |c| %>
+              <%= render Icon.new(name: :sun, class_name: "transition group-hover:text-radix-slate11 dark:hidden") %>
+              <%= render Icon.new(name: :moon, class_name: "hidden transition dark:block") %>
+            <% end %>
+          </div>
         <% end %>
-        </div>
-        <div class="flex-shrink-0">
-          <%= render "theme_toggle" %>
-        </div>
+
+          <div x-data x-popover class="relative visible sm:invisible">
+            <%= render Button.new(variant: :default, "x-popover:button": true, type: :button) do |c| %>
+              <% c.with_text.with_content("Menu") %>
+              <% c.with_trailing_icon(name: :menu) %>
+            <% end %>
+
+            <%= render Dropdown.new(position: :right) do |c| %>
+              <% site.metadata.nav.mobile.each do |data| %>
+                <% c.with_item(title: data.title, href: data.href) %>
+              <% end %>
+            <% end %>
+          </div>
       </div>
-    </div>
+    <% end %>
   </div>
-  <div x-cloak class="relative shadow-sm md:hidden" id="mobile-menu" x-show="isOpen">
-    <div
-      class="absolute w-full px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-zinc-100 dark:bg-zinc-800">
-      <!-- Current: "bg-zinc-900 text-white", Default: "text-zinc-300 hover:bg-zinc-700 hover:text-white" -->
-      <% site.data.navigation.navbar.each do |nav| %>
-        <%= render Link.new(
-              href: nav.url,
-              classes: "block px-3 py-2 text-base font-medium rounded-md text-zinc-700 dark:text-zinc-300",
-              hover: "hover:bg-zinc-300 hover:text-zinc-800 dark:hover:bg-zinc-700 dark:hover:text-zinc-300",
-              key: nav.title
-            ).with_content(nav.title) %>
-      <% end %>
-    </div>
-  </div>
-</nav>
+</header>

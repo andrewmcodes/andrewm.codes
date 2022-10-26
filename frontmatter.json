@@ -1,3 +1,486 @@
 {
-  "$schema": "https://frontmatter.codes/frontmatter.schema.json"
+  "$schema": "https://frontmatter.codes/frontmatter.schema.json",
+  "frontMatter.content.publicFolder": "images",
+  "frontMatter.content.pageFolders": [
+    {
+      "title": "Projects",
+      "path": "[[workspace]]/src/_projects"
+    },
+    {
+      "title": "Posts",
+      "path": "[[workspace]]/src/_posts"
+    },
+    {
+      "title": "Newsletter",
+      "path": "[[workspace]]/src/_newsletter"
+    },
+    {
+      "title": "Pages",
+      "path": "[[workspace]]/src/_pages"
+    }
+  ],
+  "frontMatter.taxonomy.customTaxonomy": [
+    {
+      "id": "status",
+      "options": [
+        "featured"
+      ]
+    }
+  ],
+  "frontMatter.taxonomy.tags": [
+    "CI",
+    "a11y",
+    "actions",
+    "adhd",
+    "alfred",
+    "archipelago",
+    "archive",
+    "asdf",
+    "beginners",
+    "brew",
+    "bridgetown",
+    "ci",
+    "circleci",
+    "cli",
+    "cms",
+    "codequality",
+    "css",
+    "dataview",
+    "devjournal",
+    "discuss",
+    "erb",
+    "extension-pack",
+    "gem",
+    "gems",
+    "gh",
+    "github",
+    "github-actions",
+    "github-pages",
+    "haml",
+    "ideas",
+    "install",
+    "intel",
+    "junior-devs",
+    "m1",
+    "mac-defaults",
+    "macos",
+    "mentoring",
+    "monorepo",
+    "mysql",
+    "node",
+    "notes",
+    "obsidian",
+    "perfectionism",
+    "personal",
+    "podcast",
+    "postgres",
+    "productivity",
+    "rails",
+    "rbs",
+    "resources",
+    "ruby",
+    "strapi",
+    "svg",
+    "tailwind-css",
+    "tailwindcss",
+    "terminal",
+    "testing",
+    "theme",
+    "twitter",
+    "vercel",
+    "vim",
+    "vs-code",
+    "vscode",
+    "warp",
+    "webdev",
+    "webpacker",
+    "wip",
+    "zsh"
+  ],
+  "frontMatter.taxonomy.categories": [
+    "blog",
+    "conference-proposal",
+    "snippet",
+    "tutorial"
+  ],
+  "frontMatter.taxonomy.contentTypes": [
+    {
+      "name": "default",
+      "pageBundle": false,
+      "fields": [
+        {
+          "title": "status",
+          "name": "status",
+          "type": "choice",
+          "choices": [
+            "featured"
+          ]
+        },
+        {
+          "title": "title",
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "title": "description",
+          "name": "description",
+          "type": "datetime"
+        },
+        {
+          "title": "category",
+          "name": "category",
+          "type": "string"
+        },
+        {
+          "title": "tags",
+          "name": "tags",
+          "type": "tags"
+        },
+        {
+          "title": "date",
+          "name": "date",
+          "type": "datetime"
+        },
+        {
+          "title": "last_modified_at",
+          "name": "last_modified_at",
+          "type": "datetime"
+        },
+        {
+          "name": "type",
+          "type": "string",
+          "default": "post",
+          "hidden": true
+        },
+        {
+          "title": "urls",
+          "name": "urls",
+          "type": "fields",
+          "fields": [
+            {
+              "title": "speakerline",
+              "name": "speakerline",
+              "type": "string"
+            },
+            {
+              "title": "dev_to",
+              "name": "dev_to",
+              "type": "string"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "project",
+      "pageBundle": false,
+      "fields": [
+        {
+          "title": "title",
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "title": "description",
+          "name": "description",
+          "type": "string"
+        },
+        {
+          "title": "tags",
+          "name": "tags",
+          "type": "tags"
+        },
+        {
+          "title": "repo",
+          "name": "repo",
+          "type": "string"
+        },
+        {
+          "title": "last_modified_at",
+          "name": "last_modified_at",
+          "type": "datetime"
+        },
+        {
+          "name": "type",
+          "type": "string",
+          "default": "project",
+          "hidden": true
+        }
+      ]
+    },
+    {
+      "name": "page",
+      "pageBundle": false,
+      "fields": [
+        {
+          "title": "title",
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "title": "description",
+          "name": "description",
+          "type": "string"
+        },
+        {
+          "title": "date",
+          "name": "date",
+          "type": "datetime"
+        },
+        {
+          "title": "last_modified_at",
+          "name": "last_modified_at",
+          "type": "datetime"
+        },
+        {
+          "title": "layout_component",
+          "name": "layout_component",
+          "type": "string"
+        },
+        {
+          "name": "type",
+          "type": "string",
+          "default": "page",
+          "hidden": true
+        }
+      ]
+    }
+  ],
+  "frontMatter.data.files": [
+    {
+      "title": "Appearances",
+      "id": "all-appearances",
+      "file": "[[workspace]]/src/_data/appearances.json",
+      "labelField": "title",
+      "type": "appearances"
+    },
+    {
+      "title": "Podcasts",
+      "id": "all-podcasts",
+      "file": "[[workspace]]/src/_data/podcasts.json",
+      "labelField": "title",
+      "type": "podcasts"
+    },
+    {
+      "title": "Social Links",
+      "id": "all-social-links",
+      "file": "[[workspace]]/src/_data/social_links.json",
+      "labelField": "title",
+      "type": "social-links"
+    },
+    {
+      "title": "Tools",
+      "id": "all-tools",
+      "file": "[[workspace]]/src/_data/tools.json",
+      "labelField": "title",
+      "type": "tools"
+    },
+    {
+      "title": "Work History",
+      "id": "work-history",
+      "file": "[[workspace]]/src/_data/experience.json",
+      "labelField": "company",
+      "type": "workhistory"
+    }
+  ],
+  "frontMatter.data.types": [
+    {
+      "id": "podcasts",
+      "schema": {
+        "title": "Podcasts",
+        "type": "object",
+        "required": [
+          "title",
+          "description",
+          "status",
+          "image_url",
+          "website_url"
+        ],
+        "properties": {
+          "title": {
+            "type": "string",
+            "title": "Title"
+          },
+          "description": {
+            "type": "string",
+            "title": "Description"
+          },
+          "status": {
+            "type": "string",
+            "title": "Status"
+          },
+          "image_url": {
+            "type": "string",
+            "title": "Image URL"
+          },
+          "website_url": {
+            "type": "string",
+            "title": "Website URL"
+          }
+        }
+      }
+    },
+    {
+      "id": "tools",
+      "schema": {
+        "title": "Tools",
+        "type": "object",
+        "required": [
+          "title",
+          "category",
+          "description",
+          "link",
+          "referral_link"
+        ],
+        "properties": {
+          "title": {
+            "type": "string",
+            "title": "Title"
+          },
+          "category": {
+            "type": "string",
+            "title": "Category (workstation, development_tools, productivity, design)"
+          },
+          "description": {
+            "type": "string",
+            "title": "Description"
+          },
+          "link": {
+            "type": "string",
+            "title": "Link"
+          },
+          "referral_link": {
+            "type": "string",
+            "title": "Referral Link"
+          }
+        }
+      }
+    },
+    {
+      "id": "social-links",
+      "schema": {
+        "title": "Social Links",
+        "type": "object",
+        "required": [
+          "title",
+          "href"
+        ],
+        "properties": {
+          "title": {
+            "type": "string",
+            "title": "Title"
+          },
+          "href": {
+            "type": "string",
+            "title": "URL"
+          },
+          "featured": {
+            "type": "boolean",
+            "title": "Featured"
+          }
+        }
+      }
+    },
+    {
+      "id": "appearances",
+      "schema": {
+        "title": "Appearances",
+        "type": "object",
+        "required": [
+          "title",
+          "category",
+          "date",
+          "url",
+          "cta"
+        ],
+        "properties": {
+          "title": {
+            "type": "string",
+            "title": "Title"
+          },
+          "category": {
+            "type": "string",
+            "title": "Category (podcast, conference, livestream)"
+          },
+          "date": {
+            "type": "string",
+            "title": "Date (YYYY-MM-DD)"
+          },
+          "url": {
+            "type": "string",
+            "title": "URL"
+          },
+          "cta": {
+            "type": "string",
+            "title": "CTA"
+          },
+          "event": {
+            "type": "string",
+            "title": "Event"
+          },
+          "description": {
+            "type": "string",
+            "title": "Description"
+          }
+        }
+      }
+    },
+    {
+      "id": "workhistory",
+      "schema": {
+        "title": "Work History",
+        "type": "object",
+        "required": [
+          "title",
+          "company",
+          "start_date",
+          "end_date",
+          "url",
+          "start_year",
+          "end_year",
+          "image_url"
+        ],
+        "properties": {
+          "title": {
+            "type": "string",
+            "title": "Title"
+          },
+          "company": {
+            "type": "string",
+            "title": "Company"
+          },
+          "image_url": {
+            "type": "string",
+            "title": "Local Image URL"
+          },
+          "url": {
+            "type": "string",
+            "title": "URL"
+          },
+          "start_year": {
+            "type": "string",
+            "title": "Start Year (YYYY)"
+          },
+          "start_date": {
+            "type": "string",
+            "title": "Start Date (YYYY-MM)"
+          },
+          "end_year": {
+            "type": "string",
+            "title": "End Year (YYYY)"
+          },
+          "end_date": {
+            "type": "string",
+            "title": "End Date (YYYY-MM)"
+          }
+        }
+      }
+    }
+  ],
+  "frontMatter.content.autoUpdateDate": false,
+  "frontMatter.data.folders": [
+    "src/_data"
+  ],
+  "frontMatter.framework.startCommand": "bin/bridgetown start",
+  "frontMatter.preview.host": "http://localhost:4000"
 }

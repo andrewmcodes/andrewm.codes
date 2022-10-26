@@ -1,69 +1,63 @@
-# [andrewm.codes](https://andrewm.codes)
+# andrewm.codes
 
-## [![Repography logo](https://images.repography.com/logo.svg)](https://repography.com) / Recent activity [![Time period](https://images.repography.com/29040617/andrewmcodes/andrewm-codes-website/recent-activity/6abb56df720e25d92f20f7e2b26f21e1_badge.svg)](https://repography.com)
-[![Timeline graph](https://images.repography.com/29040617/andrewmcodes/andrewm-codes-website/recent-activity/6abb56df720e25d92f20f7e2b26f21e1_timeline.svg)](https://github.com/andrewmcodes/andrewm-codes-website/commits)
-[![Issue status graph](https://images.repography.com/29040617/andrewmcodes/andrewm-codes-website/recent-activity/6abb56df720e25d92f20f7e2b26f21e1_issues.svg)](https://github.com/andrewmcodes/andrewm-codes-website/issues)
-[![Pull request status graph](https://images.repography.com/29040617/andrewmcodes/andrewm-codes-website/recent-activity/6abb56df720e25d92f20f7e2b26f21e1_prs.svg)](https://github.com/andrewmcodes/andrewm-codes-website/pulls)
-[![Trending topics](https://images.repography.com/29040617/andrewmcodes/andrewm-codes-website/recent-activity/6abb56df720e25d92f20f7e2b26f21e1_words.svg)](https://github.com/andrewmcodes/andrewm-codes-website/commits)
+[![Lint](https://github.com/andrewmcodes/website-v6/actions/workflows/lint.yml/badge.svg)](https://github.com/andrewmcodes/website-v6/actions/workflows/lint.yml)
+[![Test](https://github.com/andrewmcodes/website-v6/actions/workflows/tests.yml/badge.svg)](https://github.com/andrewmcodes/website-v6/actions/workflows/tests.yml)
+[![release-please](https://github.com/andrewmcodes/website-v6/actions/workflows/release.yml/badge.svg)](https://github.com/andrewmcodes/website-v6/actions/workflows/release.yml)
 
+[![Ruby Style Guide](https://img.shields.io/badge/ruby_code_style-standard-orange.svg)](https://github.com/testdouble/standard)
+[![JavaScript Style Guide](https://img.shields.io/badge/js_code_style-prettier-ff69b4.svg?style=flat-square)](https://prettier.io)
+[![CSS Style Guide](https://img.shields.io/badge/css_code_style-stylelint-black.svg?style=flat-square)](https://prettier.io)
+[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org/)
 
-## Prerequisites
+---
 
-- [GCC](https://gcc.gnu.org/install/)
-- [Make](https://www.gnu.org/software/make/)
-- [Ruby](https://www.ruby-lang.org/en/downloads/)
-  - `>= 2.7`
-- [Bridgetown Gem](https://rubygems.org/gems/bridgetown)
-  - `gem install bridgetown -N`
-- [Node](https://nodejs.org)
-  - `>= 12`
-- [Yarn](https://yarnpkg.com)
+## Developing in Codespaces
 
-## Install
+This project comes with a [`.devcontainer.json` configuration](https://docs.github.com/en/codespaces/setting-up-your-project-for-codespaces/introduction-to-dev-containers) so the quickest way to get up and running is with [GitHub Codespaces](https://github.com/features/codespaces) for the majority of changes.
+
+## Developing Locally
+
+### Prerequisites
+
+- Ruby
+- NodeJS
+- Yarn
+- Bundler
+
+An exhaustive list can be found [here](https://www.bridgetownrb.com/docs/installation) if you run into issues, but you likely already have these dependencies installed (maybe not the right versions though) if you are working on Rails applications.
+
+The project is set up to run everything through binstubs but you may want to install the Bridgetown gem yourself:
+
+`gem install bridgetown`
+
+### Install
 
 ```sh
-cd bridgetown-site-folder
+cd andrewm.codes
 bundle install && yarn install
 ```
 
 > Learn more: [Bridgetown Getting Started Documentation](https://www.bridgetownrb.com/docs/).
 
+---
+
 ## Development
 
 To start your site in development mode, run `bin/bridgetown start` and navigate to [localhost:4000](https://localhost:4000/)!
 
-### Commands
+If you have never used the Bridgetown CLI before, `bin/bridgetown start` is the most important one to know, and the rest can be found here: [Bridgetown CLI Documentation](https://www.bridgetownrb.com/docs/command-line-usage)
 
-```sh
-# running locally
-bin/bridgetown start
+## Deployment
 
-# build & deploy to production
-bin/bridgetown deploy
+This site is deployed with and hosted on Vercel.
 
-# load the site up within a Ruby console (IRB)
-bin/bridgetown console
-```
-
-> Learn more: [Bridgetown CLI Documentation](https://www.bridgetownrb.com/docs/command-line-usage)
-
-### Structure
-
-## [![Repography logo](https://images.repography.com/logo.svg)](https://repography.com) / Structure
-[![Structure](https://images.repography.com/29040617/andrewmcodes/andrewm-codes-website/structure/501bf47fc1acefb78c8b5fb7ae91a355_table.svg)](https://github.com/andrewmcodes/andrewm-codes-website)
+PR's have deploy previews automatically generated and merging to main will deploy the site to production.
 
 ## Contributing
 
-_Detailed docs coming soon_
-
 1. Fork it
-2. Clone the fork using `git clone` to your local development machine.
-3. Create your feature branch (`git checkout -b my-new-feature`)
-4. Commit your changes (`git commit -am 'feat: Add some feature'`)
+2. Open in Codespaces or clone the fork using `git clone` or `gh repo clone` to your local development machine.
+3. Create your feature branch (`git checkout -b feat-add-webmentions`)
+4. Commit your changes using [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) messages. For a list of allowed prefixes, [check here.](https://github.com/conventional-changelog/commitlint/tree/master/%40commitlint/config-conventional#type-enum) (`git commit -am 'feat: Add some feature'`)
 5. Push to the branch (`git push origin my-new-feature`)
-6. Create a new Pull Request
-
-### Top contributors
-
-[![Top contributors](https://images.repography.com/29040617/andrewmcodes/andrewm-codes-website/top-contributors/6abb56df720e25d92f20f7e2b26f21e1_table.svg)](https://github.com/andrewmcodes/andrewm-codes-website/graphs/contributors)
-
+6. Create a new Pull Request on GitHub and fill in the PR template provided
