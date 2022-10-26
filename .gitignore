@@ -42,3 +42,7 @@ frontend/styles/jit-refresh.css
 .frontmatter
 hint-report
 tmp
+
+.env*
+!.env.project
+!.env.vault
