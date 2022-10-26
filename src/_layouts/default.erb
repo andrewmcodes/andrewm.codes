@@ -27,6 +27,7 @@ body_classes: "antialiased bg-radix-slate1 text-radix-slate11"
       x-bind:x-on:turbolinks:visit="console.log('Turbolinks visit event fired')"
       x-bind:x-on:alpine:initialized="console.log('Alpine initialized')"
     >
+      <%= render "construction_alert" %>
       <%= render "nav" %>
       <main class="py-12 lg:pt-24 min-w-0"><%= yield %></main>
       <%= render "footer", metadata: site.metadata %>

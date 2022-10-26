@@ -15,7 +15,7 @@ description: >-
   Andrew Mason is a senior full stack software engineer, content creator, and Rubyist. Currently a senior product developer at Podia based in Phoenix, Arizona.
 theme_color:
   light: "#0091FF"
-  dark: "#0091FF"
+  dark: "#3C181A"
 generator: Bridgetown
 image: "/public/share.jpeg"
 author:

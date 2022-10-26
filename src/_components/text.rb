@@ -10,7 +10,8 @@ class Text < Box
   TEXT_COLORS = {
     default: "text-radix-slate11",
     strong: "text-radix-slate12",
-    primary: "text-radix-blue11"
+    primary: "text-radix-blue11",
+    warning: "text-radix-red11",
   }
   TEXT_LEADING = {
     default: "",

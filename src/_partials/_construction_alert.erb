@@ -1,0 +1,10 @@
+<%= render Container.new(class_name: "red-bg py-2 border-b red-border") do %>
+  <%= render Spacer.new(y: :xs) do %>
+    <%= render Spacer.new(y: :sm, class_name: "text-center mx-auto") do %>
+      <%= render Text.new(weight: :md, color: :warning) do %>
+        <span class="lg:hidden">This website is under major construction!</span>
+        <span class="hidden lg:inline">Some shit's possibly fucked but I am finishing the redesign of this website in the open now.</span>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>
