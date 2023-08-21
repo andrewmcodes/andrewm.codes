@@ -6,7 +6,7 @@ gem "puma", "~> 5.6"
 
 group :development do
   gem "standard", "~> 1.13"
-  gem "solargraph", "~> 0.45"
+  gem "solargraph", "~> 0.48"
 end
 
 group :bridgetown_plugins do
