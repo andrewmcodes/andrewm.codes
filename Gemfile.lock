@@ -228,9 +228,8 @@ GEM
     view_component (2.62.0)
       activesupport (>= 5.0.0, < 8.0)
       method_source (~> 1.0)
-    webrick (1.7.0)
-    yard (0.9.27)
-      webrick (~> 1.7.0)
+    webrick (1.8.1)
+    yard (0.9.36)
     zeitwerk (2.5.4)
 
 PLATFORMS
