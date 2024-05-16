@@ -172,7 +172,8 @@ GEM
       netrc (~> 0.8)
     reverse_markdown (2.1.1)
       nokogiri
-    rexml (3.2.5)
+    rexml (3.2.8)
+      strscan (>= 3.0.9)
     roda (3.55.0)
       rack
     rouge (3.28.0)
@@ -215,6 +216,7 @@ GEM
     standard (1.13.0)
       rubocop (= 1.31.2)
       rubocop-performance (= 1.14.3)
+    strscan (3.1.0)
     terminal-table (1.8.0)
       unicode-display_width (~> 1.1, >= 1.1.1)
     thor (1.2.1)
