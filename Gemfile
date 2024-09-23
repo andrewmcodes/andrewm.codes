@@ -2,7 +2,7 @@ source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 gem "bridgetown", "~> 1.0.0"
-gem "puma", "~> 5.6"
+gem "puma", "~> 6.4"
 
 group :development do
   gem "standard", "~> 1.13"
