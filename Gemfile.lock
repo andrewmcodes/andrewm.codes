@@ -172,7 +172,7 @@ GEM
       netrc (~> 0.8)
     reverse_markdown (2.1.1)
       nokogiri
-    rexml (3.2.5)
+    rexml (3.3.9)
     roda (3.55.0)
       rack
     rouge (3.28.0)
