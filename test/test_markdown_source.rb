@@ -26,7 +26,7 @@ class TestMarkdownSource < Bridgetown::Test
 
   it "writes an llms.txt index linking to the .md twins" do
     refute_nil LLMS, "Expected output/llms.txt to exist after build"
-    expect(LLMS).must_match(/^# andrewm\.codes/)
+    expect(LLMS).must_match(/^# Andrew Mason/)
     expect(LLMS).must_include "## Posts"
     expect(LLMS).must_include "https://andrewm.codes/p/kill-process-on-port.md"
   end
