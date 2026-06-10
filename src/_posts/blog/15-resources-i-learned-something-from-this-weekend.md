@@ -1,7 +1,6 @@
 ---
 title: 15 Resources I Learned Something From This Weekend
-description: I wanted to get a lot of writing done this weekend but unfortunately
-  I had to take care of a cranky a...
+description: "A weekend roundup of 15 things worth your time: five Ruby on Rails blog posts, five open source projects, and five podcast episodes."
 urls:
   dev_to: https://dev.to/andrewmcodes/15-ruby-on-rails-resources-443o
 tags:

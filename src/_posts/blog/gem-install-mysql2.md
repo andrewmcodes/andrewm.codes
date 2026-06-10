@@ -1,7 +1,6 @@
 ---
 title: gem install mysql2
-description: I've come across this error several times throughout my development career
-  so I figured it was finall...
+description: "How to fix the mysql2 gem's 'library not found for -lssl' native extension error on macOS using cmake and OpenSSL build flags."
 urls:
   dev_to: https://dev.to/andrewmcodes/gem-install-mysql2-6o1
 tags:

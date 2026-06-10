@@ -1,7 +1,6 @@
 ---
 title: How to Unhide Desktop Icons on macOS
-description: If your desktop icons dissapear, you may need to toggle the desktop on
-  via the command line.
+description: "If your desktop icons disappear, you may need to toggle the desktop back on via the command line."
 tags:
   - zsh
   - macos

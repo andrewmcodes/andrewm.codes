@@ -1,7 +1,6 @@
 ---
 title: Automating Ruby Gem Releases with GitHub Actions
-description: Whether you are a gem maintaining machine or new to the world of authoring
-  gems, this tutorial is for...
+description: "Automate Ruby gem releases with GitHub Actions and Release Please: conventional-commit versioning, changelog generation, and publishing to RubyGems."
 urls:
   dev_to: https://dev.to/andrewmcodes/automating-ruby-gem-releases-with-github-actions-1m1c
 tags:

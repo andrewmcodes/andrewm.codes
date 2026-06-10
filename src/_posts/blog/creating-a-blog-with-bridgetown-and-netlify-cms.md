@@ -1,7 +1,6 @@
 ---
 title: Creating a blog with Bridgetown and Netlify CMS
-description: This is a quick tutorial to showcase how you can quickly integrate Netlify
-  CMS into your Bridgetown s...
+description: "A step-by-step tutorial on adding Netlify CMS to a Bridgetown site so you can edit and publish content from a Git-backed admin UI."
 urls:
   dev_to: https://dev.to/andrewmcodes/creating-a-blog-with-bridgetown-and-netlify-cms-1d1a
 tags:

@@ -1,14 +1,13 @@
 ---
-title: Kill Process Running on a Specfic Port
-description: I often have to kill proccesses that weren't stopped correctly on different
-  ports and can never remember the command.
+title: Kill Process Running on a Specific Port
+description: "I often have to kill processes that weren't stopped correctly on different ports and can never remember the command."
 tags:
   - unix
 date: 2023-01-01 20:23:33.000000000 -07:00
 last_modified_at: 2023-01-01 20:23:33.000000000 -07:00
 ---
 
-I often have to kill proccesses that weren't stopped correctly on different ports and can never remember the command.
+I often have to kill processes that weren't stopped correctly on different ports and can never remember the command.
 
 ## Snippet
 

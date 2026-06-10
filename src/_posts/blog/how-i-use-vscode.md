@@ -1,7 +1,6 @@
 ---
 title: How I Use VSCode
-description: I’m about to overhaul my settings and plugins in VSCode so this is my
-  “before” shot.   I recently upd...
+description: "A snapshot of my Visual Studio Code setup — the settings and extensions I use day to day, shared via How I VSCode."
 urls:
   dev_to: https://dev.to/andrewmcodes/how-i-use-vscode-1aha
 tags:

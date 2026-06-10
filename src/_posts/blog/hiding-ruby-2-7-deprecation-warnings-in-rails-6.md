@@ -1,7 +1,6 @@
 ---
 title: Hiding Ruby 2.7 Deprecation Warnings in Rails 6
-description: Hiding Ruby 2.7 Deprecation Warnings in Rails 6   If you have upgraded
-  your Rails app to Rub...
+description: "Three ways to silence noisy Ruby 2.7 deprecation warnings in a Rails 6 app using the RUBYOPT environment variable."
 urls:
   dev_to: https://dev.to/andrewmcodes/hiding-ruby-2-7-deprecation-warnings-in-rails-6-2mil
 tags:

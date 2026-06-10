@@ -2,8 +2,7 @@
 series: ci-for-ror
 featured: false
 title: "CI for Ruby on Rails: CircleCI"
-description: "CI for Ruby on Rails: GitHub Actions vs. CircleCI   This is part of
-  a three part series wher..."
+description: "Part two of a CI for Ruby on Rails series: build a complete CircleCI pipeline with Docker images, caching, database setup, tests, and linters."
 urls:
   dev_to: https://dev.to/codefund/ci-for-ruby-on-rails-circleci-4lkn
 tags:
