@@ -1,18 +1,19 @@
 ---
 series: webpacker-6
 featured: false
-title: 'Webpacker 6: CSS Loaders'
-description: 'This page has changed since first posted, refer to the changelog at the bottom.   In order to proces...'
+title: "Webpacker 6: CSS Loaders"
+description: This page has changed since first posted, refer to the changelog at the
+  bottom.   In order to proces...
 urls:
-  dev_to: 'https://dev.to/andrewmcodes/webpacker-6-css-loaders-28hb'
+  dev_to: https://dev.to/andrewmcodes/webpacker-6-css-loaders-28hb
 tags:
   - rails
   - webpacker
   - tutorial
   - css
 categories: tutorial
-date: '2020-12-23T22:12:55Z'
-last_modified_at: '2022-01-29T17:01:41.484Z'
+date: 2020-12-23 22:12:55.000000000 Z
+last_modified_at: 2022-01-29 17:01:41.484000000 Z
 ---
 
 > **This page has changed since first posted**, refer to the changelog at the bottom.

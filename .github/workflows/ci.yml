@@ -1,0 +1,207 @@
+name: CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+# Cancel in-flight runs of this workflow on the same ref. Pushes to main are
+# kept distinct from PRs by including the event name in the key, so a PR push
+# doesn't cancel a production deploy on main.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event_name }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+permissions:
+  contents: read
+
+jobs:
+  lint:
+    name: standardrb
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: ./.github/actions/setup
+        with:
+          node: "false"
+      - run: bundle exec standardrb
+
+  commitlint:
+    name: commitlint
+    runs-on: ubuntu-latest
+    steps:
+      # fetch-depth: 0 so the full commit range is available to lint.
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+      - uses: ./.github/actions/setup
+        with:
+          ruby: "false"
+      - name: Lint PR commits
+        if: github.event_name == 'pull_request'
+        run: >
+          pnpm exec commitlint
+          --from ${{ github.event.pull_request.base.sha }}
+          --to ${{ github.event.pull_request.head.sha }}
+          --verbose
+      - name: Lint pushed commit
+        if: github.event_name == 'push'
+        run: pnpm exec commitlint --last --verbose
+
+  typecheck:
+    name: typecheck
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: ./.github/actions/setup
+        with:
+          ruby: "false"
+      - run: pnpm run typecheck
+
+  test:
+    name: minitest
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: ./.github/actions/setup
+      - run: bundle exec rake test
+
+  build:
+    name: production build
+    runs-on: ubuntu-latest
+    outputs:
+      built: ${{ steps.mark.outputs.built }}
+    steps:
+      - uses: actions/checkout@v6
+      - uses: ./.github/actions/setup
+      - env:
+          BRIDGETOWN_ENV: production
+          TORCHLIGHT_TOKEN: ${{ secrets.TORCHLIGHT_TOKEN }}
+        run: bin/bridgetown deploy
+      - id: mark
+        run: echo "built=true" >> "$GITHUB_OUTPUT"
+      - name: Upload build output
+        if: |
+          github.event_name == 'push' ||
+          (github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository)
+        uses: actions/upload-artifact@v7
+        with:
+          name: site-output
+          path: output
+          retention-days: 1
+          include-hidden-files: true
+
+  lighthouse:
+    name: lighthouse
+    runs-on: ubuntu-latest
+    needs: build
+    # The build job only uploads site-output on push or same-repo PRs, so gate
+    # Lighthouse the same way. Informational: it does not gate the deploy.
+    if: |
+      github.event_name == 'push' ||
+      (github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository)
+    steps:
+      - uses: actions/checkout@v6
+      - uses: ./.github/actions/setup
+        with:
+          ruby: "false"
+      - uses: actions/download-artifact@v8
+        with:
+          name: site-output
+          path: output
+      - name: Lighthouse CI
+        env:
+          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
+        run: pnpm exec lhci autorun
+
+  deploy:
+    name: deploy to cloudflare
+    runs-on: ubuntu-latest
+    needs: [lint, commitlint, typecheck, test, build]
+    if: |
+      (github.event_name == 'push' && github.ref == 'refs/heads/main') ||
+      (github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository)
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v6
+      - uses: ./.github/actions/setup
+        with:
+          ruby: "false"
+      - uses: actions/download-artifact@v8
+        with:
+          name: site-output
+          path: output
+
+      - name: Deploy to production
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        uses: cloudflare/wrangler-action@v4
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: deploy
+
+      - name: Compute preview alias
+        if: github.event_name == 'pull_request'
+        id: alias
+        run: |
+          raw="pr-${{ github.event.pull_request.number }}-${{ github.head_ref }}"
+          slug=$(printf '%s' "$raw" \
+            | tr '[:upper:]' '[:lower:]' \
+            | sed -E 's/[^a-z0-9-]+/-/g; s/-+/-/g; s/^-+|-+$//g' \
+            | cut -c1-40 \
+            | sed -E 's/-+$//')
+          echo "alias=$slug" >> "$GITHUB_OUTPUT"
+
+      # OG image meta tags are absolute (https://andrewm.codes/og/<slug>.png)
+      # because Util::Seo runs them through helpers.absolute_url, which uses
+      # site.metadata.url. Pre-merge, prod doesn't have the PNGs yet, so
+      # social validators 404 when they scrape a preview URL. Rewrite just
+      # the og/twitter image hosts to point at this preview deploy so it
+      # self-validates. Canonical / og:url intentionally stay on prod.
+      - name: Rewrite OG image URLs for preview
+        if: github.event_name == 'pull_request'
+        env:
+          # Cloudflare account-level workers.dev subdomain. There's no clean
+          # way to read this from wrangler config or env, so document and
+          # hardcode (Dash → Workers & Pages → Settings → Subdomain).
+          CF_WORKERS_SUBDOMAIN: andrewmcodes
+        run: |
+          worker_name=$(jq -r '.name' wrangler.jsonc)
+          preview_host="${{ steps.alias.outputs.alias }}-${worker_name}.${CF_WORKERS_SUBDOMAIN}.workers.dev"
+          echo "Rewriting og:image hosts → https://${preview_host}/og/"
+          find output -name '*.html' -print0 \
+            | xargs -0 sed -i "s#https://andrewm.codes/og/#https://${preview_host}/og/#g"
+
+      - name: Deploy PR preview
+        if: github.event_name == 'pull_request'
+        id: preview
+        uses: cloudflare/wrangler-action@v4
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: versions upload --preview-alias ${{ steps.alias.outputs.alias }}
+
+      - name: Comment preview URL on PR
+        if: github.event_name == 'pull_request'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          PREVIEW_OUTPUT: ${{ steps.preview.outputs.command-output }}
+          PREVIEW_STDERR: ${{ steps.preview.outputs.command-stderr }}
+        run: |
+          # Wrangler prints two URLs — prefer the human-readable alias.
+          #   Version Preview URL:       https://<hash>-<worker>.<account>.workers.dev
+          #   Version Preview Alias URL: https://<alias>-<worker>.<account>.workers.dev
+          combined=$(printf '%s\n%s\n' "$PREVIEW_OUTPUT" "$PREVIEW_STDERR")
+          url=$(printf '%s\n' "$combined" \
+            | sed -nE 's#.*Version Preview Alias URL:[[:space:]]+(https://[A-Za-z0-9.-]+\.workers\.dev).*#\1#p' \
+            | head -1)
+          if [ -z "$url" ]; then
+            url=$(printf '%s\n' "$combined" \
+              | sed -nE 's#.*Version Preview URL:[[:space:]]+(https://[A-Za-z0-9.-]+\.workers\.dev).*#\1#p' \
+              | head -1)
+          fi
+          body="Preview: ${url:-(URL could not be extracted from wrangler output)}"
+          gh pr comment "$PR_NUMBER" --body "$body" --edit-last 2>/dev/null \
+            || gh pr comment "$PR_NUMBER" --body "$body"

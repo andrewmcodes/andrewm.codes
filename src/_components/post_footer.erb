@@ -1,0 +1,12 @@
+<footer class="mt-16 pt-7 border-t border-sage-5">
+  <%= render PostFooterNav.new(
+    previous_resource: @previous_resource,
+    next_resource: @next_resource,
+  ) %>
+
+  <div class="flex items-center gap-3 mt-4">
+    <%= render ShareButton.new(resource: @resource) %>
+  </div>
+
+  <%= render RelatedPosts.new(posts: helpers.related_posts(@resource)) %>
+</footer>

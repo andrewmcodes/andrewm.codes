@@ -1,0 +1,40 @@
+{
+  // Type-check JS without emitting (esbuild does the bundling). Checking is
+  // opt-in per file via a `// @ts-check` pragma at the top — see
+  // frontend/javascript/cmdk.js and scripts/generate-og.mjs. Annotate a file
+  // with JSDoc + `// @ts-check`, get it green under `pnpm run typecheck`, then
+  // add the next one. Flip "checkJs" to true once every included file opts in.
+  "compilerOptions": {
+    "noEmit": true,
+    "allowJs": true,
+    "checkJs": false,
+    "strict": true,
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    // esbuild bundles every file as an ES module; mirror that so tsc scopes
+    // top-level declarations per file instead of treating import/export-less
+    // files as global scripts.
+    "moduleDetection": "force",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "types": ["node"],
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    // Path aliases consumed by esbuild, which auto-reads tsconfig.json (in
+    // preference to jsconfig.json). Mirrors the former jsconfig.json that this
+    // file now supersedes — keep in sync with any `$`-prefixed import.
+    // No baseUrl: under moduleResolution "bundler", paths resolve relative to
+    // this file (and baseUrl is deprecated in TS 6).
+    "paths": {
+      "$styles/*": ["./frontend/styles/*"],
+      "$javascript/*": ["./frontend/javascript/*"],
+      "$components/*": ["./src/_components/*"]
+    }
+  },
+  "include": [
+    "frontend/javascript/**/*.js",
+    "scripts/**/*.mjs",
+    "esbuild.config.js"
+  ]
+}

@@ -1,19 +1,96 @@
----<%
-{
-  colors: "bg-zinc-50 text-zinc-900 dark:bg-zinc-900 dark:text-zinc-50"
-}
-%>---
-<!DOCTYPE html>
-<html lang="en" class="h-full" data-env="<%= Bridgetown.env %>">
-  <%= render "head" %>
-  <body class="h-full font-sans <%= layout.data.colors %> <%= class_map "debug-screens": Bridgetown.env.development? %>">
-    <%= render "nav" %>
-    <%= render Stack.new(classes: "min-h-full mt-16", spacing: "space-y-16") do %>
-      <%= render Alert.new(variant: :error, classes: "-mb-8").with_content("Layout: #{resource.data&.layout&.to_s}") if Bridgetown.env.development? %>
-      <%= render Stack.new(classes: "grow mt-16 px-4", as: :main, tabindex: "-1") do %>
-        <%= content %>
-      <% end %>
-      <%= render "footer" %>
+<%# Theme detection — runs synchronously before paint %>
+<!doctype html>
+<html lang="<%= site.metadata.lang %>">
+  <head>
+    <script>
+      (() => {
+        const saved = localStorage.getItem("theme")
+        const prefersDark = matchMedia("(prefers-color-scheme: dark)").matches
+        // Only "light"/"dark" are valid persisted values; anything else
+        // (absent, or a stale "system") resolves from the OS preference.
+        const theme = saved === "light" || saved === "dark" ? saved : (prefersDark ? "dark" : "light")
+        document.documentElement.dataset.theme = theme
+      })()
+    </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="<%= site.metadata.theme_color_light %>" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="<%= site.metadata.theme_color %>" media="(prefers-color-scheme: dark)">
+    <% if data.noindex %>
+      <meta name="robots" content="noindex,nofollow">
+    <% else %>
+      <meta name="robots" content="max-image-preview:large">
     <% end %>
+
+    <%= render Util::Seo.new(resource: resource) %>
+    <%= render Util::StructuredData.new(resource: resource) %>
+
+    <link
+      rel="alternate"
+      type="application/atom+xml"
+      title="<%= site.metadata.title %> (Atom)"
+      href="<%= absolute_url("/feed.xml") %>"
+    >
+    <link
+      rel="alternate"
+      type="application/feed+json"
+      title="<%= site.metadata.title %> (JSON Feed)"
+      href="<%= absolute_url("/feed.json") %>"
+    >
+    <link
+      rel="sitemap"
+      type="application/xml"
+      title="Sitemap"
+      href="<%= absolute_url("/sitemap.xml") %>"
+    >
+
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/images/favicon-32x32.png"
+    >
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/images/favicon-16x16.png"
+    >
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/images/apple-touch-icon.png"
+    >
+    <link rel="manifest" href="/site.webmanifest">
+
+    <link rel="webmention" href="https://webmention.io/andrewm.codes/webmention">
+    <link rel="pingback" href="https://webmention.io/andrewm.codes/xmlrpc">
+
+    <link rel="me" href="https://bsky.app/profile/andrewm.codes">
+    <link rel="me" href="https://github.com/andrewmcodes">
+    <link rel="me" href="https://www.linkedin.com/in/andrew-mason">
+    <link rel="me" href="https://x.com/andrewmcodes">
+
+    <link rel="stylesheet" href="<%= asset_path :css %>">
+    <script src="<%= asset_path :js %>" defer></script>
+  </head>
+  <body
+    class="
+      bg-sage-1 text-sage-12 font-sans text-[15px] leading-relaxed min-h-screen flex
+      flex-col
+    "
+  >
+    <%= render SkipLink.new %>
+
+    <%= render Topbar.new(resource: resource) %>
+
+    <%= render MainContent.new(kind: data.kind) do %>
+      <%= yield %>
+    <% end %>
+
+    <%= render SiteFooter.new %>
+    <%= render Cmdk.new %>
   </body>
 </html>

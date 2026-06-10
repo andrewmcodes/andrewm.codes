@@ -1,174 +1,252 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-@layer base {
-  @font-face {
-    font-family: "IBM Plex Sans";
-    font-style: normal;
-    font-weight: 100 900;
-    font-display: optional;
-    src: url(../fonts/ibm-plex-sans-var.woff2) format("woff2");
-  }
+@plugin "@tailwindcss/typography";
+@plugin "@tailwindcss/aspect-ratio";
 
-  @font-face {
-    font-family: "IBM Plex Sans";
-    font-style: italic;
-    font-weight: 100 900;
-    font-display: optional;
-    src: url(../fonts/ibm-plex-sans-var-italic.woff2) format("woff2");
-  }
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
 
-  :root {
-    --primary: #007aff;
-    --primary-light: #298fff;
-    --primary-dark: #0066d6;
-    --page: #fafafa;
-    --code: #262626;
-    --text-code: #f5f5f5;
-    --page-inverted: #171717;
-    --text: #262626;
-    --text-muted: #525252;
-    --text-inverted: #fafafa;
-    --divider: #d4d4d4;
-    --nav-bg: #f5f5f5;
-  }
+/* Radix UI Sage + Mint — values inlined and scoped to our data-theme attribute.
+   Radix's own CSS files scope dark to `.dark, .dark-theme` (class selectors)
+   which wouldn't trigger our attribute-based theme switch. */
+:root,
+[data-theme="light"] {
+  --sage-1: #fbfdfc;
+  --sage-2: #f7f9f8;
+  --sage-3: #eef1f0;
+  --sage-4: #e6e9e8;
+  --sage-5: #dfe2e0;
+  --sage-6: #d7dad9;
+  --sage-7: #cbcfcd;
+  --sage-8: #b8bcba;
+  --sage-9: #868e8b;
+  --sage-10: #7c8481;
+  --sage-11: #5f6563;
+  --sage-12: #1a211e;
 
-  .dark {
-    --primary: #ec4899;
-    --primary-light: #fb7185;
-    --primary-dark: #db2777;
-    --page: #171717;
-    --code: #262626;
-    --text-code: #fafafa;
-    --page-inverted: #fafafa;
-    --text: #e5e7eb;
-    --text-muted: #a3a3a3;
-    --divider: #404040;
-    --nav-bg: #262626;
-  }
+  --mint-1: #f9fefd;
+  --mint-2: #f2fbf9;
+  --mint-3: #ddf9f2;
+  --mint-4: #c8f4e9;
+  --mint-5: #b3ecde;
+  --mint-6: #9ce0d0;
+  --mint-7: #7ecfbd;
+  --mint-8: #4cbba5;
+  --mint-9: #86ead4;
+  --mint-10: #7de0cb;
+  --mint-11: #027864;
+  --mint-12: #16433c;
+}
 
-  .highlight code .k {
-    color: #d55fde;
-  }
-  .highlight code .c,
-  .highlight code .err,
-  .highlight code .l,
-  .highlight code .g,
-  .highlight code .o,
-  .highlight code .x,
-  .highlight code .p,
-  .highlight code .ch,
-  .highlight code .cm,
-  .highlight code .cpf,
-  .highlight code .c1,
-  .highlight code .cs,
-  .highlight code .nn,
-  .highlight code .ni,
-  .highlight code .ne,
-  .highlight code .ld,
-  .highlight code .nx,
-  .highlight code .py,
-  .highlight code .gt,
-  .highlight code .gp,
-  .highlight code .w,
-  .highlight code .gs,
-  .highlight code .gr {
-    color: #aab1c0;
-  }
-  .highlight code .ge {
-    color: #aab1c0;
-    text-decoration: underline;
-  }
-  .highlight code .go {
-    color: #44475a;
-  }
-  .highlight code .gh,
-  .highlight code .gu {
-    color: #aab1c0;
-    font-weight: bold;
-  }
+[data-theme="dark"] {
+  --sage-1: #101211;
+  --sage-2: #171918;
+  --sage-3: #202221;
+  --sage-4: #272a29;
+  --sage-5: #2e3130;
+  --sage-6: #373b39;
+  --sage-7: #444947;
+  --sage-8: #5b625f;
+  --sage-9: #63706b;
+  --sage-10: #717d79;
+  --sage-11: #adb5b2;
+  --sage-12: #eceeed;
 
-  .highlight code .kd {
-    color: #8be9fd;
-    font-style: italic;
-  }
-  .highlight code .kc,
-  .highlight code .cp,
-  .highlight code .kn,
-  .highlight code .kp,
-  .highlight code .kr,
-  .highlight code .kt {
-    color: #d55fde;
-  }
-  .highlight code .m {
-    color: #d8985f;
-  }
-  .highlight code .nb {
-    color: #f5c876;
-    font-style: italic;
-  }
-  .highlight code .sa,
-  .highlight code .sb,
-  .highlight code .sc,
-  .highlight code .dl,
-  .highlight code .sd,
-  .highlight code .hll,
-  .highlight code .no,
-  .highlight code .s {
-    color: #f5c876;
-  }
-  .highlight code .nf {
-    color: #52adf2;
-  }
-  .highlight code .nl {
-    color: #aab1c0;
-    font-style: italic;
-  }
-  .highlight code .n,
-  .highlight code .gd,
-  .highlight code .nt {
-    color: #ef596f;
-  }
-  .highlight code .mb,
-  .highlight code .ow .highlight code .mf,
-  .highlight code .si .highlight code .il .highlight code .mh,
-  .highlight code .mi,
-  .highlight code .mo {
-    color: #d55fde;
-  }
-  .highlight code .nc,
-  .highlight code .gi,
-  .highlight code .s2,
-  .highlight code .sh,
-  .highlight code .fm,
-  .highlight code .sx {
-    color: #98c379;
-  }
-  .highlight code .se,
-  .highlight code .sr,
-  .highlight code .nd,
-  .highlight code .na,
-  .highlight code .s1,
-  .highlight code .ss {
-    color: #33d8e4;
-  }
-  .highlight code .bp {
-    color: #aab1c0;
-    font-style: italic;
-  }
-  .highlight code .nv,
-  .highlight code .vc,
-  .highlight code .vg,
-  .highlight code .vi,
-  .highlight code .vm {
-    color: #8be9fd;
-    font-style: italic;
+  --mint-1: #0e1515;
+  --mint-2: #0f1b1b;
+  --mint-3: #092c2b;
+  --mint-4: #003a38;
+  --mint-5: #004744;
+  --mint-6: #105650;
+  --mint-7: #1e685f;
+  --mint-8: #277f70;
+  --mint-9: #86ead4;
+  --mint-10: #a8f5e5;
+  --mint-11: #58d5ba;
+  --mint-12: #c4f5e1;
+}
+
+@theme {
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono Variable", ui-monospace, "Menlo", monospace;
+
+  /* Named breakpoints for the topbar's load-bearing nav collapse points
+     (these don't map onto sm/md/lg). Naming them keeps the markup free of
+     arbitrary min-[Npx]/max-[Npx] values: `nav:`/`max-nav:` and
+     `compact:`/`max-compact:` variants are generated from these. */
+  --breakpoint-nav: 820px;
+  --breakpoint-compact: 520px;
+
+  --color-sage-1: var(--sage-1);
+  --color-sage-2: var(--sage-2);
+  --color-sage-3: var(--sage-3);
+  --color-sage-4: var(--sage-4);
+  --color-sage-5: var(--sage-5);
+  --color-sage-6: var(--sage-6);
+  --color-sage-7: var(--sage-7);
+  --color-sage-8: var(--sage-8);
+  --color-sage-9: var(--sage-9);
+  --color-sage-10: var(--sage-10);
+  --color-sage-11: var(--sage-11);
+  --color-sage-12: var(--sage-12);
+
+  --color-mint-3: var(--mint-3);
+  --color-mint-4: var(--mint-4);
+  --color-mint-5: var(--mint-5);
+  --color-mint-8: var(--mint-8);
+  --color-mint-9: var(--mint-9);
+  --color-mint-11: var(--mint-11);
+  --color-mint-12: var(--mint-12);
+}
+
+body {
+  font-feature-settings: "cv11", "ss01";
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection { background: var(--mint-5); color: var(--sage-12); }
+
+/* View transitions */
+@view-transition { navigation: auto; }
+::view-transition-old(root),
+::view-transition-new(root) { animation-duration: 200ms; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
 
-@layer utilities {
-  [x-cloak] {
-    @apply hidden;
-  }
+/* Vertical bullet thread (Now / Uses) */
+.bullet-thread { list-style: none; padding-left: 0; margin: 0; }
+.bullet-thread > li {
+  position: relative;
+  padding: 10px 0 12px 28px;
+  border-bottom: 1px solid var(--sage-4);
 }
+.bullet-thread > li::before {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 18px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--sage-1);
+  border: 1.5px solid var(--mint-11);
+}
+.bullet-thread > li::after {
+  content: "";
+  position: absolute;
+  left: 7.5px;
+  top: 0;
+  bottom: -1px;
+  width: 1px;
+  background: var(--sage-4);
+}
+.bullet-thread > li:first-child::after { top: 18px; }
+.bullet-thread > li:last-child::after { bottom: auto; height: 18px; }
+
+/* Cmdk modal animations */
+@keyframes cmdk-overlay-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes cmdk-panel-in   { from { transform: translateY(-10px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+.cmdk-overlay { animation: cmdk-overlay-in .12s ease; }
+.cmdk-panel   { animation: cmdk-panel-in   .18s cubic-bezier(.2,.8,.2,1); }
+
+/* Copy-code button on <pre><code> */
+pre { position: relative; }
+button.copy-code {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  background: var(--sage-3);
+  color: var(--sage-11);
+  border: 1px solid var(--sage-5);
+  border-radius: 0.25rem;
+  cursor: pointer;
+  font-family: var(--font-mono);
+}
+button.copy-code:hover { background: var(--sage-2); color: var(--sage-12); }
+
+/* When the mobile menu is open, drop the header's translucency so the
+   sticky bar above the dropdown doesn't show page content bleeding through.
+   The menu is toggled via `data-open`, not the `hidden` attribute. */
+header:has(#mobile-menu[data-open="true"]) {
+  background-color: var(--sage-1);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+/* Markdown tables can be wider than the prose column; let them scroll
+   horizontally inside the content rather than forcing the whole page to. */
+.prose :where(table) {
+  display: block;
+  width: max-content;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+/* Card grid — hairlines via borders so an odd number of cards doesn't leave
+   an empty colored cell where a gap-bg trick would show through. */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-top: 1px solid var(--sage-4);
+}
+.card-grid > * { border-bottom: 1px solid var(--sage-4); }
+.card-grid > *:nth-child(odd) { border-right: 1px solid var(--sage-4); }
+@media (max-width: 680px) {
+  .card-grid { grid-template-columns: 1fr; }
+  .card-grid > *:nth-child(odd) { border-right: 0; }
+}
+
+/* Torchlight — https://torchlight.dev/docs/css#tailwind
+   Bridgetown's Rouge wraps code in <pre class="highlight">; Torchlight adds
+   the `torchlight` class to the same pre, so selectors are pre.torchlight
+   rather than pre code.torchlight from the upstream docs. */
+pre.torchlight {
+  @apply my-4 rounded-md overflow-x-auto;
+}
+pre.torchlight code {
+  @apply block py-4 min-w-max bg-transparent border-0 p-0;
+  font-size: 13.5px;
+}
+pre.torchlight code .line {
+  @apply px-4;
+}
+pre.torchlight code .line-number,
+pre.torchlight code .summary-caret {
+  @apply mr-4;
+}
+
+/* Fallback for plain <pre><code> when Torchlight didn't run (dev mode,
+   missing TORCHLIGHT_TOKEN). Sage styling so dev still reads cleanly. */
+pre:not(.torchlight) {
+  @apply my-4 rounded-md overflow-x-auto bg-sage-2 border border-sage-4 p-4;
+  font-size: 13.5px;
+}
+pre:not(.torchlight) code {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  color: var(--sage-12);
+}
+
+/* Heading anchors injected by Builders::Inspectors::ProseHeadings */
+.heading-anchor {
+  margin-left: 0.5rem;
+  color: var(--sage-7);
+  font-weight: 400;
+  text-decoration: none;
+  opacity: 0;
+  transition: opacity .15s ease, color .15s ease;
+}
+.prose h2:hover .heading-anchor,
+.prose h3:hover .heading-anchor,
+.prose h4:hover .heading-anchor,
+.prose h5:hover .heading-anchor { opacity: 1; }
+.heading-anchor:hover { color: var(--mint-11); }

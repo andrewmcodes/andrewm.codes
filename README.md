@@ -1,69 +1,71 @@
-# [andrewm.codes](https://andrewm.codes)
+# andrewm.codes
 
-## [![Repography logo](https://images.repography.com/logo.svg)](https://repography.com) / Recent activity [![Time period](https://images.repography.com/29040617/andrewmcodes/andrewm-codes-website/recent-activity/6abb56df720e25d92f20f7e2b26f21e1_badge.svg)](https://repography.com)
-[![Timeline graph](https://images.repography.com/29040617/andrewmcodes/andrewm-codes-website/recent-activity/6abb56df720e25d92f20f7e2b26f21e1_timeline.svg)](https://github.com/andrewmcodes/andrewm-codes-website/commits)
-[![Issue status graph](https://images.repography.com/29040617/andrewmcodes/andrewm-codes-website/recent-activity/6abb56df720e25d92f20f7e2b26f21e1_issues.svg)](https://github.com/andrewmcodes/andrewm-codes-website/issues)
-[![Pull request status graph](https://images.repography.com/29040617/andrewmcodes/andrewm-codes-website/recent-activity/6abb56df720e25d92f20f7e2b26f21e1_prs.svg)](https://github.com/andrewmcodes/andrewm-codes-website/pulls)
-[![Trending topics](https://images.repography.com/29040617/andrewmcodes/andrewm-codes-website/recent-activity/6abb56df720e25d92f20f7e2b26f21e1_words.svg)](https://github.com/andrewmcodes/andrewm-codes-website/commits)
+Personal site built with [Bridgetown](https://www.bridgetownrb.com), styled
+with Tailwind v4 and [Radix UI Colors](https://www.radix-ui.com/colors)
+(Sage + Mint). Syntax highlighting via [Torchlight](https://torchlight.dev).
 
+## Develop
 
-## Prerequisites
-
-- [GCC](https://gcc.gnu.org/install/)
-- [Make](https://www.gnu.org/software/make/)
-- [Ruby](https://www.ruby-lang.org/en/downloads/)
-  - `>= 2.7`
-- [Bridgetown Gem](https://rubygems.org/gems/bridgetown)
-  - `gem install bridgetown -N`
-- [Node](https://nodejs.org)
-  - `>= 12`
-- [Yarn](https://yarnpkg.com)
-
-## Install
-
-```sh
-cd bridgetown-site-folder
-bundle install && yarn install
+```bash
+mise run setup
+mise run dev
 ```
 
-> Learn more: [Bridgetown Getting Started Documentation](https://www.bridgetownrb.com/docs/).
+`mise install` runs implicitly via `mise run setup` if tools aren't present.
 
-## Development
+The design-system conventions live in
+[docs/design-system.md](docs/design-system.md).
 
-To start your site in development mode, run `bin/bridgetown start` and navigate to [localhost:4000](https://localhost:4000/)!
+## Secrets (fnox)
 
-### Commands
+API keys and other secrets are managed with [fnox](https://github.com/jdx/fnox),
+installed via mise. This repo uses fnox's **macOS Keychain** provider: the
+committed `fnox.toml` is plaintext and only declares which env vars to
+populate and the Keychain entry name to read from (all under the
+`fnox-andrewmcodes-v8` service). Secret _values_ live in your Keychain —
+never in git.
 
-```sh
-# running locally
-bin/bridgetown start
+First-time setup on a new Mac:
 
-# build & deploy to production
-bin/bridgetown deploy
+```bash
+# Install tools (includes fnox)
+mise install
 
-# load the site up within a Ruby console (IRB)
-bin/bridgetown console
+# Write each value into the macOS Keychain via fnox.
+# fnox.toml already declares the names; this just stores the values.
+fnox set TORCHLIGHT_TOKEN          # from https://torchlight.dev
+fnox set CLOUDFLARE_API_KEY        # from https://dash.cloudflare.com/profile/api-tokens
+fnox set CLOUDFLARE_EMAIL
+fnox set BUZZSPROUT_API_TOKEN      # from Buzzsprout dashboard
+
+# Optional: turn on shell integration so secrets auto-load when you cd here
+eval "$(fnox activate zsh)"   # or bash / fish
 ```
 
-> Learn more: [Bridgetown CLI Documentation](https://www.bridgetownrb.com/docs/command-line-usage)
+After this, `mise run build` wraps the production build in `fnox exec`, so
+`TORCHLIGHT_TOKEN` is in scope when Torchlight runs.
 
-### Structure
+Moving to a second machine just means re-running the `fnox set` commands
+there — there's no key material to copy.
 
-## [![Repography logo](https://images.repography.com/logo.svg)](https://repography.com) / Structure
-[![Structure](https://images.repography.com/29040617/andrewmcodes/andrewm-codes-website/structure/501bf47fc1acefb78c8b5fb7ae91a355_table.svg)](https://github.com/andrewmcodes/andrewm-codes-website)
+## Deploy
 
-## Contributing
+The site is deployed to **Cloudflare Workers Static Assets** (see
+`wrangler.jsonc`) via the `cloudflare/wrangler-action@v4` GitHub Action.
 
-_Detailed docs coming soon_
+- Push to `main` → CI builds and runs `wrangler deploy` to production.
+- PR from a same-repo branch → CI uploads a preview version with a
+  `pr-<num>-<branch>` alias and posts the preview URL as a PR comment.
+- Fork PRs skip the deploy job (no secret access); lint/test/build still run.
 
-1. Fork it
-2. Clone the fork using `git clone` to your local development machine.
-3. Create your feature branch (`git checkout -b my-new-feature`)
-4. Commit your changes (`git commit -am 'feat: Add some feature'`)
-5. Push to the branch (`git push origin my-new-feature`)
-6. Create a new Pull Request
+GitHub Actions CI uses these repo secrets:
 
-### Top contributors
+- `TORCHLIGHT_TOKEN` — production build (Torchlight highlighting).
+- `CLOUDFLARE_API_TOKEN` (Workers Scripts: Edit permission) — wrangler deploy.
+- `CLOUDFLARE_ACCOUNT_ID` — wrangler deploy target.
+- `BUZZSPROUT_API_TOKEN` — daily `sync-remote-ruby` workflow that refreshes
+  `src/_data/remote_ruby.json` from the [Buzzsprout API](https://github.com/Buzzsprout/buzzsprout-api).
 
-[![Top contributors](https://images.repography.com/29040617/andrewmcodes/andrewm-codes-website/top-contributors/6abb56df720e25d92f20f7e2b26f21e1_table.svg)](https://github.com/andrewmcodes/andrewm-codes-website/graphs/contributors)
+## License
 
+MIT — see LICENSE.md

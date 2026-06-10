@@ -1,0 +1,44 @@
+---
+layout: default
+title: Projects
+permalink: /projects/
+description: Open source, side projects, and other things I've shipped to scratch an itch.
+---
+
+<% projects = collections.projects.resources %>
+<% oss = site.data.oss %>
+
+<%= render PageShell.new do %>
+  <%= render Ui::PageHeader.new(title: "Projects", description: data.description) %>
+
+  <% if projects.any? %>
+    <%= render PageSection.new(spacing: (oss && oss.any? ? :default : :none)) do %>
+      <%= render CardGrid.new do %>
+        <% projects.each do |p| %>
+          <%= render ProjectCard.new(project: p) %>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+
+  <% if oss && oss.any? %>
+    <%= render PageSection.new(spacing: :none) do %>
+      <%= render SectionHead.new(title: "From GitHub", bordered: true) %>
+      <%= render CardGrid.new do %>
+        <% oss.each do |repo| %>
+          <%= render ProjectCard.new(
+            project: {
+              name: repo["name"],
+              desc: repo["description"],
+              status: "active",
+              lang: repo["primaryLanguage"] && repo["primaryLanguage"]["name"],
+              color: repo["primaryLanguage"] && repo["primaryLanguage"]["color"],
+              stars: repo["stargazerCount"],
+              href: repo["url"],
+            },
+          ) %>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>

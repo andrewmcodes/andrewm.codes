@@ -1,0 +1,12 @@
+---
+title: Heading
+---
+
+<div class="space-y-4">
+  <%= render Heading.new(size: :xl) do %>Heading XL<% end %>
+  <%= render Heading.new(size: :lg) do %>Heading LG<% end %>
+  <%= render Heading.new(size: :md) do %>Heading MD<% end %>
+  <%= render Heading.new(size: :sm) do %>Heading SM<% end %>
+  <%= render Heading.new(size: :lg, scheme: :accent) do %>Accent heading<% end %>
+  <%= render Heading.new(size: :lg, scheme: :muted) do %>Muted heading<% end %>
+</div>

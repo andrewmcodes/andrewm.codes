@@ -1,0 +1,45 @@
+name: Sync OSS projects
+on:
+  schedule: [{ cron: "0 14 * * *" }]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - env:
+          GH_TOKEN: ${{ secrets.OSS_SYNC_TOKEN }}
+        run: |
+          set -euo pipefail
+          gh api graphql -f query='
+            query {
+              user(login: "andrewmcodes") {
+                pinnedItems(first: 6, types: REPOSITORY) {
+                  nodes { ... on Repository {
+                    name url description stargazerCount
+                    primaryLanguage { name color }
+                    pushedAt
+                  } }
+                }
+              }
+            }' | jq '.data.user.pinnedItems.nodes' > /tmp/oss.json
+
+      - name: Validate shape
+        run: |
+          set -euo pipefail
+          # Must be a non-empty array of objects with the expected keys, or the
+          # workflow has silently regressed (auth failure, schema change, etc).
+          jq -e 'type == "array" and length > 0 and all(.name? and .url?)' /tmp/oss.json > /dev/null \
+            || { echo "::error::oss.json failed shape validation"; exit 1; }
+          mv /tmp/oss.json src/_data/oss.json
+
+      - run: |
+          if ! git diff --quiet src/_data/oss.json; then
+            git config user.name "andrewmcodes-bot"
+            git config user.email "bot@andrewm.codes"
+            git add src/_data/oss.json
+            git commit -m "chore(data): refresh OSS projects"
+            git push
+          fi

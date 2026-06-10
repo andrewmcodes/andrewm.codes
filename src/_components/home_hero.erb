@@ -1,0 +1,46 @@
+<section class="pt-24 pb-12">
+  <h1
+    class="
+      text-[clamp(34px,5vw,52px)] leading-[1.05] tracking-[-0.028em] font-semibold m-0
+      mb-8 text-balance max-w-[680px] text-sage-12
+    "
+  >
+    Andrew Mason<span class="text-mint-11">.</span>
+  </h1>
+  <p
+    class="
+      text-[16.5px] text-sage-11 max-w-[600px] leading-[1.65] m-0 mb-4 text-pretty
+    "
+  >
+    Ruby engineer at
+    <%= render Link.new(href: "https://podia.com", variant: :inline) do %>Podia<% end %>, co-host of
+    <%= render Link.new(href: "/speaking/", variant: :inline) do %>Remote Ruby<% end %>, and based in Arizona.
+  </p>
+  <p
+    class="
+      text-[16.5px] text-sage-11 max-w-[600px] leading-[1.65] m-0 mb-4 text-pretty
+    "
+  >
+    I write about Rails, Ruby tooling, and the stuff I learn while shipping
+    software for a living. Most posts started as a note I was writing for
+    myself and turned out to be useful for somebody else.
+  </p>
+  <p
+    class="
+      text-[16.5px] text-sage-11 max-w-[600px] leading-[1.65] m-0 mb-4 text-pretty
+    "
+  >
+    You'll find my
+    <%= render Link.new(href: "/posts/", variant: :inline) do %>writing<% end %>,
+    <%= render Link.new(href: "/projects/", variant: :inline) do %>open source<% end %>, and
+    <%= render Link.new(href: "/speaking/", variant: :inline) do %>talks and podcasts<% end %>
+    here. Mostly so I can find them again later.
+  </p>
+  <%= render Link.new(href: "/posts/", variant: :action) do %>
+    Read the writing
+    <%= render Icon.new(
+      name: "arrow_right",
+      class: "transition-transform group-hover:translate-x-1",
+    ) %>
+  <% end %>
+</section>

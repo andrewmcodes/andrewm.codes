@@ -1,0 +1,3 @@
+<% schemas.each do |schema| %>
+  <script type="application/ld+json"><%== {"@context" => "https://schema.org"}.merge(schema).to_json.gsub("</", '<\/') %></script>
+<% end %>

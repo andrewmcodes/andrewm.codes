@@ -1,52 +1,34 @@
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.metadata.title }}, {{ site.metadata.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.metadata.myvariable }}.
-
-version: 0.0.1
-
-charset: utf-8
-lang: en
-direction: ltr
-
-domain: andrewm.codes
-url: https://andrewm.codes/
-repo: andrewmcodes/andrewm-codes-website
-
-title: Andrew Mason — Ruby on Rails Software Engineer
-tagline: " — andrewm.codes"
-description: >-
-  Andrew Mason is a full stack Ruby on Rails software engineer, podcaster, and creator currently working remotely from Phoenix, Arizona.
-
-theme_color:
-  light: "#f4f4f5"
-  dark: "#27272a"
-
-feed:
-  subtitle: RSS Feed for andrewm.codes
-  filename: feed.xml
-  path: /feed.xml
-  id: "https://andrewm.codes"
-
-json_feed:
-  path: /feed.json
-  url: https://andrewm.codes/feed.json
-
-twitter:
-  username: "@andrewmcodes"
-  card: "summary_large_image"
-  url: https://twitter.com/andrewmcodes/
-
-# Add a level to display the alert
-alert:
-  level:
-  message: >-
-    Site is under renovation and you may experience weirdness.
-
+title: andrewm.codes
+tagline: Notes from a Ruby developer
+long_title: "andrewm.codes · Notes from a Ruby developer"
+description: Ruby developer at Podia, Remote Ruby co-host. Notes on Rails, podcasting, and open source.
+url: https://andrewm.codes
+repo: andrewmcodes/andrewm.codes
+handle: andrewmcodes
 author:
   name: Andrew Mason
-  picture: https://res.cloudinary.com/andrewmcodes/image/upload/c_scale,h_80,w_80/v1/andrewm.codes/avatar-bw.jpg
   twitter: andrewmcodes
-  uri: https://andrewm.codes/
-  github: andrewmcodes
+  url: https://andrewm.codes/about/
+  job_title: Software Engineer
+  works_for: Podia
+  bio: Ruby on Rails engineer, podcaster, and Remote Ruby co-host based in Phoenix, Arizona.
+  knows_about:
+    - Ruby
+    - Ruby on Rails
+    - ViewComponent
+    - Bridgetown
+    - Open source
+    - Podcasting
+image: /og/default.png
+lang: en
+# theme_color is the dark-mode chrome color (sage-1 dark); theme_color_light is
+# the light-mode equivalent. default.erb emits both via prefers-color-scheme.
+theme_color: "#101211"
+theme_color_light: "#fbfdfc"
+# Personal profiles for the same Andrew Mason entity (schema.org `sameAs`).
+social:
+  links:
+    - https://bsky.app/profile/andrewm.codes
+    - https://github.com/andrewmcodes
+    - https://www.linkedin.com/in/andrew-mason
+    - https://x.com/andrewmcodes

@@ -1,0 +1,24 @@
+---
+permalink: /feed.json
+layout: none
+sitemap: false
+---
+<%= raw JSON.pretty_generate({
+  version: "https://jsonfeed.org/version/1.1",
+  title: site.metadata.title,
+  home_page_url: site.config.url,
+  feed_url: absolute_url("/feed.json"),
+  description: site.metadata.description,
+  author: { name: site.metadata.author.name, url: site.config.url },
+  items: collections.posts.resources.first(20).map { |post|
+    {
+      id: post.absolute_url,
+      url: post.absolute_url,
+      title: post.data.title,
+      content_html: post.content.to_s,
+      date_published: post.date.iso8601,
+      summary: post.data.description,
+      tags: post.data.tags || []
+    }
+  }
+}) %>

@@ -1,22 +1,24 @@
 ---
-lastmod: "2022-01-10T04:11:08.445Z"
+lastmod: "2026-05-20T00:00:00.000Z"
 ---
 
 # Changelog
 
-## [3.4.0](https://github.com/andrewmcodes/andrewm-codes-website/compare/v3.3.0...v3.4.0) (2022-05-26)
+## v8.0.0 / 2026-05-20
 
+Complete rewrite for Bridgetown 2.2+. ERB, ViewComponent, Tailwind v4, Radix UI Colors, Cloudflare Pages.
+
+## [3.4.0](https://github.com/andrewmcodes/andrewm-codes-website/compare/v3.3.0...v3.4.0) (2022-05-26)
 
 ### Features
 
-* add Minimalist Habit Tracker Template for Obsidian post ([#186](https://github.com/andrewmcodes/andrewm-codes-website/issues/186)) ([0b64c1a](https://github.com/andrewmcodes/andrewm-codes-website/commit/0b64c1ae6b74d9eda922f41f6aa64a11daf61a17))
+- add Minimalist Habit Tracker Template for Obsidian post ([#186](https://github.com/andrewmcodes/andrewm-codes-website/issues/186)) ([0b64c1a](https://github.com/andrewmcodes/andrewm-codes-website/commit/0b64c1ae6b74d9eda922f41f6aa64a11daf61a17))
 
 ## [3.3.0](https://github.com/andrewmcodes/andrewm-codes-website/compare/v3.2.0...v3.3.0) (2022-05-05)
 
-
 ### Features
 
-* add twitter-avatar ([#182](https://github.com/andrewmcodes/andrewm-codes-website/issues/182)) ([3ff3ad8](https://github.com/andrewmcodes/andrewm-codes-website/commit/3ff3ad883b2aaf2bcd73880ef49cf5a961679c54))
+- add twitter-avatar ([#182](https://github.com/andrewmcodes/andrewm-codes-website/issues/182)) ([3ff3ad8](https://github.com/andrewmcodes/andrewm-codes-website/commit/3ff3ad883b2aaf2bcd73880ef49cf5a961679c54))
 
 ## [3.2.0](https://github.com/andrewmcodes/andrewm-codes-website/compare/v3.1.0...v3.2.0) (2022-03-30)
 

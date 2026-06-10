@@ -1,11 +1,29 @@
 ---
-title: "Posts"
-description: "posts"
+layout: default
+title: Posts
 permalink: /posts/
-no_index: false
-layout: page
+description: Notes on Rails, podcasting, and the long unglamorous middle. Occasionally proofread.
 ---
 
-<%= render List.new do %>
-  <%= render(PostComponent.with_collection(collections.posts.resources)) %>
+<% posts = collections.posts.resources %>
+<% tag_counts =
+  posts
+    .flat_map { |p| Array(p.data.tags) }
+    .tally
+    .sort_by { |_, n| -n }
+    .first(12) %>
+<% years = posts.group_by { |p| p.date.year }.sort.reverse %>
+
+<%= render PageShell.new do %>
+  <%= render Ui::PageHeader.new(title: "Posts", description: data.description) %>
+
+  <%= render TagCloud.new(tags: tag_counts.map(&:first)) %>
+
+  <% years.each do |year, year_posts| %>
+    <%= render CollectionGroup.new(title: year) do %>
+      <% year_posts.each do |post| %>
+        <%= render PostRow.new(post: post) %>
+      <% end %>
+    <% end %>
+  <% end %>
 <% end %>

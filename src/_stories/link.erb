@@ -1,0 +1,29 @@
+---
+title: Link
+---
+
+<div class="space-y-6">
+  <div class="space-y-2">
+    <p class="font-mono text-xs text-sage-10">Inline</p>
+    <p class="text-sage-11">
+      An
+      <%= render Link.new(href: "#", variant: :inline) do %>inline link<% end %>
+      and an
+      <%= render Link.new(href: "#", variant: :inline_accent) do %>accent inline link<% end %>
+      within copy.
+    </p>
+  </div>
+
+  <div class="space-y-2">
+    <p class="font-mono text-xs text-sage-10">Tag</p>
+    <div class="flex flex-wrap items-center gap-3">
+      <%= render Link.new(href: "#", variant: :tag) do %>#ruby<% end %>
+      <%= render Link.new(href: "#", variant: :post_tag) do %>rails<% end %>
+    </div>
+  </div>
+
+  <div class="space-y-2">
+    <p class="font-mono text-xs text-sage-10">Action</p>
+    <%= render Link.new(href: "#", variant: :action) do %>Read more<% end %>
+  </div>
+</div>

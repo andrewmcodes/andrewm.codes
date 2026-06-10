@@ -1,0 +1,10 @@
+{
+  "id": 19280496,
+  "title": "Revise Auth and Podcasting Plans",
+  "url": "https://www.buzzsprout.com/2260490/episodes/19280496-revise-auth-and-podcasting-plans",
+  "published_at": "2026-06-05T08:00:00.000-04:00",
+  "description": "<p>Chris and David cover a lot of ground in this episode, starting with Chris’s experience teaching a Rails workshop for Frontend Masters in Minneapolis. Along the way, they dive deep into Rails authentication, Devise, Authlogic migrations, Chris’s ReviseAuth gem, password security, session handling, and the hard tradeoffs of maintaining open source tools. The episode wraps with big podcasting news: David is taking over The Ruby on Rails Podcast!&nbsp; Hit download now to hear more!&nbsp;</p><p><b>Links</b></p><ul><li><a href=\"https://judoscale.com/friends/new?source=remote-ruby&amp;utm_source=remoteruby&amp;utm_medium=podcast\">Judoscale- Remote Ruby listener gift</a></li><li><a href=\"https://minnestar.org/minnebar/\">Minnebar</a></li><li><a href=\"https://www.ruby-lang.org/en/news/2026/05/20/ruby-4-0-5-released/\">Ruby 4.0.5 Released</a>&nbsp;</li><li><a href=\"https://github.com/excid3/revise_auth\">ReviseAuth</a></li><li><a href=\"https://www.therubyonrailspodcast.com/\">The Ruby on Rails Podcast</a></li></ul>",
+  "duration": 4170,
+  "episode_number": 354,
+  "artwork_url": "https://storage.buzzsprout.com/fdqldsi8gdhid2qcbksbm9vbna8x"
+}

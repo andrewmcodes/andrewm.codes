@@ -1,0 +1,19 @@
+---
+layout: page
+title: Changelog
+permalink: /changelog/
+description: A running log of meaningful changes to andrewm.codes. Sourced from CHANGELOG.md in the repo.
+---
+
+<%= render Prose.new(variant: :page) do %>
+  <%= markdownify(site.data.changelog || "No CHANGELOG.md found in the repo root.") %>
+<% end %>
+
+<%= render Text.new(variant: :source_note) do %>
+  Sourced from
+  <%= render Link.new(
+    href: "https://github.com/#{site.metadata.repo}/blob/main/CHANGELOG.md",
+    variant: :inline_accent,
+  ) { "CHANGELOG.md" } %>
+  in the repo.
+<% end %>

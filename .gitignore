@@ -1,14 +1,11 @@
 # Bridgetown
-build
 output
 .bridgetown-cache
 .bridgetown-metadata
-.bridgetown-webpack
+.routes.json
 
 # Dependency folders
 node_modules
-bower_components
-vendor
 
 # Caches
 .sass-cache
@@ -17,12 +14,14 @@ vendor
 
 # Ignore bundler config.
 /.bundle
+.bundle/
 
 # Ignore Byebug command history file.
 .byebug_history
 
 # dotenv environment variables file
 .env
+.env*
 
 # Mac files
 .DS_Store
@@ -32,8 +31,34 @@ yarn-error.log
 yarn-debug.log*
 .pnp/
 .pnp.js
-# Yarn Integrity file
 .yarn-integrity
 
-# Vercel
-.vercel
+# pnpm
+.pnpm-store/
+
+# Ignore all tempfiles.
+/tmp/*
+!/tmp/.keep
+
+# Ignore pidfiles, but keep the directory.
+/tmp/pids/*
+!/tmp/pids/
+!/tmp/pids/.keep
+
+# Generated OG images
+src/og/*.png
+
+# Standard
+.standardrb
+
+# Torchlight cache
+.torchlight-cache/
+
+# Wranger
+.wrangler/
+
+# Storybook
+storybook-static/
+
+# AI
+.claude/

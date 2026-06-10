@@ -1,0 +1,87 @@
+<div
+  id="cmdk"
+  hidden
+  role="dialog"
+  aria-modal="true"
+  aria-label="Search the site"
+  class="
+    cmdk-overlay fixed inset-0 z-[100] bg-black/50 backdrop-blur-sm flex items-start
+    justify-center pt-[12vh]
+  "
+>
+  <div
+    class="
+      cmdk-panel w-[min(580px,92vw)] bg-sage-2 border border-sage-5 rounded-[14px]
+      overflow-hidden shadow-2xl
+    "
+  >
+    <div class="flex items-center gap-3 px-[18px] py-3.5 border-b border-sage-5">
+      <svg
+        class="text-sage-10 shrink-0"
+        width="14"
+        height="14"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      ><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input
+        id="cmdk-input"
+        type="search"
+        autocomplete="off"
+        role="combobox"
+        aria-expanded="true"
+        aria-controls="cmdk-results"
+        aria-autocomplete="list"
+        aria-label="Search posts, talks, episodes, projects"
+        placeholder="Search posts, talks, episodes, projects…"
+        class="
+          flex-1 bg-transparent border-0 outline-none text-[15.5px] text-sage-12
+          placeholder:text-sage-8
+        "
+      />
+      <span
+        class="
+          font-mono text-[11px] text-sage-10 border border-sage-5 rounded px-1.5 py-0.5
+        "
+      >esc</span>
+    </div>
+    <div
+      id="cmdk-results"
+      role="listbox"
+      aria-label="Search results"
+      class="max-h-[52vh] overflow-y-auto py-2"
+    ></div>
+    <div
+      class="
+        flex gap-[18px] px-[18px] py-2.5 border-t border-sage-5 font-mono text-[11px]
+        text-sage-10
+      "
+    >
+      <span class="inline-flex items-center gap-1.5"><kbd
+          class="
+            font-mono text-[11px] bg-sage-3 border border-sage-5 rounded text-sage-11 px-1.5
+            py-px
+          "
+        >↑↓</kbd>
+        navigate</span>
+      <span class="inline-flex items-center gap-1.5"><kbd
+          class="
+            font-mono text-[11px] bg-sage-3 border border-sage-5 rounded text-sage-11 px-1.5
+            py-px
+          "
+        >↵</kbd>
+        open</span>
+      <span class="inline-flex items-center gap-1.5"><kbd
+          class="
+            font-mono text-[11px] bg-sage-3 border border-sage-5 rounded text-sage-11 px-1.5
+            py-px
+          "
+        >esc</kbd>
+        close</span>
+    </div>
+  </div>
+</div>

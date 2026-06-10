@@ -1,18 +1,19 @@
 ---
 series: webpacker-6
 featured: false
-title: 'Webpacker 6: Tutorial Setup'
-description: 'Before we start the upgrade process for Webpacker 6, we are going to create a small demo application...'
+title: "Webpacker 6: Tutorial Setup"
+description: Before we start the upgrade process for Webpacker 6, we are going to
+  create a small demo application...
 urls:
-  dev_to: 'https://dev.to/andrewmcodes/webpacker-6-tutorial-setup-281k'
+  dev_to: https://dev.to/andrewmcodes/webpacker-6-tutorial-setup-281k
 tags:
   - rails
   - ruby
   - tutorial
   - webpacker
 categories: tutorial
-date: '2020-12-23T22:00:26Z'
-last_modified_at: '2022-01-29T17:01:41.554Z'
+date: 2020-12-23 22:00:26.000000000 Z
+last_modified_at: 2022-01-29 17:01:41.554000000 Z
 ---
 
 Before we start the upgrade process for Webpacker 6, we are going to create a small demo application for us to work on.

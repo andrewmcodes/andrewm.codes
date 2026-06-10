@@ -1,13 +1,13 @@
 ---
-series: null
-featured: false
-title: My Twitter Avatar
-description: How I get the progress bar around my Twitter avatar and what it means.
+title: How to Add a Progress Bar Around Your Twitter Avatar
+description: Add a personalized progress bar to your Twitter avatar with the help
+  of BlackMagic.so's Profile Progress Bar Tool. Follow me on Twitter to see it in
+  motion!
 tags:
   - twitter
-categories: blog
-date: "2022-05-04T22:12:19-07:00"
-last_modified_at: "2022-05-04T22:23:36-07:00"
+date: 2022-05-24 21:34:24.000000000 Z
+categories:
+  - blog
 ---
 
 My [Twitter avatar](https://twitter.com/andrewmcodes) is outlined by a blue, previously green, progress bar that I get asked about often.
@@ -16,7 +16,14 @@ The progress bar is updated in real-time every time I get a new follower. When I
 
 To achieve this effect, I use [BlackMagic.so](https://blackmagic.so/), a suite of tools for influencers to enhance [Twitter](https://twitter.com/andrewmcodes) from [Tony Dinh.](https://twitter.com/tdinh_me) Their main product is an analytics tools, but they have a free tool named [Profile Progress Bar](https://blackmagic.so/profile-progress-bar), which you can use to add a progress bar to your Twitter avatar.
 
-<img alt="BlackMagic.so Profile Progress Bar Twitter Tool" src="<%= cloudinary_url 'v1651727326/posts/twitter-avatar/20220505050712Z_BlackMagic.so', :medium %>" />
+<%= render(Figure.new) do |c| %>
+<% c.slot :image do %>
+<%= render Image.new(variant: :figure, cid: "v1666073663/posts/twitter-avatar/20220505050712Z_BlackMagic.so2", alt: "BlackMagic.so Profile Progress Bar Twitter Tool") %>
+<% end %>
+<% c.slot :caption do %>
+The BlackMagic.so Profile Progress Bar Twitter Tool
+<% end %>
+<% end %>
 
 Connect your [Twitter account](https://twitter.com/andrewmcodes) to BlackMagic.so to add a progress bar to your Twitter avatar. You can customize the colors and progress value to your liking and start the real-time updates.
 

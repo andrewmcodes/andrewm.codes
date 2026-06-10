@@ -1,18 +1,49 @@
 version: 2
+
 updates:
-  # Yarn
-  - package-ecosystem: "npm"
-    directory: "/"
+  - package-ecosystem: npm
+    directory: /
     schedule:
-      interval: "weekly"
-    open-pull-requests-limit: 3
-    assignees:
-      - andrewmcodes
-  # Bundler
-  - package-ecosystem: "bundler"
-    directory: "/"
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 5
+    groups:
+      minor-and-patch:
+        update-types:
+          - minor
+          - patch
+      tailwind:
+        patterns:
+          - "tailwindcss"
+          - "@tailwindcss/*"
+      bridgetown-frontend:
+        patterns:
+          - "@hotwired/*"
+          - "@fontsource/*"
+          - "@fontsource-variable/*"
+
+  - package-ecosystem: bundler
+    directory: /
     schedule:
-      interval: "weekly"
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 5
+    groups:
+      bridgetown:
+        patterns:
+          - "bridgetown*"
+      minor-and-patch:
+        update-types:
+          - minor
+          - patch
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
     open-pull-requests-limit: 3
-    assignees:
-      - andrewmcodes
+    groups:
+      actions:
+        patterns:
+          - "*"

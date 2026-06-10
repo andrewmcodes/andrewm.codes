@@ -1,0 +1,23 @@
+- slug: start-your-ruby-podcast-today
+  title: "Start Your Ruby Podcast Today! No Experience Required!"
+  date: 2022-05-19
+  venue: RailsConf
+  city: Pittsburgh, PA
+  duration: 40 min
+  excerpt: My first conference talk, given with my Remote Ruby co-hosts Jason Charnes and Chris Oliver. A practical guide to starting a podcast as an engineer.
+  links:
+    - label: video
+      href: https://www.youtube.com/watch?v=Y6QVKq3iM5s
+
+- slug: learn-enough-bridgetown
+  title: "Learn Enough Bridgetown to be Dangerous"
+  date: 2022-09-15
+  venue: BridgetownConf
+  city: Virtual
+  duration: 30 min
+  excerpt: A virtual talk about getting started with Bridgetown, the Ruby static site generator I've built every version of this site on.
+  links:
+    - label: video
+      href: https://www.bridgetownconf.rocks/#talk-bridgetown-dangerous
+    - label: slides
+      href: https://speakerdeck.com/andrewmcodes/learn-enough-bridgetown-to-be-dangerous
