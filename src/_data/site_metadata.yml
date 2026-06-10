@@ -1,7 +1,7 @@
-title: andrewm.codes
+title: Andrew Mason
 tagline: Notes from a Ruby developer
-long_title: "andrewm.codes · Notes from a Ruby developer"
-description: Ruby developer at Podia, Remote Ruby co-host. Notes on Rails, podcasting, and open source.
+long_title: "Andrew Mason — Ruby on Rails Engineer & Remote Ruby Co-host"
+description: Andrew Mason is a Ruby on Rails engineer at Podia and co-host of the Remote Ruby podcast, writing about Rails, Ruby tooling, CI, and open source.
 url: https://andrewm.codes
 repo: andrewmcodes/andrewm.codes
 handle: andrewmcodes
@@ -17,6 +17,9 @@ author:
     - Ruby on Rails
     - ViewComponent
     - Bridgetown
+    - Tailwind CSS
+    - Continuous integration
+    - Developer tooling
     - Open source
     - Podcasting
 image: /og/default.png

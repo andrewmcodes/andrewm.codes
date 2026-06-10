@@ -19,21 +19,21 @@ class TestMarkdownSource < Bridgetown::Test
 
   it "writes a .md twin for each post" do
     refute_nil KILL_MD, "Expected output/p/kill-process-on-port.md to exist after build"
-    expect(KILL_MD).must_match(/\A# Kill Process Running on a Specfic Port/)
+    expect(KILL_MD).must_match(/\A# Kill Process Running on a Specific Port/)
     expect(KILL_MD).must_include "```sh"
     expect(KILL_MD).must_include "lsof -ti tcp:4000"
   end
 
   it "writes an llms.txt index linking to the .md twins" do
     refute_nil LLMS, "Expected output/llms.txt to exist after build"
-    expect(LLMS).must_match(/^# andrewm\.codes/)
+    expect(LLMS).must_match(/^# Andrew Mason/)
     expect(LLMS).must_include "## Posts"
     expect(LLMS).must_include "https://andrewm.codes/p/kill-process-on-port.md"
   end
 
   it "writes a concatenated llms-full.txt" do
     refute_nil LLMS_FULL, "Expected output/llms-full.txt to exist after build"
-    expect(LLMS_FULL).must_include "# Kill Process Running on a Specfic Port"
+    expect(LLMS_FULL).must_include "# Kill Process Running on a Specific Port"
     expect(LLMS_FULL).must_match(/\n---\n/)
   end
 

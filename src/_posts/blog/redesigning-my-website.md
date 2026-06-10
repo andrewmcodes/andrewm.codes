@@ -1,7 +1,6 @@
 ---
 title: Redesigning my website
-description: My personal website - andrewm.codes has gone through many iterations
-  over the years. Some may view my...
+description: "Why and how I rebuilt andrewm.codes with Bridgetown — putting content first — and the stack behind it: ERB, Tailwind CSS, and Strapi."
 urls:
   dev_to: https://dev.to/andrewmcodes/redesigning-my-website-4lli
 tags:

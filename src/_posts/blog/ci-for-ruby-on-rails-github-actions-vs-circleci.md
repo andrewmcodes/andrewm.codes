@@ -2,7 +2,7 @@
 series: ci-for-ror
 featured: false
 title: "CI for Ruby on Rails: GitHub Actions vs. CircleCI"
-description: "CI for Ruby on Rails: GitHub Actions vs. CircleCI."
+description: "The finale of a three-part series on CI for Ruby on Rails, comparing GitHub Actions and CircleCI to help you choose the right setup."
 urls:
   dev_to: https://dev.to/codefund/ci-for-ruby-on-rails-github-actions-vs-circleci-524p
 tags:

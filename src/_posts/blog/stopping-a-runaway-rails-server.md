@@ -1,7 +1,6 @@
 ---
 title: Stopping a runaway Rails server
-description: Many of us have been there. You hit ctrl-c on you Ruby on Rails server,
-  but nothing happens. No matte...
+description: "How to stop a runaway Ruby on Rails server that won't quit on ctrl-c, using the shutup gem to kill it with a single command."
 urls:
   dev_to: https://dev.to/andrewmcodes/stopping-a-runaway-rails-server-7mg
 tags:
@@ -15,7 +14,7 @@ categories:
   - tutorials
 ---
 
-_Many of us have been there. You hit `ctrl-c` on you Ruby on Rails server, but nothing happens. No matter what keys you hit on your keyboard, the Rails server is still running, and you can't stop it. You have a runaway train on your hands._
+_Many of us have been there. You hit `ctrl-c` on your Ruby on Rails server, but nothing happens. No matter what keys you hit on your keyboard, the Rails server is still running, and you can't stop it. You have a runaway train on your hands._
 
 ## The Problem
 
