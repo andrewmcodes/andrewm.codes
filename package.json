@@ -20,7 +20,7 @@
     "@fontsource/inter": "^5.2.8",
     "@lhci/cli": "^0.15.1",
     "@resvg/resvg-js": "^2.6.2",
-    "@storybook/html-vite": "^10.4.2",
+    "@storybook/html-vite": "^10.4.3",
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/postcss": "^4.3.0",
     "@tailwindcss/typography": "^0.5.20",
@@ -34,13 +34,13 @@
     "postcss-focus-visible": "^11.0.0",
     "postcss-import": "^16.1.1",
     "postcss-load-config": "^6.0.1",
-    "prettier": "^3.8.3",
+    "prettier": "^3.8.4",
     "read-cache": "^1.0.0",
     "satori": "^0.26.0",
-    "storybook": "^10.4.2",
+    "storybook": "^10.4.3",
     "tailwindcss": "^4.3.0",
     "typescript": "^6.0.3",
-    "wrangler": "^4.98.0"
+    "wrangler": "^4.99.0"
   },
   "dependencies": {
     "@hotwired/turbo": "^8.0.23",
