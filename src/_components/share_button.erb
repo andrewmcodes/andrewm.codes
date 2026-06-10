@@ -1,0 +1,9 @@
+<%= render Button.new(
+  variant: :share,
+  class: "share-btn",
+  data: { share_url: share_url, share_title: share_title },
+  hidden: true
+) do %>
+  Share this post
+  <%= render Icon.new(name: "share", class: "w-[11px] h-[11px]") %>
+<% end %>

@@ -1,0 +1,6 @@
+---
+# Story pages render as bare HTML fragments (no layout) so Storybook can import
+# them raw. Keep them out of the sitemap; Builders::Stories drops them from
+# production entirely.
+sitemap: false
+---

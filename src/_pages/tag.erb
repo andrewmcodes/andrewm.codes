@@ -1,0 +1,40 @@
+---
+layout: default
+title: "Posts tagged #:prototype-term"
+description: "Every post Andrew Mason has written tagged #:prototype-term, newest first."
+kind: tag
+image: /og/tag-:prototype-term.png
+permalink: /tag/:term/
+prototype:
+  collection: posts
+  term: tag
+---
+
+<% tag = data.tag %>
+<% tagged =
+  collections
+    .posts
+    .resources
+    .select { |p| Array(p.data.tags).include?(tag) }
+    .sort_by(&:date)
+    .reverse %>
+<% years = tagged.group_by { |p| p.date.year }.sort.reverse %>
+
+<%= render PageShell.new do %>
+  <%= render BackLink.new(href: "/posts/", label: "all posts") %>
+
+  <%= render Ui::PageHeader.new(title: "##{tag}") do %>
+    <%= tagged.size %>
+    <%= tagged.size == 1 ? "post" : "posts" %>
+    tagged
+    <code class="font-mono text-sage-12">#<%= tag %></code>.
+  <% end %>
+
+  <% years.each do |year, year_posts| %>
+    <%= render CollectionGroup.new(title: year) do %>
+      <% year_posts.each do |post| %>
+        <%= render PostRow.new(post: post) %>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>

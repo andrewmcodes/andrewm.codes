@@ -1,51 +1,50 @@
-# https://www.bridgetownrb.com/docs/resources
-
 url: "https://andrewm.codes"
-timezone: America/Phoenix
-destination: "build"
-template_engine: erb
-permalink: simple
-content_engine: resource
+permalink: "/:path.*/"
+
+# Disable Rouge so Torchlight does the highlighting. Bridgetown coerces
+# nil/false back to "rouge" (`||= config["highlighter"] || "rouge"`), so
+# we pass an empty string — kramdown sees no registered highlighter and
+# emits plain `<pre><code class="language-X">...</code></pre>`.
+highlighter: ""
 
 collections:
   pages:
+    output: true
     permalink: "/:slug/"
   posts:
-    permalink: "/:slug/"
+    output: true
+    permalink: "/p/:slug/"
     sort_by: date
     sort_direction: descending
-  podcasts:
+  projects:
     output: false
-    relations:
-      has_many: podcast_episodes
-  podcast_episodes:
-    output: false
-    sort_by: published_on
-    sort_direction: descending
-    relations:
-      belongs_to: podcast
   cfps:
     output: true
-    permalink: pretty
-  snippets:
-    output: true
-    permalink: "/snippets/:slug/"
+    permalink: "/cfps/:slug/"
     sort_by: date
     sort_direction: descending
+  # Component stories: rendered to /stories/<name>/ in dev/test so Storybook can
+  # consume the real component HTML (see .storybook/ + stories/*.stories.js).
+  # Builders::Stories strips them from production output so they never ship.
+  stories:
+    output: true
+    permalink: "/stories/:slug/"
 
-taxonomies:
-  series:
-    key: series
-    title: "Series"
+defaults:
+  - scope: { path: "" }
+    values:
+      kind: page
+  - scope: { path: "", type: posts }
+    values:
+      layout: post
+      kind: post
+  - scope: { path: "", type: pages }
+    values:
+      layout: page
+  - scope: { path: "", type: cfps }
+    values:
+      layout: post
+      kind: cfp
 
-development:
-  url: http://localhost:8080
-
-cloudinary:
-  cloud_name: andrewmcodes
-
-pagination:
-  enabled: true
-
-plausible:
-  domain: andrewm.codes
+feed:
+  categories: [blog, tutorials, snippets]

@@ -1,0 +1,33 @@
+<article
+  class="
+    relative grid grid-cols-[120px_1fr] gap-5 py-5 border-b border-sage-4
+    max-sm:grid-cols-1 max-sm:gap-2 max-sm:py-4 before:absolute before:-inset-x-3
+    before:inset-y-1 before:-z-10 before:rounded-md before:bg-transparent
+    before:transition-colors hover:before:bg-sage-2
+  "
+>
+  <div class="font-mono text-[11.5px] text-sage-10">
+    <div class="text-sage-11 text-[13px] mb-1"><%= date_str %></div>
+    <div class="text-[11px] text-sage-10"><%= duration_str %></div>
+  </div>
+  <div>
+    <div class="font-mono text-[11.5px] text-mint-11 mb-2 lowercase">remote ruby<% if episode_number %>
+        · ep
+        <%= episode_number %><% end %></div>
+    <h3 class="text-[17px] font-medium tracking-tight mb-1 text-sage-12"><%= title %></h3>
+    <p class="text-[13.5px] leading-snug text-sage-11 mb-3 text-pretty"><%= excerpt %></p>
+    <div class="flex flex-wrap gap-3.5">
+      <a
+        href="<%= url %>"
+        target="_blank"
+        rel="noreferrer"
+        class="
+          font-mono text-[11.5px] text-sage-10 border-b border-sage-5 pb-px
+          hover:text-mint-11 hover:border-mint-11 transition-colors
+        "
+      >
+        listen →
+      </a>
+    </div>
+  </div>
+</article>

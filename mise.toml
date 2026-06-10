@@ -1,0 +1,105 @@
+[tools]
+ruby = "4.0.3"
+node = "22"
+fnox = "latest"
+
+[env]
+BUNDLE_PATH = ".bundle"
+COREPACK_ENABLE_DOWNLOAD_PROMPT = "0"
+
+[tasks.dev]
+run = "bin/bridgetown start"
+
+# Production build wrapped in `fnox exec` so secrets (TORCHLIGHT_TOKEN, ...)
+# from fnox.toml are exported into the build environment.
+[tasks.build]
+run = "fnox exec -- env BRIDGETOWN_ENV=production bin/bridgetown deploy"
+
+[tasks.og]
+run = "node scripts/generate-og.mjs"
+description = "Regenerate OG PNGs from existing output/ HTML (requires prior build)"
+
+# Manual deploy: production build (fnox-wrapped for TORCHLIGHT_TOKEN) then
+# wrangler deploy reads wrangler.jsonc and uploads the output/ assets to
+# the andrewm-codes Workers route.
+[tasks.deploy]
+description = "Build + wrangler deploy to Cloudflare Workers Static Assets"
+depends = ["build"]
+run = "wrangler deploy"
+
+# Lighthouse CI against the already-built ./output (see lighthouserc.cjs).
+# Run `mise run build` first so output/ exists.
+[tasks.lighthouse]
+description = "Run Lighthouse CI against ./output (build first)"
+run = "pnpm exec lhci autorun"
+
+# Refresh src/_data/webmentions.json from webmention.io. fnox-wrapped so
+# WEBMENTION_IO_TOKEN is exported from the Keychain for local runs; CI passes
+# the token via env instead (see .github/workflows/webmentions.yml).
+[tasks.webmentions]
+description = "Fetch latest webmentions from webmention.io"
+run = "fnox exec -- node scripts/fetch-webmentions.mjs"
+
+# Build the component story pages into output/stories (dev/test only — the
+# production build strips them; see plugins/builders/stories.rb), then start
+# Storybook. Storybook reads the rendered HTML via raw imports, so the
+# Bridgetown build must run first.
+[tasks.storybook]
+description = "Build story pages + start Storybook dev server"
+run = "bin/bridgetown build && pnpm exec storybook dev -p 6006 --no-open"
+
+[tasks."storybook:build"]
+description = "Build story pages + a static Storybook bundle"
+run = "bin/bridgetown build && pnpm exec storybook build"
+
+[tasks.format]
+run = "mise run format:ruby && mise run format:erb && mise run format:prettier"
+
+[tasks."format:ruby"]
+run = "bundle exec standardrb --fix"
+
+[tasks."format:erb"]
+run = "bundle exec erb-format src/**/*.erb --write"
+
+[tasks."format:prettier"]
+run = "pnpm exec prettier --write \"**/*.{js,yml,md,mdx,cjs}\""
+
+[tasks.lint]
+description = "Lint everything: Ruby (standard), Prettier, JS types, and commit messages"
+run = "mise run lint:ruby && mise run lint:prettier && mise run lint:types && mise run lint:commits"
+
+[tasks."lint:ruby"]
+run = "bundle exec standardrb"
+
+[tasks."lint:prettier"]
+run = "pnpm exec prettier --check \"**/*.{js,yml,md,mdx,cjs}\""
+
+# Type-check JS via tsc --noEmit. Only files with a `// @ts-check` pragma are
+# checked (see tsconfig.json); annotate more files to expand coverage.
+[tasks."lint:types"]
+run = "pnpm run typecheck"
+
+# Lint commit messages on this branch against @andrewmcodes/commitlint-config.
+# On main the range is empty and the check is a no-op.
+[tasks."lint:commits"]
+description = "Lint branch commit messages (main..HEAD) with commitlint"
+run = "pnpm exec commitlint --from main --to HEAD"
+
+[tasks.test]
+run = "bundle exec rake test"
+
+[tasks."install:js"]
+description = "Install JS deps via pnpm"
+run = "corepack enable && pnpm install"
+
+[tasks."install:gems"]
+description = "Install Ruby gems via bundler"
+run = "bundle install"
+
+[tasks.install]
+description = "Install all dependencies (gems + node_modules)"
+depends = ["install:js", "install:gems"]
+
+[tasks.setup]
+description = "First-time setup: tools + dependencies"
+run = "mise install && mise run install"

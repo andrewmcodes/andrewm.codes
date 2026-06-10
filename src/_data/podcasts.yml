@@ -1,0 +1,44 @@
+- slug: remote-ruby
+  name: Remote Ruby
+  role: co-host
+  active: true
+  tagline: Three Rubyists having conversations and interviewing others about Ruby and web development. I host alongside Chris Oliver, Jason Charnes, and David Hill.
+  schedule: Weekly
+  since: 2022
+  mark: RR
+  accent_hue: 180
+  image: /images/podcasts/remote-ruby.jpg
+  url: https://remoteruby.com
+
+- slug: ruby-for-all
+  name: Ruby for All
+  role: co-host
+  active: false
+  tagline: A podcast for people newer to Ruby. Conversations with juniors, mentors, and the community building each other up. I co-hosted with Julie J.
+  since: "2022–2024"
+  mark: R4A
+  accent_hue: 0
+  image: /images/podcasts/ruby-for-all.png
+  url: https://rubyforall.com
+
+- slug: the-ruby-blend
+  name: The Ruby Blend
+  role: co-host
+  active: false
+  tagline: A spontaneous chat about Ruby, Rails, and whatever else was on our minds that week. I co-hosted with Nate Hopkins and Ron Cooke.
+  since: "2022–2023"
+  mark: TRB
+  accent_hue: 40
+  image: /images/podcasts/the-ruby-blend.jpg
+  url: "#"
+
+- slug: ruby-rogues
+  name: Ruby Rogues
+  role: panelist
+  active: false
+  tagline: A panel discussion about Ruby, programming, and software development. I was a panelist alongside Charles Max Wood and a rotating cast.
+  since: "2018–2022"
+  mark: RR
+  accent_hue: 350
+  image: /images/podcasts/ruby-rogues.jpg
+  url: https://devchat.tv/podcasts/ruby-rogues/

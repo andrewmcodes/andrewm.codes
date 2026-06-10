@@ -1,0 +1,44 @@
+---
+layout: default
+title: Search
+permalink: /search/
+description: Search andrewm.codes — posts, projects, talks, podcasts, and pages — from one place.
+noindex: true
+sitemap: false
+---
+
+<%= render PageShell.new(width: :narrow) do %>
+  <%= render Ui::PageHeader.new(title: "Search", description: data.description) %>
+
+  <form data-search-form role="search" class="mb-6">
+    <label for="search-input" class="sr-only">Search the site</label>
+    <input
+      type="search"
+      id="search-input"
+      name="q"
+      autocomplete="off"
+      autofocus
+      placeholder="Search posts, projects, talks…"
+      class="
+        w-full bg-sage-2 border border-sage-5 rounded-md px-4 py-2.5 text-[15px] text-sage-12
+        placeholder:text-sage-9 focus:outline-none focus:border-mint-9 focus:ring-2
+        focus:ring-mint-8
+      "
+    >
+  </form>
+
+  <p
+    data-search-status
+    class="font-mono text-[12px] text-sage-11 mb-3"
+    aria-live="polite"
+  ></p>
+  <ul data-search-results class="flex flex-col"></ul>
+
+  <noscript>
+    <p class="text-sage-11 text-[15px]">
+      Search needs JavaScript. Browse
+      <a href="/posts/" class="text-mint-11 hover:underline">all posts</a>
+      instead.
+    </p>
+  </noscript>
+<% end %>

@@ -1,11 +1,23 @@
-class Stack < BoxComponent
+# Vertical stack layout primitive for one-dimensional content flows.
+#
+# Use `Stack` in pages and layouts when repeated rows should share a simple
+# column rhythm without page-local Tailwind classes.
+#
+# @option opts [Symbol] :gap (`:none`) one of `GAPS`
+class Stack < Box
+  COMPONENT_OPTIONS = %i[gap].freeze
+
+  GAPS = {
+    none: "",
+    xs: "gap-1",
+    sm: "gap-2",
+    md: "gap-4",
+    lg: "gap-6"
+  }.freeze
+
   private
 
   def classes
-    [opts.fetch(:spacing, "space-y-4 md:space-y-8"), DEFAULT_FLEX_COL]
-  end
-
-  def remove_options
-    [:spacing]
+    cx("flex flex-col", GAPS.fetch(opts.fetch(:gap, :none), GAPS[:none]))
   end
 end

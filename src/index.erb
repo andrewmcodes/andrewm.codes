@@ -1,0 +1,63 @@
+---
+layout: default
+title: andrewm.codes
+---
+
+<% recent_posts = collections.posts.resources.first(5) %>
+<% projects = collections.projects.resources.first(4) %>
+<% latest_talk = site.data.talks.max_by { |t| t["date"] || t[:date] } %>
+<% latest_episode = site.data.remote_ruby %>
+
+<%= render PageShell.new(spacing: :home) do %>
+  <%= render HomeHero.new %>
+
+  <%= render PageSection.new(spacing: :home_first) do %>
+    <%= render SectionHead.new(
+      title: "recent posts",
+      link_label: "all posts",
+      link_href: "/posts/",
+    ) %>
+    <%= render Stack.new do %>
+      <% recent_posts.each do |post| %>
+        <%= render PostRow.new(post: post) %>
+      <% end %>
+    <% end %>
+  <% end %>
+
+  <% if projects.any? %>
+    <%= render PageSection.new(spacing: :home) do %>
+      <%= render SectionHead.new(
+        title: "open source",
+        link_label: "all projects",
+        link_href: "/projects/",
+      ) %>
+      <%= render CardGrid.new do %>
+        <% projects.each do |proj| %>
+          <%= render ProjectCard.new(project: proj) %>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+
+  <% if latest_talk %>
+    <%= render PageSection.new(spacing: :home) do %>
+      <%= render SectionHead.new(
+        title: "latest talk",
+        link_label: "all talks",
+        link_href: "/speaking/",
+      ) %>
+      <%= render TalkCard.new(talk: latest_talk) %>
+    <% end %>
+  <% end %>
+
+  <% if latest_episode %>
+    <%= render PageSection.new(spacing: :home) do %>
+      <%= render SectionHead.new(
+        title: "latest podcast",
+        link_label: "all podcasts",
+        link_href: "/speaking/",
+      ) %>
+      <%= render EpisodeCard.new(episode: latest_episode) %>
+    <% end %>
+  <% end %>
+<% end %>

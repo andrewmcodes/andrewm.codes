@@ -1,18 +1,19 @@
 ---
 series: webpacker-6
 featured: false
-title: 'Webpacker 6: Troubleshooting Guide'
-description: A (growing) collection of tools and techniques for debugging your Webpack(er) setup.   I highly recom...
+title: "Webpacker 6: Troubleshooting Guide"
+description: A (growing) collection of tools and techniques for debugging your Webpack(er)
+  setup.   I highly recom...
 urls:
-  dev_to: 'https://dev.to/andrewmcodes/webpacker-6-troubleshooting-guide-pdl'
+  dev_to: https://dev.to/andrewmcodes/webpacker-6-troubleshooting-guide-pdl
 tags:
   - rails
   - webpacker
   - tutorial
   - debugging
 categories: tutorial
-date: '2020-12-23T22:16:57Z'
-last_modified_at: '2022-01-29T17:01:41.560Z'
+date: 2020-12-23 22:16:57.000000000 Z
+last_modified_at: 2022-01-29 17:01:41.560000000 Z
 ---
 
 A (growing) collection of tools and techniques for debugging your Webpack(er) setup.

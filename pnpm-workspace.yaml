@@ -1,0 +1,5 @@
+allowBuilds:
+  "@resvg/resvg-js": true
+  esbuild: true
+  sharp: true
+  workerd: true

@@ -1,0 +1,46 @@
+---
+title: Icon
+---
+
+<% names = %i[
+  github
+  twitter
+  linkedin
+  discord
+  rss
+  arrow_right
+  arrow_top_right
+  calendar
+  clock
+  star
+  tag
+  link_icon
+  copy
+  share
+  check
+  globe
+  pencil
+] %>
+<div class="space-y-6">
+  <div class="space-y-2">
+    <p class="font-mono text-xs text-sage-10">Default size</p>
+    <div class="flex flex-wrap items-center gap-4 text-sage-11">
+      <% names.each do |name| %>
+        <span class="flex flex-col items-center gap-1">
+          <%= render Icon.new(name: name) %>
+          <span class="font-mono text-[10px] text-sage-10"><%= name %></span>
+        </span>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="space-y-2">
+    <p class="font-mono text-xs text-sage-10">Sizes</p>
+    <div class="flex items-end gap-4 text-sage-11">
+      <%= render Icon.new(name: :star, size: :sm) %>
+      <%= render Icon.new(name: :star) %>
+      <%= render Icon.new(name: :star, size: :lg) %>
+      <%= render Icon.new(name: :star, size: :xl) %>
+    </div>
+  </div>
+</div>

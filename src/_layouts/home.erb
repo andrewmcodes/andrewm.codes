@@ -1,7 +1,0 @@
----<%
-{ layout: :default }
-%>---
-<%= render Container.new(as: :section) do %>
-<%= render Image.new(src: "/assets/images/main-avatar.png", width: 80, height: 80, alt: site.metadata.author.name, classes: "h-20 w-20 rounded-full shadow-md", loading: "eager" ) %>
-<%= render ContentBlock.new.with_content(content) %>
-<% end %>

@@ -1,0 +1,27 @@
+name: Sync webmentions
+on:
+  schedule: [{ cron: "0 5 * * *" }]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with: { node-version: "22" }
+      - name: Fetch webmentions from webmention.io
+        env:
+          WEBMENTION_IO_TOKEN: ${{ secrets.WEBMENTION_IO_TOKEN }}
+        run: node scripts/fetch-webmentions.mjs
+
+      - name: Commit changes if any
+        run: |
+          if ! git diff --quiet src/_data/webmentions.json; then
+            git config user.name "andrewmcodes-bot"
+            git config user.email "bot@andrewm.codes"
+            git add src/_data/webmentions.json
+            git commit -m "chore(data): refresh webmentions"
+            git push
+          fi

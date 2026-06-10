@@ -1,16 +1,15 @@
 ---
-series: null
-featured: false
 title: How to Deploy Your Bridgetown Site to Github Pages
-description: It has never been easier to deploy your Bridgetown site to GitHub Pages thanks
-  to a new bundled configuration in Bridgetown v1.0
+description: It has never been easier to deploy your Bridgetown site to GitHub Pages
+  thanks to a new bundled configuration in Bridgetown v1.0
 tags:
   - bridgetown
   - github-pages
   - github-actions
-categories: tutorial
-date: "2022-03-23T07:46:39.094Z"
-last_modified_at: "2022-03-23T07:47:00.109Z"
+date: 2022-03-23 07:47:00.000000000 Z
+last_modified_at: 2022-03-24 07:47:00.000000000 Z
+categories:
+  - tutorials
 ---
 
 With the release of [Bridgetown version 1.0](https://www.bridgetownrb.com/release/reaching-1.0-next-generation-progressive-site-generator/) came several new [bundled configurations](https://www.bridgetownrb.com/docs/bundled-configurations) for deployment, in addition to other powerful new features.

@@ -1,13 +1,15 @@
 ---
 title: Dare To Give Your Junior Developers Permission To Fail
-description: My rejected CFP for RailsConf 2020
-conferences:
-  - name: RailsConf 2020
-    status: rejected
+description: My rejected CFP for RailsConf 2020 about how to be a better mentor to junior developers.
 urls:
-  speakerline: "https://speakerline.io/proposals/7652"
-date: "2020-02-01T01:40:05Z"
-last_modified_at: "2022-01-29T17:01:41.408Z"
+  speakerline: https://speakerline.io/proposals/7652
+tags:
+  - archive
+  - mentoring
+  - junior-devs
+event: RailsConf 2020
+status: rejected
+date: 2020-02-01T01:40:16Z
 ---
 
 ## Abstract
@@ -41,6 +43,8 @@ This talk is aimed at mentors and junior developers.
 
 ## Pitch
 
-The more experience you have, the further removed you are from the needs of your junior developers. With only two years experience, I have a fresh perspective on the positive and negative mentorship tactics that many juniors are currently being exposed to. The main premise behind this talk comes from a discussion I had with my team lead about a pattern I had introduced that others didn’t seem to like. The takeaway from that conversation is my lead wanted to give me the space to explore my ideas. If I succeeded, we would have a great new pattern to use moving forward. If I failed, it wasn’t something we couldn’t recover from, and I would have learned a great deal. The key to these two possible outcomes is that regardless of whether I succeeded or failed in my attempt, my mentor was excited to help me realize the lessons I learned from the experiment that would help me to become a better developer moving forward.
+The more experience you have, the further removed you are from the needs of your junior developers. With only two years experience, I have a fresh perspective on the positive and negative mentorship tactics that many juniors are currently being exposed to. The main premise behind this talk comes from a discussion I had with my team lead about a pattern I had introduced that others didn't seem to like. The takeaway from that conversation is my lead wanted to give me the space to explore my ideas. If I succeeded, we would have a great new pattern to use moving forward. If I failed, it wasn't something we couldn't recover from, and I would have learned a great deal. The key to these two possible outcomes is that regardless of whether I succeeded or failed in my attempt, my mentor was excited to help me realize the lessons I learned from the experiment that would help me to become a better developer moving forward.
 
-The other reason this talk should be considered is because juniors and mids need to see someone like them on the stage. I have been to two RailsConf’s and one RubyConf and took a lot out of the many talks I attended but none of them look like me. Most of the speakers are older, well respected Rubyists and it’s hard to justify taking the time to submit a talk when you think only talks from these more experienced developers will be accepted. By giving this talk, my hope is that I inspire other developers with similar experience to submit their conference talk ideas and continue growing the Ruby community.
+The other reason this talk should be considered is because juniors and mids need to see someone like them on the stage. I have been to two RailsConf's and one RubyConf and took a lot out of the many talks I attended but none of them look like me. Most of the speakers are older, well respected Rubyists and it's hard to justify taking the time to submit a talk when you think only talks from these more experienced developers will be accepted. By giving this talk, my hope is that I inspire other developers with similar experience to submit their conference talk ideas and continue growing the Ruby community.
+
+[Mirror](https://speakerline.io/proposals/7652)

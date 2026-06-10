@@ -1,18 +1,19 @@
 ---
 series: webpacker-6
 featured: false
-title: 'Webpacker 6: Upgrade Guide'
-description: 'This page has changed since first posted, refer to the changelog at the bottom.   In this article, w...'
+title: "Webpacker 6: Upgrade Guide"
+description: This page has changed since first posted, refer to the changelog at the
+  bottom.   In this article, w...
 urls:
-  dev_to: 'https://dev.to/andrewmcodes/webpacker-6-upgrade-guide-3p6d'
+  dev_to: https://dev.to/andrewmcodes/webpacker-6-upgrade-guide-3p6d
 tags:
   - rails
   - ruby
   - webpacker
   - tutorial
 categories: tutorial
-date: '2020-12-23T22:07:10Z'
-last_modified_at: '2022-01-29T17:01:41.438Z'
+date: 2020-12-23 22:07:10.000000000 Z
+last_modified_at: 2022-01-29 17:01:41.438000000 Z
 ---
 
 > **This page has changed since first posted**, refer to the changelog at the bottom.
