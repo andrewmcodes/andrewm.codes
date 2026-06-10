@@ -62,3 +62,5 @@ storybook-static/
 
 # AI
 .claude/
+.agents/
+skills-lock.json
