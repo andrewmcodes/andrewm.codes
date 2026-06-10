@@ -1,7 +1,6 @@
 ---
 title: "A11Y in Rails: Automated Linting with AccessLint\U0001F389"
-description: Accessibility (A11Y) testing cannot be fully automated, and requires
-  special attention in order to ge...
+description: "Add automated accessibility (a11y) linting to a Ruby on Rails app with AccessLint, which flags issues on every pull request before they ship."
 urls:
   dev_to: https://dev.to/andrewmcodes/a11y-in-rails-automated-linting-with-accesslint-1618
 tags:

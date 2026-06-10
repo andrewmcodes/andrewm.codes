@@ -1,7 +1,6 @@
 ---
 title: Rails 6 Band-Aid for Webpacker::Manifest::MissingEntryError
-description: At CodeFund, we try to keep our dependencies, including Rails, as up
-  to date as possible. We upgraded...
+description: "A workaround for Webpacker::Manifest::MissingEntryError in the Rails 6 test environment: force Webpacker to compile test packs from your test helper."
 urls:
   dev_to: https://dev.to/andrewmcodes/rails-6-band-aid-for-webpacker-manifest-missingentryerror-1o21
 tags:

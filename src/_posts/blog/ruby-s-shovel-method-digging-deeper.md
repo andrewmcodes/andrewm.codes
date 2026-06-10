@@ -1,7 +1,6 @@
 ---
 title: "Ruby's Shovel Method: Digging Deeper"
-description: "Heads up! This is not actually a deep dive \U0001F62C   With everything
-  going on in the world, I almost forgo..."
+description: "A short, fun look at Ruby's shovel operator (<<) — what it does on arrays and strings, and why you can chain it even though you probably shouldn't."
 urls:
   dev_to: https://dev.to/andrewmcodes/ruby-s-shovel-method-digging-deeper-5hfm
 tags:

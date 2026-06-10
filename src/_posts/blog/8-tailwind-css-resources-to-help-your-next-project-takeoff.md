@@ -1,7 +1,6 @@
 ---
 title: 8 Tailwind CSS resources to help your next project takeoff
-description: Let's face it, no matter whether its our first or hundredth time, staring
-  at a blank Tailwind CSS is...
+description: "Eight Tailwind CSS resources — component libraries, typography and layout helpers, and developer-experience plugins — to speed up your next project."
 urls:
   dev_to: https://dev.to/andrewmcodes/8-tailwind-css-resources-to-help-your-next-project-takeoff-2b92
 tags:
@@ -15,7 +14,7 @@ categories:
   - tutorials
 ---
 
-Let's face it, no matter whether its our first or hundredth time, staring at a blank Tailwind CSS is intimidating. The enormity of the task at hand starts to crash over you as the excitement begins to build. Here are eight resources that I reach for first when I need to move quickly or want inspiration that may prove helpful to you.
+Let's face it, no matter whether it's our first or hundredth time, staring at a blank Tailwind CSS is intimidating. The enormity of the task at hand starts to crash over you as the excitement begins to build. Here are eight resources that I reach for first when I need to move quickly or want inspiration that may prove helpful to you.
 
 At the end of list I will let you know which of the following I add to every Tailwind CSS project, NO MATTER WHAT!
 
