@@ -26,7 +26,7 @@
     "@tailwindcss/typography": "^0.5.20",
     "@torchlight-api/torchlight-cli": "^0.1.7",
     "@types/node": "^22.19.19",
-    "esbuild": "^0.28.0",
+    "esbuild": "^0.28.1",
     "gray-matter": "^4.0.3",
     "node-html-parser": "^7.1.0",
     "pagefind": "^1.5.2",
