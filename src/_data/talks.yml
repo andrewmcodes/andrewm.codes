@@ -21,3 +21,14 @@
       href: https://www.bridgetownconf.rocks/#talk-bridgetown-dangerous
     - label: slides
       href: https://speakerdeck.com/andrewmcodes/learn-enough-bridgetown-to-be-dangerous
+
+- slug: we-are-the-ruby-community
+  title: "We Are the Ruby Community"
+  date: 2026-06-12
+  venue: Blastoff Rails
+  city: Albuquerque, NM
+  duration: 30 min
+  excerpt: Many developers feel like observers of the Ruby community rather than participants in it. This talk reframes what community actually means, breaks down the invisible barriers that make people feel like they don't belong, and shows practical ways anyone can participate right away. The goal is to show that the Ruby community isn't something you join, it's something you help create.
+  links:
+    - label: slides
+      href: https://speakerdeck.com/andrewmcodes/we-are-the-ruby-community
