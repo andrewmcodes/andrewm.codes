@@ -1,10 +1,10 @@
 {
-  "id": 19322062,
-  "title": "Navigating Subscription Overhauls and Payments",
-  "url": "https://www.buzzsprout.com/2260490/episodes/19322062-navigating-subscription-overhauls-and-payments",
-  "published_at": "2026-06-19T08:00:00.000-04:00",
-  "description": "<p>Chris, Andrew, and David catch up after a missed week of recording and quickly dive into the kind of deeply practical Rails work that only comes from real production pain. Andrew shares the massive subscription and billing migration happening at Podia, including Stripe edge cases, legacy plan preservation, and stress-test tooling built from live scenarios. Chris then goes deep on a Hatchbox email cancellation flow that turns into a Rails internals rabbit hole around Action Mailer callbacks, mail delivery cancellation, and a tiny Rails PR born from production debugging. Hit download now to hear more!&nbsp;</p><p><b>Links</b></p><ul><li><a href=\"https://judoscale.com/friends/new?source=remote-ruby&amp;utm_source=remoteruby&amp;utm_medium=podcast\">Judoscale- Remote Ruby listener gift</a></li><li><a href=\"https://www.podia.com/\">Podia</a></li><li><a href=\"https://github.com/rails/rails/pull/57581\">Support only: and except: on _deliver callbacks in ActionMailer #57581</a></li><li><a href=\"https://github.com/rails/rails/pull/57489/files\">Improve documentation/testing of abort in Action Mailer ‘before_action #57489</a></li><li><a href=\"https://github.com/excid3/mailbin\">Mailbin- GitHub</a></li></ul><p><br></p>",
-  "duration": 1685,
-  "episode_number": 355,
+  "id": 19386150,
+  "title": "Blastoff Rails Recap and Ruby Central Revamp",
+  "url": "https://www.buzzsprout.com/2260490/episodes/19386150-blastoff-rails-recap-and-ruby-central-revamp",
+  "published_at": "2026-06-26T08:00:00.000-04:00",
+  "description": "",
+  "duration": 2067,
+  "episode_number": 356,
   "artwork_url": "https://storage.buzzsprout.com/fdqldsi8gdhid2qcbksbm9vbna8x"
 }
