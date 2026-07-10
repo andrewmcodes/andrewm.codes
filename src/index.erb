@@ -11,8 +11,16 @@ title: andrewm.codes
 <%= render PageShell.new(spacing: :home) do %>
   <%= render HomeHero.new %>
 
+  <%= render PageSection.new(spacing: :home_first) do %>
+    <%= render SectionHead.new(
+      title: "now",
+      description: "What I'm actively working on right now.",
+    ) %>
+    <%= render HomeNow.new(episode: latest_episode, talk: latest_talk) %>
+  <% end %>
+
   <% if site.data.featured&.any? %>
-    <%= render PageSection.new(spacing: :home_first) do %>
+    <%= render PageSection.new(spacing: :home) do %>
       <%= render SectionHead.new(
         title: "featured work",
         description: "A few things I'm proud of and point people to most often.",
