@@ -12,7 +12,7 @@ require_relative "../plugins/builders/search_index"
 # build. Fast feedback for the regex/string handling that's easy to get wrong.
 class TestBuilders < Minitest::Test
   Resource = Struct.new(:relative_url, :relative_path, :data)
-  ResourceData = Struct.new(:permalink, keyword_init: true)
+  ResourceData = Struct.new(:permalink)
 
   # -------- OgHelper.slug --------
 

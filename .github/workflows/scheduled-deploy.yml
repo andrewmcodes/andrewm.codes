@@ -1,0 +1,41 @@
+name: Scheduled deploy
+on:
+  # Weekly production redeploy so scheduled content (talks, podcasts, CFPs)
+  # and freshly synced data land on the live site without a code push.
+  # 17:00 UTC = 10am Pacific during PDT (summer); note GitHub cron is UTC and
+  # does not adjust for DST, so this drifts to 9am Pacific in the winter (PST).
+  schedule: [{ cron: "0 17 * * 5" }]
+  workflow_dispatch:
+
+# Don't stack redeploys if a run overruns into the next trigger.
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    name: build + deploy to cloudflare
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: ./.github/actions/setup
+
+      - name: Production build
+        env:
+          BRIDGETOWN_ENV: production
+          TORCHLIGHT_TOKEN: ${{ secrets.TORCHLIGHT_TOKEN }}
+        run: bin/bridgetown deploy
+
+      - name: Deploy to production
+        uses: cloudflare/wrangler-action@v4
+        # Authenticate with the Global API Key + email (read from env by
+        # wrangler) instead of a scoped apiToken input.
+        env:
+          CLOUDFLARE_API_KEY: ${{ secrets.CLOUDFLARE_API_KEY }}
+          CLOUDFLARE_EMAIL: ${{ secrets.CLOUDFLARE_EMAIL }}
+        with:
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: deploy
