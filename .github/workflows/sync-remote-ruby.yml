@@ -2,6 +2,11 @@ name: Sync latest Remote Ruby episode
 on:
   schedule: [{ cron: "0 13 * * *" }]
   workflow_dispatch:
+# Only the latest run proceeds; cancel any older in-flight run.
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: true
+
 permissions:
   contents: write
 jobs:

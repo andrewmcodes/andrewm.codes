@@ -10,10 +10,10 @@ permissions:
   contents: write
   pull-requests: write
 
-# Never run two release passes at once; a second push should wait, not race.
+# Only the latest push runs a release pass; cancel any older in-flight run.
 concurrency:
   group: ${{ github.workflow }}
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   release-please:

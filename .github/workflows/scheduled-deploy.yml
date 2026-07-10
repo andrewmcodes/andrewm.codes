@@ -7,10 +7,10 @@ on:
   schedule: [{ cron: "0 17 * * 5" }]
   workflow_dispatch:
 
-# Don't stack redeploys if a run overruns into the next trigger.
+# Only the latest deploy runs; cancel an older in-flight run rather than stack.
 concurrency:
   group: ${{ github.workflow }}
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 permissions:
   contents: read
