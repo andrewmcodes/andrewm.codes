@@ -1,5 +1,9 @@
 allowBuilds:
   "@resvg/resvg-js": true
   esbuild: true
-  sharp: true
+  # miniflare (wrangler) pulls sharp in, but this site uses @resvg/resvg-js +
+  # satori for images and never uses sharp. Skip its native build — the source
+  # build needs libvips/node-addon-api and fails, and the prebuilt @img binary
+  # is installed for runtime regardless.
+  sharp: false
   workerd: true
