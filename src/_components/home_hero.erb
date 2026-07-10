@@ -21,9 +21,10 @@
       text-[16.5px] text-sage-11 max-w-[600px] leading-[1.65] m-0 mb-4 text-pretty
     "
   >
-    I write about Rails, Ruby tooling, and the stuff I learn while shipping
-    software for a living. Most posts started as a note I was writing for
-    myself and turned out to be useful for somebody else.
+    I spend my time on the parts of Rails that compound — fast CI and test
+    suites, developer tooling, and the workflow details that make a team
+    quicker. Most of what I learn shipping software for a living ends up
+    written down here.
   </p>
   <p
     class="
@@ -36,11 +37,19 @@
     <%= render Link.new(href: "/speaking/", variant: :inline) do %>talks and podcasts<% end %>
     here. Mostly so I can find them again later.
   </p>
-  <%= render Link.new(href: "/posts/", variant: :action) do %>
-    Read the writing
-    <%= render Icon.new(
-      name: "arrow_right",
-      class: "transition-transform group-hover:translate-x-1",
-    ) %>
-  <% end %>
+  <div class="mt-8 flex flex-wrap items-center gap-3">
+    <%= render Button.new(href: "/posts/", variant: :primary, size: :xl) do %>
+      Read the writing
+      <%= render Icon.new(
+        name: "arrow_right",
+        class: "ml-1.5 inline-block transition-transform group-hover:translate-x-0.5",
+      ) %>
+    <% end %>
+    <%= render Button.new(href: "/projects/", variant: :secondary, size: :xl) do %>
+      Browse projects
+    <% end %>
+    <%= render Button.new(href: "https://remoteruby.com/", variant: :ghost, size: :xl) do %>
+      Listen to Remote Ruby
+    <% end %>
+  </div>
 </section>
