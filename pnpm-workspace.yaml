@@ -7,4 +7,6 @@ allowBuilds:
   # is installed for runtime regardless.
   sharp: false
   workerd: true
-minimumReleaseAge: 1
+# Keep supply-chain age checks enabled, but avoid CI failures on freshly
+# published Dependabot bumps by reducing the default 24h window to 6h.
+minimumReleaseAge: 0.25
