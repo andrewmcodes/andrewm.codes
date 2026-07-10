@@ -10,10 +10,10 @@
   desc: The weekly podcast I co-host on Rails, Ruby, and whatever the community is talking about that week — 350+ episodes and counting.
   href: https://remoteruby.com/
   label: remoteruby.com
-- title: Rails Extension Power Pack
+- title: js-configs
   kind: open source
-  desc: A curated VS Code extension pack for Ruby on Rails development. One of my most-installed open source projects.
-  href: https://github.com/andrewmcodes/rails-extension-power-pack
+  desc: Shareable JavaScript and Node.js tooling configs (Prettier, commitlint) — a pnpm + Changesets monorepo I lean on to keep tooling consistent across projects.
+  href: https://github.com/andrewmcodes/js-configs
   label: github.com/andrewmcodes
 - title: obsidian-objects
   kind: open source
