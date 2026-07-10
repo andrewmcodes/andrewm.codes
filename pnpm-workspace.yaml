@@ -7,3 +7,4 @@ allowBuilds:
   # is installed for runtime regardless.
   sharp: false
   workerd: true
+minimumReleaseAge: 0
