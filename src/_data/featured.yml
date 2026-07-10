@@ -1,0 +1,22 @@
+# Curated proof points surfaced in the homepage "featured work" section.
+# Each item is a real thing worth pointing people to first.
+- title: Podia
+  kind: work
+  desc: Ruby on Rails engineer building the all-in-one platform creators use to sell courses, digital downloads, and community. The day job that keeps everything else grounded in real product work.
+  href: https://www.podia.com/
+  label: podia.com
+- title: Remote Ruby
+  kind: podcast
+  desc: The weekly podcast I co-host on Rails, Ruby, and whatever the community is talking about that week — 350+ episodes and counting.
+  href: https://remoteruby.com/
+  label: remoteruby.com
+- title: Rails Extension Power Pack
+  kind: open source
+  desc: A curated VS Code extension pack for Ruby on Rails development. One of my most-installed open source projects.
+  href: https://github.com/andrewmcodes/rails-extension-power-pack
+  label: github.com/andrewmcodes
+- title: Shared GitHub Actions
+  kind: open source
+  desc: Reusable GitHub Actions and CI building blocks I lean on across projects — the CI-and-tooling work I care about, out in the open.
+  href: https://github.com/andrewmcodes/actions
+  label: github.com/andrewmcodes

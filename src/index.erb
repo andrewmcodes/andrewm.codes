@@ -11,7 +11,21 @@ title: andrewm.codes
 <%= render PageShell.new(spacing: :home) do %>
   <%= render HomeHero.new %>
 
-  <%= render PageSection.new(spacing: :home_first) do %>
+  <% if site.data.featured&.any? %>
+    <%= render PageSection.new(spacing: :home_first) do %>
+      <%= render SectionHead.new(
+        title: "featured work",
+        description: "A few things I'm proud of and point people to most often.",
+      ) %>
+      <%= render CardGrid.new do %>
+        <% site.data.featured.each do |item| %>
+          <%= render FeaturedCard.new(item: item) %>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+
+  <%= render PageSection.new(spacing: :home) do %>
     <%= render SectionHead.new(
       title: "recent posts",
       link_label: "all posts",
