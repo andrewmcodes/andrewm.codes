@@ -1,0 +1,29 @@
+name: Release Please
+on:
+  push:
+    branches: [main]
+
+# release-please needs to open/update the release PR and, on merge, create the
+# tag + GitHub release. Requires "Allow GitHub Actions to create and approve
+# pull requests" to be enabled in repo Settings → Actions → General.
+permissions:
+  contents: write
+  pull-requests: write
+
+# Only the latest push runs a release pass; cancel any older in-flight run.
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: true
+
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    steps:
+      # Reads release-please-config.json + .release-please-manifest.json. On a
+      # normal push it opens/updates a release PR that rolls up conventional
+      # commits into CHANGELOG.md + a package.json version bump. Merging that PR
+      # tags the release and, being a push to main, triggers the CI deploy so
+      # the updated CHANGELOG.md renders at /changelog/.
+      - uses: googleapis/release-please-action@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}

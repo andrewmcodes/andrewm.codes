@@ -4,66 +4,47 @@ on:
     branches: [main]
   pull_request:
 
-# Cancel in-flight runs of this workflow on the same ref. Pushes to main are
-# kept distinct from PRs by including the event name in the key, so a PR push
-# doesn't cancel a production deploy on main.
+# Cancel in-flight runs on the same ref so only the latest run proceeds. The
+# event name is part of the key so a PR push and a push to main stay in
+# separate groups and never cancel each other.
 concurrency:
   group: ${{ github.workflow }}-${{ github.event_name }}-${{ github.ref }}
-  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+  cancel-in-progress: true
 
 permissions:
   contents: read
 
 jobs:
-  lint:
-    name: standardrb
+  # standardrb, typecheck, minitest, and commitlint are independent and each
+  # finishes in well under a second — the cost is the repeated checkout + Ruby/
+  # Node setup. Run them as parallel steps in one job so that setup happens once
+  # instead of four times. See .ai/2026-06-25-parallel-steps.md.
+  checks:
+    name: checks
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
-      - uses: ./.github/actions/setup
-        with:
-          node: "false"
-      - run: bundle exec standardrb
-
-  commitlint:
-    name: commitlint
-    runs-on: ubuntu-latest
-    steps:
-      # fetch-depth: 0 so the full commit range is available to lint.
-      - uses: actions/checkout@v6
+      # fetch-depth: 0 so commitlint can see the full commit range.
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 0
       - uses: ./.github/actions/setup
-        with:
-          ruby: "false"
-      - name: Lint PR commits
-        if: github.event_name == 'pull_request'
-        run: >
-          pnpm exec commitlint
-          --from ${{ github.event.pull_request.base.sha }}
-          --to ${{ github.event.pull_request.head.sha }}
-          --verbose
-      - name: Lint pushed commit
-        if: github.event_name == 'push'
-        run: pnpm exec commitlint --last --verbose
-
-  typecheck:
-    name: typecheck
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v6
-      - uses: ./.github/actions/setup
-        with:
-          ruby: "false"
-      - run: pnpm run typecheck
-
-  test:
-    name: minitest
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v6
-      - uses: ./.github/actions/setup
-      - run: bundle exec rake test
+      - parallel:
+          - name: standardrb
+            run: bundle exec standardrb
+          - name: typecheck
+            run: pnpm run typecheck
+          - name: minitest
+            run: bundle exec rake test
+          - name: commitlint
+            run: |
+              if [ "${{ github.event_name }}" = "pull_request" ]; then
+                pnpm exec commitlint \
+                  --from "${{ github.event.pull_request.base.sha }}" \
+                  --to "${{ github.event.pull_request.head.sha }}" \
+                  --verbose
+              else
+                pnpm exec commitlint --last --verbose
+              fi
 
   build:
     name: production build
@@ -71,7 +52,7 @@ jobs:
     outputs:
       built: ${{ steps.mark.outputs.built }}
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - uses: ./.github/actions/setup
       - env:
           BRIDGETOWN_ENV: production
@@ -100,7 +81,7 @@ jobs:
       github.event_name == 'push' ||
       (github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository)
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - uses: ./.github/actions/setup
         with:
           ruby: "false"
@@ -116,15 +97,18 @@ jobs:
   deploy:
     name: deploy to cloudflare
     runs-on: ubuntu-latest
-    needs: [lint, commitlint, typecheck, test, build]
+    needs: [checks, build]
+    # Dependabot PRs run with a restricted token and no access to Actions
+    # secrets, so the Cloudflare preview deploy can't authenticate. Skip it for
+    # Dependabot (lint/test/build still validate the bump), just like forks.
     if: |
       (github.event_name == 'push' && github.ref == 'refs/heads/main') ||
-      (github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository)
+      (github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository && github.actor != 'dependabot[bot]')
     permissions:
       contents: read
       pull-requests: write
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - uses: ./.github/actions/setup
         with:
           ruby: "false"

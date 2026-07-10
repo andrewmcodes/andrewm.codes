@@ -1,7 +1,7 @@
 class Builders::Changelog < SiteBuilder
   def build
-    hook :site, :pre_read do |site|
-      path = File.join(site.root_dir, "CHANGELOG.md")
+    hook :site, :post_read do |site|
+      path = site.in_root_dir("CHANGELOG.md")
       next unless File.exist?(path)
 
       raw = File.read(path)

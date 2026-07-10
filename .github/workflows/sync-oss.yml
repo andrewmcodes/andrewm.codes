@@ -2,13 +2,18 @@ name: Sync OSS projects
 on:
   schedule: [{ cron: "0 14 * * *" }]
   workflow_dispatch:
+# Only the latest run proceeds; cancel any older in-flight run.
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: true
+
 permissions:
   contents: write
 jobs:
   sync:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - env:
           GH_TOKEN: ${{ secrets.OSS_SYNC_TOKEN }}
         run: |
