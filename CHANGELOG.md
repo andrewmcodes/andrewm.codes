@@ -1,5 +1,17 @@
 # Changelog
 
+## [8.1.0](https://github.com/andrewmcodes/andrewm.codes/compare/v8.0.0...v8.1.0) (2026-07-10)
+
+
+### Features
+
+* **home:** homepage positioning — hero, CTAs, featured work, now ([#546](https://github.com/andrewmcodes/andrewm.codes/issues/546)) ([7e5501c](https://github.com/andrewmcodes/andrewm.codes/commit/7e5501c1dd42058ea3b3745c3e27fcf2d329fc4a)), closes [#520](https://github.com/andrewmcodes/andrewm.codes/issues/520)
+
+
+### Bug Fixes
+
+* **deps:** skip sharp native build to unblock pnpm install ([e5ae6db](https://github.com/andrewmcodes/andrewm.codes/commit/e5ae6db3b9863c66506c8902b60edd457be21208))
+
 ## v8.0.0 / 2026-05-20
 
 Complete rewrite for Bridgetown 2.2+. ERB, ViewComponent, Tailwind v4, Radix UI Colors, Cloudflare Pages.
