@@ -1,5 +1,18 @@
 # Changelog
 
+## [8.1.1](https://github.com/andrewmcodes/andrewm.codes/compare/v8.1.0...v8.1.1) (2026-07-10)
+
+
+### Bug Fixes
+
+* changelog and featured projects ([f6a2b11](https://github.com/andrewmcodes/andrewm.codes/commit/f6a2b115f750732cfd7ef6e40c8b12ad53a3202b))
+* changelog rendering, button sizing, favicon, featured work ([#549](https://github.com/andrewmcodes/andrewm.codes/issues/549)) ([e51510e](https://github.com/andrewmcodes/andrewm.codes/commit/e51510e7c9fb0dad7582c165bda2fe6c63912e7d))
+
+
+### Documentation
+
+* add ai skills ([#548](https://github.com/andrewmcodes/andrewm.codes/issues/548)) ([128ebc4](https://github.com/andrewmcodes/andrewm.codes/commit/128ebc4342d865e120ec67501144a303ad26179f))
+
 ## [8.1.0](https://github.com/andrewmcodes/andrewm.codes/compare/v8.0.0...v8.1.0) (2026-07-10)
 
 
