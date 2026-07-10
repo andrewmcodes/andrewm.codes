@@ -34,13 +34,13 @@
     "postcss-focus-visible": "^11.0.0",
     "postcss-import": "^16.1.1",
     "postcss-load-config": "^6.0.1",
-    "prettier": "^3.9.4",
+    "prettier": "^3.9.5",
     "read-cache": "^1.0.0",
     "satori": "^0.26.0",
     "storybook": "^10.4.6",
     "tailwindcss": "^4.3.2",
     "typescript": "^6.0.3",
-    "wrangler": "^4.107.1"
+    "wrangler": "^4.110.0"
   },
   "dependencies": {
     "@hotwired/turbo": "^8.0.23",
