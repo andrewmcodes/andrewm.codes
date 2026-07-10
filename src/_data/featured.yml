@@ -15,8 +15,8 @@
   desc: A curated VS Code extension pack for Ruby on Rails development. One of my most-installed open source projects.
   href: https://github.com/andrewmcodes/rails-extension-power-pack
   label: github.com/andrewmcodes
-- title: Shared GitHub Actions
+- title: obsidian-objects
   kind: open source
-  desc: Reusable GitHub Actions and CI building blocks I lean on across projects — the CI-and-tooling work I care about, out in the open.
-  href: https://github.com/andrewmcodes/actions
+  desc: Schema-driven, object-based note-taking for Obsidian using native Markdown, Properties, and Bases — turning a vault into a structured knowledge base.
+  href: https://github.com/andrewmcodes/obsidian-objects
   label: github.com/andrewmcodes
