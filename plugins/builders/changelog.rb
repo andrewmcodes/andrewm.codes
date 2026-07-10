@@ -6,6 +6,9 @@ class Builders::Changelog < SiteBuilder
 
       raw = File.read(path)
       body = raw.sub(/\A---\s*\n.*?\n---\s*\n*/m, "")
+      # The page supplies its own "Changelog" title, so drop the leading H1
+      # that release-please always emits to avoid a duplicate <h1>.
+      body = body.sub(/\A#\s+.*\n+/, "")
       site.data["changelog"] = body
     end
   end
