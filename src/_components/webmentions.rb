@@ -5,20 +5,18 @@ require "time"
 # Data comes from `site.data.webmentions` — a webmention.io JF2 feed refreshed
 # by .github/workflows/webmentions.yml (see scripts/fetch-webmentions.mjs). The
 # section renders nothing when a post has no mentions.
-class Webmentions < Bridgetown::Component
+class Webmentions < Base
   # JF2 `wm-property` values grouped into faces vs threaded responses.
   REACTIONS = %w[like-of repost-of bookmark-of].freeze
   REPLIES = %w[in-reply-to mention-of].freeze
-
-  # @param url [String] the post's relative URL (e.g. "/p/slug/")
-  def initialize(url:)
-    @url = url
-    @site = Bridgetown::Current.site
-  end
+  COMPONENT_OPTIONS = %i[url].freeze
 
   private
 
-  attr_reader :url
+  # @return [String] the post's relative URL (e.g. "/p/slug/")
+  def url
+    opts[:url]
+  end
 
   # @return [String] the absolute URL webmention targets are matched against
   def target

@@ -42,11 +42,17 @@ module Util
       title
     end
 
-    # @return [String] the resource description (or site default),
-    #   whitespace-collapsed and untruncated
+    # @return [String] the resource description (or site default), HTML
+    #   stripped, whitespace-collapsed, and untruncated
     def description
       desc = resource.data.description || metadata.description
-      desc.to_s.strip.gsub(/\s+/, " ")
+      strip_html(desc.to_s).strip.gsub(/\s+/, " ")
+    end
+
+    # @param text [String] the source text
+    # @return [String] +text+ with any HTML tags removed
+    def strip_html(text)
+      text.gsub(/<[^>]+>/, " ")
     end
 
     # Google clips the meta description ~155–160 chars; OG/Twitter cards allow a
@@ -174,7 +180,7 @@ module Util
         published = iso_date(resource.data.date)
         meta << {property: "article:published_time", content: published} if published
         meta << {property: "article:modified_time", content: article_modified} if article_modified
-        meta << {property: "article:author", content: metadata.author.name}
+        meta << {property: "article:author", content: metadata.author.url}
         article_tags.each { |tag| meta << {property: "article:tag", content: tag} }
       end
 

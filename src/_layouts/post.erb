@@ -13,15 +13,17 @@ layout: default
 <%= render PageShell.new(width: :narrow) do %>
   <%= render BackLink.new(href: back["path"], label: back["label"]) %>
 
-  <%= render PostHeader.new(resource: resource) %>
+  <div class="h-entry">
+    <%= render PostHeader.new(resource: resource) %>
 
-  <% if resource.stale? %>
-    <%= render StaleNote.new(updated_at: updated_time) %>
-  <% end %>
+    <% if resource.stale? %>
+      <%= render StaleNote.new(updated_at: updated_time) %>
+    <% end %>
 
-  <%= render Prose.new(as: :article, variant: :post, max_w: false) do %>
-    <%= yield %>
-  <% end %>
+    <%= render Prose.new(as: :article, variant: :post, max_w: false, class_name: "e-content") do %>
+      <%= yield %>
+    <% end %>
+  </div>
 
   <%= render PostFooter.new(
     resource: resource,
