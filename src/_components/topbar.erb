@@ -3,7 +3,14 @@
 >
   <div class="max-w-[1080px] mx-auto w-full px-9 max-md:px-4">
     <div class="flex items-center gap-4 h-16 max-compact:h-14 max-compact:gap-2">
-      <a href="/" class="inline-flex items-center gap-3 font-semibold tracking-tight">
+      <a
+        href="/"
+        class="
+          inline-flex items-center gap-3 font-semibold tracking-tight rounded-md
+          focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2
+          focus-visible:outline-mint-9
+        "
+      >
         <span class="w-9 h-9 rounded-full shrink-0 bg-mint-9"></span>
         <span class="text-sm text-sage-12"><%= metadata.author.name %></span>
         <span class="text-sage-8 mx-0.5 font-normal max-compact:hidden">/</span>
@@ -21,7 +28,9 @@
             href="<%= item.url %>"
             class="
               px-2.5 py-1.5 text-[13.5px] rounded-md transition-colors hover:bg-sage-3
-              hover:text-sage-12 <%= active?(item.url) ? "text-sage-12 relative after:absolute after:left-2.5 after:right-2.5 after:bottom-0.5 after:h-[1.5px] after:bg-mint-11 after:rounded-sm" : "text-sage-11" %> max-nav:hidden
+              hover:text-sage-12 focus-visible:outline focus-visible:outline-2
+              focus-visible:outline-offset-2 focus-visible:outline-mint-9
+              <%= active?(item.url) ? "text-sage-12 relative after:absolute after:left-2.5 after:right-2.5 after:bottom-0.5 after:h-[1.5px] after:bg-mint-11 after:rounded-sm" : "text-sage-11" %> max-nav:hidden
             "
           >
             <%= item.label %>
@@ -39,6 +48,8 @@
             class="
               font-mono text-[11.5px] text-sage-11 px-2.5 py-1.5 rounded-md inline-flex
               items-center gap-2 hover:bg-sage-3 hover:text-sage-12 transition-colors
+              focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2
+              focus-visible:outline-mint-9
             "
             aria-label="Open search"
           >
@@ -66,8 +77,10 @@
             type="button"
             id="mobile-menu-trigger"
             class="
-              hidden max-nav:inline-flex w-9 h-9 rounded-md items-center justify-center
+              hidden max-nav:inline-flex w-11 h-11 rounded-md items-center justify-center
               text-sage-11 hover:bg-sage-3 hover:text-sage-12 transition-colors
+              focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2
+              focus-visible:outline-mint-9
             "
             aria-label="Open menu"
             aria-expanded="false"
@@ -139,7 +152,9 @@
           <% if active?(item.url) %>aria-current="page"<% end %>
           class="
             group flex items-center justify-between gap-3 px-4 py-3 rounded-xl text-[15px]
-            transition-colors <%= active?(item.url) ? "bg-mint-3 text-mint-11 font-medium" : "text-sage-11 hover:bg-sage-3 hover:text-sage-12" %>
+            transition-colors focus-visible:outline focus-visible:outline-2
+            focus-visible:outline-offset-2 focus-visible:outline-mint-9
+            <%= active?(item.url) ? "bg-mint-3 text-mint-11 font-medium" : "text-sage-11 hover:bg-sage-3 hover:text-sage-12" %>
           "
         >
           <span><%= item.label %></span>
@@ -171,6 +186,8 @@
         class="
           inline-flex items-center gap-2 px-3 py-2 rounded-lg font-mono text-[12.5px]
           text-sage-11 hover:bg-sage-3 hover:text-sage-12 transition-colors
+          focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2
+          focus-visible:outline-mint-9
         "
       >
         <svg

@@ -44,7 +44,7 @@ class Button < Base
       (BUTTON_SIZES[size][:default_spacing] unless opts[:circle] || variant == :share),
       BUTTON_SIZES[size][:text],
       ((opts[:circle] ? "rounded-full" : "rounded-md") unless variant == :share),
-      ((variant == :share) ? nil : "inline-flex items-center justify-center leading-none font-medium"),
+      ((variant == :share) ? nil : "group inline-flex items-center justify-center leading-none font-medium"),
       "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-mint-9"
     )
   end

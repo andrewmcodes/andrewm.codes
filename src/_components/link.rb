@@ -22,13 +22,17 @@ class Link < Box
     skip: "sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:px-3 focus:py-2 focus:bg-sage-2 focus:text-sage-12 focus:rounded focus:border focus:border-sage-5"
   }.freeze
 
+  # Keyboard focus ring shared with Button; :skip owns its own focus styling.
+  FOCUS_RING = "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-mint-9 rounded-[2px]"
+
   private
 
   def classes
     cx(
       LINK_VARIANTS.fetch(opts[:variant], LINK_VARIANTS[:default]),
       TEXT_SCHEME.fetch(opts[:scheme], TEXT_SCHEME[:default]),
-      TEXT_WEIGHT[opts[:weight]&.to_sym]
+      TEXT_WEIGHT[opts[:weight]&.to_sym],
+      (FOCUS_RING unless opts[:variant] == :skip)
     )
   end
 

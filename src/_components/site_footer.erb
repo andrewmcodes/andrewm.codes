@@ -15,7 +15,8 @@
             href="<%= a["url"] %>"
             class="
               text-sage-11 border-b border-sage-5 pb-px hover:text-mint-11
-              hover:border-mint-11 transition-colors
+              hover:border-mint-11 transition-colors rounded-[2px] focus-visible:outline
+              focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-mint-9
             "
           ><%= a["name"] %></a>
         <% end %>
@@ -46,20 +47,21 @@
       "
     >
       <span class="flex flex-wrap gap-x-3 gap-y-1">
-        <a href="/changelog/" class="text-sage-11 hover:text-mint-11 transition-colors">Changelog</a>
+        <a href="/changelog/" class="text-sage-11 hover:text-mint-11 transition-colors rounded-[2px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-mint-9">Changelog</a>
         <span>·</span>
-        <a href="/uses/" class="text-sage-11 hover:text-mint-11 transition-colors">Uses</a>
+        <a href="/uses/" class="text-sage-11 hover:text-mint-11 transition-colors rounded-[2px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-mint-9">Uses</a>
         <span>·</span>
         <a
           href="https://github.com/<%= metadata.repo %>"
-          class="text-sage-11 hover:text-mint-11 transition-colors"
+          class="text-sage-11 hover:text-mint-11 transition-colors rounded-[2px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-mint-9"
         >Source</a>
       </span>
       <a
         href="<%= latest_commit_url %>"
         class="
           text-sage-11 hover:text-mint-11 transition-colors inline-flex items-center
-          gap-1.5
+          gap-1.5 rounded-[2px] focus-visible:outline focus-visible:outline-2
+          focus-visible:outline-offset-2 focus-visible:outline-mint-9
         "
         title="Latest commit"
       >
