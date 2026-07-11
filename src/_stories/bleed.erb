@@ -1,0 +1,20 @@
+---
+title: Bleed
+---
+
+<div class="space-y-6 max-w-prose border-x border-dashed border-sage-6 mx-auto">
+  <div class="space-y-2">
+    <p class="font-mono text-xs text-sage-10">Default (no bleed)</p>
+    <div class="bg-sage-3 p-4">Constrained to the prose column</div>
+  </div>
+
+  <div class="space-y-2">
+    <p class="font-mono text-xs text-sage-10">amount: :md</p>
+    <%= render Bleed.new(amount: :md) do %><div class="bg-sage-4 p-4">Breaks out of the prose column at md+</div><% end %>
+  </div>
+
+  <div class="space-y-2">
+    <p class="font-mono text-xs text-sage-10">amount: :lg</p>
+    <%= render Bleed.new(amount: :lg) do %><div class="bg-sage-4 p-4">Breaks out further at md+</div><% end %>
+  </div>
+</div>

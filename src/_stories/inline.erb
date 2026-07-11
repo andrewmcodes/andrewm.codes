@@ -1,0 +1,26 @@
+---
+title: Inline
+---
+
+<div class="space-y-6 max-w-prose">
+  <div class="space-y-2">
+    <p class="font-mono text-xs text-sage-10">Gaps</p>
+    <%= render Inline.new(gap: :xs) do %><span class="bg-sage-4 px-2 py-1">xs</span><span class="bg-sage-4 px-2 py-1">xs</span><% end %>
+    <%= render Inline.new(gap: :sm) do %><span class="bg-sage-4 px-2 py-1">sm</span><span class="bg-sage-4 px-2 py-1">sm</span><% end %>
+    <%= render Inline.new(gap: :md) do %><span class="bg-sage-4 px-2 py-1">md</span><span class="bg-sage-4 px-2 py-1">md</span><% end %>
+    <%= render Inline.new(gap: :lg) do %><span class="bg-sage-4 px-2 py-1">lg</span><span class="bg-sage-4 px-2 py-1">lg</span><% end %>
+  </div>
+
+  <div class="space-y-2">
+    <p class="font-mono text-xs text-sage-10">Align (mixed heights)</p>
+    <%= render Inline.new(gap: :sm, align: :baseline) do %><span class="text-2xl">Aa</span><span class="text-xs">baseline</span><% end %>
+    <%= render Inline.new(gap: :sm, align: :start) do %><span class="text-2xl">Aa</span><span class="text-xs">start</span><% end %>
+  </div>
+
+  <div class="space-y-2">
+    <p class="font-mono text-xs text-sage-10">No wrap</p>
+    <div class="max-w-[160px] border border-sage-5">
+      <%= render Inline.new(gap: :sm, wrap: false) do %><span class="bg-sage-4 px-2 py-1 whitespace-nowrap">one</span><span class="bg-sage-4 px-2 py-1 whitespace-nowrap">two</span><span class="bg-sage-4 px-2 py-1 whitespace-nowrap">three</span><% end %>
+    </div>
+  </div>
+</div>
