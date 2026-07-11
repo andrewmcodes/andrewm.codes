@@ -5,14 +5,14 @@
   aria-modal="true"
   aria-label="Search the site"
   class="
-    cmdk-overlay fixed inset-0 z-[100] bg-black/50 backdrop-blur-sm flex items-start
+    cmdk-overlay fixed inset-0 z-[100] bg-sage-1/50 backdrop-blur-sm flex items-start
     justify-center pt-[12vh]
   "
 >
   <div
     class="
       cmdk-panel w-[min(580px,92vw)] bg-sage-2 border border-sage-5 rounded-[14px]
-      overflow-hidden shadow-2xl
+      overflow-hidden
     "
   >
     <div class="flex items-center gap-3 px-[18px] py-3.5 border-b border-sage-5">
@@ -43,11 +43,7 @@
           placeholder:text-sage-8
         "
       />
-      <span
-        class="
-          font-mono text-[11px] text-sage-10 border border-sage-5 rounded px-1.5 py-0.5
-        "
-      >esc</span>
+      <span class="<%= kbd_class %>">esc</span>
     </div>
     <div
       id="cmdk-results"
@@ -61,27 +57,10 @@
         text-sage-11
       "
     >
-      <span class="inline-flex items-center gap-1.5"><kbd
-          class="
-            font-mono text-[11px] bg-sage-3 border border-sage-5 rounded text-sage-11 px-1.5
-            py-px
-          "
-        >↑↓</kbd>
-        navigate</span>
-      <span class="inline-flex items-center gap-1.5"><kbd
-          class="
-            font-mono text-[11px] bg-sage-3 border border-sage-5 rounded text-sage-11 px-1.5
-            py-px
-          "
-        >↵</kbd>
-        open</span>
-      <span class="inline-flex items-center gap-1.5"><kbd
-          class="
-            font-mono text-[11px] bg-sage-3 border border-sage-5 rounded text-sage-11 px-1.5
-            py-px
-          "
-        >esc</kbd>
-        close</span>
+      <% hints.each do |hint| %>
+        <span class="inline-flex items-center gap-1.5"><kbd class="<%= kbd_class %>"><%= hint[:keys] %></kbd>
+          <%= hint[:label] %></span>
+      <% end %>
     </div>
   </div>
 </div>

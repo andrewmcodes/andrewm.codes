@@ -1,18 +1,5 @@
-<% url = field(:url) %>
-<% has_url = url.to_s != "" && url.to_s != "#" %>
-<% image = field(:image) %>
-<% hover_classes =
-  (
-    if has_url
-      "before:absolute before:-inset-x-3 before:inset-y-1 before:-z-10 before:rounded-md before:bg-transparent before:transition-colors hover:before:bg-sage-2"
-    else
-      ""
-    end
-  ) %>
-<% row_classes =
-  "group relative grid grid-cols-[64px_1fr_auto] gap-5 items-center py-[18px] border-b border-sage-4 #{hover_classes} max-sm:grid-cols-1 max-sm:items-start max-sm:gap-3.5" %>
 <% row_component =
-  if has_url
+  if linked?
     Link.new(href: url, external: true, class: row_classes)
   else
     Box.new(class: row_classes)
@@ -28,9 +15,9 @@
     >
       <%= field(:mark) %>
     </div>
-    <% if image %>
+    <% if field(:image) %>
       <img
-        src="<%= image %>"
+        src="<%= field(:image) %>"
         alt=""
         loading="lazy"
         onerror="this.style.display='none'"
@@ -40,22 +27,11 @@
     <% end %>
   </div>
   <div>
-    <div
-      class="
-        text-[17px] font-medium tracking-tight text-sage-12
-        <%= "group-hover:text-mint-11 transition-colors" if has_url %> mb-0.5
-      "
-    ><%= field(:name) %></div>
+    <%= render Text.new(as: :div, variant: :row_title, class: "mb-0.5") do %><%= field(:name) %><% end %>
     <%= render Text.new(as: :div, variant: :card_body) do %><%= field(:tagline) %><% end %>
-    <div class="mt-1.5 flex flex-wrap gap-3 font-mono text-[11px] text-sage-11">
-      <% if field(:since) %><span><%= field(:active) ? "since " : "" %><%= field(:since) %></span><% end %>
-      <% if field(:schedule) %><% if field(:since) %><span>·</span><% end %><span><%= field(:schedule) %></span><% end %>
-    </div>
+    <% if meta_parts.any? %>
+      <%= render Text.new(as: :div, variant: :meta, class: "mt-1.5") do %><%= meta_parts.join(" · ") %><% end %>
+    <% end %>
   </div>
-  <div
-    class="
-      font-mono text-[11px] uppercase tracking-[0.06em] text-sage-11 whitespace-nowrap
-      max-sm:mt-1
-    "
-  ><%= field(:role) %></div>
+  <%= render Text.new(as: :div, variant: :eyebrow, class: "whitespace-nowrap max-sm:mt-1") do %><%= field(:role) %><% end %>
 <% end %>

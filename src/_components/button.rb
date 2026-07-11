@@ -14,10 +14,17 @@ class Button < Base
   }.freeze
 
   BUTTON_VARIANTS = {
-    primary: "bg-mint-4 hover:bg-mint-5 text-mint-11 border border-mint-9/40",
-    secondary: "bg-sage-3 hover:bg-sage-4 text-sage-12 border border-sage-5",
-    ghost: "bg-transparent hover:bg-sage-3 text-sage-11",
+    # Primary CTA. Bordered, sage at rest — mint is reserved for interactive
+    # states (never a decorative fill), so mint only shows up on hover/focus.
+    primary: "bg-transparent border border-sage-6 text-sage-12 hover:border-mint-9 hover:text-mint-11 transition-colors",
+    # Secondary CTA. Neutral bordered sage surface.
+    secondary: "bg-sage-3 hover:bg-sage-4 text-sage-12 border border-sage-5 transition-colors",
+    # Low-emphasis control. No border, subtle hover fill.
+    ghost: "bg-transparent hover:bg-sage-3 text-sage-11 transition-colors",
+    # Bare text control. No border, no fill.
     text: "bg-transparent text-sage-11",
+    # Inline share affordance styled like an underline-meta link rather than
+    # button chrome (see ShareButton).
     share: "inline-flex items-center gap-1.5 font-mono text-[11.5px] text-sage-11 border-b border-sage-5 pb-0.5 hover:text-mint-11 hover:border-mint-11 transition-colors bg-transparent"
   }.freeze
 
@@ -44,7 +51,7 @@ class Button < Base
       (BUTTON_SIZES[size][:default_spacing] unless opts[:circle] || variant == :share),
       BUTTON_SIZES[size][:text],
       ((opts[:circle] ? "rounded-full" : "rounded-md") unless variant == :share),
-      ((variant == :share) ? nil : "group inline-flex items-center justify-center leading-none font-medium"),
+      ((variant == :share) ? nil : cx("group inline-flex items-center justify-center leading-none font-medium", FONT_FAMILY[:mono])),
       "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-mint-9"
     )
   end

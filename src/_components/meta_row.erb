@@ -1,39 +1,30 @@
-<%= render Link.new(
-  href: href,
-  external: external?,
-  class: "group grid grid-cols-[96px_1fr_auto] gap-6 items-baseline py-3.5 border-b border-sage-4 max-md:grid-cols-1 max-md:gap-1.5"
-) do %>
-  <div class="font-mono text-xs text-sage-11 whitespace-nowrap"><%= date %></div>
+<%= render Link.new(href: href, external: external?, class: row_classes) do %>
+  <%= render Text.new(as: :div, variant: :meta, class: "whitespace-nowrap") do %><%= date %><% end %>
   <div>
-    <div
-      class="
-        text-[15.5px] font-medium leading-snug tracking-[-0.008em] text-sage-12
-        group-hover:text-mint-11 transition-colors
-        <%= "inline-flex items-center gap-1.5" if title_icon? %>
-      "
-    >
+    <%= render Text.new(as: :div, variant: :row_title, class: title_wrap_classes) do %>
       <% if title_icon? %>
         <span><%= title %></span>
         <%= render Icon.new(
           name: icon_name,
-          class:
-            "text-sage-8 group-hover:text-mint-11 transition-colors shrink-0 inline-block translate-y-px",
+          class: "text-sage-8 group-hover:text-mint-11 transition-colors shrink-0 inline-block translate-y-px",
         ) %>
       <% else %>
         <%= title %>
       <% end %>
-    </div>
+    <% end %>
     <% if meta.any? %>
-      <div class="mt-1 flex flex-wrap gap-3 font-mono text-[11px] text-sage-11">
-        <% meta.each_with_index do |m, i| %>
-          <% if i > 0 %><span>·</span><% end %>
-          <span><%= m %></span>
+      <%= render Inline.new(gap: :sm, class: "mt-1") do %>
+        <% meta.each_with_index do |item, i| %>
+          <% if i > 0 %>
+            <%= render Text.new(as: :span, variant: :meta) do %>·<% end %>
+          <% end %>
+          <%= render Text.new(as: :span, variant: :meta) do %><%= item %><% end %>
         <% end %>
-      </div>
+      <% end %>
     <% end %>
   </div>
   <% unless title_icon? %>
-    <div class="font-mono text-[11.5px] text-sage-11 max-md:hidden">
+    <div class="max-md:hidden inline-flex items-center justify-end">
       <%= render Icon.new(
         name: icon_name,
         class: "text-sage-8 group-hover:text-mint-11 transition-colors",

@@ -29,7 +29,7 @@ prototype:
     <%= tagged.size %>
     <%= tagged.size == 1 ? "post" : "posts" %>
     tagged
-    <code class="font-mono text-sage-12">#<%= tag %></code>.
+    <%= render Text.new(as: :code, font: :mono, scheme: :strong) do %>#<%= tag %><% end %>.
   <% end %>
 
   <% years.each do |year, year_posts| %>

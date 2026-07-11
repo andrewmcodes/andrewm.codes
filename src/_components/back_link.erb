@@ -1,11 +1,4 @@
-<a
-  href="<%= @href %>"
-  class="
-    group inline-flex items-center gap-1.5 mb-7 py-1 font-mono text-xs text-sage-11
-    hover:text-mint-11 transition-colors rounded-[2px] focus-visible:outline
-    focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-mint-9
-  "
->
+<%= render Link.new(href: @href, variant: :back) do %>
   <svg
     width="12"
     height="12"
@@ -19,4 +12,4 @@
     class="transition-transform group-hover:-translate-x-0.5"
   ><path d="M14 8H3M7 4l-4 4 4 4"/></svg>
   <%= @label %>
-</a>
+<% end %>

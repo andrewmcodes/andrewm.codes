@@ -1,6 +1,4 @@
 <div class="mb-9">
-  <%= render Text.new(as: :div, variant: :meta, class: "tracking-[0.08em] uppercase mt-7 mb-1.5") do %><%= @title %><% end %>
-  <div class="flex flex-col">
-    <%= content %>
-  </div>
+  <%= render Text.new(as: :div, variant: :eyebrow, class: "mt-7 mb-1.5") do %><%= @title %><% end %>
+  <%= render Stack.new do %><%= content %><% end %>
 </div>

@@ -1,10 +1,11 @@
 <section class="pt-24 pb-12">
-  <h1
-    class="
-      text-[clamp(34px,5vw,52px)] leading-[1.05] tracking-[-0.028em] font-semibold m-0
-      mb-8 text-balance max-w-[680px] text-sage-12
-    "
-  >
+  <%# IndieWeb identity: hidden h-card so webmention/mf2 parsers can resolve
+      the site's author from the homepage (mirrors the one on /about/). %>
+  <div class="h-card hidden">
+    <a class="u-url p-name" href="https://andrewm.codes/">Andrew Mason</a>
+    <img class="u-photo" src="/images/main-avatar.png" alt="">
+  </div>
+  <h1 class="<%= h1_class %> m-0 mb-8">
     Andrew Mason<span class="text-mint-11">.</span>
   </h1>
   <%= render Text.new(variant: :lead, class: "m-0 mb-4") do %>
@@ -25,7 +26,8 @@
     <%= render Link.new(href: "/speaking/", variant: :inline) do %>talks and podcasts<% end %>
     here. Mostly so I can find them again later.
   <% end %>
-  <div class="mt-8 flex flex-wrap items-center gap-3">
+  <%# Kept as a component-owned margin (mt-8): a one-off gap between prose and the CTA row, not a repeated layout rhythm a parent owns. %>
+  <%= render Inline.new(gap: :sm2, class: "mt-8") do %>
     <%= render Button.new(href: "/posts/", variant: :primary, size: :xl) do %>
       Read the writing
       <%= render Icon.new(
@@ -39,5 +41,5 @@
     <%= render Button.new(href: "https://remoteruby.com/", variant: :ghost, size: :xl) do %>
       Listen to Remote Ruby
     <% end %>
-  </div>
+  <% end %>
 </section>

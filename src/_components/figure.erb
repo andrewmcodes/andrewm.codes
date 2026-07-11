@@ -3,6 +3,6 @@
     <%= slotted :image %>
   </div>
   <% if slotted?(:caption) %>
-    <figcaption class="text-center text-sm text-slate-11"><%= slotted :caption %></figcaption>
+    <%= render Text.new(as: :figcaption, size: :md, scheme: :muted, class: "text-center") do %><%= slotted :caption %><% end %>
   <% end %>
 </figure>

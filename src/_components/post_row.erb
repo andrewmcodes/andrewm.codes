@@ -1,44 +1,24 @@
-<a
-  href="<%= @post.relative_url %>"
-  data-post-row
-  data-tags="<%= tags_data %>"
-  class="
-    group grid grid-cols-[96px_1fr_auto] gap-6 items-baseline py-3.5 border-b
-    border-sage-4 max-md:grid-cols-1 max-md:gap-1.5 rounded-[2px]
-    focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2
-    focus-visible:outline-mint-9
-  "
->
-  <div
-    class="font-mono text-xs text-sage-11 whitespace-nowrap max-md:text-[11px]"
-  ><%= date_str %></div>
+<%= render Link.new(
+  href: @post.relative_url,
+  class: row_classes,
+  data_post_row: true,
+  data_tags: tags_data,
+) do %>
+  <%= render Text.new(as: :div, variant: :meta, class: "whitespace-nowrap max-md:text-[11px]") do %><%= date_str %><% end %>
   <div>
-    <div
-      class="
-        text-[15.5px] font-medium leading-snug tracking-[-0.008em] text-sage-12
-        group-hover:text-mint-11 transition-colors text-balance
-      "
-    >
-      <%= @post.data.title %>
-    </div>
-    <div class="mt-1 flex flex-wrap gap-3 font-mono text-[11px] text-sage-11">
+    <%= render Text.new(as: :div, variant: :row_title, class: "text-balance") do %><%= @post.data.title %><% end %>
+    <%= render Inline.new(gap: :sm, class: "mt-1") do %>
       <% tags.each do |t| %>
-        <span><span class="text-sage-8">#</span><%= t %></span>
+        <%= render Text.new(as: :span, variant: :meta) do %><span class="text-sage-8">#</span><%= t %><% end %>
       <% end %>
-      <% if tags.any? %><span>·</span><% end %>
-      <span><%= reading %></span>
-    </div>
+      <% if tags.any? %><%= render Text.new(as: :span, variant: :meta) do %>·<% end %><% end %>
+      <%= render Text.new(as: :span, variant: :meta) do %><%= reading %><% end %>
+    <% end %>
   </div>
-  <div
-    class="
-      font-mono text-[11.5px] text-sage-11 whitespace-nowrap max-md:hidden inline-flex
-      items-center justify-end
-    "
-  >
+  <div class="max-md:hidden inline-flex items-center justify-end">
     <%= render Icon.new(
       name: "arrow_right",
-      class:
-        "text-sage-8 group-hover:text-mint-11 group-hover:translate-x-0.5 transition-all",
+      class: "text-sage-8 group-hover:text-mint-11 group-hover:translate-x-0.5 transition-all",
     ) %>
   </div>
-</a>
+<% end %>

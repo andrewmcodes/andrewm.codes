@@ -37,7 +37,7 @@ sitemap: false
   <noscript>
     <p class="text-sage-11 text-[15px]">
       Search needs JavaScript. Browse
-      <a href="/posts/" class="text-mint-11 hover:underline">all posts</a>
+      <%= render Link.new(href: "/posts/", variant: :inline_accent) do %>all posts<% end %>
       instead.
     </p>
   </noscript>

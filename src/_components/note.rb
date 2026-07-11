@@ -1,5 +1,5 @@
 # Markdown-aware callout block for prose content.
-class Note < Base
+class Note < Box
   COMPONENT_OPTIONS = %i[scheme].freeze
 
   NOTE_SCHEME = {
@@ -7,13 +7,11 @@ class Note < Base
     accent: "bg-mint-3 text-mint-12 border-mint-6"
   }.freeze
 
-  def call
-    inner = markdownify(content).to_s
-    cls = classes
-    html -> { %(<div class="#{cls}">#{inner}</div>) }
-  end
-
   private
+
+  def children
+    markdownify(content)
+  end
 
   def classes
     cx(

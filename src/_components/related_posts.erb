@@ -1,23 +1,13 @@
 <nav aria-label="Related posts" class="mt-10 pt-7 border-t border-sage-5">
-  <%= render Text.new(as: :h2, variant: :meta, class: "tracking-[0.08em] uppercase mb-3") do %>Related posts<% end %>
-  <ul class="flex flex-col">
+  <%= render Text.new(as: :h2, variant: :eyebrow, class: "mb-3") do %>Related posts<% end %>
+  <%= render Stack.new(as: :ul, gap: :none) do %>
     <% posts.each do |post| %>
       <li>
-        <a
-          href="<%= post.relative_url %>"
-          class="
-            group flex items-baseline gap-3 py-1.5 font-mono text-[13px] text-sage-11
-            hover:text-mint-11 transition-colors
-          "
-        >
+        <%= render Link.new(href: post.relative_url, class: link_classes) do %>
           <span class="text-sage-9 whitespace-nowrap"><%= post.date.strftime("%b %Y") %></span>
-          <span
-            class="
-              font-sans text-[14px] text-sage-12 group-hover:text-mint-11 transition-colors
-            "
-          ><%= post.data.title %></span>
-        </a>
+          <span class="<%= title_classes %>"><%= post.data.title %></span>
+        <% end %>
       </li>
     <% end %>
-  </ul>
+  <% end %>
 </nav>

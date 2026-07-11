@@ -3,50 +3,24 @@
 >
   <div class="<%= shell_width %> mx-auto w-full">
     <div class="flex items-center gap-4 h-16 max-compact:h-14 max-compact:gap-2">
-      <a
-        href="/"
-        class="
-          inline-flex items-center gap-3 font-semibold tracking-tight rounded-md
-          focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2
-          focus-visible:outline-mint-9
-        "
-      >
+      <%= render Link.new(href: "/", variant: :brand) do %>
         <span class="w-9 h-9 rounded-full shrink-0 bg-mint-9"></span>
         <span class="text-sm text-sage-12"><%= metadata.author.name %></span>
         <span class="text-sage-8 mx-0.5 font-normal max-compact:hidden">/</span>
-        <span
-          class="
-            text-sage-11 text-[12.5px] font-mono font-normal max-compact:hidden
-          "
-        >@<%= metadata.handle %></span>
-      </a>
+        <%= render Text.new(as: :span, variant: :meta, class: "max-compact:hidden") do %>@<%= metadata.handle %><% end %>
+      <% end %>
 
       <nav aria-label="Primary" class="ml-auto flex items-center gap-0.5">
         <% nav_items.each do |item| %>
-          <% next if item.label == "RSS" %>
-          <a
-            href="<%= item.url %>"
-            class="
-              px-2.5 py-1.5 text-[13.5px] rounded-md transition-colors hover:bg-sage-3
-              hover:text-sage-12 focus-visible:outline focus-visible:outline-2
-              focus-visible:outline-offset-2 focus-visible:outline-mint-9
-              <%= active?(item.url) ? "text-sage-12 relative after:absolute after:left-2.5 after:right-2.5 after:bottom-0.5 after:h-[1.5px] after:bg-mint-11 after:rounded-sm" : "text-sage-11" %> max-nav:hidden
-            "
-          >
-            <%= item.label %>
-          </a>
+          <%= render Link.new(href: item.url, variant: :nav, class: nav_item_class(item)) do %><%= item.label %><% end %>
         <% end %>
 
-        <div
-          class="
-            flex items-center gap-1.5 ml-2 max-compact:gap-0.5 max-compact:ml-1
-          "
-        >
+        <%= render Inline.new(gap: :sm, wrap: false, class: "ml-2 max-compact:gap-0.5 max-compact:ml-1") do %>
           <button
             type="button"
             id="cmdk-trigger"
             class="
-              font-mono text-[11.5px] text-sage-11 px-2.5 py-1.5 rounded-md inline-flex
+              font-mono text-xs text-sage-11 px-2.5 py-1.5 rounded-md inline-flex
               items-center gap-2 hover:bg-sage-3 hover:text-sage-12 transition-colors
               focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2
               focus-visible:outline-mint-9
@@ -111,7 +85,7 @@
               aria-hidden="true"
             ><path d="M18 6 6 18M6 6l12 12"/></svg>
           </button>
-        </div>
+        <% end %>
       </nav>
     </div>
   </div>
@@ -137,7 +111,7 @@
     inert
     class="
       fixed inset-x-0 top-16 z-[35] origin-top bg-sage-1/95 backdrop-blur border-b
-      border-sage-4 rounded-b-2xl shadow-xl px-2 pt-2 pb-3
+      border-sage-4 rounded-b-2xl px-2 pt-2 pb-3
       transition-[opacity,transform] duration-200 ease-out opacity-0
       -translate-y-2 pointer-events-none data-[open=true]:opacity-100
       data-[open=true]:translate-y-0
@@ -146,17 +120,12 @@
   >
     <nav aria-label="Mobile" class="flex flex-col gap-0.5">
       <% nav_items.each do |item| %>
-        <% next if item.label == "RSS" %>
-        <a
-          href="<%= item.url %>"
-          <% if active?(item.url) %>aria-current="page"<% end %>
-          class="
-            group flex items-center justify-between gap-3 px-4 py-3 rounded-xl text-[15px]
-            transition-colors focus-visible:outline focus-visible:outline-2
-            focus-visible:outline-offset-2 focus-visible:outline-mint-9
-            <%= active?(item.url) ? "bg-mint-3 text-mint-11 font-medium" : "text-sage-11 hover:bg-sage-3 hover:text-sage-12" %>
-          "
-        >
+        <%= render Link.new(
+          href: item.url,
+          variant: :nav_mobile,
+          class: mobile_item_class(item),
+          "aria-current": (active?(item.url) ? "page" : nil),
+        ) do %>
           <span><%= item.label %></span>
           <svg
             width="16"
@@ -168,28 +137,17 @@
             stroke-linecap="round"
             stroke-linejoin="round"
             aria-hidden="true"
-            class="
-              <%= active?(item.url) ? "text-mint-11" : "text-sage-7 -translate-x-1 opacity-0 transition group-hover:translate-x-0 group-hover:opacity-100" %>
-            "
+            class="<%= mobile_chevron_class(item) %>"
           ><path d="m9 18 6-6-6-6"/></svg>
-        </a>
+        <% end %>
       <% end %>
     </nav>
 
-    <div
-      class="
-        mt-2 pt-3 px-2 border-t border-sage-4 flex items-center justify-between gap-3
-      "
-    >
-      <a
-        href="/feed.xml"
-        class="
-          inline-flex items-center gap-2 px-3 py-2 rounded-lg font-mono text-[12.5px]
-          text-sage-11 hover:bg-sage-3 hover:text-sage-12 transition-colors
-          focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2
-          focus-visible:outline-mint-9
-        "
-      >
+    <%= render Inline.new(gap: :md, wrap: false, class: "mt-2 pt-3 px-2 border-t border-sage-4 justify-between") do %>
+      <%= render Link.new(
+        href: "/feed.xml",
+        class: "inline-flex items-center gap-2 px-3 py-2 rounded-lg font-mono text-xs text-sage-11 hover:bg-sage-3 hover:text-sage-12 transition-colors",
+      ) do %>
         <svg
           width="15"
           height="15"
@@ -206,9 +164,9 @@
             r="1"
           /></svg>
         RSS
-      </a>
+      <% end %>
 
       <%= render ThemeToggle.new(context: "menu") %>
-    </div>
+    <% end %>
   </div>
 </header>
