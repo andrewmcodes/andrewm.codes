@@ -9,6 +9,7 @@ class Text < Box
 
   VARIANTS = {
     default: "",
+    lead: "text-[16.5px] leading-[1.65] max-w-[600px] text-pretty text-sage-11",
     source_note: "mt-10 text-[12.5px] text-sage-10"
   }.freeze
 
