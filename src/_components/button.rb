@@ -14,11 +14,11 @@ class Button < Base
   }.freeze
 
   BUTTON_VARIANTS = {
-    primary: "shadow-sm bg-mint-4 hover:bg-mint-5 text-mint-11 border border-mint-9/40",
-    secondary: "shadow-sm bg-sage-3 hover:bg-sage-4 text-sage-12",
+    primary: "bg-mint-4 hover:bg-mint-5 text-mint-11 border border-mint-9/40",
+    secondary: "bg-sage-3 hover:bg-sage-4 text-sage-12 border border-sage-5",
     ghost: "bg-transparent hover:bg-sage-3 text-sage-11",
     text: "bg-transparent text-sage-11",
-    share: "inline-flex items-center gap-1.5 font-mono text-[11.5px] text-sage-10 border-b border-sage-5 pb-0.5 hover:text-mint-11 hover:border-mint-11 transition-colors bg-transparent"
+    share: "inline-flex items-center gap-1.5 font-mono text-[11.5px] text-sage-11 border-b border-sage-5 pb-0.5 hover:text-mint-11 hover:border-mint-11 transition-colors bg-transparent"
   }.freeze
 
   def call

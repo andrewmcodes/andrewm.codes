@@ -1,6 +1,6 @@
 <% if reactions.any? || replies.any? %>
   <section class="mt-12 pt-7 border-t border-sage-5">
-    <h2 class="font-mono text-[12.5px] uppercase tracking-wide text-sage-10">Webmentions</h2>
+    <h2 class="font-mono text-[12.5px] uppercase tracking-wide text-sage-11">Webmentions</h2>
 
     <% if reactions.any? %>
       <div class="mt-4 flex flex-wrap items-center gap-2">
@@ -20,7 +20,7 @@
             <% end %>
           <% end %>
         <% end %>
-        <span class="font-mono text-xs text-sage-10">
+        <span class="font-mono text-xs text-sage-11">
           <%= reactions.length %>
           <%= (reactions.length == 1) ? "reaction" : "reactions" %>
         </span>
@@ -47,7 +47,7 @@
                   <%= a["name"] || "Someone" %>
                 <% end %>
                 <% if published_on(wm) %>
-                  <span class="font-mono text-[11px] text-sage-10"><%= published_on(wm) %></span>
+                  <span class="font-mono text-[11px] text-sage-11"><%= published_on(wm) %></span>
                 <% end %>
               </div>
               <% if content_text(wm) %>

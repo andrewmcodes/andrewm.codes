@@ -47,14 +47,14 @@
       "
     ><%= field(:name) %></div>
     <%= render Text.new(as: :div, variant: :card_body) do %><%= field(:tagline) %><% end %>
-    <div class="mt-1.5 flex flex-wrap gap-3 font-mono text-[11px] text-sage-10">
+    <div class="mt-1.5 flex flex-wrap gap-3 font-mono text-[11px] text-sage-11">
       <% if field(:since) %><span><%= field(:active) ? "since " : "" %><%= field(:since) %></span><% end %>
       <% if field(:schedule) %><% if field(:since) %><span>·</span><% end %><span><%= field(:schedule) %></span><% end %>
     </div>
   </div>
   <div
     class="
-      font-mono text-[11px] uppercase tracking-[0.06em] text-sage-10 whitespace-nowrap
+      font-mono text-[11px] uppercase tracking-[0.06em] text-sage-11 whitespace-nowrap
       max-sm:mt-1
     "
   ><%= field(:role) %></div>

@@ -11,8 +11,8 @@ class Text < Box
     default: "",
     lead: "text-[16.5px] leading-[1.65] max-w-[600px] text-pretty text-sage-11",
     card_body: "text-[13.5px] leading-snug text-sage-11 text-pretty",
-    meta: "font-mono text-[11.5px] text-sage-10",
-    source_note: "mt-10 text-[12.5px] text-sage-10"
+    meta: "font-mono text-[11.5px] text-sage-11",
+    source_note: "mt-10 text-[12.5px] text-sage-11"
   }.freeze
 
   private

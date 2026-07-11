@@ -14,10 +14,10 @@ class Link < Box
     nav: "text-sm font-medium",
     inline: "text-sage-12 border-b border-sage-5 hover:text-mint-11 hover:border-mint-11 transition-colors",
     inline_accent: "text-mint-11 hover:underline",
-    tag: "font-mono text-xs py-1 text-sage-10 hover:text-mint-11 transition-colors",
+    tag: "font-mono text-xs py-1 text-sage-11 hover:text-mint-11 transition-colors",
     post_tag: "px-2 py-0.5 rounded-full border border-sage-5 text-sage-11 hover:text-mint-11 hover:border-mint-11 text-[11px] transition-colors",
     action: "group inline-flex items-center gap-1.5 mt-7 font-mono text-[13px] text-sage-11 border-b border-sage-5 pb-0.5 hover:text-mint-11 hover:border-mint-11 transition-colors",
-    section_action: "inline-flex items-center gap-1.5 font-mono text-[12.5px] text-sage-10 hover:text-mint-11 transition-colors group",
+    section_action: "inline-flex items-center gap-1.5 font-mono text-[12.5px] text-sage-11 hover:text-mint-11 transition-colors group",
     post_nav: "text-sage-11 hover:text-mint-11 transition-colors",
     skip: "sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:px-3 focus:py-2 focus:bg-sage-2 focus:text-sage-12 focus:rounded focus:border focus:border-sage-5"
   }.freeze
