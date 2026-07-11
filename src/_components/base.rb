@@ -7,6 +7,7 @@ class Base < Bridgetown::Component
   COMPONENT_OPTIONS = [].freeze
 
   TEXT_WEIGHT = {
+    light: "font-light",
     default: "font-normal",
     medium: "font-medium",
     semibold: "font-semibold",
@@ -15,12 +16,18 @@ class Base < Bridgetown::Component
     black: "font-black"
   }.freeze
 
+  # Real scale (not an arbitrary-value grab bag) sized for Literata/Martian
+  # Mono, which both run a touch larger than the previous sans/mono pairing
+  # did at the same nominal size. Roles are intended usage, not hard rules:
   TEXT_SIZES = {
     none: "",
-    sm: "text-xs",
-    md: "text-sm",
-    lg: "text-base",
-    xl: "text-lg"
+    xs2: "text-[11px]", # smallest meta labels: eyebrow/section labels, dense chrome
+    xs: "text-xs", # meta labels: dates, tags, nav labels, kbd
+    sm: "text-[13px]", # card body copy, secondary descriptions
+    md: "text-sm", # default body-adjacent copy (component default)
+    lg: "text-[15px]", # emphasized body copy, card titles
+    xl: "text-base", # lead-in copy, pulled-up body text
+    xl2: "text-[17px]" # lead paragraphs (matches prose :post body size)
   }.freeze
 
   TEXT_SCHEME = {
@@ -46,8 +53,39 @@ class Base < Bridgetown::Component
   }.freeze
 
   FONT_FAMILY = {
+    serif: "font-serif",
     sans: "font-sans",
     mono: "font-mono"
+  }.freeze
+
+  # Gap tokens shared by the one-axis layout primitives (Stack/Inline/Columns).
+  # `sm2` (12px) exists because it's a real rhythm in the chrome (CTA rows,
+  # footer link rows) that neither sm (8px) nor md (16px) reproduces.
+  GAPS = {
+    none: "",
+    xs: "gap-1",
+    sm: "gap-2",
+    sm2: "gap-3",
+    md: "gap-4",
+    lg: "gap-6"
+  }.freeze
+
+  # Line-height tokens. Literata (serif body) wants more air than the
+  # previous sans body did; Martian Mono chrome text stays tight/snug.
+  LEADING = {
+    tight: "leading-tight",
+    snug: "leading-snug",
+    normal: "leading-normal",
+    relaxed: "leading-relaxed"
+  }.freeze
+
+  # Letter-spacing tokens, mainly for Martian Mono uppercase chrome labels
+  # (it runs wide already, so `wide`/`wider` are used sparingly).
+  TRACKING = {
+    tight: "tracking-tight",
+    normal: "tracking-normal",
+    wide: "tracking-wide",
+    wider: "tracking-wider"
   }.freeze
 
   def initialize(**opts)

@@ -66,8 +66,21 @@
 }
 
 @theme {
-  --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: "JetBrains Mono Variable", ui-monospace, "Menlo", monospace;
+  --font-serif: "Literata Variable", Georgia, "Times New Roman", serif;
+  --font-sans: ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Martian Mono Variable", ui-monospace, "Menlo", monospace;
+
+  /* Sharp-corners direction: hairline borders carry the visual language, not
+     shadows or rounded corners. Scale down (not off) so existing rounded-*
+     utilities sharpen sitewide without touching every template.
+     rounded-full is intentionally untouched (avatars/toggles stay round). */
+  --radius-xs: 1px;
+  --radius-sm: 2px;
+  --radius-md: 2px;
+  --radius-lg: 3px;
+  --radius-xl: 4px;
+  --radius-2xl: 4px;
+  --radius-3xl: 6px;
 
   /* Named breakpoints for the topbar's load-bearing nav collapse points
      (these don't map onto sm/md/lg). Naming them keeps the markup free of
@@ -99,7 +112,6 @@
 }
 
 body {
-  font-feature-settings: "cv11", "ss01";
   -webkit-font-smoothing: antialiased;
 }
 
@@ -162,7 +174,7 @@ button.copy-code {
   top: 0.5rem;
   right: 0.5rem;
   padding: 0.25rem 0.5rem;
-  font-size: 0.75rem;
+  font-size: 12.5px;
   background: var(--sage-3);
   color: var(--sage-11);
   border: 1px solid var(--sage-5);
@@ -213,7 +225,7 @@ pre.torchlight {
 }
 pre.torchlight code {
   @apply block py-4 min-w-max bg-transparent border-0 p-0;
-  font-size: 13.5px;
+  font-size: 12.5px;
 }
 pre.torchlight code .line {
   @apply px-4;
@@ -227,7 +239,7 @@ pre.torchlight code .summary-caret {
    missing TORCHLIGHT_TOKEN). Sage styling so dev still reads cleanly. */
 pre:not(.torchlight) {
   @apply my-4 rounded-md overflow-x-auto bg-sage-2 border border-sage-4 p-4;
-  font-size: 13.5px;
+  font-size: 12.5px;
 }
 pre:not(.torchlight) code {
   background: transparent;
