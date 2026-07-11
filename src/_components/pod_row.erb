@@ -46,7 +46,7 @@
         <%= "group-hover:text-mint-11 transition-colors" if has_url %> mb-0.5
       "
     ><%= field(:name) %></div>
-    <div class="text-[13.5px] leading-snug text-sage-11 text-pretty"><%= field(:tagline) %></div>
+    <%= render Text.new(as: :div, variant: :card_body) do %><%= field(:tagline) %><% end %>
     <div class="mt-1.5 flex flex-wrap gap-3 font-mono text-[11px] text-sage-10">
       <% if field(:since) %><span><%= field(:active) ? "since " : "" %><%= field(:since) %></span><% end %>
       <% if field(:schedule) %><% if field(:since) %><span>·</span><% end %><span><%= field(:schedule) %></span><% end %>

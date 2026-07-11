@@ -28,6 +28,12 @@ class Builders::Helpers < SiteBuilder
       "https://github.com/#{site.metadata.repo}/blob/main/src/#{resource.relative_path}"
     end
 
+    # The site container width/padding, owned by PageShell::WIDTHS, so the topbar
+    # and footer share one source of truth instead of re-hardcoding the literal.
+    helper :shell_width do |key = :wide|
+      PageShell::WIDTHS.fetch(key, PageShell::WIDTHS[:wide])
+    end
+
     helper :latest_commit_sha do
       commit_sha[0..6]
     end

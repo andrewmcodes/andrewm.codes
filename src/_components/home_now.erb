@@ -1,6 +1,6 @@
 <ul class="flex flex-col gap-3.5 m-0 p-0 list-none">
   <li class="grid grid-cols-[92px_1fr] gap-4 max-sm:grid-cols-1 max-sm:gap-0.5">
-    <span class="font-mono text-[11.5px] text-sage-10 lowercase pt-px">building</span>
+    <%= render Text.new(as: :span, variant: :meta, class: "lowercase pt-px") do %>building<% end %>
     <span class="text-[14.5px] leading-snug text-sage-11 text-pretty">
       Shipping Ruby on Rails at
       <%= render Link.new(href: "https://www.podia.com/", variant: :inline) do %>Podia<% end %>,
@@ -9,7 +9,7 @@
   </li>
   <% if episode_url %>
     <li class="grid grid-cols-[92px_1fr] gap-4 max-sm:grid-cols-1 max-sm:gap-0.5">
-      <span class="font-mono text-[11.5px] text-sage-10 lowercase pt-px">podcasting</span>
+      <%= render Text.new(as: :span, variant: :meta, class: "lowercase pt-px") do %>podcasting<% end %>
       <span class="text-[14.5px] leading-snug text-sage-11 text-pretty">
         Co-hosting
         <%= render Link.new(href: episode_url, variant: :inline) do %>Remote Ruby<% end %><% if episode_date %>, latest episode out <%= episode_date %><% end %>.
@@ -18,7 +18,7 @@
   <% end %>
   <% if talk_field(:title) %>
     <li class="grid grid-cols-[92px_1fr] gap-4 max-sm:grid-cols-1 max-sm:gap-0.5">
-      <span class="font-mono text-[11.5px] text-sage-10 lowercase pt-px">speaking</span>
+      <%= render Text.new(as: :span, variant: :meta, class: "lowercase pt-px") do %>speaking<% end %>
       <span class="text-[14.5px] leading-snug text-sage-11 text-pretty">
         Most recently gave
         <%= render Link.new(href: "/speaking/", variant: :inline) do %><%= talk_field(:title) %><% end %><% if talk_field(:venue) %> at <%= talk_field(:venue) %><% end %><% if talk_date %> (<%= talk_date %>)<% end %>.

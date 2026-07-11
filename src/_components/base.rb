@@ -25,6 +25,7 @@ class Base < Bridgetown::Component
 
   TEXT_SCHEME = {
     default: "",
+    subtle: "text-sage-10",
     muted: "text-sage-11",
     primary: "text-mint-11",
     strong: "text-sage-12",

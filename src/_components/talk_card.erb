@@ -13,7 +13,7 @@
         ·
         <%= field(:city) %><% end %></div>
     <h3 class="text-[17px] font-medium tracking-tight mb-1 text-sage-12"><%= field(:title) %></h3>
-    <p class="text-[13.5px] leading-snug text-sage-11 mb-3 text-pretty"><%= field(:excerpt) %></p>
+    <%= render Text.new(variant: :card_body, class: "mb-3") do %><%= field(:excerpt) %><% end %>
     <div class="flex flex-wrap gap-3.5">
       <% Array(field(:links)).each do |l| %>
         <a

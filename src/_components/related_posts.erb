@@ -1,9 +1,5 @@
 <nav aria-label="Related posts" class="mt-10 pt-7 border-t border-sage-5">
-  <h2
-    class="
-      font-mono text-[11.5px] text-sage-10 tracking-[0.08em] uppercase mb-3
-    "
-  >Related posts</h2>
+  <%= render Text.new(as: :h2, variant: :meta, class: "tracking-[0.08em] uppercase mb-3") do %>Related posts<% end %>
   <ul class="flex flex-col">
     <% posts.each do |post| %>
       <li>
