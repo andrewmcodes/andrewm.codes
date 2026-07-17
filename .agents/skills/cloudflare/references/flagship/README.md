@@ -4,15 +4,15 @@ Feature flag service for controlling feature visibility without redeploying code
 
 ## When to Use
 
-| Need | Use Flagship? | Alternative |
-|------|--------------|-------------|
-| Feature toggles (on/off) | Yes | — |
-| Gradual rollouts (percentage-based) | Yes | — |
-| A/B testing with attribute targeting | Yes | — |
-| Multi-variant configuration delivery | Yes | — |
-| Environment-specific config (dev/staging/prod) | Consider | Wrangler environments, secrets |
-| Static config that never changes | No | `wrangler.jsonc` vars |
-| Per-request rate limiting | No | Rate Limiting rules |
+| Need                                           | Use Flagship? | Alternative                    |
+| ---------------------------------------------- | ------------- | ------------------------------ |
+| Feature toggles (on/off)                       | Yes           | —                              |
+| Gradual rollouts (percentage-based)            | Yes           | —                              |
+| A/B testing with attribute targeting           | Yes           | —                              |
+| Multi-variant configuration delivery           | Yes           | —                              |
+| Environment-specific config (dev/staging/prod) | Consider      | Wrangler environments, secrets |
+| Static config that never changes               | No            | `wrangler.jsonc` vars          |
+| Per-request rate limiting                      | No            | Rate Limiting rules            |
 
 ## Key Concepts
 
@@ -25,22 +25,22 @@ Feature flag service for controlling feature visibility without redeploying code
 
 ## Two Evaluation Paths
 
-| Path | Runtime | Package | Latency | Auth |
-|------|---------|---------|---------|------|
-| **Binding** (`env.FLAGS`) | Workers only | `@cloudflare/workers-types` | Lowest (no HTTP) | Automatic via binding |
-| **OpenFeature SDK** | Workers, Node.js, browser | `@cloudflare/flagship` + `@openfeature/server-sdk` or `@openfeature/web-sdk` | HTTP per eval (server) or prefetch (client) | API token or binding passthrough |
+| Path                      | Runtime                   | Package                                                                      | Latency                                     | Auth                             |
+| ------------------------- | ------------------------- | ---------------------------------------------------------------------------- | ------------------------------------------- | -------------------------------- |
+| **Binding** (`env.FLAGS`) | Workers only              | `@cloudflare/workers-types`                                                  | Lowest (no HTTP)                            | Automatic via binding            |
+| **OpenFeature SDK**       | Workers, Node.js, browser | `@cloudflare/flagship` + `@openfeature/server-sdk` or `@openfeature/web-sdk` | HTTP per eval (server) or prefetch (client) | API token or binding passthrough |
 
 **Recommendation:** Use the binding inside Workers. Use the SDK when running outside Workers or when you need OpenFeature vendor-neutrality.
 
 ## Reading Order
 
-| Task | Read |
-|------|------|
-| Set up Flagship in a Worker | `configuration.md` → `api.md` |
-| Evaluate flags in code | `configuration.md` → `patterns.md` |
-| Manage flags via REST API | `api.md` → `patterns.md` |
-| Design targeting rules & rollouts | `patterns.md` → `gotchas.md` |
-| Debug flag evaluation issues | `gotchas.md` → `api.md` |
+| Task                              | Read                               |
+| --------------------------------- | ---------------------------------- |
+| Set up Flagship in a Worker       | `configuration.md` → `api.md`      |
+| Evaluate flags in code            | `configuration.md` → `patterns.md` |
+| Manage flags via REST API         | `api.md` → `patterns.md`           |
+| Design targeting rules & rollouts | `patterns.md` → `gotchas.md`       |
+| Debug flag evaluation issues      | `gotchas.md` → `api.md`            |
 
 ## In This Reference
 

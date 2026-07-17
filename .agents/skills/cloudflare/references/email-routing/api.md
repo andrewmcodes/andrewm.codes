@@ -16,11 +16,11 @@ Main interface for incoming emails:
 
 ```typescript
 interface ForwardableEmailMessage {
-  readonly from: string;          // Envelope sender (e.g., "sender@example.com")
-  readonly to: string;             // Envelope recipient (e.g., "you@yourdomain.com")
-  readonly headers: Headers;       // Web API Headers object
-  readonly raw: ReadableStream;    // Raw MIME message stream
-  
+  readonly from: string; // Envelope sender (e.g., "sender@example.com")
+  readonly to: string; // Envelope recipient (e.g., "you@yourdomain.com")
+  readonly headers: Headers; // Web API Headers object
+  readonly raw: ReadableStream; // Raw MIME message stream
+
   setReject(reason: string): void;
   forward(rcptTo: string, headers?: Headers): Promise<void>;
 }
@@ -28,12 +28,12 @@ interface ForwardableEmailMessage {
 
 **Key Properties:**
 
-| Property | Type | Description |
-|----------|------|-------------|
-| `from` | `string` | Envelope sender (MAIL FROM), not header From |
-| `to` | `string` | Envelope recipient (RCPT TO), not header To |
-| `headers` | `Headers` | Email headers (Subject, From, To, etc.) |
-| `raw` | `ReadableStream` | Raw MIME message (consume once only) |
+| Property  | Type             | Description                                  |
+| --------- | ---------------- | -------------------------------------------- |
+| `from`    | `string`         | Envelope sender (MAIL FROM), not header From |
+| `to`      | `string`         | Envelope recipient (RCPT TO), not header To  |
+| `headers` | `Headers`        | Email headers (Subject, From, To, etc.)      |
+| `raw`     | `ReadableStream` | Raw MIME message (consume once only)         |
 
 **Methods:**
 
@@ -67,20 +67,22 @@ if (spamScore > 5) {
 
 ```typescript
 // Envelope addresses (routing, auth checks)
-message.from // "bounce@sender.com" (actual sender)
-message.to   // "you@yourdomain.com" (your address)
+message.from; // "bounce@sender.com" (actual sender)
+message.to; // "you@yourdomain.com" (your address)
 
 // Header addresses (display, user-facing)
-message.headers.get("from") // "Alice <alice@sender.com>"
-message.headers.get("to")   // "Bob <you@yourdomain.com>"
+message.headers.get("from"); // "Alice <alice@sender.com>"
+message.headers.get("to"); // "Bob <you@yourdomain.com>"
 ```
 
 **Use envelope addresses for:**
+
 - Authentication/SPF checks
 - Routing decisions
 - Bounce handling
 
 **Use header addresses for:**
+
 - Display to users
 - Reply-To logic
 - User-facing filtering
@@ -94,9 +96,7 @@ Outbound email API for transactional messages.
 ```jsonc
 // wrangler.jsonc
 {
-  "send_email": [
-    { "name": "EMAIL" }
-  ]
+  "send_email": [{ "name": "EMAIL" }],
 }
 ```
 
@@ -133,18 +133,15 @@ export default {
   async fetch(request, env, ctx): Promise<Response> {
     await env.EMAIL.send({
       from: { name: "Acme Corp", email: "noreply@yourdomain.com" },
-      to: [
-        { name: "Alice", email: "alice@example.com" },
-        "bob@example.com"
-      ],
+      to: [{ name: "Alice", email: "alice@example.com" }, "bob@example.com"],
       subject: "Your order #12345 has shipped",
       text: "Track your package at: https://track.example.com/12345",
       html: "<p>Track your package at: <a href='https://track.example.com/12345'>View tracking</a></p>",
-      reply_to: { name: "Support", email: "support@yourdomain.com" }
+      reply_to: { name: "Support", email: "support@yourdomain.com" },
     });
-    
+
     return new Response("Email sent");
-  }
+  },
 } satisfies ExportedHandler<Env>;
 ```
 
@@ -168,14 +165,14 @@ curl -H "Authorization: Bearer $API_TOKEN" https://api.cloudflare.com/client/v4/
 
 ### Key Endpoints
 
-| Operation | Method | Endpoint |
-|-----------|--------|----------|
-| Enable routing | POST | `/zones/{zone_id}/email/routing/enable` |
-| Disable routing | POST | `/zones/{zone_id}/email/routing/disable` |
-| List rules | GET | `/zones/{zone_id}/email/routing/rules` |
-| Create rule | POST | `/zones/{zone_id}/email/routing/rules` |
-| Verify destination | POST | `/zones/{zone_id}/email/routing/addresses` |
-| List destinations | GET | `/zones/{zone_id}/email/routing/addresses` |
+| Operation          | Method | Endpoint                                   |
+| ------------------ | ------ | ------------------------------------------ |
+| Enable routing     | POST   | `/zones/{zone_id}/email/routing/enable`    |
+| Disable routing    | POST   | `/zones/{zone_id}/email/routing/disable`   |
+| List rules         | GET    | `/zones/{zone_id}/email/routing/rules`     |
+| Create rule        | POST   | `/zones/{zone_id}/email/routing/rules`     |
+| Verify destination | POST   | `/zones/{zone_id}/email/routing/addresses` |
+| List destinations  | GET    | `/zones/{zone_id}/email/routing/addresses` |
 
 ### Create Routing Rule Example
 

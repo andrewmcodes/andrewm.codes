@@ -23,7 +23,7 @@ const keys = ["user:1", "user:2", "user:3", "missing:key"];
 const results = await env.MY_KV.get(keys);
 // Returns Map<string, string | null>
 
-console.log(results.get("user:1"));     // "John" (if exists)
+console.log(results.get("user:1")); // "John" (if exists)
 console.log(results.get("missing:key")); // null
 
 // Process results with null handling
@@ -35,7 +35,10 @@ for (const [key, value] of results) {
 }
 
 // TypeScript with generics (type-safe JSON parsing)
-interface UserProfile { name: string; email: string; }
+interface UserProfile {
+  name: string;
+  email: string;
+}
 const profile = await env.USERS.get<UserProfile>("user:123", "json");
 // profile is typed as UserProfile | null
 if (profile) {
@@ -56,7 +59,7 @@ await env.MY_KV.put("config", JSON.stringify({ theme: "dark" }));
 
 // With expiration (UNIX timestamp)
 await env.MY_KV.put("session", token, {
-  expiration: Math.floor(Date.now() / 1000) + 3600
+  expiration: Math.floor(Date.now() / 1000) + 3600,
 });
 
 // With TTL (seconds from now, min 60)
@@ -64,13 +67,13 @@ await env.MY_KV.put("cache", data, { expirationTtl: 300 });
 
 // With metadata (max 1024 bytes)
 await env.MY_KV.put("user:profile", userData, {
-  metadata: { version: 2, lastUpdated: Date.now() }
+  metadata: { version: 2, lastUpdated: Date.now() },
 });
 
 // Combined
 await env.MY_KV.put("temp", value, {
   expirationTtl: 3600,
-  metadata: { temporary: true }
+  metadata: { temporary: true },
 });
 ```
 
@@ -133,12 +136,12 @@ do {
 
 ### Type Selection
 
-| Type | Use Case | Performance |
-|------|----------|-------------|
-| `stream` | Large values (>1MB) | Fastest - no buffering |
-| `arrayBuffer` | Binary data | Fast - single allocation |
-| `text` | String values | Medium |
-| `json` | Objects (parse overhead) | Slowest - parsing cost |
+| Type          | Use Case                 | Performance              |
+| ------------- | ------------------------ | ------------------------ |
+| `stream`      | Large values (>1MB)      | Fastest - no buffering   |
+| `arrayBuffer` | Binary data              | Fast - single allocation |
+| `text`        | String values            | Medium                   |
+| `json`        | Objects (parse overhead) | Slowest - parsing cost   |
 
 ### Parallel Reads
 
@@ -147,7 +150,7 @@ do {
 const [user, settings, cache] = await Promise.all([
   env.USERS.get("user:123", "json"),
   env.SETTINGS.get("config:app", "json"),
-  env.CACHE.get("data:latest")
+  env.CACHE.get("data:latest"),
 ]);
 ```
 

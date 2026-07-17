@@ -11,8 +11,8 @@ Add a Flagship binding to your Wrangler config to access flags via `env.FLAGS`.
 {
   "flagship": {
     "binding": "FLAGS",
-    "app_id": "<APP_ID>"
-  }
+    "app_id": "<APP_ID>",
+  },
 }
 ```
 
@@ -31,13 +31,13 @@ app_id = "<APP_ID>"
   "flagship": [
     {
       "binding": "FLAGS",
-      "app_id": "<APP_ID_1>"
+      "app_id": "<APP_ID_1>",
     },
     {
       "binding": "EXPERIMENT_FLAGS",
-      "app_id": "<APP_ID_2>"
-    }
-  ]
+      "app_id": "<APP_ID_2>",
+    },
+  ],
 }
 ```
 
@@ -101,9 +101,7 @@ import { FlagshipServerProvider } from "@cloudflare/flagship";
 
 export default {
   async fetch(request: Request, env: Env): Promise<Response> {
-    await OpenFeature.setProviderAndWait(
-      new FlagshipServerProvider({ binding: env.FLAGS }),
-    );
+    await OpenFeature.setProviderAndWait(new FlagshipServerProvider({ binding: env.FLAGS }));
     const client = OpenFeature.getClient();
     // ... evaluate flags
   },
@@ -152,23 +150,23 @@ const client = OpenFeature.getClient();
 
 **FlagshipServerProvider:**
 
-| Option | Type | Required | Description |
-|--------|------|----------|-------------|
-| `binding` | `Flagship` | No | Binding from `env.FLAGS`. Use inside Workers. |
-| `appId` | string | No | App ID from dashboard. Required without binding. |
-| `accountId` | string | No | Cloudflare account ID. Required without binding. |
-| `authToken` | string | No | API token with Flagship read permissions. Required without binding. |
+| Option      | Type       | Required | Description                                                         |
+| ----------- | ---------- | -------- | ------------------------------------------------------------------- |
+| `binding`   | `Flagship` | No       | Binding from `env.FLAGS`. Use inside Workers.                       |
+| `appId`     | string     | No       | App ID from dashboard. Required without binding.                    |
+| `accountId` | string     | No       | Cloudflare account ID. Required without binding.                    |
+| `authToken` | string     | No       | API token with Flagship read permissions. Required without binding. |
 
 Provide either `binding` or all three of `appId` + `accountId` + `authToken`.
 
 **FlagshipClientProvider:**
 
-| Option | Type | Required | Description |
-|--------|------|----------|-------------|
-| `appId` | string | Yes | App ID from dashboard |
-| `accountId` | string | Yes | Cloudflare account ID |
-| `authToken` | string | Yes | API token with Flagship read permissions |
-| `prefetchFlags` | string[] | Yes | Flag keys to prefetch. Unlisted flags return `FLAG_NOT_FOUND`. |
+| Option          | Type     | Required | Description                                                    |
+| --------------- | -------- | -------- | -------------------------------------------------------------- |
+| `appId`         | string   | Yes      | App ID from dashboard                                          |
+| `accountId`     | string   | Yes      | Cloudflare account ID                                          |
+| `authToken`     | string   | Yes      | API token with Flagship read permissions                       |
+| `prefetchFlags` | string[] | Yes      | Flag keys to prefetch. Unlisted flags return `FLAG_NOT_FOUND`. |
 
 ---
 
@@ -176,11 +174,11 @@ Provide either `binding` or all three of `appId` + `accountId` + `authToken`.
 
 For managing flags via the REST API (create, update, delete), set these environment variables:
 
-| Variable | Description |
-|----------|-------------|
-| `CLOUDFLARE_ACCOUNT_ID` | Your Cloudflare account ID |
-| `CLOUDFLARE_API_TOKEN` | API token with Flagship permissions |
-| `FLAGSHIP_APP_ID` | Target app UUID (from dashboard under **Compute > Flagship**, or `GET /apps`) |
+| Variable                | Description                                                                   |
+| ----------------------- | ----------------------------------------------------------------------------- |
+| `CLOUDFLARE_ACCOUNT_ID` | Your Cloudflare account ID                                                    |
+| `CLOUDFLARE_API_TOKEN`  | API token with Flagship permissions                                           |
+| `FLAGSHIP_APP_ID`       | Target app UUID (from dashboard under **Compute > Flagship**, or `GET /apps`) |
 
 Base URL: `https://api.cloudflare.com/client/v4/accounts/$CLOUDFLARE_ACCOUNT_ID/flagship`
 

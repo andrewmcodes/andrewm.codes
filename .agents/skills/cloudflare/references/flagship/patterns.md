@@ -22,11 +22,7 @@ export default {
 ### Multi-Variant String Flag
 
 ```typescript
-const checkoutFlow = await env.FLAGS.getStringValue(
-  "checkout-flow",
-  "original",
-  { userId, country: "US" },
-);
+const checkoutFlow = await env.FLAGS.getStringValue("checkout-flow", "original", { userId, country: "US" });
 
 switch (checkoutFlow) {
   case "streamlined":
@@ -60,9 +56,9 @@ const details = await env.FLAGS.getBooleanDetails("new-checkout", false, {
   userId: "user-42",
 });
 
-console.log(details.value);     // true
-console.log(details.variant);   // "on"
-console.log(details.reason);    // "TARGETING_MATCH"
+console.log(details.value); // true
+console.log(details.variant); // "on"
+console.log(details.reason); // "TARGETING_MATCH"
 console.log(details.errorCode); // undefined (no error)
 ```
 
@@ -78,9 +74,7 @@ import { FlagshipServerProvider } from "@cloudflare/flagship";
 
 export default {
   async fetch(request: Request, env: Env): Promise<Response> {
-    await OpenFeature.setProviderAndWait(
-      new FlagshipServerProvider({ binding: env.FLAGS }),
-    );
+    await OpenFeature.setProviderAndWait(new FlagshipServerProvider({ binding: env.FLAGS }));
     const client = OpenFeature.getClient();
 
     const enabled = await client.getBooleanValue("new-checkout", false, {
@@ -100,14 +94,10 @@ Only the provider initialization changes — evaluation call sites stay the same
 
 ```typescript
 // ❌ Before (LaunchDarkly)
-await OpenFeature.setProviderAndWait(
-  new LaunchDarklyProvider({ sdkKey: "..." }),
-);
+await OpenFeature.setProviderAndWait(new LaunchDarklyProvider({ sdkKey: "..." }));
 
 // ✅ After (Flagship)
-await OpenFeature.setProviderAndWait(
-  new FlagshipServerProvider({ binding: env.FLAGS }),
-);
+await OpenFeature.setProviderAndWait(new FlagshipServerProvider({ binding: env.FLAGS }));
 
 // Evaluation code is unchanged
 const enabled = await client.getBooleanValue("my-flag", false, {
@@ -354,9 +344,7 @@ curl -s -X DELETE \
 ```json
 {
   "priority": 1,
-  "conditions": [
-    { "attribute": "plan", "operator": "equals", "value": "enterprise" }
-  ],
+  "conditions": [{ "attribute": "plan", "operator": "equals", "value": "enterprise" }],
   "serve_variation": "on"
 }
 ```
@@ -394,9 +382,7 @@ Gradually roll out to 10% of users:
 ```json
 {
   "priority": 1,
-  "conditions": [
-    { "attribute": "targetingKey", "operator": "not_equals", "value": "" }
-  ],
+  "conditions": [{ "attribute": "targetingKey", "operator": "not_equals", "value": "" }],
   "serve_variation": "on",
   "rollout": {
     "percentage": 10,

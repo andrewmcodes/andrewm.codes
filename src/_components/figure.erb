@@ -2,7 +2,10 @@
   <div class="<%= aspect %>">
     <%= slotted :image %>
   </div>
+
   <% if slotted?(:caption) %>
-    <figcaption class="text-center text-sm text-slate-11"><%= slotted :caption %></figcaption>
+    <figcaption class="text-center text-sm text-slate-11">
+      <%= slotted :caption %>
+    </figcaption>
   <% end %>
 </figure>

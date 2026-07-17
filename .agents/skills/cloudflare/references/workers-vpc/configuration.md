@@ -12,7 +12,7 @@ TCP Sockets are available by default in Workers runtime. No special configuratio
 {
   "name": "private-network-worker",
   "main": "src/index.ts",
-  "compatibility_date": "2025-01-01"
+  "compatibility_date": "2025-01-01",
 }
 ```
 
@@ -22,17 +22,20 @@ Store connection details as env vars:
 
 ```jsonc
 {
-  "vars": { "DB_HOST": "10.0.1.50", "DB_PORT": "5432" }
+  "vars": { "DB_HOST": "10.0.1.50", "DB_PORT": "5432" },
 }
 ```
 
 ```typescript
-interface Env { DB_HOST: string; DB_PORT: string; }
+interface Env {
+  DB_HOST: string;
+  DB_PORT: string;
+}
 
 export default {
   async fetch(req: Request, env: Env): Promise<Response> {
     const socket = connect({ hostname: env.DB_HOST, port: parseInt(env.DB_PORT) });
-  }
+  },
 };
 ```
 
@@ -43,8 +46,8 @@ export default {
   "vars": { "DB_HOST": "localhost" },
   "env": {
     "staging": { "vars": { "DB_HOST": "staging-db.internal.net" } },
-    "production": { "vars": { "DB_HOST": "prod-db.internal.net" } }
-  }
+    "production": { "vars": { "DB_HOST": "prod-db.internal.net" } },
+  },
 }
 ```
 
@@ -70,7 +73,7 @@ credentials-file: /path/to/<TUNNEL_ID>.json
 ingress:
   - hostname: db.internal.example.com
     service: tcp://10.0.1.50:5432
-  - service: http_status:404  # Required catch-all
+  - service: http_status:404 # Required catch-all
 ```
 
 4. **Run tunnel**: `cloudflared tunnel run my-private-network`
@@ -78,8 +81,8 @@ ingress:
 
 ```typescript
 const socket = connect(
-  { hostname: "db.internal.example.com", port: 5432 },  // Tunnel hostname
-  { secureTransport: "on" }
+  { hostname: "db.internal.example.com", port: 5432 }, // Tunnel hostname
+  { secureTransport: "on" },
 );
 ```
 
@@ -110,9 +113,10 @@ Access in Worker via `env.DB_PASSWORD`. Use in protocol handshake or authenticat
 Test with `wrangler dev`. Note: Local mode may not access private networks. Use public endpoints or mock servers for development:
 
 ```typescript
-const config = process.env.NODE_ENV === 'dev' 
-  ? { hostname: 'localhost', port: 5432 }  // Mock
-  : { hostname: 'db.internal.example.com', port: 5432 };  // Production
+const config =
+  process.env.NODE_ENV === "dev"
+    ? { hostname: "localhost", port: 5432 } // Mock
+    : { hostname: "db.internal.example.com", port: 5432 }; // Production
 ```
 
 ## Connection String Patterns

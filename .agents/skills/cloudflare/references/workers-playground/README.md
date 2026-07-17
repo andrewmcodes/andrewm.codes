@@ -9,6 +9,7 @@ Cloudflare Workers Playground is a browser-based sandbox for instantly experimen
 ## ⚠️ Playground Constraints
 
 **Playground is NOT production-equivalent:**
+
 - ✅ Real Workers runtime, instant testing, shareable URLs
 - ❌ No TypeScript (JavaScript only)
 - ❌ No bindings (KV, D1, R2, Durable Objects)
@@ -25,8 +26,8 @@ Minimal Worker:
 ```javascript
 export default {
   async fetch(request, env, ctx) {
-    return new Response('Hello World');
-  }
+    return new Response("Hello World");
+  },
 };
 ```
 
@@ -35,9 +36,9 @@ JSON API:
 ```javascript
 export default {
   async fetch(request, env, ctx) {
-    const data = { message: 'Hello', timestamp: Date.now() };
+    const data = { message: "Hello", timestamp: Date.now() };
     return Response.json(data);
-  }
+  },
 };
 ```
 
@@ -46,25 +47,25 @@ Proxy with modification:
 ```javascript
 export default {
   async fetch(request, env, ctx) {
-    const response = await fetch('https://example.com');
+    const response = await fetch("https://example.com");
     const modified = new Response(response.body, response);
-    modified.headers.set('X-Custom-Header', 'added-by-worker');
+    modified.headers.set("X-Custom-Header", "added-by-worker");
     return modified;
-  }
+  },
 };
 ```
 
 Import from CDN:
 
 ```javascript
-import { Hono } from 'https://esm.sh/hono@3';
+import { Hono } from "https://esm.sh/hono@3";
 
 export default {
   async fetch(request) {
     const app = new Hono();
-    app.get('/', (c) => c.text('Hello Hono!'));
+    app.get("/", (c) => c.text("Hello Hono!"));
     return app.fetch(request);
-  }
+  },
 };
 ```
 
@@ -85,16 +86,19 @@ export default {
 ## Key Features
 
 **No Setup Required:**
+
 - Open URL and start coding
 - No CLI, no account, no config files
 - Code executes in real Cloudflare Workers runtime
 
 **Instant Preview:**
+
 - Live preview pane with browser tab or HTTP tester
 - Auto-reload on code changes
 - DevTools integration (right-click → Inspect)
 
 **Share & Deploy:**
+
 - Copy Link generates permanent shareable URL
 - Deploy button publishes to production in ~30 seconds
 - Get `*.workers.dev` subdomain immediately
@@ -109,15 +113,15 @@ export default {
 
 ## Limitations vs Production
 
-| Feature | Playground | Production (wrangler) |
-|---------|------------|----------------------|
-| Language | JavaScript only | JS + TypeScript |
-| Bindings | None | KV, D1, R2, DO, AI, etc. |
-| Environment vars | None | Full support |
-| Module format | ES only | ES + Service Worker |
-| CPU time | 10ms (Free plan) | 10ms Free / 30s default, 5min max Paid |
-| Custom domains | No | Yes |
-| Analytics | No | Yes |
+| Feature          | Playground       | Production (wrangler)                  |
+| ---------------- | ---------------- | -------------------------------------- |
+| Language         | JavaScript only  | JS + TypeScript                        |
+| Bindings         | None             | KV, D1, R2, DO, AI, etc.               |
+| Environment vars | None             | Full support                           |
+| Module format    | ES only          | ES + Service Worker                    |
+| CPU time         | 10ms (Free plan) | 10ms Free / 30s default, 5min max Paid |
+| Custom domains   | No               | Yes                                    |
+| Analytics        | No               | Yes                                    |
 
 ## See Also
 

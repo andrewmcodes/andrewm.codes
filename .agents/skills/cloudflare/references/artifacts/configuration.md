@@ -35,6 +35,7 @@ Wrangler generates the `Artifacts` type from the binding. Treat the generated `w
 ## Structure Repos for Isolation
 
 Artifacts works best when autonomous work is isolated:
+
 - Create one repo per agent, session, sandbox, or task when work should stay separate.
 - Fork from a reviewed baseline instead of copying starter files into every new repo.
 - Use branches only when collaborators share the same lifecycle and need to work in one repo.
@@ -59,10 +60,12 @@ Use environment variables or your secret manager. Do not hardcode gateway JWTs o
 Artifacts workflows usually involve repo-scoped tokens returned by `create()` or minted later through the binding or REST API.
 
 Keep the control plane and data plane separate:
+
 - Use the **Workers binding** or **REST API** with a gateway JWT to create repos and mint tokens.
 - Use repo-scoped tokens only for **Git operations** against the returned `remote`.
 
 Recommended handling:
+
 - Mint the narrowest scope you need: `read` or `write`
 - Prefer short-lived tokens for handoff between systems
 - Revoke tokens that are no longer needed
@@ -84,6 +87,7 @@ Use a Basic-auth remote only for short-lived commands that need a self-contained
 ## Retrieval Checklist
 
 Check the live docs before relying on:
+
 - the current Workers binding surface
 - exact token formats
 - availability or product status

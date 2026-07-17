@@ -10,17 +10,17 @@ Artifacts exposes a Worker binding on `env.ARTIFACTS`.
 
 ### Namespace Methods
 
-| Method | Use For |
-|--------|---------|
+| Method                | Use For                                                |
+| --------------------- | ------------------------------------------------------ |
 | `create(name, opts?)` | Create a repo and receive its initial remote and token |
-| `get(name)` | Resolve a repo handle for repo-scoped operations |
-| `list(opts?)` | List repos in a namespace |
-| `delete(name)` | Delete a repo |
+| `get(name)`           | Resolve a repo handle for repo-scoped operations       |
+| `list(opts?)`         | List repos in a namespace                              |
+| `delete(name)`        | Delete a repo                                          |
 
 ```typescript
 const created = await env.ARTIFACTS.create("starter-repo", {
   description: "Repository for automation experiments",
-  setDefaultBranch: "main"
+  setDefaultBranch: "main",
 });
 const repo = await env.ARTIFACTS.get("starter-repo");
 const page = await env.ARTIFACTS.list({ limit: 10 });
@@ -32,14 +32,14 @@ Use the REST API when you need to import a repo from another HTTPS remote.
 
 Use a repo handle returned by `get()` or `create()`.
 
-| Method | Use For |
-|--------|---------|
-| `info()` | Read repo metadata, including the remote URL |
-| `createToken(scope?, ttl?)` | Mint a repo-scoped read or write token |
-| `listTokens()` | Inspect active tokens |
-| `validateToken(token)` | Check whether a token is still valid |
-| `revokeToken(tokenOrId)` | Revoke a token by ID or value |
-| `fork(name, opts?)` | Fork one repo into another |
+| Method                      | Use For                                      |
+| --------------------------- | -------------------------------------------- |
+| `info()`                    | Read repo metadata, including the remote URL |
+| `createToken(scope?, ttl?)` | Mint a repo-scoped read or write token       |
+| `listTokens()`              | Inspect active tokens                        |
+| `validateToken(token)`      | Check whether a token is still valid         |
+| `revokeToken(tokenOrId)`    | Revoke a token by ID or value                |
+| `fork(name, opts?)`         | Fork one repo into another                   |
 
 ```typescript
 const repo = await env.ARTIFACTS.get("starter-repo");
@@ -48,7 +48,7 @@ if (!repo) throw new Error("Repo not found");
 const info = await repo.info();
 const token = await repo.createToken("read", 3600);
 const forked = await repo.fork("starter-repo-copy", {
-  defaultBranchOnly: true
+  defaultBranchOnly: true,
 });
 ```
 
@@ -78,14 +78,14 @@ Current docs show the standard Cloudflare v4 response envelope around REST resul
 
 ### Repo Routes
 
-| Route | Use For |
-|-------|---------|
-| `POST /repos` | Create a repo |
-| `GET /repos` | List repos |
-| `GET /repos/:name` | Read repo metadata and remote |
-| `DELETE /repos/:name` | Delete a repo |
-| `POST /repos/:name/fork` | Fork a repo |
-| `POST /repos/:name/import` | Import a public HTTPS remote |
+| Route                      | Use For                       |
+| -------------------------- | ----------------------------- |
+| `POST /repos`              | Create a repo                 |
+| `GET /repos`               | List repos                    |
+| `GET /repos/:name`         | Read repo metadata and remote |
+| `DELETE /repos/:name`      | Delete a repo                 |
+| `POST /repos/:name/fork`   | Fork a repo                   |
+| `POST /repos/:name/import` | Import a public HTTPS remote  |
 
 ```bash
 curl --request POST "$ARTIFACTS_BASE_URL/repos" \
@@ -95,17 +95,18 @@ curl --request POST "$ARTIFACTS_BASE_URL/repos" \
 ```
 
 Important current details from the docs draft:
+
 - `POST /repos/:name/import` accepts a full HTTPS remote URL such as GitHub or GitLab.
 - Import supports options such as `branch`, `depth`, and `read_only`.
 - Repo metadata includes fields such as description, default branch, timestamps, and the Git `remote`.
 
 ### Token Routes
 
-| Route | Use For |
-|-------|---------|
-| `GET /repos/:name/tokens` | List repo tokens |
-| `POST /tokens` | Create a token for a repo |
-| `DELETE /tokens/:id` | Revoke a token by ID |
+| Route                     | Use For                   |
+| ------------------------- | ------------------------- |
+| `GET /repos/:name/tokens` | List repo tokens          |
+| `POST /tokens`            | Create a token for a repo |
+| `DELETE /tokens/:id`      | Revoke a token by ID      |
 
 Current docs show list-token filtering and pagination by token state. Retrieve the exact query shape from the live docs when you need token audit or cleanup workflows.
 

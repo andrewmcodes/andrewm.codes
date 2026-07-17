@@ -3,7 +3,7 @@
 Real-world patterns and examples for TCP Sockets in Cloudflare Workers.
 
 ```typescript
-import { connect } from 'cloudflare:sockets';
+import { connect } from "cloudflare:sockets";
 ```
 
 ## Basic Patterns
@@ -17,7 +17,7 @@ try {
   const writer = socket.writable.getWriter();
   await writer.write(new TextEncoder().encode("Hello\n"));
   await writer.close();
-  
+
   const reader = socket.readable.getReader();
   const { value } = await reader.read();
   return new Response(value);
@@ -40,7 +40,10 @@ async function readAll(socket: Socket): Promise<Uint8Array> {
   const total = chunks.reduce((sum, c) => sum + c.length, 0);
   const result = new Uint8Array(total);
   let offset = 0;
-  for (const chunk of chunks) { result.set(chunk, offset); offset += chunk.length; }
+  for (const chunk of chunks) {
+    result.set(chunk, offset);
+    offset += chunk.length;
+  }
   return result;
 }
 ```
@@ -94,10 +97,10 @@ async function connectWithRetry(addr: SocketAddress, opts: SocketOptions, maxRet
       return socket;
     } catch (error) {
       if (i === maxRetries) throw error;
-      await new Promise(r => setTimeout(r, 1000 * Math.pow(2, i - 1))); // Exponential backoff
+      await new Promise((r) => setTimeout(r, 1000 * Math.pow(2, i - 1))); // Exponential backoff
     }
   }
-  throw new Error('Unreachable');
+  throw new Error("Unreachable");
 }
 ```
 
@@ -106,7 +109,7 @@ async function connectWithRetry(addr: SocketAddress, opts: SocketOptions, maxRet
 ```typescript
 async function connectWithTimeout(addr: SocketAddress, opts: SocketOptions, ms = 5000): Promise<Socket> {
   const socket = connect(addr, opts);
-  const timeout = new Promise<never>((_, reject) => setTimeout(() => reject(new Error('Timeout')), ms));
+  const timeout = new Promise<never>((_, reject) => setTimeout(() => reject(new Error("Timeout")), ms));
   await Promise.race([socket.opened, timeout]);
   return socket;
 }
@@ -131,19 +134,19 @@ async function connectWithFallback(primary: string, fallback: string, port: numb
 ### Destination Allowlist (Prevent SSRF)
 
 ```typescript
-const ALLOWED_HOSTS = ['db.internal.company.net', 'api.internal.company.net', /^10\.0\.1\.\d+$/];
+const ALLOWED_HOSTS = ["db.internal.company.net", "api.internal.company.net", /^10\.0\.1\.\d+$/];
 
 function isAllowed(hostname: string): boolean {
-  return ALLOWED_HOSTS.some(p => p instanceof RegExp ? p.test(hostname) : p === hostname);
+  return ALLOWED_HOSTS.some((p) => (p instanceof RegExp ? p.test(hostname) : p === hostname));
 }
 
 export default {
   async fetch(req: Request): Promise<Response> {
-    const target = new URL(req.url).searchParams.get('host');
-    if (!target || !isAllowed(target)) return new Response('Forbidden', { status: 403 });
+    const target = new URL(req.url).searchParams.get("host");
+    if (!target || !isAllowed(target)) return new Response("Forbidden", { status: 403 });
     const socket = connect({ hostname: target, port: 443 });
     // Use socket...
-  }
+  },
 };
 ```
 
@@ -152,7 +155,7 @@ export default {
 ```typescript
 class SocketPool {
   private pool = new Map<string, Socket[]>();
-  
+
   async acquire(hostname: string, port: number): Promise<Socket> {
     const key = `${hostname}:${port}`;
     const sockets = this.pool.get(key) || [];
@@ -161,12 +164,14 @@ class SocketPool {
     await socket.opened;
     return socket;
   }
-  
+
   release(hostname: string, port: number, socket: Socket): void {
     const key = `${hostname}:${port}`;
     const sockets = this.pool.get(key) || [];
-    if (sockets.length < 3) { sockets.push(socket); this.pool.set(key, sockets); }
-    else socket.close();
+    if (sockets.length < 3) {
+      sockets.push(socket);
+      this.pool.set(key, sockets);
+    } else socket.close();
   }
 }
 ```
@@ -174,36 +179,43 @@ class SocketPool {
 ## Multi-Protocol Gateway
 
 ```typescript
-interface Protocol { name: string; defaultPort: number; test(host: string, port: number): Promise<string>; }
+interface Protocol {
+  name: string;
+  defaultPort: number;
+  test(host: string, port: number): Promise<string>;
+}
 
 const PROTOCOLS: Record<string, Protocol> = {
   redis: {
-    name: 'redis',
+    name: "redis",
     defaultPort: 6379,
     async test(host, port) {
       const socket = connect({ hostname: host, port });
       try {
         const writer = socket.writable.getWriter();
-        await writer.write(new TextEncoder().encode('*1\r\n$4\r\nPING\r\n'));
+        await writer.write(new TextEncoder().encode("*1\r\n$4\r\nPING\r\n"));
         writer.releaseLock();
         const reader = socket.readable.getReader();
         const { value } = await reader.read();
         return new TextDecoder().decode(value || new Uint8Array());
-      } finally { await socket.close(); }
-    }
-  }
+      } finally {
+        await socket.close();
+      }
+    },
+  },
 };
 
 export default {
   async fetch(req: Request): Promise<Response> {
     const url = new URL(req.url);
-    const proto = url.pathname.slice(1);  // /redis
-    const host = url.searchParams.get('host');
-    if (!host || !PROTOCOLS[proto]) return new Response('Invalid', { status: 400 });
-    const result = await PROTOCOLS[proto].test(host, parseInt(url.searchParams.get('port') || '') || PROTOCOLS[proto].defaultPort);
+    const proto = url.pathname.slice(1); // /redis
+    const host = url.searchParams.get("host");
+    if (!host || !PROTOCOLS[proto]) return new Response("Invalid", { status: 400 });
+    const result = await PROTOCOLS[proto].test(
+      host,
+      parseInt(url.searchParams.get("port") || "") || PROTOCOLS[proto].defaultPort,
+    );
     return new Response(result);
-  }
+  },
 };
 ```
-
-

@@ -12,6 +12,7 @@ https://dash.cloudflare.com/caching/cache-reserve
 ```
 
 **Prerequisites:**
+
 - Paid Cache Reserve plan or Smart Shield Advanced required
 - Tiered Cache **required** for Cache Reserve to function optimally
 
@@ -37,7 +38,7 @@ npm install cloudflare
 ```
 
 ```typescript
-import Cloudflare from 'cloudflare';
+import Cloudflare from "cloudflare";
 
 const client = new Cloudflare({
   apiToken: process.env.CLOUDFLARE_API_TOKEN,
@@ -45,13 +46,13 @@ const client = new Cloudflare({
 
 // Enable Cache Reserve
 await client.cache.cacheReserve.edit({
-  zone_id: 'abc123',
-  value: 'on',
+  zone_id: "abc123",
+  value: "on",
 });
 
 // Get Cache Reserve status
 const status = await client.cache.cacheReserve.get({
-  zone_id: 'abc123',
+  zone_id: "abc123",
 });
 console.log(status.value); // 'on' or 'off'
 ```

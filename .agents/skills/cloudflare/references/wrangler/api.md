@@ -13,18 +13,18 @@ import assert from "node:assert";
 
 describe("worker", () => {
   let worker;
-  
+
   before(async () => {
     worker = await startWorker({
       config: "wrangler.jsonc",
-      environment: "development"
+      environment: "development",
     });
   });
-  
+
   after(async () => {
     await worker.dispose();
   });
-  
+
   it("responds with 200", async () => {
     const response = await worker.fetch("http://example.com");
     assert.strictEqual(response.status, 200);
@@ -34,13 +34,13 @@ describe("worker", () => {
 
 ### Options
 
-| Option | Type | Description |
-|--------|------|-------------|
-| `config` | `string` | Path to wrangler.jsonc |
-| `environment` | `string` | Environment name from config |
-| `persist` | `boolean \| { path: string }` | Enable persistent state |
-| `bundle` | `boolean` | Enable bundling (default: true) |
-| `remote` | `false \| true \| "minimal"` | Remote mode: `false` (local), `true` (full remote), `"minimal"` (remote bindings only) |
+| Option        | Type                          | Description                                                                            |
+| ------------- | ----------------------------- | -------------------------------------------------------------------------------------- |
+| `config`      | `string`                      | Path to wrangler.jsonc                                                                 |
+| `environment` | `string`                      | Environment name from config                                                           |
+| `persist`     | `boolean \| { path: string }` | Enable persistent state                                                                |
+| `bundle`      | `boolean`                     | Enable bundling (default: true)                                                        |
+| `remote`      | `false \| true \| "minimal"`  | Remote mode: `false` (local), `true` (full remote), `"minimal"` (remote bindings only) |
 
 ### Remote Mode
 
@@ -49,15 +49,15 @@ describe("worker", () => {
 const worker = await startWorker({ config: "wrangler.jsonc" });
 
 // Full remote mode - production-like, slower
-const worker = await startWorker({ 
+const worker = await startWorker({
   config: "wrangler.jsonc",
-  remote: true 
+  remote: true,
 });
 
 // Minimal remote mode - remote bindings, local Worker
-const worker = await startWorker({ 
+const worker = await startWorker({
   config: "wrangler.jsonc",
-  remote: "minimal"
+  remote: "minimal",
 });
 ```
 
@@ -71,7 +71,7 @@ import { getPlatformProxy } from "wrangler";
 const { env, dispose, caches } = await getPlatformProxy<Env>({
   configPath: "wrangler.jsonc",
   environment: "production",
-  persist: { path: ".wrangler/state" }
+  persist: { path: ".wrangler/state" },
 });
 
 // Use bindings
@@ -100,7 +100,7 @@ import { startWorker } from "wrangler";
 
 const worker = await startWorker({
   config: "wrangler.jsonc",
-  bundle: true
+  bundle: true,
 });
 
 // Bundle events
@@ -134,12 +134,12 @@ const worker = await startWorker({ config: "wrangler.jsonc" });
 // Replace entire config
 await worker.setConfig({
   config: "wrangler.staging.jsonc",
-  environment: "staging"
+  environment: "staging",
 });
 
 // Patch specific fields
 await worker.patchConfig({
-  vars: { DEBUG: "true" }
+  vars: { DEBUG: "true" },
 });
 
 await worker.dispose();
@@ -159,7 +159,7 @@ import { startWorker } from "wrangler";
 const auth = await startWorker({ config: "./auth/wrangler.jsonc" });
 const api = await startWorker({
   config: "./api/wrangler.jsonc",
-  bindings: { AUTH: auth }  // Service binding
+  bindings: { AUTH: auth }, // Service binding
 });
 
 const response = await api.fetch("http://example.com/api/login");

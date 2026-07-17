@@ -9,38 +9,41 @@
   "compatibility_date": "2025-01-01", // Use current date for new projects
   "d1_databases": [
     {
-      "binding": "DB",                    // Env variable name
-      "database_name": "your-db-name",    // Human-readable name
-      "database_id": "your-database-id",  // UUID from dashboard/CLI
-      "migrations_dir": "migrations"      // Optional: default is "migrations"
+      "binding": "DB", // Env variable name
+      "database_name": "your-db-name", // Human-readable name
+      "database_id": "your-database-id", // UUID from dashboard/CLI
+      "migrations_dir": "migrations", // Optional: default is "migrations"
     },
     // Read replica (paid plans only)
     {
       "binding": "DB_REPLICA",
       "database_name": "your-db-name",
-      "database_id": "your-database-id"   // Same ID, different binding
+      "database_id": "your-database-id", // Same ID, different binding
     },
     // Multiple databases
     {
       "binding": "ANALYTICS_DB",
       "database_name": "analytics-db",
-      "database_id": "yyy-yyy-yyy"
-    }
-  ]
+      "database_id": "yyy-yyy-yyy",
+    },
+  ],
 }
 ```
 
 ## TypeScript Types
 
 ```typescript
-interface Env { DB: D1Database; ANALYTICS_DB?: D1Database; }
+interface Env {
+  DB: D1Database;
+  ANALYTICS_DB?: D1Database;
+}
 
 export default {
   async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
-    const result = await env.DB.prepare('SELECT * FROM users').all();
+    const result = await env.DB.prepare("SELECT * FROM users").all();
     return Response.json(result.results);
-  }
-}
+  },
+};
 ```
 
 ## Migrations
@@ -120,27 +123,34 @@ EXPLAIN QUERY PLAN SELECT * FROM users WHERE email = ?;
 ```typescript
 // drizzle.config.ts
 export default {
-  schema: './src/schema.ts', out: './migrations', dialect: 'sqlite', driver: 'd1-http',
-  dbCredentials: { accountId: process.env.CLOUDFLARE_ACCOUNT_ID!, databaseId: process.env.D1_DATABASE_ID!, token: process.env.CLOUDFLARE_API_TOKEN! }
+  schema: "./src/schema.ts",
+  out: "./migrations",
+  dialect: "sqlite",
+  driver: "d1-http",
+  dbCredentials: {
+    accountId: process.env.CLOUDFLARE_ACCOUNT_ID!,
+    databaseId: process.env.D1_DATABASE_ID!,
+    token: process.env.CLOUDFLARE_API_TOKEN!,
+  },
 } satisfies Config;
 
 // schema.ts
-import { sqliteTable, text, integer } from 'drizzle-orm/sqlite-core';
-export const users = sqliteTable('users', {
-  id: integer('id').primaryKey({ autoIncrement: true }),
-  email: text('email').notNull().unique(),
-  name: text('name').notNull()
+import { sqliteTable, text, integer } from "drizzle-orm/sqlite-core";
+export const users = sqliteTable("users", {
+  id: integer("id").primaryKey({ autoIncrement: true }),
+  email: text("email").notNull().unique(),
+  name: text("name").notNull(),
 });
 
 // worker.ts
-import { drizzle } from 'drizzle-orm/d1';
-import { users } from './schema';
+import { drizzle } from "drizzle-orm/d1";
+import { users } from "./schema";
 export default {
   async fetch(request: Request, env: Env) {
     const db = drizzle(env.DB);
     return Response.json(await db.select().from(users));
-  }
-}
+  },
+};
 ```
 
 ## Import & Export
@@ -166,17 +176,17 @@ wrangler d1 execute <db-name> --remote --file=./backup.sql
 
 ## Plan Tiers
 
-| Feature | Free (Workers Free) | Paid (Workers Paid) |
-|---------|---------------------|---------------------|
-| Rows read | 5 million / day | First 25 billion / month included |
-| Rows written | 100,000 / day | First 50 million / month included |
-| Storage | 5 GB (total) | First 5 GB included |
-| Database size | 500 MB | 10 GB |
-| Batch size | 1,000 statements | 10,000 statements |
-| Time Travel | 7 days | 30 days |
-| Read replicas | ❌ | ✅ |
-| Sessions API | ❌ | ✅ (up to 15 min) |
-| Pricing | Free | $5/mo + usage |
+| Feature       | Free (Workers Free) | Paid (Workers Paid)               |
+| ------------- | ------------------- | --------------------------------- |
+| Rows read     | 5 million / day     | First 25 billion / month included |
+| Rows written  | 100,000 / day       | First 50 million / month included |
+| Storage       | 5 GB (total)        | First 5 GB included               |
+| Database size | 500 MB              | 10 GB                             |
+| Batch size    | 1,000 statements    | 10,000 statements                 |
+| Time Travel   | 7 days              | 30 days                           |
+| Read replicas | ❌                  | ✅                                |
+| Sessions API  | ❌                  | ✅ (up to 15 min)                 |
+| Pricing       | Free                | $5/mo + usage                     |
 
 **Usage pricing** (paid plans, beyond included allowances): $0.001 per million rows read + $1.00 per million rows written + $0.75/GB-mo storage
 

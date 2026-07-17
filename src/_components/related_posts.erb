@@ -1,9 +1,8 @@
 <nav aria-label="Related posts" class="mt-10 pt-7 border-t border-sage-5">
-  <h2
-    class="
-      font-mono text-[11.5px] text-sage-10 tracking-[0.08em] uppercase mb-3
-    "
-  >Related posts</h2>
+  <h2 class="font-mono text-[11.5px] text-sage-10 tracking-[0.08em] uppercase mb-3">
+    Related posts
+  </h2>
+
   <ul class="flex flex-col">
     <% posts.each do |post| %>
       <li>
@@ -14,12 +13,18 @@
             hover:text-mint-11 transition-colors
           "
         >
-          <span class="text-sage-9 whitespace-nowrap"><%= post.date.strftime("%b %Y") %></span>
+          <span class="text-sage-9 whitespace-nowrap">
+            <%= post.date.strftime("%b %Y") %>
+          </span>
+
           <span
             class="
-              font-sans text-[14px] text-sage-12 group-hover:text-mint-11 transition-colors
+              font-sans text-[14px] text-sage-12 group-hover:text-mint-11
+              transition-colors
             "
-          ><%= post.data.title %></span>
+          >
+            <%= post.data.title %>
+          </span>
         </a>
       </li>
     <% end %>

@@ -91,19 +91,19 @@ echo "$UPDATED" | curl -s -X PUT -H "Authorization: Bearer $TOKEN" -H "Content-T
 
 ## Limits
 
-| Limit | Value | Notes |
-|-------|-------|-------|
-| Flag key length | 1-64 chars | Alphanumeric, hyphens, underscores only |
-| Flag key pattern | `/^[a-zA-Z0-9_-]+$/` | — |
-| Variation value size | 10KB max | Per variation, serialized |
-| Variation name length | 64 chars max | Alphanumeric, hyphens, underscores |
-| Description length | 512 chars max | Nullable |
-| App name length | 1-64 chars | Alphanumeric, hyphens, underscores |
-| Logical nesting depth | 6 levels | AND/OR conditions |
-| Mutation rate limit | 60 / 60s | Per account:app |
-| Read rate limit | 600 / 60s | Per account:app |
-| Rollout percentage | 0-100 | Integer |
-| Rule priorities | Unique integers >= 1 | Lower = evaluated first |
+| Limit                 | Value                | Notes                                   |
+| --------------------- | -------------------- | --------------------------------------- |
+| Flag key length       | 1-64 chars           | Alphanumeric, hyphens, underscores only |
+| Flag key pattern      | `/^[a-zA-Z0-9_-]+$/` | —                                       |
+| Variation value size  | 10KB max             | Per variation, serialized               |
+| Variation name length | 64 chars max         | Alphanumeric, hyphens, underscores      |
+| Description length    | 512 chars max        | Nullable                                |
+| App name length       | 1-64 chars           | Alphanumeric, hyphens, underscores      |
+| Logical nesting depth | 6 levels             | AND/OR conditions                       |
+| Mutation rate limit   | 60 / 60s             | Per account:app                         |
+| Read rate limit       | 600 / 60s            | Per account:app                         |
+| Rollout percentage    | 0-100                | Integer                                 |
+| Rule priorities       | Unique integers >= 1 | Lower = evaluated first                 |
 
 ---
 
@@ -134,7 +134,9 @@ The binding avoids HTTP overhead entirely. Only use the SDK inside Workers when 
 ```typescript
 // ❌ Unnecessary HTTP overhead inside a Worker
 const provider = new FlagshipServerProvider({
-  appId: "...", accountId: "...", authToken: "...",
+  appId: "...",
+  accountId: "...",
+  authToken: "...",
 });
 
 // ✅ Use the binding directly, or pass it to the SDK

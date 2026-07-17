@@ -6,7 +6,7 @@ See [README.md](./README.md) for overview, [configuration.md](./configuration.md
 
 ```typescript
 interface Hyperdrive {
-  connectionString: string;  // PostgreSQL
+  connectionString: string; // PostgreSQL
   // MySQL properties:
   host: string;
   port: number;
@@ -25,11 +25,11 @@ interface Env {
 ## PostgreSQL (node-postgres) - RECOMMENDED
 
 ```typescript
-import { Client } from "pg";  // pg@^8.17.2
+import { Client } from "pg"; // pg@^8.17.2
 
 export default {
   async fetch(req: Request, env: Env): Promise<Response> {
-    const client = new Client({connectionString: env.HYPERDRIVE.connectionString});
+    const client = new Client({ connectionString: env.HYPERDRIVE.connectionString });
     try {
       await client.connect();
       const result = await client.query("SELECT * FROM users WHERE id = $1", [123]);
@@ -46,11 +46,11 @@ export default {
 ## PostgreSQL (postgres.js)
 
 ```typescript
-import postgres from "postgres";  // postgres@^3.4.8
+import postgres from "postgres"; // postgres@^3.4.8
 
 const sql = postgres(env.HYPERDRIVE.connectionString, {
-  max: 5,             // Limit per Worker (Workers max: 6)
-  prepare: true,      // Enabled by default, required for caching
+  max: 5, // Limit per Worker (Workers max: 6)
+  prepare: true, // Enabled by default, required for caching
   fetch_types: false, // Reduce latency if not using arrays
 });
 
@@ -62,7 +62,7 @@ const users = await sql`SELECT * FROM users WHERE active = ${true} LIMIT 10`;
 ## MySQL (mysql2)
 
 ```typescript
-import { createConnection } from "mysql2/promise";  // mysql2@^3.16.2
+import { createConnection } from "mysql2/promise"; // mysql2@^3.16.2
 
 const conn = await createConnection({
   host: env.HYPERDRIVE.host,
@@ -70,7 +70,7 @@ const conn = await createConnection({
   password: env.HYPERDRIVE.password,
   database: env.HYPERDRIVE.database,
   port: env.HYPERDRIVE.port,
-  disableEval: true,  // ⚠️ REQUIRED for Workers
+  disableEval: true, // ⚠️ REQUIRED for Workers
 });
 
 const [results] = await conn.query("SELECT * FROM users WHERE active = ? LIMIT ?", [true, 10]);
@@ -82,12 +82,14 @@ ctx.waitUntil(conn.end());
 ## Query Caching
 
 **Cacheable:**
+
 ```sql
 SELECT * FROM posts WHERE published = true;
 SELECT COUNT(*) FROM users;
 ```
 
 **NOT cacheable:**
+
 ```sql
 -- Writes
 INSERT/UPDATE/DELETE
@@ -100,11 +102,13 @@ SELECT UUID();     -- MySQL
 ```
 
 **Cache config:**
+
 - Default: `max_age=60s`, `swr=15s`
 - Max `max_age`: 3600s
 - Disable: `--caching-disabled=true`
 
 **Multiple configs pattern:**
+
 ```typescript
 // Reads: cached
 const sqlCached = postgres(env.HYPERDRIVE_CACHED.connectionString);
@@ -118,23 +122,25 @@ const orders = await sqlNoCache`SELECT * FROM orders WHERE created_at > NOW() - 
 ## ORMs
 
 **Drizzle:**
+
 ```typescript
-import { drizzle } from "drizzle-orm/postgres-js";  // drizzle-orm@^0.45.1
+import { drizzle } from "drizzle-orm/postgres-js"; // drizzle-orm@^0.45.1
 import postgres from "postgres";
 
-const client = postgres(env.HYPERDRIVE.connectionString, {max: 5, prepare: true});
+const client = postgres(env.HYPERDRIVE.connectionString, { max: 5, prepare: true });
 const db = drizzle(client);
 const users = await db.select().from(users).where(eq(users.active, true)).limit(10);
 ```
 
 **Kysely:**
+
 ```typescript
-import { Kysely, PostgresDialect } from "kysely";  // kysely@^0.27+
+import { Kysely, PostgresDialect } from "kysely"; // kysely@^0.27+
 import postgres from "postgres";
 
 const db = new Kysely({
   dialect: new PostgresDialect({
-    postgres: postgres(env.HYPERDRIVE.connectionString, {max: 5, prepare: true}),
+    postgres: postgres(env.HYPERDRIVE.connectionString, { max: 5, prepare: true }),
   }),
 });
 const users = await db.selectFrom("users").selectAll().where("active", "=", true).execute();

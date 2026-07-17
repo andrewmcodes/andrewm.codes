@@ -18,13 +18,13 @@ GET    /zones/{zone_id}/spectrum/analytics/events/summary
 
 ```typescript
 interface CreateSpectrumAppRequest {
-  protocol: string;                    // "tcp/22", "udp/53"
+  protocol: string; // "tcp/22", "udp/53"
   dns: {
     type: "CNAME" | "ADDRESS";
-    name: string;                      // "ssh.example.com"
+    name: string; // "ssh.example.com"
   };
-  origin_direct?: string[];            // ["tcp://192.0.2.1:22"]
-  origin_dns?: { name: string };       // {"name": "origin.example.com"}
+  origin_direct?: string[]; // ["tcp://192.0.2.1:22"]
+  origin_dns?: { name: string }; // {"name": "origin.example.com"}
   origin_port?: number | { start: number; end: number };
   proxy_protocol?: "off" | "v1" | "v2" | "simple";
   ip_firewall?: boolean;
@@ -61,36 +61,36 @@ interface SpectrumApp {
 ## TypeScript SDK
 
 ```typescript
-import Cloudflare from 'cloudflare';
+import Cloudflare from "cloudflare";
 
 const client = new Cloudflare({ apiToken: process.env.CLOUDFLARE_API_TOKEN });
 
 // Create
 const app = await client.spectrum.apps.create({
-  zone_id: 'your-zone-id',
-  protocol: 'tcp/22',
-  dns: { type: 'CNAME', name: 'ssh.example.com' },
-  origin_direct: ['tcp://192.0.2.1:22'],
+  zone_id: "your-zone-id",
+  protocol: "tcp/22",
+  dns: { type: "CNAME", name: "ssh.example.com" },
+  origin_direct: ["tcp://192.0.2.1:22"],
   ip_firewall: true,
-  tls: 'off',
+  tls: "off",
 });
 
 // List
-const apps = await client.spectrum.apps.list({ zone_id: 'your-zone-id' });
+const apps = await client.spectrum.apps.list({ zone_id: "your-zone-id" });
 
 // Get
-const appDetails = await client.spectrum.apps.get({ zone_id: 'your-zone-id', app_id: app.id });
+const appDetails = await client.spectrum.apps.get({ zone_id: "your-zone-id", app_id: app.id });
 
 // Update
-await client.spectrum.apps.update({ zone_id: 'your-zone-id', app_id: app.id, tls: 'full' });
+await client.spectrum.apps.update({ zone_id: "your-zone-id", app_id: app.id, tls: "full" });
 
 // Delete
-await client.spectrum.apps.delete({ zone_id: 'your-zone-id', app_id: app.id });
+await client.spectrum.apps.delete({ zone_id: "your-zone-id", app_id: app.id });
 
 // Analytics
 const analytics = await client.spectrum.analytics.aggregate({
-  zone_id: 'your-zone-id',
-  metrics: ['bytesIngress', 'bytesEgress'],
+  zone_id: "your-zone-id",
+  metrics: ["bytesIngress", "bytesEgress"],
   since: new Date(Date.now() - 3600000).toISOString(),
 });
 ```
@@ -158,18 +158,21 @@ _ = api.DeleteSpectrumApplication(ctx, "zone-id", app.ID)
 ## Analytics API
 
 **Metrics:**
+
 - `bytesIngress` - Bytes received from clients
 - `bytesEgress` - Bytes sent to clients
 - `count` - Number of connections
 - `duration` - Connection duration (seconds)
 
 **Dimensions:**
+
 - `event` - Connection event type
 - `appID` - Spectrum application ID
 - `coloName` - Datacenter name
 - `ipVersion` - IPv4 or IPv6
 
 **Example:**
+
 ```bash
 curl "https://api.cloudflare.com/client/v4/zones/$ZONE_ID/spectrum/analytics/aggregate/current?metrics=bytesIngress,bytesEgress,count&dimensions=appID" \
   --header "Authorization: Bearer $CLOUDFLARE_API_TOKEN"

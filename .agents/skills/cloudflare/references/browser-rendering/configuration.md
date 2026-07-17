@@ -34,7 +34,7 @@ interface Env {
 export default {
   async fetch(request: Request, env: Env): Promise<Response> {
     // ...
-  }
+  },
 } satisfies ExportedHandler<Env>;
 ```
 
@@ -59,20 +59,20 @@ curl -X POST \
 
 ## Requirements
 
-| Requirement | Value |
-|-------------|-------|
-| Node.js compatibility | `nodejs_compat` flag |
-| Compatibility date | 2023-03-01+ |
-| Module format | ES modules only |
-| Browser | Chromium 119+ (no Firefox/Safari) |
+| Requirement           | Value                             |
+| --------------------- | --------------------------------- |
+| Node.js compatibility | `nodejs_compat` flag              |
+| Compatibility date    | 2023-03-01+                       |
+| Module format         | ES modules only                   |
+| Browser               | Chromium 119+ (no Firefox/Safari) |
 
 **Not supported:** WebGL, WebRTC, extensions, `file://` protocol, Service Worker syntax.
 
 ## Troubleshooting
 
-| Error | Solution |
-|-------|----------|
-| `MYBROWSER is undefined` | Use `wrangler dev --remote` |
-| `nodejs_compat not enabled` | Add to `compatibility_flags` |
-| `Module not found` | `npm install @cloudflare/puppeteer` |
-| `Browser Rendering not available` | Enable in dashboard |
+| Error                             | Solution                            |
+| --------------------------------- | ----------------------------------- |
+| `MYBROWSER is undefined`          | Use `wrangler dev --remote`         |
+| `nodejs_compat not enabled`       | Add to `compatibility_flags`        |
+| `Module not found`                | `npm install @cloudflare/puppeteer` |
+| `Browser Rendering not available` | Enable in dashboard                 |

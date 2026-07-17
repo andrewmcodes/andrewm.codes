@@ -8,25 +8,25 @@ The binding is available as `env.FLAGS` (type `Flagship` from `@cloudflare/worke
 
 All methods are async, never throw, and return the `defaultValue` on errors.
 
-| Method | Signature | Returns |
-|--------|-----------|---------|
-| `get` | `get(flagKey, defaultValue?, context?)` | `Promise<unknown>` |
-| `getBooleanValue` | `getBooleanValue(flagKey, defaultValue, context?)` | `Promise<boolean>` |
-| `getStringValue` | `getStringValue(flagKey, defaultValue, context?)` | `Promise<string>` |
-| `getNumberValue` | `getNumberValue(flagKey, defaultValue, context?)` | `Promise<number>` |
-| `getObjectValue` | `getObjectValue<T>(flagKey, defaultValue, context?)` | `Promise<T>` |
-| `getBooleanDetails` | `getBooleanDetails(flagKey, defaultValue, context?)` | `Promise<FlagshipEvaluationDetails<boolean>>` |
-| `getStringDetails` | `getStringDetails(flagKey, defaultValue, context?)` | `Promise<FlagshipEvaluationDetails<string>>` |
-| `getNumberDetails` | `getNumberDetails(flagKey, defaultValue, context?)` | `Promise<FlagshipEvaluationDetails<number>>` |
-| `getObjectDetails` | `getObjectDetails<T>(flagKey, defaultValue, context?)` | `Promise<FlagshipEvaluationDetails<T>>` |
+| Method              | Signature                                              | Returns                                       |
+| ------------------- | ------------------------------------------------------ | --------------------------------------------- |
+| `get`               | `get(flagKey, defaultValue?, context?)`                | `Promise<unknown>`                            |
+| `getBooleanValue`   | `getBooleanValue(flagKey, defaultValue, context?)`     | `Promise<boolean>`                            |
+| `getStringValue`    | `getStringValue(flagKey, defaultValue, context?)`      | `Promise<string>`                             |
+| `getNumberValue`    | `getNumberValue(flagKey, defaultValue, context?)`      | `Promise<number>`                             |
+| `getObjectValue`    | `getObjectValue<T>(flagKey, defaultValue, context?)`   | `Promise<T>`                                  |
+| `getBooleanDetails` | `getBooleanDetails(flagKey, defaultValue, context?)`   | `Promise<FlagshipEvaluationDetails<boolean>>` |
+| `getStringDetails`  | `getStringDetails(flagKey, defaultValue, context?)`    | `Promise<FlagshipEvaluationDetails<string>>`  |
+| `getNumberDetails`  | `getNumberDetails(flagKey, defaultValue, context?)`    | `Promise<FlagshipEvaluationDetails<number>>`  |
+| `getObjectDetails`  | `getObjectDetails<T>(flagKey, defaultValue, context?)` | `Promise<FlagshipEvaluationDetails<T>>`       |
 
 ### Parameters (shared across all methods)
 
-| Parameter | Type | Required | Description |
-|-----------|------|----------|-------------|
-| `flagKey` | `string` | Yes | Flag key to evaluate |
-| `defaultValue` | varies | Yes (except `get`) | Fallback if evaluation fails or flag not found |
-| `context` | `FlagshipEvaluationContext` | No | Attributes for targeting rules (`{ userId: "user-42", country: "US" }`) |
+| Parameter      | Type                        | Required           | Description                                                             |
+| -------------- | --------------------------- | ------------------ | ----------------------------------------------------------------------- |
+| `flagKey`      | `string`                    | Yes                | Flag key to evaluate                                                    |
+| `defaultValue` | varies                      | Yes (except `get`) | Fallback if evaluation fails or flag not found                          |
+| `context`      | `FlagshipEvaluationContext` | No                 | Attributes for targeting rules (`{ userId: "user-42", country: "US" }`) |
 
 ### Types
 
@@ -36,9 +36,9 @@ type FlagshipEvaluationContext = Record<string, string | number | boolean>;
 interface FlagshipEvaluationDetails<T> {
   flagKey: string;
   value: T;
-  variant?: string;     // name of the matched variation
-  reason?: string;      // "TARGETING_MATCH" | "DEFAULT" | "DISABLED" | "SPLIT"
-  errorCode?: string;   // "TYPE_MISMATCH" | "GENERAL"
+  variant?: string; // name of the matched variation
+  reason?: string; // "TARGETING_MATCH" | "DEFAULT" | "DISABLED" | "SPLIT"
+  errorCode?: string; // "TYPE_MISMATCH" | "GENERAL"
   errorMessage?: string;
 }
 ```
@@ -72,9 +72,7 @@ For Workers, Node.js, and server-side JavaScript.
 import { OpenFeature } from "@openfeature/server-sdk";
 import { FlagshipServerProvider } from "@cloudflare/flagship";
 
-await OpenFeature.setProviderAndWait(
-  new FlagshipServerProvider({ binding: env.FLAGS }),
-);
+await OpenFeature.setProviderAndWait(new FlagshipServerProvider({ binding: env.FLAGS }));
 const client = OpenFeature.getClient();
 const enabled = await client.getBooleanValue("new-checkout", false, {
   targetingKey: "user-42",
@@ -140,11 +138,11 @@ OpenFeature.addHooks(new LoggingHook(), new TelemetryHook());
 
 Before making any REST API calls (create, read, update, delete, toggle flags), verify these environment variables are set:
 
-| Variable | Purpose | How to get |
-|----------|---------|------------|
-| `CLOUDFLARE_ACCOUNT_ID` | Account identifier | Dashboard URL or `wrangler whoami` |
-| `CLOUDFLARE_API_TOKEN` | Bearer token for API auth | [Create API token](https://dash.cloudflare.com/profile/api-tokens) with Flagship permissions |
-| `FLAGSHIP_APP_ID` | Target app UUID | Dashboard under **Compute > Flagship**, or `GET /apps` endpoint |
+| Variable                | Purpose                   | How to get                                                                                   |
+| ----------------------- | ------------------------- | -------------------------------------------------------------------------------------------- |
+| `CLOUDFLARE_ACCOUNT_ID` | Account identifier        | Dashboard URL or `wrangler whoami`                                                           |
+| `CLOUDFLARE_API_TOKEN`  | Bearer token for API auth | [Create API token](https://dash.cloudflare.com/profile/api-tokens) with Flagship permissions |
+| `FLAGSHIP_APP_ID`       | Target app UUID           | Dashboard under **Compute > Flagship**, or `GET /apps` endpoint                              |
 
 Check with:
 
@@ -174,26 +172,26 @@ Response envelope:
 
 ### App Endpoints
 
-| Method | Path | Description |
-|--------|------|-------------|
-| `GET` | `/apps` | List all apps |
-| `GET` | `/apps/{app_id}` | Get app |
-| `POST` | `/apps` | Create app (`{ "name": "my-app" }`) |
-| `PUT` | `/apps/{app_id}` | Update app (`{ "name": "new-name" }`) |
-| `DELETE` | `/apps/{app_id}` | Delete app |
+| Method   | Path             | Description                           |
+| -------- | ---------------- | ------------------------------------- |
+| `GET`    | `/apps`          | List all apps                         |
+| `GET`    | `/apps/{app_id}` | Get app                               |
+| `POST`   | `/apps`          | Create app (`{ "name": "my-app" }`)   |
+| `PUT`    | `/apps/{app_id}` | Update app (`{ "name": "new-name" }`) |
+| `DELETE` | `/apps/{app_id}` | Delete app                            |
 
 App name constraints: alphanumeric + hyphens + underscores, 1-64 chars.
 
 ### Flag Endpoints
 
-| Method | Path | Description |
-|--------|------|-------------|
-| `GET` | `/apps/{app_id}/flags?limit=50&cursor=<cursor>` | List flags (paginated) |
-| `GET` | `/apps/{app_id}/flags/{flag_key}` | Get flag |
-| `POST` | `/apps/{app_id}/flags` | Create flag |
-| `PUT` | `/apps/{app_id}/flags/{flag_key}` | Update flag (full replace) |
-| `DELETE` | `/apps/{app_id}/flags/{flag_key}` | Delete flag |
-| `GET` | `/apps/{app_id}/flags/{flag_key}/changelog?limit=20&cursor=<cursor>` | Flag changelog |
+| Method   | Path                                                                 | Description                |
+| -------- | -------------------------------------------------------------------- | -------------------------- |
+| `GET`    | `/apps/{app_id}/flags?limit=50&cursor=<cursor>`                      | List flags (paginated)     |
+| `GET`    | `/apps/{app_id}/flags/{flag_key}`                                    | Get flag                   |
+| `POST`   | `/apps/{app_id}/flags`                                               | Create flag                |
+| `PUT`    | `/apps/{app_id}/flags/{flag_key}`                                    | Update flag (full replace) |
+| `DELETE` | `/apps/{app_id}/flags/{flag_key}`                                    | Delete flag                |
+| `GET`    | `/apps/{app_id}/flags/{flag_key}/changelog?limit=20&cursor=<cursor>` | Flag changelog             |
 
 ### Evaluate Endpoint
 
@@ -246,22 +244,22 @@ Requires an API token with `flagship:evaluate` permission. Context attributes pa
 
 ### Field Constraints
 
-| Field | Type | Constraints |
-|-------|------|-------------|
-| `key` | string | 1-64 chars, `/^[a-zA-Z0-9_-]+$/` |
-| `type` | enum | Optional. `boolean`, `string`, `number`, `json` (auto-inferred from variations) |
-| `default_variation` | string | Must be a key in `variations` |
-| `variations` | `Record<string, T>` | At least one. All values same type. Keys: alphanumeric/hyphens/underscores, max 64 chars. Values max 10KB. |
-| `rules` | `Rule[]` | Can be empty. No duplicate priorities. |
-| `description` | string? | Max 512 chars, nullable |
-| `enabled` | boolean | Required. `false` = always returns default variation. |
+| Field               | Type                | Constraints                                                                                                |
+| ------------------- | ------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `key`               | string              | 1-64 chars, `/^[a-zA-Z0-9_-]+$/`                                                                           |
+| `type`              | enum                | Optional. `boolean`, `string`, `number`, `json` (auto-inferred from variations)                            |
+| `default_variation` | string              | Must be a key in `variations`                                                                              |
+| `variations`        | `Record<string, T>` | At least one. All values same type. Keys: alphanumeric/hyphens/underscores, max 64 chars. Values max 10KB. |
+| `rules`             | `Rule[]`            | Can be empty. No duplicate priorities.                                                                     |
+| `description`       | string?             | Max 512 chars, nullable                                                                                    |
+| `enabled`           | boolean             | Required. `false` = always returns default variation.                                                      |
 
 ### Rule Schema
 
 ```json
 {
   "priority": 1,
-  "conditions": [ /* Condition[] */ ],
+  "conditions": [/* Condition[] */],
   "serve_variation": "on",
   "rollout": { "percentage": 50, "attribute": "targetingKey" }
 }
@@ -296,37 +294,37 @@ Nesting supported up to 6 levels deep.
 
 ### Operators
 
-| Operator | Description | Value Type |
-|----------|-------------|------------|
-| `equals` | Exact match (case-sensitive) | String |
-| `not_equals` | Not exact match | String |
-| `greater_than` | Numeric / datetime > | Number, ISO 8601 |
-| `less_than` | Numeric / datetime < | Number, ISO 8601 |
-| `greater_than_or_equals` | >= | Number, ISO 8601 |
-| `less_than_or_equals` | <= | Number, ISO 8601 |
-| `contains` | Substring match (case-sensitive) | String |
-| `starts_with` | Prefix match | String |
-| `ends_with` | Suffix match | String |
-| `in` | Value in array | Array |
-| `not_in` | Value not in array | Array |
+| Operator                 | Description                      | Value Type       |
+| ------------------------ | -------------------------------- | ---------------- |
+| `equals`                 | Exact match (case-sensitive)     | String           |
+| `not_equals`             | Not exact match                  | String           |
+| `greater_than`           | Numeric / datetime >             | Number, ISO 8601 |
+| `less_than`              | Numeric / datetime <             | Number, ISO 8601 |
+| `greater_than_or_equals` | >=                               | Number, ISO 8601 |
+| `less_than_or_equals`    | <=                               | Number, ISO 8601 |
+| `contains`               | Substring match (case-sensitive) | String           |
+| `starts_with`            | Prefix match                     | String           |
+| `ends_with`              | Suffix match                     | String           |
+| `in`                     | Value in array                   | Array            |
+| `not_in`                 | Value not in array               | Array            |
 
 ---
 
 ## Rate Limits
 
-| Operation | Limit |
-|-----------|-------|
-| Mutations (POST/PUT/DELETE) | 60 per 60s per account:app |
-| Reads (GET) | 600 per 60s per account:app |
+| Operation                   | Limit                       |
+| --------------------------- | --------------------------- |
+| Mutations (POST/PUT/DELETE) | 60 per 60s per account:app  |
+| Reads (GET)                 | 600 per 60s per account:app |
 
 ## Error Codes
 
-| HTTP Status | Meaning |
-|-------------|---------|
-| 200 | Success (read/update/delete) |
-| 201 | Created (create) |
-| 400 | Validation error (check `error` field) |
-| 401 | Invalid or missing token |
-| 404 | Flag or app not found |
-| 409 | Flag key already exists (create) |
-| 429 | Rate limited |
+| HTTP Status | Meaning                                |
+| ----------- | -------------------------------------- |
+| 200         | Success (read/update/delete)           |
+| 201         | Created (create)                       |
+| 400         | Validation error (check `error` field) |
+| 401         | Invalid or missing token               |
+| 404         | Flag or app not found                  |
+| 409         | Flag key already exists (create)       |
+| 429         | Rate limited                           |

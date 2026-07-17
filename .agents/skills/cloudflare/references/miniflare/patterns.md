@@ -2,13 +2,14 @@
 
 ## Choosing a Testing Approach
 
-| Approach | Use Case | Speed | Setup | Runtime |
-|----------|----------|-------|-------|---------|
-| **getPlatformProxy** | Unit tests, logic testing | Fast | Low | Miniflare |
-| **Miniflare API** | Integration tests, full control | Medium | Medium | Miniflare |
-| **vitest-pool-workers** | Vitest runner integration | Medium | Medium | workerd |
+| Approach                | Use Case                        | Speed  | Setup  | Runtime   |
+| ----------------------- | ------------------------------- | ------ | ------ | --------- |
+| **getPlatformProxy**    | Unit tests, logic testing       | Fast   | Low    | Miniflare |
+| **Miniflare API**       | Integration tests, full control | Medium | Medium | Miniflare |
+| **vitest-pool-workers** | Vitest runner integration       | Medium | Medium | workerd   |
 
 **Quick guide:**
+
 - Unit tests → getPlatformProxy
 - Integration tests → Miniflare API
 - Vitest workflows → vitest-pool-workers
@@ -103,9 +104,7 @@ const count = await storage.get("count");
 
 // Queue
 const worker = await mf.getWorker();
-await worker.queue("my-queue", [
-  { id: "msg1", timestamp: new Date(), body: { userId: 123 }, attempts: 1 },
-]);
+await worker.queue("my-queue", [{ id: "msg1", timestamp: new Date(), body: { userId: 123 }, attempts: 1 }]);
 
 // Scheduled
 await worker.scheduled({ cron: "0 0 * * *" });
@@ -115,7 +114,9 @@ await worker.scheduled({ cron: "0 0 * * *" });
 
 ```js
 // Per-test isolation
-beforeEach(() => { mf = new Miniflare({ kvNamespaces: ["TEST"] }); });
+beforeEach(() => {
+  mf = new Miniflare({ kvNamespaces: ["TEST"] });
+});
 afterEach(() => mf.dispose());
 
 // Mock external APIs
@@ -143,7 +144,7 @@ await env.KV.put("key", "value"); // Typed!
 export default {
   async fetch(req: Request, env: Env) {
     return new Response(await env.KV.get("key"));
-  }
+  },
 } satisfies ExportedHandler<Env>;
 ```
 

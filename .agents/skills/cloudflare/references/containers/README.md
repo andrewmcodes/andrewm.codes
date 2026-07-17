@@ -33,19 +33,19 @@ export default {
     const container = env.MY_CONTAINER.getByName("instance-1");
     await container.startAndWaitForPorts();
     return container.fetch(request);
-  }
+  },
 };
 ```
 
 ## Reading Order
 
-| Task | Files |
-|------|-------|
-| Setup new container project | README → configuration.md |
-| Implement container logic | README → api.md → patterns.md |
-| Choose routing pattern | patterns.md (routing section) |
-| Debug issues | gotchas.md |
-| Production hardening | gotchas.md → patterns.md (lifecycle) |
+| Task                        | Files                                |
+| --------------------------- | ------------------------------------ |
+| Setup new container project | README → configuration.md            |
+| Implement container logic   | README → api.md → patterns.md        |
+| Choose routing pattern      | patterns.md (routing section)        |
+| Debug issues                | gotchas.md                           |
+| Production hardening        | gotchas.md → patterns.md (lifecycle) |
 
 ## Routing Decision Tree
 
@@ -59,12 +59,14 @@ export default {
 ## When to Use Containers vs Workers
 
 **Use Containers when:**
+
 - Need stateful, long-lived processes (sessions, WebSockets, games)
 - Running existing containerized apps (Node.js, Python, custom binaries)
 - Need filesystem access or specific system dependencies
 - Per-user/session isolation with dedicated compute
 
 **Use Workers when:**
+
 - Stateless HTTP handlers
 - Sub-millisecond cold starts required
 - Auto-scaling to zero critical

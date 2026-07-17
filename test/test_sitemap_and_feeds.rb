@@ -15,10 +15,9 @@ class TestSitemapAndFeeds < Bridgetown::Test
       expect(@body).must_match %r{<loc>https://andrewm\.codes/p/}
     end
 
-    it "excludes noindexed tag pages" do
-      # Tag pages are on-site navigation only (many are single-post), so they're
-      # noindexed and kept out of the sitemap. See src/_pages/tag.erb.
-      expect(@body).wont_match %r{<loc>https://andrewm\.codes/tag/}
+    it "includes substantial tag pages and excludes thin noindexed tags" do
+      expect(@body).must_match %r{<loc>https://andrewm\.codes/tag/rails/</loc>}
+      expect(@body).wont_match %r{<loc>https://andrewm\.codes/tag/unix/</loc>}
     end
 
     it "excludes the 404 page" do

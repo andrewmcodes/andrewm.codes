@@ -7,6 +7,7 @@ Store versioned file trees behind a repo-style interface that works from Workers
 Use **Artifacts** when the thing you need to store is a versioned filesystem tree rather than a single object, key, or SQL row.
 
 Typical Artifacts use cases:
+
 - Git-style repositories
 - Per-agent, per-session, or per-task repos
 - Build outputs and deployment bundles
@@ -21,12 +22,12 @@ Artifacts is especially useful for agent and automation workflows where each uni
 
 ## When to Use Artifacts
 
-| Need | Use | Why |
-|------|-----|-----|
-| Versioned file trees such as repos, build outputs, checkpoints, or generated assets | Artifacts | Artifacts stores and shares **versioned filesystem content** |
-| A git-compatible workflow with `clone`, `fetch`, `pull`, or `push` | Artifacts | Artifacts exposes **git-over-HTTPS remotes** and repo-scoped tokens |
-| The same artifact accessible from Workers, HTTP APIs, and developer tooling | Artifacts | Artifacts is available through a **Workers binding**, **REST API**, and **git-compatible interface** |
-| Large files by object key, app config by key, or relational app data | R2, KV, or D1 | Use storage products directly when you need **objects, key-value entries, or SQL rows**, not versioned file trees |
+| Need                                                                                | Use           | Why                                                                                                               |
+| ----------------------------------------------------------------------------------- | ------------- | ----------------------------------------------------------------------------------------------------------------- |
+| Versioned file trees such as repos, build outputs, checkpoints, or generated assets | Artifacts     | Artifacts stores and shares **versioned filesystem content**                                                      |
+| A git-compatible workflow with `clone`, `fetch`, `pull`, or `push`                  | Artifacts     | Artifacts exposes **git-over-HTTPS remotes** and repo-scoped tokens                                               |
+| The same artifact accessible from Workers, HTTP APIs, and developer tooling         | Artifacts     | Artifacts is available through a **Workers binding**, **REST API**, and **git-compatible interface**              |
+| Large files by object key, app config by key, or relational app data                | R2, KV, or D1 | Use storage products directly when you need **objects, key-value entries, or SQL rows**, not versioned file trees |
 
 ## Recommended Workflow
 
@@ -55,12 +56,12 @@ Use the namespace-scoped Artifacts base URL plus a gateway JWT. For imports from
 
 ## Reading Order
 
-| Task | Read |
-|------|------|
-| Decide whether Artifacts is the right product | README only |
-| Create or manage repos from a Worker | README → configuration.md → api.md |
-| Integrate Artifacts from an external system | README → api.md |
-| Set up agent or sandbox workflows | README → configuration.md |
+| Task                                          | Read                                                            |
+| --------------------------------------------- | --------------------------------------------------------------- |
+| Decide whether Artifacts is the right product | README only                                                     |
+| Create or manage repos from a Worker          | README → configuration.md → api.md                              |
+| Integrate Artifacts from an external system   | README → api.md                                                 |
+| Set up agent or sandbox workflows             | README → configuration.md                                       |
 | Verify exact auth, routes, limits, or pricing | Live docs first: `https://developers.cloudflare.com/artifacts/` |
 
 ## In This Reference

@@ -16,6 +16,7 @@ title: andrewm.codes
       title: "now",
       description: "What I'm actively working on right now.",
     ) %>
+
     <%= render HomeNow.new(episode: latest_episode, talk: latest_talk) %>
   <% end %>
 
@@ -25,6 +26,7 @@ title: andrewm.codes
         title: "featured work",
         description: "A few things I'm proud of and point people to most often.",
       ) %>
+
       <%= render CardGrid.new do %>
         <% site.data.featured.each do |item| %>
           <%= render FeaturedCard.new(item: item) %>
@@ -39,6 +41,7 @@ title: andrewm.codes
       link_label: "all posts",
       link_href: "/posts/",
     ) %>
+
     <%= render Stack.new do %>
       <% recent_posts.each do |post| %>
         <%= render PostRow.new(post: post) %>
@@ -53,6 +56,7 @@ title: andrewm.codes
         link_label: "all projects",
         link_href: "/projects/",
       ) %>
+
       <%= render CardGrid.new do %>
         <% projects.each do |proj| %>
           <%= render ProjectCard.new(project: proj) %>
@@ -68,6 +72,7 @@ title: andrewm.codes
         link_label: "all talks",
         link_href: "/speaking/",
       ) %>
+
       <%= render TalkCard.new(talk: latest_talk) %>
     <% end %>
   <% end %>
@@ -79,6 +84,7 @@ title: andrewm.codes
         link_label: "all podcasts",
         link_href: "/speaking/",
       ) %>
+
       <%= render EpisodeCard.new(episode: latest_episode) %>
     <% end %>
   <% end %>

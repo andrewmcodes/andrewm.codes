@@ -2,12 +2,12 @@
 
 ## Platform Limitations
 
-| Limitation | Impact | Workaround |
-|------------|--------|------------|
-| Safari broken | Preview fails | Use Chrome/Firefox/Edge |
-| TypeScript unsupported | TS syntax errors | Write plain JS or use JSDoc |
-| No bindings | `env` always `{}` | Mock data or use external APIs |
-| No env vars | Can't access secrets | Hardcode for testing |
+| Limitation             | Impact               | Workaround                     |
+| ---------------------- | -------------------- | ------------------------------ |
+| Safari broken          | Preview fails        | Use Chrome/Firefox/Edge        |
+| TypeScript unsupported | TS syntax errors     | Write plain JS or use JSDoc    |
+| No bindings            | `env` always `{}`    | Mock data or use external APIs |
+| No env vars            | Can't access secrets | Hardcode for testing           |
 
 ## Common Runtime Errors
 
@@ -64,25 +64,25 @@ try { ... } catch (e) {
 
 ## Limits
 
-| Resource | Free | Paid |
-|----------|------|------|
-| CPU time | 10ms | 30s (default), 5min (max) |
-| Memory | 128 MB | 128 MB |
-| Subrequests | 50 | 10,000 |
+| Resource    | Free   | Paid                      |
+| ----------- | ------ | ------------------------- |
+| CPU time    | 10ms   | 30s (default), 5min (max) |
+| Memory      | 128 MB | 128 MB                    |
+| Subrequests | 50     | 10,000                    |
 
 ## Browser Support
 
-| Browser | Status |
-|---------|--------|
-| Chrome | ✅ Recommended |
-| Firefox | ✅ Works |
-| Edge | ✅ Works |
-| Safari | ❌ Broken |
+| Browser | Status         |
+| ------- | -------------- |
+| Chrome  | ✅ Recommended |
+| Firefox | ✅ Works       |
+| Edge    | ✅ Works       |
+| Safari  | ❌ Broken      |
 
 ## Debugging
 
 ```javascript
-console.log('URL:', request.url); // View in browser DevTools Console
+console.log("URL:", request.url); // View in browser DevTools Console
 ```
 
 **Note:** `console.log` works in playground. For production, use Logpush or Tail Workers.

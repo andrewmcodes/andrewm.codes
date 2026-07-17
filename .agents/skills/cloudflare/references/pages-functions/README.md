@@ -5,19 +5,20 @@ Serverless functions on Cloudflare Pages using Workers runtime. Full-stack dev w
 ## Quick Navigation
 
 **Need to...**
-| Task | Go to |
-|------|-------|
-| Set up TypeScript types | [configuration.md](./configuration.md) - TypeScript Setup |
-| Configure bindings (KV, D1, R2) | [configuration.md](./configuration.md) - wrangler.jsonc |
-| Access request/env/params | [api.md](./api.md) - EventContext |
-| Add middleware or auth | [patterns.md](./patterns.md) - Middleware, Auth |
-| Background tasks (waitUntil) | [patterns.md](./patterns.md) - Background Tasks |
-| Debug errors or check limits | [gotchas.md](./gotchas.md) - Common Errors, Limits |
+
+| Task                            | Go to                                                     |
+| ------------------------------- | --------------------------------------------------------- |
+| Set up TypeScript types         | [configuration.md](./configuration.md) - TypeScript Setup |
+| Configure bindings (KV, D1, R2) | [configuration.md](./configuration.md) - wrangler.jsonc   |
+| Access request/env/params       | [api.md](./api.md) - EventContext                         |
+| Add middleware or auth          | [patterns.md](./patterns.md) - Middleware, Auth           |
+| Background tasks (waitUntil)    | [patterns.md](./patterns.md) - Background Tasks           |
+| Debug errors or check limits    | [gotchas.md](./gotchas.md) - Common Errors, Limits        |
 
 ## Decision Tree: Is This Pages Functions?
 
 ```
-Need serverless backend? 
+Need serverless backend?
 ├─ Yes, for a static site → Pages Functions
 ├─ Yes, standalone API → Workers
 └─ Just static hosting → Pages (no functions)
@@ -45,6 +46,7 @@ Framework-based?
 ```
 
 **Rules:**
+
 - `index.js` → directory root
 - Trailing slash optional
 - Specific routes precede catch-alls
@@ -53,6 +55,7 @@ Framework-based?
 ## Dynamic Routes
 
 **Single segment** `[param]` → string:
+
 ```js
 // /functions/users/[user].js
 export function onRequest(context) {
@@ -62,6 +65,7 @@ export function onRequest(context) {
 ```
 
 **Multi-segment** `[[param]]` → array:
+
 ```js
 // /functions/users/[[catchall]].js
 export function onRequest(context) {
@@ -81,6 +85,7 @@ export function onRequest(context) {
 ## Reading Order
 
 **New to Pages Functions?** Start here:
+
 1. [README.md](./README.md) - Overview, routing, decision tree (you are here)
 2. [configuration.md](./configuration.md) - TypeScript setup, wrangler.jsonc, bindings
 3. [api.md](./api.md) - EventContext, handlers, bindings reference
@@ -88,11 +93,13 @@ export function onRequest(context) {
 5. [gotchas.md](./gotchas.md) - Common errors, debugging, limits
 
 **Quick reference lookup:**
+
 - Bindings table → [api.md](./api.md)
 - Error diagnosis → [gotchas.md](./gotchas.md)
 - TypeScript setup → [configuration.md](./configuration.md)
 
 ## See Also
+
 - [pages](../pages/) - Pages platform overview and static site deployment
 - [workers](../workers/) - Workers runtime API reference
 - [d1](../d1/) - D1 database integration with Pages Functions

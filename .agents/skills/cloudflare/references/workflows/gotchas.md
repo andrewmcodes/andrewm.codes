@@ -72,6 +72,7 @@ Limits and pricing change over time. **Always fetch the latest values** from the
 Key areas to check: CPU time per step, max steps per workflow, concurrent instance limits, step return size, event payload size, instance creation rate, subrequest limits, state retention period, and name/ID length constraints.
 
 **Behavioral notes** (stable, not subject to number changes):
+
 - `step.sleep()` and `step.waitForEvent()` don't count toward the max steps limit
 - Instances in `waiting` state (sleeping, waiting for event, waiting for retry) don't count toward the concurrent instance limit
 - CPU time is active processing only — network I/O, DB queries, and sleeps are wall-clock time, not CPU time

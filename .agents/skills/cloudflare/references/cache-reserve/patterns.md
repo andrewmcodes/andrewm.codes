@@ -7,15 +7,10 @@
 ```typescript
 // Cache Reserve is designed for use WITH Tiered Cache
 const configuration = {
-  tieredCache: 'enabled',    // Required for optimal performance
-  cacheReserve: 'enabled',   // Works best with Tiered Cache
-  
-  hierarchy: [
-    'Lower-Tier Cache (visitor)',
-    'Upper-Tier Cache (origin region)',
-    'Cache Reserve (persistent)',
-    'Origin'
-  ]
+  tieredCache: "enabled", // Required for optimal performance
+  cacheReserve: "enabled", // Works best with Tiered Cache
+
+  hierarchy: ["Lower-Tier Cache (visitor)", "Upper-Tier Cache (origin region)", "Cache Reserve (persistent)", "Origin"],
 };
 ```
 
@@ -24,10 +19,10 @@ const configuration = {
 ```typescript
 // Origin response headers for Cache Reserve eligibility
 const originHeaders = {
-  'Cache-Control': 'public, max-age=86400', // 24hr (minimum 10hr)
-  'Content-Length': '1024000', // Required
-  'Cache-Tag': 'images,product-123', // Optional: purging
-  'ETag': '"abc123"', // Optional: revalidation
+  "Cache-Control": "public, max-age=86400", // 24hr (minimum 10hr)
+  "Content-Length": "1024000", // Required
+  "Cache-Tag": "images,product-123", // Optional: purging
+  ETag: '"abc123"', // Optional: revalidation
   // Avoid: 'Set-Cookie' and 'Vary: *' prevent caching
 };
 ```
@@ -38,28 +33,28 @@ const originHeaders = {
 // Different TTLs for different content types
 const cacheRules = [
   {
-    description: 'Long-term cache for immutable assets',
+    description: "Long-term cache for immutable assets",
     expression: '(http.request.uri.path matches "^/static/.*\\.[a-f0-9]{8}\\.")',
     action_parameters: {
       cache_reserve: { eligible: true },
-      edge_ttl: { mode: 'override_origin', default: 2592000 }, // 30 days
-      cache: true
-    }
+      edge_ttl: { mode: "override_origin", default: 2592000 }, // 30 days
+      cache: true,
+    },
   },
   {
-    description: 'Moderate cache for regular images',
+    description: "Moderate cache for regular images",
     expression: '(http.request.uri.path matches "\\.(jpg|png|webp)$")',
     action_parameters: {
       cache_reserve: { eligible: true },
-      edge_ttl: { mode: 'override_origin', default: 86400 }, // 24 hours
-      cache: true
-    }
+      edge_ttl: { mode: "override_origin", default: 86400 }, // 24 hours
+      cache: true,
+    },
   },
   {
-    description: 'Exclude API from Cache Reserve',
+    description: "Exclude API from Cache Reserve",
     expression: '(http.request.uri.path matches "^/api/")',
-    action_parameters: { cache_reserve: { eligible: false }, cache: false }
-  }
+    action_parameters: { cache_reserve: { eligible: false }, cache: false },
+  },
 ];
 ```
 
@@ -72,20 +67,20 @@ export default {
   async fetch(request: Request, env: Env): Promise<Response> {
     const response = await fetch(request);
     if (!response.ok) return response;
-    
+
     const headers = new Headers(response.headers);
-    headers.set('Cache-Control', 'public, max-age=36000'); // 10hr minimum
-    headers.delete('Set-Cookie'); // Blocks caching
-    
+    headers.set("Cache-Control", "public, max-age=36000"); // 10hr minimum
+    headers.delete("Set-Cookie"); // Blocks caching
+
     // Ensure Content-Length present
-    if (!headers.has('Content-Length')) {
+    if (!headers.has("Content-Length")) {
       const blob = await response.blob();
-      headers.set('Content-Length', blob.size.toString());
+      headers.set("Content-Length", blob.size.toString());
       return new Response(blob, { status: response.status, headers });
     }
-    
+
     return new Response(response.body, { status: response.status, headers });
-  }
+  },
 };
 ```
 
@@ -104,14 +99,14 @@ export default {
     const url = new URL(request.url);
     const isImmutable = /\.[a-f0-9]{8,}\.(js|css|jpg|png|woff2)$/.test(url.pathname);
     const response = await fetch(request);
-    
+
     if (isImmutable) {
       const headers = new Headers(response.headers);
-      headers.set('Cache-Control', 'public, max-age=31536000, immutable');
+      headers.set("Cache-Control", "public, max-age=31536000, immutable");
       return new Response(response.body, { status: response.status, headers });
     }
     return response;
-  }
+  },
 };
 ```
 
@@ -131,25 +126,25 @@ interface CacheReserveEstimate {
 function estimateMonthlyCost(input: CacheReserveEstimate) {
   // Cache Reserve pricing
   const storageCostPerGBMonth = 0.015;
-  const classAPerMillion = 4.50; // writes
+  const classAPerMillion = 4.5; // writes
   const classBPerMillion = 0.36; // reads
-  
+
   // Calculate Cache Reserve costs
   const totalStorageGB = input.avgAssetSizeGB * input.uniqueAssets;
   const storageCost = totalStorageGB * storageCostPerGBMonth;
   const writeCost = (input.monthlyWrites / 1_000_000) * classAPerMillion;
   const readCost = (input.monthlyReads / 1_000_000) * classBPerMillion;
-  
+
   const cacheReserveCost = storageCost + writeCost + readCost;
-  
+
   // Calculate origin egress cost (what you'd pay without Cache Reserve)
-  const totalTrafficGB = (input.monthlyReads * input.avgAssetSizeGB);
+  const totalTrafficGB = input.monthlyReads * input.avgAssetSizeGB;
   const originEgressCost = totalTrafficGB * input.originEgressCostPerGB;
-  
+
   // Savings calculation
   const savings = originEgressCost - cacheReserveCost;
   const savingsPercent = ((savings / originEgressCost) * 100).toFixed(1);
-  
+
   return {
     cacheReserveCost: `$${cacheReserveCost.toFixed(2)}`,
     originEgressCost: `$${originEgressCost.toFixed(2)}`,
@@ -159,7 +154,7 @@ function estimateMonthlyCost(input: CacheReserveEstimate) {
       storage: `$${storageCost.toFixed(2)}`,
       writes: `$${writeCost.toFixed(2)}`,
       reads: `$${readCost.toFixed(2)}`,
-    }
+    },
   };
 }
 
