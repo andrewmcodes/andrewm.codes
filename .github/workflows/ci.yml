@@ -80,6 +80,8 @@ jobs:
     if: |
       github.event_name == 'push' ||
       (github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository)
+    env:
+      LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
     steps:
       - uses: actions/checkout@v7
       - uses: ./.github/actions/setup
@@ -89,10 +91,30 @@ jobs:
         with:
           name: site-output
           path: output
-      - name: Lighthouse CI
-        env:
-          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
-        run: pnpm exec lhci autorun
+      # Lighthouse dominates this job's wall-clock. Instead of collecting all
+      # seven URLs serially in one `lhci autorun`, split them into three shards
+      # that run as parallel steps so the Chrome runs overlap. Each `autorun`
+      # auto-assigns a free port and posts per-URL GitHub statuses (context
+      # `lhci/url<path>`), so shards never collide on ports or clobber each
+      # other's statuses. `--collect.url` overrides the list in lighthouserc.cjs
+      # — keep the union of these shards in sync with that file.
+      - parallel:
+          - name: Lighthouse (home, posts, about)
+            run: >-
+              pnpm exec lhci autorun
+              --collect.url=http://localhost/
+              --collect.url=http://localhost/posts/
+              --collect.url=http://localhost/about/
+          - name: Lighthouse (projects, speaking)
+            run: >-
+              pnpm exec lhci autorun
+              --collect.url=http://localhost/projects/
+              --collect.url=http://localhost/speaking/
+          - name: Lighthouse (post, tag)
+            run: >-
+              pnpm exec lhci autorun
+              --collect.url=http://localhost/p/kill-process-on-port/
+              --collect.url=http://localhost/tag/rails/
 
   deploy:
     name: deploy to cloudflare
