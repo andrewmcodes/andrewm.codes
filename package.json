@@ -28,7 +28,7 @@
     "@types/node": "^26.1.1",
     "esbuild": "^0.28.1",
     "gray-matter": "^4.0.3",
-    "node-html-parser": "^7.1.0",
+    "node-html-parser": "^9.0.0",
     "pagefind": "^1.5.2",
     "postcss": "^8.5.16",
     "postcss-focus-visible": "^11.0.0",
