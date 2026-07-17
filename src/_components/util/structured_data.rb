@@ -106,6 +106,13 @@ module Util
       res.respond_to?(:absolute_url) ? res.absolute_url : helpers.absolute_url(res.relative_url)
     end
 
+    def canonical_url(res = resource)
+      canonical = res.data.canonical_url if res.respond_to?(:data)
+      return canonical if canonical && canonical != false
+
+      abs_url(res)
+    end
+
     def resource_image(res)
       helpers.absolute_url(res.data.image || metadata.image)
     end
@@ -196,8 +203,11 @@ module Util
         "author" => person,
         "publisher" => person_ref,
         "image" => resource_image(resource),
-        "url" => abs_url,
-        "mainEntityOfPage" => abs_url,
+        "url" => canonical_url,
+        "mainEntityOfPage" => {
+          "@type" => "WebPage",
+          "@id" => canonical_url
+        },
         "inLanguage" => metadata.lang,
         "isPartOf" => website_ref,
         "keywords" => keywords(resource),

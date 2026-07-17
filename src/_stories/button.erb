@@ -5,32 +5,67 @@ title: Button
 <div class="space-y-6">
   <div class="space-y-2">
     <p class="font-mono text-xs text-sage-10">Variants</p>
+
     <div class="flex flex-wrap items-center gap-3">
-      <%= render Button.new(variant: :primary) do %>Primary<% end %>
-      <%= render Button.new(variant: :secondary) do %>Secondary<% end %>
-      <%= render Button.new(variant: :ghost) do %>Ghost<% end %>
-      <%= render Button.new(variant: :text) do %>Text<% end %>
+      <%= render Button.new(variant: :primary) do %>
+        Primary
+      <% end %>
+
+      <%= render Button.new(variant: :secondary) do %>
+        Secondary
+      <% end %>
+
+      <%= render Button.new(variant: :ghost) do %>
+        Ghost
+      <% end %>
+
+      <%= render Button.new(variant: :text) do %>
+        Text
+      <% end %>
     </div>
   </div>
 
   <div class="space-y-2">
     <p class="font-mono text-xs text-sage-10">Sizes</p>
+
     <div class="flex flex-wrap items-center gap-3">
-      <%= render Button.new(size: :xs) do %>XS<% end %>
-      <%= render Button.new(size: :sm) do %>SM<% end %>
-      <%= render Button.new(size: :md) do %>MD<% end %>
-      <%= render Button.new(size: :lg) do %>LG<% end %>
-      <%= render Button.new(size: :xl) do %>XL<% end %>
+      <%= render Button.new(size: :xs) do %>
+        XS
+      <% end %>
+
+      <%= render Button.new(size: :sm) do %>
+        SM
+      <% end %>
+
+      <%= render Button.new(size: :md) do %>
+        MD
+      <% end %>
+
+      <%= render Button.new(size: :lg) do %>
+        LG
+      <% end %>
+
+      <%= render Button.new(size: :xl) do %>
+        XL
+      <% end %>
     </div>
   </div>
 
   <div class="space-y-2">
     <p class="font-mono text-xs text-sage-10">Icon</p>
+
     <div class="flex flex-wrap items-center gap-3">
-      <%= render Button.new(circle: true, size: :sm) do %><%= render Icon.new(name: :check) %><% end %>
-      <%= render Button.new(circle: true) do %><%= render Icon.new(name: :star) %><% end %>
-      <%= render Button.new(href: "#") do %><%= render Icon.new(name: :github) %>
-        GitHub<% end %>
+      <%= render Button.new(circle: true, size: :sm) do %>
+        <%= render Icon.new(name: :check) %>
+      <% end %>
+
+      <%= render Button.new(circle: true) do %>
+        <%= render Icon.new(name: :star) %>
+      <% end %>
+
+      <%= render Button.new(href: "#") do %>
+        <%= render Icon.new(name: :github) %> GitHub
+      <% end %>
     </div>
   </div>
 </div>

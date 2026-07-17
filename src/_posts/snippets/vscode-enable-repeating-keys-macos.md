@@ -8,7 +8,7 @@ tags:
   - vim
   - vs-code
 date: 2022-02-27 07:37:44.751000000 Z
-last_modified_at: 2022-02-27 07:37:00.678000000 Z
+last_modified_at: 2022-02-27 07:37:44.751000000 Z
 ---
 
 ```sh
