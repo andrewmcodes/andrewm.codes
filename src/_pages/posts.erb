@@ -6,12 +6,14 @@ description: Notes on Rails, podcasting, and the long unglamorous middle. Occasi
 ---
 
 <% posts = collections.posts.resources %>
+
 <% tag_counts =
   posts
     .flat_map { |p| Array(p.data.tags) }
     .tally
     .sort_by { |_, n| -n }
     .first(12) %>
+
 <% years = posts.group_by { |p| p.date.year }.sort.reverse %>
 
 <%= render PageShell.new do %>

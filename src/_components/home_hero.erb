@@ -7,36 +7,53 @@
   >
     Andrew Mason<span class="text-mint-11">.</span>
   </h1>
+
   <p
     class="
-      text-[16.5px] text-sage-11 max-w-[600px] leading-[1.65] m-0 mb-4 text-pretty
+      text-[16.5px] text-sage-11 max-w-[600px] leading-[1.65] m-0 mb-4
+      text-pretty
     "
   >
     Ruby on Rails engineer at
-    <%= render Link.new(href: "https://podia.com", variant: :inline) do %>Podia<% end %>, co-host of
-    <%= render Link.new(href: "/speaking/", variant: :inline) do %>Remote Ruby<% end %>, and based in Arizona.
+    <%= render Link.new(href: "https://podia.com", variant: :inline) do %>
+      Podia
+    <% end %>, co-host of
+    <%= render Link.new(href: "/speaking/", variant: :inline) do %>
+      Remote Ruby
+    <% end %>, and based in Arizona.
   </p>
+
   <p
     class="
-      text-[16.5px] text-sage-11 max-w-[600px] leading-[1.65] m-0 mb-4 text-pretty
+      text-[16.5px] text-sage-11 max-w-[600px] leading-[1.65] m-0 mb-4
+      text-pretty
     "
   >
     I spend my time on the parts of Rails that compound — fast CI and test
     suites, developer tooling, and the workflow details that make a team
-    quicker. Most of what I learn shipping software for a living ends up
-    written down here.
+    quicker. Most of what I learn shipping software for a living ends up written
+    down here.
   </p>
+
   <p
     class="
-      text-[16.5px] text-sage-11 max-w-[600px] leading-[1.65] m-0 mb-4 text-pretty
+      text-[16.5px] text-sage-11 max-w-[600px] leading-[1.65] m-0 mb-4
+      text-pretty
     "
   >
     You'll find my
-    <%= render Link.new(href: "/posts/", variant: :inline) do %>writing<% end %>,
-    <%= render Link.new(href: "/projects/", variant: :inline) do %>open source<% end %>, and
-    <%= render Link.new(href: "/speaking/", variant: :inline) do %>talks and podcasts<% end %>
+    <%= render Link.new(href: "/posts/", variant: :inline) do %>
+      writing
+    <% end %>,
+    <%= render Link.new(href: "/projects/", variant: :inline) do %>
+      open source
+    <% end %>, and
+    <%= render Link.new(href: "/speaking/", variant: :inline) do %>
+      talks and podcasts
+    <% end %>
     here. Mostly so I can find them again later.
   </p>
+
   <div class="mt-8 flex flex-wrap items-center gap-3">
     <%= render Button.new(href: "/posts/", variant: :primary, size: :xl) do %>
       Read the writing
@@ -45,9 +62,11 @@
         class: "ml-1.5 inline-block transition-transform group-hover:translate-x-0.5",
       ) %>
     <% end %>
+
     <%= render Button.new(href: "/projects/", variant: :secondary, size: :xl) do %>
       Browse projects
     <% end %>
+
     <%= render Button.new(href: "https://remoteruby.com/", variant: :ghost, size: :xl) do %>
       Listen to Remote Ruby
     <% end %>

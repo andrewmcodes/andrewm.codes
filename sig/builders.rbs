@@ -1,0 +1,13 @@
+class SiteBuilder < Bridgetown::Builder
+  @logger: untyped
+
+  private
+
+  def error: (String message) -> void
+  def warn: (String message) -> void
+  def logger: () -> untyped
+end
+
+module OgHelper
+  def self.slug: (untyped resource) -> String
+end

@@ -59,14 +59,14 @@ run = "mise run format:ruby && mise run format:erb && mise run format:prettier"
 run = "bundle exec standardrb --fix"
 
 [tasks."format:erb"]
-run = "bundle exec erb-format src/**/*.erb --write"
+run = "pnpm exec herb-format \"src/**/*.erb\""
 
 [tasks."format:prettier"]
 run = "pnpm exec prettier --write \"**/*.{js,yml,md,mdx,cjs}\""
 
 [tasks.lint]
 description = "Lint everything: Ruby (standard), Prettier, JS types, and commit messages"
-run = "mise run lint:ruby && mise run lint:prettier && mise run lint:types && mise run lint:commits"
+run = "mise run lint:ruby && mise run lint:prettier && mise run lint:types && mise run typecheck:ruby && mise run lint:commits"
 
 [tasks."lint:ruby"]
 run = "bundle exec standardrb"
@@ -78,6 +78,10 @@ run = "pnpm exec prettier --check \"**/*.{js,yml,md,mdx,cjs}\""
 # checked (see tsconfig.json); annotate more files to expand coverage.
 [tasks."lint:types"]
 run = "pnpm run typecheck"
+
+[tasks."typecheck:ruby"]
+description = "Type-check the initial RBS/Steep Ruby surface"
+run = "bundle exec steep check --jobs=1"
 
 # Lint commit messages on this branch against @andrewmcodes/commitlint-config.
 # On main the range is empty and the check is a no-op.

@@ -7,9 +7,10 @@
     border-sage-4 max-md:grid-cols-1 max-md:gap-1.5
   "
 >
-  <div
-    class="font-mono text-xs text-sage-11 whitespace-nowrap max-md:text-[11px]"
-  ><%= date_str %></div>
+  <div class="font-mono text-xs text-sage-11 whitespace-nowrap max-md:text-[11px]">
+    <%= date_str %>
+  </div>
+
   <div>
     <div
       class="
@@ -19,14 +20,20 @@
     >
       <%= @post.data.title %>
     </div>
+
     <div class="mt-1 flex flex-wrap gap-3 font-mono text-[11px] text-sage-11">
       <% tags.each do |t| %>
         <span><span class="text-sage-8">#</span><%= t %></span>
       <% end %>
-      <% if tags.any? %><span>·</span><% end %>
+
+      <% if tags.any? %>
+        <span>·</span>
+      <% end %>
+
       <span><%= reading %></span>
     </div>
   </div>
+
   <div
     class="
       font-mono text-[11.5px] text-sage-11 whitespace-nowrap max-md:hidden inline-flex

@@ -1,5 +1,6 @@
 require "minitest_helper"
 require "json"
+require "time"
 
 def jsonld_scripts(doc)
   doc.query_selector_all("script[type='application/ld+json']").map { |s|
@@ -143,6 +144,37 @@ class TestJsonLd < Bridgetown::Test
       expect(names.first).must_equal "Home"
       expect(names[1]).must_equal "Posts"
       expect(crumbs["itemListElement"].last["item"]).must_equal "https://andrewm.codes/p/twitter-avatar/"
+    end
+  end
+
+  describe "all post BlogPosting relationships" do
+    it "matches canonical URLs and shared author identity" do
+      failures = []
+
+      Dir[File.join(__dir__, "..", "output", "p", "*", "index.html")].sort.each do |file|
+        slug = File.basename(File.dirname(file))
+        path = "/p/#{slug}/"
+
+        html get path
+
+        canonical = document.query_selector("link[rel='canonical']")["href"]
+        post = jsonld_of_type(document, "BlogPosting").first
+
+        failures << "#{path}: missing BlogPosting" unless post
+        next unless post
+
+        published = Time.parse(post["datePublished"])
+        modified = Time.parse(post["dateModified"])
+
+        failures << "#{path}: BlogPosting.url mismatch" unless post["url"] == canonical
+        failures << "#{path}: BlogPosting.mainEntityOfPage.@id mismatch" unless post.dig("mainEntityOfPage", "@id") == canonical
+        failures << "#{path}: BlogPosting.author.@id mismatch" unless post.dig("author", "@id") == PERSON_ID
+        failures << "#{path}: dateModified before datePublished" if modified < published
+      rescue ArgumentError => e
+        failures << "#{path}: invalid post date: #{e.message}"
+      end
+
+      expect(failures).must_equal []
     end
   end
 

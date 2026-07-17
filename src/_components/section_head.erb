@@ -2,9 +2,11 @@
   <div class="mb-4">
     <div class="flex items-baseline justify-between gap-4 mb-3">
       <h2 class="<%= heading_classes %>"><%= @title %></h2>
+
       <% if @link_label && @link_href %>
         <%= render Link.new(href: @link_href, variant: :section_action) do %>
           <%= @link_label %>
+
           <%= render Icon.new(
             name: icon_name,
             class: "transition-transform group-hover:translate-x-0.5",
@@ -12,6 +14,7 @@
         <% end %>
       <% end %>
     </div>
+
     <% if @description %>
       <p class="text-sage-11 text-[13.5px] leading-snug max-w-[600px] mb-4">
         <%= @description %>
@@ -21,9 +24,11 @@
 <% else %>
   <div class="flex items-baseline justify-between gap-4 mb-[18px]">
     <h2 class="<%= heading_classes %>"><%= @title %></h2>
+
     <% if @link_label && @link_href %>
       <%= render Link.new(href: @link_href, variant: :section_action) do %>
         <%= @link_label %>
+
         <%= render Icon.new(
           name: icon_name,
           class: "transition-transform group-hover:translate-x-0.5",
