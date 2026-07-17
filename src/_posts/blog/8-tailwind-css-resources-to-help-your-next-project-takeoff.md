@@ -1,6 +1,6 @@
 ---
 title: 8 Tailwind CSS resources to help your next project takeoff
-description: "Eight Tailwind CSS resources — component libraries, typography and layout helpers, and developer-experience plugins — to speed up your next project."
+description: "Eight Tailwind CSS resources to speed up your next project: component libraries, typography and layout helpers, and developer-experience plugins."
 urls:
   dev_to: https://dev.to/andrewmcodes/8-tailwind-css-resources-to-help-your-next-project-takeoff-2b92
 tags:

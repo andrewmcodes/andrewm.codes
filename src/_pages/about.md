@@ -18,11 +18,11 @@ I grew up in North Carolina, studied Computer Science, and eventually landed in 
 
 ## Elsewhere
 
-[Bluesky](https://bsky.app/profile/andrewm.codes) · [GitHub](https://github.com/andrewmcodes) · [LinkedIn](https://www.linkedin.com/in/andrew-mason) · [Remote Ruby](https://remoteruby.com) · [Email](mailto:hello@andrewmcodes.dev)
+[Bluesky](https://bsky.app/profile/andrewm.codes) · [GitHub](https://github.com/andrewmcodes) · [LinkedIn](https://www.linkedin.com/in/andrew-mason) · [Remote Ruby](https://remoteruby.com)
 
 ## Speaking & podcasts
 
-If you'd like me at your conference, on your podcast, or generally in a room with a microphone — [email me](mailto:hello@andrewmcodes.dev). I'm slow to reply but I do reply.
+If you'd like me at your conference, on your podcast, or generally in a room with a microphone, [reach out on Bluesky](https://bsky.app/profile/andrewm.codes). I'm slow to reply but I do reply.
 
 ## Colophon
 

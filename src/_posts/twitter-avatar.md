@@ -1,8 +1,6 @@
 ---
 title: How to Add a Progress Bar Around Your Twitter Avatar
-description: Add a personalized progress bar to your Twitter avatar with the help
-  of BlackMagic.so's Profile Progress Bar Tool. Follow me on Twitter to see it in
-  motion!
+description: Add a personalized progress bar to your Twitter avatar with the help of BlackMagic.so's Profile Progress Bar Tool. Follow me on Twitter to see it in motion!
 tags:
   - twitter
 date: 2022-05-24 21:34:24.000000000 Z

@@ -229,8 +229,7 @@ In order to log in to our CMS, we need to enable Netlify Identity on the `Identi
 
 #### Registration preferences
 
-**Before setting this, make sure you have created your first user to make your life easier (next section)**
-I would recommend setting this to invite only vs open once you have a configured user.
+**Before setting this, make sure you have created your first user to make your life easier (next section)** I would recommend setting this to invite only vs open once you have a configured user.
 
 #### External providers
 

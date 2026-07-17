@@ -100,20 +100,13 @@ jobs:
       - parallel:
           - name: Lighthouse (home, posts, about)
             run: >-
-              pnpm exec lhci autorun
-              --collect.url=http://localhost/
-              --collect.url=http://localhost/posts/
-              --collect.url=http://localhost/about/
+              pnpm exec lhci autorun --collect.url=http://localhost/ --collect.url=http://localhost/posts/ --collect.url=http://localhost/about/
           - name: Lighthouse (projects, speaking)
             run: >-
-              pnpm exec lhci autorun
-              --collect.url=http://localhost/projects/
-              --collect.url=http://localhost/speaking/
+              pnpm exec lhci autorun --collect.url=http://localhost/projects/ --collect.url=http://localhost/speaking/
           - name: Lighthouse (post, tag)
             run: >-
-              pnpm exec lhci autorun
-              --collect.url=http://localhost/p/kill-process-on-port/
-              --collect.url=http://localhost/tag/rails/
+              pnpm exec lhci autorun --collect.url=http://localhost/p/kill-process-on-port/ --collect.url=http://localhost/tag/rails/
 
   deploy:
     name: deploy to cloudflare

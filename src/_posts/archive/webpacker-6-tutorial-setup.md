@@ -2,8 +2,7 @@
 series: webpacker-6
 featured: false
 title: "Webpacker 6: Tutorial Setup"
-description: Before we start the upgrade process for Webpacker 6, we are going to
-  create a small demo application...
+description: Before we start the upgrade process for Webpacker 6, we are going to create a small demo application...
 urls:
   dev_to: https://dev.to/andrewmcodes/webpacker-6-tutorial-setup-281k
 tags:

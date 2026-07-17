@@ -1,12 +1,10 @@
 # Runbooks
 
-Operational procedures for the andrewm.codes site. Each section covers the
-minimum required steps; deeper context lives in `AGENTS.md`.
+Operational procedures for the andrewm.codes site. Each section covers the minimum required steps; deeper context lives in `AGENTS.md`.
 
 ## Rotate `BUZZSPROUT_API_TOKEN`
 
-Used by `.github/workflows/sync-remote-ruby.yml` to refresh
-`src/_data/remote_ruby.json` from the Buzzsprout API.
+Used by `.github/workflows/sync-remote-ruby.yml` to refresh `src/_data/remote_ruby.json` from the Buzzsprout API.
 
 1. Issue a new token from the Buzzsprout dashboard (Account → API).
 2. `gh secret set BUZZSPROUT_API_TOKEN --body "<new-token>"`.
@@ -17,28 +15,16 @@ Used by `.github/workflows/sync-remote-ruby.yml` to refresh
 
 ## Bypass OG image generation
 
-If `scripts/generate-og.mjs` fails (Satori upgrade regression, missing fonts,
-API change) and you need to ship a fix without blocking on OG, you have two
-escape hatches:
+If `scripts/generate-og.mjs` fails (Satori upgrade regression, missing fonts, API change) and you need to ship a fix without blocking on OG, you have two escape hatches:
 
-- **Temporary, in CI:** comment out the `site:post_write` hook block in
-  `plugins/builders/og_images.rb` (the `if Bridgetown.env.production?` branch).
-  Existing PNGs under `output/og/` from the previous deploy keep serving from
-  Cloudflare's cache; new posts fall back to whatever `og:image` URL is in
-  their meta (currently `/og/<slug>.png`, which will 404 until you re-enable
-  generation).
-- **Locally:** `BRIDGETOWN_ENV=development bin/bridgetown deploy` skips OG
-  generation entirely. Useful for diffing other build changes without paying
-  the OG time cost.
+- **Temporary, in CI:** comment out the `site:post_write` hook block in `plugins/builders/og_images.rb` (the `if Bridgetown.env.production?` branch). Existing PNGs under `output/og/` from the previous deploy keep serving from Cloudflare's cache; new posts fall back to whatever `og:image` URL is in their meta (currently `/og/<slug>.png`, which will 404 until you re-enable generation).
+- **Locally:** `BRIDGETOWN_ENV=development bin/bridgetown deploy` skips OG generation entirely. Useful for diffing other build changes without paying the OG time cost.
 
-After fixing the underlying issue, regenerate the full set locally with
-`mise run og` and verify a sample image before pushing.
+After fixing the underlying issue, regenerate the full set locally with `mise run og` and verify a sample image before pushing.
 
 ## Recover from a bad data-sync commit
 
-`.github/workflows/sync-oss.yml` and `sync-remote-ruby.yml` commit directly
-to `main` on cron. If an upstream API change writes malformed JSON, the next
-deploy will fail (or worse, ship blank data).
+`.github/workflows/sync-oss.yml` and `sync-remote-ruby.yml` commit directly to `main` on cron. If an upstream API change writes malformed JSON, the next deploy will fail (or worse, ship blank data).
 
 1. Identify the bad commit:
    ```sh
@@ -75,11 +61,8 @@ configured secrets.
 
 The CI deploy job runs `wrangler deploy` on push to `main`. To revert:
 
-1. `git revert <bad-sha>` and push — the next CI run will redeploy the prior
-   state.
-2. Or use Cloudflare's dashboard rollback (Workers → andrewm-codes →
-   Deployments → Rollback). This is faster but doesn't update git, so the
-   next push from main will reintroduce the issue.
+1. `git revert <bad-sha>` and push — the next CI run will redeploy the prior state.
+2. Or use Cloudflare's dashboard rollback (Workers → andrewm-codes → Deployments → Rollback). This is faster but doesn't update git, so the next push from main will reintroduce the issue.
 
 ## Force a fresh production build
 

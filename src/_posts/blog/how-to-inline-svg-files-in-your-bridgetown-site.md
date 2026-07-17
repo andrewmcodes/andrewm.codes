@@ -1,7 +1,6 @@
 ---
 title: How to inline SVG files in your Bridgetown site
-description: A short tutorial on how to inline SVG files in your Bridgetown site with
-  bridgetown-svg-inliner.
+description: A short tutorial on how to inline SVG files in your Bridgetown site with bridgetown-svg-inliner.
 urls:
   dev_to: https://dev.to/andrewmcodes/how-to-inline-svg-files-in-your-bridgetown-site-45ag
 tags:

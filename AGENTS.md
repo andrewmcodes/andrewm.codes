@@ -21,6 +21,14 @@ Run a single test file: `bundle exec rake test TEST=test/test_homepage.rb`. Run 
 
 Lint only: `bundle exec standardrb` (CI uses this without `--fix`).
 
+## Commit conventions
+
+**Commit messages MUST follow [Conventional Commits](https://www.conventionalcommits.org/)** — CI runs `commitlint` (`commitlint.config.js` extends `@andrewmcodes` → `@commitlint/config-conventional`) and a non-conforming message fails the build. Every commit subject must be `<type>(<optional scope>): <description>`:
+
+- **Allowed types:** `build`, `chore`, `ci`, `docs`, `feat`, `fix`, `perf`, `refactor`, `revert`, `style`, `test`.
+- Type is lowercase; description starts lowercase and has no trailing period (e.g. `refactor: point contact links to bluesky`, not `Remove email links.`).
+- Header (type + scope + description) stays under 100 chars. Body/footer line length is unrestricted (relaxed by the `@andrewmcodes` config), so wrap the body however reads best.
+
 ## Architecture
 
 ### Resource pipeline

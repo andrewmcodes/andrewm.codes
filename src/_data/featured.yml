@@ -7,16 +7,16 @@
   label: podia.com
 - title: Remote Ruby
   kind: podcast
-  desc: The weekly podcast I co-host on Rails, Ruby, and whatever the community is talking about that week — 350+ episodes and counting.
+  desc: The weekly podcast I co-host on Rails, Ruby, and whatever the community is talking about that week. 350+ episodes and counting.
   href: https://remoteruby.com/
   label: remoteruby.com
 - title: js-configs
   kind: open source
-  desc: Shareable JavaScript and Node.js tooling configs (Prettier, commitlint) — a pnpm + Changesets monorepo I lean on to keep tooling consistent across projects.
+  desc: Shareable JavaScript and Node.js tooling configs (Prettier, commitlint), built as a pnpm + Changesets monorepo I lean on to keep tooling consistent across projects.
   href: https://github.com/andrewmcodes/js-configs
   label: github.com/andrewmcodes
 - title: obsidian-objects
   kind: open source
-  desc: Schema-driven, object-based note-taking for Obsidian using native Markdown, Properties, and Bases — turning a vault into a structured knowledge base.
+  desc: Schema-driven, object-based note-taking for Obsidian using native Markdown, Properties, and Bases, turning a vault into a structured knowledge base.
   href: https://github.com/andrewmcodes/obsidian-objects
   label: github.com/andrewmcodes

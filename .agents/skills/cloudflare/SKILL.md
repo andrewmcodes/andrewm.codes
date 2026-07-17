@@ -18,12 +18,12 @@ Your knowledge of Cloudflare APIs, types, limits, and pricing may be outdated. *
 
 Fetch the **latest** information before citing specific numbers, API signatures, or configuration options. Do not rely on baked-in knowledge or these reference files alone.
 
-| Source                 | How to retrieve                                                       | Use for                                                   |
-| ---------------------- | --------------------------------------------------------------------- | --------------------------------------------------------- |
-| Cloudflare docs        | `cloudflare-docs` search tool or `https://developers.cloudflare.com/` | Limits, pricing, API reference, compatibility dates/flags |
-| Workers types          | `npm pack @cloudflare/workers-types` or check `node_modules`          | Type signatures, binding shapes, handler types            |
-| Wrangler config schema | `node_modules/wrangler/config-schema.json`                            | Config fields, binding shapes, allowed values             |
-| Product changelogs     | `https://developers.cloudflare.com/changelog/`                        | Recent changes to limits, features, deprecations          |
+| Source | How to retrieve | Use for |
+| --- | --- | --- |
+| Cloudflare docs | `cloudflare-docs` search tool or `https://developers.cloudflare.com/` | Limits, pricing, API reference, compatibility dates/flags |
+| Workers types | `npm pack @cloudflare/workers-types` or check `node_modules` | Type signatures, binding shapes, handler types |
+| Wrangler config schema | `node_modules/wrangler/config-schema.json` | Config fields, binding shapes, allowed values |
+| Product changelogs | `https://developers.cloudflare.com/changelog/` | Recent changes to limits, features, deprecations |
 
 When a reference file and the docs disagree, **trust the docs**. This is especially important for: numeric limits, pricing tiers, type signatures, and configuration options.
 
@@ -35,11 +35,11 @@ When a reference file and the docs disagree, **trust the docs**. This is especia
 
 ## Reference Index
 
-| Topic          | Reference                     | Use for                                                                 |
-| -------------- | ----------------------------- | ----------------------------------------------------------------------- |
-| Static Assets  | `references/static-assets/`   | `assets` config, `not_found_handling`, `_redirects`, routing precedence |
-| Workers        | `references/workers/`         | Worker runtime model, request handling, compatibility dates/flags       |
-| Wrangler       | `references/wrangler/`        | `deploy`, `versions upload`, config schema, preview aliases             |
-| Observability  | `references/observability/`   | Workers Logs, sampling, trace/log config, real-time debugging           |
+| Topic | Reference | Use for |
+| --- | --- | --- |
+| Static Assets | `references/static-assets/` | `assets` config, `not_found_handling`, `_redirects`, routing precedence |
+| Workers | `references/workers/` | Worker runtime model, request handling, compatibility dates/flags |
+| Wrangler | `references/wrangler/` | `deploy`, `versions upload`, config schema, preview aliases |
+| Observability | `references/observability/` | Workers Logs, sampling, trace/log config, real-time debugging |
 
 If a task genuinely needs a Cloudflare product not listed here (a database, queue, AI, etc.), that would be a new capability for this site — retrieve from the Cloudflare docs rather than assuming it's already wired up, and consider whether it belongs in this static-site architecture at all.

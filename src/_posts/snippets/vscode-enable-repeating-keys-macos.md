@@ -1,7 +1,6 @@
 ---
 title: Enable Repeating Keys in VS Code on macOS
-description: If you want to use Vim in VS Code, you have to enable repeating keys,
-  which can be frustrating if you are new to Vim.
+description: If you want to use Vim in VS Code, you have to enable repeating keys, which can be frustrating if you are new to Vim.
 tags:
   - mac-defaults
   - macos
