@@ -1,7 +1,6 @@
 ---
 title: "Living with ADHD: The Benefits of Openness and Vulnerability"
-description: Adventures in adjusting to life with ADHD - Join me on my journey as
-  I talk about working with, and understanding, my ADHD diagnosis.
+description: Adventures in adjusting to life with ADHD - Join me on my journey as I talk about working with, and understanding, my ADHD diagnosis.
 tags:
   - personal
   - adhd
@@ -27,5 +26,4 @@ Medication completely changed my life and I currently take Vyvanse to help manag
 
 **If you want to talk about ADHD**, hit me up on [Twitter](https://twitter.com/andrewmcodes).
 
-> ADHD is being a perfectionist without the capability of motivating yourself to achieve said perfection.
-> \- [@avresco](https://twitter.com/avresco/status/1286441624361287681)
+> ADHD is being a perfectionist without the capability of motivating yourself to achieve said perfection. \- [@avresco](https://twitter.com/avresco/status/1286441624361287681)

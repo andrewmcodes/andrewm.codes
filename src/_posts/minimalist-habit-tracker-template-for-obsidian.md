@@ -1,7 +1,6 @@
 ---
 title: Minimalist Habit Tracking Template for Obsidian
-description: A short tutorial on how to build a minimalist habit tracker template
-  for Obsidian using the Dataview plugin.
+description: A short tutorial on how to build a minimalist habit tracker template for Obsidian using the Dataview plugin.
 tags:
   - obsidian
   - dataview
@@ -30,11 +29,7 @@ Here is an example daily note template with Templater, which includes the habits
 
 ## Habits
 
-**Reading**::
-**Sleep**:: 0
-**Exercise**:: 0
-**Highlights**:: 0
-**Mindfulness**:: 0
+**Reading**:: **Sleep**:: 0 **Exercise**:: 0 **Highlights**:: 0 **Mindfulness**:: 0
 
 ## Notes
 ```
@@ -60,9 +55,7 @@ WHERE file.day <= date(now) AND file.day >= date(now) - dur(7days)
 SORT file.day ASC
 ```
 
-<%= render Note.new do %>
-`FROM "daily"` determines which pages are collected and displayed. In this case, we are only collecting notes in the `daily` folder. You can select based on other sources like tags and links. Refer to the [Dataview FROM documentation](https://blacksmithgu.github.io/obsidian-dataview/query/queries/#from) for more information.
-<% end %>
+<%= render Note.new do %> `FROM "daily"` determines which pages are collected and displayed. In this case, we are only collecting notes in the `daily` folder. You can select based on other sources like tags and links. Refer to the [Dataview FROM documentation](https://blacksmithgu.github.io/obsidian-dataview/query/queries/#from) for more information. <% end %>
 
 After we accumulate more daily notes, our dashboard will look something like:
 

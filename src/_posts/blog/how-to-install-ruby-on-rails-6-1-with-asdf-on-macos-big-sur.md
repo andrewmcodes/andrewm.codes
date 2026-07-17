@@ -1,7 +1,6 @@
 ---
 title: How to install Ruby on Rails 6.1 with asdf on macOS Big Sur
-description: Setup Ruby, Node, and PostgreSQL with asdf to quickly get up and running
-  with Rails
+description: Setup Ruby, Node, and PostgreSQL with asdf to quickly get up and running with Rails
 urls:
   dev_to: https://dev.to/andrewmcodes/how-to-install-ruby-on-rails-6-1-with-asdf-on-macos-big-sur-31c3
 tags:

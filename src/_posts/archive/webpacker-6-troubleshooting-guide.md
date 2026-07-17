@@ -2,8 +2,7 @@
 series: webpacker-6
 featured: false
 title: "Webpacker 6: Troubleshooting Guide"
-description: A (growing) collection of tools and techniques for debugging your Webpack(er)
-  setup.   I highly recom...
+description: A (growing) collection of tools and techniques for debugging your Webpack(er) setup.   I highly recom...
 urls:
   dev_to: https://dev.to/andrewmcodes/webpacker-6-troubleshooting-guide-pdl
 tags:

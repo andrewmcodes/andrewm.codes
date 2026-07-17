@@ -1,7 +1,6 @@
 ---
 title: Stop Hoarding Notes
-description: My ideas on why you should become just as comfortable deleting notes
-  as you do code
+description: My ideas on why you should become just as comfortable deleting notes as you do code
 tags:
   - obsidian
   - ideas
@@ -38,8 +37,7 @@ The second you decide that it represents your worth you discount all the amazing
 
 The code is not important, the lessons you learned while building it are though and they aren't going anywhere. The code's purpose has been served. It was once needed but now it no longer is.
 
-> By acknowledging their contribution and letting them go with gratitude, you will be able to truly put the things you own, and your life, in order.
-> \- Marie Kondo.
+> By acknowledging their contribution and letting them go with gratitude, you will be able to truly put the things you own, and your life, in order. \- Marie Kondo.
 
 Much like code, your notes should be created with a particular goal in mind and when they no longer serve that goal, it is time to thank them and delete them.
 

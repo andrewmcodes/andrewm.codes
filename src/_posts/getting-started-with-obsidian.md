@@ -1,7 +1,6 @@
 ---
 title: Getting Started with Obsidian
-description: A beginners guide to setting up Obsidian, an advanced markdown note taking
-  app, for the first time.
+description: A beginners guide to setting up Obsidian, an advanced markdown note taking app, for the first time.
 tags:
   - obsidian
   - macos
@@ -33,8 +32,7 @@ Once installed, opening Obsidian for the first time will land you on the [vault 
 
 ![Obsidian Splash Screen](https://res.cloudinary.com/andrewmcodes/image/upload/v1642138668/posts/getting-started-with-obsidian/20220113_182236_Obsidian_SplashScreen_tr5ytn.png)
 
-Create a new vault and then enter in the name and choose a location.
-![Obsidian Create New Vault](https://res.cloudinary.com/andrewmcodes/image/upload/v1642138668/posts/getting-started-with-obsidian/20220113_182436_Obsidian_NewVault_1_mukbs7.png)
+Create a new vault and then enter in the name and choose a location. ![Obsidian Create New Vault](https://res.cloudinary.com/andrewmcodes/image/upload/v1642138668/posts/getting-started-with-obsidian/20220113_182436_Obsidian_NewVault_1_mukbs7.png)
 
 When your vault opens for the first time, you may be prompted to [turn on Live Preview](https://help.obsidian.md/Live+preview+update) which I suggest doing.
 

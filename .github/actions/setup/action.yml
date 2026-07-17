@@ -1,8 +1,6 @@
 name: Setup
 description: >
-  Ruby + Node + pnpm setup with caching shared by all CI jobs. Pass
-  `node: false` to skip the Node/pnpm half (e.g. the lint job) or
-  `ruby: false` to skip the Ruby half (e.g. the deploy job).
+  Ruby + Node + pnpm setup with caching shared by all CI jobs. Pass `node: false` to skip the Node/pnpm half (e.g. the lint job) or `ruby: false` to skip the Ruby half (e.g. the deploy job).
 
 inputs:
   ruby-version:

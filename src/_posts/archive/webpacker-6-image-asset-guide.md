@@ -2,8 +2,7 @@
 series: webpacker-6
 featured: false
 title: "Webpacker 6: Image Asset Guide"
-description: In order to use your images and SVG files with Webpacker 6, you need
-  to put them in the correct place...
+description: In order to use your images and SVG files with Webpacker 6, you need to put them in the correct place...
 urls:
   dev_to: https://dev.to/andrewmcodes/webpacker-6-image-asset-guide-42hn
 tags:
