@@ -207,49 +207,85 @@ header:has(#mobile-menu[data-open="true"]) {
 /* Rouge-rendered fenced blocks. Bridgetown/kramdown wraps these in
    .highlighter-rouge > .highlight > pre.highlight. */
 .highlighter-rouge .highlight pre.highlight {
-  @apply my-4 rounded-md overflow-x-auto bg-sage-2 border border-sage-4 p-4;
+  @apply my-4 rounded-md overflow-x-auto border p-4;
+  background: #282c34;
+  border-color: #3e4451;
   font-size: 13.5px;
 }
 .highlighter-rouge .highlight pre.highlight code {
   @apply block min-w-max bg-transparent border-0 p-0;
-  color: var(--sage-12);
+  color: #abb2bf;
 }
 
 /* Fallback for plain <pre><code> blocks that aren't Rouge-highlighted. */
 pre:not(.highlight) {
-  @apply my-4 rounded-md overflow-x-auto bg-sage-2 border border-sage-4 p-4;
+  @apply my-4 rounded-md overflow-x-auto border p-4;
+  background: #282c34;
+  border-color: #3e4451;
   font-size: 13.5px;
 }
 pre:not(.highlight) code {
   background: transparent;
   border: 0;
   padding: 0;
-  color: var(--sage-12);
+  color: #abb2bf;
 }
 
-/* Rouge token colors */
+/* Rouge token colors (OneDark Pro-like palette) */
 .highlighter-rouge .highlight .k,
+.highlighter-rouge .highlight .kc,
 .highlighter-rouge .highlight .kd,
+.highlighter-rouge .highlight .kn,
+.highlighter-rouge .highlight .kp,
 .highlighter-rouge .highlight .kr,
-.highlighter-rouge .highlight .nt { color: var(--mint-11); }
+.highlighter-rouge .highlight .kt { color: #c678dd; }
 .highlighter-rouge .highlight .s,
+.highlighter-rouge .highlight .sa,
 .highlighter-rouge .highlight .s1,
 .highlighter-rouge .highlight .s2,
 .highlighter-rouge .highlight .sb,
-.highlighter-rouge .highlight .sr { color: var(--sage-12); }
+.highlighter-rouge .highlight .sc,
+.highlighter-rouge .highlight .sh,
+.highlighter-rouge .highlight .si,
+.highlighter-rouge .highlight .sr,
+.highlighter-rouge .highlight .ss,
+.highlighter-rouge .highlight .sx { color: #98c379; }
 .highlighter-rouge .highlight .c,
+.highlighter-rouge .highlight .ch,
 .highlighter-rouge .highlight .c1,
-.highlighter-rouge .highlight .cm { color: var(--sage-10); }
+.highlighter-rouge .highlight .cm,
+.highlighter-rouge .highlight .cp,
+.highlighter-rouge .highlight .cs { color: #5c6370; }
 .highlighter-rouge .highlight .na,
-.highlighter-rouge .highlight .nf,
-.highlighter-rouge .highlight .nc,
 .highlighter-rouge .highlight .nb,
-.highlighter-rouge .highlight .nv { color: var(--mint-10); }
+.highlighter-rouge .highlight .nc,
+.highlighter-rouge .highlight .nd,
+.highlighter-rouge .highlight .ne,
+.highlighter-rouge .highlight .nf,
+.highlighter-rouge .highlight .nn,
+.highlighter-rouge .highlight .nt,
+.highlighter-rouge .highlight .nv,
+.highlighter-rouge .highlight .nx,
+.highlighter-rouge .highlight .py { color: #61afef; }
+.highlighter-rouge .highlight .m,
+.highlighter-rouge .highlight .mb,
+.highlighter-rouge .highlight .mf,
+.highlighter-rouge .highlight .mh,
+.highlighter-rouge .highlight .mi,
+.highlighter-rouge .highlight .mo,
+.highlighter-rouge .highlight .il { color: #d19a66; }
 .highlighter-rouge .highlight .o,
+.highlighter-rouge .highlight .ow,
 .highlighter-rouge .highlight .p,
-.highlighter-rouge .highlight .w { color: var(--sage-11); }
-.highlighter-rouge .highlight .gi { color: var(--mint-11); }
-.highlighter-rouge .highlight .gd { color: var(--sage-11); }
+.highlighter-rouge .highlight .w { color: #abb2bf; }
+.highlighter-rouge .highlight .gd,
+.highlighter-rouge .highlight .gr,
+.highlighter-rouge .highlight .gt { color: #e06c75; }
+.highlighter-rouge .highlight .gi { color: #98c379; }
+.highlighter-rouge .highlight .gh,
+.highlighter-rouge .highlight .gu,
+.highlighter-rouge .highlight .nl { color: #e5c07b; }
+.highlighter-rouge .highlight .err { color: #e06c75; }
 
 /* Heading anchors injected by Builders::Inspectors::ProseHeadings */
 .heading-anchor {
