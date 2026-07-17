@@ -48,8 +48,9 @@ yarn-debug.log*
 # Generated OG images
 src/og/*.png
 
-# Standard
+# Ruby
 .standardrb
+vendor/bundle
 
 # Torchlight cache
 .torchlight-cache/
