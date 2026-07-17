@@ -24,6 +24,6 @@ jobs:
       # commits into CHANGELOG.md + a package.json version bump. Merging that PR
       # tags the release and, being a push to main, triggers the CI deploy so
       # the updated CHANGELOG.md renders at /changelog/.
-      - uses: googleapis/release-please-action@v4
+      - uses: googleapis/release-please-action@v5
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
