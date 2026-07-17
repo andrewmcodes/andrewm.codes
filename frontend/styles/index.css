@@ -248,8 +248,8 @@ pre:not(.highlight) code {
 .highlighter-rouge .highlight .o,
 .highlighter-rouge .highlight .p,
 .highlighter-rouge .highlight .w { color: var(--sage-11); }
-.highlighter-rouge .highlight .gi { color: #16a34a; }
-.highlighter-rouge .highlight .gd { color: #dc2626; }
+.highlighter-rouge .highlight .gi { color: var(--mint-11); }
+.highlighter-rouge .highlight .gd { color: var(--sage-11); }
 
 /* Heading anchors injected by Builders::Inspectors::ProseHeadings */
 .heading-anchor {
