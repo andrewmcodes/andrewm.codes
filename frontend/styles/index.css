@@ -204,37 +204,52 @@ header:has(#mobile-menu[data-open="true"]) {
   .card-grid > *:nth-child(odd) { border-right: 0; }
 }
 
-/* Torchlight — https://torchlight.dev/docs/css#tailwind
-   Bridgetown's Rouge wraps code in <pre class="highlight">; Torchlight adds
-   the `torchlight` class to the same pre, so selectors are pre.torchlight
-   rather than pre code.torchlight from the upstream docs. */
-pre.torchlight {
-  @apply my-4 rounded-md overflow-x-auto;
-}
-pre.torchlight code {
-  @apply block py-4 min-w-max bg-transparent border-0 p-0;
-  font-size: 13.5px;
-}
-pre.torchlight code .line {
-  @apply px-4;
-}
-pre.torchlight code .line-number,
-pre.torchlight code .summary-caret {
-  @apply mr-4;
-}
-
-/* Fallback for plain <pre><code> when Torchlight didn't run (dev mode,
-   missing TORCHLIGHT_TOKEN). Sage styling so dev still reads cleanly. */
-pre:not(.torchlight) {
+/* Rouge-rendered fenced blocks. Bridgetown/kramdown wraps these in
+   .highlighter-rouge > .highlight > pre.highlight. */
+.highlighter-rouge .highlight pre.highlight {
   @apply my-4 rounded-md overflow-x-auto bg-sage-2 border border-sage-4 p-4;
   font-size: 13.5px;
 }
-pre:not(.torchlight) code {
+.highlighter-rouge .highlight pre.highlight code {
+  @apply block min-w-max bg-transparent border-0 p-0;
+  color: var(--sage-12);
+}
+
+/* Fallback for plain <pre><code> blocks that aren't Rouge-highlighted. */
+pre:not(.highlight) {
+  @apply my-4 rounded-md overflow-x-auto bg-sage-2 border border-sage-4 p-4;
+  font-size: 13.5px;
+}
+pre:not(.highlight) code {
   background: transparent;
   border: 0;
   padding: 0;
   color: var(--sage-12);
 }
+
+/* Rouge token colors */
+.highlighter-rouge .highlight .k,
+.highlighter-rouge .highlight .kd,
+.highlighter-rouge .highlight .kr,
+.highlighter-rouge .highlight .nt { color: var(--mint-11); }
+.highlighter-rouge .highlight .s,
+.highlighter-rouge .highlight .s1,
+.highlighter-rouge .highlight .s2,
+.highlighter-rouge .highlight .sb,
+.highlighter-rouge .highlight .sr { color: var(--sage-12); }
+.highlighter-rouge .highlight .c,
+.highlighter-rouge .highlight .c1,
+.highlighter-rouge .highlight .cm { color: var(--sage-10); }
+.highlighter-rouge .highlight .na,
+.highlighter-rouge .highlight .nf,
+.highlighter-rouge .highlight .nc,
+.highlighter-rouge .highlight .nb,
+.highlighter-rouge .highlight .nv { color: var(--mint-10); }
+.highlighter-rouge .highlight .o,
+.highlighter-rouge .highlight .p,
+.highlighter-rouge .highlight .w { color: var(--sage-11); }
+.highlighter-rouge .highlight .gi { color: #16a34a; }
+.highlighter-rouge .highlight .gd { color: #dc2626; }
 
 /* Heading anchors injected by Builders::Inspectors::ProseHeadings */
 .heading-anchor {

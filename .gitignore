@@ -52,9 +52,6 @@ src/og/*.png
 .standardrb
 vendor/bundle
 
-# Torchlight cache
-.torchlight-cache/
-
 # Wranger
 .wrangler/
 

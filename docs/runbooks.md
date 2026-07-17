@@ -3,23 +3,6 @@
 Operational procedures for the andrewm.codes site. Each section covers the
 minimum required steps; deeper context lives in `AGENTS.md`.
 
-## Rotate `TORCHLIGHT_TOKEN`
-
-The Torchlight API token authenticates the production syntax highlighter
-(`plugins/builders/torchlight.rb`). If the production build job fails with
-HTTP 401/403 from Torchlight, rotate the token.
-
-1. Generate a new token at <https://torchlight.dev>.
-2. Update the GitHub Actions secret:
-   ```sh
-   gh secret set TORCHLIGHT_TOKEN --body "<new-token>"
-   ```
-3. Update the local `fnox` store so manual `mise run build` keeps working:
-   ```sh
-   fnox set TORCHLIGHT_TOKEN <new-token>
-   ```
-4. Re-run the failed CI job to confirm.
-
 ## Rotate `BUZZSPROUT_API_TOKEN`
 
 Used by `.github/workflows/sync-remote-ruby.yml` to refresh
@@ -73,7 +56,7 @@ deploy will fail (or worse, ship blank data).
 
 `fnox` decrypts `fnox.toml` (committed) with an age key (not committed) at
 `~/.config/fnox/age.txt`. Without that key, `mise run build` cannot read
-`TORCHLIGHT_TOKEN`.
+configured secrets.
 
 1. From the source machine, copy the age key:
    ```sh
@@ -82,11 +65,11 @@ deploy will fail (or worse, ship blank data).
    ```
 2. On the new machine, verify decryption:
    ```sh
-   fnox exec -- env | grep TORCHLIGHT_TOKEN
+   fnox exec -- env | grep CLOUDFLARE_API_KEY
    ```
 3. If the source machine is gone and the key is lost, generate a new age
    identity and re-encrypt `fnox.toml` against it; you'll need to re-add every
-   secret from its source-of-truth (Torchlight dashboard, Buzzsprout, etc.).
+   secret from its source-of-truth (Cloudflare dashboard, Buzzsprout, etc.).
 
 ## Roll back a Cloudflare deploy
 
@@ -100,12 +83,9 @@ The CI deploy job runs `wrangler deploy` on push to `main`. To revert:
 
 ## Force a fresh production build
 
-If you suspect cached output (`.bridgetown-cache/`, `.torchlight-cache/`):
+If you suspect cached output (`.bridgetown-cache/`):
 
 ```sh
-rm -rf .bridgetown-cache .torchlight-cache output
+rm -rf .bridgetown-cache output
 mise run build
 ```
-
-Torchlight will re-hit the API on every snippet (slower), so only do this when
-you have an actual cache-correctness concern.
