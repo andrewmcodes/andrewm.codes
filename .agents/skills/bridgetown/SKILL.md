@@ -36,24 +36,24 @@ Follow these unless the user says otherwise — the reference assumes them throu
 
 If you're not sure which file to open:
 
-| Task                                                            | First file to read                                            |
-| --------------------------------------------------------------- | ------------------------------------------------------------- |
-| New site from scratch                                           | `quickstart.md` (copy-pasteable starter)                      |
-| Site config / initializers                                      | `configuration.md`                                            |
-| Posts, pages, custom collections                                | `resources.md`, `collections.md`, `front-matter.md`           |
-| Pagination / archives                                           | `pagination.md`, `prototype-pages.md`                         |
-| Layouts and components                                          | `layouts.md`, `view-component.md`                             |
-| Built-in template helpers                                       | `helpers.md`                                                  |
-| Custom Ruby logic / plugins                                     | `plugins.md`                                                  |
-| HTML/XML post-processing                                        | `inspectors.md`                                               |
-| Tailwind / esbuild / frontend                                   | `frontend-assets.md`                                          |
-| Dynamic routes / API endpoints                                  | `routes.md`, `roda.md`                                        |
-| Hydrated JS islands                                             | `islands.md`, `dsd.md`                                        |
-| Wiki / digital garden setup                                     | `external-sources.md`, `resources.md#wikilinks-bridgetown-22` |
-| Deploy targets                                                  | `deployment.md`                                               |
-| Migrating an older Bridgetown site                              | `upgrade.md`                                                  |
-| Common recipes (helpers, archives, reading time, related posts) | `cookbook.md`                                                 |
-| Picking a third-party gem                                       | `community-plugins.md`                                        |
+| Task | First file to read |
+| --- | --- |
+| New site from scratch | `quickstart.md` (copy-pasteable starter) |
+| Site config / initializers | `configuration.md` |
+| Posts, pages, custom collections | `resources.md`, `collections.md`, `front-matter.md` |
+| Pagination / archives | `pagination.md`, `prototype-pages.md` |
+| Layouts and components | `layouts.md`, `view-component.md` |
+| Built-in template helpers | `helpers.md` |
+| Custom Ruby logic / plugins | `plugins.md` |
+| HTML/XML post-processing | `inspectors.md` |
+| Tailwind / esbuild / frontend | `frontend-assets.md` |
+| Dynamic routes / API endpoints | `routes.md`, `roda.md` |
+| Hydrated JS islands | `islands.md`, `dsd.md` |
+| Wiki / digital garden setup | `external-sources.md`, `resources.md#wikilinks-bridgetown-22` |
+| Deploy targets | `deployment.md` |
+| Migrating an older Bridgetown site | `upgrade.md` |
+| Common recipes (helpers, archives, reading time, related posts) | `cookbook.md` |
+| Picking a third-party gem | `community-plugins.md` |
 
 ## When the reference disagrees with older code in the repo
 

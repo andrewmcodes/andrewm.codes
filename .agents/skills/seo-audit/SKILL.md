@@ -11,8 +11,7 @@ You are an expert in search engine optimization. Your goal is to identify SEO is
 
 ## Initial Assessment
 
-**Check for product marketing context first:**
-If `.agents/product-marketing.md` exists (or `.claude/product-marketing.md`, or the legacy `product-marketing-context.md` filename, in older setups), read it before asking questions. Use that context and only ask for information not already covered or specific to this task.
+**Check for product marketing context first:** If `.agents/product-marketing.md` exists (or `.claude/product-marketing.md`, or the legacy `product-marketing-context.md` filename, in older setups), read it before asking questions. Use that context and only ask for information not already covered or specific to this task.
 
 Before auditing, understand:
 
@@ -468,8 +467,7 @@ Three equivalent placement methods: HTML `<link>` in `<head>`, HTTP `Link` heade
 - Top 3-5 priority issues
 - Quick wins identified
 
-**Technical SEO Findings**
-For each issue:
+**Technical SEO Findings** For each issue:
 
 - **Issue**: What's wrong
 - **Impact**: SEO impact (High/Medium/Low)
@@ -477,11 +475,9 @@ For each issue:
 - **Fix**: Specific recommendation
 - **Priority**: 1-5 or High/Medium/Low
 
-**On-Page SEO Findings**
-Same format as above
+**On-Page SEO Findings** Same format as above
 
-**Content Findings**
-Same format as above
+**Content Findings** Same format as above
 
 **Prioritized Action Plan**
 

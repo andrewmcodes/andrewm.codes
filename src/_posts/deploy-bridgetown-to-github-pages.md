@@ -1,7 +1,6 @@
 ---
 title: How to Deploy Your Bridgetown Site to Github Pages
-description: It has never been easier to deploy your Bridgetown site to GitHub Pages
-  thanks to a new bundled configuration in Bridgetown v1.0
+description: It has never been easier to deploy your Bridgetown site to GitHub Pages thanks to a new bundled configuration in Bridgetown v1.0
 tags:
   - bridgetown
   - github-pages

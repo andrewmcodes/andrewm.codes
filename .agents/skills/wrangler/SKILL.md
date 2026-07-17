@@ -11,11 +11,11 @@ Your knowledge of Wrangler CLI flags, config fields, and subcommands may be outd
 
 Fetch the **latest** information before writing or reviewing Wrangler commands and config. Do not rely on baked-in knowledge for CLI flags, config fields, or binding shapes.
 
-| Source                 | How to retrieve                                             | Use for                                       |
-| ---------------------- | ----------------------------------------------------------- | --------------------------------------------- |
-| Wrangler docs          | `https://developers.cloudflare.com/workers/wrangler/`       | CLI commands, flags, config reference         |
-| Wrangler config schema | `node_modules/wrangler/config-schema.json`                  | Config fields, binding shapes, allowed values |
-| Cloudflare docs        | Search tool or `https://developers.cloudflare.com/workers/` | API reference, compatibility dates/flags      |
+| Source | How to retrieve | Use for |
+| --- | --- | --- |
+| Wrangler docs | `https://developers.cloudflare.com/workers/wrangler/` | CLI commands, flags, config reference |
+| Wrangler config schema | `node_modules/wrangler/config-schema.json` | Config fields, binding shapes, allowed values |
+| Cloudflare docs | Search tool or `https://developers.cloudflare.com/workers/` | API reference, compatibility dates/flags |
 
 ## FIRST: Check if Wrangler is installed, and if not, install it
 
@@ -224,9 +224,7 @@ wrangler deploy --minify
 
 ### Manage Secrets
 
-> **Security**: Never pass secret values as command arguments or pipe them via `echo`.
-> Use the interactive prompt (preferred), pipe from a file, or use `secret bulk`.
-> Never output, log, or hardcode secret values in commands.
+> **Security**: Never pass secret values as command arguments or pipe them via `echo`. Use the interactive prompt (preferred), pipe from a file, or use `secret bulk`. Never output, log, or hardcode secret values in commands.
 
 ```bash
 # Set secret — interactive prompt (preferred, wrangler will ask for the value securely)

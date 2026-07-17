@@ -32,11 +32,11 @@ Em dashes are longer than hyphens (-) and are used for emphasis, interruptions, 
 
 ### What To Do Instead
 
-| Instead of                                                 | Use                                                          |
-| ---------------------------------------------------------- | ------------------------------------------------------------ |
-| The results—which were surprising—showed...                | The results, which were surprising, showed...                |
-| This approach—unlike traditional methods—allows...         | This approach, unlike traditional methods, allows...         |
-| The study found—as expected—that...                        | The study found, as expected, that...                        |
+| Instead of | Use |
+| --- | --- |
+| The results—which were surprising—showed... | The results, which were surprising, showed... |
+| This approach—unlike traditional methods—allows... | This approach, unlike traditional methods, allows... |
+| The study found—as expected—that... | The study found, as expected, that... |
 | Communication skills—both written and verbal—are essential | Communication skills (both written and verbal) are essential |
 
 ### Guidelines

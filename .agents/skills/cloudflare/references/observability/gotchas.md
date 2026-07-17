@@ -2,8 +2,7 @@
 
 ### "Logs not appearing"
 
-**Cause:** Observability disabled, Worker not redeployed, no traffic, low sampling rate, or log size exceeds 256 KB
-**Solution:**
+**Cause:** Observability disabled, Worker not redeployed, no traffic, low sampling rate, or log size exceeds 256 KB **Solution:**
 
 ```bash
 # Verify config
@@ -20,8 +19,7 @@ Ensure `observability.enabled = true`, redeploy Worker, check `head_sampling_rat
 
 ### "Traces not being captured"
 
-**Cause:** Traces not enabled, incorrect sampling rate, Worker not redeployed, or destination unavailable
-**Solution:**
+**Cause:** Traces not enabled, incorrect sampling rate, Worker not redeployed, or destination unavailable **Solution:**
 
 ```jsonc
 // Temporarily set to 100% sampling for debugging
@@ -52,9 +50,7 @@ Ensure `observability.traces.enabled = true`, set `head_sampling_rate` to 1.0 fo
 
 ### Spectre Mitigation Timing
 
-**Problem:** `Date.now()` and `performance.now()` have reduced precision (coarsened to 100μs)
-**Cause:** Spectre vulnerability mitigation in V8
-**Solution:** Accept reduced precision or use Workers Traces for accurate timing
+**Problem:** `Date.now()` and `performance.now()` have reduced precision (coarsened to 100μs) **Cause:** Spectre vulnerability mitigation in V8 **Solution:** Accept reduced precision or use Workers Traces for accurate timing
 
 ```typescript
 // Date.now() is coarsened - trace spans are accurate
@@ -73,9 +69,7 @@ export default {
 
 ### Analytics Engine _sample_interval Aggregation
 
-**Problem:** Queries return incorrect totals when not multiplying by `_sample_interval`
-**Cause:** Analytics Engine stores sampled data points, each representing multiple events
-**Solution:** Always multiply counts/sums by `_sample_interval` in aggregations
+**Problem:** Queries return incorrect totals when not multiplying by `_sample_interval` **Cause:** Analytics Engine stores sampled data points, each representing multiple events **Solution:** Always multiply counts/sums by `_sample_interval` in aggregations
 
 ```sql
 -- WRONG: Undercounts actual events
@@ -89,9 +83,7 @@ FROM api_usage GROUP BY customer_id;
 
 ### Trace Context Propagation Limits
 
-**Problem:** Deep call chains lose trace context after 100 spans
-**Cause:** Cloudflare limits trace depth to prevent performance impact
-**Solution:** Design for flatter architectures or use custom correlation IDs for deep chains
+**Problem:** Deep call chains lose trace context after 100 spans **Cause:** Cloudflare limits trace depth to prevent performance impact **Solution:** Design for flatter architectures or use custom correlation IDs for deep chains
 
 ```typescript
 // For deep call chains, add custom correlation ID

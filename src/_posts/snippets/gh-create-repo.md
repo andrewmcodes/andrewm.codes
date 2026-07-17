@@ -1,7 +1,6 @@
 ---
 title: Create Repository from Current Directory with the GitHub CLI
-description: Use gh to create a repo using your current directory as the source and
-  push to GitHub without having to set your upstream.
+description: Use gh to create a repo using your current directory as the source and push to GitHub without having to set your upstream.
 tags:
   - gh
   - github

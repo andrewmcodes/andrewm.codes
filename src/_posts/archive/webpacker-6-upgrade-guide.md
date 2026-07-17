@@ -2,8 +2,7 @@
 series: webpacker-6
 featured: false
 title: "Webpacker 6: Upgrade Guide"
-description: This page has changed since first posted, refer to the changelog at the
-  bottom.   In this article, w...
+description: This page has changed since first posted, refer to the changelog at the bottom.   In this article, w...
 urls:
   dev_to: https://dev.to/andrewmcodes/webpacker-6-upgrade-guide-3p6d
 tags:

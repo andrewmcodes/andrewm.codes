@@ -34,13 +34,13 @@ describe("worker", () => {
 
 ### Options
 
-| Option        | Type                          | Description                                                                            |
-| ------------- | ----------------------------- | -------------------------------------------------------------------------------------- |
-| `config`      | `string`                      | Path to wrangler.jsonc                                                                 |
-| `environment` | `string`                      | Environment name from config                                                           |
-| `persist`     | `boolean \| { path: string }` | Enable persistent state                                                                |
-| `bundle`      | `boolean`                     | Enable bundling (default: true)                                                        |
-| `remote`      | `false \| true \| "minimal"`  | Remote mode: `false` (local), `true` (full remote), `"minimal"` (remote bindings only) |
+| Option | Type | Description |
+| --- | --- | --- |
+| `config` | `string` | Path to wrangler.jsonc |
+| `environment` | `string` | Environment name from config |
+| `persist` | `boolean \| { path: string }` | Enable persistent state |
+| `bundle` | `boolean` | Enable bundling (default: true) |
+| `remote` | `false \| true \| "minimal"` | Remote mode: `false` (local), `true` (full remote), `"minimal"` (remote bindings only) |
 
 ### Remote Mode
 

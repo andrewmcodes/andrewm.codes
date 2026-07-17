@@ -1,8 +1,7 @@
 ---
 published: false
 title: Thoughts on GitHub Sponsors
-description: GitHub made it super easy to send and receive funds for open source projects
-  but is the community ready to support open source projects financially?
+description: GitHub made it super easy to send and receive funds for open source projects but is the community ready to support open source projects financially?
 tags:
   - github
   - oss
