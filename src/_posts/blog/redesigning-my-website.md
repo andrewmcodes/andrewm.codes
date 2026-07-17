@@ -1,6 +1,6 @@
 ---
 title: Redesigning my website
-description: "Why and how I rebuilt andrewm.codes with Bridgetown — putting content first — and the stack behind it: ERB, Tailwind CSS, and Strapi."
+description: "Why and how I rebuilt andrewm.codes with Bridgetown to put content first, and the stack behind it: ERB, Tailwind CSS, and Strapi."
 urls:
   dev_to: https://dev.to/andrewmcodes/redesigning-my-website-4lli
 tags:

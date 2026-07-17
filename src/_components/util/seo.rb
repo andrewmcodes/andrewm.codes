@@ -38,7 +38,7 @@ module Util
 
     # @return [String] the title used for OG/Twitter cards
     def social_title
-      return metadata.long_title || "#{metadata.title} — #{metadata.tagline}" if homepage?
+      return metadata.long_title || "#{metadata.title}, #{metadata.tagline}" if homepage?
       title
     end
 
