@@ -20,6 +20,8 @@
     "@fontsource-variable/literata": "5.2.8",
     "@fontsource-variable/martian-mono": "5.2.7",
     "@fontsource/inter": "^5.2.8",
+    "@fontsource/literata": "5.2.8",
+    "@fontsource/martian-mono": "5.2.7",
     "@herb-tools/formatter": "^0.10.2",
     "@lhci/cli": "^0.15.1",
     "@resvg/resvg-js": "^2.6.2",
