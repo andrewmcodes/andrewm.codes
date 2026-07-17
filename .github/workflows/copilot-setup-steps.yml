@@ -1,5 +1,7 @@
-name: Copilot Setup Steps
+name: "Copilot Setup Steps"
 
+# Automatically run setup changes for validation, and allow manual testing in
+# the Actions UI.
 on:
   workflow_dispatch:
   push:
@@ -10,10 +12,14 @@ on:
       - .github/workflows/copilot-setup-steps.yml
 
 jobs:
+  # This job name is required for Copilot cloud agent to pick up setup steps.
   copilot-setup-steps:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     permissions:
       contents: read
     steps:
-      - uses: actions/checkout@v7
-      - uses: ./.github/actions/setup
+      - name: Checkout code
+        uses: actions/checkout@v7
+      - name: Install project toolchains and dependencies
+        uses: ./.github/actions/setup
