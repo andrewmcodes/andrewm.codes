@@ -71,8 +71,6 @@ GEM
     drb (2.2.3)
     dry-inflector (1.3.1)
     erb (6.0.4)
-    erb-formatter (0.7.3)
-      syntax_tree (~> 6.0)
     erubi (1.13.1)
     faraday (2.14.3)
       faraday-net_http (>= 2.0, < 3.5)
@@ -94,6 +92,7 @@ GEM
     fiber-local (1.1.0)
       fiber-storage
     fiber-storage (1.0.1)
+    fileutils (1.8.0)
     freyia (0.6.2)
     hash_with_dot_access (2.2.0)
     i18n (1.15.2)
@@ -151,7 +150,6 @@ GEM
       racc
     pp (0.6.4)
       prettyprint
-    prettier_print (1.2.1)
     prettyprint (0.2.0)
     prism (1.9.0)
     public_suffix (7.0.5)
@@ -222,11 +220,28 @@ GEM
     standard-performance (1.9.0)
       lint_roller (~> 1.1)
       rubocop-performance (~> 1.26.0)
+    steep (2.0.0)
+      concurrent-ruby (>= 1.1.10)
+      csv (>= 3.0.9)
+      fileutils (>= 1.1.0)
+      json (>= 2.1.0)
+      language_server-protocol (>= 3.17.0.4, < 4.0)
+      listen (~> 3.0)
+      logger (>= 1.3.0)
+      parser (>= 3.2)
+      prism (>= 0.25.0)
+      rainbow (>= 2.2.2, < 4.0)
+      rbs (~> 4.0)
+      securerandom (>= 0.1)
+      strscan (>= 1.0.0)
+      terminal-table (>= 2, < 5)
+      uri (>= 0.12.0)
     streamlined (0.6.2)
       serbea (>= 2.1)
       zeitwerk (~> 2.5)
-    syntax_tree (6.3.0)
-      prettier_print (>= 1.2.0)
+    strscan (3.1.8)
+    terminal-table (4.0.0)
+      unicode-display_width (>= 1.1.1, < 4)
     tilt (2.8.0)
     tsort (0.2.0)
     unicode-display_width (3.2.0)
@@ -254,11 +269,12 @@ DEPENDENCIES
   bridgetown-svg-inliner
   debug
   dotenv
-  erb-formatter
   minitest
   nokolexbor (~> 0.6)
   rack-test
+  rbs
   standard
+  steep
 
 CHECKSUMS
   addressable (2.9.0) sha256=7fdf6ac3660f7f4e867a0838be3f6cf722ace541dd97767fa42bc6cfa980c7af
@@ -283,7 +299,6 @@ CHECKSUMS
   drb (2.2.3) sha256=0b00d6fdb50995fe4a45dea13663493c841112e4068656854646f418fda13373
   dry-inflector (1.3.1) sha256=7fb0c2bb04f67638f25c52e7ba39ab435d922a3a5c3cd196120f63accb682dcc
   erb (6.0.4) sha256=38e3803694be357fe2bfe312487c74beaf9fb4e5beb3e22498952fe1645b95d9
-  erb-formatter (0.7.3) sha256=64d188897b9827a486ba56eb4cd60b4e3ebc8fce0674ee94c9b074d3c836a4d9
   erubi (1.13.1) sha256=a082103b0885dbc5ecf1172fede897f9ebdb745a4b97a5e8dc63953db1ee4ad9
   faraday (2.14.3) sha256=1882247e6766615c8220b4392bf1d27f6ebb63d8e28267587cef1fb0bf37f278
   faraday-follow_redirects (0.5.0) sha256=5cde93c894b30943a5d2b93c2fe9284216a6b756f7af406a1e55f211d97d10ad
@@ -299,6 +314,7 @@ CHECKSUMS
   fiber-annotation (0.2.0) sha256=7abfadf1d119f508867d4103bf231c0354d019cc39a5738945dec2edadaf6c03
   fiber-local (1.1.0) sha256=c885f94f210fb9b05737de65d511136ea602e00c5105953748aa0f8793489f06
   fiber-storage (1.0.1) sha256=f48e5b6d8b0be96dac486332b55cee82240057065dc761c1ea692b2e719240e1
+  fileutils (1.8.0) sha256=8c6b1df54e2540bdb2f39258f08af78853aa70bad52b4d394bbc6424593c6e02
   freyia (0.6.2) sha256=86e1572d3111ce415bdefce6a45d9875b3e5b6d1a3d2322f96adceffeba502ff
   hash_with_dot_access (2.2.0) sha256=0ee95dabdefecce04e66396dd31f4675fd07eb829a32fd3e85c461b3eff89acc
   i18n (1.15.2) sha256=00f9eb62412fe593b2a65a97daa75300d37abb8f7202ec748e94b6d46a9dd1b5
@@ -332,7 +348,6 @@ CHECKSUMS
   parallel (2.1.0) sha256=b35258865c2e31134c5ecb708beaaf6772adf9d5efae28e93e99260877b09356
   parser (3.3.11.1) sha256=d17ace7aabe3e72c3cc94043714be27cc6f852f104d81aa284c2281aecc65d54
   pp (0.6.4) sha256=dfcb0fce700c41456265922884f9fe195d7fbb0674a3578e6c0f69588e82b570
-  prettier_print (1.2.1) sha256=a72838b5f23facff21f90a5423cdcdda19e4271092b41f4ea7f50b83929e6ff9
   prettyprint (0.2.0) sha256=2bc9e15581a94742064a3cc8b0fb9d45aae3d03a1baa6ef80922627a0766f193
   prism (1.9.0) sha256=7b530c6a9f92c24300014919c9dcbc055bf4cdf51ec30aed099b06cd6674ef85
   public_suffix (7.0.5) sha256=1a8bb08f1bbea19228d3bed6e5ed908d1cb4f7c2726d18bd9cadf60bc676f623
@@ -362,8 +377,10 @@ CHECKSUMS
   standard (1.55.0) sha256=8a8f2c3e681a4db3aafde1b301561b0f3d7c5f06c160167cb744a4d7baf0426e
   standard-custom (1.0.2) sha256=424adc84179a074f1a2a309bb9cf7cd6bfdb2b6541f20c6bf9436c0ba22a652b
   standard-performance (1.9.0) sha256=49483d31be448292951d80e5e67cdcb576c2502103c7b40aec6f1b6e9c88e3f2
+  steep (2.0.0) sha256=6eb0ecc09637bbb54f0a5f2cf63daea6d3208ccace64b4f1107d976333605c30
   streamlined (0.6.2) sha256=58c73a95d0decd3e4f5739be22be1d629682669d4093829189cb3edf7e332de6
-  syntax_tree (6.3.0) sha256=56e25a9692c798ec94c5442fe94c5e94af76bef91edc8bb02052cbdecf35f13d
+  strscan (3.1.8) sha256=aae2db611a225559f21ffbb71765c9a4e60fd262534a9ea84f4f11c7f32f679e
+  terminal-table (4.0.0) sha256=f504793203f8251b2ea7c7068333053f0beeea26093ec9962e62ea79f94301d2
   tilt (2.8.0) sha256=ba472eb2716fe1e04112d6d219a9dae938ec09a6a1e2ad3ecc7922e79bde3721
   tsort (0.2.0) sha256=9650a793f6859a43b6641671278f79cfead60ac714148aabe4e3f0060480089f
   unicode-display_width (3.2.0) sha256=0cdd96b5681a5949cdbc2c55e7b420facae74c4aaf9a9815eee1087cb1853c42

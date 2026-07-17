@@ -14,8 +14,9 @@ gem "nokolexbor", "~> 0.6"
 gem "dotenv"
 
 group :development do
+  gem "rbs"
+  gem "steep"
   gem "standard"
-  gem "erb-formatter"
   gem "debug"
 end
 

@@ -1,0 +1,56 @@
+class Base < Bridgetown::Component
+  INVALID_ATTRIBUTES: Array[Symbol]
+  COMPONENT_OPTIONS: Array[Symbol]
+  TEXT_WEIGHT: Hash[Symbol, String]
+  TEXT_SIZES: Hash[Symbol, String]
+  TEXT_SCHEME: Hash[Symbol, String]
+  HEADING_SIZES: Hash[Symbol, String]
+  HEADING_SCHEME: Hash[Symbol, String]
+  FONT_FAMILY: Hash[Symbol, String]
+  GAPS: Hash[Symbol, String]
+  LEADING: Hash[Symbol, String]
+  TRACKING: Hash[Symbol, String]
+
+  @opts: Hash[Symbol, untyped]
+  @attribute_opts: Hash[Symbol, untyped]
+  @site: untyped
+
+  def initialize: (**untyped) -> void
+
+  private
+
+  def opts: () -> Hash[Symbol, untyped]
+  def attribute_opts: () -> Hash[Symbol, untyped]
+  def generate_attribute_opts: (**untyped) -> Hash[Symbol, untyped]
+  def helper_opts: () -> Hash[Symbol, untyped]
+  def tag_opts: () -> Hash[Symbol, untyped]
+  def classes: () -> (Array[untyped] | String)
+  def children: () -> untyped
+  def cx: (*untyped classes) -> String
+  def slugify: (untyped str) -> String
+end
+
+class ProjectCard < Base
+  CARD_CLASSES: String
+  STATUS_BADGE_CLASSES: String
+
+  @project: untyped
+
+  def initialize: (project: untyped) -> void
+  def name: () -> untyped
+  def desc: () -> untyped
+  def status: () -> untyped
+  def lang: () -> untyped
+  def lang_color: () -> untyped
+  def stars: () -> untyped
+  def forks: () -> untyped
+  def href: () -> untyped
+  def external?: () -> bool
+  def card_classes: () -> String
+  def status_badge_classes: () -> String
+
+  private
+
+  def resource?: () -> bool
+  def repo_url: () -> untyped
+end

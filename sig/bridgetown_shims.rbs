@@ -1,0 +1,35 @@
+module Bridgetown
+  def self.configure: () { (untyped config) -> void } -> void
+  def self.env: () -> untyped
+  def self.logger: () -> untyped
+
+  module Current
+    def self.site: () -> untyped
+  end
+
+  class Builder
+  end
+
+  class Component
+    def initialize: (*untyped, **untyped) -> void
+
+    private
+
+    def content: () -> untyped
+    def helpers: () -> untyped
+    def html: (untyped renderer) -> untyped
+    def html_attributes: (**untyped) -> String
+  end
+
+  module Resource
+    class Base
+      def absolute_url: () -> String
+      def collection: () -> untyped
+      def data: () -> untyped
+      def relative_path: () -> String
+      def relative_url: () -> String
+      def updated_at: () -> untyped
+      def url: () -> String
+    end
+  end
+end

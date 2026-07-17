@@ -1,4 +1,5 @@
 <title><%= page_title %></title>
+
 <% meta_tags_data.each do |data| %>
   <meta <%= helpers.safe(html_attributes(**data)) %>>
 <% end %>
