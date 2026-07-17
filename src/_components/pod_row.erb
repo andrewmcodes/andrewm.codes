@@ -1,6 +1,7 @@
 <% url = field(:url) %>
 <% has_url = url.to_s != "" && url.to_s != "#" %>
 <% image = field(:image) %>
+
 <% hover_classes =
   (
     if has_url
@@ -9,14 +10,17 @@
       ""
     end
   ) %>
+
 <% row_classes =
   "group relative grid grid-cols-[64px_1fr_auto] gap-5 items-center py-[18px] border-b border-sage-4 #{hover_classes} max-sm:grid-cols-1 max-sm:items-start max-sm:gap-3.5" %>
+
 <% row_component =
   if has_url
     Link.new(href: url, external: true, class: row_classes)
   else
     Box.new(class: row_classes)
   end %>
+
 <%= render row_component do %>
   <div class="relative w-14 h-14 max-sm:w-16 max-sm:h-16 shrink-0">
     <div
@@ -28,6 +32,7 @@
     >
       <%= field(:mark) %>
     </div>
+
     <% if image %>
       <img
         src="<%= image %>"
@@ -39,23 +44,41 @@
       />
     <% end %>
   </div>
+
   <div>
     <div
       class="
         text-[17px] font-medium tracking-tight text-sage-12
         <%= "group-hover:text-mint-11 transition-colors" if has_url %> mb-0.5
       "
-    ><%= field(:name) %></div>
-    <div class="text-[13.5px] leading-snug text-sage-11 text-pretty"><%= field(:tagline) %></div>
-    <div class="mt-1.5 flex flex-wrap gap-3 font-mono text-[11px] text-sage-10">
-      <% if field(:since) %><span><%= field(:active) ? "since " : "" %><%= field(:since) %></span><% end %>
-      <% if field(:schedule) %><% if field(:since) %><span>·</span><% end %><span><%= field(:schedule) %></span><% end %>
+    >
+      <%= field(:name) %>
+    </div>
+
+    <div class="text-[13.5px] leading-snug text-sage-11 text-pretty">
+      <%= field(:tagline) %>
+    </div>
+
+    <div class="mt-1.5 flex flex-wrap gap-3 font-mono text-[11px] text-sage-11">
+      <% if field(:since) %>
+        <span><%= field(:active) ? "since " : "" %><%= field(:since) %></span>
+      <% end %>
+
+      <% if field(:schedule) %>
+        <% if field(:since) %>
+          <span>·</span>
+        <% end %>
+        <span><%= field(:schedule) %></span>
+      <% end %>
     </div>
   </div>
+
   <div
     class="
-      font-mono text-[11px] uppercase tracking-[0.06em] text-sage-10 whitespace-nowrap
+      font-mono text-[11px] uppercase tracking-[0.06em] text-sage-11 whitespace-nowrap
       max-sm:mt-1
     "
-  ><%= field(:role) %></div>
+  >
+    <%= field(:role) %>
+  </div>
 <% end %>

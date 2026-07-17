@@ -23,7 +23,7 @@ class SectionHead < Bridgetown::Component
 
   def heading_classes
     cx(
-      "m-0 font-mono text-xs font-medium uppercase tracking-[0.08em] text-sage-10",
+      "m-0 font-mono text-xs font-medium uppercase tracking-[0.08em] text-sage-11",
       (bordered? ? "flex-1 pb-2 border-b border-sage-4" : nil)
     )
   end

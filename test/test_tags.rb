@@ -27,5 +27,22 @@ class TestTags < Bridgetown::Test
       expect(og).must_match %r{/og/tag-rails\.png\z}
       expect(og).wont_match %r{/og/default\.png\z}
     end
+
+    it "keeps substantial tag pages indexable" do
+      html get "/tag/rails/"
+      robots = document.query_selector("meta[name='robots']")
+      canonical = document.query_selector("link[rel='canonical']")
+
+      expect(robots["content"]).wont_match(/noindex/)
+      expect(canonical["href"]).must_equal "https://andrewm.codes/tag/rails/"
+    end
+
+    it "noindexes thin tag pages" do
+      html get "/tag/unix/"
+      robots = document.query_selector("meta[name='robots']")
+
+      expect(robots["content"]).must_match(/noindex/)
+      expect(document.query_selector("link[rel='canonical']")).must_be_nil
+    end
   end
 end
