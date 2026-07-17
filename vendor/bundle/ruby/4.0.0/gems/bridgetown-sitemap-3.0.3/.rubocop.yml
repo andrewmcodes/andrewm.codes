@@ -1,0 +1,44 @@
+require: rubocop-bridgetown
+
+inherit_gem:
+  rubocop-bridgetown: .rubocop.yml
+
+AllCops:
+  TargetRubyVersion: 3.2
+
+  Exclude:
+    - .gitignore
+    - .rubocop.yml
+    - "*.gemspec"
+
+    - Gemfile.lock
+    - CHANGELOG.md
+    - LICENSE.txt
+    - README.md
+    - Rakefile
+    - bridgetown.automation.rb
+
+    - script/**/*
+    - test/fixtures/**/*
+    - vendor/**/*
+
+Layout/LineLength:
+  Max: 140
+
+Layout/IndentationWidth:
+  Enabled: false
+
+Layout/IndentationConsistency:
+  Enabled: false
+
+Metrics/BlockLength:
+  Enabled: false
+
+Bundler/OrderedGems:
+  Enabled: false
+
+Style/IfUnlessModifier:
+  Enabled: false
+
+Lint/UselessConstantScoping:
+  Enabled: false

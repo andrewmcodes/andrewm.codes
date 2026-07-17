@@ -1,0 +1,46 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+STDOUT.sync = true
+
+$LOAD_PATH.unshift File.expand_path("../../bridgetown/lib", __dir__)
+
+require "bridgetown"
+
+# Support NO_COLOR: https://no-color.org
+# TODO: need to change behavior of Colorator gem
+#ENV["THOR_SHELL"] = "Basic" if ENV["NO_COLOR"]
+
+if ARGV[0] == "-v" || ARGV[0] == "--version"
+  puts "bridgetown #{Bridgetown::VERSION} \"#{Bridgetown::CODE_NAME}\""
+  exit(true)
+end
+
+if env_index = ARGV.index { |arg| arg == "-e" } # rubocop:disable Lint/AssignmentInCondition
+  env = ARGV[env_index + 1]
+  ENV["BRIDGETOWN_ENV"] = env if env
+elsif env_flag = ARGV.find { |arg| arg.start_with?("--environment=") } # rubocop:disable Lint/AssignmentInCondition
+  ENV["BRIDGETOWN_ENV"] = env_flag.split("=").last
+end
+
+Bridgetown.begin!
+
+require "bridgetown-core/commands/application"
+
+custom_commands_file = File.expand_path("config/custom_commands.rb", Dir.pwd)
+require custom_commands_file if File.exist?(custom_commands_file)
+
+begin
+  Bridgetown::Commands::Application.parse(ARGV.dup).call
+rescue Samovar::MissingValueError => e
+  puts "#{"Command error:".bold.red} #{e.message.to_s.yellow}\n\n"
+  e.command.print_usage
+  exit(false)
+rescue Samovar::InvalidInputError => e
+  puts "#{"Unknown token:".bold.red} #{e.token.yellow}\n\n"
+  e.command.print_usage
+  exit(false)
+rescue StandardError => e
+  Bridgetown::Errors.print_build_error(e)
+  exit(false)
+end

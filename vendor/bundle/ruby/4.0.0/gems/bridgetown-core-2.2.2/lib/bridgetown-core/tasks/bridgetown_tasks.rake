@@ -1,0 +1,83 @@
+# frozen_string_literal: true
+
+desc "Generate a secret key for use in sessions, token generation, and beyond"
+task :secret do
+  require "securerandom"
+  puts SecureRandom.hex(64) # rubocop:disable Bridgetown/NoPutsAllowed
+end
+
+namespace :frontend do
+  desc "Run frontend bundler independently"
+  task :watcher, :sidecar do |_task, args|
+    # sidecar is when the task is running alongside the start command
+    sidecar = args[:sidecar] == true
+    Bridgetown::Utils::Aux.run_process "Frontend", :blue, "bridgetown frontend:dev"
+
+    if sidecar
+      # give FE bundler time to boot before returning control to the start command
+      sleep Bridgetown::Utils.frontend_bundler_type == :esbuild ? 3 : 4
+    else
+      trap("INT") do
+        Bridgetown::Utils::Aux.kill_processes
+        sleep 0.5
+        exit(0)
+      end
+      loop { sleep 1000 }
+    end
+  end
+end
+
+namespace :roda do
+  desc "Prints out the Roda routes file"
+  task :routes do
+    require "bridgetown-core/rack/boot"
+
+    Bridgetown::Rack::Routes.print_routes
+  end
+end
+
+desc "Prerequisite task which loads site and provides automation"
+task :environment do
+  require "freyia"
+
+  class Hamr < Freyia::Base # rubocop:disable Lint/ConstantDefinitionInBlock
+    include Bridgetown::Commands::Automations
+
+    def self.exit_on_failure?
+      true
+    end
+
+    private
+
+    def site(context: :rake)
+      @site ||= begin
+        config = Bridgetown::Current.preloaded_configuration
+        config.run_initializers!(context:)
+        Bridgetown::Site.new(config)
+      end
+    end
+  end
+
+  define_singleton_method :automation do |*args, &block|
+    @hamr ||= Hamr.new(source: Dir.pwd, dest: Dir.pwd)
+    @hamr.instance_exec(*args, &block)
+  end
+
+  %i(site run_initializers).each do |meth|
+    define_singleton_method meth do |**kwargs|
+      @hamr ||= Hamr.new(source: Dir.pwd, dest: Dir.pwd)
+      @hamr.send(:site, **kwargs)
+    end
+  end
+end
+
+# rubocop:disable Bridgetown/NoPutsAllowed
+desc "Provides a time zone-aware date string you can use in front matter"
+task date: :environment do
+  run_initializers
+
+  puts "🗓️  Today's date & time in your site's timezone (#{ENV.fetch("TZ", "NOT SET")}):"
+  puts
+  puts "➡️  #{Time.now.strftime("%a, %d %b %Y %T %z")}"
+end
+# rubocop:enable Bridgetown/NoPutsAllowed

@@ -1,0 +1,21 @@
+# frozen_string_literal: true
+
+source "https://gem.coop"
+
+# Specify your gem's dependencies in streamlined.gemspec
+gemspec
+
+gem "rake", "~> 13.0"
+
+gem "minitest", "~> 5.0"
+gem "minitest-reporters", "~> 1.5"
+
+gem "rubocop", "~> 1.21"
+gem "rubocop-bridgetown", "~> 0.7"
+gem "rubocop-minitest", "~> 0.20"
+gem "rubocop-rake", "~> 0.6"
+
+gem "solargraph", "~> 0.50"
+
+gem "bridgetown-foundation", git: "https://github.com/bridgetownrb/bridgetown.git"
+gem "nokolexbor", "~> 0.6.2"

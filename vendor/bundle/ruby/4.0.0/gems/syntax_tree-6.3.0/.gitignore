@@ -1,0 +1,13 @@
+/.bundle/
+/.yardoc
+/_yardoc/
+/coverage/
+/pkg/
+/rdocs/
+/sorbet/
+/spec/reports/
+/tmp/
+/vendor/
+
+test.rb
+query.txt

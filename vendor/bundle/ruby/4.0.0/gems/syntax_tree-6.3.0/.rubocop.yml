@@ -1,0 +1,176 @@
+inherit_from: config/rubocop.yml
+
+AllCops:
+  DisplayCopNames: true
+  DisplayStyleGuide: true
+  NewCops: enable
+  SuggestExtensions: false
+  TargetRubyVersion: 2.7
+  Exclude:
+  - '{.git,.github,.ruby-lsp,bin,coverage,doc,pkg,sorbet,spec,test/fixtures,vendor,tmp}/**/*'
+  - test.rb
+
+Gemspec/DevelopmentDependencies:
+  Enabled: false
+
+Layout/LineLength:
+  Max: 80
+
+Lint/AmbiguousBlockAssociation:
+  Enabled: false
+
+Lint/AmbiguousOperatorPrecedence:
+  Enabled: false
+
+Lint/AmbiguousRange:
+  Enabled: false
+
+Lint/BooleanSymbol:
+  Enabled: false
+
+Lint/Debugger:
+  Enabled: false
+
+Lint/DuplicateBranch:
+  Enabled: false
+
+Lint/EmptyBlock:
+  Enabled: false
+
+Lint/InterpolationCheck:
+  Enabled: false
+
+Lint/MissingSuper:
+  Enabled: false
+
+Lint/NonLocalExitFromIterator:
+  Enabled: false
+
+Lint/RedundantRequireStatement:
+  Enabled: false
+
+Lint/RescueException:
+  Enabled: false
+
+Lint/SuppressedException:
+  Enabled: false
+
+Lint/UnderscorePrefixedVariableName:
+  Enabled: false
+
+Lint/UnusedMethodArgument:
+  AllowUnusedKeywordArguments: true
+
+Metrics:
+  Enabled: false
+
+Naming/MethodName:
+  Enabled: false
+
+Naming/MethodParameterName:
+  Enabled: false
+
+Naming/RescuedExceptionsVariableName:
+  PreferredName: error
+
+Naming/VariableNumber:
+  Enabled: false
+
+Security/Eval:
+  Enabled: false
+
+Style/AccessorGrouping:
+  Enabled: false
+
+Style/Alias:
+  Enabled: false
+
+Style/CaseEquality:
+  Enabled: false
+
+Style/CaseLikeIf:
+  Enabled: false
+
+Style/ClassVars:
+  Enabled: false
+
+Style/CombinableLoops:
+  Enabled: false
+
+Style/DocumentDynamicEvalDefinition:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/EndBlock:
+  Enabled: false
+
+Style/ExplicitBlockArgument:
+  Enabled: false
+
+Style/FormatString:
+  Enabled: false
+
+Style/FormatStringToken:
+  Enabled: false
+
+Style/GuardClause:
+  Enabled: false
+
+Style/HashLikeCase:
+  Enabled: false
+
+Style/IdenticalConditionalBranches:
+  Enabled: false
+
+Style/IfInsideElse:
+  Enabled: false
+
+Style/IfWithBooleanLiteralBranches:
+  Enabled: false
+
+Style/KeywordParametersOrder:
+  Enabled: false
+
+Style/MissingRespondToMissing:
+  Enabled: false
+
+Style/MultipleComparison:
+  Enabled: false
+
+Style/MutableConstant:
+  Enabled: false
+
+Style/NegatedIfElseCondition:
+  Enabled: false
+
+Style/Next:
+  Enabled: false
+
+Style/NumericPredicate:
+  Enabled: false
+
+Style/ParallelAssignment:
+  Enabled: false
+
+Style/PerlBackrefs:
+  Enabled: false
+
+Style/RedundantArrayConstructor:
+  Enabled: false
+
+Style/RedundantParentheses:
+  Enabled: false
+
+Style/SafeNavigation:
+  Enabled: false
+
+Style/SpecialGlobalVars:
+  Enabled: false
+
+Style/StructInheritance:
+  Enabled: false
+
+Style/YodaExpression:
+  Enabled: false

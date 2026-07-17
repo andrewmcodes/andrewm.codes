@@ -1,0 +1,37 @@
+[dev]
+  command = "bin/bridgetown dev"
+  targetPort = 4000
+  port = 8888
+  publish = "output"
+  autoLaunch = true
+  framework = "#custom"
+
+[context.dev.build.environment]
+  NODE_ENV = "development"
+  BRIDGETOWN_ENV = "development"
+
+[build]
+  command = "bin/bridgetown deploy"
+  publish = "output"
+
+[build.environment]
+  NODE_ENV = "development"
+  BRIDGETOWN_ENV = "production"
+
+[build.processing.html]
+  pretty_urls = true
+
+[[headers]]
+  for = "*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Strict-Transport-Security = "max-age=15552000; includeSubDomains"
+    Referrer-Policy = "no-referrer-when-downgrade"
+    Cache-Control = "public, max-age=604800, s-max-age=604800"
+
+[[headers]]
+  for = "/*.(png|jpg|js|css|svg|woff|ttf|eot|ico|woff2)"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, s-max-age=31536000"

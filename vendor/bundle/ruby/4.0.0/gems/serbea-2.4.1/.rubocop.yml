@@ -1,0 +1,29 @@
+require: rubocop-bridgetown
+inherit_gem:
+  rubocop-bridgetown: .rubocop.yml
+
+AllCops:
+  TargetRubyVersion: 3.1
+  Exclude:
+    - bin/**/*
+    - exe/**/*
+    - test/**/*
+    - tmp/**/*
+    - Gemfile
+    - Rakefile
+    - docs/**/*
+    - lib/rouge/**/*
+    - serbea-rails/**/*
+    - serbea.gemspec
+
+Bridgetown/NoPutsAllowed:
+  Enabled: false
+
+Bridgetown/InsecureHeredoc:
+  Enabled: false
+
+Layout/LineLength:
+  Enabled: false
+
+Metrics/BlockNesting:
+  Enabled: false
