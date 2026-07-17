@@ -13,7 +13,7 @@
   },
   "devDependencies": {
     "@andrewmcodes/commitlint-config": "^0.1.2",
-    "@andrewmcodes/prettier-config": "^2.1.0",
+    "@andrewmcodes/prettier-config": "^3.0.0",
     "@commitlint/cli": "^21.2.1",
     "@fontsource-variable/inter": "^5.2.8",
     "@fontsource-variable/jetbrains-mono": "^5.2.8",

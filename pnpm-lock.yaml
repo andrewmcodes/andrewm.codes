@@ -19,8 +19,8 @@ importers:
         specifier: ^0.1.2
         version: 0.1.2
       '@andrewmcodes/prettier-config':
-        specifier: ^2.1.0
-        version: 2.1.0(prettier@3.9.5)
+        specifier: ^3.0.0
+        version: 3.0.0(prettier@3.9.5)
       '@commitlint/cli':
         specifier: ^21.2.1
         version: 21.2.1(@types/node@26.1.1)(conventional-commits-parser@7.0.1)(typescript@6.0.3)
@@ -115,8 +115,8 @@ packages:
   '@andrewmcodes/commitlint-config@0.1.2':
     resolution: {integrity: sha512-/3Ju7pCNVpbfp9xA/3Xpu9I110GFiPEEASqwA4grcGctALXQFB3Ip9oWyUmin0g83AZGsezO6ymvfmSoAAMxMg==}
 
-  '@andrewmcodes/prettier-config@2.1.0':
-    resolution: {integrity: sha512-07ZHsmUHJn1ANtBoaJLMmNG/QO5qvHNr4kaGZpJcw81opMlhmdJtDgTMi+EdQyFSCoUOP+pLO6RYv9aYcgpJAQ==}
+  '@andrewmcodes/prettier-config@3.0.0':
+    resolution: {integrity: sha512-SBG2DD1sEQthu0X0kIT711O4QqfJ217O/UgHJv2/CIFkWHJJyRtNe8IvMVVAp5V174SSWDSmUWNL8OiPhiAa7A==}
     peerDependencies:
       prettier: '>=3.0.0'
 
@@ -2646,6 +2646,11 @@ packages:
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
 
+  nanoid@3.3.16:
+    resolution: {integrity: sha512-bzlKTyNJ7+LdGIIwy8ijFpIqEQIvafahV7eYykJ8Cvh42EdJeODoJ6gUJXpQJvej1BddH8OqTXZNE/KfbWAu8Q==}
+    engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
+    hasBin: true
+
   negotiator@0.6.3:
     resolution: {integrity: sha512-+EUsqGPLsM+j/zdChZjsnX51g4XrHFOIXwfnCVPGlQk/k5giakcKsuxCObBRu6DSm9opw/O6slWbJdghQM4bBg==}
     engines: {node: '>= 0.6'}
@@ -2866,6 +2871,10 @@ packages:
 
   postcss@8.5.16:
     resolution: {integrity: sha512-vuwillviilfKZsg0VGj5R/YwwcHx4SLsIOI/7K6mQkWx+l5cUHTjj5g0AasTBcyXsbfTgrwsUNmVUb5xVwyPwg==}
+    engines: {node: ^10 || ^12 || >=14}
+
+  postcss@8.5.18:
+    resolution: {integrity: sha512-xdB1oSLHbz1vRWgCDalrCqEFTWzFlhqFC5tIHLMOSUIjhm3XXQ1qrFy8S/ESr1JYRRXqM3c1QFiMZUJdUTqyMQ==}
     engines: {node: ^10 || ^12 || >=14}
 
   prettier@3.9.5:
@@ -3529,7 +3538,7 @@ snapshots:
     dependencies:
       '@commitlint/config-conventional': 17.8.1
 
-  '@andrewmcodes/prettier-config@2.1.0(prettier@3.9.5)':
+  '@andrewmcodes/prettier-config@3.0.0(prettier@3.9.5)':
     dependencies:
       prettier: 3.9.5
 
@@ -5841,6 +5850,8 @@ snapshots:
 
   nanoid@3.3.15: {}
 
+  nanoid@3.3.16: {}
+
   negotiator@0.6.3: {}
 
   negotiator@0.6.4: {}
@@ -6092,6 +6103,12 @@ snapshots:
   postcss@8.5.16:
     dependencies:
       nanoid: 3.3.15
+      picocolors: 1.1.1
+      source-map-js: 1.2.1
+
+  postcss@8.5.18:
+    dependencies:
+      nanoid: 3.3.16
       picocolors: 1.1.1
       source-map-js: 1.2.1
 
@@ -6653,7 +6670,7 @@ snapshots:
     dependencies:
       lightningcss: 1.32.0
       picomatch: 4.0.5
-      postcss: 8.5.16
+      postcss: 8.5.18
       rolldown: 1.0.3
       tinyglobby: 0.2.17
     optionalDependencies:
