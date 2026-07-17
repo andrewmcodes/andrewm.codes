@@ -1,31 +1,13 @@
 <aside
   role="note"
-  class="
-    mb-10 rounded-lg border border-amber-500/30 bg-amber-500/5 p-4 text-[14px]
-    text-sage-12 leading-relaxed
-  "
+  class="mb-10 rounded-md border border-sage-5 bg-sage-2 p-4 text-[13px] text-sage-11 leading-relaxed"
 >
-  <div class="flex items-start gap-3">
-    <svg
-      width="16"
-      height="16"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      class="text-amber-500 mt-0.5 shrink-0"
-      aria-hidden="true"
-    >
-      <circle cx="12" cy="12" r="10" />
-      <path d="M12 8v4M12 16h.01" />
-    </svg>
-
-    <div>
-      <strong class="font-medium">Heads up:</strong> this post was last updated
-      <time datetime="<%= datetime %>"><%= label %></time>. Tools, versions, and
-      best practices may have moved on since then.
-    </div>
-  </div>
+  <%= render Inline.new(gap: :sm, align: :start) do %>
+    <%= render Icon.new(name: "warning", size: :sm, class: "text-sage-11") %>
+    <p class="m-0">
+      <span class="font-mono text-xs uppercase tracking-wide text-sage-12">Heads up:</span>
+      this post was last updated
+      <%= render Util::Time.new(date: updated_at, format: :month_year, class_name: "dt-updated") %>. Tools, versions, and best practices may have moved on since then.
+    </p>
+  <% end %>
 </aside>

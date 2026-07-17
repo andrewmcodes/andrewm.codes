@@ -1,0 +1,12 @@
+include:
+- "**/*.rb"
+exclude:
+- vendor/**/*
+- ".bundle/**/*"
+require:
+- "bridgetown-foundation"
+domains: []
+reporters:
+- rubocop
+- require_not_found
+max_files: 5000

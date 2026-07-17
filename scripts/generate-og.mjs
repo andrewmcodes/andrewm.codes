@@ -21,22 +21,27 @@ import { Resvg } from "@resvg/resvg-js"
  * @property {string} [imageUrl]
  */
 
+// Satori can't consume the variable woff2 files the site itself ships, so the
+// static @fontsource packages (dev deps) supply plain woffs matching the site
+// faces: Literata for titles/body, Martian Mono for the site-name label.
 const FONT_PATHS = {
-  regular: "node_modules/@fontsource/inter/files/inter-latin-400-normal.woff",
-  bold:    "node_modules/@fontsource/inter/files/inter-latin-700-normal.woff",
+  regular: "node_modules/@fontsource/literata/files/literata-latin-400-normal.woff",
+  bold:    "node_modules/@fontsource/literata/files/literata-latin-700-normal.woff",
+  mono:    "node_modules/@fontsource/martian-mono/files/martian-mono-latin-400-normal.woff",
 }
 
 for (const [label, path] of Object.entries(FONT_PATHS)) {
   if (!existsSync(path)) {
-    console.error(`OG: missing Inter ${label} font at ${path}. Did you run \`pnpm install\`?`)
+    console.error(`OG: missing ${label} font at ${path}. Did you run \`pnpm install\`?`)
     process.exit(1)
   }
 }
 
 /** @type {import("satori").SatoriOptions["fonts"]} */
 const FONTS = [
-  { name: "Inter", data: readFileSync(FONT_PATHS.regular), weight: 400, style: "normal" },
-  { name: "Inter", data: readFileSync(FONT_PATHS.bold),    weight: 700, style: "normal" },
+  { name: "Literata", data: readFileSync(FONT_PATHS.regular), weight: 400, style: "normal" },
+  { name: "Literata", data: readFileSync(FONT_PATHS.bold),    weight: 700, style: "normal" },
+  { name: "Martian Mono", data: readFileSync(FONT_PATHS.mono), weight: 400, style: "normal" },
 ]
 
 const SITE_ROOT = process.argv[2] || "output"
@@ -73,9 +78,9 @@ const OG = {
     siteName:    "#58d5ba",
     description: "#adb5b2",
   },
-  siteName:    { fontSize: 24, fontWeight: 500, letterSpacing: 0.5 },
-  title:       { fontSize: 64, fontWeight: 700, lineHeight: 1.1 },
-  description: { fontSize: 28, fontWeight: 400, lineHeight: 1.35 },
+  siteName:    { fontSize: 22, fontWeight: 400, letterSpacing: 0.5, fontFamily: "Martian Mono" },
+  title:       { fontSize: 64, fontWeight: 700, lineHeight: 1.15 },
+  description: { fontSize: 28, fontWeight: 400, lineHeight: 1.4 },
 }
 
 /** @param {string | undefined} s @param {number} max @returns {string | undefined} */
@@ -95,7 +100,7 @@ function template(payload) {
         display: "flex", flexDirection: "column",
         width: "100%", height: "100%",
         background: OG.colors.background, color: OG.colors.foreground,
-        padding: OG.layout.padding, fontFamily: "Inter",
+        padding: OG.layout.padding, fontFamily: "Literata",
       },
       children: [
         {

@@ -1,34 +1,9 @@
-<% if bordered? %>
-  <div class="mb-4">
-    <div class="flex items-baseline justify-between gap-4 mb-3">
-      <h2 class="<%= heading_classes %>"><%= @title %></h2>
-
-      <% if @link_label && @link_href %>
-        <%= render Link.new(href: @link_href, variant: :section_action) do %>
-          <%= @link_label %>
-
-          <%= render Icon.new(
-            name: icon_name,
-            class: "transition-transform group-hover:translate-x-0.5",
-          ) %>
-        <% end %>
-      <% end %>
-    </div>
-
-    <% if @description %>
-      <p class="text-sage-11 text-[13.5px] leading-snug max-w-[600px] mb-4">
-        <%= @description %>
-      </p>
-    <% end %>
-  </div>
-<% else %>
-  <div class="flex items-baseline justify-between gap-4 mb-[18px]">
-    <h2 class="<%= heading_classes %>"><%= @title %></h2>
-
+<div class="<%= wrapper_classes %>">
+  <div class="<%= title_row_classes %>">
+    <%= render Text.new(as: :h2, variant: :eyebrow, class: heading_classes) do %><span aria-hidden="true" class="text-sage-8">//</span> <%= @title %><% end %>
     <% if @link_label && @link_href %>
       <%= render Link.new(href: @link_href, variant: :section_action) do %>
         <%= @link_label %>
-
         <%= render Icon.new(
           name: icon_name,
           class: "transition-transform group-hover:translate-x-0.5",
@@ -36,4 +11,7 @@
       <% end %>
     <% end %>
   </div>
-<% end %>
+  <% if @description %>
+    <%= render Text.new(variant: :card_body, class: "mb-4") do %><%= @description %><% end %>
+  <% end %>
+</div>

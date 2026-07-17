@@ -1,15 +1,10 @@
 # Alert shown on posts that have not been updated recently.
-class StaleNote < Bridgetown::Component
-  # @param updated_at [Time] resource updated timestamp
-  def initialize(updated_at:)
-    @updated_at = updated_at
-  end
+class StaleNote < Base
+  COMPONENT_OPTIONS = %i[updated_at].freeze
 
-  def datetime
-    @updated_at.iso8601
-  end
+  private
 
-  def label
-    @updated_at.strftime("%b %Y")
+  def updated_at
+    opts[:updated_at]
   end
 end

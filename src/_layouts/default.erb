@@ -1,5 +1,4 @@
 <!doctype html>
-
 <html lang="<%= site.metadata.lang %>">
   <head>
     <script>
@@ -10,23 +9,11 @@
         document.documentElement.dataset.theme = theme
       })()
     </script>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="light dark">
-
-    <meta
-      name="theme-color"
-      content="<%= site.metadata.theme_color_light %>"
-      media="(prefers-color-scheme: light)"
-    >
-
-    <meta
-      name="theme-color"
-      content="<%= site.metadata.theme_color %>"
-      media="(prefers-color-scheme: dark)"
-    >
-
+    <meta name="theme-color" content="<%= site.metadata.theme_color_light %>" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="<%= site.metadata.theme_color %>" media="(prefers-color-scheme: dark)">
     <% if data.noindex %>
       <meta name="robots" content="noindex,nofollow">
     <% else %>
@@ -42,50 +29,21 @@
       title="<%= site.metadata.title %> (Atom)"
       href="<%= absolute_url("/feed.xml") %>"
     >
-
     <link
       rel="alternate"
       type="application/feed+json"
       title="<%= site.metadata.title %> (JSON Feed)"
       href="<%= absolute_url("/feed.json") %>"
     >
-
-    <link
-      rel="sitemap"
-      type="application/xml"
-      title="Sitemap"
-      href="<%= absolute_url("/sitemap.xml") %>"
-    >
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="<%= absolute_url("/sitemap.xml") %>">
 
     <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
-
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="/images/favicon-32x32.png"
-    >
-
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="/images/favicon-16x16.png"
-    >
-
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="/images/apple-touch-icon.png"
-    >
-
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
     <link rel="manifest" href="/site.webmanifest">
 
-    <link
-      rel="webmention"
-      href="https://webmention.io/andrewm.codes/webmention"
-    >
-
+    <link rel="webmention" href="https://webmention.io/andrewm.codes/webmention">
     <link rel="pingback" href="https://webmention.io/andrewm.codes/xmlrpc">
 
     <link rel="me" href="https://bsky.app/profile/andrewm.codes">
@@ -94,16 +52,9 @@
     <link rel="me" href="https://x.com/andrewmcodes">
 
     <link rel="stylesheet" href="<%= asset_path :css %>">
-
     <script src="<%= asset_path :js %>" defer></script>
   </head>
-
-  <body
-    class="
-      bg-sage-1 text-sage-12 font-sans text-[15px] leading-relaxed
-      min-h-screen flex flex-col
-    "
-  >
+  <body class="bg-sage-1 text-sage-12 font-serif text-[16.5px] leading-relaxed min-h-screen flex flex-col">
     <%= render SkipLink.new %>
 
     <%= render Topbar.new(resource: resource) %>

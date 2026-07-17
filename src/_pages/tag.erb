@@ -5,8 +5,6 @@ description: "Every post Andrew Mason has written tagged #:prototype-term, newes
 kind: tag
 image: /og/tag-:prototype-term.png
 permalink: /tag/:term/
-# Builders::PrototypeMetadata flips noindex for tags with at least three posts
-# and adds indexable tag URLs to the generated sitemap.
 noindex: true
 sitemap: false
 prototype:
@@ -15,7 +13,6 @@ prototype:
 ---
 
 <% tag = data.tag %>
-
 <% tagged =
   collections
     .posts
@@ -23,15 +20,16 @@ prototype:
     .select { |p| Array(p.data.tags).include?(tag) }
     .sort_by(&:date)
     .reverse %>
-
 <% years = tagged.group_by { |p| p.date.year }.sort.reverse %>
 
 <%= render PageShell.new do %>
   <%= render BackLink.new(href: "/posts/", label: "all posts") %>
 
   <%= render Ui::PageHeader.new(title: "##{tag}") do %>
-    <%= tagged.size %> <%= tagged.size == 1 ? "post" : "posts" %> tagged
-    <code class="font-mono text-sage-12">#<%= tag %></code>.
+    <%= tagged.size %>
+    <%= tagged.size == 1 ? "post" : "posts" %>
+    tagged
+    <%= render Text.new(as: :code, font: :mono, scheme: :strong) do %>#<%= tag %><% end %>.
   <% end %>
 
   <% years.each do |year, year_posts| %>

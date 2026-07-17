@@ -1,0 +1,88 @@
+# frozen_string_literal: true
+
+module Bridgetown
+  class PluginContentReader
+    attr_reader :site, :manifest, :content_dirs
+
+    # @param site [Bridgetown::Site]
+    # @param manifest [Bridgetown::Configuration::SourceManifest]
+    def initialize(site, manifest)
+      @site = site
+      @manifest = manifest
+      @content_dirs = manifest.contents || {}
+      @content_files = Set.new
+      @supports_bare_text = manifest.bare_text
+      @bare_text_extensions = site.config.markdown_ext.split(",").map { ".#{_1}" } + [".html"]
+    end
+
+    def read
+      return if content_dirs.empty?
+
+      content_dirs.each do |collection_name, root|
+        read_content_root collection_name, root
+      end
+    end
+
+    # rubocop:disable Metrics/MethodLength, Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity
+    def read_content_root(collection_name, content_dir)
+      collection = site.collections[collection_name]
+      unless collection
+        Bridgetown.logger.warn(
+          "Reading",
+          "Plugin requested missing collection #{collection_name}, cannot continue"
+        )
+        return
+      end
+
+      Find.find(content_dir) do |path|
+        if File.directory?(path)
+          if rejected_by_external_sources_filter?(path, collection_name) ||
+              EntryFilter::SPECIAL_LEADING_CHAR_REGEX.match?(File.basename(path))
+            Find.prune
+          end
+
+          next
+        end
+
+        next if rejected_by_external_sources_filter?(path, collection_name)
+
+        if File.symlink?(path)
+          Bridgetown.logger.warn "Plugin content reader:", "Ignored symlinked asset: #{path}"
+        else
+          read_content_file(content_dir, path, collection)
+        end
+      end
+    end
+    # rubocop:enable Metrics/MethodLength, Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity
+
+    def rejected_by_external_sources_filter?(path, collection_name)
+      filter = site.config.external_sources_filters&.dig(collection_name)
+      return false unless filter
+
+      !filter.call(File.basename(path), path)
+    end
+
+    # @param collection [Bridgetown::Collection]
+    def read_content_file(content_dir, path, collection)
+      dir = File.dirname(path.sub("#{content_dir}/", ""))
+      name = File.basename(path)
+      extname = File.extname(path)
+
+      @content_files << if FrontMatter::Loaders.front_matter?(path)
+                          collection.read_resource(path, manifest:)
+                        elsif @supports_bare_text && @bare_text_extensions.any? { extname == _1 }
+                          collection.read_resource(path, manifest:, bare_text: true)
+                        else
+                          Bridgetown::StaticFile.new(site, content_dir, "/#{dir}", name)
+                        end
+      add_to(site.static_files, Bridgetown::StaticFile)
+    end
+
+    def add_to(content_type, klass)
+      existing_paths = content_type.filter_map(&:relative_path)
+      @content_files.select { |item| item.is_a?(klass) }.each do |item|
+        content_type << item unless existing_paths.include?(item.relative_path)
+      end
+    end
+  end
+end

@@ -1,14 +1,11 @@
 <% if reactions.any? || replies.any? %>
   <section class="mt-12 pt-7 border-t border-sage-5">
-    <h2 class="font-mono text-[12.5px] uppercase tracking-wide text-sage-10">
-      Webmentions
-    </h2>
+    <%= render Text.new(as: :h2, variant: :meta, class: "uppercase tracking-wide") do %>Webmentions<% end %>
 
     <% if reactions.any? %>
-      <div class="mt-4 flex flex-wrap items-center gap-2">
+      <%= render Inline.new(gap: :sm, wrap: true, class_name: "mt-4") do %>
         <% reactions.first(40).each do |wm| %>
           <% a = author_of(wm) %>
-
           <%= render Link.new(href: a["url"] || wm["url"], external: true, class_name: "shrink-0") do %>
             <% if a["photo"] %>
               <%= render Image.new(
@@ -23,49 +20,42 @@
             <% end %>
           <% end %>
         <% end %>
-
-        <span class="font-mono text-xs text-sage-10">
+        <%= render Text.new(as: :span, variant: :meta) do %>
           <%= reactions.length %>
           <%= (reactions.length == 1) ? "reaction" : "reactions" %>
-        </span>
-      </div>
+        <% end %>
+      <% end %>
     <% end %>
 
     <% if replies.any? %>
-      <ul class="mt-6 space-y-5">
+      <ul class="mt-6 flex flex-col gap-5">
         <% replies.each do |wm| %>
           <% a = author_of(wm) %>
-
-          <li class="flex gap-3">
-            <% if a["photo"] %>
-              <%= render Image.new(
-                src: a["photo"],
-                alt: a["name"] || "Someone",
-                variant: :avatar,
-                width: 24,
-                height: 24,
-              ) %>
-            <% end %>
-
-            <div class="min-w-0">
-              <div class="flex items-baseline gap-2">
-                <%= render Link.new(href: a["url"] || wm["url"], external: true, weight: :medium, scheme: :strong) do %>
-                  <%= a["name"] || "Someone" %>
+          <li>
+            <%= render Inline.new(gap: :sm, align: :start) do %>
+              <% if a["photo"] %>
+                <%= render Image.new(
+                  src: a["photo"],
+                  alt: a["name"] || "Someone",
+                  variant: :avatar,
+                  width: 24,
+                  height: 24,
+                ) %>
+              <% end %>
+              <div class="min-w-0">
+                <%= render Inline.new(gap: :xs, align: :baseline) do %>
+                  <%= render Link.new(href: a["url"] || wm["url"], external: true, weight: :medium, scheme: :strong) do %>
+                    <%= a["name"] || "Someone" %>
+                  <% end %>
+                  <% if published_on(wm) %>
+                    <%= render Text.new(as: :span, variant: :meta) do %><%= published_on(wm) %><% end %>
+                  <% end %>
                 <% end %>
-
-                <% if published_on(wm) %>
-                  <span class="font-mono text-[11px] text-sage-10">
-                    <%= published_on(wm) %>
-                  </span>
+                <% if content_text(wm) %>
+                  <%= render Text.new(size: :md, scheme: :muted, class_name: "mt-1 break-words") do %><%= content_text(wm) %><% end %>
                 <% end %>
               </div>
-
-              <% if content_text(wm) %>
-                <p class="mt-1 text-sm text-sage-11 break-words">
-                  <%= content_text(wm) %>
-                </p>
-              <% end %>
-            </div>
+            <% end %>
           </li>
         <% end %>
       </ul>

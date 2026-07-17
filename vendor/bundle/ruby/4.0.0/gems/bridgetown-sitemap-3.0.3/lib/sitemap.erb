@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<% if page.data.xsl %>
+  <?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>
+<% end %>
+
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml"
+  xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+    http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd
+    http://www.w3.org/1999/xhtml
+    http://www.w3.org/2002/08/xhtml/xhtml1-strict.xsd">
+  <% output_collection_names = site.config.collections.select { |_name, data| data.output }.keys %>
+
+  <% collections.slice(*output_collection_names).each do |_name, collection| %>
+    <% BridgetownSitemap::GroupedResources.new(collection.resources)
+        .each(locale: site.locale) do |default:, latest:, group:| %>
+      <% if default %>
+        <url>
+          <loc><%= xml_escape absolute_url(in_locale(default, default.data.locale)) %></loc>
+
+          <% group.each do |resource| %>
+            <% if site.locale == resource.data.locale %>
+              <xhtml:link rel="alternate" hreflang="x-default" href="<%= xml_escape resource.absolute_url %>" />
+            <% end %>
+              <xhtml:link rel="alternate" hreflang="<%= resource.data.locale %>" href="<%= xml_escape resource.absolute_url %>" />
+          <% end %>
+
+          <lastmod><%= latest.sitemap_last_modified_at.localtime.xmlschema %></lastmod>
+
+          <% if default.data.sitemap_priority %>
+            <priority><%= default.data.sitemap_priority %></priority>
+          <% end %>
+
+          <% if default.data.sitemap_change_frequency %>
+            <changefreq><%= default.data.sitemap_change_frequency %></changefreq>
+          <% end %>
+        </url>
+      <% end %>
+    <% end %>
+  <% end %>
+
+  <% BridgetownSitemap::GroupedGeneratedPages.new(site.generated_pages)
+      .each(locale: site.locale) do |default:, latest:, group:| %>
+
+    <% if default %>
+      <url>
+        <loc><%= xml_escape absolute_url(default.url) %></loc>
+
+        <% group.reject { |p| p.respond_to?(:original_resource) && p.original_resource && p.url != default.url }.each do |page| %>
+          <% if !page.data.locale || site.locale == page.data.locale %>
+            <xhtml:link rel="alternate" hreflang="x-default" href="<%= xml_escape absolute_url(page.url) %>" />
+          <% end %>
+            <xhtml:link rel="alternate" hreflang="<%= page.data.locale || site.locale %>" href="<%= xml_escape absolute_url(page.url) %>" />
+        <% end %>
+
+        <lastmod><%= (latest.data.last_modified_at || site.time).localtime.xmlschema %></lastmod>
+
+        <% if default.data.sitemap_priority %>
+          <priority><%= default.data.sitemap_priority %></priority>
+        <% end %>
+
+        <% if default.data.sitemap_change_frequency %>
+          <changefreq><%= default.data.sitemap_change_frequency %></changefreq>
+        <% end %>
+      </url>
+    <% end %>
+  <% end %>
+
+  <% page.data.static_files.each do |file| %>
+    <% next if file.data.sitemap == false %>
+    <url>
+      <loc><%= xml_escape absolute_url(file.relative_path) %></loc>
+      <lastmod><%= file.modified_time.localtime.xmlschema %></lastmod>
+      <% if file.data.sitemap_priority %>
+        <priority><%= file.data.sitemap_priority %></priority>
+      <% end %>
+      <% if file.data.sitemap_change_frequency %>
+        <changefreq><%= file.data.sitemap_change_frequency %></changefreq>
+      <% end %>
+    </url>
+  <% end %>
+
+  <% page.data.custom_urls.each do |custom_url| %>
+    <url>
+      <loc><%= xml_escape custom_url["url"] %></loc>
+      <lastmod><%= custom_url["lastmod"] || Time.now.localtime.xmlschema %></lastmod>
+      <% if custom_url["changefreq"] %>
+        <changefreq><%= custom_url["changefreq"] %></changefreq>
+      <% end %>
+      <% if custom_url["priority"] %>
+        <priority><%= custom_url["priority"] %></priority>
+      <% end %>
+    </url>
+  <% end %>
+</urlset>

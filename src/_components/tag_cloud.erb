@@ -1,11 +1,6 @@
 <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-5">
-  <span class="font-mono text-[11px] text-sage-10 uppercase tracking-[0.08em] mr-2">
-    <%= @label %>
-  </span>
-
+  <%= render Text.new(as: :span, variant: :eyebrow, class: "mr-2") do %><%= @label %><% end %>
   <% @tags.each do |tag| %>
-    <%= render Link.new(href: "#{@href_prefix}#{tag}/", variant: :tag) do %>
-      #<%= tag %>
-    <% end %>
+    <%= render Link.new(href: "#{@href_prefix}#{tag}/", variant: :tag) do %>#<%= tag %><% end %>
   <% end %>
 </div>

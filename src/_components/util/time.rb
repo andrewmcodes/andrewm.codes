@@ -19,7 +19,8 @@ module Util
     end
 
     def children
-      return date.strftime("%b %d, %Y") if opts[:format]&.to_sym == :simple
+      return date.strftime("%b %-d, %Y") if opts[:format]&.to_sym == :simple
+      return date.strftime("%b %Y") if opts[:format]&.to_sym == :month_year
       return date.strftime("%Y-%m-%d") if opts[:format]&.to_sym == :clean
       return date.strftime("%b %d, %Y at %H:%M %Z") if opts[:format]&.to_sym == :timeline
       return date.iso8601 if opts[:format]&.to_sym == :iso

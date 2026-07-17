@@ -211,7 +211,8 @@ module Util
         "inLanguage" => metadata.lang,
         "isPartOf" => website_ref,
         "keywords" => keywords(resource),
-        "wordCount" => word_count
+        "wordCount" => word_count,
+        "isAccessibleForFree" => (true if type == "BlogPosting")
       }.compact
     end
 

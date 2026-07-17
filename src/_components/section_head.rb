@@ -1,5 +1,5 @@
 # Section heading layout with optional description and trailing action link.
-class SectionHead < Bridgetown::Component
+class SectionHead < Base
   # @param title [String] section title
   # @param link_label [String, nil] optional action label
   # @param link_href [String, nil] optional action destination
@@ -11,6 +11,7 @@ class SectionHead < Bridgetown::Component
     @link_href = link_href
     @description = description
     @bordered = bordered
+    super()
   end
 
   def icon_name
@@ -21,16 +22,15 @@ class SectionHead < Bridgetown::Component
     @bordered || @description
   end
 
-  def heading_classes
-    cx(
-      "m-0 font-mono text-xs font-medium uppercase tracking-[0.08em] text-sage-11",
-      (bordered? ? "flex-1 pb-2 border-b border-sage-4" : nil)
-    )
+  def wrapper_classes
+    bordered? ? "mb-4" : ""
   end
 
-  private
+  def title_row_classes
+    cx("flex items-baseline justify-between gap-4", bordered? ? "mb-3" : "mb-[18px]")
+  end
 
-  def cx(*classes)
-    classes.flatten.compact.join(" ")
+  def heading_classes
+    cx("m-0", (bordered? ? "flex-1 pb-2 border-b border-sage-4" : nil))
   end
 end

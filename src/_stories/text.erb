@@ -58,4 +58,14 @@ title: Text
       Primary
     <% end %>
   </div>
+
+  <div class="space-y-2">
+    <p class="font-mono text-xs text-sage-10">Variants</p>
+    <%= render Text.new(variant: :lead) do %>Lead paragraph copy under a page or section header.<% end %>
+    <%= render Text.new(as: :div, variant: :card_body) do %>Card body copy for descriptions and abstracts.<% end %>
+    <%= render Text.new(as: :div, variant: :meta) do %>Jul 11, 2026 · 4 min<% end %>
+    <%= render Text.new(as: :div, variant: :eyebrow) do %>Section label<% end %>
+    <%= render Text.new(as: :div, variant: :row_title) do %>List/row title (post, talk, episode, pod)<% end %>
+    <%= render Text.new(as: :div, variant: :card_title) do %>Grid card title (project, featured)<% end %>
+  </div>
 </div>

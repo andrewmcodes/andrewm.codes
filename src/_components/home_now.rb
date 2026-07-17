@@ -3,7 +3,7 @@
 # Surfaces active work (role, latest podcast episode, most recent talk) so the
 # homepage shows current momentum instead of leaning on blog post dates, which
 # can read as stale even when the work behind the scenes is active.
-class HomeNow < Bridgetown::Component
+class HomeNow < Base
   # @param episode [Hash, nil] latest episode data (`site.data.remote_ruby`)
   # @param talk [Hash, nil] most recent talk from `src/_data/talks.yml`
   def initialize(episode:, talk:)

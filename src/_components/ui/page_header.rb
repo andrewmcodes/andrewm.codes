@@ -3,7 +3,7 @@ module Ui
   #
   # Pass a block for rich description markup. Prefer the block form over
   # `description_html` so HTML is authored in templates instead of strings.
-  class PageHeader < Bridgetown::Component
+  class PageHeader < Base
     attr_reader :title,
       :description,
       :description_html,
@@ -21,6 +21,7 @@ module Ui
       @description_html = description_html
       @description_link_label = description_link_label
       @description_link_href = description_link_href
+      super()
     end
 
     def description_link?

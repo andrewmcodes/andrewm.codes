@@ -1,0 +1,17 @@
+---
+inherit_from: ../.rubocop.yml
+
+AllCops:
+  Exclude:
+    - "*.gemspec"
+    - test/**/*.rb
+
+Metrics/AbcSize:
+  Exclude:
+    - lib/bridgetown-builder/dsl/generators.rb
+Metrics/MethodLength:
+  Exclude:
+    - lib/bridgetown-builder/dsl/*
+Metrics/ParameterLists:
+  Exclude:
+    - lib/bridgetown-builder/dsl/hooks.rb

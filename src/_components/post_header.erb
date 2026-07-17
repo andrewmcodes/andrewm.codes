@@ -1,35 +1,31 @@
-<h1
-  class="
-    text-[clamp(28px,4vw,40px)] leading-[1.15] tracking-tight font-bold m-0 mb-4
-    text-balance text-sage-12
-  "
->
-  <%= title %>
+<h1 class="<%= h1_class %>">
+  <span class="p-name"><%= title %></span>
 </h1>
 
-<div class="flex flex-wrap items-center gap-3.5 font-mono text-xs text-sage-11 mb-5">
-  <time datetime="<%= date.iso8601 %>"><%= date.strftime("%b %-d, %Y") %></time>
-  <span>·</span>
-  <span><%= reading_time %> min read</span>
-  <span>·</span>
-
-  <a
-    href="/about/"
-    rel="author"
-    class="text-sage-11 hover:text-mint-11 transition-colors"
-  >
-    <%= author_name %>
-  </a>
-
+<%= render Inline.new(gap: :sm, wrap: true, class_name: "mb-5") do %>
+  <%= render Text.new(as: :span, variant: :meta) do %>
+    <%= render Util::Time.new(date: date, format: :simple, class_name: "dt-published") %>
+  <% end %>
+  <span class="text-sage-9" aria-hidden="true">·</span>
+  <%= render Text.new(as: :span, variant: :meta) do %><%= reading_time %> min read<% end %>
+  <span class="text-sage-9" aria-hidden="true">·</span>
+  <%= render Link.new(
+    href: "/about/",
+    rel: "author",
+    variant: :post_nav,
+    class_name: "p-author h-card u-url font-mono text-[11.5px]",
+  ) do %>
+    <span class="p-name"><%= author_name %></span>
+  <% end %>
   <% if tags.any? %>
-    <span>·</span>
+    <span class="text-sage-9" aria-hidden="true">·</span>
     <% tags.each do |tag| %>
-      <%= render Link.new(href: "/tag/#{tag}/", variant: :post_tag) do %>
-        #<%= tag %>
-      <% end %>
+      <%= render Link.new(href: "/tag/#{tag}/", variant: :post_tag) do %>#<%= tag %><% end %>
     <% end %>
   <% end %>
-</div>
+<% end %>
+
+<a href="<%= resource.relative_url %>" class="u-url hidden" aria-hidden="true" tabindex="-1"></a>
 
 <div class="mb-10">
   <%= render MarkdownActions.new(resource: resource) %>

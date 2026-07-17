@@ -1,0 +1,23 @@
+---
+title: Columns
+---
+
+<div class="space-y-6">
+  <div class="space-y-2">
+    <p class="font-mono text-xs text-sage-10">list_row (96px date column)</p>
+    <%= render Columns.new(template: :list_row) do %>
+      <span class="font-mono text-xs text-sage-10">Jan 2024</span>
+      <span>Row content goes here</span>
+      <span class="text-sage-9">→</span>
+    <% end %>
+  </div>
+
+  <div class="space-y-2">
+    <p class="font-mono text-xs text-sage-10">media_row (64px media column)</p>
+    <%= render Columns.new(template: :media_row) do %>
+      <span class="bg-sage-4 h-12 w-12"></span>
+      <span>Row content goes here</span>
+      <span class="text-sage-9">→</span>
+    <% end %>
+  </div>
+</div>

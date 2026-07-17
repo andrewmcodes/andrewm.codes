@@ -1,9 +1,14 @@
 # Previous/next post navigation for post-like resources.
-class PostFooterNav < Bridgetown::Component
-  # @param previous_resource [Bridgetown::Resource::Base, nil] older resource
-  # @param next_resource [Bridgetown::Resource::Base, nil] newer resource
-  def initialize(previous_resource:, next_resource:)
-    @previous_resource = previous_resource
-    @next_resource = next_resource
+class PostFooterNav < Base
+  COMPONENT_OPTIONS = %i[previous_resource next_resource].freeze
+
+  private
+
+  def previous_resource
+    opts[:previous_resource]
+  end
+
+  def next_resource
+    opts[:next_resource]
   end
 end

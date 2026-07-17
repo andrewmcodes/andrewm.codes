@@ -1,0 +1,25 @@
+require: rubocop-bridgetown
+
+inherit_gem:
+  rubocop-bridgetown: .rubocop.yml
+
+AllCops:
+  TargetRubyVersion: 2.5
+
+  Exclude:
+    - .gitignore
+    - .rspec
+    - .rubocop.yml
+    - .travis.yml
+
+    - Rakefile
+    - "*.gemspec"
+    - Gemfile.lock
+    - History.markdown
+    - LICENSE.txt
+    - README.md
+
+    - script/**/*
+    - vendor/**/*
+    - spec/**/*
+

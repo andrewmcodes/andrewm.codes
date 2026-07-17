@@ -1,58 +1,27 @@
 <footer class="border-t border-sage-4 mt-16 pt-10 pb-8" data-pagefind-ignore>
-  <div class="max-w-[1080px] mx-auto w-full px-9 max-md:px-4">
+  <div class="<%= shell_width %> mx-auto w-full">
     <div
       class="
         flex flex-col gap-4 md:flex-row md:flex-wrap md:justify-between md:items-center
-        font-mono text-[11.5px] text-sage-11
+        font-mono text-xs text-sage-11
       "
     >
-      <span>© 2019–<%= Date.today.year %><%= metadata.author.name %></span>
+      <span><%= copyright_line %></span>
 
-      <div class="flex flex-wrap items-center gap-x-4 gap-y-3">
-        <span class="flex flex-wrap gap-x-3 gap-y-1">
+      <%= render Inline.new(gap: :md) do %>
+        <%= render Inline.new(gap: :sm) do %>
           <% accounts.each_with_index do |a, i| %>
-            <% if i > 0 %>
-              <span>·</span>
-            <% end %>
-
-            <a
-              href="<%= a["url"] %>"
-              class="
-                text-sage-11 border-b border-sage-5 pb-px hover:text-mint-11
-                hover:border-mint-11 transition-colors
-              "
-            >
-              <%= a["name"] %>
-            </a>
+            <% if i > 0 %><span>·</span><% end %>
+            <%= render Link.new(href: a["url"], variant: :underline_meta) do %><%= a["name"] %><% end %>
           <% end %>
-
           <span>·</span>
-
-          <a
-            href="/feed.xml"
-            class="
-              text-sage-11 border-b border-sage-5 pb-px hover:text-mint-11
-              hover:border-mint-11 transition-colors
-            "
-          >
-            RSS
-          </a>
-
+          <%= render Link.new(href: "/feed.xml", variant: :underline_meta) do %>RSS<% end %>
           <span>·</span>
-
-          <a
-            href="/feed.json"
-            class="
-              text-sage-11 border-b border-sage-5 pb-px hover:text-mint-11
-              hover:border-mint-11 transition-colors
-            "
-          >
-            JSON
-          </a>
-        </span>
+          <%= render Link.new(href: "/feed.json", variant: :underline_meta) do %>JSON<% end %>
+        <% end %>
 
         <%= render ThemeToggle.new %>
-      </div>
+      <% end %>
     </div>
 
     <div
@@ -61,55 +30,31 @@
         md:items-center font-mono text-[11px] text-sage-11
       "
     >
-      <span class="flex flex-wrap gap-x-3 gap-y-1">
-        <a
-          href="/changelog/"
-          class="text-sage-11 hover:text-mint-11 transition-colors"
-        >
-          Changelog
-        </a>
-
+      <%= render Inline.new(gap: :sm) do %>
+        <%= render Link.new(href: "/changelog/", variant: :post_nav) do %>Changelog<% end %>
         <span>·</span>
-
-        <a
-          href="/uses/"
-          class="text-sage-11 hover:text-mint-11 transition-colors"
-        >
-          Uses
-        </a>
-
+        <%= render Link.new(href: "/uses/", variant: :post_nav) do %>Uses<% end %>
         <span>·</span>
+        <%= render Link.new(href: "https://github.com/#{metadata.repo}", variant: :post_nav) do %>Source<% end %>
+      <% end %>
 
-        <a
-          href="https://github.com/<%= metadata.repo %>"
-          class="text-sage-11 hover:text-mint-11 transition-colors"
-        >
-          Source
-        </a>
-      </span>
-
-      <a
-        href="<%= latest_commit_url %>"
-        class="
-          text-sage-11 hover:text-mint-11 transition-colors inline-flex items-center
-          gap-1.5
-        "
-        title="Latest commit"
-      >
+      <%= render Link.new(
+        href: latest_commit_url,
+        variant: :post_nav,
+        class: "inline-flex items-center gap-1.5",
+        title: "Latest commit",
+      ) do %>
         <svg
           width="10"
           height="10"
           viewBox="0 0 16 16"
           fill="currentColor"
           aria-hidden="true"
-        >
-          <path
+        ><path
             d="M11.93 8.5a4.002 4.002 0 0 1-7.86 0H.75a.75.75 0 0 1 0-1.5h3.32a4.002 4.002 0 0 1 7.86 0h3.32a.75.75 0 0 1 0 1.5Zm-1.43-.75a2.5 2.5 0 1 0-5 0 2.5 2.5 0 0 0 5 0Z"
-          />
-        </svg>
-
+          /></svg>
         <span><%= latest_commit_sha %></span>
-      </a>
+      <% end %>
     </div>
   </div>
 </footer>

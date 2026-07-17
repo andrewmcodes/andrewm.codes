@@ -1,0 +1,19 @@
+current directory: /home/runner/work/andrewm.codes/andrewm.codes/vendor/bundle/ruby/4.0.0/gems/debug-1.11.1/ext/debug
+/opt/hostedtoolcache/Ruby/4.0.3/x64/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /home/runner/work/andrewm.codes/andrewm.codes/vendor/bundle/ruby/4.0.0/gems/debug-1.11.1/ext/debug
+make -j4 DESTDIR\= sitearchdir\=./.gem.20260610-2333-1dy0ea sitelibdir\=./.gem.20260610-2333-1dy0ea clean
+
+current directory: /home/runner/work/andrewm.codes/andrewm.codes/vendor/bundle/ruby/4.0.0/gems/debug-1.11.1/ext/debug
+make -j4 DESTDIR\= sitearchdir\=./.gem.20260610-2333-1dy0ea sitelibdir\=./.gem.20260610-2333-1dy0ea
+compiling debug.c
+compiling iseq_collector.c
+linking shared-object debug/debug.so
+
+current directory: /home/runner/work/andrewm.codes/andrewm.codes/vendor/bundle/ruby/4.0.0/gems/debug-1.11.1/ext/debug
+make -j4 DESTDIR\= sitearchdir\=./.gem.20260610-2333-1dy0ea sitelibdir\=./.gem.20260610-2333-1dy0ea install
+/usr/bin/install -c -m 0755 debug.so ./.gem.20260610-2333-1dy0ea/debug
+
+current directory: /home/runner/work/andrewm.codes/andrewm.codes/vendor/bundle/ruby/4.0.0/gems/debug-1.11.1/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20260610-2333-1dy0ea sitelibdir\=./.gem.20260610-2333-1dy0ea clean

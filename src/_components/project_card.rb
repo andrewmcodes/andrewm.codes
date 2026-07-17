@@ -1,8 +1,15 @@
 # Project card for local project resources and GitHub API repository hashes.
-class ProjectCard < Bridgetown::Component
+class ProjectCard < Base
+  CARD_CLASSES = "group flex flex-col gap-1 bg-sage-1 hover:bg-sage-2 transition-colors py-3.5 md:p-5"
+  # Neutral always — status used to switch to a decorative mint fill for
+  # "active", which broke the mint-is-interactive-only rule. The status text
+  # itself communicates state; the badge chrome stays sage regardless.
+  STATUS_BADGE_CLASSES = "ml-auto rounded-full border border-sage-4 px-1.5 py-px"
+
   # @param project [Bridgetown::Resource::Base, Hash] project resource or repo hash
   def initialize(project:)
     @project = project
+    super()
   end
 
   def name
@@ -39,6 +46,14 @@ class ProjectCard < Bridgetown::Component
 
   def external?
     true
+  end
+
+  def card_classes
+    CARD_CLASSES
+  end
+
+  def status_badge_classes
+    STATUS_BADGE_CLASSES
   end
 
   private

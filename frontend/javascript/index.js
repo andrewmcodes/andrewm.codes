@@ -1,7 +1,8 @@
 import "$styles/index.css";
 import "@hotwired/turbo";
-import "@fontsource-variable/inter";
-import "@fontsource-variable/jetbrains-mono";
+import "@fontsource-variable/literata";
+import "@fontsource-variable/literata/wght-italic.css";
+import "@fontsource-variable/martian-mono";
 import "./cmdk.js";
 import "./search_page.js";
 import "./theme.js";

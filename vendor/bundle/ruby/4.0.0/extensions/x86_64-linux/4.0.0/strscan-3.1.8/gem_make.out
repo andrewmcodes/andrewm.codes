@@ -1,0 +1,23 @@
+current directory: /home/runner/work/andrewm.codes/andrewm.codes/vendor/bundle/ruby/4.0.0/gems/strscan-3.1.8/ext/strscan
+/opt/hostedtoolcache/Ruby/4.0.3/x64/bin/ruby extconf.rb
+checking for onig_region_memsize(NULL)... yes
+checking for rb_reg_onig_match() in ruby/re.h... yes
+checking for rb_deprecate_constant()... yes
+checking for rb_gc_location() in ruby.h... yes
+checking for RUBY_TYPED_EMBEDDABLE in ruby.h... yes
+creating Makefile
+
+current directory: /home/runner/work/andrewm.codes/andrewm.codes/vendor/bundle/ruby/4.0.0/gems/strscan-3.1.8/ext/strscan
+make -j4 DESTDIR\= sitearchdir\=./.gem.20260717-2363-epxs7 sitelibdir\=./.gem.20260717-2363-epxs7 clean
+
+current directory: /home/runner/work/andrewm.codes/andrewm.codes/vendor/bundle/ruby/4.0.0/gems/strscan-3.1.8/ext/strscan
+make -j4 DESTDIR\= sitearchdir\=./.gem.20260717-2363-epxs7 sitelibdir\=./.gem.20260717-2363-epxs7
+compiling strscan.c
+linking shared-object strscan.so
+
+current directory: /home/runner/work/andrewm.codes/andrewm.codes/vendor/bundle/ruby/4.0.0/gems/strscan-3.1.8/ext/strscan
+make -j4 DESTDIR\= sitearchdir\=./.gem.20260717-2363-epxs7 sitelibdir\=./.gem.20260717-2363-epxs7 install
+/usr/bin/install -c -m 0755 strscan.so ./.gem.20260717-2363-epxs7
+
+current directory: /home/runner/work/andrewm.codes/andrewm.codes/vendor/bundle/ruby/4.0.0/gems/strscan-3.1.8/ext/strscan
+make DESTDIR\= sitearchdir\=./.gem.20260717-2363-epxs7 sitelibdir\=./.gem.20260717-2363-epxs7 clean

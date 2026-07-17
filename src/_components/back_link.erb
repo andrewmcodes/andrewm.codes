@@ -1,10 +1,4 @@
-<a
-  href="<%= @href %>"
-  class="
-    group inline-flex items-center gap-1.5 mb-7 py-1 font-mono text-xs text-sage-10
-    hover:text-mint-11 transition-colors
-  "
->
+<%= render Link.new(href: @href, variant: :back) do %>
   <svg
     width="12"
     height="12"
@@ -21,4 +15,4 @@
   </svg>
 
   <%= @label %>
-</a>
+<% end %>

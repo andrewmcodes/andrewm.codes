@@ -1,0 +1,165 @@
+# frozen_string_literal: true
+
+module Bridgetown
+  module Rack
+    class Routes
+      include Bridgetown::Prioritizable
+
+      self.priorities = {
+        highest: "010",
+        high: "020",
+        normal: "030",
+        low: "040",
+        lowest: "050",
+      }.freeze
+
+      class << self
+        # rubocop:disable Bridgetown/NoPutsAllowed, Metrics
+        def print_routes
+          # TODO: this needs to be fully documented
+          routes = begin
+            JSON.parse(
+              File.read(
+                File.join(Bridgetown::Current.preloaded_configuration.root_dir, ".routes.json")
+              )
+            )
+          rescue StandardError
+            []
+          end
+
+          puts "Routes:".bold.green
+          puts
+
+          if routes.empty?
+            puts "No routes found. Have you commented all of your routes?"
+            puts "Documentation: https://github.com/jeremyevans/roda-route_list#label-Basic+Usage"
+          end
+
+          routes.group_by { _1["file"] }.each do |file, file_routes|
+            file_routes.each_with_index do |route, index|
+              puts [
+                (route["methods"]&.join("|") || "GET").cyan,
+                route["path"],
+                file && index == file_routes.length - 1 ? "\n  #{"File:".yellow} #{file}" : nil,
+              ].compact.join(" ")
+            end
+            puts
+          end
+        end
+        # rubocop:enable Bridgetown/NoPutsAllowed, Metrics
+
+        # @return [Proc]
+        attr_accessor :router_block
+
+        # Spaceship is priority [higher -> lower]
+        #
+        # @param other [Class(Routes)] The class to be compared.
+        # @return [Integer] -1, 0, 1.
+        def <=>(other)
+          "#{priorities[priority]}#{self}" <=> "#{priorities[other.priority]}#{other}"
+        end
+
+        # @return [Array<Class(Routes)>]
+        def sorted_subclasses
+          Bridgetown::Rack::Routes.descendants.sort
+        end
+
+        # Add a router block via the current Routes class
+        #
+        # Example:
+        #
+        #   class Routes::Hello < Bridgetown::Rack::Routes
+        #     route do |r|
+        #       r.get "hello", String do |name|
+        #         { hello: "friend #{name}" }
+        #       end
+        #     end
+        #   end
+        #
+        # @param block [Proc]
+        def route(&block)
+          self.router_block = block
+        end
+
+        # Initialize a new Routes instance and execute the route as part of the
+        # Roda app request cycle
+        #
+        # @param roda_app [Roda]
+        def merge(roda_app)
+          return unless router_block
+
+          new(roda_app).handle_routes
+        end
+
+        # Set up live reload if allowed, then run through all the Routes blocks.
+        #
+        # @param roda_app [Roda]
+        # @return [void]
+        def load_all(roda_app)
+          if Bridgetown.env.development? &&
+              !Bridgetown::Current.preloaded_configuration.skip_live_reload
+            setup_live_reload roda_app
+          end
+
+          Bridgetown::Rack::Routes.sorted_subclasses&.each do |klass|
+            klass.merge roda_app
+          end
+
+          nil # required for proper 404 handling
+        end
+
+        # @param app [Roda]
+        def setup_live_reload(app)
+          require_relative "live_reload"
+
+          file_to_check = Bridgetown.live_reload_path
+          errors_file = Bridgetown.build_errors_path
+          live_reload = Bridgetown::Rack::LiveReload.new(
+            file_to_check: file_to_check,
+            errors_file: errors_file
+          )
+
+          app.request.get "_bridgetown/live_reload" do
+            event_stream =
+              if defined? Falcon
+                live_reload.event_stream
+              else
+                live_reload.threaded_event_stream
+              end
+
+            app.request.halt [200, {
+              "Content-Type"  => "text/event-stream",
+              "cache-control" => "no-cache",
+            }, event_stream,]
+          end
+        end
+      end
+
+      # @param roda_app [Roda]
+      def initialize(roda_app)
+        @_roda_app = roda_app
+      end
+
+      # Execute the router block via the instance, passing it the Roda request
+      #
+      # @return [Object] whatever is returned by the router block as expected
+      #   by the Roda API
+      def handle_routes
+        instance_exec(@_roda_app.request, &self.class.router_block)
+      end
+
+      # Any missing methods are passed along to the underlying Roda app if possible
+      def method_missing(method_name, ...)
+        if @_roda_app.respond_to?(method_name.to_sym)
+          @_roda_app.send(method_name.to_sym, ...)
+        else
+          super
+        end
+      end
+
+      def respond_to_missing?(method_name, include_private = false)
+        @_roda_app.respond_to?(method_name.to_sym, include_private) || super
+      end
+    end
+  end
+end

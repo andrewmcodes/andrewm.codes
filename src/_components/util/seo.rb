@@ -42,11 +42,17 @@ module Util
       title
     end
 
-    # @return [String] the resource description (or site default),
-    #   whitespace-collapsed and untruncated
+    # @return [String] the resource description (or site default), HTML
+    #   stripped, whitespace-collapsed, and untruncated
     def description
       desc = resource.data.description || metadata.description
-      desc.to_s.strip.gsub(/\s+/, " ")
+      strip_html(desc.to_s).strip.gsub(/\s+/, " ")
+    end
+
+    # @param text [String] the source text
+    # @return [String] +text+ with any HTML tags removed
+    def strip_html(text)
+      text.gsub(/<[^>]+>/, " ")
     end
 
     # Google clips the meta description ~155–160 chars; OG/Twitter cards allow a
@@ -67,7 +73,7 @@ module Util
     def truncate(text, max)
       return text if text.length <= max
 
-      cut = text[0, max - 1].to_s
+      cut = text[0, max - 1]
       cut = cut.sub(/\s+\S*\z/, "") if cut.include?(" ")
       "#{cut.rstrip}…"
     end
@@ -151,13 +157,13 @@ module Util
 
       if og_generated_image?
         meta << {property: "og:image:type", content: "image/png"}
-        meta << {property: "og:image:width", content: "1200"}
-        meta << {property: "og:image:height", content: "630"}
+        meta << {property: "og:image:width", content: 1200}
+        meta << {property: "og:image:height", content: 630}
       end
 
       meta.concat([
         {property: "og:image:alt", content: image_alt},
-        {property: "og:url", content: canonical_url},
+        {property: "og:url", content: page_url},
         {property: "og:site_name", content: metadata.title},
         {property: "og:type", content: page_type},
         {property: "og:locale", content: "en_US"},
@@ -173,10 +179,8 @@ module Util
       if article?
         published = iso_date(resource.data.date)
         meta << {property: "article:published_time", content: published} if published
-        if (modified = article_modified)
-          meta << {property: "article:modified_time", content: modified}
-        end
-        meta << {property: "article:author", content: metadata.author.name}
+        meta << {property: "article:modified_time", content: article_modified} if article_modified
+        meta << {property: "article:author", content: metadata.author.url}
         article_tags.each { |tag| meta << {property: "article:tag", content: tag} }
       end
 
@@ -195,7 +199,6 @@ module Util
     # @return [Array<Hash>] <link> descriptors; a canonical link unless the page
     #   opts out (canonical_url: false) or is noindex
     def extra_links_data
-      # @type var links: Array[Hash[Symbol, untyped]]
       links = []
       unless resource.data.canonical_url == false || resource.data.noindex == true
         links << {rel: "canonical", href: canonical_url}

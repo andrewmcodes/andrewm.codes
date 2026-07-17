@@ -1,23 +1,18 @@
 <div class="mb-10">
-  <h1 class="text-3xl tracking-tight font-semibold m-0 mb-3 text-sage-12">
-    <%= title %>
-  </h1>
-
+  <%= render Heading.new(as: :h1, size: :lg, class: "m-0 mb-3") do %><%= title %><% end %>
   <% if rich_description? || description || description_html %>
-    <p class="text-sage-11 max-w-[600px] text-[15px] text-pretty leading-[1.6]">
+    <%= render Text.new(variant: :lead) do %>
       <% if rich_description? %>
         <%= rich_description %>
       <% elsif description_html %>
         <%== description_html %>
       <% else %>
-        <%= description %>
-        <% if description_link? %>
+        <%= description %><% if description_link? %>
           <%= render Link.new(href: description_link_href, variant: :inline_accent) {
             description_link_label
-          } %>
-          .
+          } %>.
         <% end %>
       <% end %>
-    </p>
+    <% end %>
   <% end %>
 </div>
