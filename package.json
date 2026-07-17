@@ -12,7 +12,7 @@
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
-    "@andrewmcodes/commitlint-config": "^0.1.2",
+    "@andrewmcodes/commitlint-config": "^1.0.1",
     "@andrewmcodes/prettier-config": "^3.0.0",
     "@commitlint/cli": "^21.2.1",
     "@fontsource-variable/inter": "^5.2.8",
