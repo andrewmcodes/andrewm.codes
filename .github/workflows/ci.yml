@@ -23,10 +23,7 @@ jobs:
     name: checks
     runs-on: ubuntu-latest
     steps:
-      # fetch-depth: 0 so commitlint can see the full commit range.
       - uses: actions/checkout@v7
-        with:
-          fetch-depth: 0
       - uses: ./.github/actions/setup
       - parallel:
           - name: standardrb
@@ -35,16 +32,13 @@ jobs:
             run: pnpm run typecheck
           - name: minitest
             run: bundle exec rake test
+          # PRs are always squash-merged, so only the final squash commit
+          # (defaulting to the PR title) lands on main — linting intermediate
+          # PR commits adds friction without protecting main. Lint only the
+          # squash commit as it arrives on push.
           - name: commitlint
-            run: |
-              if [ "${{ github.event_name }}" = "pull_request" ]; then
-                pnpm exec commitlint \
-                  --from "${{ github.event.pull_request.base.sha }}" \
-                  --to "${{ github.event.pull_request.head.sha }}" \
-                  --verbose
-              else
-                pnpm exec commitlint --last --verbose
-              fi
+            if: github.event_name != 'pull_request'
+            run: pnpm exec commitlint --last --verbose
 
   build:
     name: production build
