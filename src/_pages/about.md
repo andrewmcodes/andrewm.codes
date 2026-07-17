@@ -22,7 +22,7 @@ I grew up in North Carolina, studied Computer Science, and eventually landed in 
 
 ## Speaking & podcasts
 
-If you'd like me at your conference, on your podcast, or generally in a room with a microphone — [reach out on Bluesky](https://bsky.app/profile/andrewm.codes). I'm slow to reply but I do reply.
+If you'd like me at your conference, on your podcast, or generally in a room with a microphone, [reach out on Bluesky](https://bsky.app/profile/andrewm.codes). I'm slow to reply but I do reply.
 
 ## Colophon
 
