@@ -39,7 +39,7 @@
     "satori": "^0.26.0",
     "storybook": "^10.4.6",
     "tailwindcss": "^4.3.2",
-    "typescript": "^6.0.3",
+    "typescript": "^7.0.2",
     "wrangler": "^4.110.0"
   },
   "dependencies": {
