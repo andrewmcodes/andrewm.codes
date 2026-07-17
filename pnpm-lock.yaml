@@ -30,6 +30,12 @@ importers:
       '@fontsource-variable/jetbrains-mono':
         specifier: ^5.2.8
         version: 5.2.8
+      '@fontsource-variable/literata':
+        specifier: 5.2.8
+        version: 5.2.8
+      '@fontsource-variable/martian-mono':
+        specifier: 5.2.7
+        version: 5.2.7
       '@fontsource/inter':
         specifier: ^5.2.8
         version: 5.2.8
@@ -453,6 +459,12 @@ packages:
 
   '@fontsource-variable/jetbrains-mono@5.2.8':
     resolution: {integrity: sha512-WBA9elru6Jdp5df2mES55wuOO0WIrn3kpXnI4+W2ek5u3ZgLS9XS4gmIlcQhiZOWEKl95meYdvK7xI+ETLCq/Q==}
+
+  '@fontsource-variable/literata@5.2.8':
+    resolution: {integrity: sha512-LhxHyo0lDNu2w8FJ7OfTZl6kT8pDYhXiCmWxFAqpUmOqHz1z3OWOaaWBDVOCDOE8b+GWJQX9HYHZ2CERQjjlWA==}
+
+  '@fontsource-variable/martian-mono@5.2.7':
+    resolution: {integrity: sha512-tchlJXmyjMLQLbhYh5kCwZIVXsTxfvfTAZ32nIrszWCJnEIqTpRloMvJPOpQA9BBCaOvvV5k0nI633dlqJsPRw==}
 
   '@fontsource/inter@5.2.8':
     resolution: {integrity: sha512-P6r5WnJoKiNVV+zvW2xM13gNdFhAEpQ9dQJHt3naLvfg+LkF2ldgSLiF4T41lf1SQCM9QmkqPTn4TH568IRagg==}
@@ -3971,6 +3983,10 @@ snapshots:
   '@fontsource-variable/inter@5.2.8': {}
 
   '@fontsource-variable/jetbrains-mono@5.2.8': {}
+
+  '@fontsource-variable/literata@5.2.8': {}
+
+  '@fontsource-variable/martian-mono@5.2.7': {}
 
   '@fontsource/inter@5.2.8': {}
 

@@ -17,6 +17,8 @@
     "@commitlint/cli": "^21.2.1",
     "@fontsource-variable/inter": "^5.2.8",
     "@fontsource-variable/jetbrains-mono": "^5.2.8",
+    "@fontsource-variable/literata": "5.2.8",
+    "@fontsource-variable/martian-mono": "5.2.7",
     "@fontsource/inter": "^5.2.8",
     "@herb-tools/formatter": "^0.10.2",
     "@lhci/cli": "^0.15.1",
