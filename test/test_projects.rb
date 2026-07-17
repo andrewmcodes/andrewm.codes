@@ -5,7 +5,7 @@ class TestProjects < Bridgetown::Test
     before { html get "/projects/" }
 
     it "renders the page heading" do
-      expect(document.query_selector("h1").text).must_equal "Projects"
+      expect(document.query_selector("h1").text.strip).must_equal "Projects"
     end
 
     it "renders project cards" do

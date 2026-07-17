@@ -5,11 +5,17 @@ title: Note
 <div class="space-y-6 max-w-prose">
   <div class="space-y-2">
     <p class="font-mono text-xs text-sage-10">Default</p>
-    <%= render Note.new do %>This is a note. Use it as a callout for asides and context within posts.<% end %>
+
+    <%= render Note.new do %>
+      This is a note. Use it as a callout for asides and context within posts.
+    <% end %>
   </div>
 
   <div class="space-y-2">
     <p class="font-mono text-xs text-sage-10">Accent</p>
-    <%= render Note.new(scheme: :accent) do %>This is an **accent** note for things worth emphasizing.<% end %>
+
+    <%= render Note.new(scheme: :accent) do %>
+      This is an **accent** note for things worth emphasizing.
+    <% end %>
   </div>
 </div>

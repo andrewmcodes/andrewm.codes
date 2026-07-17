@@ -7,16 +7,12 @@
   <%= title %>
 </h1>
 
-<div
-  class="
-    flex flex-wrap items-center gap-3.5 font-mono text-xs text-sage-11 mb-5
-  "
->
+<div class="flex flex-wrap items-center gap-3.5 font-mono text-xs text-sage-11 mb-5">
   <time datetime="<%= date.iso8601 %>"><%= date.strftime("%b %-d, %Y") %></time>
   <span>·</span>
-  <span><%= reading_time %>
-    min read</span>
+  <span><%= reading_time %> min read</span>
   <span>·</span>
+
   <a
     href="/about/"
     rel="author"
@@ -24,10 +20,13 @@
   >
     <%= author_name %>
   </a>
+
   <% if tags.any? %>
     <span>·</span>
     <% tags.each do |tag| %>
-      <%= render Link.new(href: "/tag/#{tag}/", variant: :post_tag) do %>#<%= tag %><% end %>
+      <%= render Link.new(href: "/tag/#{tag}/", variant: :post_tag) do %>
+        #<%= tag %>
+      <% end %>
     <% end %>
   <% end %>
 </div>

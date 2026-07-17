@@ -1,0 +1,34 @@
+module Util
+  class Seo < Base
+    COMPONENT_OPTIONS: Array[Symbol]
+
+    @metadata: untyped
+
+    private
+
+    def resource: () -> untyped
+    def title: () -> String
+    def homepage?: () -> bool
+    def page_title: () -> String
+    def social_title: () -> String
+    def description: () -> String
+    def strip_html: (String text) -> String
+    def meta_description: () -> String
+    def social_description: () -> String
+    def truncate: (String text, Integer max) -> String
+    def image: () -> String
+    def og_generated_image?: () -> bool
+    def image_alt: () -> String
+    def iso_date: (untyped value) -> String?
+    def article_tags: () -> Array[untyped]
+    def page_url: () -> String
+    def canonical_url: () -> untyped
+    def metadata: () -> untyped
+    def post?: (untyped res) -> bool
+    def page_type: () -> String
+    def article?: () -> bool
+    def meta_tags_data: () -> Array[Hash[Symbol, untyped]]
+    def article_modified: () -> String?
+    def extra_links_data: () -> Array[Hash[Symbol, untyped]]
+  end
+end

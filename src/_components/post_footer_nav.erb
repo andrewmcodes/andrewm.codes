@@ -1,21 +1,20 @@
 <div
   class="
-    flex flex-col gap-3 sm:flex-row sm:justify-between sm:gap-4 font-mono text-[12.5px]
-    mb-8
+    flex flex-col gap-3 sm:flex-row sm:justify-between sm:gap-4 font-mono
+    text-[12.5px] mb-8
   "
 >
   <% if @previous_resource %>
     <%= render Link.new(href: @previous_resource.relative_url, variant: :post_nav) do %>
-      ←
-      <%= @previous_resource.data.title %>
+      ← <%= @previous_resource.data.title %>
     <% end %>
   <% else %>
     <span class="max-sm:hidden"></span>
   <% end %>
+
   <% if @next_resource %>
     <%= render Link.new(href: @next_resource.relative_url, variant: :post_nav, class: "sm:text-right") do %>
-      <%= @next_resource.data.title %>
-      →
+      <%= @next_resource.data.title %> →
     <% end %>
   <% end %>
 </div>

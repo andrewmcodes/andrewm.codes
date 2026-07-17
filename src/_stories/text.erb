@@ -5,24 +5,57 @@ title: Text
 <div class="space-y-6">
   <div class="space-y-2">
     <p class="font-mono text-xs text-sage-10">Sizes</p>
-    <%= render Text.new(size: :sm) do %>Small (sm)<% end %>
-    <%= render Text.new(size: :md) do %>Medium (md)<% end %>
-    <%= render Text.new(size: :lg) do %>Large (lg)<% end %>
-    <%= render Text.new(size: :xl) do %>Extra large (xl)<% end %>
+
+    <%= render Text.new(size: :sm) do %>
+      Small (sm)
+    <% end %>
+
+    <%= render Text.new(size: :md) do %>
+      Medium (md)
+    <% end %>
+
+    <%= render Text.new(size: :lg) do %>
+      Large (lg)
+    <% end %>
+
+    <%= render Text.new(size: :xl) do %>
+      Extra large (xl)
+    <% end %>
   </div>
 
   <div class="space-y-2">
     <p class="font-mono text-xs text-sage-10">Weights</p>
-    <%= render Text.new(weight: :default) do %>Normal weight<% end %>
-    <%= render Text.new(weight: :medium) do %>Medium weight<% end %>
-    <%= render Text.new(weight: :semibold) do %>Semibold weight<% end %>
-    <%= render Text.new(weight: :bold) do %>Bold weight<% end %>
+
+    <%= render Text.new(weight: :default) do %>
+      Normal weight
+    <% end %>
+
+    <%= render Text.new(weight: :medium) do %>
+      Medium weight
+    <% end %>
+
+    <%= render Text.new(weight: :semibold) do %>
+      Semibold weight
+    <% end %>
+
+    <%= render Text.new(weight: :bold) do %>
+      Bold weight
+    <% end %>
   </div>
 
   <div class="space-y-2">
     <p class="font-mono text-xs text-sage-10">Schemes</p>
-    <%= render Text.new(scheme: :strong) do %>Strong<% end %>
-    <%= render Text.new(scheme: :muted) do %>Muted<% end %>
-    <%= render Text.new(scheme: :primary) do %>Primary<% end %>
+
+    <%= render Text.new(scheme: :strong) do %>
+      Strong
+    <% end %>
+
+    <%= render Text.new(scheme: :muted) do %>
+      Muted
+    <% end %>
+
+    <%= render Text.new(scheme: :primary) do %>
+      Primary
+    <% end %>
   </div>
 </div>

@@ -1,22 +1,28 @@
-<header
-  class="sticky top-0 z-40 bg-sage-1/85 backdrop-blur backdrop-saturate-150"
->
+<header class="sticky top-0 z-40 bg-sage-1/85 backdrop-blur backdrop-saturate-150">
   <div class="max-w-[1080px] mx-auto w-full px-9 max-md:px-4">
     <div class="flex items-center gap-4 h-16 max-compact:h-14 max-compact:gap-2">
-      <a href="/" class="inline-flex items-center gap-3 font-semibold tracking-tight">
+      <a
+        href="/"
+        class="inline-flex items-center gap-3 font-semibold tracking-tight"
+      >
         <span class="w-9 h-9 rounded-full shrink-0 bg-mint-9"></span>
         <span class="text-sm text-sage-12"><%= metadata.author.name %></span>
         <span class="text-sage-8 mx-0.5 font-normal max-compact:hidden">/</span>
+
         <span
           class="
-            text-sage-11 text-[12.5px] font-mono font-normal max-compact:hidden
+            text-sage-11 text-[12.5px] font-mono font-normal
+            max-compact:hidden
           "
-        >@<%= metadata.handle %></span>
+        >
+          @<%= metadata.handle %>
+        </span>
       </a>
 
       <nav aria-label="Primary" class="ml-auto flex items-center gap-0.5">
         <% nav_items.each do |item| %>
           <% next if item.label == "RSS" %>
+
           <a
             href="<%= item.url %>"
             class="
@@ -30,7 +36,8 @@
 
         <div
           class="
-            flex items-center gap-1.5 ml-2 max-compact:gap-0.5 max-compact:ml-1
+            flex items-center gap-1.5 ml-2 max-compact:gap-0.5
+            max-compact:ml-1
           "
         >
           <button
@@ -52,14 +59,21 @@
               stroke-linecap="round"
               stroke-linejoin="round"
               aria-hidden="true"
-            ><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+            >
+              <circle cx="11" cy="11" r="7" />
+              <path d="m20 20-3.5-3.5" />
+            </svg>
+
             <span class="max-compact:hidden">Search</span>
+
             <kbd
               class="
                 font-mono text-[11px] bg-sage-3 border border-sage-5 rounded text-sage-11 px-1.5
                 py-px max-nav:hidden
               "
-            >⌘K</kbd>
+            >
+              ⌘K
+            </kbd>
           </button>
 
           <button
@@ -83,7 +97,10 @@
               stroke-linecap="round"
               stroke-linejoin="round"
               aria-hidden="true"
-            ><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+            >
+              <path d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+
             <svg
               data-menu-icon="close"
               hidden
@@ -96,7 +113,9 @@
               stroke-linecap="round"
               stroke-linejoin="round"
               aria-hidden="true"
-            ><path d="M18 6 6 18M6 6l12 12"/></svg>
+            >
+              <path d="M18 6 6 18M6 6l12 12" />
+            </svg>
           </button>
         </div>
       </nav>
@@ -134,15 +153,19 @@
     <nav aria-label="Mobile" class="flex flex-col gap-0.5">
       <% nav_items.each do |item| %>
         <% next if item.label == "RSS" %>
+
         <a
           href="<%= item.url %>"
-          <% if active?(item.url) %>aria-current="page"<% end %>
+          <% if active?(item.url) %>
+            aria-current="page"
+          <% end %>
           class="
-            group flex items-center justify-between gap-3 px-4 py-3 rounded-xl text-[15px]
-            transition-colors <%= active?(item.url) ? "bg-mint-3 text-mint-11 font-medium" : "text-sage-11 hover:bg-sage-3 hover:text-sage-12" %>
-          "
+              group flex items-center justify-between gap-3 px-4 py-3 rounded-xl text-[15px]
+              transition-colors <%= active?(item.url) ? "bg-mint-3 text-mint-11 font-medium" : "text-sage-11 hover:bg-sage-3 hover:text-sage-12" %>
+            "
         >
           <span><%= item.label %></span>
+
           <svg
             width="16"
             height="16"
@@ -153,17 +176,18 @@
             stroke-linecap="round"
             stroke-linejoin="round"
             aria-hidden="true"
-            class="
-              <%= active?(item.url) ? "text-mint-11" : "text-sage-7 -translate-x-1 opacity-0 transition group-hover:translate-x-0 group-hover:opacity-100" %>
-            "
-          ><path d="m9 18 6-6-6-6"/></svg>
+            class="<%= active?(item.url) ? "text-mint-11" : "text-sage-7 -translate-x-1 opacity-0 transition group-hover:translate-x-0 group-hover:opacity-100" %>"
+          >
+            <path d="m9 18 6-6-6-6" />
+          </svg>
         </a>
       <% end %>
     </nav>
 
     <div
       class="
-        mt-2 pt-3 px-2 border-t border-sage-4 flex items-center justify-between gap-3
+        mt-2 pt-3 px-2 border-t border-sage-4 flex items-center
+        justify-between gap-3
       "
     >
       <a
@@ -183,11 +207,10 @@
           stroke-linecap="round"
           stroke-linejoin="round"
           aria-hidden="true"
-        ><path d="M4 11a9 9 0 0 1 9 9M4 4a16 16 0 0 1 16 16"/><circle
-            cx="5"
-            cy="19"
-            r="1"
-          /></svg>
+        >
+          <path d="M4 11a9 9 0 0 1 9 9M4 4a16 16 0 0 1 16 16" />
+          <circle cx="5" cy="19" r="1" />
+        </svg>
         RSS
       </a>
 

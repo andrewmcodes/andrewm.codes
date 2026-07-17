@@ -24,6 +24,7 @@ description: Open source, side projects, and other things I've shipped to scratc
   <% if oss && oss.any? %>
     <%= render PageSection.new(spacing: :none) do %>
       <%= render SectionHead.new(title: "From GitHub", bordered: true) %>
+
       <%= render CardGrid.new do %>
         <% oss.each do |repo| %>
           <%= render ProjectCard.new(

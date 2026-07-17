@@ -21,9 +21,11 @@ title: Icon
   globe
   pencil
 ] %>
+
 <div class="space-y-6">
   <div class="space-y-2">
     <p class="font-mono text-xs text-sage-10">Default size</p>
+
     <div class="flex flex-wrap items-center gap-4 text-sage-11">
       <% names.each do |name| %>
         <span class="flex flex-col items-center gap-1">
@@ -36,6 +38,7 @@ title: Icon
 
   <div class="space-y-2">
     <p class="font-mono text-xs text-sage-10">Sizes</p>
+
     <div class="flex items-end gap-4 text-sage-11">
       <%= render Icon.new(name: :star, size: :sm) %>
       <%= render Icon.new(name: :star) %>

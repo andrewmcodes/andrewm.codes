@@ -6,39 +6,55 @@
         font-mono text-[11.5px] text-sage-11
       "
     >
-      <span>© 2019–<%= Date.today.year %> <%= metadata.author.name %></span>
+      <span>© 2019–<%= Date.today.year %><%= metadata.author.name %></span>
+
       <div class="flex flex-wrap items-center gap-x-4 gap-y-3">
         <span class="flex flex-wrap gap-x-3 gap-y-1">
-        <% accounts.each_with_index do |a, i| %>
-          <% if i > 0 %><span>·</span><% end %>
+          <% accounts.each_with_index do |a, i| %>
+            <% if i > 0 %>
+              <span>·</span>
+            <% end %>
+
+            <a
+              href="<%= a["url"] %>"
+              class="
+                text-sage-11 border-b border-sage-5 pb-px hover:text-mint-11
+                hover:border-mint-11 transition-colors
+              "
+            >
+              <%= a["name"] %>
+            </a>
+          <% end %>
+
+          <span>·</span>
+
           <a
-            href="<%= a["url"] %>"
+            href="/feed.xml"
             class="
               text-sage-11 border-b border-sage-5 pb-px hover:text-mint-11
               hover:border-mint-11 transition-colors
             "
-          ><%= a["name"] %></a>
-        <% end %>
-        <span>·</span>
-        <a
-          href="/feed.xml"
-          class="
-            text-sage-11 border-b border-sage-5 pb-px hover:text-mint-11
-            hover:border-mint-11 transition-colors
-          "
-        >RSS</a>
-        <span>·</span>
-        <a
-          href="/feed.json"
-          class="
-            text-sage-11 border-b border-sage-5 pb-px hover:text-mint-11
-            hover:border-mint-11 transition-colors
-          "
-        >JSON</a>
+          >
+            RSS
+          </a>
+
+          <span>·</span>
+
+          <a
+            href="/feed.json"
+            class="
+              text-sage-11 border-b border-sage-5 pb-px hover:text-mint-11
+              hover:border-mint-11 transition-colors
+            "
+          >
+            JSON
+          </a>
         </span>
+
         <%= render ThemeToggle.new %>
       </div>
     </div>
+
     <div
       class="
         mt-4 md:mt-3 flex flex-col gap-2 md:flex-row md:flex-wrap md:justify-between
@@ -46,15 +62,32 @@
       "
     >
       <span class="flex flex-wrap gap-x-3 gap-y-1">
-        <a href="/changelog/" class="text-sage-11 hover:text-mint-11 transition-colors">Changelog</a>
+        <a
+          href="/changelog/"
+          class="text-sage-11 hover:text-mint-11 transition-colors"
+        >
+          Changelog
+        </a>
+
         <span>·</span>
-        <a href="/uses/" class="text-sage-11 hover:text-mint-11 transition-colors">Uses</a>
+
+        <a
+          href="/uses/"
+          class="text-sage-11 hover:text-mint-11 transition-colors"
+        >
+          Uses
+        </a>
+
         <span>·</span>
+
         <a
           href="https://github.com/<%= metadata.repo %>"
           class="text-sage-11 hover:text-mint-11 transition-colors"
-        >Source</a>
+        >
+          Source
+        </a>
       </span>
+
       <a
         href="<%= latest_commit_url %>"
         class="
@@ -69,9 +102,12 @@
           viewBox="0 0 16 16"
           fill="currentColor"
           aria-hidden="true"
-        ><path
+        >
+          <path
             d="M11.93 8.5a4.002 4.002 0 0 1-7.86 0H.75a.75.75 0 0 1 0-1.5h3.32a4.002 4.002 0 0 1 7.86 0h3.32a.75.75 0 0 1 0 1.5Zm-1.43-.75a2.5 2.5 0 1 0-5 0 2.5 2.5 0 0 0 5 0Z"
-          /></svg>
+          />
+        </svg>
+
         <span><%= latest_commit_sha %></span>
       </a>
     </div>
