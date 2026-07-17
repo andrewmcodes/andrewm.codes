@@ -206,29 +206,35 @@ header:has(#mobile-menu[data-open="true"]) {
 
 /* Rouge-rendered fenced blocks. Bridgetown/kramdown wraps these in
    .highlighter-rouge > .highlight > pre.highlight. */
+.highlighter-rouge .highlight,
+pre:not(.highlight) {
+  --syntax-bg: #282c34;
+  --syntax-border: #3e4451;
+  --syntax-fg: #abb2bf;
+}
 .highlighter-rouge .highlight pre.highlight {
   @apply my-4 rounded-md overflow-x-auto border p-4;
-  background: #282c34;
-  border-color: #3e4451;
+  background: var(--syntax-bg);
+  border-color: var(--syntax-border);
   font-size: 13.5px;
 }
 .highlighter-rouge .highlight pre.highlight code {
   @apply block min-w-max bg-transparent border-0 p-0;
-  color: #abb2bf;
+  color: var(--syntax-fg);
 }
 
 /* Fallback for plain <pre><code> blocks that aren't Rouge-highlighted. */
 pre:not(.highlight) {
   @apply my-4 rounded-md overflow-x-auto border p-4;
-  background: #282c34;
-  border-color: #3e4451;
+  background: var(--syntax-bg);
+  border-color: var(--syntax-border);
   font-size: 13.5px;
 }
 pre:not(.highlight) code {
   background: transparent;
   border: 0;
   padding: 0;
-  color: #abb2bf;
+  color: var(--syntax-fg);
 }
 
 /* Rouge token colors (OneDark Pro-like palette) */
@@ -277,7 +283,7 @@ pre:not(.highlight) code {
 .highlighter-rouge .highlight .o,
 .highlighter-rouge .highlight .ow,
 .highlighter-rouge .highlight .p,
-.highlighter-rouge .highlight .w { color: #abb2bf; }
+.highlighter-rouge .highlight .w { color: var(--syntax-fg); }
 .highlighter-rouge .highlight .gd,
 .highlighter-rouge .highlight .gr,
 .highlighter-rouge .highlight .gt { color: #e06c75; }
