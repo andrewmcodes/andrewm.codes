@@ -40,6 +40,15 @@ description: Open source, side projects, and other things I've shipped to scratc
           ) %>
         <% end %>
       <% end %>
+
+      <%= render Text.new(scheme: :muted, size: :md) do %>
+        Want the writing behind the work? Browse
+        <%= render Link.new(href: "/posts/", variant: :inline_accent) { "posts" } %>,
+        see
+        <%= render Link.new(href: "/speaking/", variant: :inline_accent) { "talks and podcasts" } %>,
+        or use
+        <%= render Link.new(href: "/search/", variant: :inline_accent) { "search" } %>.
+      <% end %>
     <% end %>
   <% end %>
 <% end %>

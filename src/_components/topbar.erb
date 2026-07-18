@@ -25,6 +25,9 @@
 
           <a
             href="<%= item.url %>"
+            <% if active?(item.url) %>
+              aria-current="page"
+            <% end %>
             class="
               px-2.5 py-1.5 text-[13.5px] rounded-md transition-colors hover:bg-sage-3
               hover:text-sage-12 <%= active?(item.url) ? "text-sage-12 relative after:absolute after:left-2.5 after:right-2.5 after:bottom-0.5 after:h-[1.5px] after:bg-mint-11 after:rounded-sm" : "text-sage-11" %> max-nav:hidden

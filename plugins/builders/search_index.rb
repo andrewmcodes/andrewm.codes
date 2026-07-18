@@ -8,6 +8,7 @@ class Builders::SearchIndex < SiteBuilder
     {title: "Speaking", url: "/speaking/", kind: "page", pinned: true},
     {title: "Uses", url: "/uses/", kind: "page", pinned: true},
     {title: "About", url: "/about/", kind: "page", pinned: true},
+    {title: "Search", url: "/search/", kind: "page", pinned: true},
     {title: "Changelog", url: "/changelog/", kind: "page", pinned: true}
   ].freeze
 

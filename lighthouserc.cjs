@@ -3,7 +3,7 @@
 //
 // Runs against the already-built static output (./output), so CI can reuse the
 // `site-output` artifact from the production build job rather than rebuilding.
-// Performance is a soft warning; accessibility and SEO are enforced as errors.
+// Enforce minimum quality bars on key page types and fail CI regressions.
 //
 // `numberOfRuns: 1` — this job is informational (it does not gate the deploy)
 // and a11y/SEO scores are deterministic on static HTML, so the median-of-3
@@ -28,8 +28,11 @@ module.exports = {
     assert: {
       assertions: {
         "categories:seo": ["error", { minScore: 1 }],
-        "categories:performance": ["warn", { minScore: 0.87 }],
+        "categories:performance": ["error", { minScore: 0.9 }],
         "categories:accessibility": ["error", { minScore: 0.9 }],
+        "largest-contentful-paint": ["error", { maxNumericValue: 2500 }],
+        "cumulative-layout-shift": ["error", { maxNumericValue: 0.1 }],
+        "interaction-to-next-paint": ["error", { maxNumericValue: 200 }],
       },
     },
     upload: {

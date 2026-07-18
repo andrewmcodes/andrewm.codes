@@ -25,6 +25,10 @@ class TestSitemapAndFeeds < Bridgetown::Test
       expect(@body).wont_match %r{<loc>[^<]*/404</loc>}
     end
 
+    it "excludes noindex utility pages like /search/" do
+      expect(@body).wont_match %r{<loc>https://andrewm\.codes/search/</loc>}
+    end
+
     it "excludes the JSON and RSS feeds" do
       expect(@body).wont_match %r{/feed\.json}
       expect(@body).wont_match %r{/feed\.xml}

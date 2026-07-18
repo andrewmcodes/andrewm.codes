@@ -10,18 +10,25 @@ description: The tools I rely on day to day. Updated whenever I switch something
 - [**Apple MacBook Pro 15-Inch (Core i9, 2019)**](https://everymac.com/systems/apple/macbook_pro/specs/macbook-pro-core-i9-2.3-eight-core-15-mid-2019-touch-bar-specs.html). Mac since college; no plans to change.
 - [**Ultimate Hacking Keyboard v1**](https://ultimatehackingkeyboard.com/). Split design. Fixed my wrist pain in 2020 and still going.
 - [**Logitech MX Vertical**](https://www.logitech.com/en-us/products/mice/mx-vertical-ergonomic-mouse.910-005447.html). Looks weird, feels great.
-- **LG 34" UltraWide**. Yep, the massive-monitor guy.
+- **LG 34" UltraWide**. Still the best productivity upgrade I've bought.
 
 ## Development
 
 - [**VS Code**](https://code.visualstudio.com). Daily driver since college. I'll use JetBrains IDEs for larger projects.
-- [**Warp**](https://app.warp.dev/referral/2W6LEL). Replaced iTerm. Shareable blocks, command palette, AI suggestions.
+- [**Warp**](https://app.warp.dev/referral/2W6LEL). Replaced iTerm. Fast startup, shareable command blocks, and a shell UX I don't fight.
+- [**Mise**](https://mise.jdx.dev/). Single place to manage toolchain versions and project tasks.
 
 ## Productivity
 
 - [**Alfred**](https://www.alfredapp.com). Spotlight replacement with custom workflows. Worth the Powerpack.
 - [**Obsidian**](https://obsidian.md). The first note app that stuck with my ADHD brain. Daily.
 - [**Session**](https://go.setapp.com/invite/3sztpuuq). Pomodoro timer with analytics. Helps me actually sit down and focus.
+
+## Publishing
+
+- [**Bridgetown**](https://www.bridgetownrb.com). This site is built on Bridgetown with ERB components.
+- [**Cloudflare Workers Static Assets**](https://developers.cloudflare.com/workers/static-assets/). Hosts the production deploys and PR previews.
+- [**Torchlight**](https://torchlight.dev). Production syntax highlighting.
 
 ## Design
 

@@ -18,6 +18,12 @@ class TestPages < Bridgetown::Test
       expect(links.any? { |link| link["href"] == "/projects/" && link.text.strip == "open source" }).must_equal true
       expect(links.any? { |link| link["href"] == "/speaking/" && link.text.strip == "talks and podcasts" }).must_equal true
     end
+
+    it "includes a primary nav link to /search/" do
+      link = document.query_selector("header a[href='/search/']")
+      expect(link).wont_be_nil
+      expect(link.text.strip).must_equal "Search"
+    end
   end
 
   describe "/speaking/" do

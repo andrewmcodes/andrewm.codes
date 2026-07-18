@@ -91,6 +91,27 @@ class TestJsonLd < Bridgetown::Test
     end
   end
 
+  describe "/search/" do
+    before { html get "/search/" }
+
+    it "emits SearchResultsPage JSON-LD" do
+      page = jsonld_of_type(document, "SearchResultsPage").first
+      expect(page).wont_be_nil
+      expect(page["url"]).must_equal "https://andrewm.codes/search/"
+      expect(page["isPartOf"]["@id"]).must_equal "https://andrewm.codes/#website"
+    end
+  end
+
+  describe "/changelog/" do
+    before { html get "/changelog/" }
+
+    it "emits a generic WebPage schema" do
+      page = jsonld_of_type(document, "WebPage").first
+      expect(page).wont_be_nil
+      expect(page["url"]).must_equal "https://andrewm.codes/changelog/"
+    end
+  end
+
   describe "a tag page" do
     before { html get "/tag/rails/" }
 

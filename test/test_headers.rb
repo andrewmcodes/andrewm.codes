@@ -25,9 +25,11 @@ class TestHeaders < Bridgetown::Test
   it "sets security headers for all routes" do
     expect(HEADERS).must_match %r{X-Content-Type-Options: nosniff}
     expect(HEADERS).must_match %r{Referrer-Policy: strict-origin-when-cross-origin}
+    expect(HEADERS).must_match %r{Strict-Transport-Security: max-age=31536000}
   end
 
-  it "ships a Content-Security-Policy with a default-src directive" do
-    expect(HEADERS).must_match %r{Content-Security-Policy(-Report-Only)?: .*default-src 'self'}
+  it "ships both enforced and report-only Content-Security-Policy headers" do
+    expect(HEADERS).must_match %r{Content-Security-Policy: .*default-src 'self'}
+    expect(HEADERS).must_match %r{Content-Security-Policy-Report-Only: .*default-src 'self'}
   end
 end

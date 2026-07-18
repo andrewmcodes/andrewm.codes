@@ -44,5 +44,13 @@ class TestTags < Bridgetown::Test
       expect(robots["content"]).must_match(/noindex/)
       expect(document.query_selector("link[rel='canonical']")).must_be_nil
     end
+
+    it "normalizes tag aliases into canonical taxonomy pages" do
+      html get "/tag/tailwindcss/"
+      expect(document.query_selector("h1").text.downcase).must_include "tailwindcss"
+
+      get "/tag/tailwind-css/"
+      expect(last_response.status).must_equal 404
+    end
   end
 end

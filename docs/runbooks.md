@@ -85,3 +85,51 @@ mise run build
 ```
 
 Torchlight will re-hit the API on every snippet (slower), so only do this when you have an actual cache-correctness concern.
+
+## Website improvement scorecard (quarterly)
+
+Track these KPIs before and after major changes so improvements are measurable:
+
+- Lighthouse scores on: `/`, `/posts/`, `/about/`, `/projects/`, `/speaking/`, `/p/kill-process-on-port/`, `/tag/rails/`.
+- Search visibility: indexed pages, impressions, clicks, and CTR in Search Console.
+- Engagement: top landing pages, pages/session, and exits on hub pages (`/posts/`, `/projects/`, `/speaking/`).
+- Outcomes: speaking/contact inbound (Bluesky DMs + referral patterns in analytics).
+
+Cadence:
+
+1. Capture a baseline snapshot before making structural/content changes.
+2. Re-capture one week after deploy and again after 30 days.
+3. Log notable changes and outcomes in `CHANGELOG.md` under the related release.
+
+## Content quality checklist (for new/updated pages)
+
+Use this checklist before publishing:
+
+1. **SEO**: unique title + meta description, canonical correct, OG/Twitter card present.
+2. **Accessibility**: single H1, heading order logical, links have clear text, keyboard navigation works.
+3. **Internal links**: include at least 2 contextual links to related posts/projects/speaking pages.
+4. **Structured data**: page emits valid JSON-LD for its type (article/listing/profile/etc.).
+5. **Freshness**: add/update `last_modified_at` when meaningfully revising older content.
+
+## Data sync validation before deploy
+
+Scheduled sync workflows already validate API payload shape. CI now also runs `bundle exec rake data:validate` to prevent malformed `_data` files from reaching production.
+
+If this check fails:
+
+1. Inspect the changed file in `src/_data/`.
+2. Confirm required keys exist (`remote_ruby.json`: `id`, `title`, `url`, `published_at`; `oss.json`: non-empty array with `name` + `url`).
+3. Re-run the sync job after fixing parser/shape assumptions.
+
+## Content ownership cadence
+
+- **Weekly**: review homepage "now" section and latest episode/talk pointers.
+- **Monthly**: review `/projects/` featured cards + `src/_data/featured.yml`.
+- **Quarterly**: prune stale tags/topics and refresh top posts with meaningful edits + `last_modified_at`.
+- **Per release**: ensure About/Speaking/Uses still match current stack and priorities.
+
+## Security hygiene cadence
+
+- Monthly: review dependency updates and security alerts.
+- Quarterly: review `_headers` policy set (CSP, HSTS, permissions policy) and tighten where safe.
+- Before each release: confirm noindex pages remain limited to intended routes (`/search/`, `/404.html`, thin `/tag/*` pages).

@@ -28,4 +28,12 @@ description: Notes on Rails, podcasting, and the long unglamorous middle. Occasi
       <% end %>
     <% end %>
   <% end %>
+
+  <%= render Text.new(scheme: :muted, size: :md) do %>
+    Looking for talks, podcasts, or projects instead? Visit
+    <%= render Link.new(href: "/speaking/", variant: :inline_accent) { "speaking" } %>,
+    <%= render Link.new(href: "/projects/", variant: :inline_accent) { "projects" } %>,
+    or jump to
+    <%= render Link.new(href: "/search/", variant: :inline_accent) { "site search" } %>.
+  <% end %>
 <% end %>

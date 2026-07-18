@@ -22,8 +22,8 @@ I grew up in North Carolina, studied Computer Science, and eventually landed in 
 
 ## Speaking & podcasts
 
-If you'd like me at your conference, on your podcast, or generally in a room with a microphone, [reach out on Bluesky](https://bsky.app/profile/andrewm.codes). I'm slow to reply but I do reply.
+If you'd like me at your conference, on your podcast, or generally in a room with a microphone, [get in touch on Bluesky](https://bsky.app/profile/andrewm.codes). I'm slow to reply but I do reply.
 
 ## Colophon
 
-This site is built with [Bridgetown](https://www.bridgetownrb.com) (ERB + Bridgetown::Component), Tailwind v4, and [Radix UI Colors](https://www.radix-ui.com/colors). Inter and JetBrains Mono. Search is powered by [Pagefind](https://pagefind.app). Deployed to Cloudflare Pages. Source is on [GitHub](https://github.com/andrewmcodes/andrewm.codes).
+This site is built with [Bridgetown](https://www.bridgetownrb.com) (ERB + Bridgetown::Component), Tailwind v4, and [Radix UI Colors](https://www.radix-ui.com/colors). Inter and JetBrains Mono. Search is powered by a static `search.json` index used by `/search/` and the command palette. Deployed to Cloudflare Workers Static Assets. Source is on [GitHub](https://github.com/andrewmcodes/andrewm.codes).

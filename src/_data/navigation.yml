@@ -8,5 +8,7 @@
   url: /uses/
 - label: About
   url: /about/
+- label: Search
+  url: /search/
 - label: RSS
   url: /feed.xml

@@ -4,7 +4,7 @@
   </span>
 
   <% @tags.each do |tag| %>
-    <%= render Link.new(href: "#{@href_prefix}#{tag}/", variant: :tag) do %>
+    <%= render Link.new(href: "#{@href_prefix}#{tag_slug(tag)}/", variant: :tag) do %>
       #<%= tag %>
     <% end %>
   <% end %>

@@ -15,10 +15,10 @@ permissions:
   contents: read
 
 jobs:
-  # standardrb, typecheck, minitest, and commitlint are independent and each
+  # standardrb, typecheck, minitest, commitlint, and data validation are independent and each
   # finishes in well under a second — the cost is the repeated checkout + Ruby/
   # Node setup. Run them as parallel steps in one job so that setup happens once
-  # instead of four times. See .ai/2026-06-25-parallel-steps.md.
+  # instead of five times. See .ai/2026-06-25-parallel-steps.md.
   checks:
     name: checks
     runs-on: ubuntu-latest
@@ -45,6 +45,8 @@ jobs:
               else
                 pnpm exec commitlint --last --verbose
               fi
+          - name: data validation
+            run: bundle exec rake data:validate
 
   build:
     name: production build
@@ -76,7 +78,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     # The build job only uploads site-output on push or same-repo PRs, so gate
-    # Lighthouse the same way. Informational: it does not gate the deploy.
+    # Lighthouse the same way.
     if: |
       github.event_name == 'push' ||
       (github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository)
@@ -112,7 +114,7 @@ jobs:
   deploy:
     name: deploy to cloudflare
     runs-on: ubuntu-latest
-    needs: [checks, build]
+    needs: [checks, build, lighthouse]
     # Dependabot PRs run with a restricted token and no access to Actions
     # secrets, so the Cloudflare preview deploy can't authenticate. Skip it for
     # Dependabot (lint/test/build still validate the bump), just like forks.

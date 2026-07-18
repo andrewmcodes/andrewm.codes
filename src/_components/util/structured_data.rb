@@ -176,6 +176,8 @@ module Util
       when "/about/" then [profile_page]
       when "/posts/" then [blog_listing]
       when "/projects/" then [projects_collection]
+      when "/search/" then [search_results_page]
+      when "/changelog/" then [generic_web_page]
       when "/speaking/" then speaking_schemas
       else tag_page? ? [tag_collection] : []
       end
@@ -231,6 +233,28 @@ module Util
         "description" => resource.data.description,
         "inLanguage" => metadata.lang,
         "mainEntity" => person
+      }.compact
+    end
+
+    def generic_web_page
+      {
+        "@type" => "WebPage",
+        "url" => abs_url,
+        "name" => resource.data.title,
+        "description" => resource.data.description,
+        "inLanguage" => metadata.lang,
+        "isPartOf" => website_ref
+      }.compact
+    end
+
+    def search_results_page
+      {
+        "@type" => "SearchResultsPage",
+        "url" => abs_url,
+        "name" => resource.data.title,
+        "description" => resource.data.description,
+        "inLanguage" => metadata.lang,
+        "isPartOf" => website_ref
       }.compact
     end
 

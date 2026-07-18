@@ -13,6 +13,14 @@ mise run dev
 
 The design-system conventions live in [docs/design-system.md](docs/design-system.md).
 
+## Ongoing website improvement scope
+
+Current optimization focus (tracked in `docs/runbooks.md`):
+
+- Grow qualified Ruby/Rails audience and speaking opportunities.
+- Prioritize core hub pages: `/`, `/posts/`, `/about/`, `/projects/`, `/speaking/`, plus top posts.
+- Track KPI baselines before and after changes (Lighthouse, Search Console visibility, engagement on hub pages).
+
 ## Secrets (fnox)
 
 API keys and other secrets are managed with [fnox](https://github.com/jdx/fnox), installed via mise. This repo uses fnox's **macOS Keychain** provider: the committed `fnox.toml` is plaintext and only declares which env vars to populate and the Keychain entry name to read from (all under the `fnox-andrewmcodes-v8` service). Secret _values_ live in your Keychain — never in git.

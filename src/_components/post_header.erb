@@ -24,7 +24,7 @@
   <% if tags.any? %>
     <span>·</span>
     <% tags.each do |tag| %>
-      <%= render Link.new(href: "/tag/#{tag}/", variant: :post_tag) do %>
+    <%= render Link.new(href: "/tag/#{tag_slug(tag)}/", variant: :post_tag) do %>
         #<%= tag %>
       <% end %>
     <% end %>

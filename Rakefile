@@ -1,4 +1,6 @@
 require "bridgetown"
+require "json"
+require "yaml"
 
 Bridgetown.load_tasks
 
@@ -29,6 +31,34 @@ namespace :frontend do
   desc "Build the frontend with esbuild for deployment"
   task :build do
     sh "npm run esbuild"
+  end
+
+  namespace :data do
+    desc "Validate required source data files and minimal schema"
+    task :validate do
+      data_dir = File.join(__dir__, "src", "_data")
+
+      json_files = %w[accounts.json appearances.json oss.json podcasts.json remote_ruby.json]
+      json_files.each do |file|
+        path = File.join(data_dir, file)
+        raise "Missing required data file: #{path}" unless File.exist?(path)
+        JSON.parse(File.read(path))
+      end
+
+      talks = YAML.safe_load_file(File.join(data_dir, "talks.yml")) || []
+      raise "talks.yml must contain an array" unless talks.is_a?(Array)
+
+      remote_ruby = JSON.parse(File.read(File.join(data_dir, "remote_ruby.json")))
+      %w[id title url published_at].each do |key|
+        raise "remote_ruby.json missing required key: #{key}" if remote_ruby[key].to_s.strip.empty?
+      end
+
+      oss = JSON.parse(File.read(File.join(data_dir, "oss.json")))
+      raise "oss.json must contain at least one project" unless oss.is_a?(Array) && oss.any?
+      unless oss.all? { |item| item.is_a?(Hash) && item["name"].to_s != "" && item["url"].to_s != "" }
+        raise "oss.json entries must include non-empty name and url"
+      end
+    end
   end
 
   desc "Watch the frontend with esbuild during development"

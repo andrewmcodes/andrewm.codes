@@ -115,5 +115,12 @@ description: Talks I've given, podcasts I host, shows I've been on, and CFPs I'v
         ) %>
       <% end %>
     <% end %>
+
+    <%= render Text.new(scheme: :muted, size: :md) do %>
+      Looking for writing too? Browse
+      <%= render Link.new(href: "/posts/", variant: :inline_accent) { "all posts" } %>
+      or use
+      <%= render Link.new(href: "/search/", variant: :inline_accent) { "site search" } %>.
+    <% end %>
   <% end %>
 <% end %>
