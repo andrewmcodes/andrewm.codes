@@ -6,13 +6,11 @@ class Builders::TagTaxonomy < SiteBuilder
   }.freeze
 
   def build
-    hook :resources, :post_read do |resources|
-      resources.each do |resource|
-        next unless resource.collection&.label == "posts"
-        next if Array(resource.data.tags).empty?
+    hook :resources, :post_read do |resource|
+      next unless resource.collection&.label == "posts"
+      next if Array(resource.data.tags).empty?
 
-        resource.data.tags = normalized_tags(resource.data.tags)
-      end
+      resource.data.tags = normalized_tags(resource.data.tags)
     end
   end
 
