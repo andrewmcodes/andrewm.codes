@@ -26,10 +26,6 @@ class PostHeader < Bridgetown::Component
     Array(@resource.data.tags)
   end
 
-  def tag_slug(tag)
-    tag.to_s.downcase.gsub(/[^a-z0-9]+/, "-").gsub(/\A-|-+\z/, "")
-  end
-
   def author_name
     Bridgetown::Current.site.metadata.author.name
   end

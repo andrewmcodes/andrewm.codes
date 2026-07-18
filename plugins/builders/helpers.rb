@@ -59,6 +59,10 @@ class Builders::Helpers < SiteBuilder
       next false if resource.data.toc == false
       resource.content.to_s.split.size > 800
     end
+
+    helper :tag_slug do |tag|
+      tag.to_s.downcase.gsub(/[^a-z0-9]+/, "-").gsub(/\A-|-+\z/, "")
+    end
   end
 
   private

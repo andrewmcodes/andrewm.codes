@@ -8,8 +8,4 @@ class TagCloud < Bridgetown::Component
     @label = label
     @href_prefix = href_prefix
   end
-
-  def tag_slug(tag)
-    tag.to_s.downcase.gsub(/[^a-z0-9]+/, "-").gsub(/\A-|-+\z/, "")
-  end
 end
