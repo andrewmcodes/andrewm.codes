@@ -208,9 +208,11 @@ header:has(#mobile-menu[data-open="true"]) {
    .highlighter-rouge > .highlight > pre.highlight. */
 .highlighter-rouge .highlight,
 pre:not(.highlight) {
-  --syntax-bg: #282c34;
-  --syntax-border: #3e4451;
-  --syntax-fg: #abb2bf;
+  --syntax-bg: #262d35;
+  --syntax-border: #3b4757;
+  --syntax-fg: #b7c1cf;
+  --syntax-accent: var(--mint-11);
+  --syntax-muted: var(--sage-9);
 }
 .highlighter-rouge .highlight pre.highlight {
   @apply my-4 rounded-md overflow-x-auto border p-4;
@@ -261,7 +263,7 @@ pre:not(.highlight) code {
 .highlighter-rouge .highlight .c1,
 .highlighter-rouge .highlight .cm,
 .highlighter-rouge .highlight .cp,
-.highlighter-rouge .highlight .cs { color: #5c6370; }
+.highlighter-rouge .highlight .cs { color: var(--syntax-muted); }
 .highlighter-rouge .highlight .na,
 .highlighter-rouge .highlight .nb,
 .highlighter-rouge .highlight .nc,
@@ -272,7 +274,7 @@ pre:not(.highlight) code {
 .highlighter-rouge .highlight .nt,
 .highlighter-rouge .highlight .nv,
 .highlighter-rouge .highlight .nx,
-.highlighter-rouge .highlight .py { color: #61afef; }
+.highlighter-rouge .highlight .py { color: var(--syntax-accent); }
 .highlighter-rouge .highlight .m,
 .highlighter-rouge .highlight .mb,
 .highlighter-rouge .highlight .mf,
