@@ -56,7 +56,6 @@ jobs:
       - uses: ./.github/actions/setup
       - env:
           BRIDGETOWN_ENV: production
-          TORCHLIGHT_TOKEN: ${{ secrets.TORCHLIGHT_TOKEN }}
         run: bin/bridgetown deploy
       - id: mark
         run: echo "built=true" >> "$GITHUB_OUTPUT"
