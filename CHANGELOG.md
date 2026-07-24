@@ -1,5 +1,22 @@
 # Changelog
 
+## [8.1.2](https://github.com/andrewmcodes/andrewm.codes/compare/v8.1.1...v8.1.2) (2026-07-24)
+
+
+### Bug Fixes
+
+* install falcon for local development ([#564](https://github.com/andrewmcodes/andrewm.codes/issues/564)) ([06d7e7d](https://github.com/andrewmcodes/andrewm.codes/commit/06d7e7d79c2c46eee9fecec77581d7b2364d95f0))
+
+
+### Performance
+
+* **ci:** parallelize Lighthouse and cut runs per URL ([#562](https://github.com/andrewmcodes/andrewm.codes/issues/562)) ([459e8b0](https://github.com/andrewmcodes/andrewm.codes/commit/459e8b0553dd459166adc3fdac99621d84715049))
+
+
+### Refactors
+
+* replace email links with bluesky contact links ([#565](https://github.com/andrewmcodes/andrewm.codes/issues/565)) ([4a7d78e](https://github.com/andrewmcodes/andrewm.codes/commit/4a7d78e5cbfe7fe421bb35be8da624c522238d57))
+
 ## [8.1.1](https://github.com/andrewmcodes/andrewm.codes/compare/v8.1.0...v8.1.1) (2026-07-10)
 
 
