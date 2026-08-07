@@ -31,7 +31,7 @@
     "gray-matter": "^4.0.3",
     "node-html-parser": "^9.0.0",
     "pagefind": "^1.5.2",
-    "postcss": "^8.5.19",
+    "postcss": "^8.5.23",
     "postcss-focus-visible": "^11.0.0",
     "postcss-import": "^16.1.1",
     "postcss-load-config": "^6.0.1",
