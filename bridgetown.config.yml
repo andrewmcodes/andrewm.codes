@@ -1,11 +1,8 @@
 url: "https://andrewm.codes"
 permalink: "/:path.*/"
 
-# Disable Rouge so Torchlight does the highlighting. Bridgetown coerces
-# nil/false back to "rouge" (`||= config["highlighter"] || "rouge"`), so
-# we pass an empty string — kramdown sees no registered highlighter and
-# emits plain `<pre><code class="language-X">...</code></pre>`.
-highlighter: ""
+# Use Bridgetown's built-in Rouge highlighter for local syntax highlighting.
+highlighter: rouge
 
 collections:
   pages:
