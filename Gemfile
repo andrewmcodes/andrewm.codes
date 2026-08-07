@@ -9,7 +9,7 @@ gem "bridgetown-feed"
 gem "bridgetown-sitemap"
 gem "bridgetown-svg-inliner"
 
-gem "nokolexbor", "~> 0.6"
+gem "nokolexbor", "~> 0.8"
 
 gem "dotenv"
 
