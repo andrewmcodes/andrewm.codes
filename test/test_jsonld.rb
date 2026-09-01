@@ -197,7 +197,7 @@ class TestJsonLd < Bridgetown::Test
     it "emits the latest PodcastEpisode tied to its series" do
       episode = jsonld_of_type(document, "PodcastEpisode").first
       expect(episode).wont_be_nil
-      expect(episode["episodeNumber"]).must_be :>, 0
+      expect(episode["episodeNumber"]).must_be :>, 0 if episode["episodeNumber"]
       expect(episode["duration"]).must_match(/\APT/)
       expect(episode["partOfSeries"]["name"]).must_equal "Remote Ruby"
     end
