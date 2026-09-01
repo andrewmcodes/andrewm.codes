@@ -1,6 +1,8 @@
 # andrewm.codes
 
-Personal site built with [Bridgetown](https://www.bridgetownrb.com), styled with Tailwind v4 and [Radix UI Colors](https://www.radix-ui.com/colors) (Sage + Mint). Syntax highlighting via [Torchlight](https://torchlight.dev).
+Personal site built with [Bridgetown](https://www.bridgetownrb.com), styled
+with Tailwind v4 and [Radix UI Colors](https://www.radix-ui.com/colors)
+(Sage + Mint). Syntax highlighting via Bridgetown's built-in Rouge.
 
 ## Develop
 
@@ -25,7 +27,6 @@ mise install
 
 # Write each value into the macOS Keychain via fnox.
 # fnox.toml already declares the names; this just stores the values.
-fnox set TORCHLIGHT_TOKEN          # from https://torchlight.dev
 fnox set CLOUDFLARE_API_KEY        # from https://dash.cloudflare.com/profile/api-tokens
 fnox set CLOUDFLARE_EMAIL
 fnox set BUZZSPROUT_API_TOKEN      # from Buzzsprout dashboard
@@ -34,7 +35,8 @@ fnox set BUZZSPROUT_API_TOKEN      # from Buzzsprout dashboard
 eval "$(fnox activate zsh)"   # or bash / fish
 ```
 
-After this, `mise run build` wraps the production build in `fnox exec`, so `TORCHLIGHT_TOKEN` is in scope when Torchlight runs.
+After this, `mise run build` wraps the production build in `fnox exec` so
+configured secrets are in scope for build/deploy tasks.
 
 Moving to a second machine just means re-running the `fnox set` commands there — there's no key material to copy.
 
@@ -48,7 +50,6 @@ The site is deployed to **Cloudflare Workers Static Assets** (see `wrangler.json
 
 GitHub Actions CI uses these repo secrets:
 
-- `TORCHLIGHT_TOKEN` — production build (Torchlight highlighting).
 - `CLOUDFLARE_API_TOKEN` (Workers Scripts: Edit permission) — wrangler deploy.
 - `CLOUDFLARE_ACCOUNT_ID` — wrangler deploy target.
 - `BUZZSPROUT_API_TOKEN` — daily `sync-remote-ruby` workflow that refreshes `src/_data/remote_ruby.json` from the [Buzzsprout API](https://github.com/Buzzsprout/buzzsprout-api).

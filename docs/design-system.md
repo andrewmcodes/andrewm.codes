@@ -281,9 +281,11 @@ The "Copy page / View as Markdown" control on posts (the `.md` twin, plus "Open 
 
 ## Code & syntax highlighting
 
-- Production highlights via **Torchlight** (`pre.torchlight`, 13.5px code).
-- When Torchlight doesn't run (dev, or no `TORCHLIGHT_TOKEN`), plain `pre:not(.torchlight)` gets a sage-styled fallback so dev still reads cleanly.
-- Inline `<code>` inside prose renders as a sage chip (`bg-sage-3`, `border-sage-5`, rounded).
+- Fenced code blocks are highlighted with Bridgetown/Rouge
+  (`.highlighter-rouge .highlight pre.highlight`, 13.5px code).
+- Non-highlighted `<pre><code>` blocks use a matching sage fallback style.
+- Inline `<code>` inside prose renders as a sage chip
+  (`bg-sage-3`, `border-sage-5`, rounded).
 - Every `<pre><code>` gets a JS-driven **Copy** button (`button.copy-code`).
 
 ---

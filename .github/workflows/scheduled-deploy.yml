@@ -26,7 +26,6 @@ jobs:
       - name: Production build
         env:
           BRIDGETOWN_ENV: production
-          TORCHLIGHT_TOKEN: ${{ secrets.TORCHLIGHT_TOKEN }}
         run: bin/bridgetown deploy
 
       - name: Deploy to production
