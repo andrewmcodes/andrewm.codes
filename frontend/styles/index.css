@@ -5,9 +5,10 @@
 
 @custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
 
-/* Radix UI Sage + Mint — values inlined and scoped to our data-theme attribute.
-   Radix's own CSS files scope dark to `.dark, .dark-theme` (class selectors)
-   which wouldn't trigger our attribute-based theme switch. */
+/* Radix UI Sage + Mint + Slate — values inlined and scoped to our data-theme
+   attribute. Radix's own CSS files scope dark to `.dark, .dark-theme` (class
+   selectors) which wouldn't trigger our attribute-based theme switch.
+   Source of truth: node_modules/@radix-ui/colors/{sage,mint,slate}[-dark].css */
 :root,
 [data-theme="light"] {
   --sage-1: #fbfdfc;
@@ -35,6 +36,19 @@
   --mint-10: #7de0cb;
   --mint-11: #027864;
   --mint-12: #16433c;
+
+  --slate-1: #fcfcfd;
+  --slate-2: #f9f9fb;
+  --slate-3: #f0f0f3;
+  --slate-4: #e8e8ec;
+  --slate-5: #e0e1e6;
+  --slate-6: #d9d9e0;
+  --slate-7: #cdced6;
+  --slate-8: #b9bbc6;
+  --slate-9: #8b8d98;
+  --slate-10: #80838d;
+  --slate-11: #60646c;
+  --slate-12: #1c2024;
 }
 
 [data-theme="dark"] {
@@ -63,6 +77,19 @@
   --mint-10: #a8f5e5;
   --mint-11: #58d5ba;
   --mint-12: #c4f5e1;
+
+  --slate-1: #111113;
+  --slate-2: #18191b;
+  --slate-3: #212225;
+  --slate-4: #272a2d;
+  --slate-5: #2e3135;
+  --slate-6: #363a3f;
+  --slate-7: #43484e;
+  --slate-8: #5a6169;
+  --slate-9: #696e77;
+  --slate-10: #777b84;
+  --slate-11: #b0b4ba;
+  --slate-12: #edeef0;
 }
 
 @theme {
@@ -97,6 +124,21 @@
   --color-mint-9: var(--mint-9);
   --color-mint-11: var(--mint-11);
   --color-mint-12: var(--mint-12);
+
+  /* Secondary cool neutral. Bridged in full (like sage) rather than as a used
+     subset, so reaching for a slate step never silently produces nothing. */
+  --color-slate-1: var(--slate-1);
+  --color-slate-2: var(--slate-2);
+  --color-slate-3: var(--slate-3);
+  --color-slate-4: var(--slate-4);
+  --color-slate-5: var(--slate-5);
+  --color-slate-6: var(--slate-6);
+  --color-slate-7: var(--slate-7);
+  --color-slate-8: var(--slate-8);
+  --color-slate-9: var(--slate-9);
+  --color-slate-10: var(--slate-10);
+  --color-slate-11: var(--slate-11);
+  --color-slate-12: var(--slate-12);
 }
 
 body {
