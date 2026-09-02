@@ -24,12 +24,17 @@ layout: default
   <div class="grid items-start nav:grid-cols-[208px_minmax(0,1fr)] nav:gap-x-14">
     <%= render PostAside.new(
       resource: resource,
-      back: back,
       show_toc: should_show_toc(resource),
       class: "nav:col-start-1 nav:row-start-1 nav:row-span-2 max-nav:order-2 max-nav:mb-9",
     ) %>
 
+    <%#
+      The back link leads out of the page, so it sits above the title rather
+      than with the facts about the post. Everything else stays in the rail.
+    %>
+
     <div class="nav:col-start-2 nav:row-start-1 max-nav:order-1 min-w-0">
+      <%= render BackLink.new(href: back["path"], label: back["label"]) %>
       <%= render PostHeader.new(resource: resource) %>
     </div>
 
