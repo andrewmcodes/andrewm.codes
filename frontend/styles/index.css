@@ -199,6 +199,31 @@ body {
 input, textarea { caret-color: var(--ruby-11); }
 a { text-underline-offset: 0.2em; }
 
+/* Keyboard focus is a system guarantee, not a per-component decision: applied
+   once so every focusable element is covered by default, rather than chased
+   component by component, which is how a site ends up with six styled controls
+   and forty bare ones.
+   It lives in `base` on purpose. Unlayered CSS outranks Tailwind's utilities
+   whatever the specificity, so a component that needs a different indicator —
+   the theme toggle's inset ring, the palette's borderless input — could not
+   override it from markup. Inside `base`, a utility class wins as expected. */
+@layer base {
+  :where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+    outline: 2px solid var(--ruby-9);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+}
+
+/* The palette is its own field: the panel opening is the focus event, so the
+   input carries no chrome — including the native clear button, which renders
+   as an unstyleable glyph and duplicates the `esc` affordance beside it. */
+#cmdk-input::-webkit-search-cancel-button,
+#cmdk-input::-webkit-search-decoration {
+  appearance: none;
+  display: none;
+}
+
 /* Metadata is measurement, so its digits align in a column. */
 .font-mono { font-variant-numeric: tabular-nums; }
 
