@@ -36,7 +36,9 @@
 
   <div>
     <% if kicker %>
-      <div class="font-mono text-meta text-ruby-11 mb-2 lowercase"><%= kicker %></div>
+      <div class="font-mono text-meta text-ruby-11 mb-2 lowercase">
+        <%= kicker %>
+      </div>
     <% end %>
 
     <div
@@ -46,11 +48,22 @@
         <%= "inline-flex items-center gap-1.5" if title_icon? %>
       "
     >
-      <%= title %><% if title_icon? %><%= render Icon.new(name: icon_name, class: "text-slate-8 group-hover:text-ruby-11 transition-colors shrink-0 inline-block translate-y-px") %><% end %>
+      <%= title %>
+
+      <% if title_icon? %>
+        <%= render Icon.new(name: icon_name, class: "text-slate-8 group-hover:text-ruby-11 transition-colors shrink-0 inline-block translate-y-px") %>
+      <% end %>
     </div>
 
     <% if excerpt %>
-      <p class="text-note leading-snug text-slate-11 mt-1.5 mb-3 max-w-[68ch] text-pretty"><%= excerpt %></p>
+      <p
+        class="
+          text-note leading-snug text-slate-11 mt-1.5 mb-3 max-w-[68ch]
+          text-pretty
+        "
+      >
+        <%= excerpt %>
+      </p>
     <% end %>
 
     <% if tags.any? || meta.any? %>
@@ -89,7 +102,12 @@
   </div>
 
   <% if three_column? %>
-    <div class="font-mono text-meta text-slate-11 whitespace-nowrap max-md:hidden inline-flex items-center justify-end">
+    <div
+      class="
+        font-mono text-meta text-slate-11 whitespace-nowrap max-md:hidden
+        inline-flex items-center justify-end
+      "
+    >
       <% if trailing %>
         <span class="uppercase"><%= trailing %></span>
       <% elsif linked? && !title_icon? %>

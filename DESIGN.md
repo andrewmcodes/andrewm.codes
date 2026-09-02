@@ -271,14 +271,14 @@ Every sage, mint, and slate token is a **light/dark pair**. The frontmatter carr
 ### Primary
 
 - **Terminal Mint** (`mint-11`): the only brand accent in the system, and the single most important token in it. It carries link text in prose, every hover state on rows, cards, nav items, hero index rows, and footer links; the active-tab underline in the topbar; the show/venue line on episode and talk cards; the blockquote rule; the bullet-thread dot ring; and the heading-anchor hover. It is a deep pine-teal on paper and a bright aqua on ink — the phosphor green of a terminal, aged.
-- **Mint Fill** (`mint-4`, hover `mint-5`): the primary button's background, the "active" project status chip, and `::selection`. The only place mint appears as a *surface* rather than as text, apart from the active drawer item.
+- **Mint Fill** (`mint-4`, hover `mint-5`): the primary button's background, the "active" project status chip, and `::selection`. The only place mint appears as a _surface_ rather than as text, apart from the active drawer item.
 - **Mint Wash** (`mint-3`): the accent callout background and the active item in the mobile drawer.
 - **Mint Marker** (`mint-9`): the topbar's avatar dot and the `focus-visible` outline color. A pure, saturated statement used at ≤36px. `mint-8` is the theme toggle's focus ring; `mint-6` is the accent callout's border.
 - **Mint Deep** (`mint-12`): text on mint-tinted surfaces — accent callout body, accent headings.
 
 ### Secondary
 
-Slate is a **cool** neutral against sage's warm green-gray — the same lightness structure, a different temperature. It is the site's annotation voice: the places where something is being *shown* rather than *said*. The full 12-step ramp is bridged, but only four steps are in use.
+Slate is a **cool** neutral against sage's warm green-gray — the same lightness structure, a different temperature. It is the site's annotation voice: the places where something is being _shown_ rather than _said_. The full 12-step ramp is bridged, but only four steps are in use.
 
 - **Shell Grey** (`slate-3` fill, `slate-12` text): the `Command` block — a `$` prompt cap butted against a mono code span, both on the same fill with the radius split across the pair. A terminal quotation, and the one surface on the site that is deliberately not paper.
 - **Frame Grey** (`slate-6`): the `1px` ring around a framed figure image, where a sage hairline would disappear into the page ground it sits on.
@@ -292,13 +292,13 @@ Slate is a **cool** neutral against sage's warm green-gray — the same lightnes
 - **Hairline** (`sage-4`): the universal 1px separator — row dividers, card-grid rules, section underlines, footer top border, inline-code borders, bullet-thread spine. The most structurally load-bearing color in the system.
 - **Strong Rule** (`sage-5`): the heavier 1px — link underlines, panel borders, `<kbd>` outlines, the post-footer and related-posts rules, the theme toggle's selected pill. Used where a line must read as an edge rather than a divider.
 - **Faint Ink** (`sage-7`, `sage-8`): placeholder text, the `#` before a tag, resting arrow glyphs, the resting heading anchor, the brand-lockup slash. The quietest things that are still legible.
-- **Meta Ink** (`sage-10`): monospace metadata — star and fork counts, source notes, section-action links, back links, related-post dates. The mono voice's default color when it is *not* carrying primary information.
+- **Meta Ink** (`sage-10`): monospace metadata — star and fork counts, source notes, section-action links, back links, related-post dates. The mono voice's default color when it is _not_ carrying primary information.
 - **Body Ink** (`sage-11`): all body copy, all secondary text, prose paragraphs, and the mono metadata that sits directly under a title. Numerically the most-used token in the codebase.
 - **Full Ink** (`sage-12`): headings, post titles, and any text that must win a scan.
 
 ### Functional (data-carrying, not brand)
 
-Three colors originate outside the sage/mint system. None of them is a second brand accent; each one is doing a job that the accent physically cannot, because its *value* is the information.
+Three colors originate outside the sage/mint system. None of them is a second brand accent; each one is doing a job that the accent physically cannot, because its _value_ is the information.
 
 - **Warning Amber** (Tailwind `amber-500`): the stale-post notice only — a `/30` border on a `/5` wash with a solid-amber icon. The single warning color on the site. It is allowed because "this content may be out of date" is a caution signal that mint, which means "live and under the pointer," would actively misreport.
 - **Podcast hue** (`oklch(0.62 0.14 <hue>)`): the rounded mark tile on each podcast row, where `<hue>` comes from `accent_hue` in `src/_data/podcasts.yml` and inactive shows drop to `opacity: 0.7`. Fixed lightness and chroma with only the hue rotating keeps a row of shows reading as one family. It is a per-show identifier, not decoration.
@@ -308,7 +308,7 @@ Three colors originate outside the sage/mint system. None of them is a second br
 
 **The One Voice Rule.** Mint has exactly one job: to mark what is live, active, or under the pointer. It never appears as decoration and never as a second brand color. At rest, a full viewport should contain almost no mint at all — often only the topbar dot, the period after "Andrew Mason", and a show name. Its rarity is what makes a hover legible from the corner of the eye.
 
-**The Borrowed-Color Rule.** A color outside sage and mint is admissible only when the color *is* the data — a warning level, a per-show identifier, an upstream language color. Never invent a decorative color; only borrow one that means something. If a new color cannot answer "what fact does this encode?", it does not go in.
+**The Borrowed-Color Rule.** A color outside sage and mint is admissible only when the color _is_ the data — a warning level, a per-show identifier, an upstream language color. Never invent a decorative color; only borrow one that means something. If a new color cannot answer "what fact does this encode?", it does not go in.
 
 **The Both-Themes Rule.** No color is chosen for light and then checked in dark. Every token is authored as a pair in `frontend/styles/index.css` and both are first-class. A change that only looks right in one theme is not finished.
 
@@ -322,7 +322,7 @@ Three colors originate outside the sage/mint system. None of them is a second br
 
 **Label / Mono Font:** JetBrains Mono Variable (with `ui-monospace, Menlo, monospace`), via `@fontsource-variable/jetbrains-mono`.
 
-**Character:** A neutral, high-legibility grotesque against a warm, wide-aperture developer mono. Neither typeface is doing anything expressive on its own — the expression comes entirely from *which one is used where*. Inter never appears in a metadata slot; JetBrains Mono never appears in a sentence.
+**Character:** A neutral, high-legibility grotesque against a warm, wide-aperture developer mono. Neither typeface is doing anything expressive on its own — the expression comes entirely from _which one is used where_. Inter never appears in a metadata slot; JetBrains Mono never appears in a sentence.
 
 ### Hierarchy
 
@@ -426,13 +426,13 @@ The ledger beside the homepage hero, and the site's answer to "prove it" without
 
 ### Inputs / Fields
 
-The command palette input is the only text input on the site: fully transparent, borderless, no outline, `15.5px` `sage-12` with a `sage-8` placeholder. It carries no chrome of its own because the panel around it — `sage-2` fill, `sage-5` border, `14px` radius, dividing rules above the results and below the hints — is the field. Focus is implicit; the panel opening *is* the focus event.
+The command palette input is the only text input on the site: fully transparent, borderless, no outline, `15.5px` `sage-12` with a `sage-8` placeholder. It carries no chrome of its own because the panel around it — `sage-2` fill, `sage-5` border, `14px` radius, dividing rules above the results and below the hints — is the field. Focus is implicit; the panel opening _is_ the focus event.
 
 ### Navigation
 
 Sticky, `64px` tall, `bg-sage-1/85` with `backdrop-blur backdrop-saturate-150`. The brand lockup runs: a `36px` `mint-9` dot, the name in `14px` semibold `sage-12`, a `sage-8` slash, then `@andrewmcodes` in `12.5px` mono. Nav links are `13.5px` at `6px 10px`, `sage-11`, going `sage-12` on a `sage-3` fill. The active item is marked with a `1.5px` `mint-11` underline inset `10px` from each edge — the only always-visible mint in the chrome besides the dot.
 
-Below `820px` the links collapse into a hamburger that opens a full-width drawer: `bg-sage-1/95`, `rounded-b-2xl`, `shadow-xl`, over a `bg-sage-1/50 backdrop-blur-sm` scrim, with the header dropping its own translucency via `header:has(#mobile-menu[data-open="true"])`. Drawer items are `15px` at `12px 16px` with `rounded-xl`, and the active one gets a `mint-3` fill with `mint-11` text — the one place the accent is a *background* for navigation, because at that size an underline wouldn't read. Menu state is `data-open`, not `hidden`, so the transition can run.
+Below `820px` the links collapse into a hamburger that opens a full-width drawer: `bg-sage-1/95`, `rounded-b-2xl`, `shadow-xl`, over a `bg-sage-1/50 backdrop-blur-sm` scrim, with the header dropping its own translucency via `header:has(#mobile-menu[data-open="true"])`. Drawer items are `15px` at `12px 16px` with `rounded-xl`, and the active one gets a `mint-3` fill with `mint-11` text — the one place the accent is a _background_ for navigation, because at that size an underline wouldn't read. Menu state is `data-open`, not `hidden`, so the transition can run.
 
 ### Theme Toggle
 

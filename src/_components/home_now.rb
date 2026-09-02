@@ -41,4 +41,20 @@ class HomeNow < Bridgetown::Component
   rescue ArgumentError, TypeError
     nil
   end
+
+  # The trailing clauses are assembled here rather than in the template because
+  # ERB conditionals put newlines around their punctuation, which renders as a
+  # space before the comma — and the ERB formatter reflows any inline fix back
+  # out again. Ruby is the only place this can be said once and stay said.
+  #
+  # @return [String] e.g. ", latest episode out Aug 2026."
+  def episode_suffix
+    episode_date ? ", latest episode out #{episode_date}." : "."
+  end
+
+  # @return [String] e.g. " at Blastoff Rails (Jun 2026)."
+  def talk_suffix
+    venue = talk_field(:venue)
+    "#{" at #{venue}" if venue}#{" (#{talk_date})" if talk_date}."
+  end
 end

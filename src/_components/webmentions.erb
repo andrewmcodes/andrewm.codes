@@ -24,7 +24,7 @@
           <% end %>
         <% end %>
 
-        <span class="font-mono text-xs text-slate-10">
+        <span class="font-mono text-meta text-slate-10">
           <%= reactions.length %>
           <%= (reactions.length == 1) ? "reaction" : "reactions" %>
         </span>
@@ -61,7 +61,7 @@
               </div>
 
               <% if content_text(wm) %>
-                <p class="mt-1 text-sm text-slate-11 break-words">
+                <p class="mt-1 text-note text-slate-11 break-words">
                   <%= content_text(wm) %>
                 </p>
               <% end %>

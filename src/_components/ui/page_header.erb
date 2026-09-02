@@ -1,5 +1,5 @@
 <div class="mb-10">
-  <h1 class="text-3xl tracking-tight font-semibold m-0 mb-3 text-slate-12">
+  <h1 class="text-page-title m-0 mb-3 text-slate-12">
     <%= title %>
   </h1>
 
@@ -14,8 +14,7 @@
         <% if description_link? %>
           <%= render Link.new(href: description_link_href, variant: :inline_accent) {
             description_link_label
-          } %>
-          .
+          } %> .
         <% end %>
       <% end %>
     </p>

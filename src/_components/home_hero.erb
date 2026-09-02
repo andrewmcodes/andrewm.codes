@@ -6,20 +6,11 @@
     "
   >
     <div>
-      <h1
-        class="
-          text-display m-0 mb-8 text-balance max-w-[680px] text-slate-12
-        "
-      >
+      <h1 class="text-display m-0 mb-8 text-balance max-w-[680px] text-slate-12">
         Andrew Mason<span class="text-ruby-11">.</span>
       </h1>
 
-      <p
-        class="
-          text-lede text-slate-11 max-w-[62ch] m-0 mb-4
-          text-pretty
-        "
-      >
+      <p class="text-lede text-slate-11 max-w-[62ch] m-0 mb-4 text-pretty">
         Ruby on Rails engineer at
         <%= render Link.new(href: "https://podia.com", variant: :inline) do %>
           Podia
@@ -29,16 +20,11 @@
         <% end %>, and based in Arizona.
       </p>
 
-      <p
-        class="
-          text-lede text-slate-11 max-w-[62ch] m-0
-          text-pretty
-        "
-      >
+      <p class="text-lede text-slate-11 max-w-[62ch] m-0 text-pretty">
         I've been doing the Rails thing for about a decade, from full-stack
         product features to fast CI and developer tooling to the billing and
-        data migrations underneath. Most of what I figure out along the way
-        ends up written down here.
+        data migrations underneath. Most of what I figure out along the way ends
+        up written down here.
       </p>
 
       <div class="mt-8 flex flex-wrap items-center gap-3">
@@ -63,8 +49,8 @@
     <div class="max-nav:max-w-[420px] max-nav:w-full">
       <div
         class="
-          font-mono text-xs font-medium uppercase tracking-[0.08em] text-slate-11 pb-2
-          border-b border-slate-4
+          font-mono text-label uppercase text-slate-11 pb-2 border-b
+          border-slate-4
         "
       >
         index
@@ -76,8 +62,8 @@
             <a
               href="<%= row[:href] %>"
               class="
-                group flex items-baseline justify-between gap-4 py-2.5 border-b
-                border-slate-4
+                group flex items-baseline justify-between gap-4 py-2.5
+                border-b border-slate-4
               "
             >
               <span

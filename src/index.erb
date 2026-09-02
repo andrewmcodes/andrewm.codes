@@ -15,22 +15,20 @@ title: andrewm.codes
     talks_count: site.data.talks.size,
   ) %>
 
-  <%= render PageSection.new(spacing: :home_coda) do %>
-    <%= render SectionHead.new(
-      title: "now",
-      description: "What I'm actually working on right now.",
-    ) %>
-
+  <%= render PageSection.new(
+    spacing: :home_coda,
+    label: "now",
+    description: "What I'm actually working on right now.",
+  ) do %>
     <%= render HomeNow.new(episode: latest_episode, talk: latest_talk) %>
   <% end %>
 
   <% if site.data.featured&.any? %>
-    <%= render PageSection.new(spacing: :home) do %>
-      <%= render SectionHead.new(
-        title: "featured work",
-        description: "A few things I'm proud of and point people to most often.",
-      ) %>
-
+    <%= render PageSection.new(
+      spacing: :home,
+      label: "featured work",
+      description: "A few things I'm proud of and point people to most often.",
+    ) do %>
       <%= render CardGrid.new do %>
         <% site.data.featured.each do |item| %>
           <%= render FeaturedCard.new(item: item) %>
@@ -39,13 +37,12 @@ title: andrewm.codes
     <% end %>
   <% end %>
 
-  <%= render PageSection.new(spacing: :home) do %>
-    <%= render SectionHead.new(
-      title: "recent posts",
-      link_label: "all posts",
-      link_href: "/posts/",
-    ) %>
-
+  <%= render PageSection.new(
+    spacing: :home,
+    label: "recent posts",
+    link_label: "all posts",
+    link_href: "/posts/",
+  ) do %>
     <%= render Stack.new do %>
       <% recent_posts.each do |post| %>
         <%= render PostRow.new(post: post) %>
@@ -54,13 +51,12 @@ title: andrewm.codes
   <% end %>
 
   <% if projects.any? %>
-    <%= render PageSection.new(spacing: :home) do %>
-      <%= render SectionHead.new(
-        title: "open source",
-        link_label: "all projects",
-        link_href: "/projects/",
-      ) %>
-
+    <%= render PageSection.new(
+      spacing: :home,
+      label: "open source",
+      link_label: "all projects",
+      link_href: "/projects/",
+    ) do %>
       <%= render CardGrid.new do %>
         <% projects.each do |proj| %>
           <%= render ProjectCard.new(project: proj) %>
@@ -70,13 +66,12 @@ title: andrewm.codes
   <% end %>
 
   <% if latest_talk || latest_episode %>
-    <%= render PageSection.new(spacing: :home) do %>
-      <%= render SectionHead.new(
-        title: "latest",
-        link_label: "talks and podcasts",
-        link_href: "/speaking/",
-      ) %>
-
+    <%= render PageSection.new(
+      spacing: :home,
+      label: "latest",
+      link_label: "talks and podcasts",
+      link_href: "/speaking/",
+    ) do %>
       <% if latest_talk %>
         <%= render TalkCard.new(talk: latest_talk) %>
       <% end %>

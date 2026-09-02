@@ -11,10 +11,10 @@ class Link < Box
 
   LINK_VARIANTS = {
     default: "",
-    nav: "text-sm font-medium",
+    nav: "text-note font-medium",
     inline: "text-slate-12 border-b border-slate-5 hover:text-ruby-11 hover:border-ruby-11 transition-colors",
     inline_accent: "text-ruby-11 hover:underline",
-    tag: "font-mono text-xs py-1 text-slate-10 hover:text-ruby-11 transition-colors",
+    tag: "font-mono text-meta py-1 text-slate-10 hover:text-ruby-11 transition-colors",
     post_tag: "font-mono text-meta text-slate-10 hover:text-ruby-11 transition-colors",
     action: "group inline-flex items-center gap-1.5 mt-7 font-mono text-note text-slate-11 border-b border-slate-5 pb-0.5 hover:text-ruby-11 hover:border-ruby-11 transition-colors",
     section_action: "inline-flex items-center gap-1.5 font-mono text-meta text-slate-10 hover:text-ruby-11 transition-colors group",
