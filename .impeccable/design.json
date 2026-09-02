@@ -9,178 +9,77 @@
         "displayName": "Paper",
         "canonical": "#fbfdfc",
         "dark": "#101211",
-        "tonalRamp": ["#fbfdfc", "#f7f9f8", "#eef1f0", "#e6e9e8", "#dfe2e0", "#d7dad9", "#cbcfcd", "#b8bcba", "#868e8b", "#7c8481", "#5f6563", "#1a211e"]
+        "tonalRamp": ["#1a211e", "#5f6563", "#7c8481", "#868e8b", "#b8bcba", "#cbcfcd", "#d7dad9", "#dfe2e0", "#e6e9e8", "#eef1f0", "#f7f9f8", "#fbfdfc"]
       },
-      "sage-2": {
-        "role": "neutral",
-        "displayName": "Raised Paper",
-        "canonical": "#f7f9f8",
-        "dark": "#171918",
-        "tonalRamp": ["#fbfdfc", "#f7f9f8", "#eef1f0", "#e6e9e8", "#dfe2e0", "#d7dad9", "#cbcfcd", "#b8bcba", "#868e8b", "#7c8481", "#5f6563", "#1a211e"]
-      },
-      "sage-3": {
-        "role": "neutral",
-        "displayName": "Control Fill",
-        "canonical": "#eef1f0",
-        "dark": "#202221",
-        "tonalRamp": ["#fbfdfc", "#f7f9f8", "#eef1f0", "#e6e9e8", "#dfe2e0", "#d7dad9", "#cbcfcd", "#b8bcba", "#868e8b", "#7c8481", "#5f6563", "#1a211e"]
-      },
-      "sage-4": {
-        "role": "neutral",
-        "displayName": "Hairline",
-        "canonical": "#e6e9e8",
-        "dark": "#272a29",
-        "tonalRamp": ["#fbfdfc", "#f7f9f8", "#eef1f0", "#e6e9e8", "#dfe2e0", "#d7dad9", "#cbcfcd", "#b8bcba", "#868e8b", "#7c8481", "#5f6563", "#1a211e"]
-      },
-      "sage-5": {
-        "role": "neutral",
-        "displayName": "Strong Rule",
-        "canonical": "#dfe2e0",
-        "dark": "#2e3130",
-        "tonalRamp": ["#fbfdfc", "#f7f9f8", "#eef1f0", "#e6e9e8", "#dfe2e0", "#d7dad9", "#cbcfcd", "#b8bcba", "#868e8b", "#7c8481", "#5f6563", "#1a211e"]
-      },
-      "sage-6": {
-        "role": "neutral",
-        "displayName": "Callout Edge",
-        "canonical": "#d7dad9",
-        "dark": "#373b39",
-        "tonalRamp": ["#fbfdfc", "#f7f9f8", "#eef1f0", "#e6e9e8", "#dfe2e0", "#d7dad9", "#cbcfcd", "#b8bcba", "#868e8b", "#7c8481", "#5f6563", "#1a211e"]
-      },
-      "sage-7": {
-        "role": "neutral",
-        "displayName": "Anchor Glyph",
-        "canonical": "#cbcfcd",
-        "dark": "#444947",
-        "tonalRamp": ["#fbfdfc", "#f7f9f8", "#eef1f0", "#e6e9e8", "#dfe2e0", "#d7dad9", "#cbcfcd", "#b8bcba", "#868e8b", "#7c8481", "#5f6563", "#1a211e"]
-      },
-      "sage-8": {
-        "role": "neutral",
-        "displayName": "Faint Ink",
-        "canonical": "#b8bcba",
-        "dark": "#5b625f",
-        "tonalRamp": ["#fbfdfc", "#f7f9f8", "#eef1f0", "#e6e9e8", "#dfe2e0", "#d7dad9", "#cbcfcd", "#b8bcba", "#868e8b", "#7c8481", "#5f6563", "#1a211e"]
-      },
-      "sage-9": {
-        "role": "neutral",
-        "displayName": "Solid Sage",
-        "canonical": "#868e8b",
-        "dark": "#63706b",
-        "tonalRamp": ["#fbfdfc", "#f7f9f8", "#eef1f0", "#e6e9e8", "#dfe2e0", "#d7dad9", "#cbcfcd", "#b8bcba", "#868e8b", "#7c8481", "#5f6563", "#1a211e"]
-      },
-      "sage-10": {
-        "role": "neutral",
-        "displayName": "Meta Ink",
-        "canonical": "#7c8481",
-        "dark": "#717d79",
-        "tonalRamp": ["#fbfdfc", "#f7f9f8", "#eef1f0", "#e6e9e8", "#dfe2e0", "#d7dad9", "#cbcfcd", "#b8bcba", "#868e8b", "#7c8481", "#5f6563", "#1a211e"]
-      },
-      "sage-11": {
-        "role": "neutral",
-        "displayName": "Body Ink",
-        "canonical": "#5f6563",
-        "dark": "#adb5b2",
-        "tonalRamp": ["#fbfdfc", "#f7f9f8", "#eef1f0", "#e6e9e8", "#dfe2e0", "#d7dad9", "#cbcfcd", "#b8bcba", "#868e8b", "#7c8481", "#5f6563", "#1a211e"]
-      },
-      "sage-12": {
-        "role": "neutral",
-        "displayName": "Full Ink",
-        "canonical": "#1a211e",
-        "dark": "#eceeed",
-        "tonalRamp": ["#fbfdfc", "#f7f9f8", "#eef1f0", "#e6e9e8", "#dfe2e0", "#d7dad9", "#cbcfcd", "#b8bcba", "#868e8b", "#7c8481", "#5f6563", "#1a211e"]
-      },
-      "mint-3": {
-        "role": "primary",
-        "displayName": "Mint Wash",
-        "canonical": "#ddf9f2",
-        "dark": "#092c2b",
-        "tonalRamp": ["#f9fefd", "#f2fbf9", "#ddf9f2", "#c8f4e9", "#b3ecde", "#9ce0d0", "#7ecfbd", "#4cbba5", "#86ead4", "#7de0cb", "#027864", "#16433c"]
-      },
+      "sage-2": { "role": "neutral", "displayName": "Raised Paper", "canonical": "#f7f9f8", "dark": "#171918" },
+      "sage-3": { "role": "neutral", "displayName": "Control Fill", "canonical": "#eef1f0", "dark": "#202221" },
+      "sage-4": { "role": "neutral", "displayName": "Hairline", "canonical": "#e6e9e8", "dark": "#272a29" },
+      "sage-5": { "role": "neutral", "displayName": "Strong Rule", "canonical": "#dfe2e0", "dark": "#2e3130" },
+      "sage-6": { "role": "neutral", "displayName": "Soft Edge", "canonical": "#d7dad9", "dark": "#373b39" },
+      "sage-7": { "role": "neutral", "displayName": "Ghost Ink", "canonical": "#cbcfcd", "dark": "#444947" },
+      "sage-8": { "role": "neutral", "displayName": "Faint Ink", "canonical": "#b8bcba", "dark": "#5b625f" },
+      "sage-9": { "role": "neutral", "displayName": "Quiet Ink", "canonical": "#868e8b", "dark": "#63706b" },
+      "sage-10": { "role": "neutral", "displayName": "Meta Ink", "canonical": "#7c8481", "dark": "#717d79" },
+      "sage-11": { "role": "neutral", "displayName": "Body Ink", "canonical": "#5f6563", "dark": "#adb5b2" },
+      "sage-12": { "role": "neutral", "displayName": "Full Ink", "canonical": "#1a211e", "dark": "#eceeed" },
+      "mint-3": { "role": "primary", "displayName": "Mint Wash", "canonical": "#ddf9f2", "dark": "#092c2b" },
       "mint-4": {
         "role": "primary",
         "displayName": "Mint Fill",
         "canonical": "#c8f4e9",
         "dark": "#003a38",
-        "tonalRamp": ["#f9fefd", "#f2fbf9", "#ddf9f2", "#c8f4e9", "#b3ecde", "#9ce0d0", "#7ecfbd", "#4cbba5", "#86ead4", "#7de0cb", "#027864", "#16433c"]
+        "tonalRamp": ["#16433c", "#027864", "#4cbba5", "#7ecfbd", "#86ead4", "#9ce0d0", "#b3ecde", "#c8f4e9", "#ddf9f2", "#f2fbf9", "#f9fefd"]
       },
-      "mint-5": {
-        "role": "primary",
-        "displayName": "Mint Fill Hover",
-        "canonical": "#b3ecde",
-        "dark": "#004744",
-        "tonalRamp": ["#f9fefd", "#f2fbf9", "#ddf9f2", "#c8f4e9", "#b3ecde", "#9ce0d0", "#7ecfbd", "#4cbba5", "#86ead4", "#7de0cb", "#027864", "#16433c"]
+      "mint-5": { "role": "primary", "displayName": "Mint Fill Hover", "canonical": "#b3ecde", "dark": "#004744" },
+      "mint-6": { "role": "primary", "displayName": "Mint Edge", "canonical": "#9ce0d0", "dark": "#105650" },
+      "mint-8": { "role": "primary", "displayName": "Mint Ring", "canonical": "#4cbba5", "dark": "#277f70" },
+      "mint-9": { "role": "primary", "displayName": "Mint Marker", "canonical": "#86ead4", "dark": "#86ead4" },
+      "mint-11": { "role": "primary", "displayName": "Terminal Mint", "canonical": "#027864", "dark": "#58d5ba" },
+      "mint-12": { "role": "primary", "displayName": "Mint Deep", "canonical": "#16433c", "dark": "#c4f5e1" },
+      "slate-3": {
+        "role": "secondary",
+        "displayName": "Shell Grey",
+        "canonical": "#f0f0f3",
+        "dark": "#212225",
+        "note": "Fill for the Command shell-prompt block, paired with slate-12 text. The one surface on the site that is deliberately not paper.",
+        "tonalRamp": ["#1c2024", "#60646c", "#80838d", "#8b8d98", "#b9bbc6", "#cdced6", "#d9d9e0", "#e0e1e6", "#e8e8ec", "#f0f0f3", "#f9f9fb", "#fcfcfd"]
       },
-      "mint-6": {
-        "role": "primary",
-        "displayName": "Mint Edge",
-        "canonical": "#9ce0d0",
-        "dark": "#105650",
-        "tonalRamp": ["#f9fefd", "#f2fbf9", "#ddf9f2", "#c8f4e9", "#b3ecde", "#9ce0d0", "#7ecfbd", "#4cbba5", "#86ead4", "#7de0cb", "#027864", "#16433c"]
-      },
-      "mint-8": {
-        "role": "primary",
-        "displayName": "Mint Line",
-        "canonical": "#4cbba5",
-        "dark": "#277f70",
-        "tonalRamp": ["#f9fefd", "#f2fbf9", "#ddf9f2", "#c8f4e9", "#b3ecde", "#9ce0d0", "#7ecfbd", "#4cbba5", "#86ead4", "#7de0cb", "#027864", "#16433c"]
-      },
-      "mint-9": {
-        "role": "primary",
-        "displayName": "Mint Marker",
-        "canonical": "#86ead4",
-        "dark": "#86ead4",
-        "tonalRamp": ["#f9fefd", "#f2fbf9", "#ddf9f2", "#c8f4e9", "#b3ecde", "#9ce0d0", "#7ecfbd", "#4cbba5", "#86ead4", "#7de0cb", "#027864", "#16433c"]
-      },
-      "mint-11": {
-        "role": "primary",
-        "displayName": "Terminal Mint",
-        "canonical": "#027864",
-        "dark": "#58d5ba",
-        "tonalRamp": ["#f9fefd", "#f2fbf9", "#ddf9f2", "#c8f4e9", "#b3ecde", "#9ce0d0", "#7ecfbd", "#4cbba5", "#86ead4", "#7de0cb", "#027864", "#16433c"]
-      },
-      "mint-12": {
-        "role": "primary",
-        "displayName": "Mint Deep",
-        "canonical": "#16433c",
-        "dark": "#c4f5e1",
-        "tonalRamp": ["#f9fefd", "#f2fbf9", "#ddf9f2", "#c8f4e9", "#b3ecde", "#9ce0d0", "#7ecfbd", "#4cbba5", "#86ead4", "#7de0cb", "#027864", "#16433c"]
+      "slate-6": { "role": "secondary", "displayName": "Frame Grey", "canonical": "#d9d9e0", "dark": "#363a3f", "note": "1px ring around a framed figure image, where a sage hairline would vanish into the page ground." },
+      "slate-11": { "role": "secondary", "displayName": "Caption Grey", "canonical": "#60646c", "dark": "#b0b4ba", "note": "Figure caption text — one temperature step off the body copy it explains." },
+      "slate-12": { "role": "secondary", "displayName": "Shell Ink", "canonical": "#1c2024", "dark": "#edeef0", "note": "Text on the shell-prompt block." },
+      "warning": {
+        "role": "tertiary",
+        "displayName": "Warning Amber",
+        "canonical": "oklch(0.769 0.188 70.08)",
+        "note": "Tailwind's default amber-500. Stale-post notice only: /30 border on a /5 wash with a solid-amber icon. Not a brand accent — it encodes a caution level mint would misreport."
       }
     },
     "typographyMeta": {
-      "display": { "displayName": "Display", "purpose": "The homepage h1 only. Tight tracking and near-solid leading make the name read as a mark." },
-      "headline": { "displayName": "Headline", "purpose": "Post and page titles. Heavier than Display because it holds the top of the page above dense metadata." },
-      "title": { "displayName": "Title", "purpose": "Post-row titles and card names. Deliberately close to body size so a list scans as a body of work." },
-      "body": { "displayName": "Body", "purpose": "Global default on <body>. Interface copy, descriptions, navigation." },
-      "body-prose": { "displayName": "Body (prose)", "purpose": "Article text only. One step larger and looser than interface body; constrained to ~65ch." },
-      "label": { "displayName": "Label", "purpose": "Section headings. Mono, uppercase, 0.08em tracked — the signature type treatment of the site." },
-      "meta": { "displayName": "Meta", "purpose": "Dates, tags, reading times, star and fork counts, keyboard caps, footer." },
-      "code": { "displayName": "Code", "purpose": "Fenced code blocks, Torchlight and the plain dev fallback. Deliberately below body prose so a wide sample fits the measure. Inline code is separate at 0.875em." }
+      "display": { "displayName": "Display", "purpose": "Homepage h1 only. Sub-solid leading makes a two-word name read as a mark." },
+      "headline": { "displayName": "Headline", "purpose": "Post titles. Heavier than Display because it sits above dense metadata." },
+      "headline-page": { "displayName": "Headline (page)", "purpose": "Index and listing page titles. A listing is a room, not an argument." },
+      "title": { "displayName": "Title", "purpose": "Episode, talk, and podcast row headings — the largest type inside a list." },
+      "row-title": { "displayName": "Row title", "purpose": "Post-row and card titles. Close to body size so the list scans as a body of work." },
+      "body": { "displayName": "Body", "purpose": "Global default on <body>. Interface copy, descriptions, nav." },
+      "body-prose": { "displayName": "Body (prose)", "purpose": "Article text only. One step larger and looser than interface body; capped at ~65ch." },
+      "label": { "displayName": "Label", "purpose": "Section headings — the signature type treatment. Authored lowercase, rendered uppercase." },
+      "meta": { "displayName": "Meta", "purpose": "Every fact: dates, tags, counts, reading times, keyboard caps, footer." },
+      "code": { "displayName": "Code", "purpose": "Fenced code blocks. Below prose size so a wide sample fits the measure." }
     },
     "shadows": [
-      {
-        "name": "control-lift",
-        "value": "0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)",
-        "purpose": "Primary and secondary buttons only. Just enough to read as pressable; never on ghost, text, or share variants."
-      },
-      {
-        "name": "drawer",
-        "value": "0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)",
-        "purpose": "The mobile menu drawer dropping from the sticky header."
-      },
-      {
-        "name": "palette",
-        "value": "0 25px 50px -12px rgb(0 0 0 / 0.25)",
-        "purpose": "The ⌘K command palette panel over a blurred scrim. The largest shadow in the system, used once."
-      }
+      { "name": "control-lift", "value": "0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)", "purpose": "Primary and secondary buttons and the selected theme-toggle pill. Just enough to read as pressable." },
+      { "name": "dropdown", "value": "0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)", "purpose": "The Markdown-actions popover — the only non-modal float, and the only shadow inside the reading column." },
+      { "name": "drawer", "value": "0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)", "purpose": "Mobile menu dropping from the sticky header, with a matching 16px bottom radius." },
+      { "name": "modal", "value": "0 25px 50px -12px rgb(0 0 0 / 0.25)", "purpose": "The command palette. The largest shadow in the system, used exactly once." }
     ],
     "motion": [
-      { "name": "colors", "value": "150ms", "purpose": "The workhorse. Every hover color and border shift in the system." },
-      { "name": "anchor-fade", "value": "opacity 150ms ease, color 150ms ease", "purpose": "Heading anchor links revealing on prose heading hover." },
-      { "name": "overlay-in", "value": "120ms ease", "purpose": "Command palette scrim fade-in." },
-      { "name": "panel-in", "value": "180ms cubic-bezier(0.2, 0.8, 0.2, 1)", "purpose": "Command palette panel dropping 10px into place." },
-      { "name": "drawer-in", "value": "200ms ease-out", "purpose": "Mobile menu opacity and 8px translate." },
-      { "name": "view-transition", "value": "200ms", "purpose": "Cross-document view transitions on navigation." },
-      { "name": "nudge", "value": "translateX(2px)", "purpose": "Trailing arrows sliding right on group hover." },
-      { "name": "reduced-motion", "value": "0.01ms", "purpose": "Global prefers-reduced-motion override on every animation, transition, and scroll behavior." }
+      { "name": "hover", "value": "150ms", "purpose": "transition-colors at the Tailwind default. The workhorse — 48 occurrences against 5 of everything else." },
+      { "name": "nudge", "value": "0.5px translate on group hover", "purpose": "Arrows slide right (back arrows left) when their row is hovered." },
+      { "name": "overlay-in", "value": "120ms ease", "purpose": "Command palette scrim fade." },
+      { "name": "panel-in", "value": "180ms cubic-bezier(.2, .8, .2, 1)", "purpose": "Command palette panel dropping 10px into place." },
+      { "name": "drawer-in", "value": "200ms ease-out", "purpose": "Mobile menu opacity plus 8px translate." },
+      { "name": "view-transition", "value": "200ms", "purpose": "Cross-document root view transition." },
+      { "name": "reduced", "value": "0.01ms", "purpose": "Global prefers-reduced-motion override on every animation, transition, and scroll behavior." }
     ],
     "breakpoints": [
       { "name": "compact", "value": "520px" },
@@ -196,119 +95,134 @@
       "name": "Primary Button",
       "kind": "button",
       "refersTo": "button-primary",
-      "description": "The only filled-with-color control in the system. One per page, on the single most important action.",
+      "description": "The only filled-with-color control in the system. One per page, at most.",
       "html": "<a class=\"ds-btn-primary\" href=\"#\">Read the writing<svg class=\"ds-btn-arrow\" width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg></a>",
-      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-family: \"Inter Variable\", ui-sans-serif, system-ui, sans-serif; font-size: 14px; font-weight: 500; line-height: 1; text-decoration: none; padding: 10px 14px; border-radius: 6px; background: var(--mint-4, #c8f4e9); color: var(--mint-11, #027864); border: 1px solid color-mix(in srgb, var(--mint-9, #86ead4) 40%, transparent); box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1); transition: background-color 150ms, color 150ms, border-color 150ms; } .ds-btn-primary .ds-btn-arrow { transition: transform 150ms; } .ds-btn-primary:hover { background: var(--mint-5, #b3ecde); } .ds-btn-primary:hover .ds-btn-arrow { transform: translateX(2px); } .ds-btn-primary:focus-visible { outline: 2px solid var(--mint-9, #86ead4); outline-offset: 2px; }"
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 6px; padding: 10px 14px; font-family: \"Inter Variable\", ui-sans-serif, system-ui, sans-serif; font-size: 14px; font-weight: 500; line-height: 1; text-decoration: none; color: var(--mint-11); background: var(--mint-4); border: 1px solid color-mix(in oklab, var(--mint-9) 40%, transparent); border-radius: 6px; box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1); transition: background-color 150ms, color 150ms; } .ds-btn-primary:hover { background: var(--mint-5); } .ds-btn-primary:hover .ds-btn-arrow { transform: translateX(0.5px); } .ds-btn-arrow { transition: transform 150ms; } .ds-btn-primary:focus-visible { outline: 2px solid var(--mint-9); outline-offset: 2px; }"
     },
     {
       "name": "Secondary Button",
       "kind": "button",
       "refersTo": "button-secondary",
-      "description": "The default control. Sage fill, no border, one tonal step on hover.",
+      "description": "Sage-filled control. Hover moves exactly one tonal step.",
       "html": "<a class=\"ds-btn-secondary\" href=\"#\">Browse projects</a>",
-      "css": ".ds-btn-secondary { display: inline-flex; align-items: center; justify-content: center; font-family: \"Inter Variable\", ui-sans-serif, system-ui, sans-serif; font-size: 14px; font-weight: 500; line-height: 1; text-decoration: none; padding: 10px 14px; border-radius: 6px; background: var(--sage-3, #eef1f0); color: var(--sage-12, #1a211e); border: none; box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1); transition: background-color 150ms; } .ds-btn-secondary:hover { background: var(--sage-4, #e6e9e8); } .ds-btn-secondary:focus-visible { outline: 2px solid var(--mint-9, #86ead4); outline-offset: 2px; }"
+      "css": ".ds-btn-secondary { display: inline-flex; align-items: center; justify-content: center; padding: 10px 14px; font-family: \"Inter Variable\", ui-sans-serif, system-ui, sans-serif; font-size: 14px; font-weight: 500; line-height: 1; text-decoration: none; color: var(--sage-12); background: var(--sage-3); border: 0; border-radius: 6px; box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1); transition: background-color 150ms; } .ds-btn-secondary:hover { background: var(--sage-4); } .ds-btn-secondary:focus-visible { outline: 2px solid var(--mint-9); outline-offset: 2px; }"
     },
     {
-      "name": "Ghost Button",
+      "name": "Ruled Text Action",
       "kind": "button",
-      "refersTo": "button-ghost",
-      "description": "Tertiary action. Invisible at rest; the hover surface is the only thing that appears.",
-      "html": "<a class=\"ds-btn-ghost\" href=\"#\">Listen to Remote Ruby</a>",
-      "css": ".ds-btn-ghost { display: inline-flex; align-items: center; justify-content: center; font-family: \"Inter Variable\", ui-sans-serif, system-ui, sans-serif; font-size: 14px; font-weight: 500; line-height: 1; text-decoration: none; padding: 10px 14px; border-radius: 6px; background: transparent; color: var(--sage-11, #5f6563); border: none; transition: background-color 150ms, color 150ms; } .ds-btn-ghost:hover { background: var(--sage-3, #eef1f0); color: var(--sage-12, #1a211e); } .ds-btn-ghost:focus-visible { outline: 2px solid var(--mint-9, #86ead4); outline-offset: 2px; }"
+      "refersTo": "button-share",
+      "description": "The share / action / section-action language: mono on a hairline underline, not a button shape at all.",
+      "html": "<a class=\"ds-action\" href=\"#\">all posts<svg width=\"12\" height=\"12\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg></a>",
+      "css": ".ds-action { display: inline-flex; align-items: center; gap: 6px; padding-bottom: 2px; font-family: \"JetBrains Mono Variable\", ui-monospace, Menlo, monospace; font-size: 11.5px; text-decoration: none; color: var(--sage-10); border-bottom: 1px solid var(--sage-5); transition: color 150ms, border-color 150ms; } .ds-action:hover { color: var(--mint-11); border-color: var(--mint-11); } .ds-action:hover svg { transform: translateX(0.5px); } .ds-action svg { transition: transform 150ms; } .ds-action:focus-visible { outline: 2px solid var(--mint-9); outline-offset: 2px; }"
     },
     {
       "name": "Post Row",
       "kind": "custom",
       "refersTo": "post-row",
-      "description": "The signature component. Mono date, Inter title, mono tag line, trailing arrow — separated by a hairline, entirely inert until hovered.",
-      "html": "<a class=\"ds-post-row\" href=\"#\"><div class=\"ds-post-date\">Sep 1, 2026</div><div><div class=\"ds-post-title\">Fast CI for Rails monorepos</div><div class=\"ds-post-meta\"><span><span class=\"ds-post-hash\">#</span>rails</span><span><span class=\"ds-post-hash\">#</span>ci</span><span>·</span><span>6 min read</span></div></div><div class=\"ds-post-arrow\"><svg width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg></div></a>",
-      "css": ".ds-post-row { display: grid; grid-template-columns: 96px 1fr auto; gap: 24px; align-items: baseline; padding: 14px 0; border-bottom: 1px solid var(--sage-4, #e6e9e8); text-decoration: none; } .ds-post-date { font-family: \"JetBrains Mono Variable\", ui-monospace, Menlo, monospace; font-size: 12px; color: var(--sage-11, #5f6563); white-space: nowrap; } .ds-post-title { font-family: \"Inter Variable\", ui-sans-serif, system-ui, sans-serif; font-size: 15.5px; font-weight: 500; line-height: 1.375; letter-spacing: -0.008em; color: var(--sage-12, #1a211e); transition: color 150ms; } .ds-post-meta { margin-top: 4px; display: flex; flex-wrap: wrap; gap: 12px; font-family: \"JetBrains Mono Variable\", ui-monospace, Menlo, monospace; font-size: 11px; color: var(--sage-11, #5f6563); } .ds-post-hash { color: var(--sage-8, #b8bcba); } .ds-post-arrow { color: var(--sage-8, #b8bcba); display: inline-flex; transition: color 150ms, transform 150ms; } .ds-post-row:hover .ds-post-title { color: var(--mint-11, #027864); } .ds-post-row:hover .ds-post-arrow { color: var(--mint-11, #027864); transform: translateX(2px); } .ds-post-row:focus-visible { outline: 2px solid var(--mint-9, #86ead4); outline-offset: 2px; }"
+      "description": "The core unit of the site: mono date, title with mono tag line, trailing arrow. Whole row is the target.",
+      "html": "<a class=\"ds-post-row\" href=\"#\"><div class=\"ds-post-date\">Aug 14, 2026</div><div><div class=\"ds-post-title\">Bridging Radix steps into a Tailwind v4 theme</div><div class=\"ds-post-meta\"><span><span class=\"ds-hash\">#</span>tailwind</span><span><span class=\"ds-hash\">#</span>bridgetown</span><span>·</span><span>6 min read</span></div></div><div class=\"ds-post-arrow\"><svg width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg></div></a>",
+      "css": ".ds-post-row { display: grid; grid-template-columns: 96px 1fr auto; gap: 24px; align-items: baseline; padding: 14px 0; border-bottom: 1px solid var(--sage-4); text-decoration: none; } .ds-post-date { font-family: \"JetBrains Mono Variable\", ui-monospace, Menlo, monospace; font-size: 12px; color: var(--sage-11); white-space: nowrap; } .ds-post-title { font-family: \"Inter Variable\", ui-sans-serif, system-ui, sans-serif; font-size: 15.5px; font-weight: 500; line-height: 1.375; letter-spacing: -0.008em; color: var(--sage-12); text-wrap: balance; transition: color 150ms; } .ds-post-meta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 4px; font-family: \"JetBrains Mono Variable\", ui-monospace, Menlo, monospace; font-size: 11px; color: var(--sage-11); } .ds-hash { color: var(--sage-8); } .ds-post-arrow { display: inline-flex; justify-content: flex-end; color: var(--sage-8); transition: color 150ms, transform 150ms; } .ds-post-row:hover .ds-post-title { color: var(--mint-11); } .ds-post-row:hover .ds-post-arrow { color: var(--mint-11); transform: translateX(0.5px); } @media (max-width: 767px) { .ds-post-row { grid-template-columns: 1fr; gap: 6px; } .ds-post-date { font-size: 11px; } .ds-post-arrow { display: none; } }"
     },
     {
-      "name": "Section Head",
+      "name": "Hero Index",
       "kind": "custom",
-      "refersTo": "label",
-      "description": "The signature type treatment: a mono uppercase filing label on a hairline, with an optional trailing action link. Never large.",
-      "html": "<div class=\"ds-section-head\"><h2 class=\"ds-section-title\">recent posts</h2><a class=\"ds-section-action\" href=\"#\">all posts<svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg></a></div>",
-      "css": ".ds-section-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin-bottom: 18px; } .ds-section-title { margin: 0; flex: 1; padding-bottom: 8px; border-bottom: 1px solid var(--sage-4, #e6e9e8); font-family: \"JetBrains Mono Variable\", ui-monospace, Menlo, monospace; font-size: 12px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; color: var(--sage-11, #5f6563); } .ds-section-action { display: inline-flex; align-items: center; gap: 6px; font-family: \"JetBrains Mono Variable\", ui-monospace, Menlo, monospace; font-size: 12.5px; color: var(--sage-10, #7c8481); text-decoration: none; transition: color 150ms; } .ds-section-action svg { transition: transform 150ms; } .ds-section-action:hover { color: var(--mint-11, #027864); } .ds-section-action:hover svg { transform: translateX(2px); }"
+      "refersTo": "hero-index-row",
+      "description": "The ledger beside the homepage hero. Counts are derived from the collections at build time — never asserted.",
+      "html": "<div class=\"ds-index\"><div class=\"ds-index-label\">index</div><ul class=\"ds-index-list\"><li><a class=\"ds-index-row\" href=\"#\"><span class=\"ds-index-name\">writing</span><span class=\"ds-index-value\">55 posts</span></a></li><li><a class=\"ds-index-row\" href=\"#\"><span class=\"ds-index-name\">open source</span><span class=\"ds-index-value\">15 repos</span></a></li><li><a class=\"ds-index-row\" href=\"#\"><span class=\"ds-index-name\">podcast</span><span class=\"ds-index-value\">350+ episodes</span></a></li></ul><p class=\"ds-index-aside\">mostly so I can find them again later.</p></div>",
+      "css": ".ds-index { max-width: 300px; } .ds-index-label { padding-bottom: 8px; border-bottom: 1px solid var(--sage-4); font-family: \"JetBrains Mono Variable\", ui-monospace, Menlo, monospace; font-size: 12px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; color: var(--sage-11); } .ds-index-list { list-style: none; margin: 0; padding: 0; } .ds-index-row { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding: 10px 0; border-bottom: 1px solid var(--sage-4); text-decoration: none; } .ds-index-name { font-family: \"Inter Variable\", ui-sans-serif, system-ui, sans-serif; font-size: 13.5px; color: var(--sage-12); transition: color 150ms; } .ds-index-value { font-family: \"JetBrains Mono Variable\", ui-monospace, Menlo, monospace; font-size: 11.5px; color: var(--sage-11); white-space: nowrap; transition: color 150ms; } .ds-index-row:hover .ds-index-name, .ds-index-row:hover .ds-index-value { color: var(--mint-11); } .ds-index-aside { margin: 16px 0 0; font-family: \"JetBrains Mono Variable\", ui-monospace, Menlo, monospace; font-size: 11.5px; line-height: 1.6; color: var(--sage-11); }"
     },
     {
       "name": "Project Card",
       "kind": "card",
       "refersTo": "project-card",
-      "description": "Square, borderless card in a hairline-ruled grid. Ends with a mono row of facts pinned to the bottom.",
-      "html": "<a class=\"ds-card\" href=\"#\"><div class=\"ds-card-head\"><span class=\"ds-card-icon\"><svg width=\"14\" height=\"14\" viewBox=\"0 0 16 16\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.486 2.486 0 0 1 4.5 9h8Z\"/></svg></span><span class=\"ds-card-name\">obsidian-objects</span><span class=\"ds-chip-active\">active</span></div><div class=\"ds-card-desc\">A small Ruby object layer over an Obsidian vault, so notes can be queried like records.</div><div class=\"ds-card-facts\"><span class=\"ds-card-fact\"><span class=\"ds-lang-dot\"></span>Ruby</span><span class=\"ds-card-fact\">★ 42</span></div></a>",
-      "css": ".ds-card { display: flex; flex-direction: column; gap: 4px; padding: 20px; background: var(--sage-1, #fbfdfc); border: 1px solid var(--sage-4, #e6e9e8); text-decoration: none; transition: background-color 150ms; } .ds-card:hover { background: var(--sage-2, #f7f9f8); } .ds-card-head { display: flex; align-items: center; gap: 10px; margin-bottom: 4px; } .ds-card-icon { display: inline-flex; color: var(--sage-10, #7c8481); transition: color 150ms; } .ds-card:hover .ds-card-icon { color: var(--mint-11, #027864); } .ds-card-name { font-family: \"Inter Variable\", ui-sans-serif, system-ui, sans-serif; font-size: 15px; font-weight: 600; letter-spacing: -0.02em; color: var(--sage-12, #1a211e); } .ds-chip-active { margin-left: auto; font-family: \"JetBrains Mono Variable\", ui-monospace, Menlo, monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.06em; padding: 1px 6px; border-radius: 9999px; color: var(--mint-11, #027864); background: var(--mint-4, #c8f4e9); border: 1px solid color-mix(in srgb, var(--mint-9, #86ead4) 30%, transparent); } .ds-card-desc { font-family: \"Inter Variable\", ui-sans-serif, system-ui, sans-serif; font-size: 13.5px; line-height: 1.375; color: var(--sage-11, #5f6563); margin: 4px 0 16px; } .ds-card-facts { margin-top: auto; display: flex; align-items: center; gap: 14px; font-family: \"JetBrains Mono Variable\", ui-monospace, Menlo, monospace; font-size: 11.5px; color: var(--sage-10, #7c8481); } .ds-card-fact { display: inline-flex; align-items: center; gap: 6px; } .ds-lang-dot { width: 8px; height: 8px; border-radius: 9999px; background: #701516; }"
+      "description": "Square, hairline-bounded region. Detail row pinned to the bottom so unequal cards align.",
+      "html": "<a class=\"ds-card\" href=\"#\"><div class=\"ds-card-head\"><span class=\"ds-card-icon\"><svg width=\"14\" height=\"14\" viewBox=\"0 0 16 16\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.486 2.486 0 0 1 4.5 9h8Z\"/></svg></span><span class=\"ds-card-name\">js-configs</span><span class=\"ds-chip ds-chip-active\">active</span></div><div class=\"ds-card-desc\">Shared ESLint, Prettier, and TypeScript configs so a new project starts correct.</div><div class=\"ds-card-detail\"><span class=\"ds-lang\"><span class=\"ds-lang-dot\"></span>JavaScript</span><span>24</span><span>3</span></div></a>",
+      "css": ".ds-card { display: flex; flex-direction: column; gap: 4px; padding: 20px; background: var(--sage-1); border: 1px solid var(--sage-4); text-decoration: none; transition: background-color 150ms; } .ds-card:hover { background: var(--sage-2); } .ds-card-head { display: flex; align-items: center; gap: 10px; margin-bottom: 4px; } .ds-card-icon { display: inline-flex; color: var(--sage-10); transition: color 150ms; } .ds-card:hover .ds-card-icon { color: var(--mint-11); } .ds-card-name { font-family: \"Inter Variable\", ui-sans-serif, system-ui, sans-serif; font-size: 15px; font-weight: 600; letter-spacing: -0.025em; color: var(--sage-12); } .ds-chip { margin-left: auto; padding: 1px 6px; font-family: \"JetBrains Mono Variable\", ui-monospace, Menlo, monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.06em; border-radius: 9999px; border: 1px solid var(--sage-4); color: var(--sage-10); } .ds-chip-active { color: var(--mint-11); background: var(--mint-4); border-color: color-mix(in oklab, var(--mint-9) 30%, transparent); } .ds-card-desc { margin: 4px 0 16px; font-family: \"Inter Variable\", ui-sans-serif, system-ui, sans-serif; font-size: 13.5px; line-height: 1.375; color: var(--sage-11); text-wrap: pretty; } .ds-card-detail { display: flex; align-items: center; gap: 14px; margin-top: auto; font-family: \"JetBrains Mono Variable\", ui-monospace, Menlo, monospace; font-size: 11.5px; color: var(--sage-10); } .ds-lang { display: inline-flex; align-items: center; gap: 6px; } .ds-lang-dot { width: 8px; height: 8px; border-radius: 9999px; background: #f1e05a; }"
     },
     {
-      "name": "Nav Link",
-      "kind": "nav",
-      "refersTo": "nav-link",
-      "description": "Topbar navigation. Sage at rest, a sage fill on hover, and a 1.5px inset mint underline when active.",
-      "html": "<nav class=\"ds-nav\"><a class=\"ds-nav-link ds-nav-link--active\" href=\"#\">Posts</a><a class=\"ds-nav-link\" href=\"#\">Projects</a><a class=\"ds-nav-link\" href=\"#\">Speaking</a><button class=\"ds-nav-search\" type=\"button\"><svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"11\" cy=\"11\" r=\"7\"/><path d=\"m20 20-3.5-3.5\"/></svg>Search<kbd class=\"ds-kbd\">⌘K</kbd></button></nav>",
-      "css": ".ds-nav { display: flex; align-items: center; gap: 2px; font-family: \"Inter Variable\", ui-sans-serif, system-ui, sans-serif; } .ds-nav-link { position: relative; padding: 6px 10px; border-radius: 6px; font-size: 13.5px; color: var(--sage-11, #5f6563); text-decoration: none; transition: background-color 150ms, color 150ms; } .ds-nav-link:hover { background: var(--sage-3, #eef1f0); color: var(--sage-12, #1a211e); } .ds-nav-link--active { color: var(--sage-12, #1a211e); } .ds-nav-link--active::after { content: \"\"; position: absolute; left: 10px; right: 10px; bottom: 2px; height: 1.5px; border-radius: 2px; background: var(--mint-11, #027864); } .ds-nav-search { display: inline-flex; align-items: center; gap: 8px; margin-left: 8px; padding: 6px 10px; border: none; border-radius: 6px; background: transparent; cursor: pointer; font-family: \"JetBrains Mono Variable\", ui-monospace, Menlo, monospace; font-size: 11.5px; color: var(--sage-11, #5f6563); transition: background-color 150ms, color 150ms; } .ds-nav-search:hover { background: var(--sage-3, #eef1f0); color: var(--sage-12, #1a211e); } .ds-kbd { font-family: \"JetBrains Mono Variable\", ui-monospace, Menlo, monospace; font-size: 11px; background: var(--sage-3, #eef1f0); border: 1px solid var(--sage-5, #dfe2e0); border-radius: 4px; color: var(--sage-11, #5f6563); padding: 1px 6px; }"
-    },
-    {
-      "name": "Search Input",
+      "name": "Command Palette",
       "kind": "input",
       "refersTo": "input-search",
-      "description": "The only text input on the site. The field carries no chrome — the palette shell around it is the field.",
-      "html": "<div class=\"ds-search\"><svg class=\"ds-search-icon\" width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"11\" cy=\"11\" r=\"7\"/><path d=\"m20 20-3.5-3.5\"/></svg><input class=\"ds-search-input\" type=\"search\" placeholder=\"Search posts, talks, episodes, projects…\" aria-label=\"Search\"><span class=\"ds-search-esc\">esc</span></div>",
-      "css": ".ds-search { display: flex; align-items: center; gap: 12px; padding: 14px 18px; background: var(--sage-2, #f7f9f8); border: 1px solid var(--sage-5, #dfe2e0); border-radius: 14px; box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25); } .ds-search-icon { color: var(--sage-10, #7c8481); flex-shrink: 0; } .ds-search-input { flex: 1; background: transparent; border: 0; outline: none; font-family: \"Inter Variable\", ui-sans-serif, system-ui, sans-serif; font-size: 15.5px; color: var(--sage-12, #1a211e); } .ds-search-input::placeholder { color: var(--sage-8, #b8bcba); } .ds-search-esc { font-family: \"JetBrains Mono Variable\", ui-monospace, Menlo, monospace; font-size: 11px; color: var(--sage-10, #7c8481); border: 1px solid var(--sage-5, #dfe2e0); border-radius: 4px; padding: 2px 6px; }"
+      "description": "The only text input on the site. The panel is the field; the input itself has no chrome.",
+      "html": "<div class=\"ds-cmdk\"><div class=\"ds-cmdk-head\"><svg class=\"ds-cmdk-icon\" width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"11\" cy=\"11\" r=\"7\"/><path d=\"m20 20-3.5-3.5\"/></svg><input class=\"ds-cmdk-input\" type=\"search\" placeholder=\"Search posts, talks, episodes, projects…\" aria-label=\"Search\"><span class=\"ds-kbd\">esc</span></div><div class=\"ds-cmdk-foot\"><span class=\"ds-hint\"><span class=\"ds-kbd\">↑↓</span>navigate</span><span class=\"ds-hint\"><span class=\"ds-kbd\">↵</span>open</span></div></div>",
+      "css": ".ds-cmdk { width: min(580px, 92%); background: var(--sage-2); border: 1px solid var(--sage-5); border-radius: 14px; overflow: hidden; box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25); } .ds-cmdk-head { display: flex; align-items: center; gap: 12px; padding: 14px 18px; border-bottom: 1px solid var(--sage-5); } .ds-cmdk-icon { flex-shrink: 0; color: var(--sage-10); } .ds-cmdk-input { flex: 1; background: transparent; border: 0; outline: none; font-family: \"Inter Variable\", ui-sans-serif, system-ui, sans-serif; font-size: 15.5px; color: var(--sage-12); } .ds-cmdk-input::placeholder { color: var(--sage-8); } .ds-cmdk-foot { display: flex; gap: 18px; padding: 10px 18px; border-top: 1px solid var(--sage-5); font-family: \"JetBrains Mono Variable\", ui-monospace, Menlo, monospace; font-size: 11px; color: var(--sage-10); } .ds-hint { display: inline-flex; align-items: center; gap: 6px; } .ds-kbd { padding: 1px 6px; font-family: \"JetBrains Mono Variable\", ui-monospace, Menlo, monospace; font-size: 11px; color: var(--sage-11); background: var(--sage-3); border: 1px solid var(--sage-5); border-radius: 4px; }"
     },
     {
-      "name": "Tag Pill",
-      "kind": "chip",
-      "refersTo": "tag-pill",
-      "description": "Post tags. Outline-only pill — the shape signals 'token, not word' without adding a color.",
-      "html": "<a class=\"ds-tag\" href=\"#\">#rails</a> <a class=\"ds-tag\" href=\"#\">#viewcomponent</a>",
-      "css": ".ds-tag { display: inline-block; font-family: \"Inter Variable\", ui-sans-serif, system-ui, sans-serif; font-size: 11px; padding: 2px 8px; border-radius: 9999px; border: 1px solid var(--sage-5, #dfe2e0); color: var(--sage-11, #5f6563); text-decoration: none; transition: color 150ms, border-color 150ms; } .ds-tag:hover { color: var(--mint-11, #027864); border-color: var(--mint-11, #027864); } .ds-tag:focus-visible { outline: 2px solid var(--mint-9, #86ead4); outline-offset: 2px; }"
+      "name": "Topbar Nav Link",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Sage at rest; the active item carries the only always-visible mint in the chrome besides the avatar dot.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-nav-link\" href=\"#\">Posts</a><a class=\"ds-nav-link ds-nav-active\" href=\"#\">Projects</a><a class=\"ds-nav-link\" href=\"#\">Speaking</a><a class=\"ds-nav-link\" href=\"#\">About</a></nav>",
+      "css": ".ds-nav { display: flex; align-items: center; gap: 2px; } .ds-nav-link { position: relative; padding: 6px 10px; font-family: \"Inter Variable\", ui-sans-serif, system-ui, sans-serif; font-size: 13.5px; text-decoration: none; color: var(--sage-11); border-radius: 6px; transition: background-color 150ms, color 150ms; } .ds-nav-link:hover { background: var(--sage-3); color: var(--sage-12); } .ds-nav-active { color: var(--sage-12); } .ds-nav-active::after { content: \"\"; position: absolute; left: 10px; right: 10px; bottom: 2px; height: 1.5px; border-radius: 2px; background: var(--mint-11); } .ds-nav-link:focus-visible { outline: 2px solid var(--mint-9); outline-offset: 2px; }"
     },
     {
       "name": "Callout",
       "kind": "custom",
       "refersTo": "note",
-      "description": "Markdown-aware callout for prose. The one rounded content surface in the system, in a default and an accent scheme.",
-      "html": "<div class=\"ds-note\">Bridgetown treats <code class=\"ds-code\">.html.erb</code> as part of the slug. Use a single <code class=\"ds-code\">.erb</code> extension and set the permalink explicitly.</div><div class=\"ds-note ds-note--accent\">Torchlight only runs when <code class=\"ds-code\">BRIDGETOWN_ENV=production</code>. Code blocks render plain in dev.</div>",
-      "css": ".ds-note { margin: 24px 0; padding: 16px; border-radius: 12px; border: 1px solid var(--sage-6, #d7dad9); background: var(--sage-2, #f7f9f8); color: var(--sage-11, #5f6563); font-family: \"Inter Variable\", ui-sans-serif, system-ui, sans-serif; font-size: 15px; line-height: 1.5; } .ds-note--accent { background: var(--mint-3, #ddf9f2); color: var(--mint-12, #16433c); border-color: var(--mint-6, #9ce0d0); } .ds-code { font-family: \"JetBrains Mono Variable\", ui-monospace, Menlo, monospace; font-size: 0.875em; background: var(--sage-3, #eef1f0); color: var(--sage-12, #1a211e); padding: 2px 6px; border-radius: 4px; border: 1px solid var(--sage-4, #e6e9e8); } .ds-note--accent .ds-code { background: color-mix(in srgb, var(--mint-4, #c8f4e9) 70%, transparent); color: var(--mint-12, #16433c); border-color: var(--mint-6, #9ce0d0); }"
+      "description": "Markdown-aware prose callout. Default is a tonal sage panel; the accent scheme is one of the few mint surfaces.",
+      "html": "<div class=\"ds-note\">Torchlight only runs in production, so code blocks render plain in dev.</div><div class=\"ds-note ds-note-accent\">Bridge the token into <code>@theme</code> in the same change that uses it.</div>",
+      "css": ".ds-note { margin: 24px 0; padding: 16px; border: 1px solid var(--sage-6); border-radius: 12px; background: var(--sage-2); font-family: \"Inter Variable\", ui-sans-serif, system-ui, sans-serif; font-size: 15px; line-height: 1.5; color: var(--sage-11); } .ds-note-accent { background: var(--mint-3); border-color: var(--mint-6); color: var(--mint-12); } .ds-note code { padding: 2px 6px; font-family: \"JetBrains Mono Variable\", ui-monospace, Menlo, monospace; font-size: 0.875em; background: var(--sage-3); color: var(--sage-12); border: 1px solid var(--sage-4); border-radius: 4px; }"
+    },
+    {
+      "name": "Shell Command",
+      "kind": "custom",
+      "refersTo": "slate-3",
+      "description": "The site's only slate surface: a $ prompt cap butted against a mono code span, radius split across the pair.",
+      "html": "<div class=\"ds-cmd\"><span class=\"ds-cmd-prompt\">$&nbsp;</span><code class=\"ds-cmd-body\">mise run build</code></div>",
+      "css": ".ds-cmd { display: inline-flex; flex-wrap: nowrap; align-items: stretch; font-size: 14px; } .ds-cmd-prompt { padding: 4px 8px; border-radius: 6px 0 0 6px; background: var(--slate-3); color: var(--slate-12); font-family: \"JetBrains Mono Variable\", ui-monospace, Menlo, monospace; } .ds-cmd-body { padding: 4px 8px; border-radius: 0 6px 6px 0; background: var(--slate-3); color: var(--slate-12); font-family: \"JetBrains Mono Variable\", ui-monospace, Menlo, monospace; }"
+    },
+    {
+      "name": "Theme Toggle",
+      "kind": "custom",
+      "refersTo": "theme-toggle",
+      "description": "Three-way radiogroup. The visual state is driven by aria-checked so it cannot drift from the accessible state.",
+      "html": "<div class=\"ds-toggle\" role=\"radiogroup\" aria-label=\"Theme\"><button class=\"ds-toggle-btn\" role=\"radio\" aria-checked=\"true\" title=\"System\"><svg width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><rect x=\"2\" y=\"3\" width=\"20\" height=\"14\" rx=\"2\"/><path d=\"M8 21h8M12 17v4\"/></svg></button><button class=\"ds-toggle-btn\" role=\"radio\" aria-checked=\"false\" title=\"Light\"><svg width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"4\"/><path d=\"M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41\"/></svg></button><button class=\"ds-toggle-btn\" role=\"radio\" aria-checked=\"false\" title=\"Dark\"><svg width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z\"/></svg></button></div>",
+      "css": ".ds-toggle { display: inline-flex; align-items: center; gap: 2px; padding: 4px; background: var(--sage-3); border-radius: 9999px; } .ds-toggle-btn { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; padding: 0; background: transparent; border: 0; border-radius: 9999px; color: var(--sage-10); cursor: pointer; transition: background-color 150ms, color 150ms; } .ds-toggle-btn:hover { color: var(--sage-12); } .ds-toggle-btn[aria-checked=\"true\"] { background: var(--sage-5); color: var(--sage-12); box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1); } .ds-toggle-btn:focus-visible { outline: none; box-shadow: 0 0 0 2px var(--mint-8); }"
     }
   ],
   "narrative": {
     "northStar": "The Engineer's Notebook",
-    "overview": "This is a working log kept in public, and it looks like one. Sage paper as the ground, hairline rules as the only structure, monospace in the margins for everything that is a fact — dates, tags, reading times, star counts, keyboard hints — and Inter in the body for everything that is a sentence. The split is the whole system: mono is the record, sans is the voice. A post row reads like a ledger line because it is one; a paragraph reads like writing because it is.\n\nThe mood is quiet, exact, and unhurried. Nothing raises its voice, and precision is the thing that signals care. There is exactly one accent color in the entire palette, and it is spent almost entirely on hover and active states, which means the page at rest is a nearly monochrome field of sage with black text — and the instant a pointer lands, the thing under it turns mint. Restraint is not an absence of design here; it is the mechanism. A site that used five accent colors could not make a single hover feel like an event.\n\nSurfaces are flat. Depth is a 1px line, not a shadow. Shadows exist, but only on the two things that genuinely float above the page — the command palette and the mobile menu — so their appearance is a real signal that context has changed rather than a decorative default. The confirmed anti-reference is the generic dev-blog template: a grid of cards with stock cover images, colored tag pills, rounded-2xl on everything, emoji section headers. The row-and-hairline list is the deliberate alternative to that, and the mono uppercase section label is the deliberate alternative to a decorated heading.",
+    "overview": "This is a working log kept in public, and it looks like one. Sage paper as the ground, hairline rules as the only structure, monospace in the margins for everything that is a fact — dates, tags, reading times, star counts, episode numbers, keyboard hints — and Inter in the body for everything that is a sentence. The split is the whole system: mono is the record, sans is the voice. A post row reads like a ledger line because it is one; a paragraph reads like writing because it is.\n\nThe mood is quiet, exact, and unhurried. Nothing raises its voice, and precision is the thing that signals care. There is exactly one brand accent in the palette, and it is spent almost entirely on hover and active states, which means the page at rest is a nearly monochrome field of sage with black text — and the instant a pointer lands, the thing under it turns mint. Restraint is not an absence of design here; it is the mechanism. A site that used five accent colors could not make a single hover feel like an event.\n\nSurfaces are flat. Depth is a 1px line, not a shadow. Shadows exist, but only on the things that genuinely float above the page — the command palette, the mobile menu, the Markdown-actions dropdown — so their appearance is a real signal that context has changed rather than a decorative default. The confirmed anti-reference is the generic dev-blog template: a grid of cards with stock cover images, colored tag pills, rounded-2xl on everything, emoji section headers. The row-and-hairline list is the deliberate alternative to that, and the mono uppercase section label is the deliberate alternative to a decorated heading.",
     "keyCharacteristics": [
       "Two typefaces with strictly divided jobs: Inter Variable for prose, JetBrains Mono Variable for metadata and labels.",
-      "A 12-step sage ramp carrying the entire interface, and a mint ramp reserved almost entirely for state.",
+      "A 12-step sage ramp carrying the entire interface, a mint ramp reserved almost entirely for state, and a cool slate ramp used only where content is quoted rather than authored.",
       "Hairline 1px sage-4 borders as the universal separator; no ambient shadows on content.",
       "Dark and light are equal peers, defined as paired values on [data-theme] and resolved before first paint.",
       "Section headings are mono, uppercase, 12px, 0.08em tracked — a filing label, not a title.",
-      "Every interactive element is visually inert at rest and turns mint on hover."
+      "Every interactive element is visually inert at rest and turns mint on hover.",
+      "Evidence is displayed as a ledger, not asserted as a claim — the hero's index panel counts posts, repos, episodes, and talks from the collections at build time."
     ],
     "rules": [
-      { "name": "The One Voice Rule", "body": "Mint has exactly one job: to mark what is live, active, or under the pointer. It never appears as decoration, never as a second brand color, never on a static surface that isn't a control. At rest, a full viewport should contain almost no mint at all — often only the topbar dot and the period after \"Andrew Mason\". Its rarity is what makes a hover legible from the corner of the eye.", "section": "colors" },
+      { "name": "The One Voice Rule", "body": "Mint has exactly one job: to mark what is live, active, or under the pointer. It never appears as decoration and never as a second brand color. At rest, a full viewport should contain almost no mint at all — often only the topbar dot, the period after \"Andrew Mason\", and a show name. Its rarity is what makes a hover legible from the corner of the eye.", "section": "colors" },
+      { "name": "The Borrowed-Color Rule", "body": "A color outside sage and mint is admissible only when the color is the data — a warning level, a per-show identifier, an upstream language color. Never invent a decorative color; only borrow one that means something. If a new color cannot answer \"what fact does this encode?\", it does not go in.", "section": "colors" },
       { "name": "The Both-Themes Rule", "body": "No color is chosen for light and then checked in dark. Every token is authored as a pair in frontend/styles/index.css and both are first-class. A change that only looks right in one theme is not finished.", "section": "colors" },
-      { "name": "The Bridge Rule", "body": "A Radix step is only usable in markup if it has been bridged into @theme as --color-<name>. Using bg-mint-7 when --color-mint-7 isn't declared produces silence, not an error. Add the bridge and the token in the same change.", "section": "colors" },
-      { "name": "The Mono-Is-Metadata Rule", "body": "If it is a fact about the content — when, how long, how many, what tag, what key — it is JetBrains Mono. If it is the content, or a sentence about it, it is Inter. There is no third category and no overlap.", "section": "typography" },
-      { "name": "The Label-Not-Title Rule", "body": "Section headings are never large. `now`, `featured work`, `recent posts` are set at 12px mono uppercase in sage-11, sitting on a hairline — a filing tab, not a banner. Scale hierarchy is carried by the ruled structure and by which type family is used, not by making headings big.", "section": "typography" },
+      { "name": "The Bridge Rule", "body": "A Radix step is only usable in markup if it has been bridged into @theme as --color-<name>. Using bg-mint-7 when --color-mint-7 isn't declared produces silence, not an error — the class simply does nothing and the element falls back to inherited color. Sage and slate are bridged in full; mint is bridged as a subset (steps 3, 4, 5, 6, 8, 9, 11, 12), so mint is where this bites. Add the bridge and the token in the same change, and never reference a step the theme block doesn't declare.", "section": "colors" },
+      { "name": "The Two-Temperature Rule", "body": "Sage is the page and slate is the annotation. Warm sage owns every surface the site speaks in — ground, chrome, hairlines, body text, rows, cards. Cool slate is admitted only where content is being displayed rather than authored: the shell-prompt block, a figure's frame and caption. Slate never separates two regions, never carries an interface control, and never sets body copy. If a new slate usage can't name the thing it is quoting, it should be sage.", "section": "colors" },
+      { "name": "The Mono-Is-Metadata Rule", "body": "If it is a fact about the content — when, how long, how many, what tag, what key, which episode — it is JetBrains Mono. If it is the content, or a sentence about it, it is Inter. There is no third category and no overlap.", "section": "typography" },
+      { "name": "The Label-Not-Title Rule", "body": "Section headings are never large. now, featured work, recent posts, index are set at 12px mono uppercase in sage-11, sitting on a hairline — a filing tab, not a banner. Scale hierarchy is carried by the ruled structure and by which type family is used, not by making headings big.", "section": "typography" },
       { "name": "The Lowercase Rule", "body": "Section labels are authored lowercase and rendered uppercase by CSS. Copy stays in the site's understated register: no title case in section headings, no exclamation points.", "section": "typography" },
-      { "name": "The One-Column Rule", "body": "Content is a single centered column at every width. There is no sidebar, no split hero, no asymmetric layout. Responsiveness is a matter of gutters, type scale, and where a grid collapses — never of rearranging the page into a different shape.", "section": "layout" },
-      { "name": "The Hairline-Not-Shadow Rule", "body": "When two regions need separating, the answer is a 1px sage-4 line. Reach for a shadow only when an element is modal — genuinely above the page, dismissible, with a scrim. If it scrolls with the document, it is flat.", "section": "elevation" },
+      { "name": "The One-Column Rule", "body": "Content is a single centered column at every width. There is no sidebar and no asymmetric page layout. The homepage hero is the single sanctioned exception: it may pair a prose column with one narrow ledger panel, and that pairing must collapse to stacked at nav (820px). Anywhere else, responsiveness is gutters, type scale, and grid collapse — never rearranging the page into a different shape.", "section": "layout" },
+      { "name": "The Hairline-Not-Shadow Rule", "body": "When two regions need separating, the answer is a 1px sage-4 line. Reach for a shadow only when an element is floating — a modal, a drawer, or a popover, with a scrim or an outside-click dismissal. If it scrolls with the document, it is flat.", "section": "elevation" },
       { "name": "The Square-Content Rule", "body": "Anything that scrolls with the page and is separated by a hairline is square. Radius is reserved for controls and for things that float.", "section": "shapes" },
       { "name": "The Inert-Until-Touched Rule", "body": "Components have no color, border, shadow, or decoration at rest beyond their hairline. Everything expressive — the mint, the nudge, the tonal shift — is a hover, focus, or active state. A screenshot of this site at rest should look almost dead; using it should not.", "section": "components" },
       { "name": "The Whole-Row Rule", "body": "When a row or card is a link, the entire region is the anchor and the entire region responds. Never a small \"read more\" link inside an inert block.", "section": "components" }
     ],
     "dos": [
-      "Do put every fact in JetBrains Mono and every sentence in Inter. Dates, tags, reading times, counts, keyboard caps, and section labels are mono; body copy, titles, and descriptions are Inter.",
+      "Do put every fact in JetBrains Mono and every sentence in Inter. Dates, tags, reading times, counts, episode numbers, keyboard caps, and section labels are mono; body copy, titles, and descriptions are Inter.",
       "Do separate regions with a 1px sage-4 hairline, and give hover states exactly one tonal step (sage-1 → sage-2, mint-4 → mint-5).",
       "Do author every new color as a light/dark pair in frontend/styles/index.css and bridge it into @theme as --color-<name> before using it in markup.",
       "Do set section headings as 12px mono uppercase 0.08em sage-11 on a hairline, with lowercase source copy.",
-      "Do use focus-visible:outline-2 outline-offset-2 outline-mint-9 on every interactive element, and make the whole row or card the target when it links somewhere."
+      "Do use focus-visible:outline-2 outline-offset-2 outline-mint-9 on every interactive element, and make the whole row or card the target when it links somewhere.",
+      "Do derive any number the design displays from the collections or data at build time. A count that can go stale silently is worse than no count."
     ],
     "donts": [
-      "Don't add a second accent color. Mint-11 is the only accent, and it is spent on state.",
-      "Don't put a shadow on anything that scrolls with the page. Shadows belong to the command palette, the mobile drawer, and buttons — nothing else.",
-      "Don't round content. Post rows, card cells, and ruled sections are square; radius is for controls and floating panels.",
+      "Don't add a second brand accent. Mint-11 is the only one, and it is spent on state. A color from outside sage/mint is admissible only when it encodes data — a warning level, a per-show hue, an upstream language color.",
+      "Don't put a shadow on anything that scrolls with the page. Shadows belong to the command palette, the mobile drawer, the Markdown-actions popover, and buttons — nothing else.",
+      "Don't round content. Post rows, media rows, card cells, and ruled sections are square; radius is for controls and floating panels.",
       "Don't make a section heading large. Hierarchy comes from the mono/sans split and the ruled structure, not from type size.",
+      "Don't reference a Radix step that @theme doesn't bridge — an unbridged class fails silently. Sage and slate are complete; mint is a subset, so bridge the step in the same change that uses it.",
+      "Don't let slate leak past annotation surfaces. Hairlines, chrome, controls, and body copy are sage; slate is for the shell block, the figure frame, and the caption.",
+      "Don't split the page into columns outside the homepage hero. No sidebars, no two-up article layouts, no asymmetric listing pages.",
       "Don't drift toward the generic dev-blog template: no stock cover images on post cards, no colored tag pills, no rounded-2xl content boxes, no emoji section headers.",
       "Don't ship a change verified in only one theme. Both are first-class and both are resolved before first paint."
     ]
