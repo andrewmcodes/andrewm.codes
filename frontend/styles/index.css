@@ -126,8 +126,21 @@
   --text-lede--line-height: 1.55;
 
   /* The reading column only. One step up and looser than interface body. */
-  --text-read: 17px;
+  --text-read: 18px;
   --text-read--line-height: 1.7;
+
+  /* Article headings. They must outrank the prose they head by an obvious
+     step: at 17px against 17px body the sections read flat, and an h3 below
+     body size is a heading that loses to its own paragraph. */
+  --text-h2: 25px;
+  --text-h2--line-height: 1.25;
+  --text-h2--letter-spacing: -0.02em;
+  --text-h2--font-weight: 600;
+
+  --text-h3: 20px;
+  --text-h3--line-height: 1.35;
+  --text-h3--letter-spacing: -0.012em;
+  --text-h3--font-weight: 600;
 
   --text-label: 12px;
   --text-label--line-height: 1.4;
@@ -227,7 +240,9 @@ a { text-underline-offset: 0.2em; }
 /* Metadata is measurement, so its digits align in a column. */
 .font-mono { font-variant-numeric: tabular-nums; }
 
-/* View transitions */
+/* View transitions. The `<meta name="view-transition">` in the root layout is
+   what actually arms these across documents — without it Turbo Drive handles
+   the navigation and this is dead code. */
 @view-transition { navigation: auto; }
 ::view-transition-old(root),
 ::view-transition-new(root) { animation-duration: 200ms; }
@@ -239,6 +254,13 @@ a { text-underline-offset: 0.2em; }
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+
+  /* `*` does not match pseudo-elements, so the cross-document fade outlives
+     the blanket rule above unless it is named. */
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: 0.01ms !important;
+  }
 }
 
 /* Vertical bullet thread (Now / Uses) */
@@ -246,7 +268,7 @@ a { text-underline-offset: 0.2em; }
 .bullet-thread > li {
   position: relative;
   padding: 10px 0 12px 28px;
-  border-bottom: 1px solid var(--slate-4);
+  border-bottom: 1px solid var(--slate-6);
 }
 .bullet-thread > li::before {
   content: "";
@@ -266,7 +288,7 @@ a { text-underline-offset: 0.2em; }
   top: 0;
   bottom: -1px;
   width: 1px;
-  background: var(--slate-4);
+  background: var(--slate-6);
 }
 .bullet-thread > li:first-child::after { top: 18px; }
 .bullet-thread > li:last-child::after { bottom: auto; height: 18px; }
@@ -317,10 +339,10 @@ header:has(#mobile-menu[data-open="true"]) {
 .card-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  border-top: 1px solid var(--slate-4);
+  border-top: 1px solid var(--slate-6);
 }
-.card-grid > * { border-bottom: 1px solid var(--slate-4); }
-.card-grid > *:nth-child(odd) { border-right: 1px solid var(--slate-4); }
+.card-grid > * { border-bottom: 1px solid var(--slate-6); }
+.card-grid > *:nth-child(odd) { border-right: 1px solid var(--slate-6); }
 @media (max-width: 680px) {
   .card-grid { grid-template-columns: 1fr; }
   .card-grid > *:nth-child(odd) { border-right: 0; }
@@ -371,4 +393,6 @@ pre:not(.torchlight) code {
 .prose h3:hover .heading-anchor,
 .prose h4:hover .heading-anchor,
 .prose h5:hover .heading-anchor { opacity: 1; }
+/* Keyboard focus lands on the anchor too, so it cannot stay invisible. */
+.heading-anchor:focus-visible { opacity: 1; }
 .heading-anchor:hover { color: var(--ruby-11); }

@@ -15,11 +15,13 @@ class Button < Base
     xl: {circular_spacing: "p-2", default_spacing: "py-2.5 px-3.5", text: "text-note"}
   }.freeze
 
-  # Solid accent on the one primary action. Radix pairs step 9 with step 10 for
-  # hover on solid fills, and both themes share the same step 9, so the primary
-  # control is the one element that looks identical on paper and on ink.
+  # The accent marks state, so the resting primary action is a ruby hairline
+  # and a ruby label rather than a ruby field. The solid fill it replaces put
+  # white on ruby-9 at 3.89:1 — under the 4.5:1 its 13.5px label needs — and
+  # was the most landing-page-shaped object on the site. This measures 5.16:1
+  # in light and 8.36:1 in dark, and the fill still arrives on hover.
   BUTTON_VARIANTS = {
-    primary: "bg-ruby-9 hover:bg-ruby-10 text-white font-medium",
+    primary: "bg-slate-2 hover:bg-ruby-3 border border-ruby-9/50 hover:border-ruby-9 text-ruby-11 font-medium",
     secondary: "bg-slate-3 hover:bg-slate-4 text-slate-12",
     ghost: "bg-transparent hover:bg-slate-3 text-slate-11",
     text: "bg-transparent text-slate-11",

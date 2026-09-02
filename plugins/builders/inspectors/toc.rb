@@ -20,7 +20,10 @@ class Builders::Inspectors::Toc < SiteBuilder
       # A contents list of one entry is a heading with extra steps.
       next if headings.size < 2
 
-      nav.remove_attribute("hidden")
+      # `hidden` sits on the <details> wrapper so an empty rail leaves no
+      # stray summary behind; the nav itself is never separately hidden.
+      wrap = document.query_selector("[data-toc-wrap]")
+      wrap&.remove_attribute("hidden")
       nav.add_child(<<~HTML)
         <ol class="m-0 p-0 list-none flex flex-col gap-2">
           #{headings.map { |h| item(h) }.join}

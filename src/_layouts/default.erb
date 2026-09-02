@@ -15,6 +15,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="light dark">
 
+    <%#
+      Arms the cross-document view transition. Without this the @view-transition
+      rule in index.css never runs and every navigation is a hard snap.
+    %>
+    <meta name="view-transition" content="same-origin">
+
     <meta
       name="theme-color"
       content="<%= site.metadata.theme_color_light %>"

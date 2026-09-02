@@ -38,9 +38,11 @@ class EpisodeCard < Bridgetown::Component
     "#{minutes} min"
   end
 
-  # @return [String] the show, and the episode number when known
-  def kicker
-    episode_number ? "remote ruby · ep #{episode_number}" : "remote ruby"
+  # The show and the episode number are facts about the episode, so they sit
+  # with the other facts rather than as an accent line above the title.
+  # @return [Array<String>] the show, and the episode number when known
+  def show_facts
+    ["Remote Ruby", (episode_number ? "ep #{episode_number}" : nil)].compact
   end
 
   # @return [String] the description with HTML stripped, truncated to ~180 chars

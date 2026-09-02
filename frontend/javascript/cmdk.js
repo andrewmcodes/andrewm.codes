@@ -73,6 +73,9 @@ function openCmdk() {
   if (!overlay) return;
   lastFocused = /** @type {HTMLElement | null} */ (document.activeElement);
   overlay.hidden = false;
+  // The page scrolled behind the open palette, so arrow keys and a trackpad
+  // moved the document under a modal that had already trapped Tab.
+  document.documentElement.style.overflow = "hidden";
   const input = /** @type {HTMLInputElement | null} */ (el("cmdk-input"));
   if (input) {
     input.value = "";
@@ -84,6 +87,7 @@ function openCmdk() {
 function closeCmdk() {
   const overlay = el("cmdk");
   if (overlay) overlay.hidden = true;
+  document.documentElement.style.overflow = "";
   const input = el("cmdk-input");
   if (input) input.removeAttribute("aria-activedescendant");
 

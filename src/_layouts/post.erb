@@ -11,7 +11,12 @@ layout: default
 <% updated_time = resource.updated_at %>
 
 <%= render PageShell.new(width: :reading) do %>
-  <div class="grid grid-cols-[208px_minmax(0,1fr)] gap-14 items-start max-nav:grid-cols-1 max-nav:gap-0">
+  <div
+    class="
+      grid grid-cols-[208px_minmax(0,1fr)] gap-14 items-start
+      max-nav:grid-cols-1 max-nav:gap-0
+    "
+  >
     <%= render PostAside.new(
       resource: resource,
       back: back,

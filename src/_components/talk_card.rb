@@ -23,10 +23,11 @@ class TalkCard < Bridgetown::Component
     @talk[key.to_s] || @talk[key.to_sym]
   end
 
-  # @return [String, nil] venue, and the city when it is recorded
-  def kicker
-    parts = [field(:venue), field(:city)].compact
-    parts.any? ? parts.join(" · ") : nil
+  # Where it was given is a fact about the talk, so it sits with the other
+  # facts rather than as an accent line above the title.
+  # @return [Array<String>] venue, and the city when it is recorded
+  def venue_facts
+    [field(:venue), field(:city)].compact
   end
 
   # @return [Array<Hash>] normalized `{label:, href:, external:}` resources

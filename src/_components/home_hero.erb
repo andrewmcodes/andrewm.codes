@@ -50,7 +50,7 @@
       <div
         class="
           font-mono text-label uppercase text-slate-11 pb-2 border-b
-          border-slate-4
+          border-slate-6
         "
       >
         index
@@ -63,7 +63,7 @@
               href="<%= row[:href] %>"
               class="
                 group flex items-baseline justify-between gap-4 py-2.5
-                border-b border-slate-4
+                border-b border-slate-6
               "
             >
               <span
@@ -88,7 +88,13 @@
         <% end %>
       </ul>
 
-      <p class="mt-4 m-0 font-mono text-meta leading-[1.6] text-slate-11">
+      <%#
+        A sentence, not a measurement — mono was carrying prose here, which
+        is most of what flattened the small copy into one undifferentiated
+        voice. Mono keeps dates, counts, tags, durations and code.
+      %>
+
+      <p class="mt-4 m-0 text-note leading-[1.6] text-slate-11">
         mostly so I can find them again later.
       </p>
     </div>

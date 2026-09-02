@@ -7,10 +7,13 @@
 # body of work rather than four lists that merely resemble each other.
 class Entry < Bridgetown::Component
   DENSITIES = {
-    # Scanning a year of writing: date, title, facts, arrow.
+    # Scanning a year of writing: date, title, facts, arrow. The lead column is
+    # 168px to land in the same margin `PageSection` puts its labels in —
+    # at 96px the archive quietly used a second grid and the site's one
+    # compositional idea broke on the page where it should be clearest.
     compact: {
-      cols: "grid-cols-[96px_1fr_auto]",
-      spacing: "gap-6 py-3.5",
+      cols: "grid-cols-[168px_1fr_auto]",
+      spacing: "gap-10 py-3.5",
       align: "items-baseline",
       bleed: false
     },
@@ -44,15 +47,17 @@ class Entry < Bridgetown::Component
   # @param lead [String, nil] left column primary line, usually a date
   # @param lead_sub [String, nil] left column secondary line, usually a duration
   # @param mark [Hash, nil] artwork for `:media` — `{label:, hue:, image:, dim:}`
-  # @param kicker [String, nil] accent line above the title (a show or venue)
   # @param excerpt [String, nil] one paragraph of supporting copy
   # @param tags [Array<String>] hash-prefixed tags
   # @param meta [Array<String>] mono facts joined by a middot
   # @param trailing [String, nil] right column note
   # @param links [Array<Hash>] `{label:, href:}` actions below the excerpt
   # @param data [Hash] extra data attributes for the row element
+  # There is deliberately no kicker. A small accent line above a title is an
+  # eyebrow, and the show or venue it carried is a fact about the item, not a
+  # heading over it — those belong in `meta` with the other facts.
   def initialize(title:, href: nil, external: false, density: :compact,
-    lead: nil, lead_sub: nil, mark: nil, kicker: nil, excerpt: nil,
+    lead: nil, lead_sub: nil, mark: nil, excerpt: nil,
     tags: [], meta: [], trailing: nil, links: [], title_icon: false, data: {})
     @title = title
     @href = href
@@ -61,7 +66,6 @@ class Entry < Bridgetown::Component
     @lead = lead
     @lead_sub = lead_sub
     @mark = mark
-    @kicker = kicker
     @excerpt = excerpt
     @tags = Array(tags)
     @meta = Array(meta).reject { |v| v.nil? || v.to_s.strip.empty? }
@@ -71,7 +75,7 @@ class Entry < Bridgetown::Component
     @data = data
   end
 
-  attr_reader :title, :href, :lead, :lead_sub, :mark, :kicker, :excerpt,
+  attr_reader :title, :href, :lead, :lead_sub, :mark, :excerpt,
     :tags, :meta, :trailing, :links, :data
 
   def linked? = !href.nil? && href.to_s != "" && href.to_s != "#"
@@ -94,7 +98,7 @@ class Entry < Bridgetown::Component
       tokens[:cols],
       tokens[:spacing],
       tokens[:align],
-      "border-b border-slate-4",
+      "border-b border-slate-6",
       STACK[@density],
       (bleed_classes if tokens[:bleed] && linked?)
     ].compact.join(" ")

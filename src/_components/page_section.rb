@@ -44,7 +44,7 @@ class PageSection < Bridgetown::Component
   def section_classes
     [
       SPACING.fetch(@spacing, SPACING[:default]),
-      (labelled? ? "border-t border-slate-4 pt-5 #{RAIL}" : nil)
+      (labelled? ? "border-t border-slate-6 pt-5 #{RAIL}" : nil)
     ].compact.join(" ")
   end
 end

@@ -1,14 +1,17 @@
-<div class="mb-9">
-  <div
-    class="
-      font-mono text-meta text-slate-10 tracking-[0.08em] uppercase mt-7
-      mb-1.5
-    "
-  >
-    <%= @title %>
-  </div>
+<%#
+  The year is a marker over the rows, not a second rail. Giving it its own
+  168px column stacked two margins — year at the page edge, dates a further
+  168px in — and opened a gap down the middle of the archive. Set at the left
+  edge it shares a column with the dates below it, which is what makes the
+  listing read as one ledger.
+%>
 
-  <div class="flex flex-col">
+<section class="mb-9 border-t border-slate-6 pt-4">
+  <h2 class="m-0 mb-2 text-title text-slate-12 tabular-nums">
+    <%= @title %>
+  </h2>
+
+  <div class="flex flex-col min-w-0">
     <%= content %>
   </div>
-</div>
+</section>

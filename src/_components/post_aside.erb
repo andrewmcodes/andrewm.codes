@@ -1,9 +1,15 @@
 <aside class="nav:sticky nav:top-24 nav:self-start max-nav:mb-9">
   <%= render BackLink.new(href: back["path"], label: back["label"]) %>
 
-  <dl class="m-0 font-mono text-meta text-slate-11 flex flex-col gap-1.5 max-nav:flex-row max-nav:flex-wrap max-nav:gap-x-3.5">
+  <dl
+    class="
+      m-0 font-mono text-meta text-slate-11 flex flex-col gap-1.5
+      max-nav:flex-row max-nav:flex-wrap max-nav:gap-x-3.5
+    "
+  >
     <div>
       <dt class="sr-only">Published</dt>
+
       <dd class="m-0">
         <time datetime="<%= date.iso8601 %>"><%= date.strftime("%b %-d, %Y") %></time>
       </dd>
@@ -16,8 +22,13 @@
 
     <div>
       <dt class="sr-only">Author</dt>
+
       <dd class="m-0">
-        <a href="/about/" rel="author" class="hover:text-ruby-11 transition-colors">
+        <a
+          href="/about/"
+          rel="author"
+          class="hover:text-ruby-11 transition-colors"
+        >
           <%= author_name %>
         </a>
       </dd>
@@ -35,17 +46,37 @@
   <% end %>
 
   <% if show_toc? %>
-    <%# Filled at build time by Builders::Inspectors::Toc, which reads the
-        real rendered headings rather than guessing from source markdown. %>
-    <nav
-      data-toc
-      aria-labelledby="toc-label"
-      class="mt-8 pt-5 border-t border-slate-4 max-nav:hidden"
-      hidden
-    >
-      <h2 id="toc-label" class="m-0 mb-3 font-mono text-label uppercase text-slate-11">
+    <%#
+      Filled at build time by Builders::Inspectors::Toc, which reads the
+      real rendered headings rather than guessing from source markdown.
+    %>
+    <%#
+      A ten-section tutorial had no navigation at all below `nav`, which is
+      where most of the traffic reads it. One rendering serves both: a
+      <details> whose summary only shows on small screens, opened on desktop
+      by toc.js so the rail behaves as a rail.
+    %>
+    <details data-toc-wrap class="mt-8 pt-5 border-t border-slate-6" hidden>
+      <summary
+        class="
+          nav:hidden list-none cursor-pointer font-mono text-label uppercase
+          text-slate-11 marker:hidden
+        "
+      >
         Contents
-      </h2>
-    </nav>
+      </summary>
+
+      <nav data-toc aria-labelledby="toc-label">
+        <h2
+          id="toc-label"
+          class="
+            m-0 mb-3 font-mono text-label uppercase text-slate-11
+            max-nav:sr-only
+          "
+        >
+          Contents
+        </h2>
+      </nav>
+    </details>
   <% end %>
 </aside>

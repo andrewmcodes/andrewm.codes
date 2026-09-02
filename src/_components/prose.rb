@@ -12,7 +12,7 @@ class Prose < Box
   INLINE_CODE = <<~CLASSES.freeze
     [&_:not(pre)>code]:bg-slate-3 [&_:not(pre)>code]:text-slate-12
     [&_:not(pre)>code]:px-1.5 [&_:not(pre)>code]:py-0.5 [&_:not(pre)>code]:rounded
-    [&_:not(pre)>code]:border [&_:not(pre)>code]:border-slate-4
+    [&_:not(pre)>code]:border [&_:not(pre)>code]:border-slate-6
     [&_:not(pre)>code]:font-normal [&_:not(pre)>code]:font-mono
     [&_:not(pre)>code]:before:content-none [&_:not(pre)>code]:after:content-none
   CLASSES
@@ -27,8 +27,8 @@ class Prose < Box
     page: "max-w-none text-slate-11 #{READING_COLUMN} #{INLINE_CODE}",
     post: <<~CLASSES.freeze
       max-w-none text-slate-11 #{READING_COLUMN}
-      prose-h2:text-title prose-h2:mt-12 prose-h2:mb-4
-      prose-h3:text-row prose-h3:mt-10 prose-h3:mb-3
+      prose-h2:text-h2 prose-h2:mt-12 prose-h2:mb-4
+      prose-h3:text-h3 prose-h3:mt-10 prose-h3:mb-3
       prose-blockquote:border-l-[3px] prose-blockquote:border-ruby-11
       prose-blockquote:not-italic prose-blockquote:text-slate-12
       #{INLINE_CODE}
@@ -41,7 +41,12 @@ class Prose < Box
     cx(
       "prose prose-slate dark:prose-invert",
       "prose-headings:font-semibold prose-headings:tracking-tight prose-headings:text-slate-12",
-      "prose-a:text-ruby-11 prose-a:no-underline hover:prose-a:underline",
+      # Underlined, not coloured. Ruby-11 against the body slate measures
+      # 1.09:1 in light and 1.01:1 in dark, so colour alone left links
+      # effectively indistinguishable from prose — WCAG 1.4.1 wants 3:1 for a
+      # colour-only distinction. The underline is the affordance; the colour is
+      # only reinforcement, and the offset is already themed globally.
+      "prose-a:text-ruby-11 prose-a:underline prose-a:decoration-ruby-11/40 hover:prose-a:decoration-ruby-11",
       "prose-code:font-mono prose-code:text-slate-12 prose-code:bg-slate-3 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:border prose-code:border-slate-5",
       PROSE_SIZES.fetch(opts[:size], PROSE_SIZES[:default]),
       PROSE_VARIANTS.fetch(opts[:variant], PROSE_VARIANTS[:default]),
