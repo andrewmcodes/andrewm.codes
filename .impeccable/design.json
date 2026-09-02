@@ -145,11 +145,35 @@
         "darkValue": "#fed2e1",
         "purpose": "Text on ruby-tinted surfaces — ::selection, the accent callout, the accent heading scheme."
       },
-      "amber-500": {
+      "amber-2": {
         "role": "tertiary",
-        "displayName": "Stale Amber",
-        "canonical": "oklch(76.9% 0.188 70.08)",
-        "purpose": "The stale-post notice only — /30 border on a /5 wash with a solid-amber icon, raised on posts over two years past their last update. A borrowed semantic rather than borrowed data: 'this may be out of date' is a caution the brand red would misreport, so the convention is borrowed instead of invented. NOTE: this is Tailwind's own amber-500, not the four-step Radix amber subset bridged in @theme (--color-amber-3/-6/-9/-11), which nothing currently references. The bridge is unused and the Tailwind value does not flip between themes."
+        "displayName": "Stale Amber (fill)",
+        "canonical": "#fefbe9",
+        "darkValue": "#1d180f",
+        "purpose": "The stale-post notice's field. Step 2 rather than step 3: at step 3 the site's one warning became the heaviest object in the reading column, which inverts the point of a quiet aside. A borrowed semantic rather than borrowed data — 'this may be out of date' is a caution the brand red would misreport, so the convention is borrowed instead of invented.",
+        "tonalRamp": ["#fefbe9", "#fff7c2", "#f3d673", "#ffc53d", "#ab6400"],
+        "darkRamp": ["#1d180f", "#302008", "#5c3d05", "#ffc53d", "#ffca16"]
+      },
+      "amber-6": {
+        "role": "tertiary",
+        "displayName": "Stale Amber (border)",
+        "canonical": "#f3d673",
+        "darkValue": "#5c3d05",
+        "purpose": "The stale-post notice's 1px border — one of only three non-slate borders in the system."
+      },
+      "amber-9": {
+        "role": "tertiary",
+        "displayName": "Stale Amber (solid)",
+        "canonical": "#ffc53d",
+        "darkValue": "#ffc53d",
+        "purpose": "Bridged for the notice's solid step. Identical in both themes, like ruby-9."
+      },
+      "amber-11": {
+        "role": "tertiary",
+        "displayName": "Stale Amber (icon)",
+        "canonical": "#ab6400",
+        "darkValue": "#ffca16",
+        "purpose": "The stale-post notice's warning glyph."
       }
     },
     "dataColors": [
@@ -189,10 +213,9 @@
       "micro": { "displayName": "Micro", "purpose": "Tile chips." }
     },
     "shadows": [
-      { "name": "popover", "value": "0 10px 15px -3px rgb(0 0 0 / .1), 0 4px 6px -4px rgb(0 0 0 / .1)", "purpose": "The Markdown-actions dropdown on a post — the only non-modal popover on the site, and the only shadow inside the reading column." },
-      { "name": "selected-control", "value": "0 1px 3px 0 rgb(0 0 0 / .1), 0 1px 2px -1px rgb(0 0 0 / .1)", "purpose": "The selected pill in the theme toggle, so the chosen mode reads as pressed inside its track." },
-      { "name": "framed-image", "value": "0 10px 15px -3px rgb(0 0 0 / .1), 0 4px 6px -4px rgb(0 0 0 / .1) + 1px ring in slate-6", "purpose": "The Image component's figure variant, where a slate hairline alone would disappear into the ground the image sits on." },
-      { "name": "none", "value": "none", "purpose": "Everything else, deliberately — including the command palette and the mobile drawer. Elevation comes from the border and the field; the 1px slate-6 hairline is the only separator for anything that scrolls with the page." }
+      { "name": "popover", "value": "0 10px 15px -3px rgb(0 0 0 / .1), 0 4px 6px -4px rgb(0 0 0 / .1)", "purpose": "The Markdown-actions dropdown on a post — one of only two shadows in the system. It earns it by being the one thing that genuinely floats free: summoned, overlapping content it does not belong to, dismissed, and with no scrim to separate it from the reading column underneath. Also the only shadow inside the reading column." },
+      { "name": "selected-control", "value": "0 1px 3px 0 rgb(0 0 0 / .1), 0 1px 2px -1px rgb(0 0 0 / .1)", "purpose": "The selected pill in the theme toggle, so the chosen mode reads as pressed inside its track. The second and last shadow in the system." },
+      { "name": "none", "value": "none", "purpose": "Everything else, deliberately — including the command palette, the mobile drawer, and a framed figure image (which used to carry shadow-lg and lost it, because a figure scrolls with the document; it is bounded by a ring-1 ring-slate-6 hairline instead). The palette and drawer take their separation from a full-bleed scrim plus a border, which is why neither needs a shadow." }
     ],
     "motion": [
       { "name": "state", "value": "150ms (transition-colors default)", "purpose": "The workhorse. Nearly every hover, focus, and current-state change in the system." },
@@ -213,13 +236,13 @@
       { "name": "lg", "value": "1024px", "purpose": "Tailwind default. Barely used." }
     ],
     "measures": [
-      { "name": "reading", "value": "65ch at 18px Source Serif 4", "purpose": "The article column. Measured in-browser against real character width." },
+      { "name": "reading", "value": "65ch at 18px Source Serif 4 (619px)", "purpose": "The article column, measured in-browser against real character width. Governed by exactly one class: Prose emits max-w-prose or max-w-none, never both, so the measure is one decision rather than two competing classes resolved by compile order." },
       { "name": "excerpt", "value": "68ch", "purpose": "An entry's supporting paragraph." },
       { "name": "standfirst", "value": "62ch", "purpose": "Hero copy." },
       { "name": "display", "value": "680px", "purpose": "The homepage h1." },
       { "name": "page-description", "value": "600px", "purpose": "Listing page descriptions." },
       { "name": "shell-wide", "value": "1080px", "purpose": "Homepage, listings, topbar, and footer — all three repeat this measure so they align to the same edge." },
-      { "name": "shell-reading", "value": "940px", "purpose": "Post pages: wide enough to hold apparatus in the margin while the column beside it stays at a reading measure, not wide enough for the prose to grow." },
+      { "name": "shell-reading", "value": "980px", "purpose": "Post pages: wide enough to hold apparatus in the margin while the column beside it stays at a reading measure, not wide enough for the prose to grow. Widened from 940px because at 940 the grid column rather than the max-w-prose token was the binding constraint and the measure had quietly fallen to 63ch; at 980 the article column resolves to a true 65ch." },
       { "name": "shell-narrow", "value": "720px", "purpose": "Simple prose pages." }
     ],
     "focus": {
@@ -297,7 +320,7 @@
       "name": "Contents Rail",
       "kind": "custom",
       "refersTo": "toc-link",
-      "description": "The reading page's contents, filled at build time from the real rendered headings rather than parsed from source markdown, so the entries agree with the anchor IDs the reader lands on. Appears only on posts over 800 words, and never for a single heading. The current entry is marked with aria-current=\"true\" and styled off that attribute, so the accessible state and the visual state cannot drift apart.",
+      "description": "The reading page's contents, filled at build time from the real rendered headings rather than parsed from source markdown, so the entries agree with the anchor IDs the reader lands on. Appears only on posts over 800 words, and never for a single heading. The current entry is marked with aria-current=\"true\" and styled off that attribute, so the accessible state and the visual state cannot drift apart. Shown here in its desktop rail form; below nav the same markup is a <details> whose summary carries a chevron rotating on group-open, because the summary's type recipe is identical to five non-interactive labels and otherwise gave no sign it was a control. Deep links clear the sticky header via scroll-margin-top: 5.5rem on .prose headings.",
       "html": "<div class=\"ds-toc\"><h2 class=\"ds-toc-label\">Contents</h2><ol class=\"ds-toc-list\"><li><a class=\"ds-toc-link\" href=\"#\">Why CI got slow</a></li><li><a class=\"ds-toc-link\" href=\"#\" aria-current=\"true\">Splitting the suite</a></li><li class=\"ds-toc-sub\"><a class=\"ds-toc-link\" href=\"#\">Choosing a split key</a></li><li class=\"ds-toc-sub\"><a class=\"ds-toc-link\" href=\"#\">Rebalancing on timing data</a></li><li><a class=\"ds-toc-link\" href=\"#\">What it cost</a></li></ol></div>",
       "css": ".ds-toc { padding-top: 20px; border-top: 1px solid var(--slate-6); max-width: 208px; } .ds-toc-label { margin: 0 0 12px; font-family: \"Geist Mono Variable\", ui-monospace, Menlo, monospace; font-size: 12px; line-height: 1.4; letter-spacing: 0.08em; font-weight: 500; text-transform: uppercase; color: var(--slate-11); } .ds-toc-list { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px; } .ds-toc-sub { padding-left: 12px; } .ds-toc-link { display: block; font-family: \"Archivo Variable\", ui-sans-serif, system-ui, sans-serif; font-size: 13.5px; line-height: 1.375; color: var(--slate-11); text-decoration: none; transition: color .15s; } .ds-toc-link:hover { color: var(--ruby-11); } .ds-toc-link[aria-current=\"true\"] { color: var(--ruby-11); } .ds-toc-link:focus-visible { outline: 2px solid var(--ruby-9); outline-offset: 2px; border-radius: 4px; }"
     },
@@ -305,9 +328,9 @@
       "name": "Stale Note",
       "kind": "custom",
       "refersTo": "note-stale",
-      "description": "The only borrowed colour on a content surface, and the whole justification for the Borrowed-Colour Rule: 'this may be out of date' is a caution the brand red would misreport. Raised above the article on posts more than two years past their last update, unless the post is a CFP, marked evergreen, or opts out. Uses Tailwind's amber-500 rather than the Radix amber subset bridged in @theme, so unlike every other colour on the site it does not flip between themes.",
+      "description": "The only borrowed colour on a content surface, and the whole justification for the Upstream-Colour Rule's borrowed-semantic clause: 'this may be out of date' is a caution the brand red would misreport. Raised above the article on posts more than two years past their last update, unless the post is a CFP, marked evergreen, or opts out. Built from bridged Radix amber — step 2 fill, step 6 border, step 11 glyph — so it flips with the theme like every other colour in the system. The fill is step 2 rather than step 3 because at step 3 the site's one warning became the heaviest object in the reading column.",
       "html": "<aside class=\"ds-stale\" role=\"note\"><svg class=\"ds-stale-glyph\" width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><path d=\"M12 8v4M12 16h.01\"/></svg><div><strong class=\"ds-stale-lead\">Heads up:</strong> this post was last updated <time datetime=\"2023-04-01\">Apr 2023</time>. Tools, versions, and best practices may have moved on since then.</div></aside>",
-      "css": ".ds-stale { display: flex; align-items: flex-start; gap: 12px; padding: 16px; border-radius: 8px; border: 1px solid color-mix(in oklab, oklch(76.9% 0.188 70.08) 30%, transparent); background: color-mix(in oklab, oklch(76.9% 0.188 70.08) 5%, transparent); font-family: \"Archivo Variable\", ui-sans-serif, system-ui, sans-serif; font-size: 13.5px; line-height: 1.625; color: var(--slate-12); } .ds-stale-glyph { flex: none; margin-top: 2px; color: oklch(76.9% 0.188 70.08); } .ds-stale-lead { font-weight: 500; }"
+      "css": ".ds-stale { display: flex; align-items: flex-start; gap: 12px; padding: 16px; border-radius: 8px; border: 1px solid var(--amber-6); background: var(--amber-2); font-family: \"Archivo Variable\", ui-sans-serif, system-ui, sans-serif; font-size: 13.5px; line-height: 1.625; color: var(--slate-12); } .ds-stale-glyph { flex: none; margin-top: 2px; color: var(--amber-11); } .ds-stale-lead { font-weight: 500; }"
     },
     {
       "name": "Theme Toggle",
@@ -354,7 +377,12 @@
       },
       {
         "name": "The Bridge Rule",
-        "body": "A Radix step is usable in markup only if it has been bridged into @theme as --color-<name>. An unbridged utility produces silence, not an error — the class does nothing and the element falls back to inherited colour. Slate and ruby are bridged in full precisely so a step is never referenced before it exists; amber is a deliberate four-step subset. Add the bridge and the usage in the same change.",
+        "body": "A Radix step is usable in markup only if it has been bridged into @theme as --color-<name>. An unbridged utility produces silence, not an error — the class does nothing and the element falls back to inherited colour. Slate and ruby are bridged in full precisely so a step is never referenced before it exists; amber is a deliberate five-step subset (2, 3, 6, 9, 11), of which four are in use — amber-3 is bridged but unreferenced since the notice's fill moved down to step 2. Add the bridge and the usage in the same change.",
+        "section": "colors"
+      },
+      {
+        "name": "The No-Default-Palette Rule",
+        "body": "There are no Tailwind default colours anywhere in src/ or frontend/. This needs stating as a rule because Tailwind v4's @theme extends rather than replaces: declaring --color-amber-2 does not retire amber-500, so bg-amber-500 keeps working and renders a colour that is not in the system and does not flip with the theme. That is exactly how one un-themed amber survived a whole build unnoticed. The Bridge Rule catches the loud failure — an unbridged step doing nothing. This one catches the quiet failure: a default step doing something plausible. If a colour utility resolves and you did not bridge the step it names, it is a Tailwind default and it is wrong.",
         "section": "colors"
       },
       {
@@ -399,7 +427,7 @@
       },
       {
         "name": "The Hairline-Not-Shadow Rule",
-        "body": "When two regions need separating, the answer is a 1px slate-6 line. If an element scrolls with the document, it is flat — no exceptions, including tiles, rows, sections, and the reading rail. A shadow is admissible only on a genuine popover or a selected control, and even a modal here does without one.",
+        "body": "When two regions need separating, the answer is a 1px slate-6 line — one per boundary, never two. If an element scrolls with the document, it is flat: no exceptions, including tiles, rows, sections, framed figures, and the reading rail. A shadow is admissible only on a genuine popover or a selected control, and even a modal here does without one.",
         "section": "elevation"
       },
       {
@@ -446,10 +474,11 @@
       "Don't add a second accent. A colour outside slate and ruby is admissible only as upstream data (GitHub's language colour), a borrowed semantic (amber for staleness), or a one-axis derived fallback (the podcast hue) — never as a choice made for its own sake.",
       "Don't generate a colour on more than one axis. The podcast hue rotates hue at fixed lightness and chroma; free a second axis and a family of shows becomes five unrelated colours.",
       "Don't put a kicker above a title. A show, a venue, an episode number, or a city is a fact about the item and belongs in the meta row.",
-      "Don't put a shadow on anything that scrolls with the page. Even the palette and the drawer do without one; a border and a field are the elevation.",
+      "Don't put a shadow on anything that scrolls with the page. There are exactly two in the system — the Markdown-actions popover and the selected theme-toggle pill. Even the palette and the drawer do without one; a scrim and a border are the elevation.",
       "Don't round content. Entry rows, tile cells, the ledger, and ruled sections are square.",
       "Don't make a section label large. Hierarchy comes from the rail, the rules, and the face — not from type size.",
       "Don't reference a Radix step @theme doesn't bridge; an unbridged utility fails silently rather than erroring.",
+      "Don't use a Tailwind default colour. @theme extends rather than replaces, so bg-amber-500 still resolves — to a colour outside the system that doesn't flip with the theme. There are none left in src/ or frontend/; keep it that way.",
       "Don't open a second rail inside a rail, or inline apparatus into the content column on desktop.",
       "Don't add a dark: variant to fix a colour. If a token looks wrong in one theme, the pair in index.css is wrong.",
       "Don't ship a change verified in only one theme. Dark is where the work is composed; light is tested, not assumed.",
