@@ -1,17 +1,17 @@
 <div
   class="
-    md-actions relative inline-flex items-stretch font-mono text-[11.5px]
-    text-sage-10
+    md-actions relative inline-flex items-stretch font-mono text-meta
+    text-slate-10
   "
   data-md-url="<%= markdown_path %>"
 >
   <button
     type="button"
     class="
-      md-copy inline-flex items-center gap-1.5 rounded-l-md border border-sage-5
-      bg-transparent px-2 py-1 hover:text-mint-11 hover:border-mint-11
+      md-copy inline-flex items-center gap-1.5 rounded-l-md border border-slate-5
+      bg-transparent px-2 py-1 hover:text-ruby-11 hover:border-ruby-11
       transition-colors focus-visible:outline focus-visible:outline-2
-      focus-visible:outline-offset-2 focus-visible:outline-mint-9
+      focus-visible:outline-offset-2 focus-visible:outline-ruby-9
     "
   >
     <%= render Icon.new(name: "copy", class: "w-[11px] h-[11px]") %>
@@ -21,10 +21,10 @@
   <details class="md-menu -ml-px">
     <summary
       class="
-        flex h-full list-none items-center rounded-r-md border border-sage-5 px-1.5
-        cursor-pointer hover:text-mint-11 hover:border-mint-11 transition-colors
+        flex h-full list-none items-center rounded-r-md border border-slate-5 px-1.5
+        cursor-pointer hover:text-ruby-11 hover:border-ruby-11 transition-colors
         focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2
-        focus-visible:outline-mint-9 [&::-webkit-details-marker]:hidden
+        focus-visible:outline-ruby-9 [&::-webkit-details-marker]:hidden
       "
       aria-label="More Markdown options"
     >
@@ -34,7 +34,7 @@
     <div
       class="
         absolute left-0 top-full z-20 mt-1 min-w-44 overflow-hidden rounded-md border
-        border-sage-5 bg-sage-2 py-1 shadow-lg
+        border-slate-5 bg-slate-2 py-1 shadow-lg
       "
       role="menu"
     >
@@ -42,7 +42,7 @@
         href="<%= markdown_path %>"
         data-turbo="false"
         class="
-          flex items-center gap-2 px-3 py-1.5 hover:bg-sage-3 hover:text-mint-11
+          flex items-center gap-2 px-3 py-1.5 hover:bg-slate-3 hover:text-ruby-11
           transition-colors
         "
         role="menuitem"
@@ -56,7 +56,7 @@
         target="_blank"
         rel="noreferrer"
         class="
-          flex items-center gap-2 px-3 py-1.5 hover:bg-sage-3 hover:text-mint-11
+          flex items-center gap-2 px-3 py-1.5 hover:bg-slate-3 hover:text-ruby-11
           transition-colors
         "
         role="menuitem"
@@ -70,7 +70,7 @@
         target="_blank"
         rel="noreferrer"
         class="
-          flex items-center gap-2 px-3 py-1.5 hover:bg-sage-3 hover:text-mint-11
+          flex items-center gap-2 px-3 py-1.5 hover:bg-slate-3 hover:text-ruby-11
           transition-colors
         "
         role="menuitem"

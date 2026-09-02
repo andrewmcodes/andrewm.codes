@@ -61,7 +61,7 @@ class TestPages < Bridgetown::Test
     it "keeps the Speaking nav item active" do
       speaking_link = document.query_selector("header a[href='/speaking/']")
 
-      expect(speaking_link["class"]).must_include "text-sage-12"
+      expect(speaking_link["class"]).must_include "text-slate-12"
     end
   end
 

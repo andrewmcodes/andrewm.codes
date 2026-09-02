@@ -31,7 +31,7 @@ prototype:
 
   <%= render Ui::PageHeader.new(title: "##{tag}") do %>
     <%= tagged.size %> <%= tagged.size == 1 ? "post" : "posts" %> tagged
-    <code class="font-mono text-sage-12">#<%= tag %></code>.
+    <code class="font-mono text-slate-12">#<%= tag %></code>.
   <% end %>
 
   <% years.each do |year, year_posts| %>

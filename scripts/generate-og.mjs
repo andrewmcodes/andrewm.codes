@@ -21,22 +21,23 @@ import { Resvg } from "@resvg/resvg-js"
  * @property {string} [imageUrl]
  */
 
+// Satori needs static font files; the app itself loads the variable builds.
 const FONT_PATHS = {
-  regular: "node_modules/@fontsource/inter/files/inter-latin-400-normal.woff",
-  bold:    "node_modules/@fontsource/inter/files/inter-latin-700-normal.woff",
+  regular: "node_modules/@fontsource/archivo/files/archivo-latin-400-normal.woff",
+  bold:    "node_modules/@fontsource/archivo/files/archivo-latin-700-normal.woff",
 }
 
 for (const [label, path] of Object.entries(FONT_PATHS)) {
   if (!existsSync(path)) {
-    console.error(`OG: missing Inter ${label} font at ${path}. Did you run \`pnpm install\`?`)
+    console.error(`OG: missing Archivo ${label} font at ${path}. Did you run \`pnpm install\`?`)
     process.exit(1)
   }
 }
 
 /** @type {import("satori").SatoriOptions["fonts"]} */
 const FONTS = [
-  { name: "Inter", data: readFileSync(FONT_PATHS.regular), weight: 400, style: "normal" },
-  { name: "Inter", data: readFileSync(FONT_PATHS.bold),    weight: 700, style: "normal" },
+  { name: "Archivo", data: readFileSync(FONT_PATHS.regular), weight: 400, style: "normal" },
+  { name: "Archivo", data: readFileSync(FONT_PATHS.bold),    weight: 700, style: "normal" },
 ]
 
 const SITE_ROOT = process.argv[2] || "output"
@@ -67,11 +68,12 @@ function payloadHash(p) {
 const OG = {
   image:   { width: 1200, height: 630 },
   layout:  { padding: 80, gap: 32 },
+  // Dark-theme tokens: slate-1 / slate-12 / ruby-11 / slate-11.
   colors:  {
-    background:  "#101211",
-    foreground:  "#eceeed",
-    siteName:    "#58d5ba",
-    description: "#adb5b2",
+    background:  "#111113",
+    foreground:  "#edeef0",
+    siteName:    "#ff949d",
+    description: "#b0b4ba",
   },
   siteName:    { fontSize: 24, fontWeight: 500, letterSpacing: 0.5 },
   title:       { fontSize: 64, fontWeight: 700, lineHeight: 1.1 },
@@ -95,7 +97,7 @@ function template(payload) {
         display: "flex", flexDirection: "column",
         width: "100%", height: "100%",
         background: OG.colors.background, color: OG.colors.foreground,
-        padding: OG.layout.padding, fontFamily: "Inter",
+        padding: OG.layout.padding, fontFamily: "Archivo",
       },
       children: [
         {

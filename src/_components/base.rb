@@ -15,37 +15,41 @@ class Base < Bridgetown::Component
     black: "font-black"
   }.freeze
 
+  # Sizes are named type roles declared in `@theme`, not raw scale steps: each
+  # one carries its own leading, tracking, and weight so the four decisions
+  # cannot drift apart across components.
   TEXT_SIZES = {
     none: "",
-    sm: "text-xs",
-    md: "text-sm",
-    lg: "text-base",
-    xl: "text-lg"
+    sm: "text-meta",
+    md: "text-note",
+    lg: "text-body",
+    xl: "text-title"
   }.freeze
 
   TEXT_SCHEME = {
     default: "",
-    muted: "text-sage-11",
-    primary: "text-mint-11",
-    strong: "text-sage-12",
-    accent: "text-mint-11"
+    muted: "text-slate-11",
+    primary: "text-ruby-11",
+    strong: "text-slate-12",
+    accent: "text-ruby-11"
   }.freeze
 
   HEADING_SIZES = {
-    xl: "text-4xl lg:text-5xl",
-    lg: "text-3xl",
-    md: "text-base",
-    sm: "text-sm"
+    xl: "text-display",
+    lg: "text-headline",
+    md: "text-page-title",
+    sm: "text-title"
   }.freeze
 
   HEADING_SCHEME = {
-    default: "text-sage-12",
-    muted: "text-sage-11",
-    accent: "text-mint-12"
+    default: "text-slate-12",
+    muted: "text-slate-11",
+    accent: "text-ruby-12"
   }.freeze
 
   FONT_FAMILY = {
     sans: "font-sans",
+    serif: "font-serif",
     mono: "font-mono"
   }.freeze
 

@@ -14,11 +14,11 @@ class Button < Base
   }.freeze
 
   BUTTON_VARIANTS = {
-    primary: "shadow-sm bg-mint-4 hover:bg-mint-5 text-mint-11 border border-mint-9/40",
-    secondary: "shadow-sm bg-sage-3 hover:bg-sage-4 text-sage-12",
-    ghost: "bg-transparent hover:bg-sage-3 text-sage-11",
-    text: "bg-transparent text-sage-11",
-    share: "inline-flex items-center gap-1.5 font-mono text-[11.5px] text-sage-10 border-b border-sage-5 pb-0.5 hover:text-mint-11 hover:border-mint-11 transition-colors bg-transparent"
+    primary: "shadow-sm bg-ruby-4 hover:bg-ruby-5 text-ruby-11 border border-ruby-9/40",
+    secondary: "shadow-sm bg-slate-3 hover:bg-slate-4 text-slate-12",
+    ghost: "bg-transparent hover:bg-slate-3 text-slate-11",
+    text: "bg-transparent text-slate-11",
+    share: "inline-flex items-center gap-1.5 font-mono text-meta text-slate-10 border-b border-slate-5 pb-0.5 hover:text-ruby-11 hover:border-ruby-11 transition-colors bg-transparent"
   }.freeze
 
   def call
@@ -45,7 +45,7 @@ class Button < Base
       BUTTON_SIZES[size][:text],
       ((opts[:circle] ? "rounded-full" : "rounded-md") unless variant == :share),
       ((variant == :share) ? nil : "inline-flex items-center justify-center leading-none font-medium"),
-      "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-mint-9"
+      "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ruby-9"
     )
   end
 

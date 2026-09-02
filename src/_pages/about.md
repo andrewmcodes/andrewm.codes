@@ -26,4 +26,4 @@ If you'd like me at your conference, on your podcast, or generally in a room wit
 
 ## Colophon
 
-This site is built with [Bridgetown](https://www.bridgetownrb.com) (ERB + Bridgetown::Component), Tailwind v4, and [Radix UI Colors](https://www.radix-ui.com/colors). Inter and JetBrains Mono. Search is powered by [Pagefind](https://pagefind.app). Deployed to Cloudflare Pages. Source is on [GitHub](https://github.com/andrewmcodes/andrewm.codes).
+This site is built with [Bridgetown](https://www.bridgetownrb.com) (ERB + Bridgetown::Component), Tailwind v4, and [Radix UI Colors](https://www.radix-ui.com/colors). Archivo, Source Serif 4, and Geist Mono. Search is powered by [Pagefind](https://pagefind.app). Deployed to Cloudflare Pages. Source is on [GitHub](https://github.com/andrewmcodes/andrewm.codes).

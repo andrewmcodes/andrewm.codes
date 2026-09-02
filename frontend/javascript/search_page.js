@@ -68,13 +68,13 @@ async function initSearchPage() {
         .map(
           (r) => `
         <li>
-          <a href="${esc(safeUrl(r.url))}" class="flex items-baseline gap-3 py-2.5 border-b border-sage-4 hover:text-mint-11 transition-colors">
-            <span class="font-mono text-[10.5px] uppercase text-sage-10 w-16 shrink-0">${esc(r.kind || "page")}</span>
-            <span class="flex-1 text-sage-12">${esc(r.title)}</span>
+          <a href="${esc(safeUrl(r.url))}" class="flex items-baseline gap-3 py-2.5 border-b border-slate-4 hover:text-ruby-11 transition-colors">
+            <span class="font-mono text-[10.5px] uppercase text-slate-10 w-16 shrink-0">${esc(r.kind || "page")}</span>
+            <span class="flex-1 text-slate-12">${esc(r.title)}</span>
           </a>
         </li>`,
         )
-        .join("") || `<li class="py-6 text-sage-10 text-sm">No matches.</li>`;
+        .join("") || `<li class="py-6 text-slate-10 text-sm">No matches.</li>`;
   }
 
   const initial = new URLSearchParams(location.search).get("q") || "";

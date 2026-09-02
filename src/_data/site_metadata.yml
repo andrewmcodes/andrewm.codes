@@ -24,10 +24,10 @@ author:
     - Podcasting
 image: /og/default.png
 lang: en
-# theme_color is the dark-mode chrome color (sage-1 dark); theme_color_light is
+# theme_color is the dark-mode chrome color (slate-1 dark); theme_color_light is
 # the light-mode equivalent. default.erb emits both via prefers-color-scheme.
-theme_color: "#101211"
-theme_color_light: "#fbfdfc"
+theme_color: "#111113"
+theme_color_light: "#fcfcfd"
 # Personal profiles for the same Andrew Mason entity (schema.org `sameAs`).
 social:
   links:

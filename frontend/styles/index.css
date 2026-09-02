@@ -5,38 +5,16 @@
 
 @custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
 
-/* Radix UI Sage + Mint + Slate — values inlined and scoped to our data-theme
+/* Radix UI Slate + Ruby + Amber — values inlined and scoped to our data-theme
    attribute. Radix's own CSS files scope dark to `.dark, .dark-theme` (class
    selectors) which wouldn't trigger our attribute-based theme switch.
-   Source of truth: node_modules/@radix-ui/colors/{sage,mint,slate}[-dark].css */
+
+   Because every step is defined per theme, the token VALUE flips rather than
+   the class, so markup needs almost no `dark:` variants.
+
+   Source of truth: node_modules/@radix-ui/colors/{slate,ruby,amber}[-dark].css */
 :root,
 [data-theme="light"] {
-  --sage-1: #fbfdfc;
-  --sage-2: #f7f9f8;
-  --sage-3: #eef1f0;
-  --sage-4: #e6e9e8;
-  --sage-5: #dfe2e0;
-  --sage-6: #d7dad9;
-  --sage-7: #cbcfcd;
-  --sage-8: #b8bcba;
-  --sage-9: #868e8b;
-  --sage-10: #7c8481;
-  --sage-11: #5f6563;
-  --sage-12: #1a211e;
-
-  --mint-1: #f9fefd;
-  --mint-2: #f2fbf9;
-  --mint-3: #ddf9f2;
-  --mint-4: #c8f4e9;
-  --mint-5: #b3ecde;
-  --mint-6: #9ce0d0;
-  --mint-7: #7ecfbd;
-  --mint-8: #4cbba5;
-  --mint-9: #86ead4;
-  --mint-10: #7de0cb;
-  --mint-11: #027864;
-  --mint-12: #16433c;
-
   --slate-1: #fcfcfd;
   --slate-2: #f9f9fb;
   --slate-3: #f0f0f3;
@@ -49,35 +27,27 @@
   --slate-10: #80838d;
   --slate-11: #60646c;
   --slate-12: #1c2024;
+
+  --ruby-1: #fffcfd;
+  --ruby-2: #fff7f8;
+  --ruby-3: #feeaed;
+  --ruby-4: #ffdce1;
+  --ruby-5: #ffced6;
+  --ruby-6: #f8bfc8;
+  --ruby-7: #efacb8;
+  --ruby-8: #e592a3;
+  --ruby-9: #e54666;
+  --ruby-10: #dc3b5d;
+  --ruby-11: #ca244d;
+  --ruby-12: #64172b;
+
+  --amber-3: #fff7c2;
+  --amber-6: #f3d673;
+  --amber-9: #ffc53d;
+  --amber-11: #ab6400;
 }
 
 [data-theme="dark"] {
-  --sage-1: #101211;
-  --sage-2: #171918;
-  --sage-3: #202221;
-  --sage-4: #272a29;
-  --sage-5: #2e3130;
-  --sage-6: #373b39;
-  --sage-7: #444947;
-  --sage-8: #5b625f;
-  --sage-9: #63706b;
-  --sage-10: #717d79;
-  --sage-11: #adb5b2;
-  --sage-12: #eceeed;
-
-  --mint-1: #0e1515;
-  --mint-2: #0f1b1b;
-  --mint-3: #092c2b;
-  --mint-4: #003a38;
-  --mint-5: #004744;
-  --mint-6: #105650;
-  --mint-7: #1e685f;
-  --mint-8: #277f70;
-  --mint-9: #86ead4;
-  --mint-10: #a8f5e5;
-  --mint-11: #58d5ba;
-  --mint-12: #c4f5e1;
-
   --slate-1: #111113;
   --slate-2: #18191b;
   --slate-3: #212225;
@@ -90,11 +60,85 @@
   --slate-10: #777b84;
   --slate-11: #b0b4ba;
   --slate-12: #edeef0;
+
+  --ruby-1: #191113;
+  --ruby-2: #1e1517;
+  --ruby-3: #3a141e;
+  --ruby-4: #4e1325;
+  --ruby-5: #5e1a2e;
+  --ruby-6: #6f2539;
+  --ruby-7: #883447;
+  --ruby-8: #b3445a;
+  --ruby-9: #e54666;
+  --ruby-10: #ec5a72;
+  --ruby-11: #ff949d;
+  --ruby-12: #fed2e1;
+
+  --amber-3: #302008;
+  --amber-6: #5c3d05;
+  --amber-9: #ffc53d;
+  --amber-11: #ffca16;
 }
 
 @theme {
-  --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: "JetBrains Mono Variable", ui-monospace, "Menlo", monospace;
+  --font-sans: "Archivo Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Source Serif 4 Variable", ui-serif, Georgia, serif;
+  --font-mono: "Geist Mono Variable", ui-monospace, "Menlo", monospace;
+
+  /* Type roles. Every size on the site is one of these — each carries its own
+     leading, tracking, and weight, so `text-meta` is the whole decision rather
+     than four classes that drift apart. Sans is Archivo, the reading column is
+     Source Serif 4, and anything that is a measurement is Geist Mono. */
+  --text-display: clamp(38px, 6.2vw, 68px);
+  --text-display--line-height: 1.02;
+  --text-display--letter-spacing: -0.03em;
+  --text-display--font-weight: 600;
+
+  --text-headline: clamp(28px, 4vw, 42px);
+  --text-headline--line-height: 1.1;
+  --text-headline--letter-spacing: -0.028em;
+  --text-headline--font-weight: 600;
+
+  --text-page-title: 30px;
+  --text-page-title--line-height: 1.2;
+  --text-page-title--letter-spacing: -0.022em;
+  --text-page-title--font-weight: 600;
+
+  --text-title: 17px;
+  --text-title--line-height: 1.35;
+  --text-title--letter-spacing: -0.015em;
+  --text-title--font-weight: 550;
+
+  --text-row: 15.5px;
+  --text-row--line-height: 1.4;
+  --text-row--letter-spacing: -0.008em;
+  --text-row--font-weight: 500;
+
+  --text-body: 15px;
+  --text-body--line-height: 1.6;
+
+  --text-note: 13.5px;
+  --text-note--line-height: 1.5;
+
+  /* The reading column only. One step up and looser than interface body. */
+  --text-read: 17px;
+  --text-read--line-height: 1.7;
+
+  --text-label: 12px;
+  --text-label--line-height: 1.4;
+  --text-label--letter-spacing: 0.08em;
+  --text-label--font-weight: 500;
+
+  --text-meta: 11.5px;
+  --text-meta--line-height: 1.5;
+
+  --text-micro: 10.5px;
+  --text-micro--line-height: 1.4;
+  --text-micro--letter-spacing: 0.06em;
+  --text-micro--font-weight: 500;
+
+  --text-code: 13.5px;
+  --text-code--line-height: 1.5;
 
   /* Named breakpoints for the topbar's load-bearing nav collapse points
      (these don't map onto sm/md/lg). Naming them keeps the markup free of
@@ -103,30 +147,7 @@
   --breakpoint-nav: 820px;
   --breakpoint-compact: 520px;
 
-  --color-sage-1: var(--sage-1);
-  --color-sage-2: var(--sage-2);
-  --color-sage-3: var(--sage-3);
-  --color-sage-4: var(--sage-4);
-  --color-sage-5: var(--sage-5);
-  --color-sage-6: var(--sage-6);
-  --color-sage-7: var(--sage-7);
-  --color-sage-8: var(--sage-8);
-  --color-sage-9: var(--sage-9);
-  --color-sage-10: var(--sage-10);
-  --color-sage-11: var(--sage-11);
-  --color-sage-12: var(--sage-12);
-
-  --color-mint-3: var(--mint-3);
-  --color-mint-4: var(--mint-4);
-  --color-mint-5: var(--mint-5);
-  --color-mint-6: var(--mint-6);
-  --color-mint-8: var(--mint-8);
-  --color-mint-9: var(--mint-9);
-  --color-mint-11: var(--mint-11);
-  --color-mint-12: var(--mint-12);
-
-  /* Secondary cool neutral. Bridged in full (like sage) rather than as a used
-     subset, so reaching for a slate step never silently produces nothing. */
+  /* Ground. Carries the entire interface in both themes. */
   --color-slate-1: var(--slate-1);
   --color-slate-2: var(--slate-2);
   --color-slate-3: var(--slate-3);
@@ -139,14 +160,42 @@
   --color-slate-10: var(--slate-10);
   --color-slate-11: var(--slate-11);
   --color-slate-12: var(--slate-12);
+
+  /* The single brand accent. Bridged in full so a step is never referenced
+     before it exists — an unbridged utility fails silently, not loudly. */
+  --color-ruby-1: var(--ruby-1);
+  --color-ruby-2: var(--ruby-2);
+  --color-ruby-3: var(--ruby-3);
+  --color-ruby-4: var(--ruby-4);
+  --color-ruby-5: var(--ruby-5);
+  --color-ruby-6: var(--ruby-6);
+  --color-ruby-7: var(--ruby-7);
+  --color-ruby-8: var(--ruby-8);
+  --color-ruby-9: var(--ruby-9);
+  --color-ruby-10: var(--ruby-10);
+  --color-ruby-11: var(--ruby-11);
+  --color-ruby-12: var(--ruby-12);
+
+  /* Warning only. Kept deliberately narrow so it can never read as a second
+     accent: "may be out of date" is a caution the brand red would misreport. */
+  --color-amber-3: var(--amber-3);
+  --color-amber-6: var(--amber-6);
+  --color-amber-9: var(--amber-9);
+  --color-amber-11: var(--amber-11);
 }
 
 body {
-  font-feature-settings: "cv11", "ss01";
   -webkit-font-smoothing: antialiased;
 }
 
-::selection { background: var(--mint-5); color: var(--sage-12); }
+/* Browser surfaces the design still owns. */
+::selection { background: var(--ruby-5); color: var(--ruby-12); }
+* { scrollbar-color: var(--slate-8) transparent; }
+input, textarea { caret-color: var(--ruby-11); }
+a { text-underline-offset: 0.2em; }
+
+/* Metadata is measurement, so its digits align in a column. */
+.font-mono { font-variant-numeric: tabular-nums; }
 
 /* View transitions */
 @view-transition { navigation: auto; }
@@ -167,7 +216,7 @@ body {
 .bullet-thread > li {
   position: relative;
   padding: 10px 0 12px 28px;
-  border-bottom: 1px solid var(--sage-4);
+  border-bottom: 1px solid var(--slate-4);
 }
 .bullet-thread > li::before {
   content: "";
@@ -177,8 +226,8 @@ body {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: var(--sage-1);
-  border: 1.5px solid var(--mint-11);
+  background: var(--slate-1);
+  border: 1.5px solid var(--ruby-11);
 }
 .bullet-thread > li::after {
   content: "";
@@ -187,7 +236,7 @@ body {
   top: 0;
   bottom: -1px;
   width: 1px;
-  background: var(--sage-4);
+  background: var(--slate-4);
 }
 .bullet-thread > li:first-child::after { top: 18px; }
 .bullet-thread > li:last-child::after { bottom: auto; height: 18px; }
@@ -206,20 +255,20 @@ button.copy-code {
   right: 0.5rem;
   padding: 0.25rem 0.5rem;
   font-size: 0.75rem;
-  background: var(--sage-3);
-  color: var(--sage-11);
-  border: 1px solid var(--sage-5);
+  background: var(--slate-3);
+  color: var(--slate-11);
+  border: 1px solid var(--slate-5);
   border-radius: 0.25rem;
   cursor: pointer;
   font-family: var(--font-mono);
 }
-button.copy-code:hover { background: var(--sage-2); color: var(--sage-12); }
+button.copy-code:hover { background: var(--slate-2); color: var(--slate-12); }
 
 /* When the mobile menu is open, drop the header's translucency so the
    sticky bar above the dropdown doesn't show page content bleeding through.
    The menu is toggled via `data-open`, not the `hidden` attribute. */
 header:has(#mobile-menu[data-open="true"]) {
-  background-color: var(--sage-1);
+  background-color: var(--slate-1);
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
 }
@@ -238,10 +287,10 @@ header:has(#mobile-menu[data-open="true"]) {
 .card-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  border-top: 1px solid var(--sage-4);
+  border-top: 1px solid var(--slate-4);
 }
-.card-grid > * { border-bottom: 1px solid var(--sage-4); }
-.card-grid > *:nth-child(odd) { border-right: 1px solid var(--sage-4); }
+.card-grid > * { border-bottom: 1px solid var(--slate-4); }
+.card-grid > *:nth-child(odd) { border-right: 1px solid var(--slate-4); }
 @media (max-width: 680px) {
   .card-grid { grid-template-columns: 1fr; }
   .card-grid > *:nth-child(odd) { border-right: 0; }
@@ -256,7 +305,7 @@ pre.torchlight {
 }
 pre.torchlight code {
   @apply block py-4 min-w-max bg-transparent border-0 p-0;
-  font-size: 13.5px;
+  font-size: var(--text-code);
 }
 pre.torchlight code .line {
   @apply px-4;
@@ -267,22 +316,22 @@ pre.torchlight code .summary-caret {
 }
 
 /* Fallback for plain <pre><code> when Torchlight didn't run (dev mode,
-   missing TORCHLIGHT_TOKEN). Sage styling so dev still reads cleanly. */
+   missing TORCHLIGHT_TOKEN). Slate styling so dev still reads cleanly. */
 pre:not(.torchlight) {
-  @apply my-4 rounded-md overflow-x-auto bg-sage-2 border border-sage-4 p-4;
-  font-size: 13.5px;
+  @apply my-4 rounded-md overflow-x-auto bg-slate-2 border border-slate-4 p-4;
+  font-size: var(--text-code);
 }
 pre:not(.torchlight) code {
   background: transparent;
   border: 0;
   padding: 0;
-  color: var(--sage-12);
+  color: var(--slate-12);
 }
 
 /* Heading anchors injected by Builders::Inspectors::ProseHeadings */
 .heading-anchor {
   margin-left: 0.5rem;
-  color: var(--sage-7);
+  color: var(--slate-7);
   font-weight: 400;
   text-decoration: none;
   opacity: 0;
@@ -292,4 +341,4 @@ pre:not(.torchlight) code {
 .prose h3:hover .heading-anchor,
 .prose h4:hover .heading-anchor,
 .prose h5:hover .heading-anchor { opacity: 1; }
-.heading-anchor:hover { color: var(--mint-11); }
+.heading-anchor:hover { color: var(--ruby-11); }

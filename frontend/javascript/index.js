@@ -1,7 +1,8 @@
 import "$styles/index.css";
 import "@hotwired/turbo";
-import "@fontsource-variable/inter";
-import "@fontsource-variable/jetbrains-mono";
+import "@fontsource-variable/archivo";
+import "@fontsource-variable/source-serif-4";
+import "@fontsource-variable/geist-mono";
 import "./cmdk.js";
 import "./search_page.js";
 import "./theme.js";

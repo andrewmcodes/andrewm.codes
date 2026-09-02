@@ -3,8 +3,8 @@ class Note < Base
   COMPONENT_OPTIONS = %i[scheme].freeze
 
   NOTE_SCHEME = {
-    default: "bg-sage-2 text-sage-11 border-sage-6",
-    accent: "bg-mint-3 text-mint-12 border-mint-6"
+    default: "bg-slate-2 text-slate-11 border-slate-6",
+    accent: "bg-ruby-3 text-ruby-12 border-ruby-6"
   }.freeze
 
   def call

@@ -1,18 +1,18 @@
 <article
   class="
-    relative grid grid-cols-[120px_1fr] gap-5 py-5 border-b border-sage-4
+    relative grid grid-cols-[120px_1fr] gap-5 py-5 border-b border-slate-4
     max-sm:grid-cols-1 max-sm:gap-2 max-sm:py-4 before:absolute before:-inset-x-3
     before:inset-y-1 before:-z-10 before:rounded-md before:bg-transparent
-    before:transition-colors hover:before:bg-sage-2
+    before:transition-colors hover:before:bg-slate-2
   "
 >
-  <div class="font-mono text-[11.5px] text-sage-11">
-    <div class="text-sage-11 text-[13px] mb-1"><%= date_str %></div>
-    <div class="text-[11px] text-sage-11"><%= field(:duration) %></div>
+  <div class="font-mono text-meta text-slate-11">
+    <div class="text-slate-11 text-note mb-1"><%= date_str %></div>
+    <div class="text-meta text-slate-11"><%= field(:duration) %></div>
   </div>
 
   <div>
-    <div class="font-mono text-[11.5px] text-mint-11 mb-2 lowercase">
+    <div class="font-mono text-meta text-ruby-11 mb-2 lowercase">
       <%= field(:venue) %>
 
       <% if field(:city) %>
@@ -21,11 +21,11 @@
       <% end %>
     </div>
 
-    <h3 class="text-[17px] font-medium tracking-tight mb-1 text-sage-12">
+    <h3 class="text-title font-medium tracking-tight mb-1 text-slate-12">
       <%= field(:title) %>
     </h3>
 
-    <p class="text-[13.5px] leading-snug text-sage-11 mb-3 text-pretty">
+    <p class="text-note leading-snug text-slate-11 mb-3 text-pretty">
       <%= field(:excerpt) %>
     </p>
 
@@ -34,8 +34,8 @@
         <a
           href="<%= l["href"] || l[:href] %>"
           class="
-            inline-flex items-center gap-1 font-mono text-[11.5px] text-sage-11 border-b
-            border-sage-5 pb-px hover:text-mint-11 hover:border-mint-11 transition-colors
+            inline-flex items-center gap-1 font-mono text-meta text-slate-11 border-b
+            border-slate-5 pb-px hover:text-ruby-11 hover:border-ruby-11 transition-colors
           "
         >
           <%= l["label"] || l[:label] %>

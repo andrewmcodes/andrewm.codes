@@ -6,11 +6,13 @@ class Heading < Box
   private
 
   def classes
+    # Weight and tracking ride on the size role, so neither is applied here
+    # unless a caller explicitly overrides the weight.
     cx(
       HEADING_SIZES.fetch(opts[:size], HEADING_SIZES[:md]),
-      TEXT_WEIGHT.fetch(opts[:weight], TEXT_WEIGHT[:semibold]),
+      TEXT_WEIGHT[opts[:weight]],
       HEADING_SCHEME.fetch(opts[:scheme], HEADING_SCHEME[:default]),
-      "break-words tracking-tight"
+      "break-words"
     )
   end
 

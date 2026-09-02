@@ -1,6 +1,6 @@
 <% if reactions.any? || replies.any? %>
-  <section class="mt-12 pt-7 border-t border-sage-5">
-    <h2 class="font-mono text-[12.5px] uppercase tracking-wide text-sage-10">
+  <section class="mt-12 pt-7 border-t border-slate-5">
+    <h2 class="font-mono text-meta uppercase tracking-wide text-slate-10">
       Webmentions
     </h2>
 
@@ -19,12 +19,12 @@
                 height: 24,
               ) %>
             <% else %>
-              <span class="inline-block h-6 w-6 rounded-full bg-sage-4"></span>
+              <span class="inline-block h-6 w-6 rounded-full bg-slate-4"></span>
             <% end %>
           <% end %>
         <% end %>
 
-        <span class="font-mono text-xs text-sage-10">
+        <span class="font-mono text-xs text-slate-10">
           <%= reactions.length %>
           <%= (reactions.length == 1) ? "reaction" : "reactions" %>
         </span>
@@ -54,14 +54,14 @@
                 <% end %>
 
                 <% if published_on(wm) %>
-                  <span class="font-mono text-[11px] text-sage-10">
+                  <span class="font-mono text-meta text-slate-10">
                     <%= published_on(wm) %>
                   </span>
                 <% end %>
               </div>
 
               <% if content_text(wm) %>
-                <p class="mt-1 text-sm text-sage-11 break-words">
+                <p class="mt-1 text-sm text-slate-11 break-words">
                   <%= content_text(wm) %>
                 </p>
               <% end %>

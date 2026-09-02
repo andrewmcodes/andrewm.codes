@@ -24,22 +24,22 @@ title: Icon
 
 <div class="space-y-6">
   <div class="space-y-2">
-    <p class="font-mono text-xs text-sage-10">Default size</p>
+    <p class="font-mono text-xs text-slate-10">Default size</p>
 
-    <div class="flex flex-wrap items-center gap-4 text-sage-11">
+    <div class="flex flex-wrap items-center gap-4 text-slate-11">
       <% names.each do |name| %>
         <span class="flex flex-col items-center gap-1">
           <%= render Icon.new(name: name) %>
-          <span class="font-mono text-[10px] text-sage-10"><%= name %></span>
+          <span class="font-mono text-micro text-slate-10"><%= name %></span>
         </span>
       <% end %>
     </div>
   </div>
 
   <div class="space-y-2">
-    <p class="font-mono text-xs text-sage-10">Sizes</p>
+    <p class="font-mono text-xs text-slate-10">Sizes</p>
 
-    <div class="flex items-end gap-4 text-sage-11">
+    <div class="flex items-end gap-4 text-slate-11">
       <%= render Icon.new(name: :star, size: :sm) %>
       <%= render Icon.new(name: :star) %>
       <%= render Icon.new(name: :star, size: :lg) %>
