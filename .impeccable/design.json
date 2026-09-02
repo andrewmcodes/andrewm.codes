@@ -151,8 +151,9 @@
         "canonical": "#fefbe9",
         "darkValue": "#1d180f",
         "purpose": "The stale-post notice's field. Step 2 rather than step 3: at step 3 the site's one warning became the heaviest object in the reading column, which inverts the point of a quiet aside. A borrowed semantic rather than borrowed data — 'this may be out of date' is a caution the brand red would misreport, so the convention is borrowed instead of invented.",
-        "tonalRamp": ["#fefbe9", "#fff7c2", "#f3d673", "#ffc53d", "#ab6400"],
-        "darkRamp": ["#1d180f", "#302008", "#5c3d05", "#ffc53d", "#ffca16"]
+        "tonalRamp": ["#fefbe9", "#f3d673", "#ab6400"],
+        "darkRamp": ["#1d180f", "#5c3d05", "#ffca16"],
+        "rampNote": "Amber is bridged as exactly three steps — fill (2), border (6), icon (11) — so the ramp is the whole subset, not a sample of a 12-step scale."
       },
       "amber-6": {
         "role": "tertiary",
@@ -160,13 +161,6 @@
         "canonical": "#f3d673",
         "darkValue": "#5c3d05",
         "purpose": "The stale-post notice's 1px border — one of only three non-slate borders in the system."
-      },
-      "amber-9": {
-        "role": "tertiary",
-        "displayName": "Stale Amber (solid)",
-        "canonical": "#ffc53d",
-        "darkValue": "#ffc53d",
-        "purpose": "Bridged for the notice's solid step. Identical in both themes, like ruby-9."
       },
       "amber-11": {
         "role": "tertiary",
@@ -330,7 +324,7 @@
       "refersTo": "note-stale",
       "description": "The only borrowed colour on a content surface, and the whole justification for the Upstream-Colour Rule's borrowed-semantic clause: 'this may be out of date' is a caution the brand red would misreport. Raised above the article on posts more than two years past their last update, unless the post is a CFP, marked evergreen, or opts out. Built from bridged Radix amber — step 2 fill, step 6 border, step 11 glyph — so it flips with the theme like every other colour in the system. The fill is step 2 rather than step 3 because at step 3 the site's one warning became the heaviest object in the reading column.",
       "html": "<aside class=\"ds-stale\" role=\"note\"><svg class=\"ds-stale-glyph\" width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><path d=\"M12 8v4M12 16h.01\"/></svg><div><strong class=\"ds-stale-lead\">Heads up:</strong> this post was last updated <time datetime=\"2023-04-01\">Apr 2023</time>. Tools, versions, and best practices may have moved on since then.</div></aside>",
-      "css": ".ds-stale { display: flex; align-items: flex-start; gap: 12px; padding: 16px; border-radius: 8px; border: 1px solid var(--amber-6); background: var(--amber-2); font-family: \"Archivo Variable\", ui-sans-serif, system-ui, sans-serif; font-size: 13.5px; line-height: 1.625; color: var(--slate-12); } .ds-stale-glyph { flex: none; margin-top: 2px; color: var(--amber-11); } .ds-stale-lead { font-weight: 500; }"
+      "css": ".ds-stale { display: flex; align-items: flex-start; gap: 12px; padding: 16px; border-radius: 6px; border: 1px solid var(--amber-6); background: var(--amber-2); font-family: \"Archivo Variable\", ui-sans-serif, system-ui, sans-serif; font-size: 13.5px; line-height: 1.625; color: var(--slate-12); } .ds-stale-glyph { flex: none; margin-top: 2px; color: var(--amber-11); } .ds-stale-lead { font-weight: 500; }"
     },
     {
       "name": "Theme Toggle",
@@ -377,7 +371,7 @@
       },
       {
         "name": "The Bridge Rule",
-        "body": "A Radix step is usable in markup only if it has been bridged into @theme as --color-<name>. An unbridged utility produces silence, not an error — the class does nothing and the element falls back to inherited colour. Slate and ruby are bridged in full precisely so a step is never referenced before it exists; amber is a deliberate five-step subset (2, 3, 6, 9, 11), of which four are in use — amber-3 is bridged but unreferenced since the notice's fill moved down to step 2. Add the bridge and the usage in the same change.",
+        "body": "A Radix step is usable in markup only if it has been bridged into @theme as --color-<name>. An unbridged utility produces silence, not an error — the class does nothing and the element falls back to inherited colour. Slate and ruby are bridged in full precisely so a step is never referenced before it exists; amber is exactly three steps, all in use — the fill (2), the border (6), and the icon (11). It was briefly five, and the two spares were the same rule failing from the other side: the Bridge Rule catches a step used before it is bridged, and amber-3 and amber-9 were steps bridged and never used. Both are silent, so audit in both directions — bridge and usage arrive in the same change, and leave together.",
         "section": "colors"
       },
       {
@@ -436,6 +430,11 @@
         "section": "shapes"
       },
       {
+        "name": "The One-Radius Rule",
+        "body": "If a thing needs a radius, it is 6px. Do not introduce an intermediate value to signal that one surface floats more than another — this system is flat, so there is no depth for a radius to encode, and 8px beside 6px reads as a mistake rather than a distinction. The only sanctioned departures are square for document content, 4px for chips smaller than the radius would suit, and a pill or circle where the shape itself says \"token, not word\".",
+        "section": "shapes"
+      },
+      {
         "name": "The Focus-Guarantee Rule",
         "body": "Keyboard focus is a system guarantee, not a per-component decision: one rule over :where(a, button, input, select, textarea, summary, [tabindex]):focus-visible gives every focusable element a 2px solid ruby-9 outline at 2px offset with a 4px radius. It lives in @layer base specifically so a component can still override it from markup — unlayered CSS outranks Tailwind's utilities whatever the specificity, so the theme toggle's inset ring and the palette's borderless input could not opt out. Inside base, a utility wins as expected. Never remove focus from a control; override the indicator if you must, and never chase focus component by component.",
         "section": "components"
@@ -476,6 +475,7 @@
       "Don't put a kicker above a title. A show, a venue, an episode number, or a city is a fact about the item and belongs in the meta row.",
       "Don't put a shadow on anything that scrolls with the page. There are exactly two in the system — the Markdown-actions popover and the selected theme-toggle pill. Even the palette and the drawer do without one; a scrim and a border are the elevation.",
       "Don't round content. Entry rows, tile cells, the ledger, and ruled sections are square.",
+      "Don't introduce a second radius. Everything with corners is 6px; an intermediate value implies a depth hierarchy this flat system does not have.",
       "Don't make a section label large. Hierarchy comes from the rail, the rules, and the face — not from type size.",
       "Don't reference a Radix step @theme doesn't bridge; an unbridged utility fails silently rather than erroring.",
       "Don't use a Tailwind default colour. @theme extends rather than replaces, so bg-amber-500 still resolves — to a colour outside the system that doesn't flip with the theme. There are none left in src/ or frontend/; keep it that way.",

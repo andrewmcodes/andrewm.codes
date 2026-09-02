@@ -23,7 +23,6 @@ colors:
   ruby-12: "#64172b"
   amber-2: "#fefbe9"
   amber-6: "#f3d673"
-  amber-9: "#ffc53d"
   amber-11: "#ab6400"
 typography:
   display:
@@ -108,9 +107,7 @@ rounded:
   none: "0px"
   sm: "4px"
   md: "6px"
-  lg: "8px"
   mark: "10px"
-  xl: "12px"
   focus: "4px"
   full: "9999px"
 spacing:
@@ -248,18 +245,18 @@ components:
   note:
     backgroundColor: "{colors.slate-2}"
     textColor: "{colors.slate-11}"
-    rounded: "{rounded.xl}"
+    rounded: "{rounded.md}"
     padding: "16px"
   note-accent:
     backgroundColor: "{colors.ruby-3}"
     textColor: "{colors.ruby-12}"
-    rounded: "{rounded.xl}"
+    rounded: "{rounded.md}"
     padding: "16px"
   note-stale:
     backgroundColor: "{colors.amber-2}"
     textColor: "{colors.slate-12}"
     typography: "{typography.note}"
-    rounded: "{rounded.lg}"
+    rounded: "{rounded.md}"
     padding: "16px"
   theme-toggle:
     backgroundColor: "{colors.slate-3}"
@@ -345,7 +342,7 @@ Three colours originate outside slate and ruby, and they arrive by three differe
 
 **The Dark-First Rule.** Both themes ship and both must be legible, but dark is the composed ground and light is the tested peer. The mechanism is why the system stays small: because every ramp step is redefined inside `[data-theme="dark"]`, the token **value** flips rather than the class, so `text-slate-11` is correct in both themes and markup needs almost no `dark:` variants. Author a new colour as a light/dark pair in `frontend/styles/index.css` and the rest is free.
 
-**The Bridge Rule.** A Radix step is usable in markup only if it has been bridged into `@theme` as `--color-<name>`. An unbridged utility produces silence, not an error — the class does nothing and the element falls back to inherited colour. Slate and ruby are bridged in full precisely so a step is never referenced before it exists; amber is a deliberate five-step subset (`2`, `3`, `6`, `9`, `11`), of which four are in use — `amber-3` is bridged but unreferenced since the notice's fill moved down to step 2. Add the bridge and the usage in the same change.
+**The Bridge Rule.** A Radix step is usable in markup only if it has been bridged into `@theme` as `--color-<name>`. An unbridged utility produces silence, not an error — the class does nothing and the element falls back to inherited colour. Slate and ruby are bridged in full precisely so a step is never referenced before it exists; amber is exactly **three steps, all in use** — the fill (`2`), the border (`6`), and the icon (`11`). It was briefly five, and the two spares were the same rule failing from the other side: the Bridge Rule catches a step _used before it is bridged_, and `amber-3` and `amber-9` were steps _bridged and never used_. Both are silent, so audit in both directions — bridge and usage arrive in the same change, and leave together.
 
 **The No-Default-Palette Rule.** There are no Tailwind default colours anywhere in `src/` or `frontend/`. This needs stating as a rule because Tailwind v4's `@theme` **extends** rather than replaces: declaring `--color-amber-2` does not retire `amber-500`, so `bg-amber-500` keeps working and renders a colour that is not in the system and does not flip with the theme. That is exactly how one un-themed amber survived a whole build unnoticed. The Bridge Rule catches the loud failure — an unbridged step doing nothing. This one catches the quiet failure: a default step doing something plausible. If a colour utility resolves and you did not bridge the step it names, it is a Tailwind default and it is wrong.
 
@@ -439,7 +436,15 @@ Two non-shadow depth devices carry real weight: the topbar's `bg-slate-1/85 back
 
 ## Shapes
 
-Radii are small and functional, and the pattern is that **the more an element floats, the rounder it gets** — but the range is narrow on purpose. Content that sits in the document has no radius at all: entry rows, card-grid cells, section rules, and the ledger are square, because a hairline-ruled list has no corners to round. Controls, floating panels, and framed media are `6px` (`rounded-md`) — buttons, nav links, drawer items, the topbar's icon buttons, the split Markdown-actions control, the command palette panel, the drawer's bottom corners, the entry hover bleed, a figure image. Small chips are `4px` (keyboard caps, inline code, the active-tab underline's cap) or fully pill (the theme toggle and its buttons, avatars). The stale note is `8px`, callouts are `12px`, and the podcast mark is a squircle-ish `10px`. The focus ring's own `4px` radius is declared once in the base rule.
+**There is one radius.** Everything that has corners at all has `6px` corners (`rounded-md`): buttons, nav links, drawer items, the topbar's icon buttons, the split Markdown-actions control and its popover, the command palette panel, the drawer's bottom edge, the entry hover bleed, callouts, the stale note, a framed figure image. The system briefly graded radius by how much a thing floated — `8px` for the stale note, `12px` for callouts, `14px`/`16px` for panels — and that grading was noise: it implied a depth hierarchy the flat system does not have, and three near-identical values (6, 8, 12) read as drift rather than as intent. One value is the decision.
+
+Three things sit outside it, and each is outside for a reason that is not "how much it floats":
+
+- **No radius at all** — content in the document flow. Entry rows, card-grid cells, section rules, and the ledger are square, because a hairline-ruled list has no corners to round.
+- **`4px`** — things smaller than the radius would otherwise dominate: keyboard caps, inline code, the active-tab underline's cap. The focus ring's own `4px`, declared once in the base rule, belongs to this group.
+- **Fully pill or circular** — where the shape itself is the signal that a thing is a token rather than a word: the theme toggle and its buttons, avatars, the bullet-thread dots.
+
+The one remaining oddity is the podcast mark's `10px`, which is artwork rather than a surface — the mark is a square glyph tile and `6px` on a 56px square reads as an accident.
 
 Borders are always `1px` and almost always a slate step — `slate-6` for a divider, `slate-5` for an edge — with three exceptions, each of which is state or data: the primary button's `ruby-9/50` edge going solid on hover, the accent callout's `ruby-6`, and the stale note's `amber-6`. The blockquote is the only heavy rule in the system: a `3px` `ruby-11` left border, un-italicised, with `slate-12` text. The active-tab marker is a `1.5px` `ruby-11` bar inset `10px` from each edge of its link.
 
@@ -448,6 +453,8 @@ Icons are inline SVG at `15px` default (`14px` in chrome, `11–12px` in metadat
 ### Named Rules
 
 **The Square-Content Rule.** Anything that scrolls with the page and is separated by a hairline is square. Radius is for controls, chips, and things that float.
+
+**The One-Radius Rule.** If a thing needs a radius, it is `6px`. Do not introduce an intermediate value to signal that one surface floats more than another — this system is flat, so there is no depth for a radius to encode, and `8px` beside `6px` reads as a mistake rather than a distinction. The only sanctioned departures are the three above: square for document content, `4px` for chips smaller than the radius would suit, and a pill or circle where the shape itself says "token, not word".
 
 ## Components
 
@@ -510,8 +517,8 @@ A three-way `radiogroup` — system, light, dark — as `32px` circular buttons 
 
 ### Notes and Callouts
 
-- **Note** (`slate-2` on a `slate-6` border, 12px radius, 16px padding) and its accent scheme (`ruby-3` on `ruby-6` with `ruby-12` text) — markdown-aware callouts inside prose.
-- **Stale note** (`amber-2` fill, `amber-6` border, `amber-11` icon, 8px radius, 16px padding): raised above the article on posts whose last update is over two years old, unless the post is a CFP, marked `evergreen: true`, or opts out with `stale_alert: false`.
+- **Note** (`slate-2` on a `slate-6` border, 6px radius, 16px padding) and its accent scheme (`ruby-3` on `ruby-6` with `ruby-12` text) — markdown-aware callouts inside prose.
+- **Stale note** (`amber-2` fill, `amber-6` border, `amber-11` icon, 6px radius, 16px padding): raised above the article on posts whose last update is over two years old, unless the post is a CFP, marked `evergreen: true`, or opts out with `stale_alert: false`.
 
 ### Motion
 
@@ -553,6 +560,7 @@ Cross-document view transitions run at `200ms`, armed by `<meta name="view-trans
 - **Don't** put a kicker above a title. A show, a venue, an episode number, or a city is a fact about the item and belongs in the meta row.
 - **Don't** put a shadow on anything that scrolls with the page. There are exactly two in the system — the Markdown-actions popover and the selected theme-toggle pill. Even the palette and the drawer do without one; a scrim and a border are the elevation.
 - **Don't** round content. Entry rows, tile cells, the ledger, and ruled sections are square.
+- **Don't** introduce a second radius. Everything with corners is `6px`; an intermediate value implies a depth hierarchy this flat system does not have.
 - **Don't** make a section label large. Hierarchy comes from the rail, the rules, and the face — not from type size.
 - **Don't** reference a Radix step `@theme` doesn't bridge; an unbridged utility fails silently rather than erroring.
 - **Don't** use a Tailwind default colour. `@theme` extends rather than replaces, so `bg-amber-500` still resolves — to a colour outside the system that doesn't flip with the theme. There are none left in `src/` or `frontend/`; keep it that way.
