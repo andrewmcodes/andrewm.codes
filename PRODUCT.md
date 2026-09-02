@@ -47,7 +47,7 @@ A working engineer's site, not a personal brand site. What a neighboring site ca
 - Post URLs are `/p/:slug/`, pages `/:slug/`, projects `/projects/:path/`. Legacy root-level post URLs are auto-redirected by `plugins/builders/redirects.rb`.
 - OG images are generated at production build time from rendered HTML (`scripts/generate-og.mjs`); they do not exist in dev.
 - Torchlight, OG generation, and the external-link inspector run only when `BRIDGETOWN_ENV=production`.
-- Dark and light themes are both first-class; `data-theme` is set before paint in `src/_layouts/default.erb`.
+- **Dark-first.** Both themes ship and both must be legible, but dark is the ground the site is composed and reviewed in; light is a competent, tested secondary rather than an equal peer. `data-theme` is still resolved before paint in `src/_layouts/default.erb`, and the OS preference is still respected — dark-first is where design attention goes, not an override of the visitor's setting.
 
 ## Brand Commitments
 
@@ -55,6 +55,8 @@ A working engineer's site, not a personal brand site. What a neighboring site ca
 - **Voice — binding.** Personal, lowercase, understated. Section headings are lowercase fragments (`now`, `featured work`, `recent posts`). Self-deprecating asides are part of the voice ("mostly so I can find them again later"). No marketing-speak, no growth-page energy, no exclamation-point enthusiasm. Future copy may be rewritten, but not out of this register.
 - **URL structure and redirects — binding.** `/p/:slug/` post URLs and the generated legacy redirects must survive any redesign. Inbound links and search equity depend on them; content reorganization that changes URLs is not a free move.
 - Contact is via Bluesky (`bsky.app/profile/andrewm.codes`). Email links were deliberately removed from the site.
+- **Convention over conceit — binding.** Offered a dealt visual direction, a pick, and a challenger against the category standard, Andrew chose the standard played straight: the familiar arrangement for an engineer's site, executed at a craft level the category rarely reaches. Craft shows in focus states, keyboard behaviour, motion timing, and state transitions, not in layout invention. The named bar is rauno.me, paco.me, emilkowal.ski. Future design work inherits this preference; a novel governing conceit needs a fresh decision, not an assumption.
+- **Rows for chronology, grids for peers — binding.** Dated content (posts, talks, episodes) is a ruled row; genuinely parallel items with no meaningful order (projects, featured work) may tile. A grid never carries dated content. This is the resolution of "no card grids as the default primitive" — grids are permitted where a grid is honest.
 
 ## Evidence on Hand
 
