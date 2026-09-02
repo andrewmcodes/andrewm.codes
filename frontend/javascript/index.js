@@ -9,4 +9,5 @@ import "./theme.js";
 import "./share.js";
 import "./copy_code.js";
 import "./copy_page.js";
+import "./toc.js";
 import "./mobile_menu.js";

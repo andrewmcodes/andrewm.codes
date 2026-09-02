@@ -1,0 +1,51 @@
+<aside class="nav:sticky nav:top-24 nav:self-start max-nav:mb-9">
+  <%= render BackLink.new(href: back["path"], label: back["label"]) %>
+
+  <dl class="m-0 font-mono text-meta text-slate-11 flex flex-col gap-1.5 max-nav:flex-row max-nav:flex-wrap max-nav:gap-x-3.5">
+    <div>
+      <dt class="sr-only">Published</dt>
+      <dd class="m-0">
+        <time datetime="<%= date.iso8601 %>"><%= date.strftime("%b %-d, %Y") %></time>
+      </dd>
+    </div>
+
+    <div>
+      <dt class="sr-only">Reading time</dt>
+      <dd class="m-0"><%= reading_time %> min read</dd>
+    </div>
+
+    <div>
+      <dt class="sr-only">Author</dt>
+      <dd class="m-0">
+        <a href="/about/" rel="author" class="hover:text-ruby-11 transition-colors">
+          <%= author_name %>
+        </a>
+      </dd>
+    </div>
+  </dl>
+
+  <% if tags.any? %>
+    <div class="mt-3.5 flex flex-wrap gap-x-3 gap-y-1">
+      <% tags.each do |tag| %>
+        <%= render Link.new(href: "/tag/#{tag}/", variant: :post_tag) do %>
+          #<%= tag %>
+        <% end %>
+      <% end %>
+    </div>
+  <% end %>
+
+  <% if show_toc? %>
+    <%# Filled at build time by Builders::Inspectors::Toc, which reads the
+        real rendered headings rather than guessing from source markdown. %>
+    <nav
+      data-toc
+      aria-labelledby="toc-label"
+      class="mt-8 pt-5 border-t border-slate-4 max-nav:hidden"
+      hidden
+    >
+      <h2 id="toc-label" class="m-0 mb-3 font-mono text-label uppercase text-slate-11">
+        Contents
+      </h2>
+    </nav>
+  <% end %>
+</aside>

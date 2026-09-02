@@ -7,6 +7,10 @@ class PageShell < Box
 
   WIDTHS = {
     wide: "max-w-[1080px] px-9 max-md:px-4",
+    # A reading page is wide enough to hold its own apparatus in the margin
+    # while the column beside it stays at a reading measure — not wide enough
+    # for the prose itself to grow.
+    reading: "max-w-[940px] px-9 max-md:px-4",
     narrow: "max-w-[720px] px-8 max-md:px-4"
   }.freeze
 

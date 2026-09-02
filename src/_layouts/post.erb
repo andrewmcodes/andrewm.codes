@@ -10,24 +10,32 @@ layout: default
 <% back = data.back || { "path" => "/posts/", "label" => "all posts" } %>
 <% updated_time = resource.updated_at %>
 
-<%= render PageShell.new(width: :narrow) do %>
-  <%= render BackLink.new(href: back["path"], label: back["label"]) %>
+<%= render PageShell.new(width: :reading) do %>
+  <div class="grid grid-cols-[208px_minmax(0,1fr)] gap-14 items-start max-nav:grid-cols-1 max-nav:gap-0">
+    <%= render PostAside.new(
+      resource: resource,
+      back: back,
+      show_toc: should_show_toc(resource),
+    ) %>
 
-  <%= render PostHeader.new(resource: resource) %>
+    <div class="min-w-0">
+      <%= render PostHeader.new(resource: resource) %>
 
-  <% if resource.stale? %>
-    <%= render StaleNote.new(updated_at: updated_time) %>
-  <% end %>
+      <% if resource.stale? %>
+        <%= render StaleNote.new(updated_at: updated_time) %>
+      <% end %>
 
-  <%= render Prose.new(as: :article, variant: :post, max_w: false) do %>
-    <%= yield %>
-  <% end %>
+      <%= render Prose.new(as: :article, variant: :post, max_w: false) do %>
+        <%= yield %>
+      <% end %>
 
-  <%= render PostFooter.new(
-    resource: resource,
-    previous_resource: prev_post,
-    next_resource: next_post,
-  ) %>
+      <%= render PostFooter.new(
+        resource: resource,
+        previous_resource: prev_post,
+        next_resource: next_post,
+      ) %>
 
-  <%= render Webmentions.new(url: resource.relative_url) %>
+      <%= render Webmentions.new(url: resource.relative_url) %>
+    </div>
+  </div>
 <% end %>
