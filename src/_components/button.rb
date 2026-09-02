@@ -5,17 +5,22 @@ class Button < Base
   DEFAULT_TAG = :button
   COMPONENT_OPTIONS = %i[circle size variant href as type].freeze
 
+  # The scale is padding, not type: everything above `sm` shares one size so a
+  # row of buttons reads as one control family.
   BUTTON_SIZES = {
-    xs: {circular_spacing: "p-1", default_spacing: "py-1 px-2", text: "text-xs"},
-    sm: {circular_spacing: "p-1", default_spacing: "py-1 px-2", text: "text-sm"},
-    md: {circular_spacing: "p-1.5", default_spacing: "py-1.5 px-2.5", text: "text-sm"},
-    lg: {circular_spacing: "p-2", default_spacing: "py-2 px-3", text: "text-sm"},
-    xl: {circular_spacing: "p-2", default_spacing: "py-2.5 px-3.5", text: "text-sm"}
+    xs: {circular_spacing: "p-1", default_spacing: "py-1 px-2", text: "text-meta"},
+    sm: {circular_spacing: "p-1", default_spacing: "py-1 px-2", text: "text-meta"},
+    md: {circular_spacing: "p-1.5", default_spacing: "py-1.5 px-2.5", text: "text-note"},
+    lg: {circular_spacing: "p-2", default_spacing: "py-2 px-3", text: "text-note"},
+    xl: {circular_spacing: "p-2", default_spacing: "py-2.5 px-3.5", text: "text-note"}
   }.freeze
 
+  # Solid accent on the one primary action. Radix pairs step 9 with step 10 for
+  # hover on solid fills, and both themes share the same step 9, so the primary
+  # control is the one element that looks identical on paper and on ink.
   BUTTON_VARIANTS = {
-    primary: "shadow-sm bg-ruby-4 hover:bg-ruby-5 text-ruby-11 border border-ruby-9/40",
-    secondary: "shadow-sm bg-slate-3 hover:bg-slate-4 text-slate-12",
+    primary: "bg-ruby-9 hover:bg-ruby-10 text-white font-medium",
+    secondary: "bg-slate-3 hover:bg-slate-4 text-slate-12",
     ghost: "bg-transparent hover:bg-slate-3 text-slate-11",
     text: "bg-transparent text-slate-11",
     share: "inline-flex items-center gap-1.5 font-mono text-meta text-slate-10 border-b border-slate-5 pb-0.5 hover:text-ruby-11 hover:border-ruby-11 transition-colors bg-transparent"

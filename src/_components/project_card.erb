@@ -35,8 +35,8 @@
     <% if status %>
       <span
         class="
-          ml-auto font-mono text-micro uppercase tracking-[0.06em] rounded-full border
-          px-1.5 py-px <%= status.to_s == "active" ? "text-ruby-11 border-ruby-9/30 bg-ruby-4" : "text-slate-10 border-slate-4" %>
+          ml-auto font-mono text-micro uppercase
+          <%= (status.to_s == "active") ? "text-ruby-11" : "text-slate-10" %>
         "
       >
         <%= status %>

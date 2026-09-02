@@ -120,6 +120,11 @@
   --text-note: 13.5px;
   --text-note--line-height: 1.5;
 
+  /* Hero standfirst and page descriptions — sans, one step above interface
+     body and tighter than the serif reading column it must not imitate. */
+  --text-lede: 16.5px;
+  --text-lede--line-height: 1.55;
+
   /* The reading column only. One step up and looser than interface body. */
   --text-read: 17px;
   --text-read--line-height: 1.7;

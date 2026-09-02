@@ -22,11 +22,7 @@
         Co-hosting
         <%= render Link.new(href: episode_url, variant: :inline) do %>
           Remote Ruby
-        <% end %>
-        <% if episode_date %>
-          , latest episode out
-          <%= episode_date %>
-        <% end %>.
+        <% end %><% if episode_date %>, latest episode out <%= episode_date %><% end %>.
       </span>
     </li>
   <% end %>
@@ -41,16 +37,7 @@
         Most recently gave
         <%= render Link.new(href: "/speaking/", variant: :inline) do %>
           <%= talk_field(:title) %>
-        <% end %>
-        <% if talk_field(:venue) %>
-          at
-          <%= talk_field(:venue) %>
-        <% end %>
-        <% if talk_date %>
-          (
-          <%= talk_date %>
-          )
-        <% end %>.
+        <% end %><% if talk_field(:venue) %> at <%= talk_field(:venue) %><% end %><% if talk_date %> (<%= talk_date %>)<% end %>.
       </span>
     </li>
   <% end %>
