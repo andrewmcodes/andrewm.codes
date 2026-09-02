@@ -7,10 +7,11 @@ class PageShell < Box
 
   WIDTHS = {
     wide: "max-w-[1080px] px-9 max-md:px-4",
-    # A reading page is wide enough to hold its own apparatus in the margin
-    # while the column beside it stays at a reading measure — not wide enough
-    # for the prose itself to grow.
-    reading: "max-w-[940px] px-9 max-md:px-4",
+    # Wide enough to hold the apparatus in the margin and still leave the
+    # column room for a full 65ch measure. At 940px the grid column, not
+    # `max-w-prose`, was the binding constraint and the measure fell to 63ch
+    # when the body went to 18px.
+    reading: "max-w-[980px] px-9 max-md:px-4",
     narrow: "max-w-[720px] px-8 max-md:px-4"
   }.freeze
 

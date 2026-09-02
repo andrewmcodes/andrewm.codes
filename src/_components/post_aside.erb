@@ -56,13 +56,29 @@
       <details> whose summary only shows on small screens, opened on desktop
       by toc.js so the rail behaves as a rail.
     %>
-    <details data-toc-wrap class="mt-8 pt-5 border-t border-slate-6" hidden>
+    <details
+      data-toc-wrap
+      class="group mt-8 pt-5 border-t border-slate-6"
+      hidden
+    >
+      <%#
+        The label recipe here is identical to NOW, FEATURED WORK, INDEX and
+        TAGS, none of which are interactive — so the post's only navigation
+        control on mobile gave no sign it was a control. The chevron is the
+        affordance, and it rotates from the open state rather than from JS.
+      %>
+
       <summary
         class="
-          nav:hidden list-none cursor-pointer font-mono text-label uppercase
-          text-slate-11 marker:hidden
+          nav:hidden list-none marker:hidden cursor-pointer inline-flex items-center
+          gap-2 font-mono text-label uppercase text-slate-11
+          hover:text-ruby-11 transition-colors
         "
       >
+        <%= render Icon.new(
+          name: "chevron_right",
+          class: "w-3.5 h-3.5 shrink-0 transition-transform group-open:rotate-90",
+        ) %>
         Contents
       </summary>
 

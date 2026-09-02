@@ -24,9 +24,13 @@ class Prose < Box
 
   PROSE_VARIANTS = {
     default: "",
-    page: "max-w-none text-slate-11 #{READING_COLUMN} #{INLINE_CODE}",
+    # No `max-w-none` here. Both variants used to emit it alongside the
+    # `max-w-prose` below, and 65ch only won because `.max-w-prose` happens to
+    # compile later — a measure holding by utility ordering rather than by
+    # intent, which would have flipped to unbounded silently.
+    page: "text-slate-11 #{READING_COLUMN} #{INLINE_CODE}",
     post: <<~CLASSES.freeze
-      max-w-none text-slate-11 #{READING_COLUMN}
+      text-slate-11 #{READING_COLUMN}
       prose-h2:text-h2 prose-h2:mt-12 prose-h2:mb-4
       prose-h3:text-h3 prose-h3:mt-10 prose-h3:mb-3
       prose-blockquote:border-l-[3px] prose-blockquote:border-ruby-11
@@ -50,7 +54,9 @@ class Prose < Box
       "prose-code:font-mono prose-code:text-slate-12 prose-code:bg-slate-3 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:border prose-code:border-slate-5",
       PROSE_SIZES.fetch(opts[:size], PROSE_SIZES[:default]),
       PROSE_VARIANTS.fetch(opts[:variant], PROSE_VARIANTS[:default]),
-      ("max-w-prose" unless opts[:max_w])
+      # `max_w: false` means "let the reading measure govern", which is the
+      # 65ch prose measure — the layout's grid column is wider than that.
+      (opts[:max_w] ? "max-w-none" : "max-w-prose")
     )
   end
 end

@@ -54,7 +54,10 @@ class Button < Base
       (BUTTON_SIZES[size][:default_spacing] unless opts[:circle] || variant == :share),
       BUTTON_SIZES[size][:text],
       ((opts[:circle] ? "rounded-full" : "rounded-md") unless variant == :share),
-      ((variant == :share) ? nil : "inline-flex items-center justify-center leading-none font-medium"),
+      # `group` so a child icon's `group-hover:` nudge actually fires — the
+      # hero's primary button has carried that class on its arrow since before
+      # the redesign with no ancestor to trigger it.
+      ((variant == :share) ? nil : "group inline-flex items-center justify-center leading-none font-medium"),
       "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ruby-9"
     )
   end

@@ -383,6 +383,14 @@ pre:not(.torchlight) code {
   color: var(--slate-12);
 }
 
+/* The header is sticky at 64px, so without this every contents click and every
+   heading-anchor deep link parks its target underneath the bar. Costs more now
+   that headings are the article's spine and the contents rail is the mobile
+   navigation. */
+.prose :where(h2, h3, h4, h5) {
+  scroll-margin-top: 5.5rem;
+}
+
 /* Heading anchors injected by Builders::Inspectors::ProseHeadings */
 .heading-anchor {
   margin-left: 0.5rem;

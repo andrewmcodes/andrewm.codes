@@ -11,7 +11,14 @@
     <%= @title %>
   </h2>
 
-  <div class="flex flex-col min-w-0">
+  <%#
+    Every entry carries its own bottom hairline, so the last row's rule plus
+    the next group's top rule doubled every boundary with dead space between
+    them. A one-row group made it obvious; it was happening at all of them.
+    The group's own top rule is the boundary.
+  %>
+
+  <div class="flex flex-col min-w-0 [&>*:last-child]:border-b-0">
     <%= content %>
   </div>
 </section>

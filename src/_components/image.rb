@@ -5,7 +5,9 @@ class Image < Box
 
   VARIANT_OPTIONS = {
     default: "",
-    figure: "rounded-lg object-cover object-center shadow-lg ring-1 ring-slate-6 mx-auto",
+    # A figure scrolls with the document, so it is bounded by a hairline, not
+    # lifted by a shadow. Shadows belong to things that genuinely float.
+    figure: "rounded-lg object-cover object-center ring-1 ring-slate-6 mx-auto",
     cover: "object-cover w-full rounded-t-xl",
     card: "absolute inset-0 -z-10 h-full w-full object-cover",
     avatar: "inline-block h-6 w-6 rounded-full"
