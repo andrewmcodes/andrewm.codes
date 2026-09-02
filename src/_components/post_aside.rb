@@ -10,13 +10,15 @@ class PostAside < Bridgetown::Component
   # @param resource [Bridgetown::Resource::Base] the post
   # @param back [Hash] `{"path" =>, "label" =>}` breadcrumb
   # @param show_toc [Boolean] whether the post is long enough to earn contents
-  def initialize(resource:, back:, show_toc: false)
+  # @param class [String] grid placement, owned by the layout rather than here
+  def initialize(resource:, back:, show_toc: false, **opts)
     @resource = resource
     @back = back
     @show_toc = show_toc
+    @placement = opts[:class].to_s
   end
 
-  attr_reader :back
+  attr_reader :back, :placement
 
   def date = @resource.date
 

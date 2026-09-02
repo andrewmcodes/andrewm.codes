@@ -41,6 +41,7 @@
   --ruby-11: #ca244d;
   --ruby-12: #64172b;
 
+  --amber-2: #fefbe9;
   --amber-3: #fff7c2;
   --amber-6: #f3d673;
   --amber-9: #ffc53d;
@@ -74,6 +75,7 @@
   --ruby-11: #ff949d;
   --ruby-12: #fed2e1;
 
+  --amber-2: #1d180f;
   --amber-3: #302008;
   --amber-6: #5c3d05;
   --amber-9: #ffc53d;
@@ -196,6 +198,7 @@
 
   /* Warning only. Kept deliberately narrow so it can never read as a second
      accent: "may be out of date" is a caution the brand red would misreport. */
+  --color-amber-2: var(--amber-2);
   --color-amber-3: var(--amber-3);
   --color-amber-6: var(--amber-6);
   --color-amber-9: var(--amber-9);

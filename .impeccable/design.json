@@ -1,93 +1,239 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-09-01T00:00:00.000Z",
+  "generatedAt": "2026-09-01T00:00:00Z",
   "title": "Design System: andrewm.codes",
   "extensions": {
     "colorMeta": {
-      "sage-1": {
+      "slate-1": {
         "role": "neutral",
-        "displayName": "Paper",
-        "canonical": "#fbfdfc",
-        "dark": "#101211",
-        "tonalRamp": ["#1a211e", "#5f6563", "#7c8481", "#868e8b", "#b8bcba", "#cbcfcd", "#d7dad9", "#dfe2e0", "#e6e9e8", "#eef1f0", "#f7f9f8", "#fbfdfc"]
+        "displayName": "Ground",
+        "canonical": "#fcfcfd",
+        "darkValue": "#111113",
+        "purpose": "Page background, resting tile fill, the fill behind the translucent topbar and drawer, the podcast mark's glyph colour, the bullet-thread dot centre.",
+        "tonalRamp": ["#fcfcfd", "#f9f9fb", "#f0f0f3", "#e8e8ec", "#e0e1e6", "#d9d9e0", "#cdced6", "#b9bbc6", "#8b8d98", "#80838d", "#60646c", "#1c2024"],
+        "darkRamp": ["#111113", "#18191b", "#212225", "#272a2d", "#2e3135", "#363a3f", "#43484e", "#5a6169", "#696e77", "#777b84", "#b0b4ba", "#edeef0"]
       },
-      "sage-2": { "role": "neutral", "displayName": "Raised Paper", "canonical": "#f7f9f8", "dark": "#171918" },
-      "sage-3": { "role": "neutral", "displayName": "Control Fill", "canonical": "#eef1f0", "dark": "#202221" },
-      "sage-4": { "role": "neutral", "displayName": "Hairline", "canonical": "#e6e9e8", "dark": "#272a29" },
-      "sage-5": { "role": "neutral", "displayName": "Strong Rule", "canonical": "#dfe2e0", "dark": "#2e3130" },
-      "sage-6": { "role": "neutral", "displayName": "Soft Edge", "canonical": "#d7dad9", "dark": "#373b39" },
-      "sage-7": { "role": "neutral", "displayName": "Ghost Ink", "canonical": "#cbcfcd", "dark": "#444947" },
-      "sage-8": { "role": "neutral", "displayName": "Faint Ink", "canonical": "#b8bcba", "dark": "#5b625f" },
-      "sage-9": { "role": "neutral", "displayName": "Quiet Ink", "canonical": "#868e8b", "dark": "#63706b" },
-      "sage-10": { "role": "neutral", "displayName": "Meta Ink", "canonical": "#7c8481", "dark": "#717d79" },
-      "sage-11": { "role": "neutral", "displayName": "Body Ink", "canonical": "#5f6563", "dark": "#adb5b2" },
-      "sage-12": { "role": "neutral", "displayName": "Full Ink", "canonical": "#1a211e", "dark": "#eceeed" },
-      "mint-3": { "role": "primary", "displayName": "Mint Wash", "canonical": "#ddf9f2", "dark": "#092c2b" },
-      "mint-4": {
-        "role": "primary",
-        "displayName": "Mint Fill",
-        "canonical": "#c8f4e9",
-        "dark": "#003a38",
-        "tonalRamp": ["#16433c", "#027864", "#4cbba5", "#7ecfbd", "#86ead4", "#9ce0d0", "#b3ecde", "#c8f4e9", "#ddf9f2", "#f2fbf9", "#f9fefd"]
+      "slate-2": {
+        "role": "neutral",
+        "displayName": "Raised",
+        "canonical": "#f9f9fb",
+        "darkValue": "#18191b",
+        "purpose": "One tonal step up, never more — palette shell, dropdown, tile hover, entry hover bleed, primary button's resting field, dev pre fallback.",
+        "tonalRamp": ["#fcfcfd", "#f9f9fb", "#f0f0f3", "#e8e8ec", "#e0e1e6", "#d9d9e0", "#cdced6", "#b9bbc6", "#8b8d98", "#80838d", "#60646c", "#1c2024"],
+        "darkRamp": ["#111113", "#18191b", "#212225", "#272a2d", "#2e3135", "#363a3f", "#43484e", "#5a6169", "#696e77", "#777b84", "#b0b4ba", "#edeef0"]
       },
-      "mint-5": { "role": "primary", "displayName": "Mint Fill Hover", "canonical": "#b3ecde", "dark": "#004744" },
-      "mint-6": { "role": "primary", "displayName": "Mint Edge", "canonical": "#9ce0d0", "dark": "#105650" },
-      "mint-8": { "role": "primary", "displayName": "Mint Ring", "canonical": "#4cbba5", "dark": "#277f70" },
-      "mint-9": { "role": "primary", "displayName": "Mint Marker", "canonical": "#86ead4", "dark": "#86ead4" },
-      "mint-11": { "role": "primary", "displayName": "Terminal Mint", "canonical": "#027864", "dark": "#58d5ba" },
-      "mint-12": { "role": "primary", "displayName": "Mint Deep", "canonical": "#16433c", "dark": "#c4f5e1" },
       "slate-3": {
-        "role": "secondary",
-        "displayName": "Shell Grey",
+        "role": "neutral",
+        "displayName": "Control Fill",
         "canonical": "#f0f0f3",
-        "dark": "#212225",
-        "note": "Fill for the Command shell-prompt block, paired with slate-12 text. The one surface on the site that is deliberately not paper.",
-        "tonalRamp": ["#1c2024", "#60646c", "#80838d", "#8b8d98", "#b9bbc6", "#cdced6", "#d9d9e0", "#e0e1e6", "#e8e8ec", "#f0f0f3", "#f9f9fb", "#fcfcfd"]
+        "darkValue": "#212225",
+        "purpose": "Secondary button, nav hover, inline code, keyboard caps, theme-toggle track, copy-code button."
       },
-      "slate-6": { "role": "secondary", "displayName": "Frame Grey", "canonical": "#d9d9e0", "dark": "#363a3f", "note": "1px ring around a framed figure image, where a sage hairline would vanish into the page ground." },
-      "slate-11": { "role": "secondary", "displayName": "Caption Grey", "canonical": "#60646c", "dark": "#b0b4ba", "note": "Figure caption text — one temperature step off the body copy it explains." },
-      "slate-12": { "role": "secondary", "displayName": "Shell Ink", "canonical": "#1c2024", "dark": "#edeef0", "note": "Text on the shell-prompt block." },
-      "warning": {
+      "slate-4": {
+        "role": "neutral",
+        "displayName": "Faint Fill",
+        "canonical": "#e8e8ec",
+        "darkValue": "#272a2d",
+        "purpose": "Secondary button hover, dev pre fallback border, webmention avatar placeholder."
+      },
+      "slate-5": {
+        "role": "neutral",
+        "displayName": "Edge",
+        "canonical": "#e0e1e6",
+        "darkValue": "#2e3135",
+        "purpose": "The heavier 1px — link underlines, palette panel border and internal divisions, kbd outlines, post-footer and related-posts rules, theme toggle's selected pill, Markdown-actions border. Used where a line must read as an edge rather than a divider."
+      },
+      "slate-6": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "#d9d9e0",
+        "darkValue": "#363a3f",
+        "purpose": "The universal separator and the most structurally load-bearing colour in the system. Chosen by measurement: 1.37:1 light and 1.65:1 dark against the ground, where slate-4 measured 1.19 / 1.31 and disappeared."
+      },
+      "slate-7": {
+        "role": "neutral",
+        "displayName": "Faint Ink",
+        "canonical": "#cdced6",
+        "darkValue": "#43484e",
+        "purpose": "Resting heading anchor, resting drawer chevron."
+      },
+      "slate-8": {
+        "role": "neutral",
+        "displayName": "Faint Ink (strong)",
+        "canonical": "#b9bbc6",
+        "darkValue": "#5a6169",
+        "purpose": "Palette placeholder, the # before a tag, the resting entry arrow, the brand-lockup slash, the scrollbar thumb."
+      },
+      "slate-9": {
+        "role": "neutral",
+        "displayName": "Quiet Ink",
+        "canonical": "#8b8d98",
+        "darkValue": "#696e77",
+        "purpose": "Related-post dates."
+      },
+      "slate-10": {
+        "role": "neutral",
+        "displayName": "Meta Ink",
+        "canonical": "#80838d",
+        "darkValue": "#777b84",
+        "purpose": "Monospace metadata not carrying primary information — tile footers, chips, back links, section actions, source notes, palette hints."
+      },
+      "slate-11": {
+        "role": "neutral",
+        "displayName": "Body Ink",
+        "canonical": "#60646c",
+        "darkValue": "#b0b4ba",
+        "purpose": "All body copy, secondary text, prose paragraphs, entry excerpts, and the mono facts under a title. Numerically the most-used token in the codebase."
+      },
+      "slate-12": {
+        "role": "neutral",
+        "displayName": "Full Ink",
+        "canonical": "#1c2024",
+        "darkValue": "#edeef0",
+        "purpose": "Headings, entry and tile titles, and any text that must win a scan."
+      },
+      "ruby-3": {
+        "role": "primary",
+        "displayName": "Ruby Wash",
+        "canonical": "#feeaed",
+        "darkValue": "#3a141e",
+        "purpose": "The primary button's hover fill, the active drawer item, the accent callout background. The nearest thing to a ruby surface on the site, and it exists only as a hover or a current state.",
+        "tonalRamp": ["#fffcfd", "#fff7f8", "#feeaed", "#ffdce1", "#ffced6", "#f8bfc8", "#efacb8", "#e592a3", "#e54666", "#dc3b5d", "#ca244d", "#64172b"],
+        "darkRamp": ["#191113", "#1e1517", "#3a141e", "#4e1325", "#5e1a2e", "#6f2539", "#883447", "#b3445a", "#e54666", "#ec5a72", "#ff949d", "#fed2e1"]
+      },
+      "ruby-5": {
+        "role": "primary",
+        "displayName": "Selection Ruby",
+        "canonical": "#ffced6",
+        "darkValue": "#5e1a2e",
+        "purpose": "::selection background, paired with ruby-12 text."
+      },
+      "ruby-6": {
+        "role": "primary",
+        "displayName": "Ruby Edge",
+        "canonical": "#f8bfc8",
+        "darkValue": "#6f2539",
+        "purpose": "The accent callout's border."
+      },
+      "ruby-8": {
+        "role": "primary",
+        "displayName": "Ruby Ring",
+        "canonical": "#e592a3",
+        "darkValue": "#b3445a",
+        "purpose": "The theme toggle's inset focus ring, used because its buttons sit flush inside a track where a 2px offset outline would clip."
+      },
+      "ruby-9": {
+        "role": "primary",
+        "displayName": "Focus Ruby",
+        "canonical": "#e54666",
+        "darkValue": "#e54666",
+        "purpose": "The focus ring, and the primary button's resting border at 50% opacity. The only fully saturated step in use, and it appears only as a 2px line. Identical in both themes — the one token that does not flip."
+      },
+      "ruby-11": {
+        "role": "primary",
+        "displayName": "Signal Ruby",
+        "canonical": "#ca244d",
+        "darkValue": "#ff949d",
+        "purpose": "The accent, and the only one. Every hover, the active-tab underline, the current contents entry, the primary button's label, the blockquote rule, the bullet-thread dot ring, the text caret.",
+        "tonalRamp": ["#fffcfd", "#fff7f8", "#feeaed", "#ffdce1", "#ffced6", "#f8bfc8", "#efacb8", "#e592a3", "#e54666", "#dc3b5d", "#ca244d", "#64172b"],
+        "darkRamp": ["#191113", "#1e1517", "#3a141e", "#4e1325", "#5e1a2e", "#6f2539", "#883447", "#b3445a", "#e54666", "#ec5a72", "#ff949d", "#fed2e1"]
+      },
+      "ruby-12": {
+        "role": "primary",
+        "displayName": "Ruby Deep",
+        "canonical": "#64172b",
+        "darkValue": "#fed2e1",
+        "purpose": "Text on ruby-tinted surfaces — ::selection, the accent callout, the accent heading scheme."
+      },
+      "amber-500": {
         "role": "tertiary",
-        "displayName": "Warning Amber",
-        "canonical": "oklch(0.769 0.188 70.08)",
-        "note": "Tailwind's default amber-500. Stale-post notice only: /30 border on a /5 wash with a solid-amber icon. Not a brand accent — it encodes a caution level mint would misreport."
+        "displayName": "Stale Amber",
+        "canonical": "oklch(76.9% 0.188 70.08)",
+        "purpose": "The stale-post notice only — /30 border on a /5 wash with a solid-amber icon, raised on posts over two years past their last update. A borrowed semantic rather than borrowed data: 'this may be out of date' is a caution the brand red would misreport, so the convention is borrowed instead of invented. NOTE: this is Tailwind's own amber-500, not the four-step Radix amber subset bridged in @theme (--color-amber-3/-6/-9/-11), which nothing currently references. The bridge is unused and the Tailwind value does not flip between themes."
       }
     },
+    "dataColors": [
+      {
+        "name": "language-dot",
+        "route": "upstream data",
+        "value": "GitHub's own language colour, per repository",
+        "fallback": "#701516",
+        "purpose": "The 8px dot on a project tile's fact row. Not a choice the site makes — the ecosystem already assigns it, so Ruby reads as Ruby. Accepted plainly, never re-mapped into the palette.",
+        "rule": "The Upstream-Colour Rule"
+      },
+      {
+        "name": "podcast-hue",
+        "route": "derived identifier",
+        "value": "oklch(0.62 0.14 <hue>)",
+        "source": "accent_hue in src/_data/podcasts.yml",
+        "constraint": "Lightness (0.62) and chroma (0.14) are fixed; hue is the only free variable. This is what keeps a column of shows reading as one family rather than as five unrelated colours.",
+        "purpose": "The 56px rounded mark on a podcast row; an inactive show drops to opacity 0.7. A FALLBACK identity, not a primary one — every show in the data carries real artwork that covers the mark, so the generated hue surfaces only for a show with no image or one whose image fails to load.",
+        "rule": "The Derived-Identifier Rule"
+      }
+    ],
     "typographyMeta": {
-      "display": { "displayName": "Display", "purpose": "Homepage h1 only. Sub-solid leading makes a two-word name read as a mark." },
-      "headline": { "displayName": "Headline", "purpose": "Post titles. Heavier than Display because it sits above dense metadata." },
-      "headline-page": { "displayName": "Headline (page)", "purpose": "Index and listing page titles. A listing is a room, not an argument." },
-      "title": { "displayName": "Title", "purpose": "Episode, talk, and podcast row headings — the largest type inside a list." },
-      "row-title": { "displayName": "Row title", "purpose": "Post-row and card titles. Close to body size so the list scans as a body of work." },
-      "body": { "displayName": "Body", "purpose": "Global default on <body>. Interface copy, descriptions, nav." },
-      "body-prose": { "displayName": "Body (prose)", "purpose": "Article text only. One step larger and looser than interface body; capped at ~65ch." },
-      "label": { "displayName": "Label", "purpose": "Section headings — the signature type treatment. Authored lowercase, rendered uppercase." },
-      "meta": { "displayName": "Meta", "purpose": "Every fact: dates, tags, counts, reading times, keyboard caps, footer." },
-      "code": { "displayName": "Code", "purpose": "Fenced code blocks. Below prose size so a wide sample fits the measure." }
+      "display": { "displayName": "Display", "purpose": "The homepage h1 only. Sub-solid leading and tight tracking make a two-word name read as a mark. Capped at 680px and balanced." },
+      "headline": { "displayName": "Headline", "purpose": "Post titles." },
+      "page-title": { "displayName": "Page Title", "purpose": "Index and listing page titles. A listing is a room, not an argument." },
+      "h2": { "displayName": "Article H2", "purpose": "Section headings inside the reading column. They must outrank the prose by an obvious step — at 17px against 17px body the sections read flat." },
+      "h3": { "displayName": "Article H3", "purpose": "Sub-headings inside the reading column. An h3 below body size is a heading that loses to its own paragraph." },
+      "read": { "displayName": "Read", "purpose": "The reading column and nothing else. Source Serif 4 at a 65ch measure, chosen in-browser against real character width at this size." },
+      "title": { "displayName": "Title", "purpose": "The largest type inside a list — the year marker over an archive group." },
+      "lede": { "displayName": "Lede", "purpose": "Hero standfirst and page descriptions. One step above interface body and deliberately tighter than the serif column it must not imitate." },
+      "row": { "displayName": "Row", "purpose": "Every entry and tile title, the palette input, the topbar wordmark. Close to body size on purpose — a list is scanned as a body of work, not a stack of headlines." },
+      "body": { "displayName": "Body", "purpose": "The global default on <body>. Interface copy, drawer items." },
+      "note": { "displayName": "Note", "purpose": "Excerpts, descriptions, section descriptions, contents entries, button labels." },
+      "code": { "displayName": "Code", "purpose": "Fenced code blocks. Set below the 18px reading column on purpose — a wide sample has to fit the measure without horizontal scroll before it has to match the text." },
+      "label": { "displayName": "Label", "purpose": "Section labels in the rail and the contents heading. The signature type treatment of the site: 12px mono uppercase, 0.08em, slate-11, on a hairline." },
+      "meta": { "displayName": "Meta", "purpose": "Dates, reading times, durations, tags, counts, keyboard caps, footer, post navigation. font-variant-numeric: tabular-nums is set globally on .font-mono so numerals align in a column." },
+      "micro": { "displayName": "Micro", "purpose": "Tile chips." }
     },
     "shadows": [
-      { "name": "control-lift", "value": "0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)", "purpose": "Primary and secondary buttons and the selected theme-toggle pill. Just enough to read as pressable." },
-      { "name": "dropdown", "value": "0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)", "purpose": "The Markdown-actions popover — the only non-modal float, and the only shadow inside the reading column." },
-      { "name": "drawer", "value": "0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)", "purpose": "Mobile menu dropping from the sticky header, with a matching 16px bottom radius." },
-      { "name": "modal", "value": "0 25px 50px -12px rgb(0 0 0 / 0.25)", "purpose": "The command palette. The largest shadow in the system, used exactly once." }
+      { "name": "popover", "value": "0 10px 15px -3px rgb(0 0 0 / .1), 0 4px 6px -4px rgb(0 0 0 / .1)", "purpose": "The Markdown-actions dropdown on a post — the only non-modal popover on the site, and the only shadow inside the reading column." },
+      { "name": "selected-control", "value": "0 1px 3px 0 rgb(0 0 0 / .1), 0 1px 2px -1px rgb(0 0 0 / .1)", "purpose": "The selected pill in the theme toggle, so the chosen mode reads as pressed inside its track." },
+      { "name": "framed-image", "value": "0 10px 15px -3px rgb(0 0 0 / .1), 0 4px 6px -4px rgb(0 0 0 / .1) + 1px ring in slate-6", "purpose": "The Image component's figure variant, where a slate hairline alone would disappear into the ground the image sits on." },
+      { "name": "none", "value": "none", "purpose": "Everything else, deliberately — including the command palette and the mobile drawer. Elevation comes from the border and the field; the 1px slate-6 hairline is the only separator for anything that scrolls with the page." }
     ],
     "motion": [
-      { "name": "hover", "value": "150ms", "purpose": "transition-colors at the Tailwind default. The workhorse — 48 occurrences against 5 of everything else." },
-      { "name": "nudge", "value": "0.5px translate on group hover", "purpose": "Arrows slide right (back arrows left) when their row is hovered." },
-      { "name": "overlay-in", "value": "120ms ease", "purpose": "Command palette scrim fade." },
-      { "name": "panel-in", "value": "180ms cubic-bezier(.2, .8, .2, 1)", "purpose": "Command palette panel dropping 10px into place." },
-      { "name": "drawer-in", "value": "200ms ease-out", "purpose": "Mobile menu opacity plus 8px translate." },
-      { "name": "view-transition", "value": "200ms", "purpose": "Cross-document root view transition." },
-      { "name": "reduced", "value": "0.01ms", "purpose": "Global prefers-reduced-motion override on every animation, transition, and scroll behavior." }
+      { "name": "state", "value": "150ms (transition-colors default)", "purpose": "The workhorse. Nearly every hover, focus, and current-state change in the system." },
+      { "name": "ease-authored", "value": "cubic-bezier(.2, .8, .2, 1)", "purpose": "The one authored motion moment: the command palette panel's 180ms drop from translateY(-10px)." },
+      { "name": "overlay-in", "value": "120ms ease", "purpose": "The command palette's scrim fade." },
+      { "name": "drawer", "value": "200ms ease-out", "purpose": "The mobile drawer and its scrim — opacity plus an 8px translate." },
+      { "name": "view-transition", "value": "200ms", "purpose": "Cross-document root fade, armed by <meta name=\"view-transition\" content=\"same-origin\"> in the root layout. Without the meta tag Turbo Drive handles the navigation and the @view-transition rule is dead code." },
+      { "name": "nudge", "value": "2px translate", "purpose": "Section-action and primary-button icons right, the back arrow left." },
+      { "name": "arrival", "value": "4px translate + opacity", "purpose": "The entry row's trailing arrow, revealed on group-hover and group-focus-visible. At rest it repeated down forty-five rows carrying no information." },
+      { "name": "reduced", "value": "0.01ms !important", "purpose": "The prefers-reduced-motion floor, applied to every animation, transition, and scroll behaviour — then repeated for ::view-transition-old(root) / ::view-transition-new(root) by name, because * does not match pseudo-elements and the cross-document fade would otherwise outlive the blanket rule." }
     ],
     "breakpoints": [
-      { "name": "compact", "value": "520px" },
-      { "name": "sm", "value": "640px" },
-      { "name": "card-grid", "value": "680px" },
-      { "name": "md", "value": "768px" },
-      { "name": "nav", "value": "820px" },
-      { "name": "lg", "value": "1024px" }
+      { "name": "compact", "value": "520px", "purpose": "Named in @theme. The @handle, the 'Search' word and the ⌘K cap drop; header height goes 64px to 56px." },
+      { "name": "sm", "value": "640px", "purpose": "Tailwind default. Full and media entry densities collapse to one column." },
+      { "name": "card-grid", "value": "680px", "purpose": "A bare media query in index.css — the tile grid goes from two columns to one." },
+      { "name": "md", "value": "768px", "purpose": "Tailwind default. Compact entries collapse to one column; page gutters drop from 36px to 16px; tile padding drops to 14px vertical with no horizontal padding." },
+      { "name": "nav", "value": "820px", "purpose": "Named in @theme. Primary nav collapses to the hamburger; the hero, the label rail, and the reading rail all unstack. The single most load-bearing breakpoint in the system." },
+      { "name": "lg", "value": "1024px", "purpose": "Tailwind default. Barely used." }
+    ],
+    "measures": [
+      { "name": "reading", "value": "65ch at 18px Source Serif 4", "purpose": "The article column. Measured in-browser against real character width." },
+      { "name": "excerpt", "value": "68ch", "purpose": "An entry's supporting paragraph." },
+      { "name": "standfirst", "value": "62ch", "purpose": "Hero copy." },
+      { "name": "display", "value": "680px", "purpose": "The homepage h1." },
+      { "name": "page-description", "value": "600px", "purpose": "Listing page descriptions." },
+      { "name": "shell-wide", "value": "1080px", "purpose": "Homepage, listings, topbar, and footer — all three repeat this measure so they align to the same edge." },
+      { "name": "shell-reading", "value": "940px", "purpose": "Post pages: wide enough to hold apparatus in the margin while the column beside it stays at a reading measure, not wide enough for the prose to grow." },
+      { "name": "shell-narrow", "value": "720px", "purpose": "Simple prose pages." }
+    ],
+    "focus": {
+      "value": "outline: 2px solid var(--ruby-9); outline-offset: 2px; border-radius: 4px",
+      "selector": ":where(a, button, input, select, textarea, summary, [tabindex]):focus-visible",
+      "layer": "@layer base",
+      "purpose": "A system guarantee, applied once so every focusable element is covered rather than chased component by component. It sits in @layer base specifically so a component can still override it from markup — unlayered CSS outranks Tailwind's utilities whatever the specificity, so the theme toggle's inset ring and the palette's borderless input could not opt out. Inside base, a utility wins as expected."
+    },
+    "browserSurfaces": [
+      { "name": "selection", "value": "background: var(--ruby-5); color: var(--ruby-12)" },
+      { "name": "scrollbar", "value": "scrollbar-color: var(--slate-8) transparent" },
+      { "name": "caret", "value": "caret-color: var(--ruby-11)" },
+      { "name": "underline-offset", "value": "text-underline-offset: 0.2em on every anchor" },
+      { "name": "theme-resolution", "value": "data-theme set from localStorage or prefers-color-scheme by an inline script in <head>, before first paint" }
     ]
   },
   "components": [
@@ -95,136 +241,219 @@
       "name": "Primary Button",
       "kind": "button",
       "refersTo": "button-primary",
-      "description": "The only filled-with-color control in the system. One per page, at most.",
-      "html": "<a class=\"ds-btn-primary\" href=\"#\">Read the writing<svg class=\"ds-btn-arrow\" width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg></a>",
-      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 6px; padding: 10px 14px; font-family: \"Inter Variable\", ui-sans-serif, system-ui, sans-serif; font-size: 14px; font-weight: 500; line-height: 1; text-decoration: none; color: var(--mint-11); background: var(--mint-4); border: 1px solid color-mix(in oklab, var(--mint-9) 40%, transparent); border-radius: 6px; box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1); transition: background-color 150ms, color 150ms; } .ds-btn-primary:hover { background: var(--mint-5); } .ds-btn-primary:hover .ds-btn-arrow { transform: translateX(0.5px); } .ds-btn-arrow { transition: transform 150ms; } .ds-btn-primary:focus-visible { outline: 2px solid var(--mint-9); outline-offset: 2px; }"
+      "description": "The site's one primary action. A ruby hairline with a ruby-11 label — deliberately not a ruby field. The solid fill it replaced put white on ruby-9 at 3.89:1, under the 4.5:1 its 13.5px label needs, and read as the most landing-page-shaped object on the page. This measures 5.16:1 in light and 8.36:1 in dark, and the fill still arrives on hover.",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\">Read the writing<svg class=\"ds-btn-icon\" width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg></a>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 6px; padding: 10px 14px; font-family: \"Archivo Variable\", ui-sans-serif, system-ui, sans-serif; font-size: 13.5px; line-height: 1; font-weight: 500; text-decoration: none; border-radius: 6px; background: var(--slate-2); color: var(--ruby-11); border: 1px solid color-mix(in oklab, var(--ruby-9) 50%, transparent); transition: background-color .15s, border-color .15s, color .15s; } .ds-btn-primary:hover { background: var(--ruby-3); border-color: var(--ruby-9); } .ds-btn-primary:focus-visible { outline: 2px solid var(--ruby-9); outline-offset: 2px; } .ds-btn-icon { flex: none; transition: transform .15s; } .ds-btn-primary:hover .ds-btn-icon { transform: translateX(2px); }"
     },
     {
       "name": "Secondary Button",
       "kind": "button",
       "refersTo": "button-secondary",
-      "description": "Sage-filled control. Hover moves exactly one tonal step.",
-      "html": "<a class=\"ds-btn-secondary\" href=\"#\">Browse projects</a>",
-      "css": ".ds-btn-secondary { display: inline-flex; align-items: center; justify-content: center; padding: 10px 14px; font-family: \"Inter Variable\", ui-sans-serif, system-ui, sans-serif; font-size: 14px; font-weight: 500; line-height: 1; text-decoration: none; color: var(--sage-12); background: var(--sage-3); border: 0; border-radius: 6px; box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1); transition: background-color 150ms; } .ds-btn-secondary:hover { background: var(--sage-4); } .ds-btn-secondary:focus-visible { outline: 2px solid var(--mint-9); outline-offset: 2px; }"
+      "description": "The neutral control. A slate-3 field with slate-12 text and no border, moving exactly one tonal step on hover. Ghost is the same geometry with a transparent rest state.",
+      "html": "<button class=\"ds-btn-secondary\" type=\"button\">Browse projects</button> <button class=\"ds-btn-ghost\" type=\"button\">Listen to Remote Ruby</button>",
+      "css": ".ds-btn-secondary, .ds-btn-ghost { display: inline-flex; align-items: center; justify-content: center; padding: 10px 14px; font-family: \"Archivo Variable\", ui-sans-serif, system-ui, sans-serif; font-size: 13.5px; line-height: 1; font-weight: 500; border: 0; border-radius: 6px; cursor: pointer; transition: background-color .15s, color .15s; } .ds-btn-secondary { background: var(--slate-3); color: var(--slate-12); } .ds-btn-secondary:hover { background: var(--slate-4); } .ds-btn-ghost { background: transparent; color: var(--slate-11); } .ds-btn-ghost:hover { background: var(--slate-3); color: var(--slate-12); } .ds-btn-secondary:focus-visible, .ds-btn-ghost:focus-visible { outline: 2px solid var(--ruby-9); outline-offset: 2px; }"
     },
     {
-      "name": "Ruled Text Action",
-      "kind": "button",
-      "refersTo": "button-share",
-      "description": "The share / action / section-action language: mono on a hairline underline, not a button shape at all.",
-      "html": "<a class=\"ds-action\" href=\"#\">all posts<svg width=\"12\" height=\"12\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg></a>",
-      "css": ".ds-action { display: inline-flex; align-items: center; gap: 6px; padding-bottom: 2px; font-family: \"JetBrains Mono Variable\", ui-monospace, Menlo, monospace; font-size: 11.5px; text-decoration: none; color: var(--sage-10); border-bottom: 1px solid var(--sage-5); transition: color 150ms, border-color 150ms; } .ds-action:hover { color: var(--mint-11); border-color: var(--mint-11); } .ds-action:hover svg { transform: translateX(0.5px); } .ds-action svg { transition: transform 150ms; } .ds-action:focus-visible { outline: 2px solid var(--mint-9); outline-offset: 2px; }"
-    },
-    {
-      "name": "Post Row",
+      "name": "Entry — Compact Row",
       "kind": "custom",
-      "refersTo": "post-row",
-      "description": "The core unit of the site: mono date, title with mono tag line, trailing arrow. Whole row is the target.",
-      "html": "<a class=\"ds-post-row\" href=\"#\"><div class=\"ds-post-date\">Aug 14, 2026</div><div><div class=\"ds-post-title\">Bridging Radix steps into a Tailwind v4 theme</div><div class=\"ds-post-meta\"><span><span class=\"ds-hash\">#</span>tailwind</span><span><span class=\"ds-hash\">#</span>bridgetown</span><span>·</span><span>6 min read</span></div></div><div class=\"ds-post-arrow\"><svg width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg></div></a>",
-      "css": ".ds-post-row { display: grid; grid-template-columns: 96px 1fr auto; gap: 24px; align-items: baseline; padding: 14px 0; border-bottom: 1px solid var(--sage-4); text-decoration: none; } .ds-post-date { font-family: \"JetBrains Mono Variable\", ui-monospace, Menlo, monospace; font-size: 12px; color: var(--sage-11); white-space: nowrap; } .ds-post-title { font-family: \"Inter Variable\", ui-sans-serif, system-ui, sans-serif; font-size: 15.5px; font-weight: 500; line-height: 1.375; letter-spacing: -0.008em; color: var(--sage-12); text-wrap: balance; transition: color 150ms; } .ds-post-meta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 4px; font-family: \"JetBrains Mono Variable\", ui-monospace, Menlo, monospace; font-size: 11px; color: var(--sage-11); } .ds-hash { color: var(--sage-8); } .ds-post-arrow { display: inline-flex; justify-content: flex-end; color: var(--sage-8); transition: color 150ms, transform 150ms; } .ds-post-row:hover .ds-post-title { color: var(--mint-11); } .ds-post-row:hover .ds-post-arrow { color: var(--mint-11); transform: translateX(0.5px); } @media (max-width: 767px) { .ds-post-row { grid-template-columns: 1fr; gap: 6px; } .ds-post-date { font-size: 11px; } .ds-post-arrow { display: none; } }"
+      "refersTo": "entry-compact",
+      "description": "The site's one chronological row and the clearest expression of the North Star. A 168px lead column of measurement — the same margin the section label hangs in — a title carrying its own facts, and a trailing arrow that arrives on hover or keyboard focus rather than repeating down forty-five rows at rest. Entirely slate until touched.",
+      "html": "<a class=\"ds-entry\" href=\"#\"><div class=\"ds-entry-lead\">Aug 14, 2026</div><div><div class=\"ds-entry-title\">Making Rails CI fast enough to stop thinking about</div><div class=\"ds-entry-facts\"><span><span class=\"ds-entry-hash\">#</span>rails</span><span><span class=\"ds-entry-hash\">#</span>ci</span><span aria-hidden=\"true\">·</span><span>7 min</span></div></div><div class=\"ds-entry-trail\"><svg width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg></div></a>",
+      "css": ".ds-entry { display: grid; grid-template-columns: 168px 1fr auto; gap: 40px; align-items: baseline; padding: 14px 0; border-bottom: 1px solid var(--slate-6); text-decoration: none; } .ds-entry-lead { font-family: \"Geist Mono Variable\", ui-monospace, Menlo, monospace; font-variant-numeric: tabular-nums; font-size: 11.5px; line-height: 1.5; color: var(--slate-11); white-space: nowrap; } .ds-entry-title { font-family: \"Archivo Variable\", ui-sans-serif, system-ui, sans-serif; font-size: 15.5px; line-height: 1.4; letter-spacing: -0.008em; font-weight: 500; color: var(--slate-12); text-wrap: balance; transition: color .15s; } .ds-entry:hover .ds-entry-title { color: var(--ruby-11); } .ds-entry-facts { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 4px; font-family: \"Geist Mono Variable\", ui-monospace, Menlo, monospace; font-size: 11.5px; line-height: 1.5; color: var(--slate-11); } .ds-entry-hash { color: var(--slate-8); } .ds-entry-trail { display: inline-flex; align-items: center; justify-content: flex-end; color: var(--slate-8); opacity: 0; transform: translateX(-4px); transition: opacity .15s, transform .15s, color .15s; } .ds-entry:hover .ds-entry-trail, .ds-entry:focus-visible .ds-entry-trail { opacity: 1; transform: translateX(0); color: var(--ruby-11); } .ds-entry:focus-visible { outline: 2px solid var(--ruby-9); outline-offset: 2px; border-radius: 4px; } @media (max-width: 767px) { .ds-entry { grid-template-columns: 1fr; gap: 6px; } .ds-entry-trail { display: none; } }"
     },
     {
-      "name": "Hero Index",
-      "kind": "custom",
-      "refersTo": "hero-index-row",
-      "description": "The ledger beside the homepage hero. Counts are derived from the collections at build time — never asserted.",
-      "html": "<div class=\"ds-index\"><div class=\"ds-index-label\">index</div><ul class=\"ds-index-list\"><li><a class=\"ds-index-row\" href=\"#\"><span class=\"ds-index-name\">writing</span><span class=\"ds-index-value\">55 posts</span></a></li><li><a class=\"ds-index-row\" href=\"#\"><span class=\"ds-index-name\">open source</span><span class=\"ds-index-value\">15 repos</span></a></li><li><a class=\"ds-index-row\" href=\"#\"><span class=\"ds-index-name\">podcast</span><span class=\"ds-index-value\">350+ episodes</span></a></li></ul><p class=\"ds-index-aside\">mostly so I can find them again later.</p></div>",
-      "css": ".ds-index { max-width: 300px; } .ds-index-label { padding-bottom: 8px; border-bottom: 1px solid var(--sage-4); font-family: \"JetBrains Mono Variable\", ui-monospace, Menlo, monospace; font-size: 12px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; color: var(--sage-11); } .ds-index-list { list-style: none; margin: 0; padding: 0; } .ds-index-row { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding: 10px 0; border-bottom: 1px solid var(--sage-4); text-decoration: none; } .ds-index-name { font-family: \"Inter Variable\", ui-sans-serif, system-ui, sans-serif; font-size: 13.5px; color: var(--sage-12); transition: color 150ms; } .ds-index-value { font-family: \"JetBrains Mono Variable\", ui-monospace, Menlo, monospace; font-size: 11.5px; color: var(--sage-11); white-space: nowrap; transition: color 150ms; } .ds-index-row:hover .ds-index-name, .ds-index-row:hover .ds-index-value { color: var(--mint-11); } .ds-index-aside { margin: 16px 0 0; font-family: \"JetBrains Mono Variable\", ui-monospace, Menlo, monospace; font-size: 11.5px; line-height: 1.6; color: var(--sage-11); }"
-    },
-    {
-      "name": "Project Card",
+      "name": "Tile",
       "kind": "card",
-      "refersTo": "project-card",
-      "description": "Square, hairline-bounded region. Detail row pinned to the bottom so unequal cards align.",
-      "html": "<a class=\"ds-card\" href=\"#\"><div class=\"ds-card-head\"><span class=\"ds-card-icon\"><svg width=\"14\" height=\"14\" viewBox=\"0 0 16 16\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.486 2.486 0 0 1 4.5 9h8Z\"/></svg></span><span class=\"ds-card-name\">js-configs</span><span class=\"ds-chip ds-chip-active\">active</span></div><div class=\"ds-card-desc\">Shared ESLint, Prettier, and TypeScript configs so a new project starts correct.</div><div class=\"ds-card-detail\"><span class=\"ds-lang\"><span class=\"ds-lang-dot\"></span>JavaScript</span><span>24</span><span>3</span></div></a>",
-      "css": ".ds-card { display: flex; flex-direction: column; gap: 4px; padding: 20px; background: var(--sage-1); border: 1px solid var(--sage-4); text-decoration: none; transition: background-color 150ms; } .ds-card:hover { background: var(--sage-2); } .ds-card-head { display: flex; align-items: center; gap: 10px; margin-bottom: 4px; } .ds-card-icon { display: inline-flex; color: var(--sage-10); transition: color 150ms; } .ds-card:hover .ds-card-icon { color: var(--mint-11); } .ds-card-name { font-family: \"Inter Variable\", ui-sans-serif, system-ui, sans-serif; font-size: 15px; font-weight: 600; letter-spacing: -0.025em; color: var(--sage-12); } .ds-chip { margin-left: auto; padding: 1px 6px; font-family: \"JetBrains Mono Variable\", ui-monospace, Menlo, monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.06em; border-radius: 9999px; border: 1px solid var(--sage-4); color: var(--sage-10); } .ds-chip-active { color: var(--mint-11); background: var(--mint-4); border-color: color-mix(in oklab, var(--mint-9) 30%, transparent); } .ds-card-desc { margin: 4px 0 16px; font-family: \"Inter Variable\", ui-sans-serif, system-ui, sans-serif; font-size: 13.5px; line-height: 1.375; color: var(--sage-11); text-wrap: pretty; } .ds-card-detail { display: flex; align-items: center; gap: 14px; margin-top: auto; font-family: \"JetBrains Mono Variable\", ui-monospace, Menlo, monospace; font-size: 11.5px; color: var(--sage-10); } .ds-lang { display: inline-flex; align-items: center; gap: 6px; } .ds-lang-dot { width: 8px; height: 8px; border-radius: 9999px; background: #f1e05a; }"
+      "refersTo": "tile",
+      "description": "The site's one grid cell, for peers rather than chronology. A slate-1 region bounded by the grid's own hairlines — never a box of its own — going one tonal step to slate-2 on hover, with no lift, no scale, and no shadow. The fact row is pinned with margin-top: auto so a row of unequal tiles still aligns its footers, and its language dot carries GitHub's upstream colour (the #701516 here is the fallback) rather than a palette value.",
+      "html": "<div class=\"ds-tile-grid\"><a class=\"ds-tile\" href=\"#\"><div class=\"ds-tile-head\"><span class=\"ds-tile-title\">js-configs<svg class=\"ds-tile-icon\" width=\"12\" height=\"12\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 17 17 7M9 7h8v8\"/></svg></span><span class=\"ds-tile-chip\">archived</span></div><div class=\"ds-tile-desc\">Shared ESLint and Prettier configs, so a new repo starts already agreeing with the last one.</div><div class=\"ds-tile-facts\"><span class=\"ds-tile-lang\"><span class=\"ds-tile-dot\"></span>Ruby</span><span aria-hidden=\"true\">·</span><span>34 stars</span></div></a><a class=\"ds-tile\" href=\"#\"><div class=\"ds-tile-head\"><span class=\"ds-tile-title\">obsidian-objects<svg class=\"ds-tile-icon\" width=\"12\" height=\"12\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 17 17 7M9 7h8v8\"/></svg></span></div><div class=\"ds-tile-desc\">A typed object layer over an Obsidian vault.</div><div class=\"ds-tile-facts\"><span class=\"ds-tile-lang\"><span class=\"ds-tile-dot\"></span>Ruby</span></div></a></div>",
+      "css": ".ds-tile-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: 1px solid var(--slate-6); } .ds-tile-grid > * { border-bottom: 1px solid var(--slate-6); } .ds-tile-grid > *:nth-child(odd) { border-right: 1px solid var(--slate-6); } .ds-tile { display: flex; flex-direction: column; gap: 4px; padding: 20px; background: var(--slate-1); text-decoration: none; transition: background-color .15s; } .ds-tile:hover { background: var(--slate-2); } .ds-tile:focus-visible { outline: 2px solid var(--ruby-9); outline-offset: 2px; } .ds-tile-head { display: flex; align-items: center; gap: 10px; margin-bottom: 4px; } .ds-tile-title { display: inline-flex; align-items: center; gap: 6px; font-family: \"Archivo Variable\", ui-sans-serif, system-ui, sans-serif; font-size: 15.5px; line-height: 1.4; letter-spacing: -0.008em; font-weight: 500; color: var(--slate-12); } .ds-tile-icon { flex: none; color: var(--slate-8); transition: color .15s; } .ds-tile:hover .ds-tile-icon { color: var(--ruby-11); } .ds-tile-chip { margin-left: auto; font-family: \"Geist Mono Variable\", ui-monospace, Menlo, monospace; font-size: 10.5px; line-height: 1.4; letter-spacing: 0.06em; font-weight: 500; text-transform: uppercase; color: var(--slate-10); } .ds-tile-desc { margin: 4px 0 16px; font-family: \"Archivo Variable\", ui-sans-serif, system-ui, sans-serif; font-size: 13.5px; line-height: 1.375; color: var(--slate-11); text-wrap: pretty; } .ds-tile-facts { display: flex; align-items: center; gap: 14px; margin-top: auto; font-family: \"Geist Mono Variable\", ui-monospace, Menlo, monospace; font-variant-numeric: tabular-nums; font-size: 11.5px; line-height: 1.5; color: var(--slate-10); } .ds-tile-lang { display: inline-flex; align-items: center; gap: 6px; } .ds-tile-dot { width: 8px; height: 8px; border-radius: 50%; flex: none; background: #701516; } @media (max-width: 680px) { .ds-tile-grid { grid-template-columns: 1fr; } .ds-tile-grid > *:nth-child(odd) { border-right: 0; } }"
     },
     {
-      "name": "Command Palette",
-      "kind": "input",
-      "refersTo": "input-search",
-      "description": "The only text input on the site. The panel is the field; the input itself has no chrome.",
-      "html": "<div class=\"ds-cmdk\"><div class=\"ds-cmdk-head\"><svg class=\"ds-cmdk-icon\" width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"11\" cy=\"11\" r=\"7\"/><path d=\"m20 20-3.5-3.5\"/></svg><input class=\"ds-cmdk-input\" type=\"search\" placeholder=\"Search posts, talks, episodes, projects…\" aria-label=\"Search\"><span class=\"ds-kbd\">esc</span></div><div class=\"ds-cmdk-foot\"><span class=\"ds-hint\"><span class=\"ds-kbd\">↑↓</span>navigate</span><span class=\"ds-hint\"><span class=\"ds-kbd\">↵</span>open</span></div></div>",
-      "css": ".ds-cmdk { width: min(580px, 92%); background: var(--sage-2); border: 1px solid var(--sage-5); border-radius: 14px; overflow: hidden; box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25); } .ds-cmdk-head { display: flex; align-items: center; gap: 12px; padding: 14px 18px; border-bottom: 1px solid var(--sage-5); } .ds-cmdk-icon { flex-shrink: 0; color: var(--sage-10); } .ds-cmdk-input { flex: 1; background: transparent; border: 0; outline: none; font-family: \"Inter Variable\", ui-sans-serif, system-ui, sans-serif; font-size: 15.5px; color: var(--sage-12); } .ds-cmdk-input::placeholder { color: var(--sage-8); } .ds-cmdk-foot { display: flex; gap: 18px; padding: 10px 18px; border-top: 1px solid var(--sage-5); font-family: \"JetBrains Mono Variable\", ui-monospace, Menlo, monospace; font-size: 11px; color: var(--sage-10); } .ds-hint { display: inline-flex; align-items: center; gap: 6px; } .ds-kbd { padding: 1px 6px; font-family: \"JetBrains Mono Variable\", ui-monospace, Menlo, monospace; font-size: 11px; color: var(--sage-11); background: var(--sage-3); border: 1px solid var(--sage-5); border-radius: 4px; }"
+      "name": "Page Section Rail",
+      "kind": "custom",
+      "refersTo": "section-label",
+      "description": "The site's one compositional idea. A rule across the full measure, a 168px left margin carrying what the section is called, what it holds, and where the rest of it lives, and a content column beside it carrying nothing but the work. The same 168px is the lead column of a compact entry, so a label and the dates beneath it hang in one margin. Stacks below 820px, because a 168px margin is a luxury a phone does not have.",
+      "html": "<section class=\"ds-section\"><div class=\"ds-section-rail\"><h2 class=\"ds-section-label\">recent posts</h2><p class=\"ds-section-desc\">Notes on Rails, podcasting, and the long unglamorous middle.</p><a class=\"ds-section-action\" href=\"#\">all posts<svg width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg></a></div><div class=\"ds-section-body\">The work goes here, and nothing else does.</div></section>",
+      "css": ".ds-section { display: grid; grid-template-columns: 168px minmax(0, 1fr); gap: 40px; border-top: 1px solid var(--slate-6); padding-top: 20px; margin-bottom: 56px; } .ds-section-label { margin: 0; font-family: \"Geist Mono Variable\", ui-monospace, Menlo, monospace; font-size: 12px; line-height: 1.4; letter-spacing: 0.08em; font-weight: 500; text-transform: uppercase; color: var(--slate-11); } .ds-section-desc { margin: 10px 0 0; font-family: \"Archivo Variable\", ui-sans-serif, system-ui, sans-serif; font-size: 13.5px; line-height: 1.375; color: var(--slate-11); text-wrap: pretty; } .ds-section-action { display: inline-flex; align-items: center; gap: 6px; margin-top: 14px; font-family: \"Geist Mono Variable\", ui-monospace, Menlo, monospace; font-size: 11.5px; line-height: 1.5; color: var(--slate-10); text-decoration: none; transition: color .15s; } .ds-section-action svg { transition: transform .15s; } .ds-section-action:hover { color: var(--ruby-11); } .ds-section-action:hover svg { transform: translateX(2px); } .ds-section-action:focus-visible { outline: 2px solid var(--ruby-9); outline-offset: 2px; border-radius: 4px; } .ds-section-body { font-family: \"Archivo Variable\", ui-sans-serif, system-ui, sans-serif; font-size: 15px; line-height: 1.6; color: var(--slate-11); } @media (max-width: 819px) { .ds-section { grid-template-columns: 1fr; gap: 0; } .ds-section-rail { margin-bottom: 20px; } }"
     },
     {
       "name": "Topbar Nav Link",
       "kind": "nav",
       "refersTo": "nav-link",
-      "description": "Sage at rest; the active item carries the only always-visible mint in the chrome besides the avatar dot.",
-      "html": "<nav class=\"ds-nav\"><a class=\"ds-nav-link\" href=\"#\">Posts</a><a class=\"ds-nav-link ds-nav-active\" href=\"#\">Projects</a><a class=\"ds-nav-link\" href=\"#\">Speaking</a><a class=\"ds-nav-link\" href=\"#\">About</a></nav>",
-      "css": ".ds-nav { display: flex; align-items: center; gap: 2px; } .ds-nav-link { position: relative; padding: 6px 10px; font-family: \"Inter Variable\", ui-sans-serif, system-ui, sans-serif; font-size: 13.5px; text-decoration: none; color: var(--sage-11); border-radius: 6px; transition: background-color 150ms, color 150ms; } .ds-nav-link:hover { background: var(--sage-3); color: var(--sage-12); } .ds-nav-active { color: var(--sage-12); } .ds-nav-active::after { content: \"\"; position: absolute; left: 10px; right: 10px; bottom: 2px; height: 1.5px; border-radius: 2px; background: var(--mint-11); } .ds-nav-link:focus-visible { outline: 2px solid var(--mint-9); outline-offset: 2px; }"
+      "description": "13.5px slate-11 at 6px 10px, going slate-12 on a slate-3 fill. The active item carries a 1.5px ruby-11 bar inset 10px from each edge — the only always-visible ruby in the chrome besides the wordmark's period.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-nav-link\" href=\"#\">Posts</a><a class=\"ds-nav-link ds-nav-link--active\" href=\"#\" aria-current=\"page\">Projects</a><a class=\"ds-nav-link\" href=\"#\">Speaking</a><a class=\"ds-nav-link\" href=\"#\">About</a></nav>",
+      "css": ".ds-nav { display: inline-flex; align-items: center; gap: 2px; } .ds-nav-link { position: relative; padding: 6px 10px; border-radius: 6px; font-family: \"Archivo Variable\", ui-sans-serif, system-ui, sans-serif; font-size: 13.5px; line-height: 1.5; font-weight: 500; color: var(--slate-11); text-decoration: none; transition: background-color .15s, color .15s; } .ds-nav-link:hover { background: var(--slate-3); color: var(--slate-12); } .ds-nav-link:focus-visible { outline: 2px solid var(--ruby-9); outline-offset: 2px; } .ds-nav-link--active { color: var(--slate-12); } .ds-nav-link--active::after { content: \"\"; position: absolute; left: 10px; right: 10px; bottom: 2px; height: 1.5px; border-radius: 2px; background: var(--ruby-11); }"
     },
     {
-      "name": "Callout",
-      "kind": "custom",
-      "refersTo": "note",
-      "description": "Markdown-aware prose callout. Default is a tonal sage panel; the accent scheme is one of the few mint surfaces.",
-      "html": "<div class=\"ds-note\">Torchlight only runs in production, so code blocks render plain in dev.</div><div class=\"ds-note ds-note-accent\">Bridge the token into <code>@theme</code> in the same change that uses it.</div>",
-      "css": ".ds-note { margin: 24px 0; padding: 16px; border: 1px solid var(--sage-6); border-radius: 12px; background: var(--sage-2); font-family: \"Inter Variable\", ui-sans-serif, system-ui, sans-serif; font-size: 15px; line-height: 1.5; color: var(--sage-11); } .ds-note-accent { background: var(--mint-3); border-color: var(--mint-6); color: var(--mint-12); } .ds-note code { padding: 2px 6px; font-family: \"JetBrains Mono Variable\", ui-monospace, Menlo, monospace; font-size: 0.875em; background: var(--sage-3); color: var(--sage-12); border: 1px solid var(--sage-4); border-radius: 4px; }"
+      "name": "Command Palette Field",
+      "kind": "input",
+      "refersTo": "input-search",
+      "description": "The only text input on the site. Fully transparent, borderless, no outline — it carries no chrome because the panel around it is the field. The panel opening is the focus event, which is also why the palette is the one modal on the site with no shadow: a slate-2 field with a slate-5 border is the elevation.",
+      "html": "<div class=\"ds-palette\"><div class=\"ds-palette-field\"><svg class=\"ds-palette-glyph\" width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"11\" cy=\"11\" r=\"7\"/><path d=\"m20 20-3.5-3.5\"/></svg><input class=\"ds-palette-input\" type=\"search\" placeholder=\"Search posts, talks, episodes, projects…\" aria-label=\"Search\"><span class=\"ds-palette-esc\">esc</span></div><div class=\"ds-palette-hints\"><span><kbd class=\"ds-kbd\">↑↓</kbd> navigate</span><span><kbd class=\"ds-kbd\">↵</kbd> open</span><span><kbd class=\"ds-kbd\">esc</kbd> close</span></div></div>",
+      "css": ".ds-palette { width: min(580px, 92vw); background: var(--slate-2); border: 1px solid var(--slate-5); border-radius: 6px; overflow: hidden; } .ds-palette-field { display: flex; align-items: center; gap: 12px; padding: 14px 18px; border-bottom: 1px solid var(--slate-5); } .ds-palette-glyph { flex: none; color: var(--slate-10); } .ds-palette-input { flex: 1; background: transparent; border: 0; outline: none; font-family: \"Archivo Variable\", ui-sans-serif, system-ui, sans-serif; font-size: 15.5px; line-height: 1.4; letter-spacing: -0.008em; font-weight: 500; color: var(--slate-12); } .ds-palette-input::placeholder { color: var(--slate-8); font-weight: 400; } .ds-palette-input::-webkit-search-cancel-button { appearance: none; display: none; } .ds-palette-esc, .ds-kbd { font-family: \"Geist Mono Variable\", ui-monospace, Menlo, monospace; font-size: 11.5px; line-height: 1.5; border: 1px solid var(--slate-5); border-radius: 4px; padding: 1px 6px; color: var(--slate-11); } .ds-kbd { background: var(--slate-3); } .ds-palette-esc { color: var(--slate-10); } .ds-palette-hints { display: flex; gap: 18px; padding: 10px 18px; border-top: 1px solid var(--slate-5); font-family: \"Geist Mono Variable\", ui-monospace, Menlo, monospace; font-size: 11.5px; color: var(--slate-10); } .ds-palette-hints span { display: inline-flex; align-items: center; gap: 6px; }"
     },
     {
-      "name": "Shell Command",
+      "name": "Contents Rail",
       "kind": "custom",
-      "refersTo": "slate-3",
-      "description": "The site's only slate surface: a $ prompt cap butted against a mono code span, radius split across the pair.",
-      "html": "<div class=\"ds-cmd\"><span class=\"ds-cmd-prompt\">$&nbsp;</span><code class=\"ds-cmd-body\">mise run build</code></div>",
-      "css": ".ds-cmd { display: inline-flex; flex-wrap: nowrap; align-items: stretch; font-size: 14px; } .ds-cmd-prompt { padding: 4px 8px; border-radius: 6px 0 0 6px; background: var(--slate-3); color: var(--slate-12); font-family: \"JetBrains Mono Variable\", ui-monospace, Menlo, monospace; } .ds-cmd-body { padding: 4px 8px; border-radius: 0 6px 6px 0; background: var(--slate-3); color: var(--slate-12); font-family: \"JetBrains Mono Variable\", ui-monospace, Menlo, monospace; }"
+      "refersTo": "toc-link",
+      "description": "The reading page's contents, filled at build time from the real rendered headings rather than parsed from source markdown, so the entries agree with the anchor IDs the reader lands on. Appears only on posts over 800 words, and never for a single heading. The current entry is marked with aria-current=\"true\" and styled off that attribute, so the accessible state and the visual state cannot drift apart.",
+      "html": "<div class=\"ds-toc\"><h2 class=\"ds-toc-label\">Contents</h2><ol class=\"ds-toc-list\"><li><a class=\"ds-toc-link\" href=\"#\">Why CI got slow</a></li><li><a class=\"ds-toc-link\" href=\"#\" aria-current=\"true\">Splitting the suite</a></li><li class=\"ds-toc-sub\"><a class=\"ds-toc-link\" href=\"#\">Choosing a split key</a></li><li class=\"ds-toc-sub\"><a class=\"ds-toc-link\" href=\"#\">Rebalancing on timing data</a></li><li><a class=\"ds-toc-link\" href=\"#\">What it cost</a></li></ol></div>",
+      "css": ".ds-toc { padding-top: 20px; border-top: 1px solid var(--slate-6); max-width: 208px; } .ds-toc-label { margin: 0 0 12px; font-family: \"Geist Mono Variable\", ui-monospace, Menlo, monospace; font-size: 12px; line-height: 1.4; letter-spacing: 0.08em; font-weight: 500; text-transform: uppercase; color: var(--slate-11); } .ds-toc-list { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px; } .ds-toc-sub { padding-left: 12px; } .ds-toc-link { display: block; font-family: \"Archivo Variable\", ui-sans-serif, system-ui, sans-serif; font-size: 13.5px; line-height: 1.375; color: var(--slate-11); text-decoration: none; transition: color .15s; } .ds-toc-link:hover { color: var(--ruby-11); } .ds-toc-link[aria-current=\"true\"] { color: var(--ruby-11); } .ds-toc-link:focus-visible { outline: 2px solid var(--ruby-9); outline-offset: 2px; border-radius: 4px; }"
+    },
+    {
+      "name": "Stale Note",
+      "kind": "custom",
+      "refersTo": "note-stale",
+      "description": "The only borrowed colour on a content surface, and the whole justification for the Borrowed-Colour Rule: 'this may be out of date' is a caution the brand red would misreport. Raised above the article on posts more than two years past their last update, unless the post is a CFP, marked evergreen, or opts out. Uses Tailwind's amber-500 rather than the Radix amber subset bridged in @theme, so unlike every other colour on the site it does not flip between themes.",
+      "html": "<aside class=\"ds-stale\" role=\"note\"><svg class=\"ds-stale-glyph\" width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><path d=\"M12 8v4M12 16h.01\"/></svg><div><strong class=\"ds-stale-lead\">Heads up:</strong> this post was last updated <time datetime=\"2023-04-01\">Apr 2023</time>. Tools, versions, and best practices may have moved on since then.</div></aside>",
+      "css": ".ds-stale { display: flex; align-items: flex-start; gap: 12px; padding: 16px; border-radius: 8px; border: 1px solid color-mix(in oklab, oklch(76.9% 0.188 70.08) 30%, transparent); background: color-mix(in oklab, oklch(76.9% 0.188 70.08) 5%, transparent); font-family: \"Archivo Variable\", ui-sans-serif, system-ui, sans-serif; font-size: 13.5px; line-height: 1.625; color: var(--slate-12); } .ds-stale-glyph { flex: none; margin-top: 2px; color: oklch(76.9% 0.188 70.08); } .ds-stale-lead { font-weight: 500; }"
     },
     {
       "name": "Theme Toggle",
       "kind": "custom",
       "refersTo": "theme-toggle",
-      "description": "Three-way radiogroup. The visual state is driven by aria-checked so it cannot drift from the accessible state.",
-      "html": "<div class=\"ds-toggle\" role=\"radiogroup\" aria-label=\"Theme\"><button class=\"ds-toggle-btn\" role=\"radio\" aria-checked=\"true\" title=\"System\"><svg width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><rect x=\"2\" y=\"3\" width=\"20\" height=\"14\" rx=\"2\"/><path d=\"M8 21h8M12 17v4\"/></svg></button><button class=\"ds-toggle-btn\" role=\"radio\" aria-checked=\"false\" title=\"Light\"><svg width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"4\"/><path d=\"M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41\"/></svg></button><button class=\"ds-toggle-btn\" role=\"radio\" aria-checked=\"false\" title=\"Dark\"><svg width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z\"/></svg></button></div>",
-      "css": ".ds-toggle { display: inline-flex; align-items: center; gap: 2px; padding: 4px; background: var(--sage-3); border-radius: 9999px; } .ds-toggle-btn { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; padding: 0; background: transparent; border: 0; border-radius: 9999px; color: var(--sage-10); cursor: pointer; transition: background-color 150ms, color 150ms; } .ds-toggle-btn:hover { color: var(--sage-12); } .ds-toggle-btn[aria-checked=\"true\"] { background: var(--sage-5); color: var(--sage-12); box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1); } .ds-toggle-btn:focus-visible { outline: none; box-shadow: 0 0 0 2px var(--mint-8); }"
+      "description": "A three-way radiogroup — system, light, dark — as 32px circular buttons inside a slate-3 pill. The selected one lifts to slate-5 with a slate-12 icon and the system's one selected-control shadow, driven entirely by aria-checked so the accessible state and the visual state cannot drift apart. Focus is an inset ruby-8 ring rather than the standard offset outline, because the buttons sit flush inside a track — the exact case the base focus rule was put in @layer base to allow.",
+      "html": "<div class=\"ds-toggle\" role=\"radiogroup\" aria-label=\"Theme\"><button class=\"ds-toggle-btn\" type=\"button\" role=\"radio\" aria-checked=\"true\" aria-label=\"Sync theme with system\"><svg width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><rect x=\"2\" y=\"3\" width=\"20\" height=\"14\" rx=\"2\"/><path d=\"M8 21h8M12 17v4\"/></svg></button><button class=\"ds-toggle-btn\" type=\"button\" role=\"radio\" aria-checked=\"false\" aria-label=\"Use light theme\"><svg width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"4\"/><path d=\"M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41\"/></svg></button><button class=\"ds-toggle-btn\" type=\"button\" role=\"radio\" aria-checked=\"false\" aria-label=\"Use dark theme\"><svg width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z\"/></svg></button></div>",
+      "css": ".ds-toggle { display: inline-flex; align-items: center; gap: 2px; padding: 4px; border-radius: 9999px; background: var(--slate-3); } .ds-toggle-btn { width: 32px; height: 32px; display: inline-flex; align-items: center; justify-content: center; border: 0; background: transparent; border-radius: 9999px; color: var(--slate-10); cursor: pointer; transition: background-color .15s, color .15s; } .ds-toggle-btn:hover { color: var(--slate-12); } .ds-toggle-btn:focus-visible { outline: none; box-shadow: 0 0 0 2px var(--ruby-8); } .ds-toggle-btn[aria-checked=\"true\"] { background: var(--slate-5); color: var(--slate-12); box-shadow: 0 1px 3px 0 rgb(0 0 0 / .1), 0 1px 2px -1px rgb(0 0 0 / .1); }"
     }
   ],
   "narrative": {
-    "northStar": "The Engineer's Notebook",
-    "overview": "This is a working log kept in public, and it looks like one. Sage paper as the ground, hairline rules as the only structure, monospace in the margins for everything that is a fact — dates, tags, reading times, star counts, episode numbers, keyboard hints — and Inter in the body for everything that is a sentence. The split is the whole system: mono is the record, sans is the voice. A post row reads like a ledger line because it is one; a paragraph reads like writing because it is.\n\nThe mood is quiet, exact, and unhurried. Nothing raises its voice, and precision is the thing that signals care. There is exactly one brand accent in the palette, and it is spent almost entirely on hover and active states, which means the page at rest is a nearly monochrome field of sage with black text — and the instant a pointer lands, the thing under it turns mint. Restraint is not an absence of design here; it is the mechanism. A site that used five accent colors could not make a single hover feel like an event.\n\nSurfaces are flat. Depth is a 1px line, not a shadow. Shadows exist, but only on the things that genuinely float above the page — the command palette, the mobile menu, the Markdown-actions dropdown — so their appearance is a real signal that context has changed rather than a decorative default. The confirmed anti-reference is the generic dev-blog template: a grid of cards with stock cover images, colored tag pills, rounded-2xl on everything, emoji section headers. The row-and-hairline list is the deliberate alternative to that, and the mono uppercase section label is the deliberate alternative to a decorated heading.",
+    "northStar": "The Standard, Played Straight",
+    "overview": "This is the familiar arrangement for a working engineer's site — a name, a standfirst, a ledger of what exists, then ruled lists of writing and open source — built at a craft level the category rarely reaches. The invention is not in the layout. It is in the focus ring you can't lose, the hover that arrives on the one element you pointed at, the row that reveals its arrow only when you're on it, and the fact that both themes are real. Convention carries the structure so that every unit of attention can be spent on state, timing, and contrast.\n\nThe ground is a Radix slate ramp, composed dark-first: dark is where the design was made and reviewed, light is a tested peer. There is exactly one accent — Radix ruby — and it is spent entirely on state: hover, focus, active, current. There is deliberately no solid ruby field at rest anywhere on the site, including the primary button, which is a ruby hairline with a ruby-11 label. Surfaces are separated by a 1px slate-6 rule and never by a shadow. Three typefaces divide the work absolutely: Archivo for chrome and lists, Source Serif 4 for the reading column and nowhere else, Geist Mono for anything that is a measurement.\n\nThe one compositional idea is the label rail: a 168px margin on the left carrying what a section is called, what it holds, and where the rest of it lives, with the column beside it carrying nothing but the work. The same 168px is the lead column of a chronological row, so a section label and the dates under it hang in the same margin. Below 820px the rail stacks, because a 168px margin is a luxury a phone does not have. This system was built code-led against the running site; there are no comps, and nothing here is derived from a design file.\n\nThe confirmed anti-reference is the landing page: a solid accent field as a first object, a card grid used as the default primitive, a small coloured line above a title, decorated section headings. Each of those was present at some point in the build and was removed by measurement.",
     "keyCharacteristics": [
-      "Two typefaces with strictly divided jobs: Inter Variable for prose, JetBrains Mono Variable for metadata and labels.",
-      "A 12-step sage ramp carrying the entire interface, a mint ramp reserved almost entirely for state, and a cool slate ramp used only where content is quoted rather than authored.",
-      "Hairline 1px sage-4 borders as the universal separator; no ambient shadows on content.",
-      "Dark and light are equal peers, defined as paired values on [data-theme] and resolved before first paint.",
-      "Section headings are mono, uppercase, 12px, 0.08em tracked — a filing label, not a title.",
-      "Every interactive element is visually inert at rest and turns mint on hover.",
-      "Evidence is displayed as a ledger, not asserted as a claim — the hero's index panel counts posts, repos, episodes, and talks from the collections at build time."
+      "One ground (Radix slate, all 12 steps) and one accent (Radix ruby, spent only on state). Every other colour arrives by one of three narrow routes — a borrowed semantic (amber, staleness only), upstream data (GitHub's language colours), or a one-axis derived fallback (the podcast hue).",
+      "Every ramp step is redefined per [data-theme], so the token value flips rather than the class — markup carries almost no dark: variants.",
+      "Three faces with strictly divided jobs: Archivo (chrome, lists, display), Source Serif 4 (the reading column only), Geist Mono (dates, counts, durations, tags, code, labels).",
+      "Fifteen named type roles in @theme, each carrying its own leading, tracking, and weight, so text-meta is the whole decision.",
+      "Two layout primitives carry nearly the whole site: Entry (one chronological row, three densities) and Tile (one grid cell for peers).",
+      "A 1px slate-6 hairline is the only separator for anything that scrolls with the page.",
+      "Focus is a single base-layer rule over every focusable element, so it cannot be forgotten per component.",
+      "Links are underlined, not coloured — ruby against body slate measured 1.09:1 and colour alone was not a distinction."
     ],
     "rules": [
-      { "name": "The One Voice Rule", "body": "Mint has exactly one job: to mark what is live, active, or under the pointer. It never appears as decoration and never as a second brand color. At rest, a full viewport should contain almost no mint at all — often only the topbar dot, the period after \"Andrew Mason\", and a show name. Its rarity is what makes a hover legible from the corner of the eye.", "section": "colors" },
-      { "name": "The Borrowed-Color Rule", "body": "A color outside sage and mint is admissible only when the color is the data — a warning level, a per-show identifier, an upstream language color. Never invent a decorative color; only borrow one that means something. If a new color cannot answer \"what fact does this encode?\", it does not go in.", "section": "colors" },
-      { "name": "The Both-Themes Rule", "body": "No color is chosen for light and then checked in dark. Every token is authored as a pair in frontend/styles/index.css and both are first-class. A change that only looks right in one theme is not finished.", "section": "colors" },
-      { "name": "The Bridge Rule", "body": "A Radix step is only usable in markup if it has been bridged into @theme as --color-<name>. Using bg-mint-7 when --color-mint-7 isn't declared produces silence, not an error — the class simply does nothing and the element falls back to inherited color. Sage and slate are bridged in full; mint is bridged as a subset (steps 3, 4, 5, 6, 8, 9, 11, 12), so mint is where this bites. Add the bridge and the token in the same change, and never reference a step the theme block doesn't declare.", "section": "colors" },
-      { "name": "The Two-Temperature Rule", "body": "Sage is the page and slate is the annotation. Warm sage owns every surface the site speaks in — ground, chrome, hairlines, body text, rows, cards. Cool slate is admitted only where content is being displayed rather than authored: the shell-prompt block, a figure's frame and caption. Slate never separates two regions, never carries an interface control, and never sets body copy. If a new slate usage can't name the thing it is quoting, it should be sage.", "section": "colors" },
-      { "name": "The Mono-Is-Metadata Rule", "body": "If it is a fact about the content — when, how long, how many, what tag, what key, which episode — it is JetBrains Mono. If it is the content, or a sentence about it, it is Inter. There is no third category and no overlap.", "section": "typography" },
-      { "name": "The Label-Not-Title Rule", "body": "Section headings are never large. now, featured work, recent posts, index are set at 12px mono uppercase in sage-11, sitting on a hairline — a filing tab, not a banner. Scale hierarchy is carried by the ruled structure and by which type family is used, not by making headings big.", "section": "typography" },
-      { "name": "The Lowercase Rule", "body": "Section labels are authored lowercase and rendered uppercase by CSS. Copy stays in the site's understated register: no title case in section headings, no exclamation points.", "section": "typography" },
-      { "name": "The One-Column Rule", "body": "Content is a single centered column at every width. There is no sidebar and no asymmetric page layout. The homepage hero is the single sanctioned exception: it may pair a prose column with one narrow ledger panel, and that pairing must collapse to stacked at nav (820px). Anywhere else, responsiveness is gutters, type scale, and grid collapse — never rearranging the page into a different shape.", "section": "layout" },
-      { "name": "The Hairline-Not-Shadow Rule", "body": "When two regions need separating, the answer is a 1px sage-4 line. Reach for a shadow only when an element is floating — a modal, a drawer, or a popover, with a scrim or an outside-click dismissal. If it scrolls with the document, it is flat.", "section": "elevation" },
-      { "name": "The Square-Content Rule", "body": "Anything that scrolls with the page and is separated by a hairline is square. Radius is reserved for controls and for things that float.", "section": "shapes" },
-      { "name": "The Inert-Until-Touched Rule", "body": "Components have no color, border, shadow, or decoration at rest beyond their hairline. Everything expressive — the mint, the nudge, the tonal shift — is a hover, focus, or active state. A screenshot of this site at rest should look almost dead; using it should not.", "section": "components" },
-      { "name": "The Whole-Row Rule", "body": "When a row or card is a link, the entire region is the anchor and the entire region responds. Never a small \"read more\" link inside an inert block.", "section": "components" }
+      {
+        "name": "The Accent-Is-State Rule",
+        "body": "Ruby marks what is hovered, focused, active, or current — and nothing else. There is deliberately no solid ruby field at rest anywhere on the site. The primary button proves the rule rather than excepting it: the solid fill it replaced put white on ruby-9 at 3.89:1, under the 4.5:1 its 13.5px label needs, and read as the most landing-page-shaped object on the page. The hairline version measures 5.16:1 in light and 8.36:1 in dark, and the fill still arrives on hover. At rest a full viewport should hold almost no ruby at all — often only the period after the wordmark and one active nav underline.",
+        "section": "colors"
+      },
+      {
+        "name": "The Upstream-Colour Rule",
+        "body": "A colour outside slate and ruby is admissible when it is data the site did not author. GitHub's language colour on a project tile is the case: Ruby reading red is information the ecosystem already assigns, and the dot reports it rather than deciding it. Accept it plainly — no caveat, no re-mapping into the palette, no \"brand-safe\" substitute, because a substituted language colour is simply wrong. Amber for staleness is the one borrowed semantic rather than borrowed data: \"may be out of date\" is a caution the brand red would misreport, so the convention is borrowed instead of invented.",
+        "section": "colors"
+      },
+      {
+        "name": "The Derived-Identifier Rule",
+        "body": "A colour may be generated only when the generation is constrained to one axis and the result is a fallback. The podcast mark is oklch(0.62 0.14 <hue>) with accent_hue supplied per show: lightness and chroma are fixed and hue is the only free variable, which is the entire reason a column of shows reads as one family rather than as five unrelated colours. It is also a fallback identity, not a primary one — every show in the data carries real artwork that covers the mark, so the generated hue surfaces only for a show with no image. Widen the generation to lightness or chroma and you have invented a palette; use it where artwork exists and you have invented decoration. Neither this rule nor the one above is licence to invent a decorative colour: if a new colour cannot answer \"what fact does this encode?\", it does not go in.",
+        "section": "colors"
+      },
+      {
+        "name": "The Dark-First Rule",
+        "body": "Both themes ship and both must be legible, but dark is the composed ground and light is the tested peer. The mechanism is why the system stays small: because every ramp step is redefined inside [data-theme=\"dark\"], the token value flips rather than the class, so text-slate-11 is correct in both themes and markup needs almost no dark: variants. Author a new colour as a light/dark pair in frontend/styles/index.css and the rest is free.",
+        "section": "colors"
+      },
+      {
+        "name": "The Bridge Rule",
+        "body": "A Radix step is usable in markup only if it has been bridged into @theme as --color-<name>. An unbridged utility produces silence, not an error — the class does nothing and the element falls back to inherited colour. Slate and ruby are bridged in full precisely so a step is never referenced before it exists; amber is a deliberate four-step subset. Add the bridge and the usage in the same change.",
+        "section": "colors"
+      },
+      {
+        "name": "The Named-Role Rule",
+        "body": "Every size on the site is one of the fifteen roles in @theme. Never write a raw text-[15px], never pair a role with a competing leading-*/tracking-*/font-* unless the override is the point, and if a new size is genuinely needed, add a role with all four properties rather than assembling one at a call site. The only sanctioned exception is a glyph inside a mark, where the size is artwork.",
+        "section": "typography"
+      },
+      {
+        "name": "The Three-Voices Rule",
+        "body": "Chrome, lists, and display are Archivo. The reading column is Source Serif 4 and nothing else is. Anything that is a measurement — a date, a count, a duration, a tag, a keyboard cap, a code span, a section label — is Geist Mono. There is no fourth category and no overlap: if a small line is a sentence rather than a measurement, it is sans, even at 13.5px in a margin.",
+        "section": "typography"
+      },
+      {
+        "name": "The Underline Rule",
+        "body": "Links in the reading column are underlined, not coloured. Ruby-11 against body slate measures 1.09:1 in light and 1.01:1 in dark, so colour alone was not a distinction at all — WCAG 1.4.1 wants 3:1 for a colour-only difference. The underline is the affordance and the colour is only reinforcement: decoration-ruby-11/40 at rest going solid on hover, over a global text-underline-offset: 0.2em.",
+        "section": "typography"
+      },
+      {
+        "name": "The No-Kicker Rule",
+        "body": "No kicker, ever. A small accent line above a title is an eyebrow. It existed as an Entry parameter and was deleted: the show, the venue, the episode number and the city are facts about the item, not headings over it, and they live in the meta row with the other facts.",
+        "section": "typography"
+      },
+      {
+        "name": "The Label-Not-Title Rule",
+        "body": "Section labels are never large. `now`, `featured work`, `recent posts`, `Talks` are 12px mono uppercase 0.08em in slate-11, hanging in the rail above a hairline — a filing tab, not a banner. Hierarchy is carried by the ruled structure and by which face is used, not by making headings big.",
+        "section": "typography"
+      },
+      {
+        "name": "The Rows-for-Chronology Rule",
+        "body": "Dated content is an Entry — posts, talks, episodes, CFPs, appearances, shows. Genuinely parallel items with no meaningful order may Tile — projects, featured work. A grid never carries dated content. This is why writing, speaking, and podcasting read as one body of work rather than four lists that merely resemble each other, and it is the reason a card grid is not the site's default primitive.",
+        "section": "layout"
+      },
+      {
+        "name": "The Label-Rail Rule",
+        "body": "Apparatus goes in the margin; the column carries the work. What a section is called, what it holds, where the rest of it lives, when a post was written, how long it takes, what is in it — all of that hangs in a 168px (or 208px) left rail, and it stacks rather than shrinks below nav. Never inline apparatus into the content column on desktop, and never open a second rail inside a rail: the archive's year marker sits at the left edge sharing a column with the dates below it, because giving it its own 168px column stacked two margins and opened a gap down the middle of the page.",
+        "section": "layout"
+      },
+      {
+        "name": "The One-Column Rule",
+        "body": "Content is a single centred column at every width. No sidebar, no asymmetric listing page, no two-up article layout. The homepage hero is the single sanctioned exception: it may pair a prose column with one narrow derived ledger, collapsing to stacked at nav.",
+        "section": "layout"
+      },
+      {
+        "name": "The Hairline-Not-Shadow Rule",
+        "body": "When two regions need separating, the answer is a 1px slate-6 line. If an element scrolls with the document, it is flat — no exceptions, including tiles, rows, sections, and the reading rail. A shadow is admissible only on a genuine popover or a selected control, and even a modal here does without one.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Square-Content Rule",
+        "body": "Anything that scrolls with the page and is separated by a hairline is square. Radius is for controls, chips, and things that float.",
+        "section": "shapes"
+      },
+      {
+        "name": "The Focus-Guarantee Rule",
+        "body": "Keyboard focus is a system guarantee, not a per-component decision: one rule over :where(a, button, input, select, textarea, summary, [tabindex]):focus-visible gives every focusable element a 2px solid ruby-9 outline at 2px offset with a 4px radius. It lives in @layer base specifically so a component can still override it from markup — unlayered CSS outranks Tailwind's utilities whatever the specificity, so the theme toggle's inset ring and the palette's borderless input could not opt out. Inside base, a utility wins as expected. Never remove focus from a control; override the indicator if you must, and never chase focus component by component.",
+        "section": "components"
+      },
+      {
+        "name": "The Inert-Until-Touched Rule",
+        "body": "Components have no colour, border, shadow, or decoration at rest beyond their hairline. Everything expressive — the ruby, the arrow, the tonal shift — is a hover, focus, or current state. A screenshot of this site at rest should look almost dead; using it should not.",
+        "section": "components"
+      },
+      {
+        "name": "The Whole-Row Rule",
+        "body": "When a row or tile is a link, the entire region is the anchor and the entire region responds. Never a small \"read more\" inside an inert block. The one sanctioned alternative is an inert row that names several destinations as links, which is what a talk with both a video and slides gets.",
+        "section": "components"
+      },
+      {
+        "name": "The Derived-Number Rule",
+        "body": "Any number the design displays must be derived from the collections or data at build time. The homepage ledger counts posts, repos, and talks from the resources themselves; the one constant, Remote Ruby's back catalogue, is stated conservatively as 350+ because the data file carries only the latest episode. A count that can go stale silently is worse than no count.",
+        "section": "components"
+      }
     ],
     "dos": [
-      "Do put every fact in JetBrains Mono and every sentence in Inter. Dates, tags, reading times, counts, episode numbers, keyboard caps, and section labels are mono; body copy, titles, and descriptions are Inter.",
-      "Do separate regions with a 1px sage-4 hairline, and give hover states exactly one tonal step (sage-1 → sage-2, mint-4 → mint-5).",
-      "Do author every new color as a light/dark pair in frontend/styles/index.css and bridge it into @theme as --color-<name> before using it in markup.",
-      "Do set section headings as 12px mono uppercase 0.08em sage-11 on a hairline, with lowercase source copy.",
-      "Do use focus-visible:outline-2 outline-offset-2 outline-mint-9 on every interactive element, and make the whole row or card the target when it links somewhere.",
-      "Do derive any number the design displays from the collections or data at build time. A count that can go stale silently is worse than no count."
+      "Do reach for Entry for anything dated and Tile for anything genuinely parallel, and write a thin adapter component that maps your data onto one of them rather than a new primitive.",
+      "Do hang apparatus in the 168px label rail — the section name, its one-line description, its \"everything else\" link — and leave the column beside it carrying only the work.",
+      "Do spend ruby only on hover, focus, active, and current. The resting page should hold almost no ruby.",
+      "Do use one of the fifteen named type roles for every size, and add a new role with its own leading, tracking, and weight rather than assembling one at a call site.",
+      "Do put every measurement in Geist Mono, the reading column in Source Serif 4, and everything else in Archivo.",
+      "Do author every new colour as a light/dark pair in frontend/styles/index.css and bridge it into @theme as --color-<name> in the same change.",
+      "Do separate regions with a 1px slate-6 hairline, and give hover states exactly one tonal step (slate-1 → slate-2).",
+      "Do underline links in prose. Colour is reinforcement, never the distinction.",
+      "Do let the base focus rule do its job, and if a control genuinely needs a different indicator, override it from markup rather than removing it.",
+      "Do derive any number the design displays from the collections or data at build time."
     ],
     "donts": [
-      "Don't add a second brand accent. Mint-11 is the only one, and it is spent on state. A color from outside sage/mint is admissible only when it encodes data — a warning level, a per-show hue, an upstream language color.",
-      "Don't put a shadow on anything that scrolls with the page. Shadows belong to the command palette, the mobile drawer, the Markdown-actions popover, and buttons — nothing else.",
-      "Don't round content. Post rows, media rows, card cells, and ruled sections are square; radius is for controls and floating panels.",
-      "Don't make a section heading large. Hierarchy comes from the mono/sans split and the ruled structure, not from type size.",
-      "Don't reference a Radix step that @theme doesn't bridge — an unbridged class fails silently. Sage and slate are complete; mint is a subset, so bridge the step in the same change that uses it.",
-      "Don't let slate leak past annotation surfaces. Hairlines, chrome, controls, and body copy are sage; slate is for the shell block, the figure frame, and the caption.",
-      "Don't split the page into columns outside the homepage hero. No sidebars, no two-up article layouts, no asymmetric listing pages.",
-      "Don't drift toward the generic dev-blog template: no stock cover images on post cards, no colored tag pills, no rounded-2xl content boxes, no emoji section headers.",
-      "Don't ship a change verified in only one theme. Both are first-class and both are resolved before first paint."
+      "Don't put dated content in a grid. Chronology is rows; a grid is for peers with no meaningful order.",
+      "Don't add a solid ruby field at rest — including on the primary action. The measured fill failed contrast at 3.89:1 and read as a landing-page object; the hairline is the design, not a compromise.",
+      "Don't add a second accent. A colour outside slate and ruby is admissible only as upstream data (GitHub's language colour), a borrowed semantic (amber for staleness), or a one-axis derived fallback (the podcast hue) — never as a choice made for its own sake.",
+      "Don't generate a colour on more than one axis. The podcast hue rotates hue at fixed lightness and chroma; free a second axis and a family of shows becomes five unrelated colours.",
+      "Don't put a kicker above a title. A show, a venue, an episode number, or a city is a fact about the item and belongs in the meta row.",
+      "Don't put a shadow on anything that scrolls with the page. Even the palette and the drawer do without one; a border and a field are the elevation.",
+      "Don't round content. Entry rows, tile cells, the ledger, and ruled sections are square.",
+      "Don't make a section label large. Hierarchy comes from the rail, the rules, and the face — not from type size.",
+      "Don't reference a Radix step @theme doesn't bridge; an unbridged utility fails silently rather than erroring.",
+      "Don't open a second rail inside a rail, or inline apparatus into the content column on desktop.",
+      "Don't add a dark: variant to fix a colour. If a token looks wrong in one theme, the pair in index.css is wrong.",
+      "Don't ship a change verified in only one theme. Dark is where the work is composed; light is tested, not assumed.",
+      "Don't drift toward the landing page: no accent field as a first object, no card grid as the default primitive, no decorated section headings, no stock cover images on rows."
     ]
   }
 }

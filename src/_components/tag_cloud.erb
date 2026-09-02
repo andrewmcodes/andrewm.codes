@@ -1,11 +1,24 @@
-<div class="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-5">
-  <span class="font-mono text-meta text-slate-10 uppercase tracking-[0.08em] mr-2">
+<%#
+  The label sits in the same 168px margin the section labels and entry dates
+  use, so the filter row lands on the column line the rows below it use
+  rather than floating 50px in from its own label.
+%>
+
+<div
+  class="
+    mb-5 grid grid-cols-[168px_minmax(0,1fr)] gap-10 items-baseline
+    max-md:grid-cols-1 max-md:gap-1
+  "
+>
+  <span class="font-mono text-label uppercase text-slate-10">
     <%= @label %>
   </span>
 
-  <% @tags.each do |tag| %>
-    <%= render Link.new(href: "#{@href_prefix}#{tag}/", variant: :tag) do %>
-      #<%= tag %>
+  <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+    <% @tags.each do |tag| %>
+      <%= render Link.new(href: "#{@href_prefix}#{tag}/", variant: :tag) do %>
+        #<%= tag %>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
 </div>

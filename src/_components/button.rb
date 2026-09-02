@@ -22,7 +22,10 @@ class Button < Base
   # in light and 8.36:1 in dark, and the fill still arrives on hover.
   BUTTON_VARIANTS = {
     primary: "bg-slate-2 hover:bg-ruby-3 border border-ruby-9/50 hover:border-ruby-9 text-ruby-11 font-medium",
-    secondary: "bg-slate-3 hover:bg-slate-4 text-slate-12",
+    # A hairline, not a field. Once the primary stopped being a solid fill, a
+    # filled slate-3 secondary was the heaviest object in the hero and the
+    # emphasis inverted — the ruby outline has to lead.
+    secondary: "bg-transparent border border-slate-6 hover:bg-slate-3 hover:border-slate-7 text-slate-12",
     ghost: "bg-transparent hover:bg-slate-3 text-slate-11",
     text: "bg-transparent text-slate-11",
     share: "inline-flex items-center gap-1.5 font-mono text-meta text-slate-10 border-b border-slate-5 pb-0.5 hover:text-ruby-11 hover:border-ruby-11 transition-colors bg-transparent"

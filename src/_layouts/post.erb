@@ -10,22 +10,30 @@ layout: default
 <% back = data.back || { "path" => "/posts/", "label" => "all posts" } %>
 <% updated_time = resource.updated_at %>
 
+<%#
+  Two rows on desktop so the rail can span them while the reading column is
+  split; one column on mobile, where `order` puts the title first.
+
+  The split exists for the mobile order. With the aside as a single grid item
+  before the content, everything about the post — date, reading time, tags, the
+  contents disclosure — stacked above the post's own name, so a reader who had
+  just tapped a headline met the apparatus before the thing they opened.
+%>
+
 <%= render PageShell.new(width: :reading) do %>
-  <div
-    class="
-      grid grid-cols-[208px_minmax(0,1fr)] gap-14 items-start
-      max-nav:grid-cols-1 max-nav:gap-0
-    "
-  >
+  <div class="grid items-start nav:grid-cols-[208px_minmax(0,1fr)] nav:gap-x-14">
     <%= render PostAside.new(
       resource: resource,
       back: back,
       show_toc: should_show_toc(resource),
+      class: "nav:col-start-1 nav:row-start-1 nav:row-span-2 max-nav:order-2 max-nav:mb-9",
     ) %>
 
-    <div class="min-w-0">
+    <div class="nav:col-start-2 nav:row-start-1 max-nav:order-1 min-w-0">
       <%= render PostHeader.new(resource: resource) %>
+    </div>
 
+    <div class="nav:col-start-2 nav:row-start-2 max-nav:order-3 min-w-0">
       <% if resource.stale? %>
         <%= render StaleNote.new(updated_at: updated_time) %>
       <% end %>

@@ -17,7 +17,7 @@ class Note < Base
 
   def classes
     cx(
-      "my-6 rounded-xl border p-4 leading-6 [&>:first-child]:mt-0 [&>:last-child]:mb-0",
+      "my-6 rounded-md border p-4 leading-6 [&>:first-child]:mt-0 [&>:last-child]:mb-0",
       NOTE_SCHEME.fetch(opts[:scheme], NOTE_SCHEME[:default])
     )
   end

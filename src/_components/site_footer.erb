@@ -3,9 +3,15 @@
     <div
       class="
         flex flex-col gap-4 md:flex-row md:flex-wrap md:justify-between md:items-center
-        font-mono text-meta text-slate-11
+        text-note text-slate-11
       "
     >
+      <%#
+        Names and links are language, not measurement. The whole footer sat in
+        one 11.5px mono band, which is a large part of what made the site's
+        small copy read as a single undifferentiated voice. The commit SHA
+        below stays mono, because that genuinely is a measurement.
+      %>
       <span>© 2019–<%= Date.today.year %> <%= metadata.author.name %></span>
 
       <div class="flex flex-wrap items-center gap-x-4 gap-y-3">
@@ -58,7 +64,7 @@
     <div
       class="
         mt-4 md:mt-3 flex flex-col gap-2 md:flex-row md:flex-wrap md:justify-between
-        md:items-center font-mono text-meta text-slate-11
+        md:items-center text-note text-slate-11
       "
     >
       <span class="flex flex-wrap gap-x-3 gap-y-1">
@@ -100,7 +106,7 @@
           GitHub's commit mark is filled and the site's icon set is stroked;
           a mono SHA in a footer needs no glyph to say what it is.
         %>
-        <span><%= latest_commit_sha %></span>
+        <span class="font-mono text-meta"><%= latest_commit_sha %></span>
       </a>
     </div>
   </div>
