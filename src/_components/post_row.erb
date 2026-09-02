@@ -1,49 +1,9 @@
-<a
-  href="<%= @post.relative_url %>"
-  data-post-row
-  data-tags="<%= tags_data %>"
-  class="
-    group grid grid-cols-[96px_1fr_auto] gap-6 items-baseline py-3.5 border-b
-    border-slate-4 max-md:grid-cols-1 max-md:gap-1.5
-  "
->
-  <div class="font-mono text-xs text-slate-11 whitespace-nowrap max-md:text-meta">
-    <%= date_str %>
-  </div>
-
-  <div>
-    <div
-      class="
-        text-row font-medium leading-snug tracking-[-0.008em] text-slate-12
-        group-hover:text-ruby-11 transition-colors text-balance
-      "
-    >
-      <%= @post.data.title %>
-    </div>
-
-    <div class="mt-1 flex flex-wrap gap-3 font-mono text-meta text-slate-11">
-      <% tags.each do |t| %>
-        <span><span class="text-slate-8">#</span><%= t %></span>
-      <% end %>
-
-      <% if tags.any? %>
-        <span>·</span>
-      <% end %>
-
-      <span><%= reading %></span>
-    </div>
-  </div>
-
-  <div
-    class="
-      font-mono text-meta text-slate-11 whitespace-nowrap max-md:hidden inline-flex
-      items-center justify-end
-    "
-  >
-    <%= render Icon.new(
-      name: "arrow_right",
-      class:
-        "text-slate-8 group-hover:text-ruby-11 group-hover:translate-x-0.5 transition-all",
-    ) %>
-  </div>
-</a>
+<%# `data-post-row` carries a value because Base#helper_opts drops empty ones. %>
+<%= render Entry.new(
+  href: @post.relative_url,
+  lead: date_str,
+  title: @post.data.title,
+  tags: tags,
+  meta: [reading],
+  data: {"data-post-row" => "true", "data-tags" => tags_data},
+) %>

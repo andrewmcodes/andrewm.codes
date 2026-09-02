@@ -1,51 +1,8 @@
-<%= render Link.new(
+<%= render Entry.new(
   href: href,
   external: external?,
-  class: "group grid grid-cols-[96px_1fr_auto] gap-6 items-baseline py-3.5 border-b border-slate-4 max-md:grid-cols-1 max-md:gap-1.5"
-) do %>
-  <div class="font-mono text-xs text-slate-11 whitespace-nowrap">
-    <%= date %>
-  </div>
-
-  <div>
-    <div
-      class="
-        text-row font-medium leading-snug tracking-[-0.008em] text-slate-12
-        group-hover:text-ruby-11 transition-colors
-        <%= "inline-flex items-center gap-1.5" if title_icon? %>
-      "
-    >
-      <% if title_icon? %>
-        <span><%= title %></span>
-        <%= render Icon.new(
-          name: icon_name,
-          class:
-            "text-slate-8 group-hover:text-ruby-11 transition-colors shrink-0 inline-block translate-y-px",
-        ) %>
-      <% else %>
-        <%= title %>
-      <% end %>
-    </div>
-
-    <% if meta.any? %>
-      <div class="mt-1 flex flex-wrap gap-3 font-mono text-meta text-slate-11">
-        <% meta.each_with_index do |m, i| %>
-          <% if i > 0 %>
-            <span>·</span>
-          <% end %>
-
-          <span><%= m %></span>
-        <% end %>
-      </div>
-    <% end %>
-  </div>
-
-  <% unless title_icon? %>
-    <div class="font-mono text-meta text-slate-11 max-md:hidden">
-      <%= render Icon.new(
-        name: icon_name,
-        class: "text-slate-8 group-hover:text-ruby-11 transition-colors",
-      ) %>
-    </div>
-  <% end %>
-<% end %>
+  lead: date,
+  title: title,
+  meta: meta,
+  title_icon: title_icon?,
+) %>

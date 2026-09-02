@@ -37,11 +37,35 @@ class ProjectCard < Bridgetown::Component
     resource? ? (repo_url || "#") : @project[:href]
   end
 
+  # Only a status worth remarking on earns a chip. Nearly every project is
+  # active, so labelling them all said nothing and spent the accent fifteen
+  # times on one page; the exception is the only part that carries information.
+  def exceptional_status
+    s = status.to_s
+    (s.empty? || s == "active") ? nil : s
+  end
+
+  # Counts read as words rather than as glyphs: the site's icon set is stroked
+  # and GitHub's star and fork marks are filled, so borrowing them would put two
+  # icon languages in one footer to say what two nouns already say.
+  def facts
+    [
+      count_label(stars, "star"),
+      count_label(forks, "fork")
+    ].compact
+  end
+
   def external?
     true
   end
 
   private
+
+  def count_label(value, noun)
+    n = value.to_i
+    return nil if value.nil? || n <= 0
+    "#{n} #{noun}#{"s" unless n == 1}"
+  end
 
   def resource?
     @project.respond_to?(:data)

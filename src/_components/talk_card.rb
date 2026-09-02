@@ -22,4 +22,21 @@ class TalkCard < Bridgetown::Component
   def field(key)
     @talk[key.to_s] || @talk[key.to_sym]
   end
+
+  # @return [String, nil] venue, and the city when it is recorded
+  def kicker
+    parts = [field(:venue), field(:city)].compact
+    parts.any? ? parts.join(" · ") : nil
+  end
+
+  # @return [Array<Hash>] normalized `{label:, href:, external:}` resources
+  def links
+    Array(field(:links)).map do |l|
+      {
+        label: l["label"] || l[:label],
+        href: l["href"] || l[:href],
+        external: true
+      }
+    end
+  end
 end

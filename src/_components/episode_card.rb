@@ -38,6 +38,11 @@ class EpisodeCard < Bridgetown::Component
     "#{minutes} min"
   end
 
+  # @return [String] the show, and the episode number when known
+  def kicker
+    episode_number ? "remote ruby · ep #{episode_number}" : "remote ruby"
+  end
+
   # @return [String] the description with HTML stripped, truncated to ~180 chars
   def excerpt
     raw = @episode["description"].to_s
