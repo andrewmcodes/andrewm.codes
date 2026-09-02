@@ -86,10 +86,14 @@ function closeCmdk() {
   if (overlay) overlay.hidden = true;
   const input = el("cmdk-input");
   if (input) input.removeAttribute("aria-activedescendant");
-  if (lastFocused) {
-    lastFocused.focus();
-    lastFocused = null;
-  }
+
+  // Opened with ⌘K from a page where nothing was focused, `lastFocused` is
+  // <body>, which cannot take focus — so closing dropped focus entirely and a
+  // keyboard user Tabbed from the top of the document again. The trigger is
+  // the palette's own visible affordance, so it is where closing should land.
+  const restore = lastFocused && lastFocused !== document.body ? lastFocused : el("cmdk-trigger");
+  lastFocused = null;
+  if (restore) restore.focus();
 }
 
 /** @param {SearchEntry[]} items */
