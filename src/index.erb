@@ -9,9 +9,13 @@ title: andrewm.codes
 <% latest_episode = site.data.remote_ruby %>
 
 <%= render PageShell.new(spacing: :home) do %>
-  <%= render HomeHero.new %>
+  <%= render HomeHero.new(
+    posts_count: collections.posts.resources.size,
+    projects_count: collections.projects.resources.size,
+    talks_count: site.data.talks.size,
+  ) %>
 
-  <%= render PageSection.new(spacing: :home_first) do %>
+  <%= render PageSection.new(spacing: :home_coda) do %>
     <%= render SectionHead.new(
       title: "now",
       description: "What I'm actually working on right now.",
@@ -65,27 +69,21 @@ title: andrewm.codes
     <% end %>
   <% end %>
 
-  <% if latest_talk %>
+  <% if latest_talk || latest_episode %>
     <%= render PageSection.new(spacing: :home) do %>
       <%= render SectionHead.new(
-        title: "latest talk",
-        link_label: "all talks",
+        title: "latest",
+        link_label: "talks and podcasts",
         link_href: "/speaking/",
       ) %>
 
-      <%= render TalkCard.new(talk: latest_talk) %>
-    <% end %>
-  <% end %>
+      <% if latest_talk %>
+        <%= render TalkCard.new(talk: latest_talk) %>
+      <% end %>
 
-  <% if latest_episode %>
-    <%= render PageSection.new(spacing: :home) do %>
-      <%= render SectionHead.new(
-        title: "latest podcast",
-        link_label: "all podcasts",
-        link_href: "/speaking/",
-      ) %>
-
-      <%= render EpisodeCard.new(episode: latest_episode) %>
+      <% if latest_episode %>
+        <%= render EpisodeCard.new(episode: latest_episode) %>
+      <% end %>
     <% end %>
   <% end %>
 <% end %>

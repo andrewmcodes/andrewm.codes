@@ -1,74 +1,111 @@
-<section class="pt-24 pb-12">
-  <h1
+<section class="pt-24 pb-10 max-nav:pt-16 max-compact:pt-12">
+  <div
     class="
-      text-[clamp(34px,5vw,52px)] leading-[1.05] tracking-[-0.028em] font-semibold m-0
-      mb-8 text-balance max-w-[680px] text-sage-12
+      grid grid-cols-[minmax(0,1fr)_minmax(0,300px)] gap-x-16 gap-y-10 items-start
+      max-nav:grid-cols-1 max-nav:gap-y-9
     "
   >
-    Andrew Mason<span class="text-mint-11">.</span>
-  </h1>
+    <div>
+      <h1
+        class="
+          text-[clamp(38px,6.2vw,68px)] leading-[1.02] tracking-[-0.03em] font-semibold m-0
+          mb-8 text-balance max-w-[680px] text-sage-12
+        "
+      >
+        Andrew Mason<span class="text-mint-11">.</span>
+      </h1>
 
-  <p
-    class="
-      text-[16.5px] text-sage-11 max-w-[600px] leading-[1.65] m-0 mb-4
-      text-pretty
-    "
-  >
-    Ruby on Rails engineer at
-    <%= render Link.new(href: "https://podia.com", variant: :inline) do %>
-      Podia
-    <% end %>, co-host of
-    <%= render Link.new(href: "/speaking/", variant: :inline) do %>
-      Remote Ruby
-    <% end %>, and based in Arizona.
-  </p>
+      <p
+        class="
+          text-[16.5px] text-sage-11 max-w-[62ch] leading-[1.65] m-0 mb-4
+          text-pretty
+        "
+      >
+        Ruby on Rails engineer at
+        <%= render Link.new(href: "https://podia.com", variant: :inline) do %>
+          Podia
+        <% end %>, co-host of
+        <%= render Link.new(href: "/speaking/", variant: :inline) do %>
+          Remote Ruby
+        <% end %>, and based in Arizona.
+      </p>
 
-  <p
-    class="
-      text-[16.5px] text-sage-11 max-w-[600px] leading-[1.65] m-0 mb-4
-      text-pretty
-    "
-  >
-    I've been doing the Rails thing for about a decade, from full-stack product
-    features to fast CI and developer tooling to the billing and data migrations
-    underneath. Most of what I figure out along the way ends up written down
-    here.
-  </p>
+      <p
+        class="
+          text-[16.5px] text-sage-11 max-w-[62ch] leading-[1.65] m-0
+          text-pretty
+        "
+      >
+        I've been doing the Rails thing for about a decade, from full-stack
+        product features to fast CI and developer tooling to the billing and
+        data migrations underneath. Most of what I figure out along the way
+        ends up written down here.
+      </p>
 
-  <p
-    class="
-      text-[16.5px] text-sage-11 max-w-[600px] leading-[1.65] m-0 mb-4
-      text-pretty
-    "
-  >
-    You'll find my
-    <%= render Link.new(href: "/posts/", variant: :inline) do %>
-      writing
-    <% end %>,
-    <%= render Link.new(href: "/projects/", variant: :inline) do %>
-      open source
-    <% end %>, and
-    <%= render Link.new(href: "/speaking/", variant: :inline) do %>
-      talks and podcasts
-    <% end %>
-    here. Mostly so I can find them again later.
-  </p>
+      <div class="mt-8 flex flex-wrap items-center gap-3">
+        <%= render Button.new(href: "/posts/", variant: :primary, size: :xl) do %>
+          Read the writing
+          <%= render Icon.new(
+            name: "arrow_right",
+            class: "ml-1.5 inline-block transition-transform group-hover:translate-x-0.5",
+          ) %>
+        <% end %>
 
-  <div class="mt-8 flex flex-wrap items-center gap-3">
-    <%= render Button.new(href: "/posts/", variant: :primary, size: :xl) do %>
-      Read the writing
-      <%= render Icon.new(
-        name: "arrow_right",
-        class: "ml-1.5 inline-block transition-transform group-hover:translate-x-0.5",
-      ) %>
-    <% end %>
+        <%= render Button.new(href: "/projects/", variant: :secondary, size: :xl) do %>
+          Browse projects
+        <% end %>
 
-    <%= render Button.new(href: "/projects/", variant: :secondary, size: :xl) do %>
-      Browse projects
-    <% end %>
+        <%= render Button.new(href: "https://remoteruby.com/", variant: :ghost, size: :xl) do %>
+          Listen to Remote Ruby
+        <% end %>
+      </div>
+    </div>
 
-    <%= render Button.new(href: "https://remoteruby.com/", variant: :ghost, size: :xl) do %>
-      Listen to Remote Ruby
-    <% end %>
+    <div class="max-nav:max-w-[420px] max-nav:w-full">
+      <div
+        class="
+          font-mono text-xs font-medium uppercase tracking-[0.08em] text-sage-11 pb-2
+          border-b border-sage-4
+        "
+      >
+        index
+      </div>
+
+      <ul class="list-none m-0 p-0">
+        <% index_rows.each do |row| %>
+          <li>
+            <a
+              href="<%= row[:href] %>"
+              class="
+                group flex items-baseline justify-between gap-4 py-2.5 border-b
+                border-sage-4
+              "
+            >
+              <span
+                class="
+                  text-[13.5px] text-sage-12 group-hover:text-mint-11
+                  transition-colors
+                "
+              >
+                <%= row[:label] %>
+              </span>
+
+              <span
+                class="
+                  font-mono text-[11.5px] text-sage-11 whitespace-nowrap
+                  group-hover:text-mint-11 transition-colors
+                "
+              >
+                <%= row[:value] %>
+              </span>
+            </a>
+          </li>
+        <% end %>
+      </ul>
+
+      <p class="mt-4 m-0 font-mono text-[11.5px] leading-[1.6] text-sage-11">
+        mostly so I can find them again later.
+      </p>
+    </div>
   </div>
 </section>

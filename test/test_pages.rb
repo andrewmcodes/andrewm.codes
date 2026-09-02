@@ -15,7 +15,10 @@ class TestPages < Bridgetown::Test
 
       expect(links.any? { |link| link["href"] == "https://podia.com" && link.text.strip == "Podia" }).must_equal true
       expect(links.any? { |link| link["href"] == "/speaking/" && link.text.strip == "Remote Ruby" }).must_equal true
-      expect(links.any? { |link| link["href"] == "/projects/" && link.text.strip == "open source" }).must_equal true
+      # The hero index row labels its link with the section name and its count
+      # ("open source" / "15 repos"), so match on the label rather than the
+      # whole anchor text.
+      expect(links.any? { |link| link["href"] == "/projects/" && link.text.include?("open source") }).must_equal true
       expect(links.any? { |link| link["href"] == "/speaking/" && link.text.strip == "talks and podcasts" }).must_equal true
     end
   end
