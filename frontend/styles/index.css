@@ -80,13 +80,13 @@
 
 @theme {
   --font-sans: "Archivo Variable", ui-sans-serif, system-ui, sans-serif;
-  --font-serif: "Source Serif 4 Variable", ui-serif, Georgia, serif;
+  --font-read: "IBM Plex Sans Variable", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "Geist Mono Variable", ui-monospace, "Menlo", monospace;
 
   /* Type roles. Every size on the site is one of these — each carries its own
      leading, tracking, and weight, so `text-meta` is the whole decision rather
      than four classes that drift apart. Sans is Archivo, the reading column is
-     Source Serif 4, and anything that is a measurement is Geist Mono. */
+     IBM Plex Sans, and anything that is a measurement is Geist Mono. */
   --text-display: clamp(38px, 6.2vw, 68px);
   --text-display--line-height: 1.02;
   --text-display--letter-spacing: -0.03em;
@@ -118,8 +118,8 @@
   --text-note: 13.5px;
   --text-note--line-height: 1.5;
 
-  /* Hero standfirst and page descriptions — sans, one step above interface
-     body and tighter than the serif reading column it must not imitate. */
+  /* Hero standfirst and page descriptions — Archivo, one step above interface
+     body and tighter than the reading column it must not imitate. */
   --text-lede: 16.5px;
   --text-lede--line-height: 1.55;
 
@@ -336,16 +336,21 @@ header:has(#mobile-menu[data-open="true"]) {
 
 /* Card grid — hairlines via borders so an odd number of cards doesn't leave
    an empty colored cell where a gap-bg trick would show through. */
+/* Peers, separated by space rather than by rules. The grid used to draw a
+   hairline on every cell edge, which made a page of tiles read as a table and
+   spent the site's one separator fifteen times on one screen. The gap does the
+   same work; an odd card count leaves an empty cell rather than a ruled one. */
 .card-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  border-top: 1px solid var(--slate-6);
+  column-gap: 40px;
+  row-gap: 36px;
 }
-.card-grid > * { border-bottom: 1px solid var(--slate-6); }
-.card-grid > *:nth-child(odd) { border-right: 1px solid var(--slate-6); }
 @media (max-width: 680px) {
-  .card-grid { grid-template-columns: 1fr; }
-  .card-grid > *:nth-child(odd) { border-right: 0; }
+  .card-grid {
+    grid-template-columns: 1fr;
+    row-gap: 28px;
+  }
 }
 
 /* Torchlight — https://torchlight.dev/docs/css#tailwind
@@ -386,6 +391,28 @@ pre:not(.torchlight) code {
    navigation. */
 .prose :where(h2, h3, h4, h5) {
   scroll-margin-top: 5.5rem;
+}
+
+/* You-are-here in the contents rail. This lives here rather than as a variant
+   utility in Builders::Inspectors::Toc because Tailwind does not scan
+   `plugins/`, so a class written in that file is never generated and fails
+   silently — which is what happened for the life of the feature. The bar
+   carries the state; ruby against slate-11 is 1.01:1 and was never a cue on
+   its own. Drawn as a ::before in the rail's gutter so nothing reflows as the
+   current entry changes on scroll. */
+[data-toc] a[aria-current="location"] {
+  position: relative;
+  color: var(--ruby-11);
+}
+
+[data-toc] a[aria-current="location"]::before {
+  content: "";
+  position: absolute;
+  left: -0.6875rem;
+  top: 0.15em;
+  bottom: 0.15em;
+  width: 1px;
+  background: var(--ruby-11);
 }
 
 /* Heading anchors injected by Builders::Inspectors::ProseHeadings */

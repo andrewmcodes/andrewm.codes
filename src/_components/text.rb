@@ -9,7 +9,7 @@ class Text < Box
 
   VARIANTS = {
     default: "",
-    source_note: "mt-10 text-meta font-mono text-slate-10"
+    source_note: "mt-10 text-meta font-mono text-slate-11"
   }.freeze
 
   private

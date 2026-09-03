@@ -13,11 +13,15 @@ class Link < Box
     default: "",
     nav: "text-note font-medium",
     inline: "text-slate-12 border-b border-slate-5 hover:text-ruby-11 hover:border-ruby-11 transition-colors",
-    inline_accent: "text-ruby-11 hover:underline",
-    tag: "font-mono text-meta py-1 text-slate-10 hover:text-ruby-11 transition-colors",
-    post_tag: "font-mono text-meta text-slate-10 hover:text-ruby-11 transition-colors",
+    # Ruby against body slate is 1.01:1 in dark and 1.09:1 in light, so colour
+    # was never the distinction — the rule under it is. Underlined at rest, not
+    # on hover: this variant carries the only contact link on the site and both
+    # ways out of the 404.
+    inline_accent: "text-ruby-11 border-b border-ruby-11/50 hover:border-ruby-11 transition-colors",
+    tag: "font-mono text-meta py-1 text-slate-11 hover:text-ruby-11 transition-colors",
+    post_tag: "font-mono text-meta text-slate-11 hover:text-ruby-11 transition-colors",
     action: "group inline-flex items-center gap-1.5 mt-7 font-mono text-note text-slate-11 border-b border-slate-5 pb-0.5 hover:text-ruby-11 hover:border-ruby-11 transition-colors",
-    section_action: "inline-flex items-center gap-1.5 font-mono text-meta text-slate-10 hover:text-ruby-11 transition-colors group",
+    section_action: "inline-flex items-center gap-1.5 font-mono text-meta text-slate-11 hover:text-ruby-11 transition-colors group",
     post_nav: "text-slate-11 hover:text-ruby-11 transition-colors",
     skip: "sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:px-3 focus:py-2 focus:bg-slate-2 focus:text-slate-12 focus:rounded focus:border focus:border-slate-5"
   }.freeze

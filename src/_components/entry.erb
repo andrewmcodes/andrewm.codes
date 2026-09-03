@@ -24,12 +24,12 @@
         />
       <% end %>
     </div>
-  <% else %>
+  <% elsif lead %>
     <div class="font-mono text-meta text-slate-11 whitespace-nowrap">
       <div><%= lead %></div>
 
       <% if lead_sub %>
-        <div class="mt-1 text-slate-10"><%= lead_sub %></div>
+        <div class="mt-1 text-slate-11"><%= lead_sub %></div>
       <% end %>
     </div>
   <% end %>
@@ -38,14 +38,14 @@
     <div
       class="
         text-row text-slate-12 text-balance
-        <%= "group-hover:text-ruby-11 transition-colors" if linked? %>
+        <%= "group-hover:text-ruby-11 group-focus-visible:text-ruby-11 transition-colors" if linked? %>
         <%= "inline-flex items-center gap-1.5" if title_icon? %>
       "
     >
       <%= title %>
 
       <% if title_icon? %>
-        <%= render Icon.new(name: icon_name, class: "text-slate-8 group-hover:text-ruby-11 transition-colors shrink-0 inline-block translate-y-px") %>
+        <%= render Icon.new(name: icon_name, class: "text-slate-8 group-hover:text-ruby-11 group-focus-visible:text-ruby-11 transition-colors shrink-0 inline-block translate-y-px") %>
       <% end %>
     </div>
 
@@ -110,7 +110,7 @@
           carrying no information, which is most of what made the archive
           read as one undifferentiated block.
         %>
-        <%= render Icon.new(name: icon_name, class: "text-slate-8 opacity-0 -translate-x-1 transition-[opacity,transform,color] group-hover:opacity-100 group-hover:translate-x-0 group-hover:text-ruby-11 group-focus-visible:opacity-100 group-focus-visible:translate-x-0") %>
+        <%= render Icon.new(name: icon_name, class: "text-slate-8 opacity-0 -translate-x-1 transition-[opacity,transform,color] group-hover:opacity-100 group-hover:translate-x-0 group-hover:text-ruby-11 group-focus-visible:opacity-100 group-focus-visible:translate-x-0 group-focus-visible:text-ruby-11") %>
       <% end %>
     </div>
   <% end %>

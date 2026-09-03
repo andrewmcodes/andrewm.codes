@@ -1,5 +1,5 @@
-# A major page section: a rule across the measure, its label hanging in the
-# left margin, and the content in its own column.
+# A major page section: its label hanging in the left margin, and the content
+# in its own column.
 #
 # This is the site's one compositional idea on desktop. Apparatus — what a
 # section is called, what it contains, where the rest of it lives — sits in the
@@ -10,11 +10,14 @@ class PageSection < Bridgetown::Component
   # `home_coda` binds a section tightly to the hero above it and opens a large
   # gap below, so the homepage reads as a peak followed by an even body rather
   # than as six sections at identical pitch.
+  # Separation is space, not a line. The section rule was doing work the gap
+  # already does, and with one on every section the page read as a stack of
+  # ruled boxes; these steps are the compensation for taking it out.
   SPACING = {
-    default: "mb-14",
-    home: "pb-12",
-    home_first: "pt-12 pb-12",
-    home_coda: "pt-2 pb-20",
+    default: "mb-24",
+    home: "pb-20",
+    home_first: "pt-12 pb-20",
+    home_coda: "pt-2 pb-28",
     none: ""
   }.freeze
 
@@ -44,7 +47,7 @@ class PageSection < Bridgetown::Component
   def section_classes
     [
       SPACING.fetch(@spacing, SPACING[:default]),
-      (labelled? ? "border-t border-slate-6 pt-5 #{RAIL}" : nil)
+      (labelled? ? RAIL : nil)
     ].compact.join(" ")
   end
 end

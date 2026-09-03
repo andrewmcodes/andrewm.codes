@@ -20,7 +20,7 @@ class Prose < Box
   # The reading column is Source Serif 4 while headings stay Archivo. The split
   # is the hierarchy: a heading is chrome announcing a section, the paragraph
   # under it is the writing.
-  READING_COLUMN = "font-serif text-read prose-headings:font-sans".freeze
+  READING_COLUMN = "font-read text-read prose-headings:font-sans".freeze
 
   PROSE_VARIANTS = {
     default: "",
@@ -50,7 +50,7 @@ class Prose < Box
       # effectively indistinguishable from prose — WCAG 1.4.1 wants 3:1 for a
       # colour-only distinction. The underline is the affordance; the colour is
       # only reinforcement, and the offset is already themed globally.
-      "prose-a:text-ruby-11 prose-a:underline prose-a:decoration-ruby-11/40 hover:prose-a:decoration-ruby-11",
+      "prose-a:text-slate-12 prose-a:underline prose-a:decoration-ruby-11/70 hover:prose-a:decoration-ruby-11",
       "prose-code:font-mono prose-code:text-slate-12 prose-code:bg-slate-3 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:border prose-code:border-slate-5",
       PROSE_SIZES.fetch(opts[:size], PROSE_SIZES[:default]),
       PROSE_VARIANTS.fetch(opts[:variant], PROSE_VARIANTS[:default]),

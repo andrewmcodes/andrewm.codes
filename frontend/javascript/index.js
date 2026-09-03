@@ -1,7 +1,7 @@
 import "$styles/index.css";
 import "@hotwired/turbo";
 import "@fontsource-variable/archivo";
-import "@fontsource-variable/source-serif-4";
+import "@fontsource-variable/ibm-plex-sans";
 import "@fontsource-variable/geist-mono";
 import "./cmdk.js";
 import "./search_page.js";

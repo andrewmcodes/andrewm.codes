@@ -88,6 +88,19 @@ class Entry < Bridgetown::Component
 
   def tokens = DENSITIES[@density]
 
+  # A row with nothing in its lead column must not reserve one. Inside a
+  # `PageSection` the 168px lead lands in the same margin as the section label,
+  # which is the point on the archive — but where a section already owns that
+  # margin, keeping it opens a second rail inside the first and the page grows
+  # a third left edge.
+  def lead_column? = !mark.nil? || !lead.nil?
+
+  def columns
+    return tokens[:cols] if lead_column?
+
+    three_column? ? "grid-cols-[1fr_auto]" : "grid-cols-1"
+  end
+
   def three_column? = @density != :full
 
   # The hover surface bleeds past the text so a row tints without becoming a
@@ -95,11 +108,11 @@ class Entry < Bridgetown::Component
   def row_classes
     [
       "group relative grid",
-      tokens[:cols],
+      columns,
       tokens[:spacing],
       tokens[:align],
       "border-b border-slate-6",
-      STACK[@density],
+      (STACK[@density] if lead_column?),
       (bleed_classes if tokens[:bleed] && linked?)
     ].compact.join(" ")
   end

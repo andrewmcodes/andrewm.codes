@@ -17,6 +17,7 @@
     "@commitlint/cli": "^21.2.2",
     "@fontsource-variable/archivo": "^5.3.0",
     "@fontsource-variable/geist-mono": "^5.3.0",
+    "@fontsource-variable/ibm-plex-sans": "^5.3.0",
     "@fontsource-variable/source-serif-4": "^5.3.0",
     "@fontsource/archivo": "^5.3.0",
     "@herb-tools/formatter": "^0.10.3",

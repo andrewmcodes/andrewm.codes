@@ -49,7 +49,7 @@ class Base < Bridgetown::Component
 
   FONT_FAMILY = {
     sans: "font-sans",
-    serif: "font-serif",
+    read: "font-read",
     mono: "font-mono"
   }.freeze
 

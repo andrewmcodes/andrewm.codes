@@ -2,9 +2,9 @@
 #
 # A tile is what an entry is not: projects and featured work have no meaningful
 # order, so they tile as equals. Anything dated belongs in an `Entry`. The cell
-# is a region bounded by the grid's hairlines, never a box of its own — the
-# card grid draws its rules on the children so an odd count cannot leave a
-# stray filled cell behind.
+# is separated by the grid's gap, never bounded by a rule or a box — its hover
+# field bleeds out past the text on the negative margin so a tile tints without
+# ever reading as a card.
 #
 # Facts that belong at the bottom are passed as the block, pinned with
 # `mt-auto` so a row of unequal tiles still aligns its footers.
@@ -28,7 +28,7 @@ class Tile < Bridgetown::Component
   def external? = @external
 
   def chip_classes
-    accent = @chip_accent ? "text-ruby-11" : "text-slate-10"
+    accent = @chip_accent ? "text-ruby-11" : "text-slate-11"
     "ml-auto font-mono text-micro uppercase #{accent}"
   end
 end

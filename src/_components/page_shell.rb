@@ -5,14 +5,17 @@
 class PageShell < Box
   COMPONENT_OPTIONS = %i[width spacing].freeze
 
+  # One measure for every page, so the topbar, the content, and the footer
+  # share a left edge on every surface. The three widths used to diverge and
+  # `narrow` put a page title 176px right of the wordmark above it. Column
+  # width is now `max-w-prose`'s job alone: at 1080 the reading grid leaves
+  # 744px beside the rail, so 65ch of the reading face binds first — which is
+  # the constraint that matters, and the one that broke when the shell was
+  # sized in pixels against a face that has since changed.
   WIDTHS = {
     wide: "max-w-[1080px] px-9 max-md:px-4",
-    # Wide enough to hold the apparatus in the margin and still leave the
-    # column room for a full 65ch measure. At 940px the grid column, not
-    # `max-w-prose`, was the binding constraint and the measure fell to 63ch
-    # when the body went to 18px.
-    reading: "max-w-[980px] px-9 max-md:px-4",
-    narrow: "max-w-[720px] px-8 max-md:px-4"
+    reading: "max-w-[1080px] px-9 max-md:px-4",
+    narrow: "max-w-[1080px] px-9 max-md:px-4"
   }.freeze
 
   SPACING = {

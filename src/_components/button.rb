@@ -28,7 +28,7 @@ class Button < Base
     secondary: "bg-transparent border border-slate-6 hover:bg-slate-3 hover:border-slate-7 text-slate-12",
     ghost: "bg-transparent hover:bg-slate-3 text-slate-11",
     text: "bg-transparent text-slate-11",
-    share: "inline-flex items-center gap-1.5 font-mono text-meta text-slate-10 border-b border-slate-5 pb-0.5 hover:text-ruby-11 hover:border-ruby-11 transition-colors bg-transparent"
+    share: "inline-flex items-center gap-1.5 font-mono text-meta text-slate-11 border-b border-slate-5 pb-0.5 hover:text-ruby-11 hover:border-ruby-11 transition-colors bg-transparent"
   }.freeze
 
   def call

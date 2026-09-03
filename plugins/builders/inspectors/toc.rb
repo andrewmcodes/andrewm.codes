@@ -34,13 +34,17 @@ class Builders::Inspectors::Toc < SiteBuilder
 
   private
 
+  # The current-entry styling is plain CSS in index.css, not a variant utility
+  # here: Tailwind does not scan `plugins/`, so a class written in this file is
+  # never generated and fails silently. `aria-[current=location]:text-ruby-11`
+  # lived here and compiled to nothing for the life of the feature.
   def item(heading)
     indent = (heading.name.downcase == "h3") ? " pl-3" : ""
     <<~HTML
       <li class="m-0#{indent}">
         <a
           href="##{heading["id"]}"
-          class="block text-note leading-snug text-slate-11 hover:text-ruby-11 transition-colors aria-[current=true]:text-ruby-11"
+          class="block text-note leading-snug text-slate-11 hover:text-ruby-11 transition-colors"
         >#{text_of(heading)}</a>
       </li>
     HTML

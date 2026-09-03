@@ -1,7 +1,7 @@
 <%= render Link.new(
   href: href,
   external: external?,
-  class: "group flex flex-col gap-1 bg-slate-1 hover:bg-slate-2 transition-colors py-3.5 md:p-5"
+  class: "group flex flex-col gap-1 bg-slate-1 hover:bg-slate-2 transition-colors rounded-md py-3 md:-mx-4 md:px-4 md:py-4"
 ) do %>
   <div class="flex items-center gap-2.5 mb-1">
     <span class="inline-flex items-center gap-1.5 text-row text-slate-12">
@@ -20,7 +20,7 @@
   <% end %>
 
   <% if content.to_s.strip != "" %>
-    <div class="mt-auto flex items-center gap-3.5 font-mono text-meta text-slate-10">
+    <div class="mt-auto flex items-center gap-3.5 font-mono text-meta text-slate-11">
       <%= content %>
     </div>
   <% end %>

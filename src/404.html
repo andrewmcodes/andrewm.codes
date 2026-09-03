@@ -5,11 +5,41 @@ title: Not Found
 sitemap: false
 noindex: true
 ---
-<div class="max-w-[720px] mx-auto w-full px-8 max-md:px-4 py-24 pb-32 text-center">
-  <h1 class="text-3xl tracking-tight font-semibold m-0 mb-3 text-slate-12">404</h1>
-  <p class="text-slate-11 max-w-[600px] mx-auto text-body text-pretty leading-[1.6]">
-    That page doesn't exist (yet). Head to the
-    <a href="/" class="text-ruby-11 hover:underline">home page</a> or browse the
-    <a href="/posts/" class="text-ruby-11 hover:underline">posts</a>.
-  </p>
-</div>
+<%= render PageShell.new(width: :wide) do %>
+  <%= render Ui::PageHeader.new(
+    title: "Not found",
+    description: "That page doesn't exist, or it moved and the redirect missed it.",
+  ) %>
+
+  <%#
+    Misses are an expected event here, not an edge case: the build generates a
+    redirect for every legacy post URL, so anything that lands on this page has
+    already fallen through 40-odd of them. It gets the same treatment as any
+    other listing rather than a status code and an apology.
+  %>
+  <%= render PageSection.new(
+    label: "recent posts",
+    description: "The newest writing, in case you were headed for one of these.",
+    link_label: "all posts",
+    link_href: "/posts/",
+  ) do %>
+    <div>
+      <% collections.posts.resources.first(5).each do |post| %>
+        <%= render PostRow.new(post: post) %>
+      <% end %>
+    </div>
+  <% end %>
+
+  <%= render PageSection.new(
+    label: "elsewhere",
+    description: "Or start from one of these.",
+  ) do %>
+    <ul class="m-0 p-0 list-none flex flex-wrap gap-x-6 gap-y-2">
+      <% [["Home", "/"], ["Projects", "/projects/"], ["Speaking", "/speaking/"], ["About", "/about/"], ["Search", "/search/"]].each do |label, href| %>
+        <li class="m-0">
+          <%= render Link.new(href: href, variant: :inline) { label } %>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+<% end %>

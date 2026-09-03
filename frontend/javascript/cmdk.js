@@ -107,7 +107,7 @@ function renderResults(items) {
   const list = el("cmdk-results");
   if (!list) return;
   if (!items.length) {
-    list.innerHTML = `<div class="px-[18px] py-8 text-center text-note text-slate-10">No matches.</div>`;
+    list.innerHTML = `<div class="px-[18px] py-8 text-center text-note text-slate-11">No matches.</div>`;
     el("cmdk-input")?.removeAttribute("aria-activedescendant");
     return;
   }
@@ -115,7 +115,7 @@ function renderResults(items) {
     .map(
       (r, i) => `
     <a href="${escapeHTML(safeUrl(r.url))}" id="cmdk-opt-${i}" role="option" aria-selected="${i === 0}" data-cmdk-item data-idx="${i}" class="flex items-center gap-3 px-[18px] py-2 text-note cursor-pointer ${i === 0 ? "bg-slate-3" : ""}">
-      <span class="font-mono text-micro uppercase text-slate-10 w-16 shrink-0">${escapeHTML(r.kind || "page")}</span>
+      <span class="font-mono text-micro uppercase text-slate-11 w-16 shrink-0">${escapeHTML(r.kind || "page")}</span>
       <span class="flex-1 ${i === 0 ? "text-ruby-11" : "text-slate-12"}">${escapeHTML(r.title)}</span>
     </a>
   `,

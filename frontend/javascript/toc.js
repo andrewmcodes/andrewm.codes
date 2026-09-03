@@ -54,7 +54,7 @@ const start = () => {
     if (active === current) return;
 
     current?.removeAttribute("aria-current");
-    active.setAttribute("aria-current", "true");
+    active.setAttribute("aria-current", "location");
     current = active;
   };
 

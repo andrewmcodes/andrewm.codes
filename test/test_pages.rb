@@ -109,8 +109,12 @@ class TestPages < Bridgetown::Test
   describe "404" do
     before { html get "/404.html" }
 
-    it "renders the not-found heading" do
-      expect(document.query_selector("h1").text.strip).must_equal "404"
+    it "renders the not-found heading in words, not a status code" do
+      expect(document.query_selector("h1").text.strip).must_equal "Not found"
+    end
+
+    it "offers a real way onward rather than a dead end" do
+      expect(document.query_selector_all("a[href^='/p/']").size).must_equal 5
     end
 
     it "is marked noindex" do

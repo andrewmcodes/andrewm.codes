@@ -3,7 +3,15 @@ layout: default
 title: andrewm.codes
 ---
 
-<% recent_posts = collections.posts.resources.first(5) %>
+<%#
+  A selection, not a feed — see src/_data/selected_posts.yml. Order comes from
+  the data file rather than from the dates, and a slug that no longer resolves
+  drops out instead of raising.
+%>
+<% all_posts = collections.posts.resources %>
+<% by_slug = all_posts.to_h { |p| [p.relative_url.to_s.split("/").reject(&:empty?).last, p] } %>
+<% selected_posts = Array(site.data.selected_posts).filter_map { |slug| by_slug[slug.to_s] } %>
+<% post_years = all_posts.map { |p| p.date.year }.minmax %>
 <% projects = collections.projects.resources.first(4) %>
 <% latest_talk = site.data.talks.max_by { |t| t["date"] || t[:date] } %>
 <% latest_episode = site.data.remote_ruby %>
@@ -39,13 +47,14 @@ title: andrewm.codes
 
   <%= render PageSection.new(
     spacing: :home,
-    label: "recent posts",
+    label: "writing",
+    description: "#{all_posts.size} posts, #{post_years.first}–#{post_years.last}. These five go deepest.",
     link_label: "all posts",
     link_href: "/posts/",
   ) do %>
     <%= render Stack.new do %>
-      <% recent_posts.each do |post| %>
-        <%= render PostRow.new(post: post) %>
+      <% selected_posts.each do |post| %>
+        <%= render PostRow.new(post: post, show_reading: false, lead_date: false) %>
       <% end %>
     <% end %>
   <% end %>

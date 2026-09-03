@@ -1,0 +1,20 @@
+# The five posts the homepage leads with, by slug, in the order they appear.
+#
+# The homepage used to show the five newest posts under a label reading "recent
+# posts". That put the strongest claim on the page — the index ledger's decade
+# of accumulation — a few hundred pixels above its weakest evidence, and the
+# word "recent" guaranteed a reader would compare the two. Chronology is still
+# how /posts/ works; the homepage is a selection.
+#
+# Chosen for depth rather than recency: CI and release automation, performance,
+# production coverage, and accessibility tooling. The section states the real
+# span of the archive, so the dates are context rather than a surprise.
+#
+# A slug that no longer exists is skipped silently, so renaming a post cannot
+# break the homepage — but it will quietly shorten this list, so check the
+# homepage after a rename.
+- automating-ruby-gem-releases-with-github-actions
+- instantly-speed-up-your-rails-application-by-self-hosting-your-fonts
+- rails-coverage-tools-coverband
+- a11y-in-rails-automated-linting-with-accesslint
+- ci-for-ruby-on-rails-circleci
