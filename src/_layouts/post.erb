@@ -47,7 +47,7 @@ layout: default
         next_resource: next_post,
       ) %>
 
-      <%= render Webmentions.new(url: resource.relative_url) %>
+      <%= render Webmentions.new(url: resource.relative_url, syndication: resource.data.syndication) %>
     </div>
   <% end %>
 <% end %>

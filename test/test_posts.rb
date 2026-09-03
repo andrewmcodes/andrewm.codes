@@ -61,6 +61,22 @@ class TestPosts < Bridgetown::Test
       expect(byline["href"]).must_equal "/about/"
       expect(byline.text.strip).must_equal "Andrew Mason"
     end
+
+    it "always syndicates to the RSS feed" do
+      section = document.query_selector("section[aria-labelledby='webmentions-heading']")
+      expect(section).wont_be_nil
+      expect(section.text).must_include "syndicated to"
+      hrefs = section.query_selector_all("a").map { |a| a["href"] }
+      expect(hrefs).must_include "https://andrewm.codes/feed.xml"
+    end
+
+    it "offers a webmention endpoint form targeting this post's absolute URL" do
+      form = document.query_selector("section[aria-labelledby='webmentions-heading'] form")
+      expect(form).wont_be_nil
+      expect(form["action"]).must_equal "https://webmention.io/andrewm.codes/webmention"
+      target = form.query_selector("input[name='target']")
+      expect(target["value"]).must_equal "https://andrewm.codes/p/twitter-avatar/"
+    end
   end
 
   describe "a post with content images" do

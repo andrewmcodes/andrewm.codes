@@ -70,6 +70,7 @@ Many components inherit from `Base` (`src/_components/base.rb`), which provides:
 - `src/_posts/_defaults.yml` sets `layout: post_layout` and a `back:` breadcrumb. Subdirectories like `src/_posts/blog/` and `src/_posts/snippets/` have their own `_defaults.yml` that can override.
 - Post URLs live under `/p/:slug/`. The old root-level URL for each post (`/:slug/`) is auto-redirected to `/p/:slug/` by `Builders::Redirects`. **Do not add new pages with slugs that collide with existing post slugs** — they'd be shadowed by the redirect.
 - Site data lives in `src/_data/` (YAML/JSON): `site_metadata.yml`, `navigation.yml`, `accounts.json`, `appearances.json`, `talks.yml`, `podcasts.yml`. Access via `site.metadata.*` and `site.data.*` in templates.
+- **Webmentions** render under every post via the `Webmentions` component (see `src/_components/webmentions.rb`). Reaction/reply data comes from `site.data.webmentions` (webmention.io JF2 feed, refreshed by `.github/workflows/webmentions.yml` → `scripts/fetch-webmentions.mjs`). A post's `syndication:` front matter is an array of POSSE target URLs; the component auto-labels known hosts (bsky→bluesky, github→github, …) via `SYNDICATION_LABELS` and always appends the RSS feed. Point it at the _actual_ cross-posted URL, not a profile — the row is a "this post also lives here" claim.
 
 ### Frontend assets
 
