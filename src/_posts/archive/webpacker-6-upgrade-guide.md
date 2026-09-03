@@ -2,7 +2,9 @@
 series: webpacker-6
 featured: false
 title: "Webpacker 6: Upgrade Guide"
-description: This page has changed since first posted, refer to the changelog at the bottom.   In this article, w...
+description: "Upgrade a Rails app from Webpacker 5 to 6: the Gemfile bump, the install task, and the new pack tags. Part of the archived Webpacker 6 guide."
+canonical_url: https://andrewm.codes/p/webpacker-6/
+sitemap: false
 urls:
   dev_to: https://dev.to/andrewmcodes/webpacker-6-upgrade-guide-3p6d
 tags:

@@ -9,6 +9,7 @@ node_modules
 
 # Caches
 .sass-cache
+.torchlight-cache/
 .npm
 .node_repl_history
 
@@ -51,9 +52,6 @@ src/og/*.png
 # Ruby
 .standardrb
 vendor/bundle
-
-# Torchlight cache
-.torchlight-cache/
 
 # Wranger
 .wrangler/

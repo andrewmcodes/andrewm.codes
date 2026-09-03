@@ -6,9 +6,16 @@
   chip: exceptional_status,
 ) do %>
   <% if lang %>
-    <span class="inline-flex items-center gap-1.5">
+    <%#
+      GitHub's own language colour, reported rather than chosen — Ruby has to
+      read as Ruby. Several of them (Ruby #701516, Lua #000080, Dockerfile
+      #384d54) are near-black and would vanish into a dark ground, so the dot
+      carries a mauve ring: the ring makes it read as a filled token in both
+      themes without altering the colour it is reporting.
+    %>
+    <span class="inline-flex items-center gap-2">
       <span
-        class="w-2 h-2 rounded-full shrink-0"
+        class="w-[10px] h-[10px] rounded-full shrink-0 ring-1 ring-mauve-7"
         style="background: <%= lang_color %>"
       ></span><%= lang %>
     </span>
@@ -16,7 +23,7 @@
 
   <% facts.each_with_index do |fact, i| %>
     <% if i > 0 || lang %>
-      <span aria-hidden="true">·</span>
+      <span aria-hidden="true" class="text-mauve-9">·</span>
     <% end %>
 
     <span><%= fact %></span>

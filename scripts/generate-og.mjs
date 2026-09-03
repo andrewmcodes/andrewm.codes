@@ -21,23 +21,29 @@ import { Resvg } from "@resvg/resvg-js"
  * @property {string} [imageUrl]
  */
 
-// Satori needs static font files; the app itself loads the variable builds.
+// The card is set in the site's own two voices — Geist Sans for the sentence,
+// Geist Mono for the wordmark — rather than in a third face nothing else on the
+// site uses. Satori parses ttf/otf/woff and cannot read the Brotli-compressed
+// woff2 the app loads, so these are the static `@fontsource/*` builds; the app
+// still loads the variable ones.
 const FONT_PATHS = {
-  regular: "node_modules/@fontsource/archivo/files/archivo-latin-400-normal.woff",
-  bold:    "node_modules/@fontsource/archivo/files/archivo-latin-700-normal.woff",
+  sansRegular:  "node_modules/@fontsource/geist-sans/files/geist-sans-latin-400-normal.woff",
+  sansSemibold: "node_modules/@fontsource/geist-sans/files/geist-sans-latin-600-normal.woff",
+  monoMedium:   "node_modules/@fontsource/geist-mono/files/geist-mono-latin-500-normal.woff",
 }
 
 for (const [label, path] of Object.entries(FONT_PATHS)) {
   if (!existsSync(path)) {
-    console.error(`OG: missing Archivo ${label} font at ${path}. Did you run \`pnpm install\`?`)
+    console.error(`OG: missing Geist ${label} font at ${path}. Did you run \`pnpm install\`?`)
     process.exit(1)
   }
 }
 
 /** @type {import("satori").SatoriOptions["fonts"]} */
 const FONTS = [
-  { name: "Archivo", data: readFileSync(FONT_PATHS.regular), weight: 400, style: "normal" },
-  { name: "Archivo", data: readFileSync(FONT_PATHS.bold),    weight: 700, style: "normal" },
+  { name: "Geist Sans", data: readFileSync(FONT_PATHS.sansRegular),  weight: 400, style: "normal" },
+  { name: "Geist Sans", data: readFileSync(FONT_PATHS.sansSemibold), weight: 600, style: "normal" },
+  { name: "Geist Mono", data: readFileSync(FONT_PATHS.monoMedium),   weight: 500, style: "normal" },
 ]
 
 const SITE_ROOT = process.argv[2] || "output"
@@ -68,16 +74,23 @@ function payloadHash(p) {
 const OG = {
   image:   { width: 1200, height: 630 },
   layout:  { padding: 80, gap: 32 },
-  // Dark-theme tokens: slate-1 / slate-12 / ruby-11 / slate-11.
+  // Dark-theme tokens, read off `index.css`: the card is the reading pane
+  // (mauve-2) with the title at neutral (mauve-12), the description at
+  // secondary (mauve-11) and the wordmark on the accent (ruby-11). These were
+  // slate steps from a palette the site stopped using.
   colors:  {
-    background:  "#111113",
-    foreground:  "#edeef0",
+    background:  "#1a191b",
+    foreground:  "#eeeef0",
     siteName:    "#ff949d",
-    description: "#b0b4ba",
+    description: "#b5b2bc",
   },
-  siteName:    { fontSize: 24, fontWeight: 500, letterSpacing: 0.5 },
-  title:       { fontSize: 64, fontWeight: 700, lineHeight: 1.1 },
-  description: { fontSize: 28, fontWeight: 400, lineHeight: 1.35 },
+  // Weights and tracking follow the type roles rather than being picked per
+  // card: the title is `--text-display` (600, -0.022em) scaled to the canvas,
+  // the wordmark is a measurement so it is mono, and 700 is a weight the site
+  // never sets.
+  siteName:    { fontFamily: "Geist Mono", fontSize: 24, fontWeight: 500 },
+  title:       { fontFamily: "Geist Sans", fontSize: 64, fontWeight: 600, lineHeight: 1.15, letterSpacing: -1.4 },
+  description: { fontFamily: "Geist Sans", fontSize: 28, fontWeight: 400, lineHeight: 1.5, letterSpacing: -0.4 },
 }
 
 /** @param {string | undefined} s @param {number} max @returns {string | undefined} */
@@ -97,7 +110,7 @@ function template(payload) {
         display: "flex", flexDirection: "column",
         width: "100%", height: "100%",
         background: OG.colors.background, color: OG.colors.foreground,
-        padding: OG.layout.padding, fontFamily: "Archivo",
+        padding: OG.layout.padding, fontFamily: "Geist Sans",
       },
       children: [
         {

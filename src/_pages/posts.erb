@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Posts
+title: Writing
 permalink: /posts/
 description: Notes on Rails, podcasting, and the long unglamorous middle. Occasionally proofread.
 ---
@@ -17,14 +17,18 @@ description: Notes on Rails, podcasting, and the long unglamorous middle. Occasi
 <% years = posts.group_by { |p| p.date.year }.sort.reverse %>
 
 <%= render PageShell.new do %>
-  <%= render Ui::PageHeader.new(title: "Posts", description: data.description) %>
+  <%= render Stack.new(space: :xxl) do %>
+    <%= render Ui::PageHeader.new(title: "Writing", description: data.description) %>
 
-  <%= render TagCloud.new(tags: tag_counts.map(&:first)) %>
+    <%= render TagCloud.new(tags: tag_counts.map(&:first)) %>
 
-  <% years.each do |year, year_posts| %>
-    <%= render CollectionGroup.new(title: year) do %>
-      <% year_posts.each do |post| %>
-        <%= render PostRow.new(post: post) %>
+    <%= render Stack.new(space: :xl) do %>
+      <% years.each do |year, year_posts| %>
+        <%= render CollectionGroup.new(title: year) do %>
+          <% year_posts.each do |post| %>
+            <%= render PostRow.new(post: post) %>
+          <% end %>
+        <% end %>
       <% end %>
     <% end %>
   <% end %>

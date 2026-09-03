@@ -1,16 +1,24 @@
-# Homepage introduction block with the primary site message and call to action.
+# The homepage's first object: avatar, name, one claim, the ways to reach him,
+# and a single derived line of evidence.
 #
-# Kept as a component so the homepage owns content choice while the design
-# system owns the visual treatment.
-#
-# The index rows are the hero's evidence: real counts derived from the
-# collections at build time, set as a ledger so accumulation is visible in the
-# first viewport rather than claimed in prose.
+# The old hero argued in three paragraphs beside a four-row ledger. This one
+# makes the claim once and lets the lists under it be the argument — but it
+# keeps the counts, because a stranger deciding in forty seconds needs to see
+# that there is a decade of work here, and a list of five titles does not say
+# that on its own. Every number is derived from the collections at build time.
 class HomeHero < Bridgetown::Component
   # Remote Ruby's back catalogue. Not derivable from `remote_ruby.json`, which
   # only carries the latest episode, so it is stated conservatively and stays
   # true as the show grows.
   EPISODE_COUNT = "350+"
+
+  SOCIALS = [
+    {name: "GitHub", icon: "github", url: "https://github.com/andrewmcodes"},
+    {name: "Bluesky", icon: "bluesky", url: "https://bsky.app/profile/andrewm.codes"},
+    {name: "X", icon: "twitter", url: "https://x.com/andrewmcodes"},
+    {name: "LinkedIn", icon: "linkedin", url: "https://www.linkedin.com/in/andrew-mason"},
+    {name: "RSS", icon: "rss", url: "/feed.xml"}
+  ].freeze
 
   # @param posts_count [Integer] published posts
   # @param projects_count [Integer] open source projects
@@ -21,13 +29,16 @@ class HomeHero < Bridgetown::Component
     @talks_count = talks_count
   end
 
-  # @return [Array<Hash>] label / value / href rows for the hero index
-  def index_rows
+  def socials = SOCIALS
+
+  # One line, four facts, no adjectives. A count that can go stale silently is
+  # worse than no count, so all three of these come from the resources.
+  def ledger
     [
-      {label: "writing", value: pluralize(@posts_count, "post"), href: "/posts/"},
-      {label: "open source", value: pluralize(@projects_count, "repo"), href: "/projects/"},
-      {label: "podcast", value: "#{EPISODE_COUNT} episodes", href: "/speaking/"},
-      {label: "speaking", value: pluralize(@talks_count, "talk"), href: "/speaking/"}
+      pluralize(@posts_count, "post"),
+      pluralize(@projects_count, "project"),
+      pluralize(@talks_count, "talk"),
+      "#{EPISODE_COUNT} podcast episodes"
     ]
   end
 

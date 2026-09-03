@@ -1,113 +1,34 @@
-<footer class="border-t border-slate-6 mt-16 pt-10 pb-8" data-pagefind-ignore>
-  <div class="max-w-[1080px] mx-auto w-full px-9 max-md:px-4">
-    <div
-      class="
-        flex flex-col gap-4 md:flex-row md:flex-wrap md:justify-between md:items-center
-        text-note text-slate-11
-      "
-    >
-      <%#
-        Names and links are language, not measurement. The whole footer sat in
-        one 11.5px mono band, which is a large part of what made the site's
-        small copy read as a single undifferentiated voice. The commit SHA
-        below stays mono, because that genuinely is a measurement.
-      %>
+<footer class="mt-auto px-6 shell:px-12 pb-10 pt-16" data-pagefind-ignore>
+  <div class="mx-auto w-full max-w-pane">
+    <%#
+      The app's controls live in the source list, so the footer is only the
+      colophon: who, where the source is, and which commit built this page.
+      Nothing here is navigation, which is why nothing here is a second nav.
+    %>
+    <div class="flex flex-wrap items-center justify-between gap-x-6 gap-y-2 text-note text-mauve-11">
       <span>© 2019–<%= Date.today.year %> <%= metadata.author.name %></span>
 
-      <div class="flex flex-wrap items-center gap-x-4 gap-y-3">
-        <span class="flex flex-wrap gap-x-3 gap-y-1">
-          <% accounts.each_with_index do |a, i| %>
-            <% if i > 0 %>
-              <span>·</span>
-            <% end %>
-
-            <a
-              href="<%= a["url"] %>"
-              class="
-                text-slate-11 border-b border-slate-5 pb-px hover:text-ruby-11
-                hover:border-ruby-11 transition-colors
-              "
-            >
-              <%= a["name"] %>
-            </a>
-          <% end %>
-
-          <span>·</span>
-
-          <a
-            href="/feed.xml"
-            class="
-              text-slate-11 border-b border-slate-5 pb-px hover:text-ruby-11
-              hover:border-ruby-11 transition-colors
-            "
-          >
-            RSS
-          </a>
-
-          <span>·</span>
-
-          <a
-            href="/feed.json"
-            class="
-              text-slate-11 border-b border-slate-5 pb-px hover:text-ruby-11
-              hover:border-ruby-11 transition-colors
-            "
-          >
-            JSON
-          </a>
-        </span>
-
-        <%= render ThemeToggle.new %>
-      </div>
-    </div>
-
-    <div
-      class="
-        mt-4 md:mt-3 flex flex-col gap-2 md:flex-row md:flex-wrap md:justify-between
-        md:items-center text-note text-slate-11
-      "
-    >
-      <span class="flex flex-wrap gap-x-3 gap-y-1">
+      <span class="flex flex-wrap items-center gap-x-4 gap-y-1">
         <a
           href="/changelog/"
-          class="text-slate-11 hover:text-ruby-11 transition-colors"
-        >
-          Changelog
-        </a>
-
-        <span>·</span>
-
-        <a
-          href="/uses/"
-          class="text-slate-11 hover:text-ruby-11 transition-colors"
-        >
-          Uses
-        </a>
-
-        <span>·</span>
+          class="hover:text-mauve-12 transition-colors"
+        >Changelog</a>
 
         <a
           href="https://github.com/<%= metadata.repo %>"
-          class="text-slate-11 hover:text-ruby-11 transition-colors"
-        >
-          Source
-        </a>
-      </span>
+          class="hover:text-mauve-12 transition-colors"
+        >Source</a>
 
-      <a
-        href="<%= latest_commit_url %>"
-        class="
-          text-slate-11 hover:text-ruby-11 transition-colors inline-flex items-center
-          gap-1.5
-        "
-        title="Latest commit"
-      >
-        <%#
-          GitHub's commit mark is filled and the site's icon set is stroked;
-          a mono SHA in a footer needs no glyph to say what it is.
-        %>
-        <span class="font-mono text-meta"><%= latest_commit_sha %></span>
-      </a>
+        <a href="/feed.xml" class="hover:text-mauve-12 transition-colors">RSS</a>
+
+        <a href="/feed.json" class="hover:text-mauve-12 transition-colors">JSON</a>
+
+        <a
+          href="<%= latest_commit_url %>"
+          title="Latest commit"
+          class="font-mono text-meta hover:text-mauve-12 transition-colors"
+        ><%= latest_commit_sha %></a>
+      </span>
     </div>
   </div>
 </footer>

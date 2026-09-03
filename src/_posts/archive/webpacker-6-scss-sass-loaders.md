@@ -2,7 +2,9 @@
 series: webpacker-6
 featured: false
 title: "Webpacker 6: SCSS/Sass Loaders"
-description: In order to process .scss and .sass files with Webpacker 6, you need to add sass-loader and sass.   N...
+description: "How to compile SCSS and Sass in a Webpacker 6 Rails app with sass-loader and sass. Part of the archived Webpacker 6 upgrade guide."
+canonical_url: https://andrewm.codes/p/webpacker-6/
+sitemap: false
 urls:
   dev_to: https://dev.to/andrewmcodes/webpacker-6-scss-sass-loaders-37p3
 tags:

@@ -5,7 +5,7 @@ class TestPosts < Bridgetown::Test
     before { html get "/posts/" }
 
     it "renders the page heading" do
-      expect(document.query_selector("h1").text.strip).must_equal "Posts"
+      expect(document.query_selector("h1").text.strip).must_equal "Writing"
     end
 
     it "shows year-grouped post rows" do
@@ -49,7 +49,10 @@ class TestPosts < Bridgetown::Test
     end
 
     it "shows the stale-content alert when the post is >2 years old" do
-      expect(document.inner_html).must_include "this post was last updated"
+      note = document.query_selector("aside[role='note']")
+      expect(note).wont_be_nil
+      expect(note.text).must_include "Last updated"
+      expect(note.query_selector("time")).wont_be_nil
     end
 
     it "credits Andrew Mason with a byline linking to /about/" do

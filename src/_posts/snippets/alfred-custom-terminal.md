@@ -1,6 +1,6 @@
 ---
 title: Alfred Custom Terminal Snippet
-description: Integrate a custom terminal with Alfred's terminal integration.
+description: An AppleScript that wires Alfred's terminal integration to a custom terminal like Warp or Archipelago, plus the Alfred settings that enable it.
 tags:
   - warp
   - macos

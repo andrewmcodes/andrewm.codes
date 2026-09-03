@@ -1,12 +1,36 @@
-- label: Posts
-  url: /posts/
-- label: Projects
-  url: /projects/
-- label: Speaking
-  url: /speaking/
-- label: Uses
-  url: /uses/
-- label: About
-  url: /about/
-- label: RSS
-  url: /feed.xml
+# The source list. `primary` is the app's own views; `elsewhere` leaves the app.
+# Icons are the purpose-built 15px stroked set in src/images/nav_*.svg — one
+# drawing language for the whole list, so no row reads as a different weight.
+primary:
+  - label: Home
+    url: /
+    icon: nav_home
+  - label: Writing
+    url: /posts/
+    icon: nav_writing
+  - label: Projects
+    url: /projects/
+    icon: nav_projects
+  - label: Speaking
+    url: /speaking/
+    icon: nav_speaking
+  - label: Uses
+    url: /uses/
+    icon: nav_uses
+  - label: About
+    url: /about/
+    icon: nav_about
+
+elsewhere:
+  - label: GitHub
+    url: https://github.com/andrewmcodes
+    icon: github
+  - label: Bluesky
+    url: https://bsky.app/profile/andrewm.codes
+    icon: bluesky
+  - label: Remote Ruby
+    url: https://remoteruby.com/
+    icon: speaker_loud
+  - label: RSS
+    url: /feed.xml
+    icon: rss

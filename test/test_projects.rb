@@ -8,17 +8,16 @@ class TestProjects < Bridgetown::Test
       expect(document.query_selector("h1").text.strip).must_equal "Projects"
     end
 
-    it "renders project cards" do
-      cards = document.query_selector_all(".card-grid > a")
-      expect(cards.size).must_be :>, 0
+    it "renders project rows" do
+      rows = document.query_selector_all("main a[target='_blank']")
+      expect(rows.size).must_be :>, 0
     end
 
-    it "links every card directly to GitHub with target=_blank" do
-      cards = document.query_selector_all(".card-grid > a")
-      hrefs = cards.map { |a| a["href"] }
+    it "links every project row directly to GitHub with target=_blank" do
+      rows = document.query_selector_all("main a[target='_blank']")
+      hrefs = rows.map { |a| a["href"] }
       expect(hrefs).wont_be_empty
       expect(hrefs.all? { |h| h.to_s.include?("github.com") }).must_equal true
-      expect(cards.all? { |a| a["target"] == "_blank" }).must_equal true
     end
   end
 end

@@ -1,6 +1,5 @@
 ---
 layout: post_layout
-torchlight: true
 back:
   path: /posts
   label: All Posts

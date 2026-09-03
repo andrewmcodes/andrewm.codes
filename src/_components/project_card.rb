@@ -9,8 +9,12 @@ class ProjectCard < Bridgetown::Component
     resource? ? @project.data.title : @project[:name]
   end
 
+  # GitHub returns "" rather than null for a repo with no description, and an
+  # empty string is truthy in Ruby — seven of these would have rendered an empty
+  # paragraph holding open space for text that does not exist.
   def desc
-    resource? ? @project.data.description : @project[:desc]
+    value = resource? ? @project.data.description : @project[:desc]
+    presence(value)
   end
 
   def status
@@ -22,7 +26,7 @@ class ProjectCard < Bridgetown::Component
   end
 
   def lang_color
-    resource? ? (@project.data.lang_color || "#701516") : @project[:color]
+    presence(resource? ? @project.data.lang_color : @project[:color]) || "#8b949e"
   end
 
   def stars
@@ -60,6 +64,11 @@ class ProjectCard < Bridgetown::Component
   end
 
   private
+
+  def presence(value)
+    str = value.to_s.strip
+    str.empty? ? nil : str
+  end
 
   def count_label(value, noun)
     n = value.to_i

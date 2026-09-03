@@ -11,7 +11,7 @@ author:
   url: https://andrewm.codes/about/
   job_title: Software Engineer
   works_for: Podia
-  bio: Ruby on Rails engineer, podcaster, and Remote Ruby co-host based in Phoenix, Arizona.
+  bio: Ruby on Rails engineer, podcaster, and Remote Ruby co-host based in Phoenix, AZ.
   knows_about:
     - Ruby
     - Ruby on Rails
@@ -24,7 +24,7 @@ author:
     - Podcasting
 image: /og/default.png
 lang: en
-# theme_color is the dark-mode chrome color (slate-1 dark); theme_color_light is
+# theme_color is the dark-mode chrome color (mauve-1 dark); theme_color_light is
 # the light-mode equivalent. default.erb emits both via prefers-color-scheme.
 theme_color: "#111113"
 theme_color_light: "#fcfcfd"

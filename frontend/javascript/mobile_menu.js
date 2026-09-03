@@ -25,6 +25,10 @@ function setOpen(open) {
   const menu = document.getElementById(MENU_ID);
   if (!menu) return;
 
+  // The sheet covers the page, so the page must not scroll under it. Without
+  // this a swipe over the scrim scrolls the article behind the open menu.
+  document.documentElement.style.overflow = open ? "hidden" : "";
+
   // Remember where focus came from before the first open.
   if (open && menu.dataset.open !== "true") lastFocused = document.activeElement;
 
@@ -65,6 +69,11 @@ document.addEventListener("click", (e) => {
     return;
   }
 
+  if (e.target.closest("[data-menu-close]")) {
+    setOpen(false);
+    return;
+  }
+
   if (!isOpen()) return;
 
   // Tapping the backdrop or following a menu link closes the menu. Theme-toggle
@@ -99,19 +108,3 @@ document.addEventListener("keydown", (e) => {
     }
   }
 });
-
-// Close the mobile menu when the user starts scrolling. Only fires if the
-// menu is actually open to avoid the listener doing work on every scroll.
-let lastScrollY = window.scrollY;
-document.addEventListener(
-  "scroll",
-  () => {
-    if (!isOpen()) {
-      lastScrollY = window.scrollY;
-      return;
-    }
-    if (Math.abs(window.scrollY - lastScrollY) > 8) setOpen(false);
-    lastScrollY = window.scrollY;
-  },
-  { passive: true },
-);

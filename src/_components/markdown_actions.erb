@@ -1,16 +1,17 @@
 <div
   class="
     md-actions relative inline-flex items-stretch font-mono text-meta
-    text-slate-11
+    text-mauve-11
   "
   data-md-url="<%= markdown_path %>"
 >
   <button
     type="button"
     class="
-      md-copy inline-flex items-center gap-1.5 rounded-l-md border border-slate-5
-      bg-transparent px-2 py-1 hover:text-ruby-11 hover:border-ruby-11
-      transition-colors focus-visible:outline focus-visible:outline-2
+      md-copy relative inline-flex items-center gap-1.5 rounded-l-md border
+      border-mauve-6 bg-transparent px-2 py-1 hover:z-10 hover:bg-mauve-3
+      hover:border-mauve-7 hover:text-mauve-12 transition-colors
+      focus-visible:z-10 focus-visible:outline focus-visible:outline-2
       focus-visible:outline-offset-2 focus-visible:outline-ruby-9
     "
   >
@@ -21,10 +22,12 @@
   <details class="md-menu -ml-px">
     <summary
       class="
-        flex h-full list-none items-center rounded-r-md border border-slate-5 px-1.5
-        cursor-pointer hover:text-ruby-11 hover:border-ruby-11 transition-colors
-        focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2
-        focus-visible:outline-ruby-9 [&::-webkit-details-marker]:hidden
+        relative flex h-full list-none items-center rounded-r-md border
+        border-mauve-6 px-1.5 cursor-pointer hover:z-10 hover:bg-mauve-3
+        hover:border-mauve-7 hover:text-mauve-12 transition-colors
+        focus-visible:z-10 focus-visible:outline focus-visible:outline-2
+        focus-visible:outline-offset-2 focus-visible:outline-ruby-9
+        [&::-webkit-details-marker]:hidden
       "
       aria-label="More Markdown options"
     >
@@ -33,8 +36,8 @@
 
     <div
       class="
-        absolute left-0 top-full z-20 mt-1 min-w-44 overflow-hidden rounded-md border
-        border-slate-5 bg-slate-2 py-1 shadow-lg
+        absolute right-0 top-full z-20 mt-1 min-w-44 overflow-hidden rounded-lg border
+        border-mauve-6 bg-mauve-2 py-1 shadow-lg
       "
       role="menu"
     >
@@ -42,7 +45,7 @@
         href="<%= markdown_path %>"
         data-turbo="false"
         class="
-          flex items-center gap-2 px-3 py-1.5 hover:bg-slate-3 hover:text-ruby-11
+          flex items-center gap-2 px-3 py-1.5 hover:bg-mauve-3 hover:text-mauve-12
           transition-colors
         "
         role="menuitem"
@@ -56,7 +59,7 @@
         target="_blank"
         rel="noreferrer"
         class="
-          flex items-center gap-2 px-3 py-1.5 hover:bg-slate-3 hover:text-ruby-11
+          flex items-center gap-2 px-3 py-1.5 hover:bg-mauve-3 hover:text-mauve-12
           transition-colors
         "
         role="menuitem"
@@ -70,7 +73,7 @@
         target="_blank"
         rel="noreferrer"
         class="
-          flex items-center gap-2 px-3 py-1.5 hover:bg-slate-3 hover:text-ruby-11
+          flex items-center gap-2 px-3 py-1.5 hover:bg-mauve-3 hover:text-mauve-12
           transition-colors
         "
         role="menuitem"

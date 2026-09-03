@@ -1,24 +1,20 @@
 <%#
-  The label sits in the same 168px margin the section labels and entry dates
-  use, so the filter row lands on the column line the rows below it use
-  rather than floating 50px in from its own label.
+  The most-used tags, as one wrapped row. The label used to hang in a 168px
+  margin beside them; with no rules anywhere on the page that margin read as a
+  misalignment rather than as a rail, so the label now sits directly above the
+  tags like every other label on the site.
 %>
 
-<div
-  class="
-    mb-5 grid grid-cols-[168px_minmax(0,1fr)] gap-10 items-baseline
-    max-md:grid-cols-1 max-md:gap-1
-  "
->
-  <span class="font-mono text-label uppercase text-slate-11">
-    <%= @label %>
-  </span>
+<% if tags.any? %>
+  <div>
+    <p class="m-0 mb-2.5 text-label text-mauve-11">tags</p>
 
-  <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-    <% @tags.each do |tag| %>
-      <%= render Link.new(href: "#{@href_prefix}#{tag}/", variant: :tag) do %>
-        #<%= tag %>
+    <div class="flex flex-wrap gap-x-3 gap-y-1.5">
+      <% tags.each do |tag| %>
+        <%= render Link.new(href: "/tag/#{tag}/", variant: :tag) do %>
+          #<%= tag %>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
   </div>
-</div>
+<% end %>

@@ -44,7 +44,7 @@ class Builders::Inspectors::Toc < SiteBuilder
       <li class="m-0#{indent}">
         <a
           href="##{heading["id"]}"
-          class="block text-note leading-snug text-slate-11 hover:text-ruby-11 transition-colors"
+          class="block text-note leading-snug text-mauve-11 hover:text-mauve-12 transition-colors"
         >#{text_of(heading)}</a>
       </li>
     HTML

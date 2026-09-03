@@ -1,7 +1,6 @@
 import "$styles/index.css";
 import "@hotwired/turbo";
-import "@fontsource-variable/archivo";
-import "@fontsource-variable/ibm-plex-sans";
+import "@fontsource-variable/geist";
 import "@fontsource-variable/geist-mono";
 import "./cmdk.js";
 import "./search_page.js";
@@ -10,4 +9,5 @@ import "./share.js";
 import "./copy_code.js";
 import "./copy_page.js";
 import "./toc.js";
+import "./reading_progress.js";
 import "./mobile_menu.js";

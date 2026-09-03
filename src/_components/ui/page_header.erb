@@ -1,10 +1,8 @@
-<div class="mb-10">
-  <h1 class="text-page-title m-0 mb-3 text-slate-12">
-    <%= title %>
-  </h1>
+<div>
+  <h1 class="m-0 text-page-title text-mauve-12"><%= title %></h1>
 
   <% if rich_description? || description || description_html %>
-    <p class="text-slate-11 max-w-[600px] text-body text-pretty leading-[1.6]">
+    <p class="mt-3 m-0 text-note text-mauve-11 max-w-[64ch] text-pretty">
       <% if rich_description? %>
         <%= rich_description %>
       <% elsif description_html %>
@@ -12,9 +10,7 @@
       <% else %>
         <%= description %>
         <% if description_link? %>
-          <%= render Link.new(href: description_link_href, variant: :inline_accent) {
-            description_link_label
-          } %> .
+          <%= render Link.new(href: description_link_href, variant: :inline_accent) do %><%= description_link_label %><% end %>.
         <% end %>
       <% end %>
     </p>

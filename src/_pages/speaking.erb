@@ -14,6 +14,7 @@ description: Talks I've given, podcasts I host, shows I've been on, and CFPs I'v
 <% latest_episode = site.data.remote_ruby %>
 
 <%= render PageShell.new do %>
+  <%= render Stack.new(space: :xxl) do %>
   <%= render Ui::PageHeader.new(title: "Speaking") do %>
     Talks I've given, podcasts I host, shows I've been on, and CFPs I've
     submitted. Want me on yours?
@@ -25,14 +26,21 @@ description: Talks I've given, podcasts I host, shows I've been on, and CFPs I'v
     label: "Podcasts / currently hosting",
     description: "Shows I'm actively hosting or involved with, plus the latest Remote Ruby episode.",
   ) do %>
-      <%= render Stack.new do %>
+      <%= render Stack.new(space: :xxs) do %>
         <% active_pods.each do |p| %>
           <%= render PodRow.new(pod: p) %>
         <% end %>
       <% end %>
 
       <% if latest_episode %>
-        <%= render EpisodeCard.new(episode: latest_episode) %>
+        <%#
+          The episode belongs to the show above it. A 48px mark plus its 16px
+          gap is what indents that show's text, so the episode lines up with
+          the show's title rather than with the section.
+        %>
+        <div class="pl-16 max-sm:pl-0">
+          <%= render EpisodeCard.new(episode: latest_episode) %>
+        </div>
       <% end %>
     <% end %>
   <% end %>
@@ -42,7 +50,7 @@ description: Talks I've given, podcasts I host, shows I've been on, and CFPs I'v
     label: "Podcasts / previously",
     description: "Shows I used to host or appear on regularly, kept here for context and archives.",
   ) do %>
-      <%= render Stack.new do %>
+      <%= render Stack.new(space: :xxs) do %>
         <% past_pods.each do |p| %>
           <%= render PodRow.new(pod: p) %>
         <% end %>
@@ -54,7 +62,7 @@ description: Talks I've given, podcasts I host, shows I've been on, and CFPs I'v
     label: "Talks",
     description: "Conference talks and presentations I've given about Rails, Ruby, software teams, and developer workflows.",
   ) do %>
-    <%= render Stack.new do %>
+    <%= render Stack.new(space: :xxs) do %>
       <% talks.each do |t| %>
         <%= render TalkCard.new(talk: t) %>
       <% end %>
@@ -66,7 +74,7 @@ description: Talks I've given, podcasts I host, shows I've been on, and CFPs I'v
     label: "CFPs",
     description: "Conference proposals I've submitted over the years. Some accepted, most not. I keep them around because the writeups are still useful.",
   ) do %>
-      <%= render Stack.new do %>
+      <%= render Stack.new(space: :xxs) do %>
         <% cfps.each do |c| %>
           <%= render MetaRow.new(
             href: c.relative_url,
@@ -80,11 +88,10 @@ description: Talks I've given, podcasts I host, shows I've been on, and CFPs I'v
   <% end %>
 
   <%= render PageSection.new(
-    spacing: :none,
     label: "Appearances",
     description: "Guest spots, interviews, and conference appearances from around the Ruby community.",
   ) do %>
-    <%= render Stack.new do %>
+    <%= render Stack.new(space: :xxs) do %>
       <% appearances.each do |a| %>
         <%= render MetaRow.new(
           href: a["url"],
@@ -97,4 +104,5 @@ description: Talks I've given, podcasts I host, shows I've been on, and CFPs I'v
       <% end %>
     <% end %>
   <% end %>
+<% end %>
 <% end %>

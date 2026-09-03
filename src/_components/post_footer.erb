@@ -1,12 +1,33 @@
-<footer class="mt-16 pt-7 border-t border-slate-5">
-  <%= render PostFooterNav.new(
-    previous_resource: @previous_resource,
-    next_resource: @next_resource,
-  ) %>
+<%#
+  Three rules inside 700px of scroll gave the nav, the byline and the related
+  list the same weight as the end of the article itself, and each block then
+  brought its own margin, so the gaps ran 32/48/28 with no rhythm to read. The
+  page's own principle — a quiet label above the work, sections separated by
+  space rather than lines — was already true everywhere except here. One rule
+  closes the prose; below it a single `Stack` owns every gap, at the same
+  `xxxl` the homepage puts between its sections.
+%>
 
-  <div class="flex items-center gap-3 mt-4">
-    <%= render ShareButton.new(resource: @resource) %>
-  </div>
+<footer class="pt-8 border-t border-mauve-6">
+  <%= render Stack.new(space: :xxxl) do %>
+    <div>
+      <%= render PostFooterNav.new(
+        previous_resource: @previous_resource,
+        next_resource: @next_resource,
+      ) %>
 
-  <%= render RelatedPosts.new(posts: helpers.related_posts(@resource)) %>
+      <%#
+        The share action belongs to the pair above it, not to the byline
+        below, so it sits a `md` away from them and an `xxxl` from anything
+        else. The margin rides on the button because the button ships hidden —
+        a wrapper would hold the space open on every browser without the Web
+        Share API.
+      %>
+      <%= render ShareButton.new(resource: @resource, class_name: "mt-4") %>
+    </div>
+
+    <%= render PostAuthor.new %>
+
+    <%= render RelatedPosts.new(posts: helpers.related_posts(@resource)) %>
+  <% end %>
 </footer>

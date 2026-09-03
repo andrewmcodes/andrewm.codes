@@ -5,8 +5,8 @@ type = "keychain"
 service = "fnox-andrewmcodes-v8"
 
 [secrets]
-TORCHLIGHT_TOKEN= { provider = "keychain", value = "TORCHLIGHT_TOKEN" }
 CLOUDFLARE_API_KEY= { provider = "keychain", value = "CLOUDFLARE_API_KEY" }
 CLOUDFLARE_EMAIL= { provider = "keychain", value = "CLOUDFLARE_EMAIL" }
 BUZZSPROUT_API_TOKEN= { provider = "keychain", value = "BUZZSPROUT_API_TOKEN" }
 WEBMENTION_IO_TOKEN= { provider = "keychain", value = "WEBMENTION_IO_TOKEN" }
+IMAGEKIT_PRIVATE_KEY= { provider = "keychain", value = "IMAGEKIT_PRIVATE_KEY", description = "ImageKit write key for image uploads" }

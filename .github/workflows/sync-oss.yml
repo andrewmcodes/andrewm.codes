@@ -14,29 +14,49 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
+
+      # Every public repository I own that is not a fork and not archived —
+      # the projects page lists the whole set rather than a pinned handful.
+      #
+      # GraphQL rather than `gh repo list`: the REST-shaped listing returns
+      # `primaryLanguage { name }` with no `color`, so the language dot on every
+      # tile rendered with an empty background. The colour is GitHub's own datum
+      # and the page reports it rather than inventing one, so it has to come
+      # from the query that actually carries it.
       - env:
           GH_TOKEN: ${{ secrets.OSS_SYNC_TOKEN }}
         run: |
           set -euo pipefail
-          gh api graphql -f query='
-            query {
+          gh api graphql --paginate -f query='
+            query($endCursor: String) {
               user(login: "andrewmcodes") {
-                pinnedItems(first: 6, types: REPOSITORY) {
-                  nodes { ... on Repository {
-                    name url description stargazerCount
+                repositories(
+                  first: 100
+                  after: $endCursor
+                  privacy: PUBLIC
+                  isFork: false
+                  ownerAffiliations: OWNER
+                  orderBy: { field: PUSHED_AT, direction: DESC }
+                ) {
+                  pageInfo { hasNextPage endCursor }
+                  nodes {
+                    name description url stargazerCount forkCount pushedAt isArchived
                     primaryLanguage { name color }
-                    pushedAt
-                  } }
+                  }
                 }
               }
-            }' | jq '.data.user.pinnedItems.nodes' > /tmp/oss.json
+            }' --jq '.data.user.repositories.nodes[]' \
+            | jq -s 'map(select(.isArchived == false) | del(.isArchived))
+                     | sort_by(.pushedAt) | reverse' > /tmp/oss.json
 
       - name: Validate shape
         run: |
           set -euo pipefail
-          # Must be a non-empty array of objects with the expected keys, or the
-          # workflow has silently regressed (auth failure, schema change, etc).
-          jq -e 'type == "array" and length > 0 and all(.name? and .url?)' /tmp/oss.json > /dev/null \
+          # Must be a non-empty array of objects with the keys the page reads,
+          # or the workflow has silently regressed (auth failure, schema change,
+          # a `gh` flag that stopped filtering). A truncated list is the failure
+          # mode that would look fine in a diff, so assert a floor on length.
+          jq -e 'type == "array" and length >= 20 and all(.name? and .url? and .pushedAt?)' /tmp/oss.json > /dev/null \
             || { echo "::error::oss.json failed shape validation"; exit 1; }
           mv /tmp/oss.json src/_data/oss.json
 

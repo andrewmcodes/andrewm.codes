@@ -1,6 +1,6 @@
 ---
 title: Install Brew on an Intel Mac
-description: How to install Homebrew on macOS Monterey with an Intel chip.
+description: The one-liner that installs Homebrew on an Intel Mac running macOS Monterey, the PATH export it needs in ~/.zshrc, and how to verify with brew doctor.
 tags:
   - install
   - macos

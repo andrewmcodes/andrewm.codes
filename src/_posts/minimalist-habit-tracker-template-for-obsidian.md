@@ -36,7 +36,7 @@ Here is an example daily note template with Templater, which includes the habits
 
 We will use this template for our daily notes. Whenever we create a new daily note, we can fill in the values for our habits. An example of a daily note with the habits filled in:
 
-<img alt="Obsidian Daily Note Template" src="<%= cloudinary_url 'v1652347823/posts/minimalist-habit-tracker-template-for-obsidian/daily-note-template_nj1yx5', :medium %>" />
+<img alt="Obsidian Daily Note Template" src="<%= imagekit_url 'posts/minimalist-habit-tracker-template-for-obsidian/obsidian-daily-note-template' %>" />
 
 ## Dashboard
 
@@ -59,7 +59,7 @@ SORT file.day ASC
 
 After we accumulate more daily notes, our dashboard will look something like:
 
-<img alt="Obsidian Habit Tracker Dashboard" src="<%= cloudinary_url 'v1652347824/posts/minimalist-habit-tracker-template-for-obsidian/habit-tracker-dashboard_asfzri', :medium %>" />
+<img alt="Obsidian Habit Tracker Dashboard" src="<%= imagekit_url 'posts/minimalist-habit-tracker-template-for-obsidian/obsidian-habit-tracker-dashboard', :medium %>" />
 
 ## Conclusion
 

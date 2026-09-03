@@ -51,7 +51,7 @@ Today I `/re(learned|membered)/` you can chain shovels! Not that you _should_...
 
 The following is a blursed example of just that:
 
-![Blursed Ruby Shovel Code Screenshot](https://dev-to-uploads.s3.amazonaws.com/i/yufpo9f1pbnp7y3flt9u.png)
+![Blursed Ruby Shovel Code Screenshot](<%= imagekit_url 'posts/ruby-s-shovel-method-digging-deeper/blursed-ruby-shovel-code-screenshot.png' %>)
 
 [View gist](https://gist.github.com/andrewmcodes/2e4ba1d60016e065155f0509d3814234)
 

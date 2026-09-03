@@ -4,7 +4,7 @@ title: Note
 
 <div class="space-y-6 max-w-prose">
   <div class="space-y-2">
-    <p class="font-mono text-xs text-slate-10">Default</p>
+    <p class="font-mono text-xs text-mauve-10">Default</p>
 
     <%= render Note.new do %>
       This is a note. Use it as a callout for asides and context within posts.
@@ -12,9 +12,9 @@ title: Note
   </div>
 
   <div class="space-y-2">
-    <p class="font-mono text-xs text-slate-10">Accent</p>
+    <p class="font-mono text-xs text-mauve-10">Accent</p>
 
-    <%= render Note.new(scheme: :accent) do %>
+    <%= render Note.new(tone: :accent) do %>
       This is an **accent** note for things worth emphasizing.
     <% end %>
   </div>

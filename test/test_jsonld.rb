@@ -218,5 +218,37 @@ class TestJsonLd < Bridgetown::Test
       names = crumbs["itemListElement"].map { |i| i["name"] }
       expect(names).must_include "Speaking"
     end
+
+    it "types the page as an article for Open Graph too" do
+      og_type = document.query_selector("meta[property='og:type']")["content"]
+      expect(og_type).must_equal "article"
+    end
+  end
+
+  describe "a standalone page" do
+    before { html get "/uses/" }
+
+    it "emits a WebPage tied to the site and the Person" do
+      page = jsonld_of_type(document, "WebPage").first
+      expect(page).wont_be_nil
+      expect(page["url"]).must_equal "https://andrewm.codes/uses/"
+      expect(page["isPartOf"]["@type"]).must_equal "WebSite"
+      expect(page["about"]["@id"]).must_equal PERSON_ID
+    end
+
+    it "emits a Home / page BreadcrumbList" do
+      crumbs = jsonld_of_type(document, "BreadcrumbList").first
+      expect(crumbs).wont_be_nil
+      names = crumbs["itemListElement"].map { |i| i["name"] }
+      expect(names).must_equal ["Home", "Uses"]
+    end
+  end
+
+  describe "a noindex page" do
+    before { html get "/search/" }
+
+    it "emits no schema at all" do
+      expect(jsonld_scripts(document)).must_be_empty
+    end
   end
 end

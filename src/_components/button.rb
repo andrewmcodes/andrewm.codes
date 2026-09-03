@@ -21,14 +21,14 @@ class Button < Base
   # was the most landing-page-shaped object on the site. This measures 5.16:1
   # in light and 8.36:1 in dark, and the fill still arrives on hover.
   BUTTON_VARIANTS = {
-    primary: "bg-slate-2 hover:bg-ruby-3 border border-ruby-9/50 hover:border-ruby-9 text-ruby-11 font-medium",
+    primary: "bg-mauve-2 hover:bg-ruby-3 border border-ruby-9/50 hover:border-ruby-9 text-ruby-11 font-medium",
     # A hairline, not a field. Once the primary stopped being a solid fill, a
-    # filled slate-3 secondary was the heaviest object in the hero and the
+    # filled mauve-3 secondary was the heaviest object in the hero and the
     # emphasis inverted — the ruby outline has to lead.
-    secondary: "bg-transparent border border-slate-6 hover:bg-slate-3 hover:border-slate-7 text-slate-12",
-    ghost: "bg-transparent hover:bg-slate-3 text-slate-11",
-    text: "bg-transparent text-slate-11",
-    share: "inline-flex items-center gap-1.5 font-mono text-meta text-slate-11 border-b border-slate-5 pb-0.5 hover:text-ruby-11 hover:border-ruby-11 transition-colors bg-transparent"
+    secondary: "bg-transparent border border-mauve-6 hover:bg-mauve-3 hover:border-mauve-7 text-mauve-12",
+    ghost: "bg-transparent hover:bg-mauve-3 text-mauve-11",
+    text: "bg-transparent text-mauve-11",
+    share: "bg-transparent border border-mauve-6 hover:bg-mauve-3 hover:border-mauve-7 text-mauve-11 hover:text-mauve-12 font-mono"
   }.freeze
 
   def call
@@ -50,14 +50,14 @@ class Button < Base
   def classes
     cx(
       BUTTON_VARIANTS[variant],
-      (BUTTON_SIZES[size][:circular_spacing] if opts[:circle] && variant != :share),
-      (BUTTON_SIZES[size][:default_spacing] unless opts[:circle] || variant == :share),
+      (BUTTON_SIZES[size][:circular_spacing] if opts[:circle]),
+      (BUTTON_SIZES[size][:default_spacing] unless opts[:circle]),
       BUTTON_SIZES[size][:text],
-      ((opts[:circle] ? "rounded-full" : "rounded-md") unless variant == :share),
+      (opts[:circle] ? "rounded-full" : "rounded-md"),
       # `group` so a child icon's `group-hover:` nudge actually fires — the
       # hero's primary button has carried that class on its arrow since before
       # the redesign with no ancestor to trigger it.
-      ((variant == :share) ? nil : "group inline-flex items-center justify-center leading-none font-medium"),
+      "group inline-flex items-center justify-center gap-1.5 leading-none font-medium",
       "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ruby-9"
     )
   end

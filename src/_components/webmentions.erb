@@ -1,8 +1,6 @@
 <% if reactions.any? || replies.any? %>
-  <section class="mt-12 pt-7 border-t border-slate-5">
-    <h2 class="font-mono text-label uppercase text-slate-11">
-      Webmentions
-    </h2>
+  <section class="mt-12 pt-7 border-t border-mauve-6">
+    <h2 class="font-mono text-label uppercase text-mauve-11">responses from around the web</h2>
 
     <% if reactions.any? %>
       <div class="mt-4 flex flex-wrap items-center gap-2">
@@ -19,12 +17,12 @@
                 height: 24,
               ) %>
             <% else %>
-              <span class="inline-block h-6 w-6 rounded-full bg-slate-4"></span>
+              <span class="inline-block h-6 w-6 rounded-full bg-mauve-4"></span>
             <% end %>
           <% end %>
         <% end %>
 
-        <span class="font-mono text-meta text-slate-11">
+        <span class="font-mono text-meta text-mauve-11">
           <%= reactions.length %>
           <%= (reactions.length == 1) ? "reaction" : "reactions" %>
         </span>
@@ -49,19 +47,19 @@
 
             <div class="min-w-0">
               <div class="flex items-baseline gap-2">
-                <%= render Link.new(href: a["url"] || wm["url"], external: true, weight: :medium, scheme: :strong) do %>
+                <%= render Link.new(href: a["url"] || wm["url"], external: true, weight: :medium, tone: :neutral) do %>
                   <%= a["name"] || "Someone" %>
                 <% end %>
 
                 <% if published_on(wm) %>
-                  <span class="font-mono text-meta text-slate-11">
+                  <span class="font-mono text-meta text-mauve-11">
                     <%= published_on(wm) %>
                   </span>
                 <% end %>
               </div>
 
               <% if content_text(wm) %>
-                <p class="mt-1 text-note text-slate-11 break-words">
+                <p class="mt-1 text-note text-mauve-11 break-words">
                   <%= content_text(wm) %>
                 </p>
               <% end %>

@@ -107,16 +107,16 @@ function renderResults(items) {
   const list = el("cmdk-results");
   if (!list) return;
   if (!items.length) {
-    list.innerHTML = `<div class="px-[18px] py-8 text-center text-note text-slate-11">No matches.</div>`;
+    list.innerHTML = `<div class="px-[18px] py-8 text-center text-note text-mauve-11">No matches.</div>`;
     el("cmdk-input")?.removeAttribute("aria-activedescendant");
     return;
   }
   list.innerHTML = items
     .map(
       (r, i) => `
-    <a href="${escapeHTML(safeUrl(r.url))}" id="cmdk-opt-${i}" role="option" aria-selected="${i === 0}" data-cmdk-item data-idx="${i}" class="flex items-center gap-3 px-[18px] py-2 text-note cursor-pointer ${i === 0 ? "bg-slate-3" : ""}">
-      <span class="font-mono text-micro uppercase text-slate-11 w-16 shrink-0">${escapeHTML(r.kind || "page")}</span>
-      <span class="flex-1 ${i === 0 ? "text-ruby-11" : "text-slate-12"}">${escapeHTML(r.title)}</span>
+    <a href="${escapeHTML(safeUrl(r.url))}" id="cmdk-opt-${i}" role="option" aria-selected="${i === 0}" data-cmdk-item data-idx="${i}" class="cmdk-row relative flex items-center gap-3 px-[18px] py-2 text-note cursor-pointer ${i === 0 ? "bg-mauve-3" : ""}">
+      <span class="font-mono text-micro uppercase text-mauve-11 w-16 shrink-0">${escapeHTML(r.kind || "page")}</span>
+      <span class="flex-1 ${i === 0 ? "font-semibold text-mauve-12" : "text-mauve-12"}">${escapeHTML(r.title)}</span>
     </a>
   `,
     )
@@ -132,15 +132,13 @@ function updateSelection() {
     const selected = i === selectedIdx;
     node.setAttribute("aria-selected", String(selected));
     if (selected) {
-      node.classList.add("bg-slate-3");
-      title?.classList.add("text-ruby-11");
-      title?.classList.remove("text-slate-12");
+      node.classList.add("bg-mauve-3");
+      title?.classList.add("font-semibold");
       node.scrollIntoView({ block: "nearest" });
       el("cmdk-input")?.setAttribute("aria-activedescendant", node.id);
     } else {
-      node.classList.remove("bg-slate-3");
-      title?.classList.remove("text-ruby-11");
-      title?.classList.add("text-slate-12");
+      node.classList.remove("bg-mauve-3");
+      title?.classList.remove("font-semibold");
     }
   });
 }
@@ -199,7 +197,7 @@ function escapeHTML(s) {
 document.addEventListener("click", (e) => {
   const target = asElement(e.target);
   if (!target) return;
-  if (target.closest("#cmdk-trigger")) {
+  if (target.closest("[data-cmdk-trigger]")) {
     openCmdk();
     return;
   }

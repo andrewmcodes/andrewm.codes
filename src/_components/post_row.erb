@@ -1,9 +1,10 @@
 <%# `data-post-row` carries a value because Base#helper_opts drops empty ones. %>
 <%= render Entry.new(
   href: @post.relative_url,
-  lead: (date_str if lead_date?),
+  lead: (date_str if show_date?),
   title: @post.data.title,
   tags: tags,
   meta: facts,
+  clamp_title: clamp_title?,
   data: {"data-post-row" => "true", "data-tags" => tags_data},
 ) %>

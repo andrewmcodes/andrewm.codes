@@ -1,12 +1,9 @@
 <%#
-  Date, reading time, byline, and tags live in PostAside now: they are facts
-  about the post, not part of it. This is the title and the actions on it.
+  Date, reading time, byline, and tags live in PostAside: they are facts about
+  the post, not part of it. This is the title alone — the Markdown actions used
+  to sit here and were, by contrast, the loudest object between the headline
+  and the facts under it, so they now travel with the article's other actions
+  in the footer.
 %>
 
-<h1 class="text-headline m-0 mb-5 text-balance text-slate-12">
-  <%= title %>
-</h1>
-
-<div class="mb-10">
-  <%= render MarkdownActions.new(resource: resource) %>
-</div>
+<h1 class="m-0 text-headline text-balance text-mauve-12"><%= title %></h1>

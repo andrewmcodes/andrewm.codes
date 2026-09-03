@@ -1,20 +1,21 @@
-<div
-  class="
-    flex flex-col gap-3 sm:flex-row sm:justify-between sm:gap-4 font-mono
-    text-meta mb-8
-  "
->
+<%#
+  Justified left and right, the two titles wrapped toward each other and the
+  longer one right-aligned to a ragged left edge — "…macOS Big" then "Sur →"
+  alone on its own line. Post titles here are sentences, not labels, so the
+  pair reads as two rows sharing one left edge, each led by its direction
+  glyph, and the wrap falls where wraps normally fall.
+%>
+
+<%= render Stack.new(space: :sm, align: :start, class: "font-mono text-meta") do %>
   <% if @previous_resource %>
     <%= render Link.new(href: @previous_resource.relative_url, variant: :post_nav) do %>
       ← <%= @previous_resource.data.title %>
     <% end %>
-  <% else %>
-    <span class="max-sm:hidden"></span>
   <% end %>
 
   <% if @next_resource %>
-    <%= render Link.new(href: @next_resource.relative_url, variant: :post_nav, class: "sm:text-right") do %>
-      <%= @next_resource.data.title %> →
+    <%= render Link.new(href: @next_resource.relative_url, variant: :post_nav) do %>
+      → <%= @next_resource.data.title %>
     <% end %>
   <% end %>
-</div>
+<% end %>

@@ -1,36 +1,24 @@
-# Responsive page-width and vertical-spacing wrapper for top-level pages/layouts.
+# Vertical spacing for one view inside the pane.
 #
-# @option opts [Symbol] :width (`:wide`) one of `WIDTHS`
+# The pane owns the measure and the horizontal gutter — one width for every
+# surface, so the source list, the reading column and every index share a left
+# edge. All this component decides is how much air a view opens and closes on.
+#
 # @option opts [Symbol] :spacing (`:default`) one of `SPACING`
 class PageShell < Box
   COMPONENT_OPTIONS = %i[width spacing].freeze
 
-  # One measure for every page, so the topbar, the content, and the footer
-  # share a left edge on every surface. The three widths used to diverge and
-  # `narrow` put a page title 176px right of the wordmark above it. Column
-  # width is now `max-w-prose`'s job alone: at 1080 the reading grid leaves
-  # 744px beside the rail, so 65ch of the reading face binds first — which is
-  # the constraint that matters, and the one that broke when the shell was
-  # sized in pixels against a face that has since changed.
-  WIDTHS = {
-    wide: "max-w-[1080px] px-9 max-md:px-4",
-    reading: "max-w-[1080px] px-9 max-md:px-4",
-    narrow: "max-w-[1080px] px-9 max-md:px-4"
-  }.freeze
-
   SPACING = {
-    default: "py-16 pb-24",
-    home: "",
+    default: "py-14 shell:py-20",
+    # The homepage opens higher and closes tighter: its own hero already
+    # carries the top air, and the footer sits right under the last list.
+    home: "pt-16 shell:pt-24 pb-16",
     none: ""
   }.freeze
 
   private
 
   def classes
-    cx(
-      WIDTHS.fetch(opts.fetch(:width, :wide), WIDTHS[:wide]),
-      SPACING.fetch(opts.fetch(:spacing, :default), SPACING[:default]),
-      "mx-auto w-full"
-    )
+    cx("w-full", token(SPACING, opts[:spacing], :default))
   end
 end

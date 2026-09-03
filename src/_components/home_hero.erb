@@ -1,102 +1,61 @@
-<section class="pt-24 pb-10 max-nav:pt-16 max-compact:pt-12">
-  <div
-    class="
-      grid grid-cols-[minmax(0,1fr)_minmax(0,300px)] gap-x-16 gap-y-10 items-start
-      max-nav:grid-cols-1 max-nav:gap-y-9
-    "
-  >
-    <div>
-      <h1 class="text-display m-0 mb-8 text-balance max-w-[680px] text-slate-12">
-        Andrew Mason<span class="text-ruby-11">.</span>
-      </h1>
+<section>
+  <img
+    src="/images/main-avatar.png"
+    alt="Andrew Mason"
+    width="112"
+    height="112"
+    class="w-14 h-14 rounded-full object-cover"
+  />
 
-      <p class="text-lede text-slate-11 max-w-[62ch] m-0 mb-4 text-pretty">
-        Ruby on Rails engineer at
-        <%= render Link.new(href: "https://podia.com", variant: :inline) do %>
-          Podia
-        <% end %>, co-host of
-        <%= render Link.new(href: "/speaking/", variant: :inline) do %>
-          Remote Ruby
-        <% end %>, and based in Arizona.
-      </p>
+  <h1 class="mt-6 m-0 text-display text-mauve-12">Andrew Mason</h1>
 
-      <p class="text-lede text-slate-11 max-w-[62ch] m-0 text-pretty">
-        I've been doing the Rails thing for about a decade, from full-stack
-        product features to fast CI and developer tooling to the billing and
-        data migrations underneath. Most of what I figure out along the way ends
-        up written down here.
-      </p>
+  <%#
+    The second-largest object on the page is a sentence in the secondary tone.
+    That is the whole reason the name above it reads as the first thing: the
+    hierarchy is value and weight, with no rule and no accent field involved.
+  %>
+  <p class="mt-4 m-0 text-lead text-mauve-11 max-w-[30ch] text-pretty">
+    Rails engineer at
+    <a
+      href="https://podia.com"
+      class="text-mauve-12 underline decoration-mauve-7 underline-offset-[0.22em] hover:decoration-ruby-11 transition-colors"
+    >Podia</a>, co-host of
+    <a
+      href="https://remoteruby.com/"
+      class="text-mauve-12 underline decoration-mauve-7 underline-offset-[0.22em] hover:decoration-ruby-11 transition-colors"
+    >Remote Ruby</a>, located in Phoenix, AZ. 🌵
+  </p>
 
-      <div class="mt-8 flex flex-wrap items-center gap-3">
-        <%= render Button.new(href: "/posts/", variant: :primary, size: :xl) do %>
-          Read the writing
-          <%= render Icon.new(
-            name: "arrow_right",
-            class: "ml-1.5 inline-block transition-transform group-hover:translate-x-0.5",
-          ) %>
-        <% end %>
-
-        <%= render Button.new(href: "/projects/", variant: :secondary, size: :xl) do %>
-          Browse projects
-        <% end %>
-
-        <%= render Button.new(href: "https://remoteruby.com/", variant: :ghost, size: :xl) do %>
-          Listen to Remote Ruby
-        <% end %>
-      </div>
-    </div>
-
-    <div class="max-nav:max-w-[420px] max-nav:w-full">
-      <div
+  <div class="mt-7 flex flex-wrap items-center gap-1 -ml-2">
+    <% socials.each do |s| %>
+      <a
+        href="<%= s[:url] %>"
+        <%== 'target="_blank" rel="me noreferrer"' if s[:url].start_with?("http") %>
+        aria-label="<%= s[:name] %>"
+        title="<%= s[:name] %>"
         class="
-          font-mono text-label uppercase text-slate-11 pb-2 border-b
-          border-slate-6
+          inline-flex h-9 w-9 items-center justify-center rounded-md text-mauve-10
+          hover:bg-mauve-3 hover:text-mauve-12 transition-colors
         "
       >
-        index
-      </div>
-
-      <ul class="list-none m-0 p-0">
-        <% index_rows.each do |row| %>
-          <li>
-            <a
-              href="<%= row[:href] %>"
-              class="
-                group flex items-baseline justify-between gap-4 py-2.5
-                border-b border-slate-6
-              "
-            >
-              <span
-                class="
-                  text-note text-slate-12 group-hover:text-ruby-11
-                  transition-colors
-                "
-              >
-                <%= row[:label] %>
-              </span>
-
-              <span
-                class="
-                  font-mono text-meta text-slate-11 whitespace-nowrap
-                  group-hover:text-ruby-11 transition-colors
-                "
-              >
-                <%= row[:value] %>
-              </span>
-            </a>
-          </li>
-        <% end %>
-      </ul>
-
-      <%#
-        A sentence, not a measurement — mono was carrying prose here, which
-        is most of what flattened the small copy into one undifferentiated
-        voice. Mono keeps dates, counts, tags, durations and code.
-      %>
-
-      <p class="mt-4 m-0 text-note leading-[1.6] text-slate-11">
-        mostly so I can find them again later.
-      </p>
-    </div>
+        <%= render Icon.new(name: s[:icon], size: :sm) %>
+      </a>
+    <% end %>
   </div>
+
+  <%#
+    The one place a number appears in the first viewport. A hiring manager
+    reading nothing else should still see that the lists below are a decade
+    deep — and every figure here is counted from the collections at build time
+    rather than typed in, so it cannot go quietly stale.
+  %>
+  <p class="mt-6 m-0 flex flex-wrap items-center gap-x-2.5 gap-y-1 font-mono text-meta text-mauve-11">
+    <% ledger.each_with_index do |fact, i| %>
+      <% if i > 0 %>
+        <span aria-hidden="true" class="text-mauve-9">·</span>
+      <% end %>
+
+      <span><%= fact %></span>
+    <% end %>
+  </p>
 </section>

@@ -10,17 +10,20 @@ class Prose < Box
   # Inline `<code>` inside prose. Shared by every variant so a code span reads
   # identically wherever it appears.
   INLINE_CODE = <<~CLASSES.freeze
-    [&_:not(pre)>code]:bg-slate-3 [&_:not(pre)>code]:text-slate-12
+    [&_:not(pre)>code]:bg-mauve-3 [&_:not(pre)>code]:text-mauve-12
     [&_:not(pre)>code]:px-1.5 [&_:not(pre)>code]:py-0.5 [&_:not(pre)>code]:rounded
-    [&_:not(pre)>code]:border [&_:not(pre)>code]:border-slate-6
+    [&_:not(pre)>code]:border [&_:not(pre)>code]:border-mauve-6
     [&_:not(pre)>code]:font-normal [&_:not(pre)>code]:font-mono
     [&_:not(pre)>code]:before:content-none [&_:not(pre)>code]:after:content-none
   CLASSES
 
-  # The reading column is Source Serif 4 while headings stay Archivo. The split
-  # is the hierarchy: a heading is chrome announcing a section, the paragraph
-  # under it is the writing.
-  READING_COLUMN = "font-read text-read prose-headings:font-sans".freeze
+  READING_COLUMN = "text-read".freeze
+
+  # The measure is applied to the text children rather than to the container,
+  # so a code block, a figure or a table can use the whole pane while the prose
+  # stays at a reading width. `--measure` lives in index.css beside the pane
+  # width, because the two are one decision.
+  MEASURE = "prose-measured max-w-none".freeze
 
   PROSE_VARIANTS = {
     default: "",
@@ -28,13 +31,13 @@ class Prose < Box
     # `max-w-prose` below, and 65ch only won because `.max-w-prose` happens to
     # compile later — a measure holding by utility ordering rather than by
     # intent, which would have flipped to unbounded silently.
-    page: "text-slate-11 #{READING_COLUMN} #{INLINE_CODE}",
+    page: "#{READING_COLUMN} #{INLINE_CODE}",
     post: <<~CLASSES.freeze
-      text-slate-11 #{READING_COLUMN}
+      #{READING_COLUMN}
       prose-h2:text-h2 prose-h2:mt-12 prose-h2:mb-4
       prose-h3:text-h3 prose-h3:mt-10 prose-h3:mb-3
-      prose-blockquote:border-l-[3px] prose-blockquote:border-ruby-11
-      prose-blockquote:not-italic prose-blockquote:text-slate-12
+      prose-blockquote:border-l prose-blockquote:border-mauve-6
+      prose-blockquote:not-italic prose-blockquote:text-mauve-12
       #{INLINE_CODE}
     CLASSES
   }.freeze
@@ -43,20 +46,20 @@ class Prose < Box
 
   def classes
     cx(
-      "prose prose-slate dark:prose-invert",
-      "prose-headings:font-semibold prose-headings:tracking-tight prose-headings:text-slate-12",
+      "prose [&>:first-child]:mt-0 [&>:last-child]:mb-0",
+      "prose-headings:font-semibold prose-headings:tracking-tight prose-headings:text-mauve-12",
       # Underlined, not coloured. Ruby-11 against the body slate measures
       # 1.09:1 in light and 1.01:1 in dark, so colour alone left links
       # effectively indistinguishable from prose — WCAG 1.4.1 wants 3:1 for a
       # colour-only distinction. The underline is the affordance; the colour is
       # only reinforcement, and the offset is already themed globally.
-      "prose-a:text-slate-12 prose-a:underline prose-a:decoration-ruby-11/70 hover:prose-a:decoration-ruby-11",
-      "prose-code:font-mono prose-code:text-slate-12 prose-code:bg-slate-3 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:border prose-code:border-slate-5",
+      "prose-a:text-mauve-12 prose-a:underline prose-a:decoration-ruby-11/70 hover:prose-a:decoration-ruby-11",
+      "prose-code:font-mono prose-code:text-mauve-12 prose-code:bg-mauve-3 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:border prose-code:border-mauve-6",
       PROSE_SIZES.fetch(opts[:size], PROSE_SIZES[:default]),
       PROSE_VARIANTS.fetch(opts[:variant], PROSE_VARIANTS[:default]),
       # `max_w: false` means "let the reading measure govern", which is the
       # 65ch prose measure — the layout's grid column is wider than that.
-      (opts[:max_w] ? "max-w-none" : "max-w-prose")
+      (opts[:max_w] ? "max-w-none" : MEASURE)
     )
   end
 end

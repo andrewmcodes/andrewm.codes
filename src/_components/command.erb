@@ -1,9 +1,14 @@
-<div class="not-prose">
-  <div class="flex flex-nowrap items-center text-note">
-    <span class="py-1 px-2 rounded-l-md text-slate-12 bg-slate-3">$&nbsp;</span>
+<%#
+  A single terminal command. It used to render as two adjacent pills — a `$`
+  chip beside a `<code>` chip — which read as boxes inside a box once code
+  blocks became a mauve field of their own.
 
-    <code class="py-1 px-2 font-mono bg-slate-3 rounded-r-md">
-      <%= content %>
-    </code>
-  </div>
+  It is a real `<pre><code>` now, so it takes the same field, radius, scrollbar
+  and Copy button as every other code block on the site, and the prompt is
+  muted and unselectable exactly as Rouge's own `.gp` token is. One code
+  language, however the block got here.
+%>
+
+<div class="not-prose">
+  <pre><code><span class="select-none text-mauve-11">$ </span><%= content.to_s.strip %></code></pre>
 </div>

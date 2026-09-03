@@ -64,7 +64,7 @@ Your code should now be online in your repo.
 
 Navigate to [codefactor.io](codefactor.io) and log in with your preferred method. I chose to use my GitHub account.
 
-![codefactor_landing_page_1](https://dev-to-uploads.s3.amazonaws.com/i/kpmyaynxl27u2wj7m0c8.jpg)
+![codefactor_landing_page_1](<%= imagekit_url 'posts/rails-coverage-tools-codefactor/codefactor-landing-page-1.jpg', :medium %>)
 
 Once logged in, you should be taken to your dashboard.
 
@@ -72,21 +72,21 @@ Once logged in, you should be taken to your dashboard.
 
 Let's add a new repository. From your CodeFactor dashboard, click `Add`, next to `Repositories`:
 
-![codefactor_dashboard_2](https://dev-to-uploads.s3.amazonaws.com/i/sjzxqhdmb7y02xask5n4.jpg)
+![codefactor_dashboard_2](<%= imagekit_url 'posts/rails-coverage-tools-codefactor/codefactor-dashboard-2.jpg', :medium %>)
 
 You will be taken to a screen that will let you search and select your desired repo. I am adding our demo project repo:
 
-![codefactor_add_repository_3](https://dev-to-uploads.s3.amazonaws.com/i/mco0bzqakhopqvknbtng.jpg)
+![codefactor_add_repository_3](<%= imagekit_url 'posts/rails-coverage-tools-codefactor/codefactor-add-repository-3.jpg', :medium %>)
 
 Click the `Import` button to import the repository.
 
 Once your repository has been imported, it will show up on your dashboard:
 
-![codefactor_updated_dashboard_4](https://dev-to-uploads.s3.amazonaws.com/i/qla2wc05dejze7zx0olp.jpg)
+![codefactor_updated_dashboard_4](<%= imagekit_url 'posts/rails-coverage-tools-codefactor/codefactor-updated-dashboard-4.jpg', :medium %>)
 
 If we click on our repo, we will be taken to a show page for our repo:
 
-![codefactor_project_page_5](https://dev-to-uploads.s3.amazonaws.com/i/4z3mam2v9268hv5jpgng.jpg)
+![codefactor_project_page_5](<%= imagekit_url 'posts/rails-coverage-tools-codefactor/codefactor-project-page-5.jpg', :medium %>)
 
 From here you can look at information about your repository and configure settings for the tools CodeFactor will use to check your repo.
 
@@ -94,7 +94,7 @@ From here you can look at information about your repository and configure settin
 
 If we would like to add the CodeFactor README badge to our project, click the badge in the top right corner of the project page:
 
-![codefactor_badge_6](https://dev-to-uploads.s3.amazonaws.com/i/1ucwzj36wn04cbj9ap0s.jpg)
+![codefactor_badge_6](<%= imagekit_url 'posts/rails-coverage-tools-codefactor/codefactor-badge-6.jpg', :medium %>)
 
 This will open a modal with a few format options for our badge. I simply copied the markdown code and pasted it on my README.
 

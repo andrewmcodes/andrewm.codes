@@ -11,42 +11,36 @@ layout: default
 <% updated_time = resource.updated_at %>
 
 <%#
-  Two rows on desktop so the rail can span them while the reading column is
-  split; one column on mobile, where `order` puts the title first.
-
-  The split exists for the mobile order. With the aside as a single grid item
-  before the content, everything about the post — date, reading time, tags, the
-  contents disclosure — stacked above the post's own name, so a reader who had
-  just tapped a headline met the apparatus before the thing they opened.
+  One column, at the pane's own measure. The 208px reading rail is gone with
+  the page width that could afford it: inside a 736px pane a margin that wide
+  would take a third of the article, and the apparatus it carried reads better
+  as one line under the title anyway. Nothing was dropped — the date, reading
+  time, byline, tags, and contents are all still here, and the contents is now
+  a disclosure at every width rather than a rail on desktop and a disclosure on
+  a phone.
 %>
 
-<%= render PageShell.new(width: :reading) do %>
-  <div class="grid items-start nav:grid-cols-[208px_minmax(0,1fr)] nav:gap-x-14">
-    <%= render PostAside.new(
-      resource: resource,
-      show_toc: should_show_toc(resource),
-      class: "nav:col-start-1 nav:row-start-1 nav:row-span-2 max-nav:order-2 max-nav:mb-9",
-    ) %>
+<%= render PageShell.new do %>
+  <%= render Stack.new(space: :xl) do %>
+    <%= render Stack.new(space: :md, class: "max-w-[38rem]") do %>
+      <div class="flex flex-wrap items-center justify-between gap-3">
+        <%= render BackLink.new(href: back["path"], label: back["label"]) %>
+        <%= render MarkdownActions.new(resource: resource) %>
+      </div>
 
-    <%#
-      The back link leads out of the page, so it sits above the title rather
-      than with the facts about the post. Everything else stays in the rail.
-    %>
-
-    <div class="nav:col-start-2 nav:row-start-1 max-nav:order-1 min-w-0">
-      <%= render BackLink.new(href: back["path"], label: back["label"]) %>
       <%= render PostHeader.new(resource: resource) %>
-    </div>
+      <%= render PostAside.new(resource: resource, show_toc: should_show_toc(resource)) %>
+    <% end %>
 
-    <div class="nav:col-start-2 nav:row-start-2 max-nav:order-3 min-w-0">
-      <% if resource.stale? %>
-        <%= render StaleNote.new(updated_at: updated_time) %>
-      <% end %>
+    <% if resource.stale? %>
+      <div class="max-w-[38rem]"><%= render StaleNote.new(updated_at: updated_time) %></div>
+    <% end %>
 
-      <%= render Prose.new(as: :article, variant: :post, max_w: false) do %>
-        <%= yield %>
-      <% end %>
+    <%= render Prose.new(as: :article, variant: :post, max_w: false) do %>
+      <%= yield %>
+    <% end %>
 
+    <div class="max-w-[38rem]">
       <%= render PostFooter.new(
         resource: resource,
         previous_resource: prev_post,
@@ -55,5 +49,5 @@ layout: default
 
       <%= render Webmentions.new(url: resource.relative_url) %>
     </div>
-  </div>
+  <% end %>
 <% end %>

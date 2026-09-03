@@ -1,32 +1,29 @@
-<nav aria-label="Related posts" class="mt-10 pt-7 border-t border-slate-5">
-  <h2 class="font-mono text-label uppercase text-slate-11 mb-3">
-    Related posts
-  </h2>
+<%#
+  The one list on the site that was not an `Entry`. It rendered its own row —
+  14px at weight 400, date first, no ruby bar, colour-only hover — against the
+  19px/600 rows the same reader had just scanned on `/posts/`, so the last list
+  on a post taught a different language from every list that led them there.
+  It is an `Entry` now: same title size, same edge-note date, same field and
+  ruby bar on hover.
 
-  <ul class="flex flex-col">
-    <% posts.each do |post| %>
-      <li>
-        <a
-          href="<%= post.relative_url %>"
-          class="
-            group flex items-baseline gap-3 py-1.5 font-mono text-note text-slate-11
-            hover:text-ruby-11 transition-colors
-          "
-        >
-          <span class="text-slate-11 whitespace-nowrap">
-            <%= post.date.strftime("%b %Y") %>
-          </span>
+  The label is the section head, in `PageSection`'s words and at its `md`
+  remove from the list. A labelled section does not also need a rule drawn
+  over it, and the one that was here made a third hairline in the footer.
+%>
 
-          <span
-            class="
-              font-sans text-note text-slate-12 group-hover:text-ruby-11
-              transition-colors
-            "
-          >
-            <%= post.data.title %>
-          </span>
-        </a>
-      </li>
+<nav aria-label="Related posts">
+  <%= render Stack.new(space: :md) do %>
+    <h2 class="m-0 text-label text-mauve-11">Related</h2>
+
+    <%= render Stack.new(space: :xxs) do %>
+      <% posts.each do |post| %>
+        <%= render PostRow.new(
+          post: post,
+          show_reading: false,
+          show_tags: false,
+          clamp_title: true,
+        ) %>
+      <% end %>
     <% end %>
-  </ul>
+  <% end %>
 </nav>

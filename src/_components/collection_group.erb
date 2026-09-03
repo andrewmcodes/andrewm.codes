@@ -1,24 +1,17 @@
 <%#
-  The year is a marker over the rows, not a second rail. Giving it its own
-  168px column stacked two margins — year at the page edge, dates a further
-  168px in — and opened a gap down the middle of the archive. Set at the left
-  edge it shares a column with the dates below it, which is what makes the
-  listing read as one ledger.
+  A year marker over its rows. The year is a measurement, so it is mono; it is
+  a marker rather than a heading, so it is small. Groups are separated by the
+  `Stack` on the page — the rules that used to bound them were doing work the
+  space already does, and one rule per group plus one per row made an archive
+  of fifty posts read as a table.
 %>
 
-<section class="mb-9 border-t border-slate-6 pt-4">
-  <h2 class="m-0 mb-2 text-title text-slate-12 tabular-nums">
+<section>
+  <h2 class="m-0 mb-3 font-mono text-label text-mauve-11 tabular-nums">
     <%= @title %>
   </h2>
 
-  <%#
-    Every entry carries its own bottom hairline, so the last row's rule plus
-    the next group's top rule doubled every boundary with dead space between
-    them. A one-row group made it obvious; it was happening at all of them.
-    The group's own top rule is the boundary.
-  %>
-
-  <div class="flex flex-col min-w-0 [&>*:last-child]:border-b-0">
+  <div class="flex flex-col gap-1 min-w-0">
     <%= content %>
   </div>
 </section>

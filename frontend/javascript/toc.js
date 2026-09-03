@@ -21,16 +21,23 @@ const start = () => {
   const nav = document.querySelector("[data-toc]");
   if (!nav) return;
 
-  // The rail is a rail on desktop and a disclosure on mobile; one rendering
-  // serves both, so the open state is set here rather than duplicated in ERB.
+  // The reader's own open/closed choice decides the state, and it is
+  // remembered: this used to reset closed on every return, so anyone who
+  // opened the contents, followed an entry and came back had to open it again.
   const wrap = nav.closest("[data-toc-wrap]");
   if (wrap) {
-    const wide = matchMedia("(min-width: 820px)");
-    const syncOpen = () => {
-      wrap.open = wide.matches;
-    };
-    syncOpen();
-    wide.addEventListener("change", syncOpen, { signal });
+    try {
+      if (localStorage.getItem("toc-open") === "true") wrap.open = true;
+    } catch {}
+    wrap.addEventListener(
+      "toggle",
+      () => {
+        try {
+          localStorage.setItem("toc-open", String(wrap.open));
+        } catch {}
+      },
+      { signal },
+    );
   }
 
   const links = [...nav.querySelectorAll("a[href^='#']")];

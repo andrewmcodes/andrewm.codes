@@ -184,15 +184,15 @@ As mentioned at the beginning of this post, you cannot fully automate accessibil
 
 [accesslint]: https://accesslint.com
 [here]: https://github.com/andrewmcodes/access_lint_demo
-[rails_welcome_page]: https://dev-to-uploads.s3.amazonaws.com/i/prwqk92m70wgn1ddk1d6.jpg
-[access_lint_home_page]: https://dev-to-uploads.s3.amazonaws.com/i/lbprkt2tbw896u55cgb0.jpg
-[access_lint_setup]: https://dev-to-uploads.s3.amazonaws.com/i/gbaaxts5xc5r5j5h6mga.jpg
-[github_marketplace]: https://dev-to-uploads.s3.amazonaws.com/i/vd45o2btqirbuan9ww93.jpg
-[access_lint_dashboard]: https://dev-to-uploads.s3.amazonaws.com/i/2v0qsfyz3lr0l966uiqq.jpg
-[posts_index_page]: https://dev-to-uploads.s3.amazonaws.com/i/hrg37lm6h228pdigdsq0.jpg
-[github_new_pr]: https://dev-to-uploads.s3.amazonaws.com/i/xn951kddg8is90e3h3yd.jpg
-[failing_access_lint]: https://dev-to-uploads.s3.amazonaws.com/i/9l2azcm564jzsd26g2qg.jpg
-[passing_access_lint]: https://dev-to-uploads.s3.amazonaws.com/i/ygmci46vcwlf8cqctyzh.jpg
+[rails_welcome_page]: <%= imagekit_url 'posts/a11y-in-rails-automated-linting-with-accesslint/rails-welcome-page.jpg', :medium %>
+[access_lint_home_page]: <%= imagekit_url 'posts/a11y-in-rails-automated-linting-with-accesslint/access-lint-home-page.jpg', :medium %>
+[access_lint_setup]: <%= imagekit_url 'posts/a11y-in-rails-automated-linting-with-accesslint/access-lint-setup.jpg', :medium %>
+[github_marketplace]: <%= imagekit_url 'posts/a11y-in-rails-automated-linting-with-accesslint/github-marketplace.jpg' %>
+[access_lint_dashboard]: <%= imagekit_url 'posts/a11y-in-rails-automated-linting-with-accesslint/access-lint-dashboard.jpg', :medium %>
+[posts_index_page]: <%= imagekit_url 'posts/a11y-in-rails-automated-linting-with-accesslint/posts-index-page.jpg', :medium %>
+[github_new_pr]: <%= imagekit_url 'posts/a11y-in-rails-automated-linting-with-accesslint/github-new-pr.jpg', :medium %>
+[failing_access_lint]: <%= imagekit_url 'posts/a11y-in-rails-automated-linting-with-accesslint/failing-access-lint.jpg' %>
+[passing_access_lint]: <%= imagekit_url 'posts/a11y-in-rails-automated-linting-with-accesslint/passing-access-lint.jpg' %>
 [w3c: accessibility]: https://www.w3.org/standards/webdesign/accessibility
 [the a11y project]: https://a11yproject.com
 [accessibility on rails]: https://reinteractive.com/posts/355-accessibility-on-rails

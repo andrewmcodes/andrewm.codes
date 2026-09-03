@@ -169,7 +169,7 @@ git push -u origin main
 
 Our release action should run and this time find a user facing commit and open a new release PR. The PR will increment the version number and create a new, or edit an existing, Changelog.
 
-![Generated release pr](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/2mxv0klralttr9hmlsip.png)
+![Generated release pr](<%= imagekit_url 'posts/automating-ruby-gem-releases-with-github-actions/generated-release-pr.png', :medium %>)
 
 Note: For a gem without prior releases, I wasn't able to find a way to prevent a full point release. You _could_ get around this by editing the release PR to match the inital version number you'd like before merging. This is not an issue with projects with prior releases.
 
@@ -286,15 +286,15 @@ jobs:
 
 Commit, push this code, and wait for your release PR to be updated by our action bot. Once the release PR has been updated, merge the PR into your main branch.
 
-![Release action success](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/mtfi99frqpq9qr5odfnx.png)
+![Release action success](<%= imagekit_url 'posts/automating-ruby-gem-releases-with-github-actions/release-action-success.png' %>)
 
 Once our release action runs, assuming it succeeds, you should see a new release in GitHub! One great feature of this action is that it will build the release notes from our changelog entries. 🚀
 
-![New GitHub Release](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/km4thpr1h49gauu2uvic.png)
+![New GitHub Release](<%= imagekit_url 'posts/automating-ruby-gem-releases-with-github-actions/new-github-release.png', :medium %>)
 
 If we check RubyGems, we should see our new gem has been published and is ready to share!
 
-![RubyGems](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/w7se9cw67cfp3xrdz8jw.png)
+![RubyGems](<%= imagekit_url 'posts/automating-ruby-gem-releases-with-github-actions/rubygems.png' %>)
 
 ## Final Thoughts
 

@@ -33,10 +33,18 @@
       media="(prefers-color-scheme: dark)"
     >
 
+    <%#
+      noindex pages still get `follow`: a thin tag page or the 404 is worth
+      crawling through to the posts it links, just not worth indexing itself.
+      Indexable pages opt into full-length snippets and large image previews.
+    %>
     <% if data.noindex %>
-      <meta name="robots" content="noindex,nofollow">
+      <meta name="robots" content="noindex,follow">
     <% else %>
-      <meta name="robots" content="max-image-preview:large">
+      <meta
+        name="robots"
+        content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      >
     <% end %>
 
     <%= render Util::Seo.new(resource: resource) %>
@@ -104,34 +112,33 @@
     <script src="<%= asset_path :js %>" defer></script>
   </head>
 
-  <body class="bg-slate-1 text-slate-12 font-sans text-body min-h-screen flex flex-col">
+  <body class="bg-chrome text-mauve-12 font-sans text-body min-h-screen">
     <!--
-  THESIS: The category standard for an engineer's site, executed at a craft
-  level the category rarely reaches. It refuses the concept arrangement that
-  would make a working archive perform as a gallery.
-  OWN-WORLD: A Radix slate ground carrying the whole interface, composed
-  dark-first; one ruby accent spent only on state; amber reserved for
-  staleness. Archivo for chrome, Source Serif 4 for the reading column,
-  Geist Mono for measurement. Hairline rules, no ambient shadow. Rows carry
-  chronology, grids carry parallel peers, and nothing else is a grid.
-  STORY: A stranger reads accumulation as the argument — the posts, tools,
-  episodes and talks are the proof — and leaves knowing what he actually does.
-  FIRST VIEWPORT: Name and standfirst left-ranged with the derived index
-  ledger beside them and the primary action inline. Never a centered hero.
-  FORM: The category standard, played straight. The roll assigned candidate
-  4 of 7 (a technical-publishing series); canon was chosen over it. Seed 393f5e14.
+  THESIS: The site is an application you navigate, not a document you scroll.
+  It refuses the centred blog column under a topbar, the hairline-ruled list,
+  and the metadata rail that fronts every title with a date.
+  OWN-WORLD: Radix Mauve in two surfaces — a deeper chrome ground under the
+  source list, a lighter plate under the pane — with Radix Ruby spent only on
+  state and amber only on staleness. Geist Sans and Geist Mono, one designed
+  family, two voices. Whitespace separates; a rule appears only at the shell
+  seam. List titles are large and semibold: hierarchy is weight and value.
+  STORY: A stranger opens something that behaves like an app they already use,
+  reads the name, the one-line claim and the derived ledger, then moves through
+  the work by source list or by ⌘K.
+  FIRST VIEWPORT: A 268px source list at left, its current row barred in ruby;
+  beside it a pane centred at 46rem opening on a 56px avatar, the name at 34px,
+  a two-line claim at 24px in mid-value, five glyphs, one derived mono ledger,
+  then "writing" over five bare post titles carrying no dates.
+  FORM: Source List — candidate 1 of 7, brief-pinned over the roll's 7. Seed b6022bf2.
   FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance
     -->
 
     <%= render SkipLink.new %>
 
-    <%= render Topbar.new(resource: resource) %>
-
-    <%= render MainContent.new(kind: data.kind) do %>
+    <%= render AppShell.new(resource: resource, kind: data.kind) do %>
       <%= yield %>
     <% end %>
 
-    <%= render SiteFooter.new %>
     <%= render Cmdk.new %>
   </body>
 </html>
