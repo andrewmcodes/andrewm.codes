@@ -7,6 +7,10 @@ import { onReady } from "./ready.js";
 // it scrolls out of view the moment a wide line is panned — exactly when a
 // reader most wants to copy rather than read across. Each <pre> is wrapped in a
 // non-scrolling element, and the button is positioned against that instead.
+/**
+ * @param {HTMLElement} pre
+ * @returns {HTMLElement} the non-scrolling wrapper around `pre`
+ */
 function wrapperFor(pre) {
   const parent = pre.parentElement;
   if (parent && parent.classList.contains("code-block")) return parent;
@@ -20,6 +24,10 @@ function wrapperFor(pre) {
 // A block that scrolls sideways gets a fade on the edge it scrolls toward, so
 // a clipped line never just stops mid-token. Recomputed on scroll and on
 // resize, because whether a block overflows is a function of the viewport.
+/**
+ * @param {HTMLElement} wrap
+ * @param {HTMLElement} pre
+ */
 function trackOverflow(wrap, pre) {
   const update = () => {
     const remaining = pre.scrollWidth - pre.clientWidth - pre.scrollLeft;
@@ -97,6 +105,6 @@ document.addEventListener("click", async (e) => {
     setTimeout(() => {
       btn.textContent = "Copy";
       btn.removeAttribute("data-copied");
-    }, 2000)
+    }, 2000),
   );
 });

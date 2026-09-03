@@ -25,18 +25,21 @@ function setup() {
     document.body.appendChild(bar);
   }
 
+  // Built in its own binding rather than assigned straight into `top`:
+  // getElementById types that as HTMLElement, which has no `type`.
   let top = document.getElementById("back-to-top");
   if (!top) {
-    top = document.createElement("button");
-    top.id = "back-to-top";
-    top.type = "button";
-    top.textContent = "Top";
-    top.setAttribute("aria-label", "Back to top");
-    top.addEventListener("click", () => {
+    const button = document.createElement("button");
+    button.id = "back-to-top";
+    button.type = "button";
+    button.textContent = "Top";
+    button.setAttribute("aria-label", "Back to top");
+    button.addEventListener("click", () => {
       window.scrollTo({ top: 0, behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
       document.querySelector("h1")?.focus?.();
     });
-    document.body.appendChild(top);
+    document.body.appendChild(button);
+    top = button;
   }
 
   const update = () => {
