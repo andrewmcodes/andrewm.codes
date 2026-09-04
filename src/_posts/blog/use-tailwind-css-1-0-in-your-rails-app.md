@@ -1,6 +1,6 @@
 ---
 title: Use Tailwind CSS 1.1 in your Rails App
-description: How to install Tailwind CSS 1.1 in a Ruby on Rails app.
+description: A step-by-step walkthrough of adding Tailwind CSS 1.1 to a new Ruby on Rails app with Webpacker, from the npm install through PostCSS configuration.
 urls:
   dev_to: https://dev.to/andrewmcodes/use-tailwind-css-1-0-in-your-rails-app-4pm4
 tags:

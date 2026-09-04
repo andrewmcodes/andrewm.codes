@@ -1,0 +1,36 @@
+<%#
+  One grid cell. It wears the same hover marks as an `Entry` — a field and a
+  ruby bar in its own left edge — so a reader never learns two languages for
+  "this is the one you are pointing at". What differs is the shape: a tile has
+  padding and a footer pinned to its bottom, so a row of unequal tiles still
+  aligns the facts under them.
+%>
+
+<%= render Link.new(
+  href: href,
+  external: external?,
+  class: tile_classes,
+) do %>
+  <div class="flex items-baseline gap-2.5">
+    <span class="text-row text-mauve-12">
+      <%= title %><%= render Icon.new(
+        name: external? ? "arrow_top_right" : "arrow_right",
+        class: "ml-1 inline-block w-3.5 h-3.5 align-baseline text-mauve-9 group-hover:text-ruby-11 transition-colors",
+      ) %>
+    </span>
+
+    <% if chip %>
+      <span class="<%= chip_classes %>"><%= chip %></span>
+    <% end %>
+  </div>
+
+  <% if desc %>
+    <p class="mt-2 m-0 text-note text-mauve-11 text-pretty"><%= desc %></p>
+  <% end %>
+
+  <% if content.to_s.strip != "" %>
+    <div class="mt-2.5 flex flex-wrap items-center gap-x-2.5 gap-y-1 font-mono text-meta text-mauve-11">
+      <%= content %>
+    </div>
+  <% end %>
+<% end %>

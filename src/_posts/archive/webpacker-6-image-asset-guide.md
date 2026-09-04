@@ -2,7 +2,9 @@
 series: webpacker-6
 featured: false
 title: "Webpacker 6: Image Asset Guide"
-description: In order to use your images and SVG files with Webpacker 6, you need to put them in the correct place...
+description: "How to serve images and SVGs from a Webpacker 6 Rails app using require.context and asset_pack_path. Part of the archived Webpacker 6 guide."
+canonical_url: https://andrewm.codes/p/webpacker-6/
+sitemap: false
 urls:
   dev_to: https://dev.to/andrewmcodes/webpacker-6-image-asset-guide-42hn
 tags:

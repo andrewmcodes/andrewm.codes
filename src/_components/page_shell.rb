@@ -1,28 +1,24 @@
-# Responsive page-width and vertical-spacing wrapper for top-level pages/layouts.
+# Vertical spacing for one view inside the pane.
 #
-# @option opts [Symbol] :width (`:wide`) one of `WIDTHS`
+# The pane owns the measure and the horizontal gutter — one width for every
+# surface, so the source list, the reading column and every index share a left
+# edge. All this component decides is how much air a view opens and closes on.
+#
 # @option opts [Symbol] :spacing (`:default`) one of `SPACING`
 class PageShell < Box
   COMPONENT_OPTIONS = %i[width spacing].freeze
 
-  WIDTHS = {
-    wide: "max-w-[1080px] px-9 max-md:px-4",
-    narrow: "max-w-[720px] px-8 max-md:px-4"
-  }.freeze
-
   SPACING = {
-    default: "py-16 pb-24",
-    home: "",
+    default: "py-14 shell:py-20",
+    # The homepage opens higher and closes tighter: its own hero already
+    # carries the top air, and the footer sits right under the last list.
+    home: "pt-16 shell:pt-24 pb-16",
     none: ""
   }.freeze
 
   private
 
   def classes
-    cx(
-      WIDTHS.fetch(opts.fetch(:width, :wide), WIDTHS[:wide]),
-      SPACING.fetch(opts.fetch(:spacing, :default), SPACING[:default]),
-      "mx-auto w-full"
-    )
+    cx("w-full", token(SPACING, opts[:spacing], :default))
   end
 end

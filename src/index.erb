@@ -3,89 +3,107 @@ layout: default
 title: andrewm.codes
 ---
 
-<% recent_posts = collections.posts.resources.first(5) %>
-<% projects = collections.projects.resources.first(4) %>
+<%#
+  A selection, not a feed — see src/_data/selected_posts.yml. Order comes from
+  the data file rather than from the dates, and a slug that no longer resolves
+  drops out instead of raising.
+%>
+<% all_posts = collections.posts.resources %>
+<% by_slug = all_posts.to_h { |p| [p.relative_url.to_s.split("/").reject(&:empty?).last, p] } %>
+<% selected_posts = Array(site.data.selected_posts).filter_map { |slug| by_slug[slug.to_s] } %>
+<%#
+  The four most recently worked-on repositories, from the same GitHub data
+  `/projects/` renders — so the homepage is a window onto that page rather than
+  a second, separately-maintained list that drifts from it. Sorted here rather
+  than trusted from the file, so a re-sync in any order still lands newest-first.
+%>
+<% projects = Array(site.data.oss).sort_by { |r| r["pushedAt"].to_s }.reverse.first(4) %>
 <% latest_talk = site.data.talks.max_by { |t| t["date"] || t[:date] } %>
 <% latest_episode = site.data.remote_ruby %>
 
 <%= render PageShell.new(spacing: :home) do %>
-  <%= render HomeHero.new %>
-
-  <%= render PageSection.new(spacing: :home_first) do %>
-    <%= render SectionHead.new(
-      title: "now",
-      description: "What I'm actually working on right now.",
+  <%#
+    One Stack owns every gap on this page. The hero and the first section are
+    a `gutter` apart and the sections are `xxxl` apart, so the page reads as a
+    peak followed by an even body — the sectional mass the composition round
+    took from the declined quarry direction, spent as space rather than as
+    blocks.
+  %>
+  <%= render Stack.new(space: :gutter) do %>
+    <%= render HomeHero.new(
+      posts_count: all_posts.size,
+      projects_count: Array(site.data.oss).size,
+      talks_count: site.data.talks.size,
     ) %>
 
-    <%= render HomeNow.new(episode: latest_episode, talk: latest_talk) %>
-  <% end %>
-
-  <% if site.data.featured&.any? %>
-    <%= render PageSection.new(spacing: :home) do %>
-      <%= render SectionHead.new(
-        title: "featured work",
-        description: "A few things I'm proud of and point people to most often.",
-      ) %>
-
-      <%= render CardGrid.new do %>
-        <% site.data.featured.each do |item| %>
-          <%= render FeaturedCard.new(item: item) %>
+    <%= render Stack.new(space: :xxxl) do %>
+    <%= render PageSection.new(
+      label: "Writing",
+      link_label: "all writing",
+      link_href: "/posts/",
+    ) do %>
+      <%= render Stack.new(space: :xxs) do %>
+        <% selected_posts.each do |post| %>
+          <%= render PostRow.new(post: post, show_reading: false, show_date: false, show_tags: false) %>
         <% end %>
       <% end %>
     <% end %>
-  <% end %>
 
-  <%= render PageSection.new(spacing: :home) do %>
-    <%= render SectionHead.new(
-      title: "recent posts",
-      link_label: "all posts",
-      link_href: "/posts/",
-    ) %>
-
-    <%= render Stack.new do %>
-      <% recent_posts.each do |post| %>
-        <%= render PostRow.new(post: post) %>
-      <% end %>
-    <% end %>
-  <% end %>
-
-  <% if projects.any? %>
-    <%= render PageSection.new(spacing: :home) do %>
-      <%= render SectionHead.new(
-        title: "open source",
+    <% if projects.any? %>
+      <%= render PageSection.new(
+        label: "Projects",
         link_label: "all projects",
         link_href: "/projects/",
-      ) %>
-
-      <%= render CardGrid.new do %>
-        <% projects.each do |proj| %>
-          <%= render ProjectCard.new(project: proj) %>
+      ) do %>
+        <%= render CardGrid.new do %>
+          <% projects.each do |repo| %>
+            <%= render ProjectCard.new(
+              project: {
+                name: repo["name"],
+                desc: repo["description"],
+                lang: repo["primaryLanguage"] && repo["primaryLanguage"]["name"],
+                color: repo["primaryLanguage"] && repo["primaryLanguage"]["color"],
+                stars: repo["stargazerCount"],
+                forks: repo["forkCount"],
+                href: repo["url"],
+                status: "active",
+              },
+            ) %>
+          <% end %>
         <% end %>
       <% end %>
     <% end %>
-  <% end %>
 
-  <% if latest_talk %>
-    <%= render PageSection.new(spacing: :home) do %>
-      <%= render SectionHead.new(
-        title: "latest talk",
-        link_label: "all talks",
+    <% if latest_talk || latest_episode %>
+      <%= render PageSection.new(
+        label: "Speaking",
+        link_label: "talks and podcasts",
         link_href: "/speaking/",
-      ) %>
+      ) do %>
+        <%= render Stack.new(space: :xxs) do %>
+          <% if latest_episode %>
+            <%= render EpisodeCard.new(episode: latest_episode) %>
+          <% end %>
 
-      <%= render TalkCard.new(talk: latest_talk) %>
+          <% if latest_talk %>
+            <%= render TalkCard.new(talk: latest_talk) %>
+          <% end %>
+        <% end %>
+      <% end %>
     <% end %>
-  <% end %>
 
-  <% if latest_episode %>
-    <%= render PageSection.new(spacing: :home) do %>
-      <%= render SectionHead.new(
-        title: "latest podcast",
-        link_label: "all podcasts",
-        link_href: "/speaking/",
-      ) %>
-
-      <%= render EpisodeCard.new(episode: latest_episode) %>
+    <% if site.data.featured&.any? %>
+      <%= render PageSection.new(
+        label: "Elsewhere",
+        description: "A few things I point people to most often.",
+      ) do %>
+        <%= render CardGrid.new do %>
+          <% site.data.featured.each do |item| %>
+            <%= render FeaturedCard.new(item: item) %>
+          <% end %>
+        <% end %>
+      <% end %>
+    <% end %>
     <% end %>
   <% end %>
 <% end %>

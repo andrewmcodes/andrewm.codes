@@ -5,7 +5,7 @@ class TestPosts < Bridgetown::Test
     before { html get "/posts/" }
 
     it "renders the page heading" do
-      expect(document.query_selector("h1").text.strip).must_equal "Posts"
+      expect(document.query_selector("h1").text.strip).must_equal "Writing"
     end
 
     it "shows year-grouped post rows" do
@@ -49,7 +49,10 @@ class TestPosts < Bridgetown::Test
     end
 
     it "shows the stale-content alert when the post is >2 years old" do
-      expect(document.inner_html).must_include "this post was last updated"
+      note = document.query_selector("aside[role='note']")
+      expect(note).wont_be_nil
+      expect(note.text).must_include "Last updated"
+      expect(note.query_selector("time")).wont_be_nil
     end
 
     it "credits Andrew Mason with a byline linking to /about/" do
@@ -57,6 +60,22 @@ class TestPosts < Bridgetown::Test
       expect(byline).wont_be_nil
       expect(byline["href"]).must_equal "/about/"
       expect(byline.text.strip).must_equal "Andrew Mason"
+    end
+
+    it "always syndicates to the RSS feed" do
+      section = document.query_selector("section[aria-labelledby='webmentions-heading']")
+      expect(section).wont_be_nil
+      expect(section.text).must_include "syndicated to"
+      hrefs = section.query_selector_all("a").map { |a| a["href"] }
+      expect(hrefs).must_include "https://andrewm.codes/feed.xml"
+    end
+
+    it "offers a webmention endpoint form targeting this post's absolute URL" do
+      form = document.query_selector("section[aria-labelledby='webmentions-heading'] form")
+      expect(form).wont_be_nil
+      expect(form["action"]).must_equal "https://webmention.io/andrewm.codes/webmention"
+      target = form.query_selector("input[name='target']")
+      expect(target["value"]).must_equal "https://andrewm.codes/p/twitter-avatar/"
     end
   end
 

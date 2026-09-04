@@ -177,8 +177,34 @@ module Util
       when "/posts/" then [blog_listing]
       when "/projects/" then [projects_collection]
       when "/speaking/" then speaking_schemas
-      else tag_page? ? [tag_collection] : []
+      else
+        if tag_page?
+          [tag_collection]
+        elsif noindex?
+          []
+        else
+          [web_page]
+        end
       end
+    end
+
+    def noindex? = resource.data.noindex == true
+
+    # A standalone page (/uses/, /changelog/) had no entity at all. This anchors
+    # it to the same WebSite and Person graph everything else references, so the
+    # breadcrumb below has something to terminate on.
+    def web_page
+      {
+        "@type" => "WebPage",
+        "@id" => canonical_url,
+        "url" => canonical_url,
+        "name" => resource.data.title,
+        "description" => resource.data.description,
+        "inLanguage" => metadata.lang,
+        "isPartOf" => website_ref,
+        "about" => person_ref,
+        "primaryImageOfPage" => resource_image(resource)
+      }.compact
     end
 
     # ---- Article-like schemas ------------------------------------------------
@@ -359,7 +385,13 @@ module Util
         when "posts" then [home_crumb, posts_crumb, [resource.data.title, abs_url]]
         when "cfps" then [home_crumb, ["Speaking", "#{site_url}/speaking/"], [resource.data.title, abs_url]]
         else
-          [home_crumb, posts_crumb, ["##{resource.data.tag}", abs_url]] if tag_page?
+          if tag_page?
+            [home_crumb, posts_crumb, ["##{resource.data.tag}", abs_url]]
+          elsif rel_url && rel_url != "/" && !noindex?
+            # Every other top-level page — /about/, /uses/, /projects/ — is one
+            # hop from home and was shipping no breadcrumb at all.
+            [home_crumb, [resource.data.title, abs_url]]
+          end
         end
       return nil unless trail
 

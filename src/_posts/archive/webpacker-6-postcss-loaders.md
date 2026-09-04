@@ -2,7 +2,9 @@
 series: webpacker-6
 featured: false
 title: "Webpacker 6: PostCSS Loaders"
-description: In order to process .pcss files with Webpacker 6, you need to add postcss-loader. I am also going to...
+description: "How to process .pcss files in Webpacker 6 with postcss-loader and PostCSS 8. Part of the archived Webpacker 6 upgrade guide."
+canonical_url: https://andrewm.codes/p/webpacker-6/
+sitemap: false
 urls:
   dev_to: https://dev.to/andrewmcodes/webpacker-6-postcss-loaders-4ajd
 tags:

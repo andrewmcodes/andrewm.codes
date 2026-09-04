@@ -38,6 +38,13 @@ class EpisodeCard < Bridgetown::Component
     "#{minutes} min"
   end
 
+  # The show and the episode number are facts about the episode, so they sit
+  # with the other facts rather than as an accent line above the title.
+  # @return [Array<String>] the show, and the episode number when known
+  def show_facts
+    ["Remote Ruby", (episode_number ? "ep #{episode_number}" : nil)].compact
+  end
+
   # @return [String] the description with HTML stripped, truncated to ~180 chars
   def excerpt
     raw = @episode["description"].to_s

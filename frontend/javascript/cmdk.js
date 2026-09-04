@@ -73,6 +73,9 @@ function openCmdk() {
   if (!overlay) return;
   lastFocused = /** @type {HTMLElement | null} */ (document.activeElement);
   overlay.hidden = false;
+  // The page scrolled behind the open palette, so arrow keys and a trackpad
+  // moved the document under a modal that had already trapped Tab.
+  document.documentElement.style.overflow = "hidden";
   const input = /** @type {HTMLInputElement | null} */ (el("cmdk-input"));
   if (input) {
     input.value = "";
@@ -84,12 +87,17 @@ function openCmdk() {
 function closeCmdk() {
   const overlay = el("cmdk");
   if (overlay) overlay.hidden = true;
+  document.documentElement.style.overflow = "";
   const input = el("cmdk-input");
   if (input) input.removeAttribute("aria-activedescendant");
-  if (lastFocused) {
-    lastFocused.focus();
-    lastFocused = null;
-  }
+
+  // Opened with ⌘K from a page where nothing was focused, `lastFocused` is
+  // <body>, which cannot take focus — so closing dropped focus entirely and a
+  // keyboard user Tabbed from the top of the document again. The trigger is
+  // the palette's own visible affordance, so it is where closing should land.
+  const restore = lastFocused && lastFocused !== document.body ? lastFocused : el("cmdk-trigger");
+  lastFocused = null;
+  if (restore) restore.focus();
 }
 
 /** @param {SearchEntry[]} items */
@@ -99,16 +107,16 @@ function renderResults(items) {
   const list = el("cmdk-results");
   if (!list) return;
   if (!items.length) {
-    list.innerHTML = `<div class="px-[18px] py-8 text-center text-[13.5px] text-sage-10">No matches.</div>`;
+    list.innerHTML = `<div class="px-[18px] py-8 text-center text-note text-mauve-11">No matches.</div>`;
     el("cmdk-input")?.removeAttribute("aria-activedescendant");
     return;
   }
   list.innerHTML = items
     .map(
       (r, i) => `
-    <a href="${escapeHTML(safeUrl(r.url))}" id="cmdk-opt-${i}" role="option" aria-selected="${i === 0}" data-cmdk-item data-idx="${i}" class="flex items-center gap-3 px-[18px] py-2 text-sm cursor-pointer ${i === 0 ? "bg-sage-3" : ""}">
-      <span class="font-mono text-[10.5px] uppercase text-sage-10 w-16 shrink-0">${escapeHTML(r.kind || "page")}</span>
-      <span class="flex-1 ${i === 0 ? "text-mint-11" : "text-sage-12"}">${escapeHTML(r.title)}</span>
+    <a href="${escapeHTML(safeUrl(r.url))}" id="cmdk-opt-${i}" role="option" aria-selected="${i === 0}" data-cmdk-item data-idx="${i}" class="cmdk-row relative flex items-center gap-3 px-[18px] py-2 text-note cursor-pointer ${i === 0 ? "bg-mauve-3" : ""}">
+      <span class="font-mono text-micro uppercase text-mauve-11 w-16 shrink-0">${escapeHTML(r.kind || "page")}</span>
+      <span class="flex-1 ${i === 0 ? "font-semibold text-mauve-12" : "text-mauve-12"}">${escapeHTML(r.title)}</span>
     </a>
   `,
     )
@@ -124,15 +132,13 @@ function updateSelection() {
     const selected = i === selectedIdx;
     node.setAttribute("aria-selected", String(selected));
     if (selected) {
-      node.classList.add("bg-sage-3");
-      title?.classList.add("text-mint-11");
-      title?.classList.remove("text-sage-12");
+      node.classList.add("bg-mauve-3");
+      title?.classList.add("font-semibold");
       node.scrollIntoView({ block: "nearest" });
       el("cmdk-input")?.setAttribute("aria-activedescendant", node.id);
     } else {
-      node.classList.remove("bg-sage-3");
-      title?.classList.remove("text-mint-11");
-      title?.classList.add("text-sage-12");
+      node.classList.remove("bg-mauve-3");
+      title?.classList.remove("font-semibold");
     }
   });
 }
@@ -191,7 +197,7 @@ function escapeHTML(s) {
 document.addEventListener("click", (e) => {
   const target = asElement(e.target);
   if (!target) return;
-  if (target.closest("#cmdk-trigger")) {
+  if (target.closest("[data-cmdk-trigger]")) {
     openCmdk();
     return;
   }

@@ -1,74 +1,61 @@
-<section class="pt-24 pb-12">
-  <h1
-    class="
-      text-[clamp(34px,5vw,52px)] leading-[1.05] tracking-[-0.028em] font-semibold m-0
-      mb-8 text-balance max-w-[680px] text-sage-12
-    "
-  >
-    Andrew Mason<span class="text-mint-11">.</span>
-  </h1>
+<section>
+  <img
+    src="/images/main-avatar.png"
+    alt="Andrew Mason"
+    width="112"
+    height="112"
+    class="w-14 h-14 rounded-full object-cover"
+  />
 
-  <p
-    class="
-      text-[16.5px] text-sage-11 max-w-[600px] leading-[1.65] m-0 mb-4
-      text-pretty
-    "
-  >
-    Ruby on Rails engineer at
-    <%= render Link.new(href: "https://podia.com", variant: :inline) do %>
-      Podia
-    <% end %>, co-host of
-    <%= render Link.new(href: "/speaking/", variant: :inline) do %>
-      Remote Ruby
-    <% end %>, and based in Arizona.
+  <h1 class="mt-6 m-0 text-display text-mauve-12">Andrew Mason</h1>
+
+  <%#
+    The second-largest object on the page is a sentence in the secondary tone.
+    That is the whole reason the name above it reads as the first thing: the
+    hierarchy is value and weight, with no rule and no accent field involved.
+  %>
+  <p class="mt-4 m-0 text-lead text-mauve-11 max-w-[30ch] text-pretty">
+    Rails engineer at
+    <a
+      href="https://podia.com"
+      class="text-mauve-12 underline decoration-mauve-7 underline-offset-[0.22em] hover:decoration-ruby-11 transition-colors"
+    >Podia</a>, co-host of
+    <a
+      href="https://remoteruby.com/"
+      class="text-mauve-12 underline decoration-mauve-7 underline-offset-[0.22em] hover:decoration-ruby-11 transition-colors"
+    >Remote Ruby</a>, located in Phoenix, AZ. 🌵
   </p>
 
-  <p
-    class="
-      text-[16.5px] text-sage-11 max-w-[600px] leading-[1.65] m-0 mb-4
-      text-pretty
-    "
-  >
-    I've been doing the Rails thing for about a decade, from full-stack product
-    features to fast CI and developer tooling to the billing and data migrations
-    underneath. Most of what I figure out along the way ends up written down
-    here.
-  </p>
-
-  <p
-    class="
-      text-[16.5px] text-sage-11 max-w-[600px] leading-[1.65] m-0 mb-4
-      text-pretty
-    "
-  >
-    You'll find my
-    <%= render Link.new(href: "/posts/", variant: :inline) do %>
-      writing
-    <% end %>,
-    <%= render Link.new(href: "/projects/", variant: :inline) do %>
-      open source
-    <% end %>, and
-    <%= render Link.new(href: "/speaking/", variant: :inline) do %>
-      talks and podcasts
-    <% end %>
-    here. Mostly so I can find them again later.
-  </p>
-
-  <div class="mt-8 flex flex-wrap items-center gap-3">
-    <%= render Button.new(href: "/posts/", variant: :primary, size: :xl) do %>
-      Read the writing
-      <%= render Icon.new(
-        name: "arrow_right",
-        class: "ml-1.5 inline-block transition-transform group-hover:translate-x-0.5",
-      ) %>
-    <% end %>
-
-    <%= render Button.new(href: "/projects/", variant: :secondary, size: :xl) do %>
-      Browse projects
-    <% end %>
-
-    <%= render Button.new(href: "https://remoteruby.com/", variant: :ghost, size: :xl) do %>
-      Listen to Remote Ruby
+  <div class="mt-7 flex flex-wrap items-center gap-1 -ml-2">
+    <% socials.each do |s| %>
+      <a
+        href="<%= s[:url] %>"
+        <%== 'target="_blank" rel="me noreferrer"' if s[:url].start_with?("http") %>
+        aria-label="<%= s[:name] %>"
+        title="<%= s[:name] %>"
+        class="
+          inline-flex h-9 w-9 items-center justify-center rounded-md text-mauve-10
+          hover:bg-mauve-3 hover:text-mauve-12 transition-colors
+        "
+      >
+        <%= render Icon.new(name: s[:icon], size: :sm) %>
+      </a>
     <% end %>
   </div>
+
+  <%#
+    The one place a number appears in the first viewport. A hiring manager
+    reading nothing else should still see that the lists below are a decade
+    deep — and every figure here is counted from the collections at build time
+    rather than typed in, so it cannot go quietly stale.
+  %>
+  <p class="mt-6 m-0 flex flex-wrap items-center gap-x-2.5 gap-y-1 font-mono text-meta text-mauve-11">
+    <% ledger.each_with_index do |fact, i| %>
+      <% if i > 0 %>
+        <span aria-hidden="true" class="text-mauve-9">·</span>
+      <% end %>
+
+      <span><%= fact %></span>
+    <% end %>
+  </p>
 </section>

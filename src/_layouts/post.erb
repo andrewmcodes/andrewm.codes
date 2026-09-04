@@ -10,24 +10,44 @@ layout: default
 <% back = data.back || { "path" => "/posts/", "label" => "all posts" } %>
 <% updated_time = resource.updated_at %>
 
-<%= render PageShell.new(width: :narrow) do %>
-  <%= render BackLink.new(href: back["path"], label: back["label"]) %>
+<%#
+  One column, at the pane's own measure. The 208px reading rail is gone with
+  the page width that could afford it: inside a 736px pane a margin that wide
+  would take a third of the article, and the apparatus it carried reads better
+  as one line under the title anyway. Nothing was dropped — the date, reading
+  time, byline, tags, and contents are all still here, and the contents is now
+  a disclosure at every width rather than a rail on desktop and a disclosure on
+  a phone.
+%>
 
-  <%= render PostHeader.new(resource: resource) %>
+<%= render PageShell.new do %>
+  <%= render Stack.new(space: :xl) do %>
+    <%= render Stack.new(space: :md, class: "max-w-[38rem]") do %>
+      <div class="flex flex-wrap items-center justify-between gap-3">
+        <%= render BackLink.new(href: back["path"], label: back["label"]) %>
+        <%= render MarkdownActions.new(resource: resource) %>
+      </div>
 
-  <% if resource.stale? %>
-    <%= render StaleNote.new(updated_at: updated_time) %>
+      <%= render PostHeader.new(resource: resource) %>
+      <%= render PostAside.new(resource: resource, show_toc: should_show_toc(resource)) %>
+    <% end %>
+
+    <% if resource.stale? %>
+      <div class="max-w-[38rem]"><%= render StaleNote.new(updated_at: updated_time) %></div>
+    <% end %>
+
+    <%= render Prose.new(as: :article, variant: :post, max_w: false) do %>
+      <%= yield %>
+    <% end %>
+
+    <div class="max-w-[38rem]">
+      <%= render PostFooter.new(
+        resource: resource,
+        previous_resource: prev_post,
+        next_resource: next_post,
+      ) %>
+
+      <%= render Webmentions.new(url: resource.relative_url, syndication: resource.data.syndication) %>
+    </div>
   <% end %>
-
-  <%= render Prose.new(as: :article, variant: :post, max_w: false) do %>
-    <%= yield %>
-  <% end %>
-
-  <%= render PostFooter.new(
-    resource: resource,
-    previous_resource: prev_post,
-    next_resource: next_post,
-  ) %>
-
-  <%= render Webmentions.new(url: resource.relative_url) %>
 <% end %>

@@ -1,0 +1,128 @@
+<div class="mobile-bar shell:hidden sticky top-0 z-40" data-pagefind-ignore>
+  <header
+    class="
+      relative z-20 flex h-14 items-center gap-2 border-b border-mauve-6
+      bg-chrome/85 px-4 backdrop-blur backdrop-saturate-150
+    "
+  >
+    <%= render Lockup.new(size: :bar) %>
+
+    <div class="ml-auto flex items-center gap-1">
+      <button
+        type="button"
+        data-cmdk-trigger
+        aria-label="Search"
+        class="
+          inline-flex h-9 w-9 items-center justify-center rounded-md text-mauve-11
+          hover:bg-mauve-3 hover:text-mauve-12 transition-colors
+        "
+      >
+        <%= render Icon.new(name: "nav_search") %>
+      </button>
+
+      <button
+        type="button"
+        id="mobile-menu-trigger"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+        aria-label="Open menu"
+        class="
+          inline-flex h-9 w-9 items-center justify-center rounded-md text-mauve-11
+          hover:bg-mauve-3 hover:text-mauve-12 transition-colors
+        "
+      >
+        <span data-menu-icon="open" class="contents">
+          <%= render Icon.new(name: "menu") %>
+        </span>
+
+        <span data-menu-icon="close" class="contents" hidden>
+          <%= render Icon.new(name: "x") %>
+        </span>
+      </button>
+    </div>
+  </header>
+
+  <%#
+    The same source list, as a sheet. It comes in from the left edge it already
+    lives on at desktop, so the rail is one object in both layouts rather than
+    two navigations that happen to share their links — and it spans the full
+    height, because a rail that stops halfway is a dropdown wearing a sheet's
+    clothes.
+
+    `fixed`, not `absolute`: the sheet answers to the viewport rather than to
+    the bar, which is what lets it outlive the bar's 56px and sit over the
+    scrim. Transform, not opacity — a sheet that fades in has no edge, and the
+    edge arriving is the whole affordance.
+  %>
+  <div
+    id="mobile-menu"
+    data-open="false"
+    inert
+    class="
+      fixed inset-y-0 left-0 z-50 flex w-80 max-w-[85vw] flex-col
+      border-r border-mauve-6 bg-chrome
+      -translate-x-full transition-transform duration-[240ms]
+      ease-[cubic-bezier(.32,.72,0,1)] will-change-transform
+      data-[open=true]:translate-x-0
+    "
+  >
+    <div class="flex items-center gap-2 px-4 pt-4 pb-1">
+      <%= render Lockup.new(size: :bar) %>
+
+      <button
+        type="button"
+        data-menu-close
+        aria-label="Close menu"
+        class="
+          ml-auto inline-flex h-9 w-9 shrink-0 items-center justify-center
+          rounded-md text-mauve-11 hover:bg-mauve-3 hover:text-mauve-12
+          transition-colors
+        "
+      >
+        <%= render Icon.new(name: "x") %>
+      </button>
+    </div>
+
+    <nav aria-label="Primary" class="min-h-0 flex-1 overflow-y-auto px-4 pb-4">
+      <%= render Stack.new(space: :xxs, class: "mt-4") do %>
+        <% primary.each do |item| %>
+          <%= render SourceLink.new(
+            label: item["label"],
+            href: item["url"],
+            icon: item["icon"],
+            current: current?(item["url"]),
+            size: :drawer,
+          ) %>
+        <% end %>
+      <% end %>
+
+      <p class="mt-6 mb-2 px-3 m-0 text-label text-mauve-11">elsewhere</p>
+
+      <%= render Stack.new(space: :xxs) do %>
+        <% elsewhere.each do |item| %>
+          <%= render SourceLink.new(
+            label: item["label"],
+            href: item["url"],
+            icon: item["icon"],
+            external: item["url"].to_s.start_with?("http"),
+            size: :drawer,
+          ) %>
+        <% end %>
+      <% end %>
+    </nav>
+
+    <div class="border-t border-mauve-6 px-4 py-4">
+      <%= render ThemeToggle.new %>
+    </div>
+  </div>
+
+  <div
+    id="mobile-menu-backdrop"
+    data-open="false"
+    class="
+      fixed inset-0 z-40 bg-mauve-1/60 backdrop-blur-[2px] opacity-0
+      pointer-events-none transition-opacity duration-[240ms]
+      data-[open=true]:opacity-100 data-[open=true]:pointer-events-auto
+    "
+  ></div>
+</div>

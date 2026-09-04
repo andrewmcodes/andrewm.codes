@@ -1,0 +1,27 @@
+<div class="shell:grid shell:grid-cols-[17rem_minmax(0,1fr)] shell:items-start">
+  <%= render SourceList.new(resource: resource) %>
+  <%= render MobileBar.new(resource: resource) %>
+
+  <%#
+    The pane is a lighter plate on the chrome ground, and the seam between them
+    is the only rule on the site that is always visible. Below `shell` there is
+    no seam because there is no chrome beside it — the pane is the page.
+  %>
+  <div
+    class="
+      min-w-0 min-h-svh flex flex-col bg-pane
+      shell:border-l shell:border-mauve-6
+    "
+  >
+    <main
+      id="main"
+      class="flex-1 px-6 shell:px-12"
+      data-pagefind-body
+      <%== %(data-pagefind-meta="kind:#{kind}") if kind %>
+    >
+      <div class="mx-auto w-full max-w-pane"><%= content %></div>
+    </main>
+
+    <%= render SiteFooter.new %>
+  </div>
+</div>

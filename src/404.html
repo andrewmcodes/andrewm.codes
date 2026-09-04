@@ -2,14 +2,47 @@
 permalink: /404.html
 layout: default
 title: Not Found
+description: That page doesn't exist on andrewm.codes, or it moved and the redirect missed it. Start again from the writing archive, the projects list, or search.
 sitemap: false
 noindex: true
 ---
-<div class="max-w-[720px] mx-auto w-full px-8 max-md:px-4 py-24 pb-32 text-center">
-  <h1 class="text-3xl tracking-tight font-semibold m-0 mb-3 text-sage-12">404</h1>
-  <p class="text-sage-11 max-w-[600px] mx-auto text-[15px] text-pretty leading-[1.6]">
-    That page doesn't exist (yet). Head to the
-    <a href="/" class="text-mint-11 hover:underline">home page</a> or browse the
-    <a href="/posts/" class="text-mint-11 hover:underline">posts</a>.
-  </p>
-</div>
+<%= render PageShell.new do %>
+  <%= render Stack.new(space: :xxl) do %>
+  <%= render Ui::PageHeader.new(
+    title: "Not found",
+    description: "That page doesn't exist, or it moved and the redirect missed it.",
+  ) %>
+
+  <%#
+    Misses are an expected event here, not an edge case: the build generates a
+    redirect for every legacy post URL, so anything that lands on this page has
+    already fallen through 40-odd of them. It gets the same treatment as any
+    other listing rather than a status code and an apology.
+  %>
+  <%= render PageSection.new(
+    label: "Recent writing",
+    description: "The newest writing, in case you were headed for one of these.",
+    link_label: "all writing",
+    link_href: "/posts/",
+  ) do %>
+    <%= render Stack.new(space: :xxs) do %>
+      <% collections.posts.resources.first(5).each do |post| %>
+        <%= render PostRow.new(post: post) %>
+      <% end %>
+    <% end %>
+  <% end %>
+
+  <%= render PageSection.new(
+    label: "Elsewhere",
+    description: "Or start from one of these.",
+  ) do %>
+    <ul class="m-0 p-0 list-none flex flex-wrap gap-x-6 gap-y-2">
+      <% [["Home", "/"], ["Projects", "/projects/"], ["Speaking", "/speaking/"], ["About", "/about/"], ["Search", "/search/"]].each do |label, href| %>
+        <li class="m-0">
+          <%= render Link.new(href: href, variant: :inline) do %><%= label %><% end %>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+<% end %>
+<% end %>

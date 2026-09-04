@@ -5,110 +5,332 @@
 
 @custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
 
-/* Radix UI Sage + Mint — values inlined and scoped to our data-theme attribute.
-   Radix's own CSS files scope dark to `.dark, .dark-theme` (class selectors)
-   which wouldn't trigger our attribute-based theme switch. */
+/* Radix UI Mauve + Ruby + Amber — values inlined and scoped to our data-theme
+   attribute. Radix's own CSS files scope dark to `.dark, .dark-theme` (class
+   selectors) which wouldn't trigger our attribute-based theme switch.
+
+   Mauve rather than a pure grey because Radix designs it as the neutral that
+   pairs with red/ruby/crimson: the ground carries a trace of the accent's own
+   warmth, so a near-black page and a rose accent read as one family instead of
+   as a red dropped onto a blue-grey.
+
+   Because every step is defined per theme, the token VALUE flips rather than
+   the class, so markup needs almost no `dark:` variants.
+
+   Source of truth: node_modules/@radix-ui/colors/{mauve,ruby,amber}[-dark].css */
 :root,
 [data-theme="light"] {
-  --sage-1: #fbfdfc;
-  --sage-2: #f7f9f8;
-  --sage-3: #eef1f0;
-  --sage-4: #e6e9e8;
-  --sage-5: #dfe2e0;
-  --sage-6: #d7dad9;
-  --sage-7: #cbcfcd;
-  --sage-8: #b8bcba;
-  --sage-9: #868e8b;
-  --sage-10: #7c8481;
-  --sage-11: #5f6563;
-  --sage-12: #1a211e;
+  --mauve-1: #fdfcfd;
+  --mauve-2: #faf9fb;
+  --mauve-3: #f2eff3;
+  --mauve-4: #eae7ec;
+  --mauve-5: #e3dfe6;
+  --mauve-6: #dbd8e0;
+  --mauve-7: #d0cdd7;
+  --mauve-8: #bcbac7;
+  --mauve-9: #8e8c99;
+  --mauve-10: #84828e;
+  --mauve-11: #65636d;
+  --mauve-12: #211f26;
 
-  --mint-1: #f9fefd;
-  --mint-2: #f2fbf9;
-  --mint-3: #ddf9f2;
-  --mint-4: #c8f4e9;
-  --mint-5: #b3ecde;
-  --mint-6: #9ce0d0;
-  --mint-7: #7ecfbd;
-  --mint-8: #4cbba5;
-  --mint-9: #86ead4;
-  --mint-10: #7de0cb;
-  --mint-11: #027864;
-  --mint-12: #16433c;
+  --ruby-1: #fffcfd;
+  --ruby-2: #fff7f8;
+  --ruby-3: #feeaed;
+  --ruby-4: #ffdce1;
+  --ruby-5: #ffced6;
+  --ruby-6: #f8bfc8;
+  --ruby-7: #efacb8;
+  --ruby-8: #e592a3;
+  --ruby-9: #e54666;
+  --ruby-10: #dc3b5d;
+  --ruby-11: #ca244d;
+  --ruby-12: #64172b;
+
+  --amber-2: #fefbe9;
+  --amber-6: #f3d673;
+  --amber-11: #ab6400;
+
+  /* Syntax. A borrowed semantic, like amber: "keyword", "string", "comment"
+     are distinctions the ecosystem assigns, and a code block that flattens
+     them is harder to read than one that spends four hues. All are Radix
+     Radix step 12 in light and step 11 in dark: measured against the mauve-3
+     field the block actually uses, step 11 came back at 4.44:1 for strings and
+     3.95:1 for literals in light, both under AA for 13.5px code. The dark
+     ramp clears 7:1 at step 11, so only light needed the deeper step. Diff
+     tints are step 3 of the same hue — a field quiet enough to sit under code
+     without becoming the thing you read. */
+  --syntax-keyword: #53195d;
+  --syntax-string: #203c25;
+  --syntax-name: #1f2d5c;
+  --syntax-literal: #582d1d;
+  --syntax-added: #203c25;
+  --syntax-added-bg: #daf1db;
+  --syntax-removed: #641723;
+  --syntax-removed-bg: #ffdbdc;
+
+  /* The shell's two surfaces. An application reads as an application because
+     its chrome and its content sit on different grounds; the pair is one Radix
+     step apart in both themes and the seam border carries the rest. */
+  --chrome: var(--mauve-2);
+  --pane: var(--mauve-1);
 }
 
 [data-theme="dark"] {
-  --sage-1: #101211;
-  --sage-2: #171918;
-  --sage-3: #202221;
-  --sage-4: #272a29;
-  --sage-5: #2e3130;
-  --sage-6: #373b39;
-  --sage-7: #444947;
-  --sage-8: #5b625f;
-  --sage-9: #63706b;
-  --sage-10: #717d79;
-  --sage-11: #adb5b2;
-  --sage-12: #eceeed;
+  --mauve-1: #121113;
+  --mauve-2: #1a191b;
+  --mauve-3: #232225;
+  --mauve-4: #2b292d;
+  --mauve-5: #323035;
+  --mauve-6: #3c393f;
+  --mauve-7: #49474e;
+  --mauve-8: #625f69;
+  --mauve-9: #6f6d78;
+  --mauve-10: #7c7a85;
+  --mauve-11: #b5b2bc;
+  --mauve-12: #eeeef0;
 
-  --mint-1: #0e1515;
-  --mint-2: #0f1b1b;
-  --mint-3: #092c2b;
-  --mint-4: #003a38;
-  --mint-5: #004744;
-  --mint-6: #105650;
-  --mint-7: #1e685f;
-  --mint-8: #277f70;
-  --mint-9: #86ead4;
-  --mint-10: #a8f5e5;
-  --mint-11: #58d5ba;
-  --mint-12: #c4f5e1;
+  --ruby-1: #191113;
+  --ruby-2: #1e1517;
+  --ruby-3: #3a141e;
+  --ruby-4: #4e1325;
+  --ruby-5: #5e1a2e;
+  --ruby-6: #6f2539;
+  --ruby-7: #883447;
+  --ruby-8: #b3445a;
+  --ruby-9: #e54666;
+  --ruby-10: #ec5a72;
+  --ruby-11: #ff949d;
+  --ruby-12: #fed2e1;
+
+  --amber-2: #1d180f;
+  --amber-6: #5c3d05;
+  --amber-11: #ffca16;
+
+  --syntax-keyword: #e796f3;
+  --syntax-string: #71d083;
+  --syntax-name: #9eb1ff;
+  --syntax-literal: #ffa057;
+  --syntax-added: #71d083;
+  --syntax-added-bg: #1d3a24;
+  --syntax-removed: #ff9592;
+  --syntax-removed-bg: #500f1c;
+
+  /* Inverted against light: in dark the chrome is the deeper ground and the
+     pane lifts off it, which is the direction every desktop app runs. */
+  --chrome: var(--mauve-1);
+  --pane: var(--mauve-2);
 }
 
 @theme {
-  --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: "JetBrains Mono Variable", ui-monospace, "Menlo", monospace;
+  /* Two voices from one designed family. Geist Sans sets everything that is a
+     sentence — chrome, lists, display, and the reading column alike; Geist Mono
+     sets everything that is a measurement. The reading column earns its
+     distinction from size and measure rather than from a third face, which is
+     what an application does. */
+  --font-sans: "Geist Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Geist Mono Variable", ui-monospace, "Menlo", monospace;
 
-  /* Named breakpoints for the topbar's load-bearing nav collapse points
-     (these don't map onto sm/md/lg). Naming them keeps the markup free of
-     arbitrary min-[Npx]/max-[Npx] values: `nav:`/`max-nav:` and
-     `compact:`/`max-compact:` variants are generated from these. */
-  --breakpoint-nav: 820px;
+  /* Type roles. Every size on the site is one of these — each carries its own
+     leading, tracking, and weight, so `text-meta` is the whole decision rather
+     than four classes that drift apart.
+
+     The scale's weight sits in the middle, not the ends: a list title at 19px
+     semibold is the most common object on the site, and the hero is only 34px.
+     Hierarchy is carried by weight and value against a near-monochrome ground,
+     never by a rule and never by a 68px display. */
+  --text-display: clamp(28px, 3.4vw, 34px);
+  --text-display--line-height: 1.15;
+  --text-display--letter-spacing: -0.022em;
+  --text-display--font-weight: 600;
+
+  --text-headline: clamp(26px, 3.2vw, 33px);
+  --text-headline--line-height: 1.2;
+  --text-headline--letter-spacing: -0.024em;
+  --text-headline--font-weight: 600;
+
+  --text-page-title: 26px;
+  --text-page-title--line-height: 1.25;
+  --text-page-title--letter-spacing: -0.02em;
+  --text-page-title--font-weight: 600;
+
+  /* The hero claim and page descriptions. Semibold and mid-value on purpose:
+     the second-largest object on the page is a sentence set in the secondary
+     tone, which is the whole reason the name above it reads as the first. */
+  --text-lead: clamp(20px, 2.4vw, 24px);
+  --text-lead--line-height: 1.38;
+  --text-lead--letter-spacing: -0.018em;
+  --text-lead--font-weight: 600;
+
+  --text-h2: 22px;
+  --text-h2--line-height: 1.3;
+  --text-h2--letter-spacing: -0.018em;
+  --text-h2--font-weight: 600;
+
+  --text-h3: 18px;
+  --text-h3--line-height: 1.4;
+  --text-h3--letter-spacing: -0.011em;
+  --text-h3--font-weight: 600;
+
+  /* Every list-item title on the site. Deliberately large and semibold: a list
+     of titles IS the content here, so it is set at reading scale rather than
+     at the interface scale a ruled row would use. */
+  --text-row: 19px;
+  --text-row--line-height: 1.4;
+  --text-row--letter-spacing: -0.014em;
+  --text-row--font-weight: 600;
+
+  /* The reading column only. */
+  --text-read: 17.5px;
+  --text-read--line-height: 1.75;
+
+  --text-nav: 14.5px;
+  --text-nav--line-height: 1.4;
+  --text-nav--letter-spacing: -0.006em;
+  --text-nav--font-weight: 500;
+
+  --text-body: 15px;
+  --text-body--line-height: 1.6;
+
+  --text-note: 14px;
+  --text-note--line-height: 1.55;
+
+  /* Section labels. Sans, sentence case, secondary tone — a spoken word above
+     a list, not a filing tab. The uppercase mono label the old system used is
+     gone: in a world with no rules, a label that shouts competes with the
+     titles it introduces. */
+  --text-label: 13px;
+  --text-label--line-height: 1.4;
+  --text-label--letter-spacing: -0.002em;
+  --text-label--font-weight: 500;
+
+  --text-meta: 12.5px;
+  --text-meta--line-height: 1.5;
+
+  --text-micro: 11px;
+  --text-micro--line-height: 1.4;
+  --text-micro--letter-spacing: 0.05em;
+  --text-micro--font-weight: 500;
+
+  --text-code: 13.5px;
+  --text-code--line-height: 1.55;
+
+  /* `shell` is where the source list appears and the page stops being a single
+     column; `compact` is where the mobile bar sheds its optional parts.
+     Naming them keeps arbitrary min-[Npx] values out of markup. */
+  --breakpoint-shell: 1024px;
   --breakpoint-compact: 520px;
 
-  --color-sage-1: var(--sage-1);
-  --color-sage-2: var(--sage-2);
-  --color-sage-3: var(--sage-3);
-  --color-sage-4: var(--sage-4);
-  --color-sage-5: var(--sage-5);
-  --color-sage-6: var(--sage-6);
-  --color-sage-7: var(--sage-7);
-  --color-sage-8: var(--sage-8);
-  --color-sage-9: var(--sage-9);
-  --color-sage-10: var(--sage-10);
-  --color-sage-11: var(--sage-11);
-  --color-sage-12: var(--sage-12);
+  /* The pane's own measure. One value for every surface: the reading column,
+     the homepage lists, and every index share a left edge. */
+  --container-pane: 46rem;
 
-  --color-mint-3: var(--mint-3);
-  --color-mint-4: var(--mint-4);
-  --color-mint-5: var(--mint-5);
-  --color-mint-8: var(--mint-8);
-  --color-mint-9: var(--mint-9);
-  --color-mint-11: var(--mint-11);
-  --color-mint-12: var(--mint-12);
+  /* The reading measure. 38rem is where a counted line in Geist at 17.5px
+     comes back inside the 65–75 character band. */
+  --measure: 38rem;
+
+  /* Ground. Mauve carries the entire interface in both themes. */
+  --color-mauve-1: var(--mauve-1);
+  --color-mauve-2: var(--mauve-2);
+  --color-mauve-3: var(--mauve-3);
+  --color-mauve-4: var(--mauve-4);
+  --color-mauve-5: var(--mauve-5);
+  --color-mauve-6: var(--mauve-6);
+  --color-mauve-7: var(--mauve-7);
+  --color-mauve-8: var(--mauve-8);
+  --color-mauve-9: var(--mauve-9);
+  --color-mauve-10: var(--mauve-10);
+  --color-mauve-11: var(--mauve-11);
+  --color-mauve-12: var(--mauve-12);
+
+  --color-chrome: var(--chrome);
+  --color-pane: var(--pane);
+
+  /* The single brand accent. Bridged in full so a step is never referenced
+     before it exists — an unbridged utility fails silently, not loudly. */
+  --color-ruby-1: var(--ruby-1);
+  --color-ruby-2: var(--ruby-2);
+  --color-ruby-3: var(--ruby-3);
+  --color-ruby-4: var(--ruby-4);
+  --color-ruby-5: var(--ruby-5);
+  --color-ruby-6: var(--ruby-6);
+  --color-ruby-7: var(--ruby-7);
+  --color-ruby-8: var(--ruby-8);
+  --color-ruby-9: var(--ruby-9);
+  --color-ruby-10: var(--ruby-10);
+  --color-ruby-11: var(--ruby-11);
+  --color-ruby-12: var(--ruby-12);
+
+  /* Warning only, and exactly the three steps the staleness note uses — fill,
+     border, icon. Kept this narrow so it can never read as a second accent. */
+  --color-amber-2: var(--amber-2);
+  --color-amber-6: var(--amber-6);
+  --color-amber-11: var(--amber-11);
 }
 
 body {
-  font-feature-settings: "cv11", "ss01";
   -webkit-font-smoothing: antialiased;
 }
 
-::selection { background: var(--mint-5); color: var(--sage-12); }
+/* Browser surfaces the design still owns. */
+::selection { background: var(--ruby-5); color: var(--ruby-12); }
+* { scrollbar-color: var(--mauve-7) transparent; }
+input, textarea { caret-color: var(--ruby-11); }
+a { text-underline-offset: 0.2em; }
 
-/* View transitions */
+/* Keyboard focus is a system guarantee, not a per-component decision: applied
+   once so every focusable element is covered by default, rather than chased
+   component by component, which is how a site ends up with six styled controls
+   and forty bare ones.
+   It lives in `base` on purpose. Unlayered CSS outranks Tailwind's utilities
+   whatever the specificity, so a component that needs a different indicator —
+   the theme toggle's inset ring, the palette's borderless input — could not
+   override it from markup. Inside `base`, a utility class wins as expected. */
+@layer base {
+  :where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+    outline: 2px solid var(--ruby-9);
+    outline-offset: 2px;
+    border-radius: 6px;
+  }
+}
+
+/* The palette is its own field: the panel opening is the focus event, so the
+   input carries no chrome — including the native clear button, which renders
+   as an unstyleable glyph and duplicates the `esc` affordance beside it. */
+#cmdk-input::-webkit-search-cancel-button,
+#cmdk-input::-webkit-search-decoration {
+  appearance: none;
+  display: none;
+}
+
+/* Metadata is measurement, so its digits align in a column. */
+.font-mono { font-variant-numeric: tabular-nums; }
+
+/* View transitions. The `<meta name="view-transition">` in the root layout is
+   what actually arms these across documents — without it Turbo Drive handles
+   the navigation and this is dead code.
+
+   The source list must not cross-fade with the pane: it is the one thing that
+   does not change between navigations, so it is named out of the transition
+   and the pane animates alone. That is what makes the site read as an app
+   swapping a view rather than a document reloading. */
 @view-transition { navigation: auto; }
 ::view-transition-old(root),
-::view-transition-new(root) { animation-duration: 200ms; }
+::view-transition-new(root) { animation-duration: 180ms; }
+
+.source-list { view-transition-name: source-list; }
+/* `animation: none` here leaves the outgoing snapshot with nothing to end it,
+   which can strand the previous page's rail on top of the new one. A zero
+   duration ends it on the next frame and still means "do not fade". */
+::view-transition-old(source-list),
+::view-transition-new(source-list) { animation-duration: 0s; }
+
+/* A theme change is not a navigation. The rail is named out of the transition
+   above because it is the one thing that does not change between pages — but
+   it very much changes with the theme, and holding it still would leave the
+   old palette's rail hard-cutting beside a cross-fading pane. `theme.js` sets
+   this attribute for the length of the flip so the page is captured as one
+   surface and fades as one. */
+[data-theme-transition] .source-list { view-transition-name: none; }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
@@ -117,37 +339,68 @@ body {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+
+  /* `*` does not match pseudo-elements, so the cross-document fade outlives
+     the blanket rule above unless it is named. */
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: 0.01ms !important;
+  }
 }
 
-/* Vertical bullet thread (Now / Uses) */
-.bullet-thread { list-style: none; padding-left: 0; margin: 0; }
-.bullet-thread > li {
-  position: relative;
-  padding: 10px 0 12px 28px;
-  border-bottom: 1px solid var(--sage-4);
-}
-.bullet-thread > li::before {
+/* The palette's selected row wears the same marks as a current row in the
+   source list and a pointed-at row in any list: a field, a weight step, and a
+   ruby bar in its own left edge. It is drawn off `aria-selected` so the
+   accessible state and the visual state cannot drift apart. */
+.cmdk-row[aria-selected="true"]::before {
   content: "";
   position: absolute;
-  left: 4px;
-  top: 18px;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--sage-1);
-  border: 1.5px solid var(--mint-11);
+  left: 0;
+  top: 6px;
+  bottom: 6px;
+  width: 2px;
+  border-radius: 9999px;
+  background: var(--ruby-11);
 }
-.bullet-thread > li::after {
-  content: "";
-  position: absolute;
-  left: 7.5px;
-  top: 0;
-  bottom: -1px;
-  width: 1px;
-  background: var(--sage-4);
+
+/* Reading progress, drawn on the viewport's own top edge. It reads as the
+   page's status rather than as an object in the article, which is why it is
+   1.5px and ruby: the accent marks where you are, here as everywhere. */
+#reading-progress {
+  position: fixed;
+  inset-block-start: 0;
+  inset-inline: 0;
+  z-index: 60;
+  height: 1.5px;
+  background: var(--ruby-11);
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  pointer-events: none;
 }
-.bullet-thread > li:first-child::after { top: 18px; }
-.bullet-thread > li:last-child::after { bottom: auto; height: 18px; }
+
+/* Back to top. Appears only once a screen has been scrolled, so it never
+   occupies the first viewport it would be useless in. */
+#back-to-top {
+  position: fixed;
+  inset-block-end: 1rem;
+  inset-inline-end: 1rem;
+  z-index: 60;
+  padding: 0.5rem 0.75rem;
+  min-height: 2.25rem;
+  border: 1px solid var(--mauve-6);
+  border-radius: 6px;
+  background: var(--chrome);
+  color: var(--mauve-11);
+  font-family: var(--font-mono);
+  font-size: var(--text-meta);
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(4px);
+  pointer-events: none;
+  transition: opacity .15s ease, transform .15s ease, color .15s ease, background-color .15s ease;
+}
+#back-to-top[data-visible="true"] { opacity: 1; transform: none; pointer-events: auto; }
+#back-to-top:hover { background: var(--mauve-3); color: var(--mauve-12); }
 
 /* Cmdk modal animations */
 @keyframes cmdk-overlay-in { from { opacity: 0; } to { opacity: 1; } }
@@ -155,91 +408,279 @@ body {
 .cmdk-overlay { animation: cmdk-overlay-in .12s ease; }
 .cmdk-panel   { animation: cmdk-panel-in   .18s cubic-bezier(.2,.8,.2,1); }
 
-/* Copy-code button on <pre><code> */
-pre { position: relative; }
+/* The positioning context for the copy button below. */
+.code-block { position: relative; }
+
+/* Copy-code button. Anchored to the wrapper `copy_code.js` puts around each
+   <pre>, never to the <pre> itself: the <pre> is the horizontal scroll
+   container, so a button positioned against it slides out of view the moment a
+   wide line is panned — precisely when a reader stops reading and reaches for
+   Copy. The wrapper does not scroll, so the button holds its corner, and it
+   carries the block's own fill so code panning underneath passes behind it. */
 button.copy-code {
   position: absolute;
   top: 0.5rem;
   right: 0.5rem;
+  z-index: 2;
   padding: 0.25rem 0.5rem;
-  font-size: 0.75rem;
-  background: var(--sage-3);
-  color: var(--sage-11);
-  border: 1px solid var(--sage-5);
-  border-radius: 0.25rem;
-  cursor: pointer;
+  min-height: 1.75rem;
+  font-size: var(--text-meta);
   font-family: var(--font-mono);
+  background: var(--mauve-4);
+  color: var(--mauve-11);
+  border: 1px solid var(--mauve-6);
+  border-radius: 6px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity .15s ease, background-color .15s ease, color .15s ease,
+    border-color .15s ease;
 }
-button.copy-code:hover { background: var(--sage-2); color: var(--sage-12); }
+/* Present for keyboard and touch at all times; it fades in for a pointer so a
+   resting code block stays a code block. */
+.code-block:hover button.copy-code,
+button.copy-code:focus-visible { opacity: 1; }
+@media (hover: none) {
+  button.copy-code { opacity: 1; }
+}
+button.copy-code:hover { background: var(--mauve-5); color: var(--mauve-12); }
 
-/* When the mobile menu is open, drop the header's translucency so the
-   sticky bar above the dropdown doesn't show page content bleeding through.
-   The menu is toggled via `data-open`, not the `hidden` attribute. */
-header:has(#mobile-menu[data-open="true"]) {
-  background-color: var(--sage-1);
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
+/* Copying is the one action here that produces nothing you can see — the
+   clipboard is off-screen, so the swapped label was the entire receipt, and a
+   label that changes without moving is easy to miss at the edge of vision.
+   The confirmation takes the accent for its two seconds. That is the accent
+   rule, not an exception to it: "just copied" is a current state, and it
+   inherits the border-colour transition above so it arrives rather than pops.
+   The failure label stays in mauve — ruby there would read as success. */
+button.copy-code[data-copied] {
+  color: var(--ruby-11);
+  border-color: var(--ruby-8);
+}
+.md-copy[data-copied] { color: var(--ruby-11); border-color: var(--ruby-8); }
+
+
+/* A block that scrolls sideways has to say so. macOS hides overlay scrollbars
+   until you touch them, so four of ten blocks on a long post could be panned
+   with nothing on screen admitting it — a reader copies what they can see and
+   loses the rest. A permanent 6px rail is the cheapest honest answer. */
+pre.highlight,
+pre:not(.highlight) {
+  scrollbar-width: thin;
+  scrollbar-color: var(--mauve-7) transparent;
+}
+pre.highlight::-webkit-scrollbar,
+pre:not(.highlight)::-webkit-scrollbar { height: 6px; }
+pre.highlight::-webkit-scrollbar-thumb,
+pre:not(.highlight)::-webkit-scrollbar-thumb {
+  background: var(--mauve-7);
+  border-radius: 9999px;
 }
 
-/* Markdown tables can be wider than the prose column; let them scroll
-   horizontally inside the content rather than forcing the whole page to. */
-.prose :where(table) {
+/* The language, from Rouge's own wrapper class. It sits opposite the Copy
+   button in the block's own furniture row rather than floating over the code. */
+.code-block[data-lang]::before {
+  content: attr(data-lang);
+  position: absolute;
+  top: 0.75rem;
+  left: 1rem;
+  z-index: 1;
+  font-family: var(--font-mono);
+  font-size: var(--text-micro);
+  letter-spacing: var(--text-micro--letter-spacing);
+  color: var(--mauve-9);
+  pointer-events: none;
+}
+.code-block[data-lang] > pre { padding-top: 2.25rem; }
+
+/* Only while the block actually overflows, and only on the edge it overflows
+   toward. `copy_code.js` sets `data-overflow` on the wrapper and clears it at
+   the end of the scroll, so the fade never lies about a block that fits and
+   never hangs over the last character once you have reached it. It is drawn on
+   the wrapper, which does not scroll, so it holds its edge like the Copy
+   button beside it. */
+/* The fade on the edge a block scrolls toward, so a clipped line never just
+   stops mid-token. `copy_code.js` sets `data-overflow` while there is more to
+   the right and clears it at the end, so it never lies about a block that fits
+   and never hangs over the last character once you have reached it.
+
+   A mask on the scroller rather than an overlay on the wrapper: an ::after
+   pseudo here matched its selector but never painted, and the mask needs no
+   stacking context of its own. A mask reads only the alpha channel, so
+   `currentColor` is simply "opaque" and no literal colour is involved. */
+.code-block[data-overflow="true"] > pre {
+  mask-image: linear-gradient(to right, currentColor calc(100% - 3rem), transparent);
+}
+
+/* The reading column's colours are the site's tokens, not the typography
+   plugin's palette. Setting them here rather than reaching for `prose-slate
+   dark:prose-invert` means the article flips with the theme for the same
+   reason everything else does — the token value changes, not the class.
+
+   `--tw-prose-body` is mauve-11: body copy reads at 5.77:1 in light and 8.39:1
+   in dark, comfortably past 4.5:1 at `text-read`, and the step it gives up to
+   mauve-12 is what lets headings, links, bold and code rank above the sentence
+   they sit in without any of them needing extra weight or colour. */
+.prose {
+  --tw-prose-body: var(--mauve-11);
+  --tw-prose-headings: var(--mauve-12);
+  --tw-prose-lead: var(--mauve-11);
+  --tw-prose-links: var(--mauve-12);
+  --tw-prose-bold: var(--mauve-12);
+  --tw-prose-counters: var(--mauve-11);
+  --tw-prose-bullets: var(--mauve-7);
+  --tw-prose-hr: var(--mauve-6);
+  --tw-prose-quotes: var(--mauve-12);
+  --tw-prose-quote-borders: var(--mauve-6);
+  --tw-prose-captions: var(--mauve-11);
+  --tw-prose-code: var(--mauve-12);
+  --tw-prose-pre-code: var(--mauve-12);
+  --tw-prose-pre-bg: var(--mauve-3);
+  --tw-prose-th-borders: var(--mauve-6);
+  --tw-prose-td-borders: var(--mauve-6);
+}
+
+/* The reading measure belongs to the text, not to the article box.
+   With `max-w-[38rem]` on <article>, a code block and a screenshot inherited a
+   width chosen for prose: three of twelve blocks clipped at 1440 while 128px of
+   pane and 215px of gutter sat empty beside them, and a 1145px screenshot was
+   squeezed to 608. Prose keeps the measure; anything that is not a sentence is
+   allowed the full pane. */
+.prose-measured > * {
+  max-width: var(--measure);
+}
+.prose-measured > :where(figure, table, img, video, hr, [class*="language-"], .highlighter-rouge) {
+  max-width: none;
+}
+
+/* Rouge, Bridgetown's built-in highlighter. Kramdown wraps a fenced block as
+   .highlighter-rouge > .highlight > pre.highlight > code, and Rouge tags each
+   token with a short class (.k, .s, .c, .nf, .mi...).
+
+   This replaced Torchlight, which ran only in production against a hosted API:
+   code blocks rendered plain in dev, so the one thing a reader of this site
+   looks at most was the one thing its author never saw while writing. Rouge
+   highlights at build time in every environment, which is why the fallback
+   below is now genuinely a fallback rather than the dev experience.
+
+   The block is a mauve field with no border — the same "separated by space,
+   not rules" the rest of the system runs on — and it flips with the theme
+   like everything else, rather than pinning a dark editor chrome into a light
+   page. */
+pre.highlight,
+pre:not(.highlight) {
+  @apply my-6 rounded-lg overflow-x-auto bg-mauve-3 p-4;
+  font-size: var(--text-code);
+  line-height: var(--text-code--line-height);
+  color: var(--mauve-12);
+}
+pre.highlight code,
+pre:not(.highlight) code {
+  @apply block min-w-max bg-transparent border-0 p-0;
+  color: inherit;
+  font-size: inherit;
+}
+
+/* Rouge token colours, mapped against what these posts actually contain:
+   108 shell blocks, 41 diffs, 20 yaml, then js/html/erb/css/ruby. The mapping
+   is by what a token IS rather than one rule per Rouge tag, and anything
+   unmapped inherits the block's foreground — an unstyled token should read as
+   code, not as an accident. Ruby appears only where a diff needs a red, since
+   it is otherwise the state accent and a code block at rest is not a state. */
+.highlight .k,  .highlight .kc, .highlight .kd, .highlight .kn,
+.highlight .kp, .highlight .kr, .highlight .kt, .highlight .ow
+  { color: var(--syntax-keyword); }
+
+.highlight .s,  .highlight .sa, .highlight .sb, .highlight .sc,
+.highlight .sd, .highlight .s1, .highlight .s2, .highlight .se,
+.highlight .sh, .highlight .sr, .highlight .ss, .highlight .sx,
+.highlight .dl
+  { color: var(--syntax-string); }
+
+/* Interpolation is code that happens to live inside a string, so it steps back
+   out to the block's own foreground rather than staying quoted. */
+.highlight .si { color: var(--mauve-12); }
+
+.highlight .c,  .highlight .ch, .highlight .cd, .highlight .cm,
+.highlight .c1, .highlight .cs
+  { color: var(--mauve-11); font-style: italic; }
+
+/* `.cp` is "preprocessor", which here is almost entirely ERB's `<%= %>` and a
+   handful of HTML doctypes — structure, not commentary. It was inheriting the
+   comment rule and rendering 38 ERB delimiters as italic grey asides. */
+.highlight .cp, .highlight .cpf { color: var(--syntax-keyword); font-style: normal; }
+
+.highlight .na, .highlight .nb, .highlight .nc, .highlight .nd,
+.highlight .ne, .highlight .nf, .highlight .nn, .highlight .nt,
+.highlight .nv, .highlight .nx, .highlight .vc, .highlight .vg,
+.highlight .vi, .highlight .py, .highlight .fm
+  { color: var(--syntax-name); }
+
+.highlight .m,  .highlight .mb, .highlight .mf, .highlight .mh,
+.highlight .mi, .highlight .mo, .highlight .il, .highlight .no,
+.highlight .nl, .highlight .bp
+  { color: var(--syntax-literal); }
+
+/* YAML's `:` and `-` are the most numerous tokens on the whole site (496 of
+   them). At full foreground they out-shout the keys and values they separate,
+   so structure punctuation recedes a step. */
+.highlight .pi { color: var(--mauve-11); }
+
+/* A shell prompt is furniture — it marks where a command starts and is never
+   the thing being read, and it must not be copied as if it were. */
+.highlight .gp { color: var(--mauve-11); user-select: none; }
+
+/* `.err` is a Rouge lexer miss, not information: 92 of them across these
+   posts, every one a perfectly ordinary character the lexer could not place.
+   Coloured, they read as 92 mistakes in the author's code. */
+.highlight .err { color: inherit; background: none; }
+
+/* Diffs are the second most common block here, and a diff is the one place a
+   red and a green ARE the information. Rouge wraps whole lines, so they get a
+   full-bleed tinted band rather than coloured text on a plain field — the
+   padding is undone by the negative margin so the band reaches the block's
+   edges. */
+.highlight .gi,
+.highlight .gd {
   display: block;
-  width: max-content;
-  max-width: 100%;
-  overflow-x: auto;
+  margin-inline: -1rem;
+  padding-inline: 1rem;
+}
+.highlight .gi { color: var(--syntax-added); background: var(--syntax-added-bg); }
+.highlight .gd { color: var(--syntax-removed); background: var(--syntax-removed-bg); }
+.highlight .gr { color: var(--syntax-removed); }
+.highlight .gh, .highlight .gu { color: var(--mauve-11); }
+.highlight .gs { font-weight: 600; }
+.highlight .ge { font-style: italic; }
+
+/* The mobile bar is sticky, so without this every contents click and every
+   heading-anchor deep link parks its target underneath it. */
+.prose :where(h2, h3, h4, h5) {
+  scroll-margin-top: 5.5rem;
 }
 
-/* Card grid — hairlines via borders so an odd number of cards doesn't leave
-   an empty colored cell where a gap-bg trick would show through. */
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  border-top: 1px solid var(--sage-4);
-}
-.card-grid > * { border-bottom: 1px solid var(--sage-4); }
-.card-grid > *:nth-child(odd) { border-right: 1px solid var(--sage-4); }
-@media (max-width: 680px) {
-  .card-grid { grid-template-columns: 1fr; }
-  .card-grid > *:nth-child(odd) { border-right: 0; }
+/* You-are-here in the contents rail. This lives here rather than as a variant
+   utility in Builders::Inspectors::Toc because Tailwind does not scan
+   `plugins/`, so a class written in that file is never generated and fails
+   silently. The bar carries the state; colour alone was never a cue. */
+[data-toc] a[aria-current="location"] {
+  position: relative;
+  color: var(--mauve-12);
 }
 
-/* Torchlight — https://torchlight.dev/docs/css#tailwind
-   Bridgetown's Rouge wraps code in <pre class="highlight">; Torchlight adds
-   the `torchlight` class to the same pre, so selectors are pre.torchlight
-   rather than pre code.torchlight from the upstream docs. */
-pre.torchlight {
-  @apply my-4 rounded-md overflow-x-auto;
-}
-pre.torchlight code {
-  @apply block py-4 min-w-max bg-transparent border-0 p-0;
-  font-size: 13.5px;
-}
-pre.torchlight code .line {
-  @apply px-4;
-}
-pre.torchlight code .line-number,
-pre.torchlight code .summary-caret {
-  @apply mr-4;
-}
-
-/* Fallback for plain <pre><code> when Torchlight didn't run (dev mode,
-   missing TORCHLIGHT_TOKEN). Sage styling so dev still reads cleanly. */
-pre:not(.torchlight) {
-  @apply my-4 rounded-md overflow-x-auto bg-sage-2 border border-sage-4 p-4;
-  font-size: 13.5px;
-}
-pre:not(.torchlight) code {
-  background: transparent;
-  border: 0;
-  padding: 0;
-  color: var(--sage-12);
+[data-toc] a[aria-current="location"]::before {
+  content: "";
+  position: absolute;
+  left: -0.6875rem;
+  top: 0.15em;
+  bottom: 0.15em;
+  width: 2px;
+  border-radius: 9999px;
+  background: var(--ruby-11);
 }
 
 /* Heading anchors injected by Builders::Inspectors::ProseHeadings */
 .heading-anchor {
   margin-left: 0.5rem;
-  color: var(--sage-7);
+  color: var(--mauve-8);
   font-weight: 400;
   text-decoration: none;
   opacity: 0;
@@ -249,4 +690,6 @@ pre:not(.torchlight) code {
 .prose h3:hover .heading-anchor,
 .prose h4:hover .heading-anchor,
 .prose h5:hover .heading-anchor { opacity: 1; }
-.heading-anchor:hover { color: var(--mint-11); }
+/* Keyboard focus lands on the anchor too, so it cannot stay invisible. */
+.heading-anchor:focus-visible { opacity: 1; }
+.heading-anchor:hover { color: var(--ruby-11); }

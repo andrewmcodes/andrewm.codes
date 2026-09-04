@@ -1,0 +1,36 @@
+<section>
+  <% if labelled? %>
+    <%= render Stack.new(space: :md) do %>
+      <div>
+        <% if link? %>
+          <a
+            href="<%= link_href %>"
+            class="
+              group inline-flex items-center gap-1 text-label text-mauve-11
+              hover:text-mauve-12 transition-colors
+            "
+          >
+            <%= label %>
+            <%= render Icon.new(
+              name: "chevron_right",
+              class: "w-3.5 h-3.5 text-mauve-9 transition-transform group-hover:translate-x-0.5 group-hover:text-mauve-11",
+            ) %>
+            <span class="sr-only"><%= link_label || "See all" %></span>
+          </a>
+        <% else %>
+          <h2 class="m-0 text-label text-mauve-11"><%= label %></h2>
+        <% end %>
+
+        <% if description %>
+          <p class="mt-1.5 m-0 text-note text-mauve-11 text-pretty">
+            <%= description %>
+          </p>
+        <% end %>
+      </div>
+
+      <div><%= content %></div>
+    <% end %>
+  <% else %>
+    <%= content %>
+  <% end %>
+</section>

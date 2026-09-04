@@ -1,13 +1,18 @@
-# Tokenized image atom with local and Cloudinary source support.
+# Tokenized image atom with local and ImageKit source support.
 class Image < Box
   DEFAULT_TAG = :img
-  COMPONENT_OPTIONS = %i[cid transform variant src alt height width loading].freeze
+  COMPONENT_OPTIONS = %i[iid transform variant src alt height width loading].freeze
 
+  # `cover` and `card` are gone: both were unreachable, and `cover` carried the
+  # last 12px radius on the site — a shape decision being read as shipped
+  # design when no caller could render it. `figure` is currently unused too
+  # (Figure takes its image as a slot), but it is the treatment a framed image
+  # should get, so it stays as the answer rather than as a leftover.
   VARIANT_OPTIONS = {
     default: "",
-    figure: "rounded-lg object-cover object-center shadow-lg ring-1 ring-slate-6 mx-auto",
-    cover: "object-cover w-full rounded-t-xl",
-    card: "absolute inset-0 -z-10 h-full w-full object-cover",
+    # A figure scrolls with the document, so it is bounded by a hairline, not
+    # lifted by a shadow. Shadows belong to things that genuinely float.
+    figure: "rounded-lg object-cover object-center ring-1 ring-mauve-6 mx-auto",
     avatar: "inline-block h-6 w-6 rounded-full"
   }.freeze
 
@@ -32,8 +37,8 @@ class Image < Box
   end
 
   def csrc
-    return nil unless opts[:cid]
+    return nil unless opts[:iid]
     transforms = (opts[:transform] == false) ? {} : opts.fetch(:transform, {})
-    cloudinary_url(opts[:cid], **transforms)
+    imagekit_url(opts[:iid], **transforms)
   end
 end

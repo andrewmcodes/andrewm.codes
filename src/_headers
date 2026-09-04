@@ -31,4 +31,4 @@
   # report-to endpoint wired up, violations surface only in the browser console
   # (no collection) — this is intentional, dev-time observation. Once the policy
   # proves stable, rename the header to `Content-Security-Policy` to enforce.
-  Content-Security-Policy-Report-Only: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://res.cloudinary.com; font-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'
+  Content-Security-Policy-Report-Only: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://ik.imagekit.io https://i.imgur.com https://media.giphy.com; font-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'

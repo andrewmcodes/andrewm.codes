@@ -2,7 +2,9 @@
 series: webpacker-6
 featured: false
 title: "Webpacker 6: CSS Loaders"
-description: This page has changed since first posted, refer to the changelog at the bottom.   In order to proces...
+description: "How to process CSS in Webpacker 6 with css-loader, style-loader, and mini-css-extract-plugin. Part of the archived Webpacker 6 upgrade guide."
+canonical_url: https://andrewm.codes/p/webpacker-6/
+sitemap: false
 urls:
   dev_to: https://dev.to/andrewmcodes/webpacker-6-css-loaders-28hb
 tags:

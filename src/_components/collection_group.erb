@@ -1,14 +1,17 @@
-<div class="mb-9">
-  <div
-    class="
-      font-mono text-[11.5px] text-sage-10 tracking-[0.08em] uppercase mt-7
-      mb-1.5
-    "
-  >
-    <%= @title %>
-  </div>
+<%#
+  A year marker over its rows. The year is a measurement, so it is mono; it is
+  a marker rather than a heading, so it is small. Groups are separated by the
+  `Stack` on the page — the rules that used to bound them were doing work the
+  space already does, and one rule per group plus one per row made an archive
+  of fifty posts read as a table.
+%>
 
-  <div class="flex flex-col">
+<section>
+  <h2 class="m-0 mb-3 font-mono text-label text-mauve-11 tabular-nums">
+    <%= @title %>
+  </h2>
+
+  <div class="flex flex-col gap-1 min-w-0">
     <%= content %>
   </div>
-</div>
+</section>

@@ -3,8 +3,8 @@ class Note < Base
   COMPONENT_OPTIONS = %i[scheme].freeze
 
   NOTE_SCHEME = {
-    default: "bg-sage-2 text-sage-11 border-sage-6",
-    accent: "bg-mint-3 text-mint-12 border-mint-6"
+    default: "bg-mauve-2 text-mauve-11 border-mauve-6",
+    accent: "bg-ruby-3 text-ruby-12 border-ruby-6"
   }.freeze
 
   def call
@@ -17,7 +17,7 @@ class Note < Base
 
   def classes
     cx(
-      "my-6 rounded-xl border p-4 leading-6 [&>:first-child]:mt-0 [&>:last-child]:mb-0",
+      "my-6 rounded-lg border p-4 leading-6 [&>:first-child]:mt-0 [&>:last-child]:mb-0",
       NOTE_SCHEME.fetch(opts[:scheme], NOTE_SCHEME[:default])
     )
   end
