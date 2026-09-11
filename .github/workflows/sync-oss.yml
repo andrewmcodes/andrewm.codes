@@ -2,7 +2,6 @@ name: Sync OSS projects
 on:
   schedule: [{ cron: "0 14 * * *" }]
   workflow_dispatch:
-# Only the latest run proceeds; cancel any older in-flight run.
 concurrency:
   group: ${{ github.workflow }}
   cancel-in-progress: true
@@ -15,14 +14,7 @@ jobs:
     steps:
       - uses: actions/checkout@v7
 
-      # Every public repository I own that is not a fork and not archived —
-      # the projects page lists the whole set rather than a pinned handful.
-      #
-      # GraphQL rather than `gh repo list`: the REST-shaped listing returns
-      # `primaryLanguage { name }` with no `color`, so the language dot on every
-      # tile rendered with an empty background. The colour is GitHub's own datum
-      # and the page reports it rather than inventing one, so it has to come
-      # from the query that actually carries it.
+      # GraphQL supplies primaryLanguage.color, which gh repo list omits.
       - env:
           GH_TOKEN: ${{ secrets.OSS_SYNC_TOKEN }}
         run: |
@@ -52,10 +44,7 @@ jobs:
       - name: Validate shape
         run: |
           set -euo pipefail
-          # Must be a non-empty array of objects with the keys the page reads,
-          # or the workflow has silently regressed (auth failure, schema change,
-          # a `gh` flag that stopped filtering). A truncated list is the failure
-          # mode that would look fine in a diff, so assert a floor on length.
+          # Reject auth/schema failures and suspiciously truncated results.
           jq -e 'type == "array" and length >= 20 and all(.name? and .url? and .pushedAt?)' /tmp/oss.json > /dev/null \
             || { echo "::error::oss.json failed shape validation"; exit 1; }
           mv /tmp/oss.json src/_data/oss.json
