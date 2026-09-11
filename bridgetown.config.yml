@@ -4,9 +4,8 @@ permalink: "/:path.*/"
 # Use Bridgetown's built-in Rouge highlighter for local syntax highlighting.
 highlighter: rouge
 
-# Image hosting. The endpoint is public; the write key lives in the Keychain
-# via fnox and is only needed by scripts/migrate-images-to-imagekit.mjs.
-# Presets are width-only — ImageKit negotiates format and quality by default.
+# Image hosting. Presets are width-only — ImageKit negotiates format and
+# quality by default.
 imagekit:
   url_endpoint: "https://ik.imagekit.io/z7cjas4rs"
   presets:

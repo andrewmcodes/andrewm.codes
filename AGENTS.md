@@ -51,7 +51,7 @@ All inherit from `SiteBuilder` (which inherits from `Bridgetown::Builder`). They
 - **`redirects.rb`** — writes a Cloudflare-format `_redirects` file at `site:post_write` (consumed by Workers Static Assets `not_found_handling`). Includes static legacy redirects (v7 URLs, `/blog/*` and `/snippets/*` → `/p/*`) and enumerated per-post redirects from `/:slug/` → `/p/:slug/`. **There is intentionally no `/*` catch-all** — `wrangler.jsonc`'s `not_found_handling: "404-page"` serves `/404.html` on misses, and a catch-all here would match `/` and cause a redirect loop. **If you add a post, the per-slug redirect is generated automatically.**
 - **`inspectors/links.rb`** — `inspect_html` (prod only) adds `target="_blank" rel="noreferrer"` to external links and ensures any pre-existing `target="_blank"` gets `rel="noreferrer"`.
 - **`inspectors/prose_headings.rb`** — heading anchor IDs / TOC linking.
-- **`tailwind_jit.rb`** / **`imagekit.rb`** — JIT / image helpers. `imagekit_url` reads its endpoint and presets from the `imagekit:` block in `bridgetown.config.yml`; post images live on ImageKit and are migrated with `scripts/migrate-images-to-imagekit.mjs` + `scripts/rewrite-image-refs.mjs`.
+- **`tailwind_jit.rb`** / **`imagekit.rb`** — JIT / image helpers. `imagekit_url` reads its endpoint and presets from the `imagekit:` block in `bridgetown.config.yml`; post images live on ImageKit.
 
 When adding a new builder, place it in `plugins/builders/` and inherit `SiteBuilder` — it will be auto-loaded.
 
