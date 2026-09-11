@@ -83,10 +83,10 @@ class TestPosts < Bridgetown::Test
     before { html get "/p/a11y-in-rails-automated-linting-with-accesslint/" }
 
     it "async-decodes every image and lazy-loads all but the first" do
-      imgs = document.query_selector_all("img")
+      imgs = document.query_selector_all("main img")
       expect(imgs.size).must_be :>, 1
       expect(imgs.all? { |i| i["decoding"] == "async" }).must_equal true
-      # First image stays eager (likely LCP); the rest are lazy.
+      # First content image stays eager (likely LCP); the rest are lazy.
       expect(imgs.first["loading"]).must_be_nil
       expect(imgs[1]["loading"]).must_equal "lazy"
       expect(imgs.last["loading"]).must_equal "lazy"

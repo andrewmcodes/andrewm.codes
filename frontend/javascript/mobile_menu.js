@@ -7,6 +7,31 @@ const FOCUSABLE = 'a[href], button:not([disabled]), input:not([disabled]), [tabi
 
 // The element focus returns to when the menu closes.
 let lastFocused = null;
+const inertedBackground = new Set();
+
+function setBackgroundInert(menu, inert) {
+  if (!inert) {
+    inertedBackground.forEach((element) => {
+      element.inert = false;
+    });
+    inertedBackground.clear();
+    return;
+  }
+
+  // Walk from the dialog to <body>, disabling every sibling branch behind it.
+  // Keep the backdrop interactive so pointer users can still dismiss the menu.
+  let current = menu;
+  while (current.parentElement) {
+    const parent = current.parentElement;
+    Array.from(parent.children).forEach((sibling) => {
+      if (sibling === current || sibling.id === BACKDROP_ID || sibling.inert) return;
+      sibling.inert = true;
+      inertedBackground.add(sibling);
+    });
+    if (parent === document.body) break;
+    current = parent;
+  }
+}
 
 function menuFocusables(menu) {
   return Array.from(menu.querySelectorAll(FOCUSABLE)).filter(
@@ -36,6 +61,7 @@ function setOpen(open) {
   // The panel is always rendered (hidden via opacity), so `inert` is what keeps
   // it out of the tab order + accessibility tree while closed.
   menu.inert = !open;
+  setBackgroundInert(menu, open);
 
   const backdrop = document.getElementById(BACKDROP_ID);
   if (backdrop) backdrop.dataset.open = String(open);

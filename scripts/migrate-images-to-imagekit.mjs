@@ -82,14 +82,19 @@ await Promise.all(
   Array.from({ length: Math.min(CONCURRENCY, queue.length) }, async () => {
     let ref;
     while ((ref = queue.shift())) await handle(ref);
-  })
+  }),
 );
 
 // Stable key order keeps the committed map reviewable across re-runs.
-const sorted = Object.fromEntries(Object.keys(map).sort().map((key) => [key, map[key]]));
-await writeFile(MAP_PATH, JSON.stringify(sorted, null, 2) + "\n");
-
-console.log(`\nWrote ${MAP_PATH} (${Object.keys(sorted).length} entries).`);
+const sorted = Object.fromEntries(
+  Object.keys(map)
+    .sort()
+    .map((key) => [key, map[key]]),
+);
+if (!dryRun) {
+  await writeFile(MAP_PATH, JSON.stringify(sorted, null, 2) + "\n");
+  console.log(`\nWrote ${MAP_PATH} (${Object.keys(sorted).length} entries).`);
+}
 if (failures) {
   console.error(`${failures} upload(s) failed — rerun before rewriting references.`);
   process.exitCode = 1;

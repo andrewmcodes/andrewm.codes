@@ -27,18 +27,26 @@ function wrapperFor(pre) {
 /**
  * @param {HTMLElement} wrap
  * @param {HTMLElement} pre
+ * @param {AbortSignal} signal
  */
-function trackOverflow(wrap, pre) {
+function trackOverflow(wrap, pre, signal) {
   const update = () => {
     const remaining = pre.scrollWidth - pre.clientWidth - pre.scrollLeft;
     wrap.dataset.overflow = String(remaining > 2);
   };
   update();
-  pre.addEventListener("scroll", update, { passive: true });
-  window.addEventListener("resize", update, { passive: true });
+  pre.addEventListener("scroll", update, { passive: true, signal });
+  window.addEventListener("resize", update, { passive: true, signal });
 }
 
+/** @type {AbortController | null} */
+let overflowGeneration = null;
+
 onReady(() => {
+  overflowGeneration?.abort();
+  overflowGeneration = new AbortController();
+  const { signal } = overflowGeneration;
+
   document.querySelectorAll("pre > code").forEach((code) => {
     const pre = code.parentElement;
     if (!pre) return;
@@ -53,6 +61,9 @@ onReady(() => {
       pre.setAttribute("aria-label", name ? name + " code" : "Code");
       if (name) wrap.dataset.lang = name;
     }
+    // Turbo restores a cloned DOM from cache, without the direct listeners
+    // previously attached to the scroll container and window.
+    trackOverflow(wrap, pre, signal);
     // Check by DOM presence so we don't double-append on cached restore.
     if (wrap.querySelector(":scope > button.copy-code")) return;
     const btn = document.createElement("button");
@@ -61,7 +72,6 @@ onReady(() => {
     btn.textContent = "Copy";
     btn.setAttribute("aria-label", wrap.dataset.lang ? "Copy " + wrap.dataset.lang + " code" : "Copy code");
     wrap.appendChild(btn);
-    trackOverflow(wrap, pre);
   });
 });
 

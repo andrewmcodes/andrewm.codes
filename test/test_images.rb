@@ -35,6 +35,16 @@ class TestImages < Bridgetown::Test
       expect(figure["src"]).must_include "#{ENDPOINT}/posts/twitter-avatar/"
     end
 
+    it "keeps the first content image eager despite shell images" do
+      html get "/p/rails-coverage-tools-codefactor/"
+      first_content_image = document.query_selector("main img")
+
+      expect(document.query_selector("img")["src"]).must_equal "/images/main-avatar.png"
+      expect(first_content_image).wont_be_nil
+      expect(first_content_image["loading"]).must_be_nil
+      expect(first_content_image["decoding"]).must_equal "async"
+    end
+
     # The migration's whole point: no post should depend on an image host we no
     # longer control. Both of these were also outside the img-src CSP allowlist.
     it "references no Cloudinary or dev.to images anywhere in the build" do

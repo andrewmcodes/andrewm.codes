@@ -56,5 +56,14 @@ class TestHomepage < Bridgetown::Test
     it "has main element with id=main for the skip link target" do
       expect(document.query_selector("main#main")).wont_be_nil
     end
+
+    it "exposes the mobile navigation as a labelled modal dialog" do
+      menu = document.query_selector("#mobile-menu")
+
+      expect(menu["role"]).must_equal "dialog"
+      expect(menu["aria-modal"]).must_equal "true"
+      expect(menu["aria-label"]).must_equal "Site navigation"
+      expect(menu.key?("inert")).must_equal true
+    end
   end
 end

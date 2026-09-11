@@ -7,8 +7,14 @@
 import { onReady } from "./ready.js";
 
 const MIN_HEIGHT = 2200; // Short posts need neither; they fit in a few screens.
+/** @type {AbortController | null} */
+let generation = null;
 
 function setup() {
+  generation?.abort();
+  generation = new AbortController();
+  const { signal } = generation;
+
   const article = document.querySelector("article.prose");
   if (!article) return;
 
@@ -34,13 +40,19 @@ function setup() {
     button.type = "button";
     button.textContent = "Top";
     button.setAttribute("aria-label", "Back to top");
-    button.addEventListener("click", () => {
-      window.scrollTo({ top: 0, behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
-      document.querySelector("h1")?.focus?.();
-    });
     document.body.appendChild(button);
     top = button;
   }
+
+  // Turbo cache restores clone the controls but not their direct listeners.
+  top.addEventListener(
+    "click",
+    () => {
+      window.scrollTo({ top: 0, behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+      document.querySelector("h1")?.focus?.();
+    },
+    { signal },
+  );
 
   const update = () => {
     const max = doc.scrollHeight - window.innerHeight;
@@ -50,8 +62,8 @@ function setup() {
   };
 
   update();
-  document.addEventListener("scroll", update, { passive: true });
-  window.addEventListener("resize", update, { passive: true });
+  document.addEventListener("scroll", update, { passive: true, signal });
+  window.addEventListener("resize", update, { passive: true, signal });
 }
 
 onReady(setup);
