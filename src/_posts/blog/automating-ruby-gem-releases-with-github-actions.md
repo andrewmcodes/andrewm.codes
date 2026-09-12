@@ -162,20 +162,30 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 ```
 
-We are going to do some more cool things in a second but lets go ahead and see what this produces. Create a new GitHub repo, commit everything, and push it up. As a note, Bundler adds a failing test condition by default when you scaffold the gem, so if you added the `--ci=github` flag when you created the gem, the generated `.github/workflows/main.yml` action will fail unless you remove the failing test. I'll let you debug that on your own for now.
+We are going to do some more cool things in a second, but let's go ahead and see what this produces. Before the first push, two bits of housekeeping:
+
+- **Remove the failing sample spec.** Bundler scaffolds a test that asserts `expect(false).to eq(true)`, so the `main.yml` CI it adds with `--ci=github` fails until you delete it.
+- **Don't commit `Gemfile.lock`.** You generally don't check a lockfile into a library gem anyway, but with Release Please it's effectively required. Its Ruby updater bumps the version in `version.rb` and the lock's `specs:` section, but not Bundler's newer `CHECKSUMS` section ([release-please#2720](https://github.com/googleapis/release-please/issues/2720)). Since [lockfile checksums](https://blog.rubygems.org/2024/12/19/bundler-v2-6.html) are on by default in Bundler 2.6+ (and Bundler 4 / Ruby 4.0), a committed lock ends up internally inconsistent after each bump, and the release job's frozen `bundle install` fails with exit code 16. Add `/Gemfile.lock` to `.gitignore`.
+
+Now create the repo and push it with the [GitHub CLI](https://cli.github.com/):
+
+```bash
+git add -A
+git commit -m "chore: initial commit"
+gh repo create release-please-demo --public --source=. --remote=origin --push
+```
+
+One manual setting is required before Release Please can open a release PR: in the new repo, go to **Settings → Actions → General → Workflow permissions** and enable **Allow GitHub Actions to create and approve pull requests**. Without it, the action fails when it tries to open the PR.
 
 The release action will run once you push your changes to the main branch. On this first run there's nothing to release yet: the only commits are chores and build changes, so Release Please finds no user-facing commits and doesn't open a release PR.
 
-Just for reference - this is the output of `git log --oneline` so you can see my four commits:
+Just for reference - here's `git log --oneline` after the initial push:
 
 ```bash
-9a4d62b (HEAD -> main, origin/main) build: add release action (#1)
-1b0bcd4 chore: bundle install
-7a30c6d chore: update gemspec
-c793bca chore: initial commit
+c793bca (HEAD -> main, origin/main) chore: initial commit
 ```
 
-As we can see, none were features or fixes, so the action did not create a release PR.
+There are no `feat:` or `fix:` commits, so the action did not create a release PR.
 
 ## Creating a release
 
@@ -289,7 +299,7 @@ If we check RubyGems, we should see our new gem has been published and is ready 
 If you followed the tutorial and don't intend to use your new gem, you should consider yanking it to allow others to use the name in the future.
 
 ```bash
-gem yank release-please-demo -v 1.0.0
+gem yank release-please-demo -v 0.2.0
 ```
 
 One great aspect of the action is that you can use it with other languages or a `.txt` file, allowing you to create consistent pattern across all of your open source. You could enhance the workflow by adding in checks to run the tests before releases and also adding a linter to ensure conventional commits are used. With this workflow, you'll be able to make new releases without pulling down the code and never have to try and remember how you release a project again.
