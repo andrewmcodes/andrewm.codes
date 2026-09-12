@@ -58,7 +58,7 @@ Gem::Specification.new do |spec|
   spec.name = "release-please-demo"
   spec.version = Release::Please::Demo::VERSION
   spec.authors = ["Andrew Mason"]
-  spec.email = ["andrewmcodes@protonmail.com"]
+  spec.email = ["REDACTED@andrewm.codes"]
 
   spec.summary = "Demo of release-please."
   spec.description = "A demo gem showing how to use release-please to automatically version gems."
