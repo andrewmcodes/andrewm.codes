@@ -9,7 +9,7 @@ tags:
   - CI
   - gem
 date: 2021-02-20 00:33:07.000000000 Z
-last_modified_at: 2026-09-11 00:00:00.000000000 Z
+last_modified_at: 2026-09-12 00:00:00.000000000 Z
 categories:
   - tutorials
 featured: true
@@ -38,7 +38,7 @@ I've considered doing a longer article about how I use conventional commit messa
 I'm going to create a new gem to demo this action's functionality:
 
 ```bash
-bundler gem release-please-demo --test=rspec --ci=github
+bundle gem release-please-demo --test=rspec --ci=github
 cd release-please-demo
 bundle install
 ```
@@ -47,7 +47,7 @@ bundle install
 
 Next we will need to update our gemspec if we want to publish the gem. I'm not going to go over this right now, but if you're curious to learn more about how to setup a Ruby gem specification, I suggest [checking out this great article by Piotr Murach](https://piotrmurach.com/articles/writing-a-ruby-gem-specification/).
 
-This is what my `release-please-demo.gemspec` looks like after replacing the `TODO` placeholders that Bundler leaves for the summary, description, and push host, and uncommenting the `rubygems_mfa_required` line (recommended):
+This is what my `release-please-demo.gemspec` looks like after filling in the `TODO` placeholders Bundler leaves for the summary and description, removing the `allowed_push_host` line (that placeholder only matters for a private gem server — leaving it out publishes to public RubyGems), and uncommenting the `rubygems_mfa_required` line (recommended):
 
 ```ruby
 # frozen_string_literal: true
@@ -192,7 +192,7 @@ There are no `feat:` or `fix:` commits, so the action did not create a release P
 I'm going to cheat and add an empty commit for a feature:
 
 ```bash
-git commit --allow-empty -m "feat!: add a feature"
+git commit --allow-empty -m "feat: add a feature"
 git push -u origin main
 ```
 
@@ -226,8 +226,11 @@ Trusted publishing needs a one-time configuration on RubyGems.org. From the gem'
       - uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
+          ruby-version: ruby
         if: ${{ steps.release.outputs.release_created }}
 ```
+
+`ruby-version: ruby` tells `setup-ruby` to use the latest stable Ruby. `bundler gem` doesn't scaffold a `.ruby-version` file, so without this input the step has no version to resolve and fails.
 
 ### Publish Step
 
@@ -276,6 +279,7 @@ jobs:
       - uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
+          ruby-version: ruby
         if: ${{ steps.release.outputs.release_created }}
       # Build and push to RubyGems via trusted publishing
       - uses: rubygems/release-gem@v1
