@@ -35,6 +35,10 @@ class TestHeaders < Bridgetown::Test
     expect(HEADERS).must_match %r{Content-Security-Policy(-Report-Only)?: .*default-src 'self'}
   end
 
+  it "allows the Cloudflare Web Analytics beacon in script-src" do
+    expect(HEADERS).must_match %r{script-src [^\n]*https://static\.cloudflareinsights\.com}
+  end
+
   it "links HTML and Markdown representations in both directions" do
     expect(HEADERS).must_include "/p/*/\n  Link: </p/:splat.md>; rel=\"alternate\"; type=\"text/markdown\""
     expect(HEADERS).must_include "/p/*.md\n  Link: </p/:splat/>; rel=\"alternate\"; type=\"text/html\""

@@ -7,7 +7,7 @@
   since: 2022
   mark: RR
   accent_hue: 180
-  image: /images/podcasts/remote-ruby.jpg
+  image: podcasts/remote-ruby.jpg
   url: https://remoteruby.com
 
 - slug: ruby-for-all
@@ -18,7 +18,7 @@
   since: "2022–2024"
   mark: R4A
   accent_hue: 0
-  image: /images/podcasts/ruby-for-all.png
+  image: podcasts/ruby-for-all.png
   url: https://rubyforall.com
 
 - slug: the-ruby-blend
@@ -29,7 +29,7 @@
   since: "2022–2023"
   mark: TRB
   accent_hue: 40
-  image: /images/podcasts/the-ruby-blend.jpg
+  image: podcasts/the-ruby-blend.jpg
   url: "#"
 
 - slug: ruby-rogues
@@ -40,5 +40,5 @@
   since: "2018–2022"
   mark: RR
   accent_hue: 350
-  image: /images/podcasts/ruby-rogues.jpg
+  image: podcasts/ruby-rogues.jpg
   url: https://devchat.tv/podcasts/ruby-rogues/

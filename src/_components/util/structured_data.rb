@@ -325,7 +325,7 @@ module Util
           "name" => pod["name"],
           "url" => url,
           "description" => pod["tagline"],
-          "image" => absolute_image(pod["image"])
+          "image" => imagekit_url(pod["image"])
         }.compact
       end
     end

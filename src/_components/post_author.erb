@@ -1,33 +1,41 @@
 <div>
   <div class="flex items-start gap-4">
     <img
-      src="/images/main-avatar.png"
+      src="/images/main-avatar-56.webp"
+      srcset="/images/main-avatar-28.webp 28w, /images/main-avatar-56.webp 56w, /images/main-avatar-112.webp 112w, /images/main-avatar-224.webp 224w"
+      sizes="44px"
       alt=""
       width="88"
       height="88"
       class="w-11 h-11 rounded-full object-cover shrink-0"
-    />
+    >
 
     <div class="min-w-0">
       <p class="m-0 text-row text-mauve-12"><%= name %></p>
 
       <p class="mt-1.5 m-0 text-note text-mauve-11 text-pretty">
         Ruby on Rails engineer at
-        <a
-          href="https://podia.com"
-          class="text-mauve-12 underline decoration-mauve-7 underline-offset-4 hover:decoration-ruby-11 transition-colors"
-        >Podia</a>
+        <a href="https://podia.com" class="
+          text-mauve-12 underline decoration-mauve-7 underline-offset-4
+          hover:decoration-ruby-11 transition-colors
+        ">Podia</a>
         and co-host of
-        <a
-          href="https://remoteruby.com/"
-          class="text-mauve-12 underline decoration-mauve-7 underline-offset-4 hover:decoration-ruby-11 transition-colors"
-        >Remote Ruby</a>, based in Phoenix, Arizona. Writing things down mostly
-        so I can find them again.
+        <a href="https://remoteruby.com/" class="
+          text-mauve-12 underline decoration-mauve-7 underline-offset-4
+          hover:decoration-ruby-11 transition-colors
+        ">Remote Ruby</a>,
+        based in Phoenix, Arizona. Writing things down mostly so I can find them
+        again.
       </p>
 
       <%= render Inline.new(space: :md, class: "mt-3") do %>
-        <%= render Link.new(href: "/about/", variant: :action) do %>More about me<% end %>
-        <%= render Link.new(href: "https://bsky.app/profile/andrewm.codes", variant: :action) do %>@<%= handle %> on Bluesky<% end %>
+        <%= render Link.new(href: "/about/", variant: :action) do %>
+          More about me
+        <% end %>
+
+        <%= render Link.new(href: "https://bsky.app/profile/andrewm.codes", variant: :action) do %>
+          @<%= handle %> on Bluesky
+        <% end %>
       <% end %>
     </div>
   </div>

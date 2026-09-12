@@ -3,12 +3,14 @@
   class="group flex items-center <%= tokens[:gap] %> rounded-md px-1.5 py-1 -mx-1.5 hover:bg-mauve-3 transition-colors"
 >
   <img
-    src="/images/main-avatar.png"
+    src="/images/main-avatar-56.webp"
+    srcset="/images/main-avatar-28.webp 28w, /images/main-avatar-56.webp 56w, /images/main-avatar-112.webp 112w, /images/main-avatar-224.webp 224w"
+    sizes="<%= tokens[:avatar].include?("w-7") ? "28px" : "32px" %>"
     alt=""
     width="64"
     height="64"
     class="<%= tokens[:avatar] %> rounded-full object-cover shrink-0"
-  />
+  >
 
   <span class="min-w-0">
     <span class="block <%= tokens[:name] %> font-semibold text-mauve-12 truncate">

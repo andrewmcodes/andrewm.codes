@@ -5,7 +5,9 @@
   mark: {
     label: field(:mark),
     hue: hue,
-    image: field(:image),
+    image: cover_url(48),
+    srcset: cover_srcset,
+    sizes: "48px",
     dim: !field(:active),
   },
   title: field(:name),

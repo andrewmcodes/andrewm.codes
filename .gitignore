@@ -68,3 +68,6 @@ skills-lock.json
 .impeccable/critique/
 .impeccable/questions/
 .impeccable/review/
+
+# Lighthouse
+.lighthouseci

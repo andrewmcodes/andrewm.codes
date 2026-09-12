@@ -33,6 +33,8 @@ import build from "./config/esbuild.defaults.js";
  * @type {BuildOptions}
  */
 const esbuildOptions = {
+  format: "esm",
+  splitting: true,
   plugins: [
     // add new plugins here...
   ],

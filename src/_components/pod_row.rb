@@ -23,6 +23,14 @@ class PodRow < Bridgetown::Component
     [since_label, field(:schedule)].compact
   end
 
+  def cover_url(width)
+    imagekit_url(field(:image), w: width)
+  end
+
+  def cover_srcset
+    [48, 96].map { |width| "#{cover_url(width)} #{width}w" }.join(", ")
+  end
+
   private
 
   # A running show says "since 2019"; a finished one just states the year.

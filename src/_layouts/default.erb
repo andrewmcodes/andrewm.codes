@@ -119,7 +119,7 @@
       href="<%= Bridgetown.env.production? ? asset_path("styles/tailwind.css") : "/_bridgetown/static/tailwind.css" %>"
     >
 
-    <script src="<%= asset_path :js %>" defer></script>
+    <script type="module" src="<%= asset_path :js %>"></script>
   </head>
 
   <body class="bg-chrome text-mauve-12 font-sans text-body min-h-screen">
@@ -129,27 +129,6 @@
         <%= absolute_url(markdown_path) %>.
       </div>
     <% end %>
-
-    <!--
-  THESIS: The site is an application you navigate, not a document you scroll.
-  It refuses the centred blog column under a topbar, the hairline-ruled list,
-  and the metadata rail that fronts every title with a date.
-  OWN-WORLD: Radix Mauve in two surfaces — a deeper chrome ground under the
-  source list, a lighter plate under the pane — with Radix Ruby spent only on
-  state and amber only on staleness. Geist Sans and Geist Mono, one designed
-  family, two voices. Whitespace separates; a rule appears only at the shell
-  seam. List titles are large and semibold: hierarchy is weight and value.
-  STORY: A stranger opens something that behaves like an app they already use,
-  reads the name, the one-line claim and the derived ledger, then moves through
-  the work by source list or by ⌘K.
-  FIRST VIEWPORT: A 268px source list at left, its current row barred in ruby;
-  beside it a pane centred at 46rem opening on a 56px avatar, the name at 34px,
-  a two-line claim at 24px in mid-value, five glyphs, one derived mono ledger,
-  then "writing" over five bare post titles carrying no dates.
-  FORM: Source List — candidate 1 of 7, brief-pinned over the roll's 7. Seed b6022bf2.
-  FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance
-    -->
-
     <%= render SkipLink.new %>
 
     <%= render AppShell.new(resource: resource, kind: data.kind) do %>
