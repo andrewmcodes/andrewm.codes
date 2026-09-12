@@ -1,5 +1,65 @@
 # Changelog
 
+## [9.0.0](https://github.com/andrewmcodes/andrewm.codes/compare/v8.1.1...v9.0.0) (2026-09-12)
+
+
+### Features
+
+* **design:** act on the critique — Plex Sans, fewer rules, real state cues ([51456a5](https://github.com/andrewmcodes/andrewm.codes/commit/51456a5640519a23225c622b9c2c1744baa7d04f))
+* **design:** replace the visual world with slate, ruby, and a named type scale ([1157bea](https://github.com/andrewmcodes/andrewm.codes/commit/1157bea02768c696247e3a51ade6cc40f255b191))
+* **home:** add a derived evidence ledger to the hero ([d049d0b](https://github.com/andrewmcodes/andrewm.codes/commit/d049d0b4c22d8ffc98cdf29ff8a8316e5c68bcf9))
+* **layout:** give every section a label rail so the desktop reads as composed ([4599b9c](https://github.com/andrewmcodes/andrewm.codes/commit/4599b9c2f4b81224f9ec04448919c1ef9d50f0d9))
+* **post:** give the reading page a margin and finally build its contents rail ([75cf33f](https://github.com/andrewmcodes/andrewm.codes/commit/75cf33ffc3d93194e1066173be6327932a02b070))
+* **site:** source-list shell, imagekit hosting, seo hardening, and a theme cross-fade ([3ca2ace](https://github.com/andrewmcodes/andrewm.codes/commit/3ca2ace911632a70e47d08803ea07e55b8837d3b))
+* **site:** source-list shell, imagekit hosting, seo hardening, and a theme cross-fade ([cbd7b7c](https://github.com/andrewmcodes/andrewm.codes/commit/cbd7b7cebc49d57cc255ee359c75effc2bf3f07d))
+* **styles:** add the radix slate ramp ([d81e286](https://github.com/andrewmcodes/andrewm.codes/commit/d81e2869cb0a573ff070c442f09329f3303d42c4))
+* **webmentions:** redesign the post response section ([f6cd0f8](https://github.com/andrewmcodes/andrewm.codes/commit/f6cd0f8395738a35cf5343b825e37b5c844c6de4))
+
+
+### Bug Fixes
+
+* address design review and stabilize archive filters ([9bcec5a](https://github.com/andrewmcodes/andrewm.codes/commit/9bcec5a0062d6f9cf777034ed858237d2959cd14))
+* address review regressions in shell lifecycle ([e62c0f5](https://github.com/andrewmcodes/andrewm.codes/commit/e62c0f5279b3806a4d25ddf0f2de3fe323144436))
+* align component RBS declarations ([a2db634](https://github.com/andrewmcodes/andrewm.codes/commit/a2db634987d5204ce676c86131347869e4f6506c))
+* **chrome:** guarantee focus, and clear the defects the chrome was carrying ([57f75f9](https://github.com/andrewmcodes/andrewm.codes/commit/57f75f92ab050bdda3020994aef72e2b644126ae))
+* **cmdk:** restore focus to the trigger when the palette is opened with the shortcut ([8471e00](https://github.com/andrewmcodes/andrewm.codes/commit/8471e00b1576f85f618e93610928adfe3c733045))
+* **design:** apply the finish review's material fixes ([45d0048](https://github.com/andrewmcodes/andrewm.codes/commit/45d0048a144885a770ce1798ab9a374055c7db12))
+* **design:** clear the defects the first render surfaced ([de8a9d2](https://github.com/andrewmcodes/andrewm.codes/commit/de8a9d20bffae9ad33247da1bf4b39c2edf05114))
+* **design:** close the finish review's last items and four latent defects ([eaac5f4](https://github.com/andrewmcodes/andrewm.codes/commit/eaac5f4914b608d62db9af6f9dbb85c718b22819))
+* **design:** close the verdict's three regressions and three partials ([2974b4a](https://github.com/andrewmcodes/andrewm.codes/commit/2974b4aec4836194bee3a124f9c13ca2fe7e75cc))
+* **design:** unify the last radii, delete a colour trap, and order the post head ([ed29415](https://github.com/andrewmcodes/andrewm.codes/commit/ed29415b1feb450128780baf95fcc39544d7a6d4))
+* install falcon for local development ([#564](https://github.com/andrewmcodes/andrewm.codes/issues/564)) ([06d7e7d](https://github.com/andrewmcodes/andrewm.codes/commit/06d7e7d79c2c46eee9fecec77581d7b2364d95f0))
+* refresh favicon assets to match ruby palette ([1072337](https://github.com/andrewmcodes/andrewm.codes/commit/1072337b07e90626e5c78b9485ed35eeddd8e5f4))
+* remove speaking page section index ([#588](https://github.com/andrewmcodes/andrewm.codes/issues/588)) ([d026cf9](https://github.com/andrewmcodes/andrewm.codes/commit/d026cf937709adf51d10e03355fcc69c5657c740))
+* **seo:** repair links and align sitemap metadata ([f245fae](https://github.com/andrewmcodes/andrewm.codes/commit/f245fae7a552dd26f6e06fb181c97a9ef99f3f42))
+* **styles:** bridge mint-6 into the tailwind theme ([df2783c](https://github.com/andrewmcodes/andrewm.codes/commit/df2783c07acff4037df30aa2430ec1209c833bf5))
+* **types:** satisfy tsc in copy_code and reading_progress ([03d3c9a](https://github.com/andrewmcodes/andrewm.codes/commit/03d3c9a4c3af747d7946d6bcbb89f017ed4ed99b))
+
+
+### Performance
+
+* **ci:** parallelize Lighthouse and cut runs per URL ([#562](https://github.com/andrewmcodes/andrewm.codes/issues/562)) ([459e8b0](https://github.com/andrewmcodes/andrewm.codes/commit/459e8b0553dd459166adc3fdac99621d84715049))
+
+
+### Refactors
+
+* **components:** collapse seven row and card components into two primitives ([68ac658](https://github.com/andrewmcodes/andrewm.codes/commit/68ac65812cc95ad43fcd3b0f67b4eaf9805c509b))
+* **components:** drop Image's unreachable variants ([eb52a45](https://github.com/andrewmcodes/andrewm.codes/commit/eb52a45c8c176c918fed0aec01f157814c1333fc))
+* replace email links with bluesky contact links ([#565](https://github.com/andrewmcodes/andrewm.codes/issues/565)) ([4a7d78e](https://github.com/andrewmcodes/andrewm.codes/commit/4a7d78e5cbfe7fe421bb35be8da624c522238d57))
+* **styles:** prune the dead amber steps and the last hand-built label ([6c7119b](https://github.com/andrewmcodes/andrewm.codes/commit/6c7119b780a8bbef9050be2a1f0911b27afcf889))
+
+
+### Documentation
+
+* **design:** capture product context and design system ([8d6f0d8](https://github.com/andrewmcodes/andrewm.codes/commit/8d6f0d8129061b0ad153c5f52bdc84f36ed909b1))
+* **design:** refresh the design system and document slate ([c4b6a20](https://github.com/andrewmcodes/andrewm.codes/commit/c4b6a2046d5ff6674a4f18a36e2fd87242828db0))
+* **product:** record the standing design preference and the layout primitive rule ([5341c03](https://github.com/andrewmcodes/andrewm.codes/commit/5341c03f07b164c932d34f6aca1586318ef776ed))
+
+
+### Chores
+
+* release 9.0.0 ([db19704](https://github.com/andrewmcodes/andrewm.codes/commit/db19704b1488a6636a2bc277c68781e62d6552cc))
+
 ## [8.1.1](https://github.com/andrewmcodes/andrewm.codes/compare/v8.1.0...v8.1.1) (2026-07-10)
 
 
