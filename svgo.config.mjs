@@ -1,3 +1,9 @@
 export default {
-  plugins: ["preset-default"],
+  plugins: [
+    "preset-default",
+    {
+      name: "removeViewBox",
+      active: false,
+    },
+  ],
 }
