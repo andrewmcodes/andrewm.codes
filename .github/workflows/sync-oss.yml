@@ -11,6 +11,8 @@ permissions:
 jobs:
   sync:
     runs-on: ubuntu-latest
+    outputs:
+      changed: ${{ steps.commit.outputs.changed }}
     steps:
       - uses: actions/checkout@v7
 
@@ -49,11 +51,26 @@ jobs:
             || { echo "::error::oss.json failed shape validation"; exit 1; }
           mv /tmp/oss.json src/_data/oss.json
 
-      - run: |
-          if ! git diff --quiet src/_data/oss.json; then
-            git config user.name "andrewmcodes-bot"
-            git config user.email "bot@andrewm.codes"
-            git add src/_data/oss.json
-            git commit -m "chore(data): refresh OSS projects"
-            git push
-          fi
+      - uses: ./.github/actions/commit-data
+        id: commit
+        with:
+          paths: src/_data/oss.json
+          message: "chore(data): refresh OSS projects"
+
+  deploy:
+    name: deploy to cloudflare
+    needs: sync
+    if: needs.sync.outputs.changed == 'true'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      # Check out the refreshed data the sync job just pushed, not the stale trigger SHA.
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ github.ref }}
+      - uses: ./.github/actions/deploy-production
+        with:
+          cloudflare-api-key: ${{ secrets.CLOUDFLARE_API_KEY }}
+          cloudflare-email: ${{ secrets.CLOUDFLARE_EMAIL }}
+          cloudflare-account-id: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}

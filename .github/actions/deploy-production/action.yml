@@ -1,0 +1,30 @@
+name: Deploy to production
+description: >
+  Production build (`bin/bridgetown deploy`) plus a Cloudflare Workers Static Assets deploy. Used by the data-sync workflows to redeploy the site after a committed change, since pushes made with GITHUB_TOKEN do not trigger CI.
+
+inputs:
+  cloudflare-api-key:
+    description: Cloudflare API key
+    required: true
+  cloudflare-email:
+    description: Cloudflare account email
+    required: true
+  cloudflare-account-id:
+    description: Cloudflare account ID
+    required: true
+
+runs:
+  using: composite
+  steps:
+    - uses: ./.github/actions/setup
+    - shell: bash
+      env:
+        BRIDGETOWN_ENV: production
+      run: bin/bridgetown deploy
+    - uses: cloudflare/wrangler-action@v4
+      env:
+        CLOUDFLARE_API_KEY: ${{ inputs.cloudflare-api-key }}
+        CLOUDFLARE_EMAIL: ${{ inputs.cloudflare-email }}
+      with:
+        accountId: ${{ inputs.cloudflare-account-id }}
+        command: deploy
