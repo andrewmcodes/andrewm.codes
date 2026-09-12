@@ -11,13 +11,13 @@ categories:
   - tutorials
 ---
 
-Someone replied to one of my posts recently, and it showed up right underneath it:
+Andrea Fomera [replied to one of my posts recently](https://bsky.app/profile/afomera.dev/post/3mvbzefpqzs2t), and it showed up right underneath it:
 
 ![A webmention reply rendered under one of my posts](<%= imagekit_url 'posts/adding-webmentions-to-a-bridgetown-site/webmention-example.png', :medium %>)
 
 > good to see you blerging again
 
-No comment system. No third-party embed. No JavaScript widget phoning home from the corner of the page. Andrea wrote that reply somewhere else entirely, and it landed on my site as plain text that now lives in my Git repo.
+No comment system. No third-party embed. No JavaScript widget loading in the corner of the page. Andrea wrote that reply somewhere else entirely, and it landed on my site as plain text that now lives in [my Git repo](https://github.com/andrewmcodes/andrewm.codes).
 
 That's a webmention, and I finally set them up on this site.
 
@@ -27,15 +27,15 @@ Here's how it all fits together.
 
 A [webmention](https://www.w3.org/TR/webmention/) is a small notification. When someone links to one of your pages from their own site, their site sends a tiny POST to yours with two URLs: the page doing the mentioning (`source`) and the page being mentioned (`target`). In effect: "hey, I mentioned you over here." Your site gets to decide what to do with that: ignore it, count it, or render it as a reply.
 
-It's a [W3C Recommendation](https://www.w3.org/TR/webmention/) and a core piece of the [IndieWeb](https://indieweb.org/Webmention). Think of it as the open, decentralized version of "3 people liked this," except the likes and replies come from all over the web instead of from inside one company's walls.
+It's a [W3C Recommendation](https://www.w3.org/TR/webmention/) and a core piece of the [IndieWeb](https://indieweb.org/Webmention). Think of it as the open, decentralized version of "3 people liked this," except the likes and replies come from all over the web instead of from within the walled garden of a single social media site.
 
 Great in theory. There are two problems for a site like mine.
 
-First, my site is completely static. It's a Bridgetown build deployed to Cloudflare as static files, so there's no server sitting there ready to receive a POST.
+First, my site is completely static. It's a [Bridgetown](https://www.bridgetownrb.com) build deployed to Cloudflare as static files, so there's no server sitting there ready to receive a POST.
 
 Second, almost nobody writes replies on their own blog anymore. They reply on Bluesky. They like the post on Mastodon. The conversation happens on social, not on personal sites.
 
-Both problems have the same shape of fix: put hosted services at the boundary and keep my own site completely static.
+Both come down to the same fix: put hosted services at the boundary and keep my own site completely static.
 
 ## The moving parts
 
@@ -82,57 +82,77 @@ Bridgy watches the social posts tied to your site and turns replies, likes, and 
 
 Connect your accounts in Bridgy, and it takes care of the polling. That Bluesky reply from the screenshot at the top? Bridgy saw it and forwarded it to webmention.io, which is how it reached me at all.
 
+Note: which networks Bridgy supports changes over time. It works well with Bluesky and the fediverse, and it used to cover Twitter, but that stopped once Twitter became X and locked down its API. Check [Bridgy](https://brid.gy) for what's currently supported before you count on a given account.
+
 ## Step 3: Pull the mentions into the repo
 
 At this point webmention.io is collecting mentions, but my static build has no idea they exist. I need to pull them in.
 
 webmention.io exposes a per-domain [JF2](https://www.w3.org/TR/jf2/) feed. This script pages through the feed, collects every entry, and writes them back out as a JF2 feed of its own in `src/_data/webmentions.json`, which Bridgetown then exposes as `site.data.webmentions`:
 
-```js
-// scripts/fetch-webmentions.mjs
+```ruby
+# scripts/fetch-webmentions.rb
 
-const DOMAIN = "andrewm.codes";
-const PER_PAGE = 200;
+require "json"
+require "net/http"
+require "uri"
 
-const token = process.env.WEBMENTION_IO_TOKEN;
-if (!token) {
-  console.warn("WEBMENTION_IO_TOKEN not set — skipping fetch, leaving src/_data/webmentions.json unchanged.");
-  process.exit(0);
-}
+DOMAIN = "andrewm.codes"
+PER_PAGE = 200
+OUT = File.expand_path("../src/_data/webmentions.json", __dir__)
 
-async function fetchAll() {
-  const children = [];
-  for (let page = 0; ; page++) {
-    const url = new URL("https://webmention.io/api/mentions.jf2");
-    url.searchParams.set("domain", DOMAIN);
-    url.searchParams.set("token", token);
-    url.searchParams.set("per-page", String(PER_PAGE));
-    url.searchParams.set("page", String(page));
+token = ENV["WEBMENTION_IO_TOKEN"]
+if token.nil? || token.empty?
+  warn "WEBMENTION_IO_TOKEN not set; skipping fetch, leaving src/_data/webmentions.json unchanged."
+  exit 0
+end
 
-    const res = await fetch(url);
-    if (!res.ok) {
-      throw new Error(`webmention.io responded ${res.status} ${res.statusText}`);
-    }
-    const feed = await res.json();
-    const batch = feed.children ?? [];
-    children.push(...batch);
-    if (batch.length < PER_PAGE) break;
-  }
-  return children;
-}
+# Page through the JF2 feed until a short page signals the end.
+def fetch_all(token)
+  children = []
+  page = 0
 
-const children = await fetchAll();
-// Newest first so the component can take the most recent without re-sorting.
-children.sort((a, b) => (b["wm-received"] ?? "").localeCompare(a["wm-received"] ?? ""));
+  loop do
+    uri = URI("https://webmention.io/api/mentions.jf2")
+    uri.query = URI.encode_www_form(
+      "domain" => DOMAIN,
+      "token" => token,
+      "per-page" => PER_PAGE,
+      "page" => page
+    )
 
-const feed = { type: "feed", name: "Webmentions", children };
-await writeFile(OUT, JSON.stringify(feed, null, 2) + "\n");
-console.log(`Wrote ${children.length} webmentions to ${OUT}`);
+    response = Net::HTTP.get_response(uri)
+    unless response.is_a?(Net::HTTPSuccess)
+      raise "webmention.io responded #{response.code} #{response.message}"
+    end
+
+    batch = JSON.parse(response.body)["children"] || []
+    children.concat(batch)
+    break if batch.length < PER_PAGE
+
+    page += 1
+  end
+
+  children
+end
+
+children = fetch_all(token)
+# Newest first so the component can take the most recent without re-sorting.
+children.sort_by! { |wm| wm["wm-received"].to_s }
+children.reverse!
+
+feed = {"type" => "feed", "name" => "Webmentions", "children" => children}
+File.write(OUT, JSON.pretty_generate(feed) + "\n")
+puts "Wrote #{children.length} webmentions to #{OUT}"
 ```
 
-That `{ type, name, children }` shape is why the component reads `site.data.webmentions.children` later on. The full file, including the imports I trimmed here, is [`scripts/fetch-webmentions.mjs`](https://github.com/andrewmcodes/andrewm.codes/blob/main/scripts/fetch-webmentions.mjs).
+That `{ type, name, children }` shape is why the component reads `site.data.webmentions.children` later on. The full file, minus the header comment I trimmed here, is [`scripts/fetch-webmentions.rb`](https://github.com/andrewmcodes/andrewm.codes/blob/main/scripts/fetch-webmentions.rb). It leans entirely on Ruby's standard library, so there are no gems to install.
 
-A single post's mentions can be fetched publicly, but pulling every mention for the whole domain needs the account API token, which I keep out of the repo. Locally it comes from my Keychain via `fnox`, and in CI it's a repo secret.
+A single post's mentions can be fetched publicly, but pulling every mention for the whole domain needs the account API token, which I keep out of the repo. Locally it comes from my Keychain via [`fnox`](https://fnox.jdx.dev), and in CI it's a repo secret.
+
+`fnox` is from [Jeff Dickey](https://jdx.dev), the same person behind [`mise`](https://mise.jdx.dev), which I use to manage tool versions and tasks all over this repo.
+
+> BTW, we [interviewed Jeff on Remote Ruby](https://www.remoteruby.com/2260490/episodes/18785026-jeff-dickey-on-mise-precompiled-rubies-and-much-more) if you want to hear more about his projects like mise and fnox.
 
 Note: if the token is missing, the script logs a warning and exits `0` without touching the committed file. That was deliberate. I never want a missing secret to break a build. A build with slightly stale webmentions is fine. A build that fails is not.
 
@@ -165,12 +185,13 @@ jobs:
       changed: ${{ steps.commit.outputs.changed }}
     steps:
       - uses: actions/checkout@v7
-      - uses: actions/setup-node@v7
-        with: { node-version: "22" }
+      - uses: ./.github/actions/setup
+        with:
+          node: false
       - name: Fetch webmentions from webmention.io
         env:
           WEBMENTION_IO_TOKEN: ${{ secrets.WEBMENTION_IO_TOKEN }}
-        run: node scripts/fetch-webmentions.mjs
+        run: ruby scripts/fetch-webmentions.rb
 
       - uses: ./.github/actions/commit-data
         id: commit
@@ -242,6 +263,8 @@ The replies read like comments. They just don't live in a comment system. They l
 I like this setup more than any comment system I've run before, and the reason is ownership.
 
 **Every reply on my site is plain JSON in my Git repo now, not a row in someone else's database.** If webmention.io or Bridgy disappeared tomorrow, the pipeline would stop collecting anything new, but nothing I've already gathered would vanish. My site would keep building with exactly the data it has today. That's the whole IndieWeb pitch in one sentence, and it's the same reason I keep reaching for static sites in the first place.
+
+Owning the data has a quieter benefit too: moderation. I haven't had anyone reply with something heinous yet, and I'd rather not dare a reader to be the first, but if it happened I get the final say over what renders. I can filter or skip any mention I don't want on the page, and I can delete it outright from the [webmention.io dashboard](https://webmention.io/dashboard).
 
 It's also not much code. A fetch script, a scheduled Action, and one component. Most of the heavy lifting is done by two hosted services maintained by people who have been doing this far longer than I have, so real credit to Aaron Parecki and Ryan Barrett for webmention.io and Bridgy.
 
