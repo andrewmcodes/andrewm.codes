@@ -13,6 +13,8 @@ noindex: true
     description: "That page doesn't exist, or it moved and the redirect missed it.",
   ) %>
 
+  <%= render Link.new(href: "/search/", variant: :inline_accent, class: "inline-flex min-h-11 items-center text-row") do %>Search the site →<% end %>
+
   <%#
     Misses are an expected event here, not an edge case: the build generates a
     redirect for every legacy post URL, so anything that lands on this page has

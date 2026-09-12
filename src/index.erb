@@ -11,6 +11,7 @@ title: andrewm.codes
 <% all_posts = collections.posts.resources %>
 <% by_slug = all_posts.to_h { |p| [p.relative_url.to_s.split("/").reject(&:empty?).last, p] } %>
 <% selected_posts = Array(site.data.selected_posts).filter_map { |slug| by_slug[slug.to_s] } %>
+
 <%#
   The four most recently worked-on repositories, from the same GitHub data
   `/projects/` renders — so the homepage is a window onto that page rather than
@@ -24,12 +25,13 @@ title: andrewm.codes
 <%= render PageShell.new(spacing: :home) do %>
   <%#
     One Stack owns every gap on this page. The hero and the first section are
-    a `gutter` apart and the sections are `xxxl` apart, so the page reads as a
+    a `gutter` apart (xxxl on phones) and the sections are `xxxl` apart, so the page reads as a
     peak followed by an even body — the sectional mass the composition round
     took from the declined quarry direction, spent as space rather than as
     blocks.
   %>
-  <%= render Stack.new(space: :gutter) do %>
+
+  <%= render Stack.new(space: :gutter, class: "max-sm:gap-14") do %>
     <%= render HomeHero.new(
       posts_count: all_posts.size,
       projects_count: Array(site.data.oss).size,
@@ -37,27 +39,27 @@ title: andrewm.codes
     ) %>
 
     <%= render Stack.new(space: :xxxl) do %>
-    <%= render PageSection.new(
-      label: "Writing",
+      <%= render PageSection.new(
+      label: "Selected writing",
       link_label: "all writing",
       link_href: "/posts/",
     ) do %>
-      <%= render Stack.new(space: :xxs) do %>
-        <% selected_posts.each do |post| %>
-          <%= render PostRow.new(post: post, show_reading: false, show_date: false, show_tags: false) %>
+        <%= render Stack.new(space: :xxs) do %>
+          <% selected_posts.each do |post| %>
+            <%= render PostRow.new(post: post, show_reading: false, show_date: false, show_tags: false) %>
+          <% end %>
         <% end %>
       <% end %>
-    <% end %>
 
-    <% if projects.any? %>
-      <%= render PageSection.new(
+      <% if projects.any? %>
+        <%= render PageSection.new(
         label: "Projects",
         link_label: "all projects",
         link_href: "/projects/",
       ) do %>
-        <%= render CardGrid.new do %>
-          <% projects.each do |repo| %>
-            <%= render ProjectCard.new(
+          <%= render CardGrid.new do %>
+            <% projects.each do |repo| %>
+              <%= render ProjectCard.new(
               project: {
                 name: repo["name"],
                 desc: repo["description"],
@@ -69,41 +71,41 @@ title: andrewm.codes
                 status: "active",
               },
             ) %>
+            <% end %>
           <% end %>
         <% end %>
       <% end %>
-    <% end %>
 
-    <% if latest_talk || latest_episode %>
-      <%= render PageSection.new(
+      <% if latest_talk || latest_episode %>
+        <%= render PageSection.new(
         label: "Speaking",
         link_label: "talks and podcasts",
         link_href: "/speaking/",
       ) do %>
-        <%= render Stack.new(space: :xxs) do %>
-          <% if latest_episode %>
-            <%= render EpisodeCard.new(episode: latest_episode) %>
-          <% end %>
+          <%= render Stack.new(space: :xxs) do %>
+            <% if latest_episode %>
+              <%= render EpisodeCard.new(episode: latest_episode) %>
+            <% end %>
 
-          <% if latest_talk %>
-            <%= render TalkCard.new(talk: latest_talk) %>
+            <% if latest_talk %>
+              <%= render TalkCard.new(talk: latest_talk) %>
+            <% end %>
           <% end %>
         <% end %>
       <% end %>
-    <% end %>
 
-    <% if site.data.featured&.any? %>
-      <%= render PageSection.new(
+      <% if site.data.featured&.any? %>
+        <%= render PageSection.new(
         label: "Elsewhere",
         description: "A few things I point people to most often.",
       ) do %>
-        <%= render CardGrid.new do %>
-          <% site.data.featured.each do |item| %>
-            <%= render FeaturedCard.new(item: item) %>
+          <%= render CardGrid.new do %>
+            <% site.data.featured.each do |item| %>
+              <%= render FeaturedCard.new(item: item) %>
+            <% end %>
           <% end %>
         <% end %>
       <% end %>
-    <% end %>
     <% end %>
   <% end %>
 <% end %>

@@ -41,21 +41,24 @@
         aria-controls="cmdk-results"
         aria-autocomplete="list"
         aria-label="Search posts, talks, episodes, projects"
-        placeholder="Search posts, talks, episodes, projects…"
+        placeholder="Search the site…"
         class="
-          flex-1 bg-transparent border-0 outline-none text-row text-mauve-12
-          placeholder:text-mauve-9
+          min-w-0 flex-1 bg-transparent border-0 outline-none text-row text-mauve-12
+          placeholder:text-mauve-11
         "
       />
 
-      <span
+      <button
+        type="button"
+        data-cmdk-close
+        aria-label="Close search"
         class="
-          font-mono text-meta text-mauve-11 border border-mauve-6 rounded
-          px-1.5 py-0.5
+          shrink-0 min-w-11 min-h-11 font-mono text-meta text-mauve-11 rounded
+          hover:bg-mauve-3
         "
       >
-        esc
-      </span>
+        <span class="cmdk-keyboard">esc</span><span class="cmdk-touch">Close</span>
+      </button>
     </div>
 
     <div
@@ -67,7 +70,7 @@
 
     <div
       class="
-        flex gap-[18px] px-[18px] py-2.5 border-t border-mauve-6 font-mono text-meta
+        cmdk-keyboard flex gap-[18px] px-[18px] py-2.5 border-t border-mauve-6 font-mono text-meta
         text-mauve-11
       "
     >

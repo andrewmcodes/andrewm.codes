@@ -17,18 +17,29 @@ description: Every public repository Andrew Mason maintains — Ruby gems, Bridg
   date would make it one, and a grid never carries dated content.
 %>
 <% repos = Array(site.data.oss).sort_by { |r| r["pushedAt"].to_s }.reverse %>
+<% featured_urls = Array(site.data.featured).map { |item| item["href"] } %>
 
-<%= render PageShell.new do %>
+<%= render PageShell.new("data-archive": "projects") do %>
   <%= render Stack.new(space: :xxl) do %>
     <%= render Ui::PageHeader.new(
       title: "Projects",
       description: "#{repos.size} public repositories, most recently worked on first.",
     ) %>
 
+    <%= render ArchiveFilter.new(kind: "projects", count: repos.size, languages: repos.filter_map { |repo| repo.dig("primaryLanguage", "name") }.uniq.sort) %>
+
     <% if repos.any? %>
       <%= render CardGrid.new do %>
         <% repos.each do |repo| %>
-          <%= render ProjectCard.new(
+          <div
+            data-archive-item
+            data-search="<%= [repo['name'], repo['description'], repo.dig('primaryLanguage', 'name')].join(' ') %>"
+            data-language="<%= repo.dig('primaryLanguage', 'name') %>"
+            data-stars="<%= repo['stargazerCount'] %>"
+            data-updated="<%= repo['pushedAt'] %>"
+            data-featured="<%= featured_urls.include?(repo['url']) %>"
+          >
+            <%= render ProjectCard.new(
             project: {
               name: repo["name"],
               desc: repo["description"],
@@ -40,6 +51,7 @@ description: Every public repository Andrew Mason maintains — Ruby gems, Bridg
               status: "active",
             },
           ) %>
+          </div>
         <% end %>
       <% end %>
     <% end %>

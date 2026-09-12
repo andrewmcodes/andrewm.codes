@@ -4,6 +4,8 @@ import "@fontsource-variable/geist";
 import "@fontsource-variable/geist-mono";
 import "./cmdk.js";
 import "./search_page.js";
+import "./archive_filter.js";
+import "./section_index.js";
 import "./theme.js";
 import "./share.js";
 import "./copy_code.js";

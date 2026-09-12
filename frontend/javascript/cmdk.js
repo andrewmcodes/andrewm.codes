@@ -116,7 +116,7 @@ function renderResults(items) {
       (r, i) => `
     <a href="${escapeHTML(safeUrl(r.url))}" id="cmdk-opt-${i}" role="option" aria-selected="${i === 0}" data-cmdk-item data-idx="${i}" class="cmdk-row relative flex items-center gap-3 px-[18px] py-2 text-note cursor-pointer ${i === 0 ? "bg-mauve-3" : ""}">
       <span class="font-mono text-micro uppercase text-mauve-11 w-16 shrink-0">${escapeHTML(r.kind || "page")}</span>
-      <span class="flex-1 ${i === 0 ? "font-semibold text-mauve-12" : "text-mauve-12"}">${escapeHTML(r.title)}</span>
+      <span class="min-w-0 flex-1 [overflow-wrap:anywhere] ${i === 0 ? "font-semibold text-mauve-12" : "text-mauve-12"}">${escapeHTML(r.title)}</span>
     </a>
   `,
     )
@@ -205,7 +205,7 @@ document.addEventListener("click", (e) => {
     closeCmdk();
     return;
   }
-  if (target.id === "cmdk") closeCmdk();
+  if (target.id === "cmdk" || target.closest("[data-cmdk-close]")) closeCmdk();
 });
 
 document.addEventListener("mouseover", (e) => {
@@ -272,7 +272,7 @@ document.addEventListener("keydown", (e) => {
     updateSelection();
     return;
   }
-  if (e.key === "Enter") {
+  if (e.key === "Enter" && e.target === el("cmdk-input")) {
     e.preventDefault();
     const r = results[selectedIdx];
     if (r) {

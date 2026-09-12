@@ -8,6 +8,8 @@ description: The tools I rely on day to day. Updated whenever I switch something
 
 ## Workstation
 
+The desk, screens, and input devices I use every day.
+
 - [**Apple MacBook Pro 14-inch (M5)**](https://www.apple.com/macbook-pro/). Mac since college; no plans to change.
 - [**Ultimate Hacking Keyboard v2**](https://ultimatehackingkeyboard.com/). Split design. Fixed my wrist pain in 2020 and still going.
 - [**Logitech MX Vertical**](https://www.logitech.com/en-us/products/mice/mx-vertical-ergonomic-mouse.910-005447.html). Looks weird, feels great.
@@ -16,10 +18,14 @@ description: The tools I rely on day to day. Updated whenever I switch something
 
 ## Development
 
+Where I write code and run commands.
+
 - [**VS Code**](https://code.visualstudio.com). Daily driver since college. I'll use JetBrains IDEs for larger projects.
 - [**Warp**](https://app.warp.dev/referral/2W6LEL). Replaced iTerm. Shareable blocks, command palette, AI suggestions.
 
 ## Productivity
+
+Notes, shortcuts, and a little structure for the day.
 
 - [**Raycast**](https://www.raycast.com). Spotlight replacement with custom extensions and workflows. Replaced Alfred.
 - [**Obsidian**](https://obsidian.md). The first note app that stuck with my ADHD brain. Daily.
@@ -27,9 +33,13 @@ description: The tools I rely on day to day. Updated whenever I switch something
 
 ## Design
 
+For interface work and component design.
+
 - [**Figma**](https://www.figma.com). Full-time at Podia. Component composition is great.
 
 ## AI
+
+Coding assistants and tools for reviewing their work.
 
 - [**Claude Code**](https://claude.com/claude-code). Agentic coding in the terminal. Where most of my dev work happens now.
 - [**Codex**](https://openai.com/codex/). OpenAI's coding agent. Second opinion alongside Claude Code.

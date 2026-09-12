@@ -14,16 +14,19 @@
     That is the whole reason the name above it reads as the first thing: the
     hierarchy is value and weight, with no rule and no accent field involved.
   %>
+
   <p class="mt-4 m-0 text-lead text-mauve-11 max-w-[30ch] text-pretty">
     Rails engineer at
-    <a
-      href="https://podia.com"
-      class="text-mauve-12 underline decoration-mauve-7 underline-offset-[0.22em] hover:decoration-ruby-11 transition-colors"
-    >Podia</a>, co-host of
-    <a
-      href="https://remoteruby.com/"
-      class="text-mauve-12 underline decoration-mauve-7 underline-offset-[0.22em] hover:decoration-ruby-11 transition-colors"
-    >Remote Ruby</a>, located in Phoenix, AZ. 🌵
+    <a href="https://podia.com" class="
+      text-mauve-12 underline decoration-mauve-7 underline-offset-[0.22em]
+      hover:decoration-ruby-11 transition-colors
+    ">Podia</a>,
+    co-host of
+    <a href="https://remoteruby.com/" class="
+      text-mauve-12 underline decoration-mauve-7 underline-offset-[0.22em]
+      hover:decoration-ruby-11 transition-colors
+    ">Remote Ruby</a>,
+    located in Phoenix, AZ. 🌵
   </p>
 
   <div class="mt-7 flex flex-wrap items-center gap-1 -ml-2">
@@ -34,7 +37,7 @@
         aria-label="<%= s[:name] %>"
         title="<%= s[:name] %>"
         class="
-          inline-flex h-9 w-9 items-center justify-center rounded-md text-mauve-10
+          inline-flex h-11 w-11 items-center justify-center rounded-md text-mauve-10
           hover:bg-mauve-3 hover:text-mauve-12 transition-colors
         "
       >
@@ -43,13 +46,25 @@
     <% end %>
   </div>
 
+  <p class="mt-3 m-0 text-note text-mauve-11">
+    <%= render Link.new(href: "https://bsky.app/profile/andrewm.codes", variant: :inline) do %>
+      Invite me to your podcast or conference
+    <% end %>.
+  </p>
+
   <%#
     The one place a number appears in the first viewport. A hiring manager
     reading nothing else should still see that the lists below are a decade
     deep — and every figure here is counted from the collections at build time
     rather than typed in, so it cannot go quietly stale.
   %>
-  <p class="mt-6 m-0 flex flex-wrap items-center gap-x-2.5 gap-y-1 font-mono text-meta text-mauve-11">
+
+  <p
+    class="
+      mt-6 m-0 flex flex-wrap items-center gap-x-2.5 gap-y-1 font-mono
+      text-meta text-mauve-11
+    "
+  >
     <% ledger.each_with_index do |fact, i| %>
       <% if i > 0 %>
         <span aria-hidden="true" class="text-mauve-9">·</span>

@@ -8,6 +8,6 @@ class CardGrid < Box
   private
 
   def classes
-    cx("card-grid")
+    cx("card-grid grid grid-cols-1 min-[680px]:grid-cols-2 gap-x-10 gap-y-2")
   end
 end

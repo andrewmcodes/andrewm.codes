@@ -1,0 +1,25 @@
+<nav
+  data-section-index="<%= @selector %>"
+  aria-label="<%= @label %>"
+  hidden
+  class="my-6"
+>
+  <label for="section-jump" class="block mb-2 text-label text-mauve-11"><%= @label %></label>
+
+  <div class="flex gap-2">
+    <select
+      id="section-jump"
+      class="
+        min-w-0 flex-1 min-h-11 rounded-md border border-mauve-6 bg-mauve-2
+        px-3 text-body text-mauve-12
+      "
+    ></select>
+
+    <button
+      type="button"
+      class="min-h-11 min-w-11 px-3 rounded-md bg-mauve-3 text-mauve-12"
+    >
+      Go
+    </button>
+  </div>
+</nav>

@@ -41,6 +41,13 @@ const start = () => {
   }
 
   const links = [...nav.querySelectorAll("a[href^='#']")];
+  const summary = wrap?.querySelector("summary");
+  if (summary && !summary.querySelector("[data-toc-count]")) {
+    const count = document.createElement("span");
+    count.dataset.tocCount = "";
+    count.textContent = ` · ${links.length} sections`;
+    summary.append(count);
+  }
   const entries = links
     .map((link) => ({
       link,

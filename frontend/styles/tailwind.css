@@ -10,6 +10,21 @@
 
 @custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
 
+.cmdk-touch { display: none; }
+.card-grid > [data-archive-item] > a { height: 100%; }
+[data-archive-item][hidden], [data-archive-group][hidden] { display: none; }
+[data-section-index] ~ .prose h2, main section[id] h2 { scroll-margin-top: 5.5rem; }
+@media (max-width: 639px), (pointer: coarse) {
+  .cmdk-keyboard { display: none; }
+  .cmdk-touch { display: inline; }
+}
+@media (max-width: 639px) {
+  .cmdk-row { flex-direction: column; align-items: stretch; gap: 0.125rem; }
+  .cmdk-row > span:first-child { width: auto; }
+  .cmdk-overlay { padding-top: 4vh; }
+  #cmdk-results { max-height: 65dvh; }
+}
+
 /* Radix UI Mauve + Ruby + Amber — values inlined and scoped to our data-theme
    attribute. Radix's own CSS files scope dark to `.dark, .dark-theme` (class
    selectors) which wouldn't trigger our attribute-based theme switch.

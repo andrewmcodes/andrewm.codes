@@ -34,7 +34,7 @@ class Tile < Bridgetown::Component
   # language, so pointing at a project and pointing at a post feel identical —
   # the tile only differs in shape, never in how it answers the pointer.
   def tile_classes
-    "group relative flex flex-col rounded-lg -mx-4 px-4 py-3.5 " \
+    "group relative min-w-0 flex flex-col rounded-lg -mx-4 px-4 py-3.5 [overflow-wrap:anywhere] " \
       "transition-colors hover:bg-mauve-3 focus-visible:bg-mauve-3 " \
       "before:absolute before:left-0 before:top-3 before:bottom-3 before:w-0.5 " \
       "before:rounded-full before:bg-ruby-11 before:opacity-0 " \

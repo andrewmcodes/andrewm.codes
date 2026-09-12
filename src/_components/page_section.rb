@@ -14,7 +14,8 @@ class PageSection < Bridgetown::Component
   # @param description [String, nil] one line on what the section holds
   # @param link_label [String, nil] label for the "everything else" action
   # @param link_href [String, nil] destination for that action
-  def initialize(label: nil, description: nil, link_label: nil, link_href: nil, spacing: nil)
+  def initialize(label: nil, description: nil, link_label: nil, link_href: nil, spacing: nil, id: nil)
+    @id = id
     @label = label
     @description = description
     @link_label = link_label
