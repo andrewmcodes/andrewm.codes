@@ -10,13 +10,16 @@ class Builders::Imagekit < SiteBuilder
   #
   # Presets carry width only: ImageKit already applies format and quality
   # negotiation by default, so `f-auto,q-auto` would restate the default.
+  def self.url(config, path, preset = nil, **options)
+    opts = preset.is_a?(Symbol) ? (config[:presets][preset] || {}) : options
+    transforms = opts.map { |k, v| "#{k}-#{v}" }.join(",")
+    base = "#{config[:url_endpoint].chomp("/")}/#{path.to_s.delete_prefix("/")}"
+    transforms.empty? ? base : "#{base}?tr=#{transforms}"
+  end
+
   def build
     helper :imagekit_url do |path, preset = nil, **options|
-      config = site.config.imagekit
-      opts = preset.is_a?(Symbol) ? (config[:presets][preset] || {}) : options
-      transforms = opts.map { |k, v| "#{k}-#{v}" }.join(",")
-      base = "#{config[:url_endpoint].chomp("/")}/#{path.to_s.delete_prefix("/")}"
-      transforms.empty? ? base : "#{base}?tr=#{transforms}"
+      Builders::Imagekit.url(site.config.imagekit, path, preset, **options)
     end
   end
 end
