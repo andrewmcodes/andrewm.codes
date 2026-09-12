@@ -165,7 +165,9 @@ jobs:
 We are going to do some more cool things in a second, but let's go ahead and see what this produces. Before the first push, two bits of housekeeping:
 
 - **Remove the failing sample spec.** Bundler scaffolds a test that asserts `expect(false).to eq(true)`, so the `main.yml` CI it adds with `--ci=github` fails until you delete it.
-- **🚨 Don't commit `Gemfile.lock`.** You generally don't check a lockfile into a library gem anyway, but with Release Please it's effectively required. Its Ruby updater bumps the version in `version.rb` and the lock's `specs:` section, but not Bundler's newer `CHECKSUMS` section ([release-please#2720](https://github.com/googleapis/release-please/issues/2720)). Since [lockfile checksums](https://blog.rubygems.org/2024/12/19/bundler-v2-6.html) are on by default in Bundler 2.6+ (and Bundler 4 / Ruby 4.0), a committed lock ends up internally inconsistent after each bump, and the release job's frozen `bundle install` fails with exit code 16. Add `/Gemfile.lock` to `.gitignore`.
+- **🚨 Deal with `Gemfile.lock`.** Release Please's Ruby updater bumps the version in `version.rb` and the lock's `specs:` section, but not Bundler's newer `CHECKSUMS` section ([release-please#2720](https://github.com/googleapis/release-please/issues/2720)). Since [lockfile checksums](https://blog.rubygems.org/2024/12/19/bundler-v2-6.html) are on by default in Bundler 2.6+ (and Bundler 4 / Ruby 4.0), a committed lock ends up internally inconsistent after each bump, and the release job's frozen `bundle install` fails with exit code 16. Two ways to avoid it:
+  - **Don't commit the lock** — add `/Gemfile.lock` to `.gitignore`. This is the conventional choice for a library gem anyway.
+  - **Keep the lock but drop its checksums** — run `bundle config set --local lockfile_checksums false` and regenerate the lock with `bundle install`. With no `CHECKSUMS` section there's nothing for the version bump to leave stale. (`--local` writes `.bundle/config`, which Bundler gitignores by default, so commit the checksum-free `Gemfile.lock` it produces.)
 
 Now create the repo and push it with the [GitHub CLI](https://cli.github.com/):
 
