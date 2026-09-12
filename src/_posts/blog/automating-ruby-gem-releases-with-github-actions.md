@@ -179,7 +179,7 @@ As we can see, none were features or fixes, so the action did not create a relea
 
 ## Creating a release
 
-I'm going to cheat and an empty commit for a feature:
+I'm going to cheat and add an empty commit for a feature:
 
 ```bash
 git commit --allow-empty -m "feat!: add a feature"
