@@ -36,6 +36,7 @@ FileUtils.mkdir_p(output_dir)
 update_manifest(manifest_path, manifest_key, "tailwind.css") if watch
 
 args = [tailwind_cli, "-i", input_path, "-o", output_path]
+args << "--minify" unless watch
 args << "--watch" if watch
 
 pid = Process.spawn("node", *args, out: $stdout, err: $stderr)
