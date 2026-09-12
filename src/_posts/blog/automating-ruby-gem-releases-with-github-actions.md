@@ -47,7 +47,7 @@ bundle install
 
 Next we will need to update our gemspec if we want to publish the gem. I'm not going to go over this right now, but if you're curious to learn more about how to setup a Ruby gem specification, I suggest [checking out this great article by Piotr Murach](https://piotrmurach.com/articles/writing-a-ruby-gem-specification/).
 
-This is what my `release-please-demo.gemspec` looks like after filling in the `TODO` placeholders Bundler leaves for the summary and description, removing the `allowed_push_host` line (that placeholder only matters for a private gem server — leaving it out publishes to public RubyGems), and uncommenting the `rubygems_mfa_required` line (recommended):
+This is what my `release-please-demo.gemspec` looks like after filling in the `TODO` placeholders Bundler leaves for the summary and description, removing the `allowed_push_host` line (that placeholder only matters for a private gem server, so leaving it out publishes to public RubyGems), and uncommenting the `rubygems_mfa_required` line (recommended):
 
 ```ruby
 # frozen_string_literal: true
@@ -166,8 +166,8 @@ We are going to do some more cool things in a second, but let's go ahead and see
 
 - **Remove the failing sample spec.** Bundler scaffolds a test that asserts `expect(false).to eq(true)`, so the `main.yml` CI it adds with `--ci=github` fails until you delete it.
 - **🚨 Deal with `Gemfile.lock`.** Release Please's Ruby updater bumps the version in `version.rb` and the lock's `specs:` section, but not Bundler's newer `CHECKSUMS` section ([release-please#2720](https://github.com/googleapis/release-please/issues/2720)). Since [lockfile checksums](https://blog.rubygems.org/2024/12/19/bundler-v2-6.html) are on by default in Bundler 2.6+ (and Bundler 4 / Ruby 4.0), a committed lock ends up internally inconsistent after each bump, and the release job's frozen `bundle install` fails with exit code 16. Two ways to avoid it:
-  - **Don't commit the lock** — add `/Gemfile.lock` to `.gitignore`. This is the conventional choice for a library gem anyway.
-  - **Keep the lock but drop its checksums** — run `bundle config set --local lockfile_checksums false` and regenerate the lock with `bundle install`. With no `CHECKSUMS` section there's nothing for the version bump to leave stale. (`--local` writes `.bundle/config`, which Bundler gitignores by default, so commit the checksum-free `Gemfile.lock` it produces.)
+  - **Don't commit the lock:** add `/Gemfile.lock` to `.gitignore`. This is the conventional choice for a library gem anyway.
+  - **Keep the lock but drop its checksums:** run `bundle config set --local lockfile_checksums false` and regenerate the lock with `bundle install`. With no `CHECKSUMS` section there's nothing for the version bump to leave stale. (`--local` writes `.bundle/config`, which Bundler gitignores by default, so commit the checksum-free `Gemfile.lock` it produces.)
 
 Now create the repo and push it with the [GitHub CLI](https://cli.github.com/):
 
@@ -208,11 +208,11 @@ Our current setup is great if we just want to automate changelog creation and ve
 
 You may have noticed we gave our first step an id of `release`. By doing this, we can check the output of that step in other steps and act accordingly.
 
-Rather than juggle a long-lived RubyGems API token, we'll publish with [Trusted Publishing](https://guides.rubygems.org/trusted-publishing/). It uses OpenID Connect (OIDC) so GitHub Actions authenticates to RubyGems.org with a short-lived token minted at publish time — there's no secret to create, rotate, or leak. The [`rubygems/release-gem`](https://github.com/rubygems/release-gem) action handles the build-and-push for us.
+Rather than juggle a long-lived RubyGems API token, we'll publish with [Trusted Publishing](https://guides.rubygems.org/trusted-publishing/). It uses OpenID Connect (OIDC) so GitHub Actions authenticates to RubyGems.org with a short-lived token minted at publish time. There's no secret to create, rotate, or leak. The [`rubygems/release-gem`](https://github.com/rubygems/release-gem) action handles the build-and-push for us.
 
 ### One-time RubyGems setup
 
-Trusted publishing needs a one-time configuration on RubyGems.org. From the gem's **Trusted publishers** page, click **Create** and provide the repository owner, repository name, and the workflow filename (`release.yml`). For a gem that hasn't been published yet, add a [pending trusted publisher](https://guides.rubygems.org/trusted-publishing/) from your profile instead — the first successful publish claims the name. There's no secret to add to GitHub afterward.
+Trusted publishing needs a one-time configuration on RubyGems.org. From the gem's **Trusted publishers** page, click **Create** and provide the repository owner, repository name, and the workflow filename (`release.yml`). For a gem that hasn't been published yet, add a [pending trusted publisher](https://guides.rubygems.org/trusted-publishing/) from your profile instead, and the first successful publish claims the name. There's no secret to add to GitHub afterward.
 
 ### Setup Steps
 
