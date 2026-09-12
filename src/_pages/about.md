@@ -6,7 +6,15 @@ permalink: /about/
 description: Ruby on Rails software engineer, podcaster, and creator based in Phoenix, Arizona.
 ---
 
-<img src="/images/main-avatar.png" alt="Andrew Mason" width="112" height="112" class="rounded-full" />
+<img
+  src="/images/main-avatar-112.a70aa686.webp"
+  srcset="/images/main-avatar-28.81a23e39.webp 28w, /images/main-avatar-56.266c347e.webp 56w, /images/main-avatar-112.a70aa686.webp 112w, /images/main-avatar-224.214c61e3.webp 224w"
+  sizes="112px"
+  alt="Andrew Mason"
+  width="112"
+  height="112"
+  class="rounded-full"
+/>
 
 Hey, I'm Andrew. I'm a full stack Ruby on Rails engineer, podcaster, and creator working remotely from Phoenix, Arizona.
 

@@ -37,12 +37,41 @@ class TestImages < Bridgetown::Test
 
     it "keeps the first content image eager despite shell images" do
       html get "/p/rails-coverage-tools-codefactor/"
+      shell_avatar = document.query_selector("img")
       first_content_image = document.query_selector("main img")
 
-      expect(document.query_selector("img")["src"]).must_equal "/images/main-avatar.png"
+      expect(shell_avatar["src"]).must_equal "/images/main-avatar-56.266c347e.webp"
+      expect(shell_avatar["loading"]).must_equal "eager"
+      expect(shell_avatar["fetchpriority"]).must_equal "high"
+      expect(shell_avatar["decoding"]).must_equal "sync"
       expect(first_content_image).wont_be_nil
       expect(first_content_image["loading"]).must_be_nil
       expect(first_content_image["decoding"]).must_equal "async"
+    end
+
+    it "serves responsive WebP avatars with intrinsic dimensions" do
+      html get "/about/"
+      avatar = document.query_selector("main img[src*='main-avatar']")
+
+      expect(avatar["src"]).must_equal "/images/main-avatar-112.a70aa686.webp"
+      expect(avatar["srcset"]).must_include "/images/main-avatar-224.214c61e3.webp 224w"
+      expect(avatar["sizes"]).must_equal "112px"
+      expect(avatar["width"]).must_equal "112"
+      expect(avatar["height"]).must_equal "112"
+    end
+
+    it "serves responsive WebP podcast covers" do
+      html get "/speaking/"
+      cover = document.query_selector("main img[src*='/podcasts/']")
+
+      expect(cover["src"]).must_equal "#{ENDPOINT}/podcasts/remote-ruby.jpg?tr=w-48"
+      expect(cover["srcset"]).must_equal(
+        "#{ENDPOINT}/podcasts/remote-ruby.jpg?tr=w-48 48w, " \
+          "#{ENDPOINT}/podcasts/remote-ruby.jpg?tr=w-96 96w"
+      )
+      expect(cover["sizes"]).must_equal "48px"
+      expect(cover["width"]).must_equal "48"
+      expect(cover["height"]).must_equal "48"
     end
 
     # The migration's whole point: no post should depend on an image host we no

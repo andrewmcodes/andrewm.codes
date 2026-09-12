@@ -33,10 +33,17 @@ layout: default
     <% end %>
 
     <% if resource.stale? %>
-      <div class="max-w-[38rem]"><%= render StaleNote.new(updated_at: updated_time) %></div>
+      <div class="max-w-[38rem]">
+        <%= render StaleNote.new(updated_at: updated_time) %>
+      </div>
     <% end %>
 
-    <%= render Prose.new(as: :article, variant: :post, max_w: false) do %>
+    <%= render Prose.new(
+      as: :article,
+      variant: :post,
+      max_w: false,
+      data: {reading_progress: true},
+    ) do %>
       <%= yield %>
     <% end %>
 

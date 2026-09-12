@@ -11,7 +11,7 @@
 # GitHub Repo: https://github.com/marcoroth/herb
 #
 
-version: 0.10.2
+version: 0.10.4
 
 # # Framework and template engine configuration
 #
@@ -40,6 +40,9 @@ version: 0.10.2
 
 linter:
   enabled: true
+  rules:
+    erb-prefer-image-tag-helper:
+      enabled: false
   # # Exit with error code when diagnostics of this severity or higher are present
   # # Valid values: error (default), warning, info, hint
   # failLevel: warning

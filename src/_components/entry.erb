@@ -17,8 +17,15 @@
         <% if mark[:image] %>
           <img
             src="<%= mark[:image] %>"
+            <% if mark[:srcset] %>
+              srcset="<%= mark[:srcset] %>"
+              sizes="<%= mark[:sizes] %>"
+            <% end %>
             alt=""
+            width="48"
+            height="48"
             loading="lazy"
+            decoding="async"
             onerror="this.style.display='none'"
             class="absolute inset-0 w-full h-full rounded-lg object-cover"
             style="<%= "opacity: 0.7;" if mark[:dim] %>"
@@ -30,10 +37,14 @@
     <div class="min-w-0 flex-1">
       <div class="flex items-baseline gap-4">
         <span class="text-row text-mauve-12 <%= title_classes %>">
-          <%= title %><% if title_icon? %><%= render Icon.new(
+          <%= title %>
+
+          <% if title_icon? %>
+            <%= render Icon.new(
             name: external? ? "arrow_top_right" : "arrow_right",
             class: "ml-1 inline-block w-3.5 h-3.5 align-baseline text-mauve-9 group-hover:text-ruby-11 transition-colors",
-          ) %><% end %>
+          ) %>
+          <% end %>
         </span>
 
         <% if edge_note %>
@@ -43,20 +54,35 @@
             is the thing that made the archive read as one undifferentiated
             block. It is still here, still tabular, just no longer first.
           %>
-          <span class="ml-auto shrink-0 font-mono text-meta text-mauve-11 whitespace-nowrap max-compact:hidden">
+          <span
+            class="
+              ml-auto shrink-0 font-mono text-meta text-mauve-11
+              whitespace-nowrap max-compact:hidden
+            "
+          >
             <%= edge_note %>
           </span>
         <% end %>
       </div>
 
       <% if excerpt %>
-        <p class="mt-1.5 m-0 text-note text-mauve-11 max-w-[62ch] text-pretty line-clamp-2">
+        <p
+          class="
+            mt-1.5 m-0 text-note text-mauve-11 max-w-[62ch] text-pretty
+            line-clamp-2
+          "
+        >
           <%= excerpt %>
         </p>
       <% end %>
 
       <% if tags.any? || stacked_facts.any? %>
-        <div class="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 font-mono text-meta text-mauve-11">
+        <div
+          class="
+            mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 font-mono
+            text-meta text-mauve-11
+          "
+        >
           <% tags.each do |t| %>
             <span><span class="text-mauve-9">#</span><%= t %></span>
           <% end %>

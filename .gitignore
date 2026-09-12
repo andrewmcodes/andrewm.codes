@@ -62,9 +62,13 @@ storybook-static/
 # AI
 .claude/
 skills-lock.json
+.codex/
 
 # Impeccable local caches (design.json is committed)
 .impeccable/hook.cache.json
 .impeccable/critique/
 .impeccable/questions/
 .impeccable/review/
+
+# Lighthouse
+.lighthouseci

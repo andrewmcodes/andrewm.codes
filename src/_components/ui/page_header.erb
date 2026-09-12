@@ -10,7 +10,9 @@
       <% else %>
         <%= description %>
         <% if description_link? %>
-          <%= render Link.new(href: description_link_href, variant: :inline_accent) do %><%= description_link_label %><% end %>.
+          <%= render Link.new(href: description_link_href, variant: :inline_accent) do %>
+            <%= description_link_label %>
+          <% end %>.
         <% end %>
       <% end %>
     </p>

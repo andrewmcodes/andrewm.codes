@@ -14,7 +14,11 @@
 
   <% if @languages.any? %>
     <div class="flex flex-wrap items-center gap-3 mt-3 text-note text-mauve-11">
-      <label class="inline-flex min-h-11 items-center gap-2"><input type="checkbox" data-archive-featured> Featured only</label>
+      <label class="inline-flex min-h-11 items-center gap-2">
+        <input type="checkbox" data-archive-featured>
+        Featured only
+      </label>
+
       <label for="archive-language">Language</label>
 
       <select
@@ -49,7 +53,9 @@
       data-archive-status
       role="status"
       class="m-0 font-mono text-meta text-mauve-11"
-    ><%= @count %> of <%= @count %> <%= @kind %></p>
+    >
+      <%= @count %> of <%= @count %> <%= @kind %>
+    </p>
 
     <button
       type="button"
@@ -59,5 +65,10 @@
       Clear filters
     </button>
   </div>
-  <noscript><p class="text-note text-mauve-11">Filtering needs JavaScript. All <%= @kind %> are listed below.</p></noscript>
+
+  <noscript>
+    <p class="text-note text-mauve-11">
+      Filtering needs JavaScript. All <%= @kind %> are listed below.
+    </p>
+  </noscript>
 </fieldset>

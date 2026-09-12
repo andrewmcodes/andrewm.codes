@@ -37,6 +37,7 @@
     belong to the application rather than to any view, so they live where an
     application keeps them, not in a footer three screens down.
   %>
+
   <div class="mt-auto pt-8">
     <%#
       `w-full`, not `flex-1`: a `<button>` sizes to fit-content even at
@@ -45,26 +46,30 @@
       now as well as a row — the thing it opens is a text input, and a trigger
       that looks like a link promises a link.
     %>
+
     <button
-        type="button"
-        data-cmdk-trigger
+      type="button"
+      data-cmdk-trigger
+      class="
+        group flex w-full min-w-0 items-center gap-2.5 rounded-md border
+        border-mauve-6 bg-mauve-2 px-3 py-2 text-nav text-mauve-11
+        hover:border-mauve-7 hover:bg-mauve-3 hover:text-mauve-12
+        transition-colors focus-visible:outline focus-visible:outline-2
+        focus-visible:outline-offset-2 focus-visible:outline-ruby-9
+      "
+      aria-label="Search"
+    >
+      <%= render Icon.new(name: "nav_search", class: "shrink-0 text-mauve-10 group-hover:text-mauve-12 transition-colors") %>
+      <span>Search</span>
+
+      <kbd
         class="
-          group flex w-full min-w-0 items-center gap-2.5 rounded-md border
-          border-mauve-6 bg-mauve-2 px-3 py-2 text-nav text-mauve-11
-          hover:border-mauve-7 hover:bg-mauve-3 hover:text-mauve-12
-          transition-colors focus-visible:outline focus-visible:outline-2
-          focus-visible:outline-offset-2 focus-visible:outline-ruby-9
+          ml-auto shrink-0 rounded bg-mauve-3 px-1.5 py-0.5 font-mono text-micro
+          text-mauve-11 group-hover:bg-mauve-4
         "
-        aria-label="Search"
       >
-        <%= render Icon.new(name: "nav_search", class: "shrink-0 text-mauve-10 group-hover:text-mauve-12 transition-colors") %>
-        <span>Search</span>
-        <kbd
-          class="
-            ml-auto shrink-0 rounded bg-mauve-3 px-1.5 py-0.5 font-mono text-micro
-            text-mauve-11 group-hover:bg-mauve-4
-          "
-        >⌘K</kbd>
+        ⌘K
+      </kbd>
     </button>
 
     <div class="mt-3 px-1">
