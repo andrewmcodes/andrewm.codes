@@ -638,6 +638,16 @@ pre:not(.highlight)::-webkit-scrollbar-thumb {
   --tw-prose-td-borders: var(--mauve-6);
 }
 
+/* Typography injects decorative curly quotes around blockquotes via
+   `content: open-quote/close-quote`. Never wanted here. */
+.prose blockquote {
+  quotes: none;
+}
+.prose blockquote p:first-of-type::before,
+.prose blockquote p:last-of-type::after {
+  content: none;
+}
+
 /* The reading measure belongs to the text, not to the article box.
    With `max-w-[38rem]` on <article>, a code block and a screenshot inherited a
    width chosen for prose: three of twelve blocks clipped at 1440 while 128px of

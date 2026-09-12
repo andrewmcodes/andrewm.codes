@@ -15,12 +15,13 @@ jobs:
       changed: ${{ steps.commit.outputs.changed }}
     steps:
       - uses: actions/checkout@v7
-      - uses: actions/setup-node@v7
-        with: { node-version: "22" }
+      - uses: ./.github/actions/setup
+        with:
+          node: false
       - name: Fetch webmentions from webmention.io
         env:
           WEBMENTION_IO_TOKEN: ${{ secrets.WEBMENTION_IO_TOKEN }}
-        run: node scripts/fetch-webmentions.mjs
+        run: ruby scripts/fetch-webmentions.rb
 
       - uses: ./.github/actions/commit-data
         id: commit
