@@ -38,7 +38,7 @@ function syncControls() {
 
 // The theme flip is the largest state change the site has: every token in the
 // page swaps at once, and until now it landed as a single hard repaint. A
-// cross-fade at the palette's own 180ms says "one change", not "reload".
+// brief cross-fade says "one change", not "reload".
 //
 // Three things keep it honest. Choosing System while the OS already matches
 // resolves to the theme already on screen, so there is nothing to cross-fade

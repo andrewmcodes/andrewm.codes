@@ -337,9 +337,10 @@ a {
   font-variant-numeric: tabular-nums;
 }
 
-/* View transitions. The `<meta name="view-transition">` in the root layout is
-   what actually arms these across documents — without it Turbo Drive handles
-   the navigation and this is dead code.
+/* View transitions. Turbo reads the `<meta name="view-transition">` in the
+   root layout and wraps its body swap in a same-document transition. The
+   at-rule provides the same progressive enhancement for browser-managed,
+   same-origin navigations when Turbo does not intercept them.
 
    The source list must not cross-fade with the pane: it is the one thing that
    does not change between navigations, so it is named out of the transition
@@ -348,9 +349,10 @@ a {
 @view-transition {
   navigation: auto;
 }
+::view-transition-group(root),
 ::view-transition-old(root),
 ::view-transition-new(root) {
-  animation-duration: 180ms;
+  animation-duration: 100ms;
 }
 
 .source-list {
@@ -359,6 +361,7 @@ a {
 /* `animation: none` here leaves the outgoing snapshot with nothing to end it,
    which can strand the previous page's rail on top of the new one. A zero
    duration ends it on the next frame and still means "do not fade". */
+::view-transition-group(source-list),
 ::view-transition-old(source-list),
 ::view-transition-new(source-list) {
   animation-duration: 0s;
@@ -384,10 +387,14 @@ a {
     scroll-behavior: auto !important;
   }
 
-  /* `*` does not match pseudo-elements, so the cross-document fade outlives
-     the blanket rule above unless it is named. */
+  /* The transition snapshots are not DOM pseudo-elements matched by `*`, so
+     Turbo's transition needs its own reduced-motion override. */
+  ::view-transition-group(root),
   ::view-transition-old(root),
-  ::view-transition-new(root) {
+  ::view-transition-new(root),
+  ::view-transition-group(source-list),
+  ::view-transition-old(source-list),
+  ::view-transition-new(source-list) {
     animation-duration: 0.01ms !important;
   }
 }
