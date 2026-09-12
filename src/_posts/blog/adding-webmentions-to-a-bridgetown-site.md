@@ -6,7 +6,7 @@ tags:
   - indieweb
   - actions
   - ruby
-date: 2026-09-11 00:00:00.000000000 Z
+date: 2026-09-12 00:00:00.000000000 Z
 categories:
   - tutorials
 ---
