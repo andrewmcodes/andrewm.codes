@@ -1,12 +1,13 @@
 ---
 title: Exporting my Pieces code snippets to Obsidian
-description: Pieces put memories behind a paid plan, so I pulled 358 saved snippets out of its local API and turned them into plain Markdown I own.
+description: After 358 code snippets, I exported everything out of Pieces into plain Markdown I own in Obsidian. Here's the Ruby script, and why owning your data matters.
 tags:
   - obsidian
   - ruby
   - markdown
   - tooling
 date: 2026-08-14 00:00:00.000000000 Z
+last_modified_at: 2026-09-12 00:00:00.000000000 Z
 categories:
   - tutorials
 ---
@@ -15,7 +16,9 @@ I opened Pieces today and was greeted with this message:
 
 > After Sunday, August 16, 2026 at 11:59:59 PM UTC, creating new memories, generating workstream summaries, and using Agentic Chats will require a paid plan. You can still read, browse, and query your existing memories and chats in Pieces and through MCP. You do not need a paid plan for that access. As of August 10, 2026, your Pieces history includes 200K+ memories across 20 months. Thank you for making Pieces part of your work. We don't take that trust, or this change, lightly. Long-term context and Agentic Chats have ongoing infrastructure costs. Paid plans let us keep those services reliable and continue improving Pieces. We understand that paying for capabilities that were free may be disappointing.
 
-I have used Pieces for the past few years to save code snippets I wanted to reference later. I don't use enough of the other functionality to justify adding another subscription, so my first reaction was pretty simple: uninstall it.
+I've been using Pieces since they first released it, and I've really enjoyed having it in my workflow. Over the years, they've added a ton of great features, but I never really changed how I used it: for me, Pieces was always primarily a place to save code snippets I wanted to reference later.
+
+I completely understand their move to a paid model, and I hope it works out well for them. If you've never tried it, you should. I just don't use enough of its newer functionality to justify another AI subscription.
 
 There was just one problem.
 
@@ -31,7 +34,7 @@ Unfortunately, while the CLI can list materials, it doesn't currently provide a 
 
 PiecesOS was already running locally on my Mac, though, and in my case it was listening on port `39300`.
 
-It turns out we could grab all of my saved assets directly:
+It turns out I could grab all of my saved assets directly:
 
 ```bash
 curl -fsS http://localhost:39300/assets -o ./tmp/pieces-assets.json
@@ -61,7 +64,7 @@ So the migration script needed to support both formats.
 
 Before writing anything to my Obsidian vault, I spent some time validating the export rather than assuming the API response was consistent.
 
-A few things we found:
+A few things I found:
 
 - All 358 assets had unique Pieces IDs.
 - All 358 snippets were recoverable.
@@ -143,7 +146,7 @@ tags:
 ---
 ```
 
-Only **7 tags across 5 snippets** turned out to be explicitly manual tags.
+Only 7 tags across 5 snippets had actually been added manually.
 
 I also kept a `source_url` when Pieces had a trustworthy original source URL.
 
@@ -202,13 +205,11 @@ Forty of my snippets contained triple backticks themselves.
 
 If I blindly generated this:
 
-`````markdown
 ````markdown
+```markdown
 some markdown containing ```
+```
 ````
-`````
-
-`````
 
 I could accidentally terminate the outer code block.
 
@@ -217,18 +218,24 @@ Instead, the exporter determines the longest consecutive run of backticks inside
 So a snippet containing:
 
 ````markdown
-```
+Some text.
 
-```
-`````
-
-might be wrapped in:
-
-````markdown
-```
-...
+```markdown
+# Example
 ```
 ````
+
+would be wrapped in:
+
+`````markdown
+````
+Some text.
+
+```markdown
+# Example
+```
+````
+`````
 
 It is a small detail, but exactly the kind of thing that can silently corrupt a bulk Markdown migration.
 
@@ -354,6 +361,8 @@ EXPECTED_ASSET_COUNT = 358
 
 REAL_LUA_ASSET_ID = "eb6ef70c-fd33-47a1-967e-7c6e246384f6"
 
+# NOTE: This constant is very specific to my own Pieces setup
+# It maps my specific Pieces asset IDs to the programming language I want to use in Obsidian.
 LANGUAGE_OVERRIDES = {
   "c379d282-ca8b-493e-a4df-fa010ebc3797" => "javascript",
   "c8ecd0c3-693e-4026-8698-8185e20c4d0b" => "bash",
