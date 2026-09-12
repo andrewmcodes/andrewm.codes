@@ -1,5 +1,12 @@
 # Changelog
 
+## [9.1.2](https://github.com/andrewmcodes/andrewm.codes/compare/v9.1.1...v9.1.2) (2026-09-12)
+
+
+### Documentation
+
+* update pieces article ([94ea875](https://github.com/andrewmcodes/andrewm.codes/commit/94ea8753d5abfd5dc57ca44c32b0fed4a3c00431))
+
 ## [9.1.1](https://github.com/andrewmcodes/andrewm.codes/compare/v9.1.0...v9.1.1) (2026-09-12)
 
 
