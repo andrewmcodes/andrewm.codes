@@ -16,6 +16,8 @@ Use `mise run <task>` — these are the canonical entry points:
 - `mise run test` — `bundle exec rake test` (Minitest + `bridgetown/test`). Tests build the site in `BRIDGETOWN_ENV=test` and assert against rendered HTML via `Bridgetown::Test`.
 - `mise run format` — `bundle exec standardrb --fix && pnpm run format` (Prettier for JS/YAML/MD).
 - `mise run og` — regenerate OG images locally via `node scripts/generate-og.mjs`.
+- `mise run add-image [slug]` — macOS clipboard helper (file task at `mise-tasks/add-image`). Saves the current clipboard image to `tmp/post-images/<slug>/image-N.png`, numbered in copy order. Slug defaults to the newest post by front-matter `date:`. Copy an image, run it, repeat, then run `upload-images`.
+- `mise run upload-images <slug>` — upload a post's staged images from `tmp/post-images/<slug>/` to ImageKit under `posts/<slug>/` and print paste-ready `imagekit_url` markdown refs (pass `-- --dry-run` to preview). fnox-wrapped for `IMAGEKIT_PRIVATE_KEY`.
 
 Run a single test file: `bundle exec rake test TEST=test/test_homepage.rb`. Run a single test by name: `bundle exec ruby -Itest test/test_homepage.rb -n /links to/`.
 

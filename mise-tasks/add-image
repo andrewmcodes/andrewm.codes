@@ -1,0 +1,67 @@
+#!/usr/bin/env bash
+#MISE description="Save the clipboard image into tmp/post-images/<latest-post-slug>/ (macOS)"
+#USAGE arg "[slug]" help="Post slug to target (defaults to the newest post by front-matter date)"
+#
+# Workflow: write a post, copy an image to the clipboard (screenshot or
+# "copy image"), run this to stash it, repeat for each image, then
+# `mise run upload-images <slug>` to push them all to ImageKit.
+#
+# Files are numbered image-1.png, image-2.png, … in copy order. macOS only:
+# reads the clipboard via AppleScript (PNG, or TIFF converted with sips).
+set -euo pipefail
+
+ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+
+if [[ "$(uname)" != "Darwin" ]]; then
+  echo "add-image only works on macOS (uses the AppleScript clipboard)." >&2
+  exit 1
+fi
+
+slug="${1:-}"
+if [[ -z "$slug" ]]; then
+  latest="$(
+    grep -rl '^date:' "$ROOT/src/_posts" --include='*.md' | while read -r file; do
+      date_value="$(grep -m1 '^date:' "$file" | sed 's/^date:[[:space:]]*//')"
+      printf '%s\t%s\n' "$date_value" "$file"
+    done | sort -r | head -1 | cut -f2-
+  )"
+  if [[ -z "$latest" ]]; then
+    echo "No dated posts found in src/_posts. Pass a slug: mise run add-image <slug>." >&2
+    exit 1
+  fi
+  slug="$(basename "$latest" .md)"
+fi
+
+dir="$ROOT/tmp/post-images/$slug"
+mkdir -p "$dir"
+
+n=1
+while [[ -e "$dir/image-$n.png" ]]; do
+  n=$((n + 1))
+done
+out="$dir/image-$n.png"
+
+# Try the two image flavors macOS puts on the clipboard. `the clipboard as
+# «class …»` throws when that flavor is absent, so a non-zero exit means "not
+# that kind of data" — fall through to the next.
+write_clip() {
+  osascript >/dev/null 2>&1 <<APPLESCRIPT
+set imgData to (the clipboard as «class $1»)
+set fileRef to open for access POSIX file "$2" with write permission
+write imgData to fileRef
+close access fileRef
+APPLESCRIPT
+}
+
+if write_clip PNGf "$out"; then
+  :
+elif write_clip TIFF "$dir/.clip.tiff"; then
+  sips -s format png "$dir/.clip.tiff" --out "$out" >/dev/null
+  rm -f "$dir/.clip.tiff"
+else
+  echo "No image on the clipboard. Copy an image, then run this again." >&2
+  exit 1
+fi
+
+echo "Saved $(printf '%s' "${out#"$ROOT"/}") (post: $slug)"
+echo "When you're done adding images: mise run upload-images $slug"
