@@ -11,7 +11,7 @@ categories:
   - tutorials
 ---
 
-Andrea Fomera [replied to one of my posts recently](https://bsky.app/profile/afomera.dev/post/3mvbzefpqzs2t), and it showed up right underneath it:
+[Andrea Fomera](https://afomera.dev) replied to [one of my posts](https://bsky.app/profile/afomera.dev/post/3mvbzefpqzs2t) recently, and it showed up right underneath it:
 
 ![A webmention reply rendered under one of my posts](<%= imagekit_url 'posts/adding-webmentions-to-a-bridgetown-site/webmention-example.png', :medium %>)
 
