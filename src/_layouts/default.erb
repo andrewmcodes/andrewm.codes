@@ -38,6 +38,7 @@
       crawling through to the posts it links, just not worth indexing itself.
       Indexable pages opt into full-length snippets and large image previews.
     %>
+
     <% if data.noindex %>
       <meta name="robots" content="noindex,follow">
     <% else %>
@@ -108,6 +109,11 @@
     <link rel="me" href="https://x.com/andrewmcodes">
 
     <link rel="stylesheet" href="<%= asset_path :css %>">
+
+    <link
+      rel="stylesheet"
+      href="<%= Bridgetown.env.production? ? asset_path("styles/tailwind.css") : "/_bridgetown/static/tailwind.css" %>"
+    >
 
     <script src="<%= asset_path :js %>" defer></script>
   </head>

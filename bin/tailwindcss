@@ -1,0 +1,56 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require "base64"
+require "digest"
+require "fileutils"
+require "json"
+
+root = File.expand_path("..", __dir__)
+input_path = File.join(root, "frontend", "styles", "tailwind.css")
+output_dir = File.join(root, "output", "_bridgetown", "static")
+output_path = File.join(output_dir, "tailwind.css")
+manifest_path = File.join(root, ".bridgetown-cache", "frontend-bundling", "manifest.json")
+manifest_key = "styles/tailwind.css"
+watch = ARGV.include?("--watch")
+
+def update_manifest(path, key, value)
+  manifest = File.exist?(path) ? JSON.parse(File.read(path)) : {}
+  manifest[key] = value
+  FileUtils.mkdir_p(File.dirname(path))
+  File.write(path, JSON.generate(manifest))
+end
+
+def fingerprint(path)
+  digest = Digest::SHA256.digest(File.read(path))
+  Base64.urlsafe_encode64(digest).delete("=").upcase[0, 8]
+end
+
+tailwind_cli = File.join(root, "node_modules", "@tailwindcss", "cli", "dist", "index.mjs")
+unless File.exist?(tailwind_cli)
+  warn "tailwindcss CLI not found; run pnpm install"
+  exit 1
+end
+
+FileUtils.mkdir_p(output_dir)
+update_manifest(manifest_path, manifest_key, "tailwind.css") if watch
+
+args = [tailwind_cli, "-i", input_path, "-o", output_path]
+args << "--watch" if watch
+
+pid = Process.spawn("node", *args, out: $stdout, err: $stderr)
+begin
+  _, status = Process.wait2(pid)
+rescue Interrupt
+  Process.kill("TERM", pid) unless Process.waitpid(pid, Process::WNOHANG)
+  exit 130
+end
+exit_status = status.exitstatus
+
+exit exit_status unless exit_status.zero? && !watch
+
+fingerprinted_name = "tailwind.#{fingerprint(output_path)}.css"
+Dir.glob(File.join(output_dir, "tailwind.*.css")).each { File.delete(it) }
+FileUtils.mv(output_path, File.join(output_dir, fingerprinted_name))
+update_manifest(manifest_path, manifest_key, fingerprinted_name)
+puts "tailwind: fingerprinted -> #{fingerprinted_name}"

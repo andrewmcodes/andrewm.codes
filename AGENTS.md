@@ -51,7 +51,7 @@ All inherit from `SiteBuilder` (which inherits from `Bridgetown::Builder`). They
 - **`redirects.rb`** — writes a Cloudflare-format `_redirects` file at `site:post_write` (consumed by Workers Static Assets `not_found_handling`). Includes static legacy redirects (v7 URLs, `/blog/*` and `/snippets/*` → `/p/*`) and enumerated per-post redirects from `/:slug/` → `/p/:slug/`. **There is intentionally no `/*` catch-all** — `wrangler.jsonc`'s `not_found_handling: "404-page"` serves `/404.html` on misses, and a catch-all here would match `/` and cause a redirect loop. **If you add a post, the per-slug redirect is generated automatically.**
 - **`inspectors/links.rb`** — `inspect_html` (prod only) adds `target="_blank" rel="noreferrer"` to external links and ensures any pre-existing `target="_blank"` gets `rel="noreferrer"`.
 - **`inspectors/prose_headings.rb`** — heading anchor IDs / TOC linking.
-- **`tailwind_jit.rb`** / **`imagekit.rb`** — JIT / image helpers. `imagekit_url` reads its endpoint and presets from the `imagekit:` block in `bridgetown.config.yml`; post images live on ImageKit.
+- **`imagekit.rb`** — image helper. `imagekit_url` reads its endpoint and presets from the `imagekit:` block in `bridgetown.config.yml`; post images live on ImageKit.
 
 When adding a new builder, place it in `plugins/builders/` and inherit `SiteBuilder` — it will be auto-loaded.
 
@@ -74,7 +74,7 @@ Many components inherit from `Base` (`src/_components/base.rb`), which provides:
 
 ### Frontend assets
 
-`frontend/javascript/index.js` is the entry point; bundled with esbuild via `config/esbuild.defaults.js`. CSS lives in `frontend/styles/index.css` (Tailwind v4 + PostCSS). The Rake `frontend:build` task (chained from `:deploy`) runs `npm run esbuild`.
+`frontend/javascript/index.js` is the JavaScript entry point and is bundled with esbuild via `config/esbuild.defaults.js`. Tailwind v4 CSS lives in `frontend/styles/tailwind.css` and is built separately by `bin/tailwindcss`; its explicit `@source` directives scan `frontend/`, `config/`, `plugins/`, and `src/`. `frontend/styles/index.css` remains an esbuild entry so the Fontsource imports produce their own bundle. The Rake `frontend:build` task (chained from `:deploy`) builds esbuild first, then Tailwind so the Tailwind wrapper can add its fingerprinted file to the completed asset manifest. In development, Bridgetown's `frontend:watcher` starts both esbuild and the Tailwind CLI watcher.
 
 Theme detection is inlined in `src/_layouts/default.erb` and runs synchronously before paint, setting `data-theme` from `localStorage` or `prefers-color-scheme`.
 

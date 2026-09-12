@@ -1,4 +1,5 @@
 allowBuilds:
+  "@parcel/watcher": true
   "@resvg/resvg-js": true
   esbuild: true
   # miniflare (wrangler) pulls sharp in, but this site uses @resvg/resvg-js +
