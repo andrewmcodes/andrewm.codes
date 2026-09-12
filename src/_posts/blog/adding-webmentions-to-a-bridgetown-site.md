@@ -43,8 +43,8 @@ Before the step-by-step, here's the shape of the whole thing, because it only cl
 
 - **[webmention.io](https://webmention.io)** receives mentions on my behalf, since my static site can't.
 - **[Bridgy](https://brid.gy)** watches my social accounts and turns likes, reposts, and replies into webmentions.
-- **A GitHub Actions job** pulls the collected mentions into a JSON file in my repo once a day.
-- **A Bridgetown component** reads that JSON and renders it under each post at build time.
+- **A [GitHub Actions job](https://github.com/andrewmcodes/andrewm.codes/blob/main/.github/workflows/webmentions.yml)** pulls the collected mentions into a JSON file in my repo once a day.
+- **A [Bridgetown component](https://www.bridgetownrb.com/docs/components/ruby)** reads that JSON and renders it under each post at build time.
 
 Nothing runs on a server of mine, because I don't have one. Every part is either a hosted service or a build-time step. That constraint shaped every decision below.
 
