@@ -11,6 +11,8 @@ permissions:
 jobs:
   sync:
     runs-on: ubuntu-latest
+    outputs:
+      changed: ${{ steps.commit.outputs.changed }}
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-node@v7
@@ -20,12 +22,26 @@ jobs:
           WEBMENTION_IO_TOKEN: ${{ secrets.WEBMENTION_IO_TOKEN }}
         run: node scripts/fetch-webmentions.mjs
 
-      - name: Commit changes if any
-        run: |
-          if ! git diff --quiet src/_data/webmentions.json; then
-            git config user.name "andrewmcodes-bot"
-            git config user.email "bot@andrewm.codes"
-            git add src/_data/webmentions.json
-            git commit -m "chore(data): refresh webmentions"
-            git push
-          fi
+      - uses: ./.github/actions/commit-data
+        id: commit
+        with:
+          paths: src/_data/webmentions.json
+          message: "chore(data): refresh webmentions"
+
+  deploy:
+    name: deploy to cloudflare
+    needs: sync
+    if: needs.sync.outputs.changed == 'true'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      # Check out the refreshed data the sync job just pushed, not the stale trigger SHA.
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ github.ref }}
+      - uses: ./.github/actions/deploy-production
+        with:
+          cloudflare-api-key: ${{ secrets.CLOUDFLARE_API_KEY }}
+          cloudflare-email: ${{ secrets.CLOUDFLARE_EMAIL }}
+          cloudflare-account-id: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
