@@ -36,6 +36,7 @@
     "read-cache": "^1.0.2",
     "satori": "^0.33.4",
     "storybook": "^10.6.0",
+    "svgo": "4.1.0",
     "tailwindcss": "^4.3.3",
     "typescript": "^7.0.2",
     "wrangler": "^4.130.0"
