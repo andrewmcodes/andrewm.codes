@@ -164,24 +164,9 @@ jobs:
 
 We are going to do some more cool things in a second but lets go ahead and see what this produces. Create a new GitHub repo, commit everything, and push it up. As a note, Bundler adds a failing test condition by default when you scaffold the gem, so if you added the `--ci=github` flag when you created the gem, the generated `.github/workflows/main.yml` action will fail unless you remove the failing test. I'll let you debug that on your own for now.
 
-The release action will run once you push your changes to the main branch. Your initial run output should look like this:
+The release action will run once you push your changes to the main branch. On this first run there's nothing to release yet: the only commits are chores and build changes, so Release Please finds no user-facing commits and doesn't open a release PR.
 
-```
-Run googleapis/release-please-action@v4
-✖ No merged release PR found
-✖ Unable to build candidate
-✔ found 4 commits since beginning of time
-✖ no user facing commits found since beginning of time
-```
-
-This output says:
-
-- A merged release PR was not found, which we will talk about in a moment
-- There is no build candidate
-- There were 4 commits found in the repo
-- None of those commits were user facing, aka they weren't features or bug fixes
-
-Just for reference - this is the output of `git log --one-line` so you can see my four commits:
+Just for reference - this is the output of `git log --oneline` so you can see my four commits:
 
 ```bash
 9a4d62b (HEAD -> main, origin/main) build: add release action (#1)
