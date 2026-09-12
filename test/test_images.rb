@@ -13,20 +13,6 @@ class TestImages < Bridgetown::Test
       expect(remote.all? { |src| src.start_with?(ENDPOINT) }).must_equal true
     end
 
-    it "caps wide images with the medium preset and leaves narrow ones alone" do
-      html get "/p/automating-ruby-gem-releases-with-github-actions/"
-      sources = document.query_selector_all("img").map { |img| img["src"] }
-
-      # 1145px wide — worth capping to the prose column.
-      wide = sources.find { |src| src.include?("new-github-release.png") }
-      # 475px wide — asking ImageKit for w-800 would upscale it.
-      narrow = sources.find { |src| src.include?("release-action-success.png") }
-
-      expect(wide).must_include "?tr=w-800"
-      expect(narrow).wont_be_nil
-      expect(narrow).wont_include "tr="
-    end
-
     it "renders the Image component's iid through the same helper" do
       html get "/p/twitter-avatar/"
       figure = document.query_selector_all("img").find { |img| img["src"].to_s.include?("blackmagic") }

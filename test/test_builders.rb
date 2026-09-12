@@ -7,6 +7,7 @@ require_relative "../plugins/og_helper"
 module Builders; end
 require_relative "../plugins/site_builder"
 require_relative "../plugins/builders/search_index"
+require_relative "../plugins/builders/imagekit"
 
 # Plain Minitest tests for pure builder logic — no Bridgetown::Test, no site
 # build. Fast feedback for the regex/string handling that's easy to get wrong.
@@ -83,6 +84,48 @@ class TestBuilders < Minitest::Test
     assert_equal(
       "https://github.com/andrewmcodes",
       builder.send(:external_url, "https://github.com/andrewmcodes", fallback: "/")
+    )
+  end
+
+  # -------- Builders::Imagekit.url --------
+
+  IMAGEKIT_CONFIG = {
+    url_endpoint: "https://ik.imagekit.io/z7cjas4rs",
+    presets: {small: {w: 400}, medium: {w: 800}, large: {w: 1200}}
+  }.freeze
+
+  def test_imagekit_url_applies_preset_width_transform
+    assert_equal(
+      "https://ik.imagekit.io/z7cjas4rs/posts/demo/shot.png?tr=w-800",
+      Builders::Imagekit.url(IMAGEKIT_CONFIG, "posts/demo/shot.png", :medium)
+    )
+  end
+
+  def test_imagekit_url_without_preset_is_untransformed
+    assert_equal(
+      "https://ik.imagekit.io/z7cjas4rs/posts/demo/shot.png",
+      Builders::Imagekit.url(IMAGEKIT_CONFIG, "posts/demo/shot.png")
+    )
+  end
+
+  def test_imagekit_url_strips_leading_slash_from_path
+    assert_equal(
+      "https://ik.imagekit.io/z7cjas4rs/posts/demo/shot.png",
+      Builders::Imagekit.url(IMAGEKIT_CONFIG, "/posts/demo/shot.png")
+    )
+  end
+
+  def test_imagekit_url_accepts_raw_transform_options
+    assert_equal(
+      "https://ik.imagekit.io/z7cjas4rs/posts/demo/shot.png?tr=w-48",
+      Builders::Imagekit.url(IMAGEKIT_CONFIG, "posts/demo/shot.png", w: 48)
+    )
+  end
+
+  def test_imagekit_url_ignores_unknown_preset
+    assert_equal(
+      "https://ik.imagekit.io/z7cjas4rs/posts/demo/shot.png",
+      Builders::Imagekit.url(IMAGEKIT_CONFIG, "posts/demo/shot.png", :nonexistent)
     )
   end
 
