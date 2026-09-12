@@ -105,6 +105,7 @@ Always leave a blank line directly under a heading before the next paragraph or 
 
 - **Never use em-dashes (`—`).** This is the fastest tell that something wasn't written by him. Rewrite around them: use a period and a new (often one-sentence) sentence, a comma, a colon, or parentheses. "The trick is timing — run the code early" becomes "The trick is timing. Run the code early." His short-sentence rhythm makes this natural, not awkward.
 - **Rarely use horizontal rules (`---`).** He almost never separates sections with a `---`. Let headings and whitespace do the dividing. Don't sprinkle them between sections.
+- **Always use straight quotes: `'` and `"`, never curly `'` `'` `"` `"`.** Type ASCII quotes in the source. The site is configured (`kramdown: smart_quotes: apos,apos,quot,quot` in `bridgetown.config.yml`) so Kramdown no longer curls them at render, meaning what you write is what ships. Don't paste curly quotes in from other editors or docs.
 - Soft-wrap prose: each paragraph is one physical line, no manual mid-paragraph line breaks.
 
 ### Close with a real takeaway, then sign off

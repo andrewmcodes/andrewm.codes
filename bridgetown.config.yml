@@ -4,6 +4,13 @@ permalink: "/:path.*/"
 # Use Bridgetown's built-in Rouge highlighter for local syntax highlighting.
 highlighter: rouge
 
+# Keep quotes straight. Kramdown's default SmartyPants converts ' and " into
+# typographic quotes at render time; mapping the four smart-quote slots back to
+# straight entities disables that so rendered output matches the source.
+markdown: kramdown
+kramdown:
+  smart_quotes: apos,apos,quot,quot
+
 # Image hosting. Presets are width-only — ImageKit negotiates format and
 # quality by default.
 imagekit:
