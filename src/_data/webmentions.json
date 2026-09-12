@@ -6,6 +6,28 @@
       "type": "entry",
       "author": {
         "type": "card",
+        "name": "Andrea Fomera",
+        "photo": "https://cdn.bsky.app/img/avatar/plain/did:plc:7fl7mfk3dyowoiawxysu4z6f/bafkreig2ptzw7vhqhmoz7zcspazr3zqenoe7sbiwya2oc6ihngyi6f7f4m",
+        "url": "https://bsky.app/profile/afomera.dev"
+      },
+      "url": "https://bsky.app/profile/afomera.dev/post/3mvbzefpqzs2t",
+      "published": "2026-09-12T02:19:30+00:00",
+      "wm-received": "2026-09-12T03:14:27Z",
+      "wm-id": 2031253,
+      "wm-source": "https://brid.gy/comment/bluesky/did:plc:dnnzvi5274e3gol3rbkk63u6/at%253A%252F%252Fdid%253Aplc%253Adnnzvi5274e3gol3rbkk63u6%252Fapp.bsky.feed.post%252F3mvbwgmg6xc2r/at%253A%252F%252Fdid%253Aplc%253A7fl7mfk3dyowoiawxysu4z6f%252Fapp.bsky.feed.post%252F3mvbzefpqzs2t",
+      "wm-target": "https://andrewm.codes/p/exporting-my-pieces-code-snippets-to-obsidian/",
+      "wm-protocol": "webmention",
+      "content": {
+        "text": "good to see you blerging again"
+      },
+      "in-reply-to": "https://andrewm.codes/p/exporting-my-pieces-code-snippets-to-obsidian/",
+      "wm-property": "in-reply-to",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
         "name": "Eric Berry 💜 🇺🇦",
         "photo": "https://avatars.webmention.io/pbs.twimg.com/8d40e133f1805496336796cb89c8bbf42e7196192bd2c70fae56ecd7f4298150.jpg",
         "url": "https://twitter.com/coderberry"
