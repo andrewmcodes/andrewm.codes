@@ -1,5 +1,18 @@
 # Changelog
 
+## [9.1.0](https://github.com/andrewmcodes/andrewm.codes/compare/v9.0.0...v9.1.0) (2026-09-12)
+
+
+### Features
+
+* always lead selected writing with the latest post ([#597](https://github.com/andrewmcodes/andrewm.codes/issues/597)) ([38d2a44](https://github.com/andrewmcodes/andrewm.codes/commit/38d2a443a5340895c7179932d5f42751cb97c707))
+* improve llm content discovery ([#589](https://github.com/andrewmcodes/andrewm.codes/issues/589)) ([8cfb728](https://github.com/andrewmcodes/andrewm.codes/commit/8cfb72825bc31a8d891c45865c07a8e57fd047d0))
+
+
+### Performance
+
+* optimize page asset delivery ([#594](https://github.com/andrewmcodes/andrewm.codes/issues/594)) ([f785c6a](https://github.com/andrewmcodes/andrewm.codes/commit/f785c6a0c9dcfa598ed55b524ae074852d28f094))
+
 ## [9.0.0](https://github.com/andrewmcodes/andrewm.codes/compare/v8.1.1...v9.0.0) (2026-09-12)
 
 
