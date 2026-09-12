@@ -28,7 +28,7 @@ I grew up in North Carolina, studied Computer Science, and eventually landed in 
 
 ## Elsewhere
 
-[Bluesky](https://bsky.app/profile/andrewm.codes) · [GitHub](https://github.com/andrewmcodes) · [LinkedIn](https://www.linkedin.com/in/andrew-mason) · [Remote Ruby](https://remoteruby.com)
+[Bluesky](https://bsky.app/profile/andrewm.codes) · [GitHub](https://github.com/andrewmcodes) · [LinkedIn](https://www.linkedin.com/in/andrewmcodes/) · [Remote Ruby](https://remoteruby.com)
 
 ## Speaking & podcasts
 

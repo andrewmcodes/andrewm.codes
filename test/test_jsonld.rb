@@ -34,7 +34,7 @@ class TestJsonLd < Bridgetown::Test
       person = jsonld_of_type(document, "Person").find { |p| p["sameAs"] }
       expect(person["sameAs"]).must_include "https://bsky.app/profile/andrewm.codes"
       expect(person["sameAs"]).must_include "https://github.com/andrewmcodes"
-      expect(person["sameAs"]).must_include "https://www.linkedin.com/in/andrew-mason"
+      expect(person["sameAs"]).must_include "https://www.linkedin.com/in/andrewmcodes/"
     end
 
     it "points WebSite.publisher at the Person @id" do

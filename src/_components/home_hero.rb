@@ -16,7 +16,7 @@ class HomeHero < Bridgetown::Component
     {name: "GitHub", icon: "github", url: "https://github.com/andrewmcodes"},
     {name: "Bluesky", icon: "bluesky", url: "https://bsky.app/profile/andrewm.codes"},
     {name: "X", icon: "twitter", url: "https://x.com/andrewmcodes"},
-    {name: "LinkedIn", icon: "linkedin", url: "https://www.linkedin.com/in/andrew-mason"},
+    {name: "LinkedIn", icon: "linkedin", url: "https://www.linkedin.com/in/andrewmcodes/"},
     {name: "RSS", icon: "rss", url: "/feed.xml"}
   ].freeze
 

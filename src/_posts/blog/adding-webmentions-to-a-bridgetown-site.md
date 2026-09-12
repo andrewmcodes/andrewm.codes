@@ -70,7 +70,7 @@ You sign in to webmention.io with your own domain using [IndieAuth](https://indi
 ```erb
 <link rel="me" href="https://bsky.app/profile/andrewm.codes">
 <link rel="me" href="https://github.com/andrewmcodes">
-<link rel="me" href="https://www.linkedin.com/in/andrew-mason">
+<link rel="me" href="https://www.linkedin.com/in/andrewmcodes/">
 <link rel="me" href="https://x.com/andrewmcodes">
 ```
 
