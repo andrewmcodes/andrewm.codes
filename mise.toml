@@ -38,7 +38,14 @@ run = "pnpm exec lhci autorun"
 # the token via env instead (see .github/workflows/webmentions.yml).
 [tasks.webmentions]
 description = "Fetch latest webmentions from webmention.io"
-run = "fnox exec -- node scripts/fetch-webmentions.mjs"
+run = "fnox exec -- ruby scripts/fetch-webmentions.rb"
+
+# Upload a post's staged images (tmp/post-images/<slug>/) to ImageKit and print
+# paste-ready imagekit_url refs. fnox-wrapped so IMAGEKIT_PRIVATE_KEY is
+# exported from the Keychain. Usage: mise run upload-images <slug>.
+[tasks."upload-images"]
+description = "Upload a post's staged images to ImageKit (mise run upload-images <slug>)"
+run = "fnox exec -- node scripts/upload-post-images.mjs"
 
 # Build the component story pages into output/stories (dev/test only — the
 # production build strips them; see plugins/builders/stories.rb), then start

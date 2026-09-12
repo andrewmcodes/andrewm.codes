@@ -6,7 +6,7 @@ require "uri"
 # reply thread), and a form to send one back.
 #
 # Mention data comes from `site.data.webmentions` — a webmention.io JF2 feed
-# refreshed by .github/workflows/webmentions.yml (see scripts/fetch-webmentions.mjs).
+# refreshed by .github/workflows/webmentions.yml (see scripts/fetch-webmentions.rb).
 # Syndication targets come from the post's own `syndication:` front matter; the
 # RSS feed is always appended as the last target.
 class Webmentions < Bridgetown::Component
