@@ -65,36 +65,6 @@ jobs:
           retention-days: 1
           include-hidden-files: true
 
-  lighthouse:
-    name: lighthouse
-    runs-on: ubuntu-latest
-    needs: build
-    if: |
-      github.event_name == 'push' ||
-      (github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository)
-    env:
-      LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
-    steps:
-      - uses: actions/checkout@v7
-      - uses: ./.github/actions/setup
-        with:
-          ruby: "false"
-      - uses: actions/download-artifact@v8
-        with:
-          name: site-output
-          path: output
-      # Keep the shard URL union in sync with lighthouserc.cjs.
-      - parallel:
-          - name: Lighthouse (home, posts, about)
-            run: >-
-              pnpm exec lhci autorun --collect.url=http://localhost/ --collect.url=http://localhost/posts/ --collect.url=http://localhost/about/
-          - name: Lighthouse (projects, speaking)
-            run: >-
-              pnpm exec lhci autorun --collect.url=http://localhost/projects/ --collect.url=http://localhost/speaking/
-          - name: Lighthouse (post, tag)
-            run: >-
-              pnpm exec lhci autorun --collect.url=http://localhost/p/kill-process-on-port/ --collect.url=http://localhost/tag/rails/
-
   deploy:
     name: deploy to cloudflare
     runs-on: ubuntu-latest

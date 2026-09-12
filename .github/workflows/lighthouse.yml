@@ -1,0 +1,65 @@
+name: Lighthouse
+on:
+  workflow_dispatch:
+  issue_comment:
+    types: [created]
+
+concurrency:
+  group: lighthouse-${{ github.event.issue.number || github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  lighthouse:
+    name: lighthouse
+    # Dispatch runs unconditionally; a PR comment must say "@lighthouse check"
+    # and come from someone with write access (blocks drive-by triggers).
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (github.event.issue.pull_request != null &&
+       contains(github.event.comment.body, '@lighthouse check') &&
+       contains(fromJSON('["OWNER", "MEMBER", "COLLABORATOR"]'), github.event.comment.author_association))
+    runs-on: ubuntu-latest
+    env:
+      LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
+    steps:
+      - name: Acknowledge command
+        if: github.event_name == 'issue_comment'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh api --method POST \
+            "repos/${{ github.repository }}/issues/comments/${{ github.event.comment.id }}/reactions" \
+            -f content=eyes
+
+      - name: Resolve checkout ref
+        id: ref
+        run: |
+          if [ "${{ github.event_name }}" = "issue_comment" ]; then
+            echo "ref=refs/pull/${{ github.event.issue.number }}/head" >> "$GITHUB_OUTPUT"
+          else
+            echo "ref=${{ github.ref }}" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ steps.ref.outputs.ref }}
+      - uses: ./.github/actions/setup
+      - env:
+          BRIDGETOWN_ENV: production
+        run: bin/bridgetown deploy
+
+      # Keep the shard URL union in sync with lighthouserc.cjs.
+      - parallel:
+          - name: Lighthouse (home, posts, about)
+            run: >-
+              pnpm exec lhci autorun --collect.url=http://localhost/ --collect.url=http://localhost/posts/ --collect.url=http://localhost/about/
+          - name: Lighthouse (projects, speaking)
+            run: >-
+              pnpm exec lhci autorun --collect.url=http://localhost/projects/ --collect.url=http://localhost/speaking/
+          - name: Lighthouse (post, tag)
+            run: >-
+              pnpm exec lhci autorun --collect.url=http://localhost/p/kill-process-on-port/ --collect.url=http://localhost/tag/rails/
