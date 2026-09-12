@@ -30,7 +30,7 @@
     "pagefind": "^1.5.2",
     "postcss": "^8.5.26",
     "postcss-focus-visible": "^11.0.0",
-    "postcss-import": "^16.1.1",
+    "postcss-import": "^17.0.0",
     "postcss-load-config": "^6.0.1",
     "prettier": "^3.9.6",
     "read-cache": "^1.0.2",
