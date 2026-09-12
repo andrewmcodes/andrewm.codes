@@ -60,7 +60,7 @@ description = "Build story pages + a static Storybook bundle"
 run = "bin/bridgetown build && pnpm exec storybook build"
 
 [tasks.format]
-run = "mise run format:ruby && mise run format:erb && mise run format:prettier"
+run = "mise run format:ruby && mise run format:erb && mise run format:prettier && mise run format:svg"
 
 [tasks."format:ruby"]
 run = "bundle exec standardrb --fix"
@@ -70,6 +70,9 @@ run = "pnpm exec herb-format \"src/**/*.erb\""
 
 [tasks."format:prettier"]
 run = "pnpm exec prettier --write \"**/*.{js,yml,md,mdx,cjs}\""
+
+[tasks."format:svg"]
+run = "pnpm exec svgo --config=svgo.config.mjs --multipass -rf src/images"
 
 [tasks.lint]
 description = "Lint everything: Ruby (standard), Prettier, JS types, and commit messages"
