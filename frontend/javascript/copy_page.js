@@ -19,10 +19,16 @@ async function copyPage(button) {
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     await navigator.clipboard.writeText(await response.text());
     label.textContent = "Copied";
+    // The clipboard is off-screen: the accent is the only visible receipt.
+    button.setAttribute("data-copied", "");
   } catch {
+    // Failure stays in mauve — ruby here would read as success.
     label.textContent = "Copy failed";
   }
-  setTimeout(() => (label.textContent = "Copy page"), 1500);
+  setTimeout(() => {
+    label.textContent = "Copy page";
+    button.removeAttribute("data-copied");
+  }, 1500);
 }
 
 document.addEventListener("click", (e) => {

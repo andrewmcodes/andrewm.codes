@@ -3,7 +3,7 @@ require_relative "../og_helper"
 # Wires up Open Graph images. A resources:post_read hook assigns each
 # post/project/page/cfp an `/og/<slug>.png` image path (unless one is already
 # set or the resource is a prototype). In production, a low-priority
-# site:post_write hook (after Torchlight) shells out to scripts/generate-og.mjs
+# site:post_write hook shells out to scripts/generate-og.mjs
 # to render the PNGs from the rendered HTML.
 class Builders::OgImages < SiteBuilder
   # Registers the image-assignment hook, the production render hook, and the

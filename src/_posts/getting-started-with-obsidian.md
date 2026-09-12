@@ -30,17 +30,17 @@ brew install --cask obsidian
 
 Once installed, opening Obsidian for the first time will land you on the [vault creator](https://help.obsidian.md/User+interface/Vault+switcher#Create+new+vaults) where you can create a new vault, open a folder in Obsidian as a vault, or open the [help vault where you can find the documentation.](https://help.obsidian.md/Obsidian/Index)
 
-![Obsidian Splash Screen](https://res.cloudinary.com/andrewmcodes/image/upload/v1642138668/posts/getting-started-with-obsidian/20220113_182236_Obsidian_SplashScreen_tr5ytn.png)
+![Obsidian Splash Screen](<%= imagekit_url 'posts/getting-started-with-obsidian/obsidian-splash-screen.png', :medium %>)
 
-Create a new vault and then enter in the name and choose a location. ![Obsidian Create New Vault](https://res.cloudinary.com/andrewmcodes/image/upload/v1642138668/posts/getting-started-with-obsidian/20220113_182436_Obsidian_NewVault_1_mukbs7.png)
+Create a new vault and then enter in the name and choose a location. ![Obsidian Create New Vault](<%= imagekit_url 'posts/getting-started-with-obsidian/obsidian-create-new-vault.png', :medium %>)
 
 When your vault opens for the first time, you may be prompted to [turn on Live Preview](https://help.obsidian.md/Live+preview+update) which I suggest doing.
 
-![Live Preview Modal](https://res.cloudinary.com/andrewmcodes/image/upload/v1642138668/posts/getting-started-with-obsidian/20220113_182456_Obsidian_LivePreviewModal_qekx9c.png)
+![Live Preview Modal](<%= imagekit_url 'posts/getting-started-with-obsidian/live-preview-modal.png', :medium %>)
 
 Your new vault should now be ready for notes to be added.
 
-![Simple Obsidian Vault](https://res.cloudinary.com/andrewmcodes/image/upload/v1642138668/posts/getting-started-with-obsidian/20220114015141Z_Obsidian_simple-obsidian-vault-template_-_Obsidian_v0.13.19_snrawj.png)
+![Simple Obsidian Vault](<%= imagekit_url 'posts/getting-started-with-obsidian/simple-obsidian-vault.png', :medium %>)
 
 ## Setup
 

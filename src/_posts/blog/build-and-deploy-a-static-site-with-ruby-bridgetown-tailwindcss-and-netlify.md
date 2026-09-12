@@ -286,16 +286,16 @@ main {
 
 If you added these styles, your homepage should now look like:
 
-![homepage](https://dev-to-uploads.s3.amazonaws.com/i/l8p4oi78c2w1b11lesjz.jpg)
+![homepage](<%= imagekit_url 'posts/build-and-deploy-a-static-site-with-ruby-bridgetown-tailwindcss-and-netlify/homepage.jpg', :medium %>)
 
 ### Deployment with Netlify
 
 1. Login to Netlify
-2. Select `New Site from Git` ![Netlify - New Site](https://dev-to-uploads.s3.amazonaws.com/i/pemhv37uf4tq74pr7x4r.jpg)
+2. Select `New Site from Git` ![Netlify - New Site](<%= imagekit_url 'posts/build-and-deploy-a-static-site-with-ruby-bridgetown-tailwindcss-and-netlify/netlify-new-site.jpg', :medium %>)
 3. Choose your Git provider
 4. Select your repo
 5. Set your `Build Command` to `yarn deploy`
-6. Set your `Publish directory` to `output/` ![Netlify - Deploy Settings](https://dev-to-uploads.s3.amazonaws.com/i/7eao24kpdn9l776nidwm.jpg)
+6. Set your `Publish directory` to `output/` ![Netlify - Deploy Settings](<%= imagekit_url 'posts/build-and-deploy-a-static-site-with-ruby-bridgetown-tailwindcss-and-netlify/netlify-deploy-settings.jpg', :medium %>)
 7. Click `Deploy site`
 
 Your site will deploy and you should be able to view it at the preview link that Netlify provides!

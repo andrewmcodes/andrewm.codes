@@ -1,6 +1,6 @@
 ---
 title: Install Brew on a M1 Mac
-description: How to install Homebrew on macOS Monterey with a M1 chip.
+description: The one-liner that installs Homebrew on an M1 Mac running macOS Monterey, the /opt/homebrew shellenv line for ~/.zprofile, and how to verify it.
 tags:
   - install
   - macos

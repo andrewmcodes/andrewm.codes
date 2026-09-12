@@ -2,7 +2,9 @@
 series: webpacker-6
 featured: false
 title: "Webpacker 6: CSS Loaders"
-description: This page has changed since first posted, refer to the changelog at the bottom.   In order to proces...
+description: "How to process CSS in Webpacker 6 with css-loader, style-loader, and mini-css-extract-plugin. Part of the archived Webpacker 6 upgrade guide."
+canonical_url: https://andrewm.codes/p/webpacker-6/
+sitemap: false
 urls:
   dev_to: https://dev.to/andrewmcodes/webpacker-6-css-loaders-28hb
 tags:
@@ -86,4 +88,7 @@ Reload your browser and your styles should be applied now, and the Webpacker loa
 
 - [chore: add css-minimizer-webpack-plugin](https://github.com/andrewmcodes/andrewm-codes-website/pull/12/commits/6b50b3e1a08236a09cd836c97066ddd4e3b76eed)
 
-[1]: (https://webpack.js.org/loaders/css-loader/ [2]: https://webpack.js.org/loaders/style-loader/ "style-loader" [3]: https://github.com/webpack-contrib/mini-css-extract-plugin "mini-css-extract-plugin" [4]: https://webpack.js.org/plugins/css-minimizer-webpack-plugin "css-minimizer-webpack-plugin"
+[1]: https://webpack.js.org/loaders/css-loader/
+[2]: https://webpack.js.org/loaders/style-loader/ "style-loader"
+[3]: https://github.com/webpack-contrib/mini-css-extract-plugin "mini-css-extract-plugin"
+[4]: https://webpack.js.org/plugins/css-minimizer-webpack-plugin "css-minimizer-webpack-plugin"

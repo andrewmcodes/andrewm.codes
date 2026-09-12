@@ -105,7 +105,7 @@ rake coverband:coverage
 
 You should now be seeing is Coverband's mountable web interface to easily view Coverband reports.
 
-![coverband_1](https://dev-to-uploads.s3.amazonaws.com/i/k3eqawgyobre6zas94m1.jpg)
+![coverband_1](<%= imagekit_url 'posts/rails-coverage-tools-coverband/coverband-1.jpg', :medium %>)
 
 If we click on a file with 0% coverage, you will see the following message:
 
@@ -115,13 +115,13 @@ Basically this mean the code inside the file has not been loaded, and therefore 
 
 If we click on a file with partial coverage, you should see something like:
 
-![coverband_2](https://dev-to-uploads.s3.amazonaws.com/i/kluvsd2sagfwpbjz8es3.jpg)
+![coverband_2](<%= imagekit_url 'posts/rails-coverage-tools-coverband/coverband-2.jpg', :medium %>)
 
 This view will highlight the lines that have been used, and those that haven't. Take care before you start ripping out code though, it's possible that you just haven't exercised that code yet.
 
 In the `posts_controller` file in my example above, the code inside our `new` and `create` methods is not being used. I am going to open up the UI, and create a new post. You will notice that the coverage report looks a little different now:
 
-![coverband_3](https://dev-to-uploads.s3.amazonaws.com/i/smks7r65kpjlpfan8cxj.jpg)
+![coverband_3](<%= imagekit_url 'posts/rails-coverage-tools-coverband/coverband-3.jpg', :medium %>)
 
 It is important to exercise some due diligence before removing code that Coverband flags. In the example above, after some investigation I realized I in fact do not need `config/spring.rb` because I am not using `spring` in this project. This is the power of this library, the ability to point you towards areas in your codebase that may be safe to remove; however, if I had removed the flagged code in the `posts_controller` then I would be in some trouble.
 
@@ -155,7 +155,7 @@ Bundler.require(*Rails.groups)
 
 Restart the Rails server and you should now have a gem tab if you navigate back to `localhost:3000/coverband`.
 
-![coverband_4](https://dev-to-uploads.s3.amazonaws.com/i/nayxiegisac553pbk0wu.jpg)
+![coverband_4](<%= imagekit_url 'posts/rails-coverage-tools-coverband/coverband-4.jpg', :medium %>)
 
 This can help give you insight into gems that may be safe to remove.
 

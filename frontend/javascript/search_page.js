@@ -5,6 +5,7 @@
 const INDEX_URL = "/search.json";
 const MAX_RESULTS = 30;
 const DEBOUNCE_MS = 120;
+const boundForms = new WeakSet();
 
 function score(entry, terms) {
   const hay = `${entry.title} ${entry.tags || ""}`.toLowerCase();
@@ -32,12 +33,12 @@ async function initSearchPage() {
   const input = document.getElementById("search-input");
   const list = document.querySelector("[data-search-results]");
   const status = document.querySelector("[data-search-status]");
+  const suggestions = document.querySelector("[data-search-suggestions]");
   if (!form || !input || !list || !status) return; // not the search page
-  // Bind each form element only once. Turbo swaps <body> on navigation, so a
-  // revisit gets a fresh (unbound) form; the immediate call + turbo:load on
-  // first load no longer double-bind the listeners.
-  if (form.dataset.bound === "true") return;
-  form.dataset.bound = "true";
+  // A Turbo-restored clone needs new listeners; repeated initialization of
+  // the same live element does not.
+  if (boundForms.has(form)) return;
+  boundForms.add(form);
 
   let entries = [];
   try {
@@ -49,9 +50,10 @@ async function initSearchPage() {
 
   function render(q) {
     const query = q.trim().toLowerCase();
+    if (suggestions) suggestions.hidden = !!query;
     if (!query) {
       list.innerHTML = "";
-      status.textContent = "Type to search.";
+      status.textContent = "Search above, or start here.";
       return;
     }
     const terms = query.split(/\s+/).filter(Boolean);
@@ -68,13 +70,13 @@ async function initSearchPage() {
         .map(
           (r) => `
         <li>
-          <a href="${esc(safeUrl(r.url))}" class="flex items-baseline gap-3 py-2.5 border-b border-sage-4 hover:text-mint-11 transition-colors">
-            <span class="font-mono text-[10.5px] uppercase text-sage-10 w-16 shrink-0">${esc(r.kind || "page")}</span>
-            <span class="flex-1 text-sage-12">${esc(r.title)}</span>
+          <a href="${esc(safeUrl(r.url))}" class="flex items-baseline gap-3 py-2.5 border-b border-mauve-4 hover:text-ruby-11 transition-colors">
+            <span class="font-mono text-micro uppercase text-mauve-11 w-16 shrink-0">${esc(r.kind || "page")}</span>
+            <span class="min-w-0 flex-1 text-mauve-12 [overflow-wrap:anywhere]">${esc(r.title)}</span>
           </a>
         </li>`,
         )
-        .join("") || `<li class="py-6 text-sage-10 text-sm">No matches.</li>`;
+        .join("") || `<li class="py-6 text-mauve-11 text-note">No matches.</li>`;
   }
 
   const initial = new URLSearchParams(location.search).get("q") || "";

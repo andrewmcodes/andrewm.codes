@@ -1,15 +1,14 @@
 class Base < Bridgetown::Component
   INVALID_ATTRIBUTES: Array[Symbol]
   COMPONENT_OPTIONS: Array[Symbol]
+  SPACE: Hash[Symbol, String]
+  TONE: Hash[Symbol, String]
   TEXT_WEIGHT: Hash[Symbol, String]
   TEXT_SIZES: Hash[Symbol, String]
-  TEXT_SCHEME: Hash[Symbol, String]
   HEADING_SIZES: Hash[Symbol, String]
-  HEADING_SCHEME: Hash[Symbol, String]
   FONT_FAMILY: Hash[Symbol, String]
-  GAPS: Hash[Symbol, String]
-  LEADING: Hash[Symbol, String]
-  TRACKING: Hash[Symbol, String]
+  ALIGN: Hash[Symbol, String]
+  JUSTIFY: Hash[Symbol, String]
 
   @opts: Hash[Symbol, untyped]
   @attribute_opts: Hash[Symbol, untyped]
@@ -28,12 +27,10 @@ class Base < Bridgetown::Component
   def children: () -> untyped
   def cx: (*untyped classes) -> String
   def slugify: (untyped str) -> String
+  def token: (Hash[Symbol, String] map, untyped key, Symbol fallback) -> String
 end
 
-class ProjectCard < Base
-  CARD_CLASSES: String
-  STATUS_BADGE_CLASSES: String
-
+class ProjectCard < Bridgetown::Component
   @project: untyped
 
   def initialize: (project: untyped) -> void
@@ -45,12 +42,14 @@ class ProjectCard < Base
   def stars: () -> untyped
   def forks: () -> untyped
   def href: () -> untyped
+  def exceptional_status: () -> String?
+  def facts: () -> Array[String]
   def external?: () -> bool
-  def card_classes: () -> String
-  def status_badge_classes: () -> String
 
   private
 
+  def presence: (untyped value) -> String?
+  def count_label: (untyped value, String noun) -> String?
   def resource?: () -> bool
   def repo_url: () -> untyped
 end

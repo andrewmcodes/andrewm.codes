@@ -3,27 +3,27 @@ title: Heading
 ---
 
 <div class="space-y-4">
-  <%= render Heading.new(size: :xl) do %>
+  <%= render Heading.new(size: :display) do %>
     Heading XL
   <% end %>
 
-  <%= render Heading.new(size: :lg) do %>
+  <%= render Heading.new(size: :headline) do %>
     Heading LG
   <% end %>
 
-  <%= render Heading.new(size: :md) do %>
+  <%= render Heading.new(size: :page) do %>
     Heading MD
   <% end %>
 
-  <%= render Heading.new(size: :sm) do %>
+  <%= render Heading.new(size: :h3) do %>
     Heading SM
   <% end %>
 
-  <%= render Heading.new(size: :lg, scheme: :accent) do %>
+  <%= render Heading.new(size: :lg, tone: :accent) do %>
     Accent heading
   <% end %>
 
-  <%= render Heading.new(size: :lg, scheme: :muted) do %>
+  <%= render Heading.new(size: :lg, tone: :secondary) do %>
     Muted heading
   <% end %>
 </div>

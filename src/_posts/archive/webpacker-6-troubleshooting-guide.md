@@ -2,7 +2,7 @@
 series: webpacker-6
 featured: false
 title: "Webpacker 6: Troubleshooting Guide"
-description: A (growing) collection of tools and techniques for debugging your Webpack(er) setup.   I highly recom...
+description: "Tools and techniques for debugging Webpacker 6 and Webpack build errors in Rails. Archived, since Webpacker is no longer maintained."
 urls:
   dev_to: https://dev.to/andrewmcodes/webpacker-6-troubleshooting-guide-pdl
 tags:

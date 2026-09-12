@@ -1,0 +1,545 @@
+[
+  {
+    "description": "Client ID Metadata Document (CIMD) support for Doorkeeper.",
+    "forkCount": 0,
+    "name": "doorkeeper-cimd",
+    "primaryLanguage": {
+      "color": "#701516",
+      "name": "Ruby"
+    },
+    "pushedAt": "2026-09-03T03:57:53Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/andrewmcodes/doorkeeper-cimd"
+  },
+  {
+    "description": "An Awesome List of my Awesome Stars",
+    "forkCount": 2,
+    "name": "awesome-stars",
+    "primaryLanguage": null,
+    "pushedAt": "2026-09-03T01:08:44Z",
+    "stargazerCount": 20,
+    "url": "https://github.com/andrewmcodes/awesome-stars"
+  },
+  {
+    "description": "My personal website built on Bridgetown",
+    "forkCount": 3,
+    "name": "andrewm.codes",
+    "primaryLanguage": {
+      "color": "#701516",
+      "name": "Ruby"
+    },
+    "pushedAt": "2026-09-01T23:56:25Z",
+    "stargazerCount": 14,
+    "url": "https://github.com/andrewmcodes/andrewm.codes"
+  },
+  {
+    "description": "Schema-driven, object-based note-taking for Obsidian using native Markdown, Properties, and Bases.",
+    "forkCount": 1,
+    "name": "obsidian-objects",
+    "primaryLanguage": {
+      "color": "#3178c6",
+      "name": "TypeScript"
+    },
+    "pushedAt": "2026-08-27T20:56:24Z",
+    "stargazerCount": 6,
+    "url": "https://github.com/andrewmcodes/obsidian-objects"
+  },
+  {
+    "description": "Back up your Apple Shortcuts into a git repository with generated docs and browsable web reviews",
+    "forkCount": 0,
+    "name": "shortcut-source-saver",
+    "primaryLanguage": {
+      "color": "#00ADD8",
+      "name": "Go"
+    },
+    "pushedAt": "2026-08-19T23:23:59Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/andrewmcodes/shortcut-source-saver"
+  },
+  {
+    "description": "My personal dot and settings files",
+    "forkCount": 0,
+    "name": "dotfiles",
+    "primaryLanguage": {
+      "color": "#89e051",
+      "name": "Shell"
+    },
+    "pushedAt": "2026-08-19T04:06:06Z",
+    "stargazerCount": 3,
+    "url": "https://github.com/andrewmcodes/dotfiles"
+  },
+  {
+    "description": "Personal ZSH Configuration",
+    "forkCount": 0,
+    "name": "zdotdir",
+    "primaryLanguage": {
+      "color": "#89e051",
+      "name": "Shell"
+    },
+    "pushedAt": "2026-08-18T22:15:43Z",
+    "stargazerCount": 3,
+    "url": "https://github.com/andrewmcodes/zdotdir"
+  },
+  {
+    "description": "Raycast extension to search package registries (npm, RubyGems, GitHub, Homebrew, VS Code, Obsidian) and generate Obsidian software-note frontmatter for the digital-brain vault.",
+    "forkCount": 0,
+    "name": "digital-brain-registry-search",
+    "primaryLanguage": {
+      "color": "#3178c6",
+      "name": "TypeScript"
+    },
+    "pushedAt": "2026-08-13T17:45:42Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/andrewmcodes/digital-brain-registry-search"
+  },
+  {
+    "description": "Shareable JavaScript and Node.js tooling configuration packages (Prettier, commitlint) — a pnpm + Changesets monorepo.",
+    "forkCount": 0,
+    "name": "js-configs",
+    "primaryLanguage": {
+      "color": "#f1e05a",
+      "name": "JavaScript"
+    },
+    "pushedAt": "2026-07-28T23:55:44Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/andrewmcodes/js-configs"
+  },
+  {
+    "description": "Personal lazy.nvim config for a Rails/Stimulus/React/ERB + AI workflow. Includes Keycombat — a browser game to learn the keymaps.",
+    "forkCount": 0,
+    "name": "dotfiles-nvim",
+    "primaryLanguage": {
+      "color": "#000080",
+      "name": "Lua"
+    },
+    "pushedAt": "2026-07-25T04:32:53Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/andrewmcodes/dotfiles-nvim"
+  },
+  {
+    "description": "A Procfile process manager for herdr users — a herdr-backed reimplementation of Overmind",
+    "forkCount": 0,
+    "name": "overhrd",
+    "primaryLanguage": {
+      "color": "#00ADD8",
+      "name": "Go"
+    },
+    "pushedAt": "2026-07-24T06:19:20Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/andrewmcodes/overhrd"
+  },
+  {
+    "description": "Import structured metadata from canonical sources into an Obsidian vault as plain Markdown notes — Ruby gem with a Charm TUI and scriptable CLI.",
+    "forkCount": 0,
+    "name": "obsidian-import",
+    "primaryLanguage": {
+      "color": "#701516",
+      "name": "Ruby"
+    },
+    "pushedAt": "2026-06-19T00:44:26Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/andrewmcodes/obsidian-import"
+  },
+  {
+    "description": "A GitHub Action that lints your HAML code with HAML Lint!",
+    "forkCount": 1,
+    "name": "haml-lint-action",
+    "primaryLanguage": {
+      "color": "#701516",
+      "name": "Ruby"
+    },
+    "pushedAt": "2026-05-16T04:09:30Z",
+    "stargazerCount": 4,
+    "url": "https://github.com/andrewmcodes/haml-lint-action"
+  },
+  {
+    "description": "A simple tool to help you get articles from Forem/Dev.to",
+    "forkCount": 0,
+    "name": "forem_lite",
+    "primaryLanguage": {
+      "color": "#701516",
+      "name": "Ruby"
+    },
+    "pushedAt": "2026-05-16T04:09:21Z",
+    "stargazerCount": 11,
+    "url": "https://github.com/andrewmcodes/forem_lite"
+  },
+  {
+    "description": "bundler-leak GitHub action",
+    "forkCount": 0,
+    "name": "bundler-leak-action",
+    "primaryLanguage": {
+      "color": "#384d54",
+      "name": "Dockerfile"
+    },
+    "pushedAt": "2026-05-16T04:08:33Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/andrewmcodes/bundler-leak-action"
+  },
+  {
+    "description": "Bundler Audit Action",
+    "forkCount": 17,
+    "name": "bundler-audit-action",
+    "primaryLanguage": {
+      "color": "#384d54",
+      "name": "Dockerfile"
+    },
+    "pushedAt": "2026-05-16T04:08:22Z",
+    "stargazerCount": 17,
+    "url": "https://github.com/andrewmcodes/bundler-audit-action"
+  },
+  {
+    "description": "Shared GitHub Actions",
+    "forkCount": 0,
+    "name": "actions",
+    "primaryLanguage": {
+      "color": "#89e051",
+      "name": "Shell"
+    },
+    "pushedAt": "2026-05-16T03:39:16Z",
+    "stargazerCount": 2,
+    "url": "https://github.com/andrewmcodes/actions"
+  },
+  {
+    "description": null,
+    "forkCount": 0,
+    "name": "vscode-ruby-class-name",
+    "primaryLanguage": {
+      "color": "#3178c6",
+      "name": "TypeScript"
+    },
+    "pushedAt": "2026-05-16T03:34:01Z",
+    "stargazerCount": 1,
+    "url": "https://github.com/andrewmcodes/vscode-ruby-class-name"
+  },
+  {
+    "description": "Ruby client for interfacing with the Consolidated Screening List (CSL)",
+    "forkCount": 0,
+    "name": "consolidated_screening_list",
+    "primaryLanguage": {
+      "color": "#701516",
+      "name": "Ruby"
+    },
+    "pushedAt": "2026-05-16T03:23:45Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/andrewmcodes/consolidated_screening_list"
+  },
+  {
+    "description": null,
+    "forkCount": 0,
+    "name": "release-please-demo",
+    "primaryLanguage": {
+      "color": "#701516",
+      "name": "Ruby"
+    },
+    "pushedAt": "2026-05-16T03:21:47Z",
+    "stargazerCount": 2,
+    "url": "https://github.com/andrewmcodes/release-please-demo"
+  },
+  {
+    "description": "CLI tool to delete Git branches",
+    "forkCount": 0,
+    "name": "pruner",
+    "primaryLanguage": {
+      "color": "#701516",
+      "name": "Ruby"
+    },
+    "pushedAt": "2026-05-16T03:16:21Z",
+    "stargazerCount": 20,
+    "url": "https://github.com/andrewmcodes/pruner"
+  },
+  {
+    "description": null,
+    "forkCount": 0,
+    "name": "turbo_debug",
+    "primaryLanguage": {
+      "color": "#701516",
+      "name": "Ruby"
+    },
+    "pushedAt": "2026-05-16T03:16:18Z",
+    "stargazerCount": 2,
+    "url": "https://github.com/andrewmcodes/turbo_debug"
+  },
+  {
+    "description": "I DIDNT WANT THIS BUT YOU MADE ME DO IT",
+    "forkCount": 0,
+    "name": "redux-on-rails",
+    "primaryLanguage": {
+      "color": "#701516",
+      "name": "Ruby"
+    },
+    "pushedAt": "2026-05-16T03:16:07Z",
+    "stargazerCount": 3,
+    "url": "https://github.com/andrewmcodes/redux-on-rails"
+  },
+  {
+    "description": "An extension pack of my favorite VS Code extensions for Ruby on Rails development.",
+    "forkCount": 0,
+    "name": "rails-extension-power-pack",
+    "primaryLanguage": null,
+    "pushedAt": "2026-05-16T03:05:47Z",
+    "stargazerCount": 12,
+    "url": "https://github.com/andrewmcodes/rails-extension-power-pack"
+  },
+  {
+    "description": "My gem card",
+    "forkCount": 0,
+    "name": "andrewmcodes_gem",
+    "primaryLanguage": {
+      "color": "#701516",
+      "name": "Ruby"
+    },
+    "pushedAt": "2026-05-16T03:05:39Z",
+    "stargazerCount": 5,
+    "url": "https://github.com/andrewmcodes/andrewmcodes_gem"
+  },
+  {
+    "description": "Warp theme based on the Radix color system",
+    "forkCount": 0,
+    "name": "warp-radix",
+    "primaryLanguage": null,
+    "pushedAt": "2026-05-16T03:05:31Z",
+    "stargazerCount": 2,
+    "url": "https://github.com/andrewmcodes/warp-radix"
+  },
+  {
+    "description": "Warp theme based on One Dark Darker",
+    "forkCount": 2,
+    "name": "warp-one-dark-darker",
+    "primaryLanguage": null,
+    "pushedAt": "2026-05-16T03:05:29Z",
+    "stargazerCount": 31,
+    "url": "https://github.com/andrewmcodes/warp-one-dark-darker"
+  },
+  {
+    "description": "A minimal template for your first Obsidian vault aimed at setting good defaults.",
+    "forkCount": 12,
+    "name": "obsidian-beginner-vault-template",
+    "primaryLanguage": null,
+    "pushedAt": "2026-05-16T03:05:16Z",
+    "stargazerCount": 89,
+    "url": "https://github.com/andrewmcodes/obsidian-beginner-vault-template"
+  },
+  {
+    "description": "StandardRB Action: A GitHub Action to run StandardRB against your code!",
+    "forkCount": 22,
+    "name": "standardrb-action",
+    "primaryLanguage": {
+      "color": "#701516",
+      "name": "Ruby"
+    },
+    "pushedAt": "2026-05-16T03:05:12Z",
+    "stargazerCount": 32,
+    "url": "https://github.com/andrewmcodes/standardrb-action"
+  },
+  {
+    "description": "A CLI tool to help you easily delete forked repositories.",
+    "forkCount": 0,
+    "name": "dishwasher",
+    "primaryLanguage": {
+      "color": "#701516",
+      "name": "Ruby"
+    },
+    "pushedAt": "2026-05-16T03:05:09Z",
+    "stargazerCount": 10,
+    "url": "https://github.com/andrewmcodes/dishwasher"
+  },
+  {
+    "description": null,
+    "forkCount": 0,
+    "name": "huebrew",
+    "primaryLanguage": {
+      "color": "#701516",
+      "name": "Ruby"
+    },
+    "pushedAt": "2026-05-16T03:05:04Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/andrewmcodes/huebrew"
+  },
+  {
+    "description": "WIP Vercel Serverless Functions written in Ruby",
+    "forkCount": 5,
+    "name": "vercel_ruby",
+    "primaryLanguage": {
+      "color": "#e34c26",
+      "name": "HTML"
+    },
+    "pushedAt": "2026-05-16T02:44:58Z",
+    "stargazerCount": 2,
+    "url": "https://github.com/andrewmcodes/vercel_ruby"
+  },
+  {
+    "description": "My personal Alfred 5 themes",
+    "forkCount": 0,
+    "name": "alfred-themes",
+    "primaryLanguage": null,
+    "pushedAt": "2026-05-16T02:44:39Z",
+    "stargazerCount": 5,
+    "url": "https://github.com/andrewmcodes/alfred-themes"
+  },
+  {
+    "description": "Demo app showing how you can filter a table in a Ruby on Rails app with StimulusReflex",
+    "forkCount": 2,
+    "name": "stimulus_reflex_table_filter",
+    "primaryLanguage": {
+      "color": "#701516",
+      "name": "Ruby"
+    },
+    "pushedAt": "2026-05-16T02:44:29Z",
+    "stargazerCount": 17,
+    "url": "https://github.com/andrewmcodes/stimulus_reflex_table_filter"
+  },
+  {
+    "description": "Ready to go Rails App with TailwindCSS, ViewComponent, Devise, and more!",
+    "forkCount": 2,
+    "name": "shotgun",
+    "primaryLanguage": {
+      "color": "#701516",
+      "name": "Ruby"
+    },
+    "pushedAt": "2026-05-16T02:44:24Z",
+    "stargazerCount": 25,
+    "url": "https://github.com/andrewmcodes/shotgun"
+  },
+  {
+    "description": "Default community health files for @andrewmcodes",
+    "forkCount": 0,
+    "name": ".github",
+    "primaryLanguage": null,
+    "pushedAt": "2026-05-16T02:43:17Z",
+    "stargazerCount": 4,
+    "url": "https://github.com/andrewmcodes/.github"
+  },
+  {
+    "description": "Generic project scaffolding platform built on declarative manifests, capability overlays, upstream ecosystem generators (bundle gem, rails new), and code patchers. v1 ships ruby-gem, rails-app, ruby-script, and ts-cli.",
+    "forkCount": 0,
+    "name": "project-kit",
+    "primaryLanguage": {
+      "color": "#701516",
+      "name": "Ruby"
+    },
+    "pushedAt": "2026-05-09T02:54:00Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/andrewmcodes/project-kit"
+  },
+  {
+    "description": "Learn lazygit keyboard shortcuts — Duolingo-style",
+    "forkCount": 0,
+    "name": "lazygit-learn",
+    "primaryLanguage": {
+      "color": "#f1e05a",
+      "name": "JavaScript"
+    },
+    "pushedAt": "2026-05-07T02:03:20Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/andrewmcodes/lazygit-learn"
+  },
+  {
+    "description": "andrewmcodes public readme",
+    "forkCount": 0,
+    "name": "andrewmcodes",
+    "primaryLanguage": null,
+    "pushedAt": "2026-03-19T03:59:53Z",
+    "stargazerCount": 7,
+    "url": "https://github.com/andrewmcodes/andrewmcodes"
+  },
+  {
+    "description": "Personal marketplace for Claude Code plugins",
+    "forkCount": 0,
+    "name": "claude-plugins",
+    "primaryLanguage": null,
+    "pushedAt": "2026-02-13T03:51:28Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/andrewmcodes/claude-plugins"
+  },
+  {
+    "description": "A curated list of awesome things related to Bridgetown",
+    "forkCount": 4,
+    "name": "awesome-bridgetown",
+    "primaryLanguage": null,
+    "pushedAt": "2024-07-30T10:39:11Z",
+    "stargazerCount": 17,
+    "url": "https://github.com/andrewmcodes/awesome-bridgetown"
+  },
+  {
+    "description": "Benchmarking usage of minifySyntax with esbuild and Bridgetown",
+    "forkCount": 0,
+    "name": "bridgetown-esbuild-minifySyntax",
+    "primaryLanguage": {
+      "color": "#f1e05a",
+      "name": "JavaScript"
+    },
+    "pushedAt": "2023-03-02T06:43:55Z",
+    "stargazerCount": 1,
+    "url": "https://github.com/andrewmcodes/bridgetown-esbuild-minifySyntax"
+  },
+  {
+    "description": null,
+    "forkCount": 0,
+    "name": "rails-ci",
+    "primaryLanguage": {
+      "color": "#701516",
+      "name": "Ruby"
+    },
+    "pushedAt": "2023-02-23T05:01:47Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/andrewmcodes/rails-ci"
+  },
+  {
+    "description": "A demo Bridgetown website that has Torchlight syntax highlighting configured!",
+    "forkCount": 0,
+    "name": "bridgetown-torchlight-demo",
+    "primaryLanguage": {
+      "color": "#f1e05a",
+      "name": "JavaScript"
+    },
+    "pushedAt": "2022-05-26T00:11:27Z",
+    "stargazerCount": 3,
+    "url": "https://github.com/andrewmcodes/bridgetown-torchlight-demo"
+  },
+  {
+    "description": "Obsidian vault of Remote Ruby episodes for personal research",
+    "forkCount": 0,
+    "name": "remote-ruby-vault",
+    "primaryLanguage": {
+      "color": "#f1e05a",
+      "name": "JavaScript"
+    },
+    "pushedAt": "2022-05-04T03:42:15Z",
+    "stargazerCount": 1,
+    "url": "https://github.com/andrewmcodes/remote-ruby-vault"
+  },
+  {
+    "description": "Demo of the new gh-pages configuration in Bridgetown v1.0",
+    "forkCount": 0,
+    "name": "bridgetown-gh-pages-demo",
+    "primaryLanguage": {
+      "color": "#f1e05a",
+      "name": "JavaScript"
+    },
+    "pushedAt": "2022-03-23T06:32:26Z",
+    "stargazerCount": 1,
+    "url": "https://github.com/andrewmcodes/bridgetown-gh-pages-demo"
+  },
+  {
+    "description": "Solutions to Advent of Code",
+    "forkCount": 0,
+    "name": "advent_of_code",
+    "primaryLanguage": {
+      "color": "#701516",
+      "name": "Ruby"
+    },
+    "pushedAt": "2021-12-01T23:31:02Z",
+    "stargazerCount": 2,
+    "url": "https://github.com/andrewmcodes/advent_of_code"
+  },
+  {
+    "description": "An extension pack for VSCode of extensions for developing with Tailwind CSS.",
+    "forkCount": 0,
+    "name": "vscode-tailwindcss-extension-pack",
+    "primaryLanguage": null,
+    "pushedAt": "2020-12-09T10:54:09Z",
+    "stargazerCount": 1,
+    "url": "https://github.com/andrewmcodes/vscode-tailwindcss-extension-pack"
+  }
+]

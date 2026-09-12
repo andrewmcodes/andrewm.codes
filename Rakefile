@@ -28,12 +28,21 @@ end
 namespace :frontend do
   desc "Build the frontend with esbuild for deployment"
   task :build do
-    sh "npm run esbuild"
+    sh "pnpm run esbuild"
+    sh "bin/tailwindcss"
   end
 
   desc "Watch the frontend with esbuild during development"
   task :dev do
-    sh "npm run esbuild-dev"
+    sh "pnpm run esbuild-dev"
   rescue Interrupt
   end
+end
+
+Rake::Task["frontend:watcher"].enhance do
+  Bridgetown::Utils::Aux.run_process(
+    "Tailwind",
+    :blue,
+    "bin/tailwindcss --watch"
+  )
 end

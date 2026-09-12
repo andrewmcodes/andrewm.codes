@@ -88,13 +88,13 @@ The last thing we need to do is tell GitHub Pages to use the `gh-pages` branch a
 
 Navigate to the settings page and set the source from `None` to `gh-pages` and click save.
 
-<img alt="GitHub Pages Public URL" src="<%= cloudinary_url 'v1648021946/posts/deploy-bridgetown-to-github-pages/20220323061751Z_Safari_Pages_cfmcb4', :medium %>" />
+<img alt="GitHub Pages Public URL" src="<%= imagekit_url 'posts/deploy-bridgetown-to-github-pages/github-pages-public-url' %>" />
 
 Once the automatic deployment completes, your site URL should be displayed! Navigate to it in your browser and verify everything works correctly.
 
 ## Success!
 
-<img alt="GitHub Pages Public URL" src="<%= cloudinary_url 'v1648021947/posts/deploy-bridgetown-to-github-pages/20220323061936Z_Safari_Your_awesome_title_This_site_is_totally_awesome_a5kova', :medium %>" />
+<img alt="GitHub Pages Public URL" src="<%= imagekit_url 'posts/deploy-bridgetown-to-github-pages/github-pages-public-url-2', :medium %>" />
 
 I want to give another big shoutout to [Ayush](https://twitter.com/ayushn21) for adding this bundled configuration to Bridgetown v1.0!
 

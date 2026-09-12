@@ -7,6 +7,31 @@ const FOCUSABLE = 'a[href], button:not([disabled]), input:not([disabled]), [tabi
 
 // The element focus returns to when the menu closes.
 let lastFocused = null;
+const inertedBackground = new Set();
+
+function setBackgroundInert(menu, inert) {
+  if (!inert) {
+    inertedBackground.forEach((element) => {
+      element.inert = false;
+    });
+    inertedBackground.clear();
+    return;
+  }
+
+  // Walk from the dialog to <body>, disabling every sibling branch behind it.
+  // Keep the backdrop interactive so pointer users can still dismiss the menu.
+  let current = menu;
+  while (current.parentElement) {
+    const parent = current.parentElement;
+    Array.from(parent.children).forEach((sibling) => {
+      if (sibling === current || sibling.id === BACKDROP_ID || sibling.inert) return;
+      sibling.inert = true;
+      inertedBackground.add(sibling);
+    });
+    if (parent === document.body) break;
+    current = parent;
+  }
+}
 
 function menuFocusables(menu) {
   return Array.from(menu.querySelectorAll(FOCUSABLE)).filter(
@@ -25,6 +50,10 @@ function setOpen(open) {
   const menu = document.getElementById(MENU_ID);
   if (!menu) return;
 
+  // The sheet covers the page, so the page must not scroll under it. Without
+  // this a swipe over the scrim scrolls the article behind the open menu.
+  document.documentElement.style.overflow = open ? "hidden" : "";
+
   // Remember where focus came from before the first open.
   if (open && menu.dataset.open !== "true") lastFocused = document.activeElement;
 
@@ -32,6 +61,7 @@ function setOpen(open) {
   // The panel is always rendered (hidden via opacity), so `inert` is what keeps
   // it out of the tab order + accessibility tree while closed.
   menu.inert = !open;
+  setBackgroundInert(menu, open);
 
   const backdrop = document.getElementById(BACKDROP_ID);
   if (backdrop) backdrop.dataset.open = String(open);
@@ -62,6 +92,11 @@ function isOpen() {
 document.addEventListener("click", (e) => {
   if (e.target.closest(`#${TRIGGER_ID}`)) {
     setOpen(!isOpen());
+    return;
+  }
+
+  if (e.target.closest("[data-menu-close]")) {
+    setOpen(false);
     return;
   }
 
@@ -99,19 +134,3 @@ document.addEventListener("keydown", (e) => {
     }
   }
 });
-
-// Close the mobile menu when the user starts scrolling. Only fires if the
-// menu is actually open to avoid the listener doing work on every scroll.
-let lastScrollY = window.scrollY;
-document.addEventListener(
-  "scroll",
-  () => {
-    if (!isOpen()) {
-      lastScrollY = window.scrollY;
-      return;
-    }
-    if (Math.abs(window.scrollY - lastScrollY) > 8) setOpen(false);
-    lastScrollY = window.scrollY;
-  },
-  { passive: true },
-);

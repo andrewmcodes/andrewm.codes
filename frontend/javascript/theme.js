@@ -11,9 +11,13 @@ const systemTheme = () => (matchMedia("(prefers-color-scheme: dark)").matches ? 
 
 const currentMode = () => localStorage.getItem(STORAGE_KEY) || "system";
 
-function applyTheme() {
+const resolvedTheme = () => {
   const mode = currentMode();
-  document.documentElement.dataset.theme = mode === "system" ? systemTheme() : mode;
+  return mode === "system" ? systemTheme() : mode;
+};
+
+function applyTheme() {
+  document.documentElement.dataset.theme = resolvedTheme();
 }
 
 function syncControls() {
@@ -32,11 +36,48 @@ function syncControls() {
   });
 }
 
+// The theme flip is the largest state change the site has: every token in the
+// page swaps at once, and until now it landed as a single hard repaint. A
+// cross-fade at the palette's own 180ms says "one change", not "reload".
+//
+// Three things keep it honest. Choosing System while the OS already matches
+// resolves to the theme already on screen, so there is nothing to cross-fade
+// and the snapshot is skipped. Reduced motion skips it too — the state still
+// changes, it just arrives instantly. And the transition count guards against
+// a fast second click, whose transition supersedes the first: the first one's
+// cleanup must not strip the attribute out from under the second.
+let runningTransitions = 0;
+
+function commit() {
+  const previous = document.documentElement.dataset.theme;
+  const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if (resolvedTheme() === previous || reduced || !document.startViewTransition) {
+    applyTheme();
+    syncControls();
+    return;
+  }
+
+  const root = document.documentElement;
+  runningTransitions += 1;
+  root.dataset.themeTransition = "";
+
+  document
+    .startViewTransition(() => {
+      applyTheme();
+      syncControls();
+    })
+    .finished.catch(() => {})
+    .finally(() => {
+      runningTransitions -= 1;
+      if (runningTransitions === 0) delete root.dataset.themeTransition;
+    });
+}
+
 function selectValue(value) {
   if (value === "system") localStorage.removeItem(STORAGE_KEY);
   else localStorage.setItem(STORAGE_KEY, value);
-  applyTheme();
-  syncControls();
+  commit();
 }
 
 // Event delegation so the listener survives Turbo navigations + cached restores.
@@ -68,8 +109,10 @@ document.addEventListener("keydown", (e) => {
 // Follow the OS while in System mode. addEventListener isn't available on
 // MediaQueryList in older Safari (<14), which only has addListener.
 const mql = matchMedia("(prefers-color-scheme: dark)");
+// An OS flip while in System mode is the same state change as a click on the
+// toggle, so it earns the same cross-fade.
 const onSystemChange = () => {
-  if (currentMode() === "system") applyTheme();
+  if (currentMode() === "system") commit();
 };
 if (mql.addEventListener) mql.addEventListener("change", onSystemChange);
 else if (mql.addListener) mql.addListener(onSystemChange);

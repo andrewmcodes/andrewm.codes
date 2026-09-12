@@ -1,7 +1,5 @@
 name: "Copilot Setup Steps"
 
-# Automatically run setup changes for validation, and allow manual testing in
-# the Actions UI.
 on:
   workflow_dispatch:
   push:

@@ -1,0 +1,22 @@
+<a
+  href="/"
+  class="group flex items-center <%= tokens[:gap] %> rounded-md px-1.5 py-1 -mx-1.5 hover:bg-mauve-3 transition-colors"
+>
+  <img
+    src="/images/main-avatar.png"
+    alt=""
+    width="64"
+    height="64"
+    class="<%= tokens[:avatar] %> rounded-full object-cover shrink-0"
+  />
+
+  <span class="min-w-0">
+    <span class="block <%= tokens[:name] %> font-semibold text-mauve-12 truncate">
+      Andrew Mason
+    </span>
+
+    <span class="block font-mono text-micro text-mauve-11 truncate max-compact:hidden">
+      @<%= handle %>
+    </span>
+  </span>
+</a>

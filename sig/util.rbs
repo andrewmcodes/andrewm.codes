@@ -1,6 +1,7 @@
 module Util
   class Seo < Base
     COMPONENT_OPTIONS: Array[Symbol]
+    ARTICLE_COLLECTIONS: Array[String]
 
     @metadata: untyped
 
@@ -12,7 +13,6 @@ module Util
     def page_title: () -> String
     def social_title: () -> String
     def description: () -> String
-    def strip_html: (String text) -> String
     def meta_description: () -> String
     def social_description: () -> String
     def truncate: (String text, Integer max) -> String
@@ -24,7 +24,7 @@ module Util
     def page_url: () -> String
     def canonical_url: () -> untyped
     def metadata: () -> untyped
-    def post?: (untyped res) -> bool
+    def article_collection?: (untyped res) -> bool
     def page_type: () -> String
     def article?: () -> bool
     def meta_tags_data: () -> Array[Hash[Symbol, untyped]]

@@ -42,7 +42,7 @@ class TestJsonLd < Bridgetown::Test
       expect(website["publisher"]["@id"]).must_equal PERSON_ID
     end
 
-    it "exposes a SearchAction for the sitelinks search box" do
+    it "describes the site search with a SearchAction" do
       website = jsonld_of_type(document, "WebSite").first
       action = website["potentialAction"]
       expect(action["@type"]).must_equal "SearchAction"
@@ -181,11 +181,8 @@ class TestJsonLd < Bridgetown::Test
   describe "/speaking/" do
     before { html get "/speaking/" }
 
-    it "emits a VideoObject per recorded talk" do
-      videos = jsonld_of_type(document, "VideoObject")
-      expect(videos).wont_be_empty
-      expect(videos.first["uploadDate"]).wont_be_nil
-      expect(videos.first["contentUrl"]).wont_be_nil
+    it "does not describe linked recordings as videos embedded on the page" do
+      expect(jsonld_of_type(document, "VideoObject")).must_be_empty
     end
 
     it "emits PodcastSeries for hosted shows" do
@@ -217,6 +214,38 @@ class TestJsonLd < Bridgetown::Test
       crumbs = jsonld_of_type(document, "BreadcrumbList").first
       names = crumbs["itemListElement"].map { |i| i["name"] }
       expect(names).must_include "Speaking"
+    end
+
+    it "types the page as an article for Open Graph too" do
+      og_type = document.query_selector("meta[property='og:type']")["content"]
+      expect(og_type).must_equal "article"
+    end
+  end
+
+  describe "a standalone page" do
+    before { html get "/uses/" }
+
+    it "emits a WebPage tied to the site and the Person" do
+      page = jsonld_of_type(document, "WebPage").first
+      expect(page).wont_be_nil
+      expect(page["url"]).must_equal "https://andrewm.codes/uses/"
+      expect(page["isPartOf"]["@type"]).must_equal "WebSite"
+      expect(page["about"]["@id"]).must_equal PERSON_ID
+    end
+
+    it "emits a Home / page BreadcrumbList" do
+      crumbs = jsonld_of_type(document, "BreadcrumbList").first
+      expect(crumbs).wont_be_nil
+      names = crumbs["itemListElement"].map { |i| i["name"] }
+      expect(names).must_equal ["Home", "Uses"]
+    end
+  end
+
+  describe "a noindex page" do
+    before { html get "/search/" }
+
+    it "emits no schema at all" do
+      expect(jsonld_scripts(document)).must_be_empty
     end
   end
 end

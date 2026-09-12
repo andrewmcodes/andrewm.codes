@@ -16,7 +16,7 @@ To achieve this effect, I use [BlackMagic.so](https://blackmagic.so/), a suite o
 
 <%= render(Figure.new) do |c| %>
 <% c.slot :image do %>
-<%= render Image.new(variant: :figure, cid: "v1666073663/posts/twitter-avatar/20220505050712Z_BlackMagic.so2", alt: "BlackMagic.so Profile Progress Bar Twitter Tool") %>
+<%= render Image.new(variant: :figure, iid: "posts/twitter-avatar/blackmagic-so-profile-progress-bar-twitter-tool", alt: "BlackMagic.so Profile Progress Bar Twitter Tool") %>
 <% end %>
 <% c.slot :caption do %>
 The BlackMagic.so Profile Progress Bar Twitter Tool

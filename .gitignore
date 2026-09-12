@@ -9,6 +9,7 @@ node_modules
 
 # Caches
 .sass-cache
+.torchlight-cache/
 .npm
 .node_repl_history
 
@@ -52,9 +53,6 @@ src/og/*.png
 .standardrb
 vendor/bundle
 
-# Torchlight cache
-.torchlight-cache/
-
 # Wranger
 .wrangler/
 
@@ -64,3 +62,9 @@ storybook-static/
 # AI
 .claude/
 skills-lock.json
+
+# Impeccable local caches (design.json is committed)
+.impeccable/hook.cache.json
+.impeccable/critique/
+.impeccable/questions/
+.impeccable/review/

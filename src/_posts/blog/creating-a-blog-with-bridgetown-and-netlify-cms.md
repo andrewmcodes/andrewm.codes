@@ -55,7 +55,7 @@ Our new site has been generated! :tada:
 
 Let's take a look! Run `yarn start` in your terminal and open `http://localhost:4000` in your browser.
 
-![Alt Text](https://dev-to-uploads.s3.amazonaws.com/i/m9dg93scfne9srinnpkw.jpg)
+![Alt Text](<%= imagekit_url 'posts/creating-a-blog-with-bridgetown-and-netlify-cms/m9dg93scfne9srinnpkw.jpg', :medium %>)
 
 #### Optional Styling
 
@@ -180,7 +180,7 @@ I neglected to add category, which would be [a great contribution to this reposi
 
 You should now be able to navigate to `http://localhost:4000/admin` in your browser and see this page:
 
-![Netlify CMS Admin Page](https://dev-to-uploads.s3.amazonaws.com/i/arv5vukbo7y6lr5r8zsi.jpg)
+![Netlify CMS Admin Page](<%= imagekit_url 'posts/creating-a-blog-with-bridgetown-and-netlify-cms/netlify-cms-admin-page.jpg', :medium %>)
 
 In order to use the CMS locally, run `npx netlify-cms-proxy-server` in a separate terminal window or run `yarn add -D netlify-cms-proxy-server` and modify `start.js`:
 
@@ -221,7 +221,7 @@ git push --set-upstream origin main
 1. Set the publish directory to `output`
 1. Deploy site
 
-![Alt Text](https://dev-to-uploads.s3.amazonaws.com/i/n0mh8jeu3wedgfz81wwt.jpg)
+![Alt Text](<%= imagekit_url 'posts/creating-a-blog-with-bridgetown-and-netlify-cms/n0mh8jeu3wedgfz81wwt.jpg' %>)
 
 ### Netlify Identity
 
@@ -245,11 +245,11 @@ Navigate to your deployed site and go to the `/admin` route. For example, the ad
 
 Your page should look like:
 
-![Netlify CMS login](https://dev-to-uploads.s3.amazonaws.com/i/re1u6hkm71qy720w10l2.jpg)
+![Netlify CMS login](<%= imagekit_url 'posts/creating-a-blog-with-bridgetown-and-netlify-cms/netlify-cms-login.jpg', :medium %>)
 
 Click the `Continue with GitHub` button. After you authenticate with GitHub, you should be redirected to your CMS!
 
-![Netlify CMS](https://dev-to-uploads.s3.amazonaws.com/i/jfdgw5nazt1bzuwadnhn.jpg)
+![Netlify CMS](<%= imagekit_url 'posts/creating-a-blog-with-bridgetown-and-netlify-cms/netlify-cms.jpg', :medium %>)
 
 **Note:** At this point, I would go back to your site settings and set the registration preferences to **invite only**!
 
@@ -267,7 +267,7 @@ To go back to your site, change your url to the root, or click the user icon in 
 
 After the deploy finishes (it is very quick if you followed along), the content you changed or added should be reflected! I updated the index page, and my site now looks like:
 
-![Alt Text](https://dev-to-uploads.s3.amazonaws.com/i/y2q7dh2fqorxdnjxs151.jpg)
+![Alt Text](<%= imagekit_url 'posts/creating-a-blog-with-bridgetown-and-netlify-cms/y2q7dh2fqorxdnjxs151.jpg', :medium %>)
 
 ### Wrap up
 

@@ -57,7 +57,7 @@ Rails
 
 Now that we have a landing page, we should snazz it up a bit with a nice font. If you're like me, this is usually when you head over to [Google Fonts](https://fonts.google.com). To keep it simple, I am going to use [Lato](https://fonts.google.com/specimen/Lato). Since I am not too sure all the styles and weights I need right now, I will just go ahead and select all the available styles (sound familiar?) and copy the link that Google provides.
 
-![Google Fonts](https://dev-to-uploads.s3.amazonaws.com/i/6qbu8zru7kgr2a2q9f6u.png)
+![Google Fonts](<%= imagekit_url 'posts/instantly-speed-up-your-rails-application-by-self-hosting-your-fonts/google-fonts.png', :medium %>)
 
 Now that we have our fonts, let’s add the link to the head of our application in `app/views/layouts/application.html.erb` on the line above your `stylesheet_link_tag` (line #7 if you are on a fresh Rails app):
 
@@ -91,7 +91,7 @@ html {
 
 Now if we start the Rails server (`bin/rails s`), and navigate to `localhost:3000`, we should see our simple landing page being rendered with our nice, new font.
 
-![Welcome Page](https://dev-to-uploads.s3.amazonaws.com/i/tv7nojfhjvcwl92k2iqm.png)
+![Welcome Page](<%= imagekit_url 'posts/instantly-speed-up-your-rails-application-by-self-hosting-your-fonts/welcome-page.png', :medium %>)
 
 ## The Problem...
 
@@ -99,7 +99,7 @@ Even though our view looks much better with the new font, we have just degraded 
 
 Introducing a render blocking resource isn't great, but what's worse is we are now relying on Google to send us that file for us to render our page. Users will now be waiting longer for the page to load, and that time will fluctuate depending on how much traffic Google’s servers are handling.
 
-![Lighthouse Audit: CDN](https://dev-to-uploads.s3.amazonaws.com/i/gwcrkehoye2yprldblz6.png)
+![Lighthouse Audit: CDN](<%= imagekit_url 'posts/instantly-speed-up-your-rails-application-by-self-hosting-your-fonts/lighthouse-audit-cdn.png', :medium %>)
 
 Not great. Lighthouse isn't happy about it either.
 
@@ -132,11 +132,11 @@ require("typeface-lato");
 
 If we fire the Rails server back up and checkout `localhost:3000`, the font should still be Lato! A quick look at the `webpacker-dev-server` logs will reveal that we are now self-hosting the same font styles and weights that we were before:
 
-![webpack-dev-server logs](https://dev-to-uploads.s3.amazonaws.com/i/mvw1wsa4g015rvv2iabc.png)
+![webpack-dev-server logs](<%= imagekit_url 'posts/instantly-speed-up-your-rails-application-by-self-hosting-your-fonts/webpack-dev-server-logs.png', :medium %>)
 
 Let's see if we have fixed the performance regression via Lighthouse:
 
-![Lighthouse Audit: Self Hosted](https://dev-to-uploads.s3.amazonaws.com/i/3a17kj9bjoct5nj1vp4x.png)
+![Lighthouse Audit: Self Hosted](<%= imagekit_url 'posts/instantly-speed-up-your-rails-application-by-self-hosting-your-fonts/lighthouse-audit-self-hosted.png' %>)
 
 Lighthouse is no longer reporting a render blocking resource, we have boosted our performance!
 

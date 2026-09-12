@@ -10,8 +10,8 @@ COREPACK_ENABLE_DOWNLOAD_PROMPT = "0"
 [tasks.dev]
 run = "bin/bridgetown start"
 
-# Production build wrapped in `fnox exec` so secrets (TORCHLIGHT_TOKEN, ...)
-# from fnox.toml are exported into the build environment.
+# Production build wrapped in `fnox exec` so any configured secrets from
+# fnox.toml are exported into the build environment.
 [tasks.build]
 run = "fnox exec -- env BRIDGETOWN_ENV=production bin/bridgetown deploy"
 
@@ -19,7 +19,7 @@ run = "fnox exec -- env BRIDGETOWN_ENV=production bin/bridgetown deploy"
 run = "node scripts/generate-og.mjs"
 description = "Regenerate OG PNGs from existing output/ HTML (requires prior build)"
 
-# Manual deploy: production build (fnox-wrapped for TORCHLIGHT_TOKEN) then
+# Manual deploy: production build (fnox-wrapped) then
 # wrangler deploy reads wrangler.jsonc and uploads the output/ assets to
 # the andrewm-codes Workers route.
 [tasks.deploy]

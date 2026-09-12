@@ -37,12 +37,31 @@ class TestTags < Bridgetown::Test
       expect(canonical["href"]).must_equal "https://andrewm.codes/tag/rails/"
     end
 
-    it "noindexes thin tag pages" do
+    it "noindexes thin tag pages but still lets crawlers follow through" do
       html get "/tag/unix/"
       robots = document.query_selector("meta[name='robots']")
 
       expect(robots["content"]).must_match(/noindex/)
+      expect(robots["content"]).wont_match(/nofollow/)
       expect(document.query_selector("link[rel='canonical']")).must_be_nil
+    end
+
+    it "describes each tag by post count and date range" do
+      html get "/tag/rails/"
+      description = document.query_selector("meta[name='description']")["content"]
+
+      expect(description).must_match(/\A\d+ posts tagged #rails, published /)
+      expect(description.length).must_be :>=, 70
+    end
+
+    # Bridgetown's prototype generator force-enables pagination, and tag.erb
+    # renders the full list itself — so every /tag/<term>/page/N/ was an
+    # orphaned, indexable byte-copy of page 1.
+    it "emits no paginated duplicates" do
+      destination = File.expand_path("../output", __dir__)
+      paginated = Dir.glob(File.join(destination, "tag", "*", "page", "*", "index.html"))
+
+      expect(paginated).must_equal []
     end
   end
 end

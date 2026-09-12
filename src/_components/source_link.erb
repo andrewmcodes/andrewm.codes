@@ -1,0 +1,29 @@
+<a
+  href="<%= href %>"
+  class="<%= row_classes %>"
+  <%== 'aria-current="page"' if current? %>
+  <%== 'target="_blank" rel="noreferrer"' if external? %>
+>
+  <% if current? %>
+    <span
+      aria-hidden="true"
+      class="absolute left-0 top-1.5 bottom-1.5 w-0.5 rounded-full bg-ruby-11"
+    ></span>
+  <% end %>
+
+  <% if icon %>
+    <%= render Icon.new(
+      name: icon,
+      class: current? ? "text-mauve-12" : "text-mauve-10 group-hover:text-mauve-12 transition-colors",
+    ) %>
+  <% end %>
+
+  <span class="min-w-0 truncate"><%= label %></span>
+
+  <% if external? %>
+    <%= render Icon.new(
+      name: "arrow_top_right",
+      class: "ml-auto w-3 h-3 text-mauve-9 opacity-0 transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100",
+    ) %>
+  <% end %>
+</a>

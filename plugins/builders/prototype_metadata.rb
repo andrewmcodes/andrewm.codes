@@ -17,8 +17,15 @@ class Builders::PrototypeMetadata < SiteBuilder
 
       next unless tag_page?(page)
 
-      thin_tag = tag_post_count(term) < MIN_INDEXABLE_TAG_POSTS
-      page.data.noindex = thin_tag
+      # Bridgetown's prototype generator force-enables pagination, but tag.erb
+      # renders the whole tagged list itself and links to no page 2. Left on,
+      # the paginator emitted /tag/<term>/page/2/ and /page/3/ — indexable,
+      # self-canonical, orphaned byte-copies of page 1.
+      page.data["pagination"] = page.data["pagination"].to_h.merge("enabled" => false)
+
+      tagged = tagged_posts(term)
+      page.data.description = tag_description(term, tagged)
+      page.data.noindex = tagged.size < MIN_INDEXABLE_TAG_POSTS
       page.data.sitemap = false
     end
 
@@ -37,8 +44,22 @@ class Builders::PrototypeMetadata < SiteBuilder
     page.data.kind == "tag" && page.data.dig("prototype", "collection") == "posts"
   end
 
-  def tag_post_count(tag)
-    site.collections.posts.resources.count { |post| Array(post.data.tags).include?(tag) }
+  def tagged_posts(tag)
+    site.collections.posts.resources.select { |post| Array(post.data.tags).include?(tag) }
+  end
+
+  # The front-matter description ("Every post ... tagged #x, newest first.")
+  # rendered at 61–69 characters, well under the ~155 Google will show. Count
+  # and date range are true of the page and read like an archive summary.
+  def tag_description(tag, posts)
+    return "Posts Andrew Mason has written tagged ##{tag} on Ruby, Rails, and developer tooling, newest first." if posts.empty?
+
+    years = posts.map { |post| post.date.year }.minmax.uniq
+    when_ = (years.size == 1) ? "in #{years.first}" : "between #{years.first} and #{years.last}"
+    noun = (posts.size == 1) ? "post" : "posts"
+
+    "#{posts.size} #{noun} tagged ##{tag}, published #{when_}. Andrew Mason's notes on Ruby, Rails, " \
+      "and developer tooling, newest first."
   end
 
   def indexable_tag_sitemap_urls(site)

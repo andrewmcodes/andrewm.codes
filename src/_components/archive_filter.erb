@@ -1,0 +1,63 @@
+<fieldset data-archive-controls disabled class="m-0 min-w-0 border-0 p-0">
+  <label for="archive-query" class="block text-label text-mauve-11 mb-2">Filter <%= @kind %></label>
+
+  <input
+    id="archive-query"
+    data-archive-query
+    type="search"
+    placeholder="Search titles, descriptions, topics…"
+    class="
+      w-full min-h-11 rounded-md border border-mauve-6 bg-mauve-2 px-3
+      text-body text-mauve-12 placeholder:text-mauve-11
+    "
+  >
+
+  <% if @languages.any? %>
+    <div class="flex flex-wrap items-center gap-3 mt-3 text-note text-mauve-11">
+      <label class="inline-flex min-h-11 items-center gap-2"><input type="checkbox" data-archive-featured> Featured only</label>
+      <label for="archive-language">Language</label>
+
+      <select
+        id="archive-language"
+        data-archive-language
+        class="
+          min-h-11 max-w-full rounded-md border border-mauve-6 bg-mauve-2
+          px-3 text-mauve-12
+        "
+      >
+        <option value="">All languages</option>
+
+        <% @languages.each do |language| %>
+          <option><%= language %></option>
+        <% end %>
+      </select>
+
+      <label class="inline-flex min-h-11 items-center gap-2">
+        <input type="checkbox" data-archive-starred>
+        Has stars
+      </label>
+
+      <label class="inline-flex min-h-11 items-center gap-2">
+        <input type="checkbox" data-archive-recent>
+        Active in the past year
+      </label>
+    </div>
+  <% end %>
+
+  <div class="flex items-center justify-between gap-3 mt-2">
+    <p
+      data-archive-status
+      role="status"
+      class="m-0 font-mono text-meta text-mauve-11"
+    ><%= @count %> of <%= @count %> <%= @kind %></p>
+
+    <button
+      type="button"
+      data-archive-reset
+      class="min-h-11 text-note text-ruby-11 underline"
+    >
+      Clear filters
+    </button>
+  </div>
+  <noscript><p class="text-note text-mauve-11">Filtering needs JavaScript. All <%= @kind %> are listed below.</p></noscript>
+</fieldset>

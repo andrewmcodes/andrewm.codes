@@ -79,8 +79,7 @@ module Util
       }
     end
 
-    # Enables Google's sitelinks search box. Targets the /search/ page, which
-    # reads ?q= and renders matches from the same search.json the palette uses.
+    # Describes /search/, which reads ?q= using the same index as the palette.
     def search_action
       {
         "@type" => "SearchAction",
@@ -177,8 +176,34 @@ module Util
       when "/posts/" then [blog_listing]
       when "/projects/" then [projects_collection]
       when "/speaking/" then speaking_schemas
-      else tag_page? ? [tag_collection] : []
+      else
+        if tag_page?
+          [tag_collection]
+        elsif noindex?
+          []
+        else
+          [web_page]
+        end
       end
+    end
+
+    def noindex? = resource.data.noindex == true
+
+    # A standalone page (/uses/, /changelog/) had no entity at all. This anchors
+    # it to the same WebSite and Person graph everything else references, so the
+    # breadcrumb below has something to terminate on.
+    def web_page
+      {
+        "@type" => "WebPage",
+        "@id" => canonical_url,
+        "url" => canonical_url,
+        "name" => resource.data.title,
+        "description" => resource.data.description,
+        "inLanguage" => metadata.lang,
+        "isPartOf" => website_ref,
+        "about" => person_ref,
+        "primaryImageOfPage" => resource_image(resource)
+      }.compact
     end
 
     # ---- Article-like schemas ------------------------------------------------
@@ -284,34 +309,10 @@ module Util
       }.compact
     end
 
-    # ---- Speaking: talks (VideoObject) + podcasts ----------------------------
+    # ---- Speaking: podcasts ------------------------------------------------
 
     def speaking_schemas
-      talk_videos + podcast_series + [latest_episode].compact
-    end
-
-    def talk_videos
-      Array(@site.data.talks).filter_map { |talk| talk_video(talk) }
-    end
-
-    def talk_video(talk)
-      href = recording_url(talk)
-      return nil unless href
-      {
-        "@type" => "VideoObject",
-        "name" => talk["title"],
-        "description" => talk["excerpt"],
-        "uploadDate" => iso(talk["date"]),
-        "url" => href,
-        "contentUrl" => href,
-        "duration" => duration_from_minutes(talk["duration"]),
-        "thumbnailUrl" => youtube_thumbnail(href)
-      }.compact
-    end
-
-    def recording_url(talk)
-      link = Array(talk["links"]).find { |l| (l["label"] || l[:label]).to_s.casecmp("video").zero? }
-      link && (link["href"] || link[:href])
+      podcast_series + [latest_episode].compact
     end
 
     def podcast_series
@@ -359,7 +360,13 @@ module Util
         when "posts" then [home_crumb, posts_crumb, [resource.data.title, abs_url]]
         when "cfps" then [home_crumb, ["Speaking", "#{site_url}/speaking/"], [resource.data.title, abs_url]]
         else
-          [home_crumb, posts_crumb, ["##{resource.data.tag}", abs_url]] if tag_page?
+          if tag_page?
+            [home_crumb, posts_crumb, ["##{resource.data.tag}", abs_url]]
+          elsif rel_url && rel_url != "/" && !noindex?
+            # Every other top-level page — /about/, /uses/, /projects/ — is one
+            # hop from home and was shipping no breadcrumb at all.
+            [home_crumb, [resource.data.title, abs_url]]
+          end
         end
       return nil unless trail
 
@@ -382,13 +389,6 @@ module Util
 
     # ---- Duration / text utilities -------------------------------------------
 
-    # @param str [String, nil] a duration like "30 min"
-    # @return [String, nil] an ISO 8601 duration ("PT30M"), or nil
-    def duration_from_minutes(str)
-      minutes = str.to_s[/\d+/]
-      minutes && "PT#{minutes}M"
-    end
-
     # @param seconds [Integer, String, nil] a duration in seconds
     # @return [String, nil] an ISO 8601 duration ("PT1H2M3S"), or nil if <= 0
     def duration_from_seconds(seconds)
@@ -401,22 +401,6 @@ module Util
       duration << "#{mins}M" if mins.positive?
       duration << "#{secs}S" if secs.positive?
       duration
-    end
-
-    # @param url [String] a YouTube watch/short URL
-    # @return [String, nil] the maxres thumbnail URL, or nil if not YouTube
-    def youtube_thumbnail(url)
-      id = youtube_id(url)
-      id && "https://i.ytimg.com/vi/#{id}/maxresdefault.jpg"
-    end
-
-    # @param url [String] a YouTube URL
-    # @return [String, nil] the 11-char video id, or nil
-    def youtube_id(url)
-      case url.to_s
-      when /[?&]v=([\w-]{11})/ then $1
-      when %r{youtu\.be/([\w-]{11})} then $1
-      end
     end
 
     # @param value [String, nil] HTML or text

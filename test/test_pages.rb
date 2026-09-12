@@ -10,13 +10,26 @@ class TestPages < Bridgetown::Test
   describe "/" do
     before { html get "/" }
 
-    it "renders homepage inline links with labels" do
+    it "renders the hero claim with its inline links" do
       links = document.query_selector_all("main a")
 
       expect(links.any? { |link| link["href"] == "https://podia.com" && link.text.strip == "Podia" }).must_equal true
-      expect(links.any? { |link| link["href"] == "/speaking/" && link.text.strip == "Remote Ruby" }).must_equal true
-      expect(links.any? { |link| link["href"] == "/projects/" && link.text.strip == "open source" }).must_equal true
-      expect(links.any? { |link| link["href"] == "/speaking/" && link.text.strip == "talks and podcasts" }).must_equal true
+      expect(links.any? { |link| link["href"] == "https://remoteruby.com/" && link.text.strip == "Remote Ruby" }).must_equal true
+    end
+
+    it "makes each section label the way into that section" do
+      hrefs = document.query_selector_all("main a").map { |a| a["href"] }
+
+      expect(hrefs).must_include "/posts/"
+      expect(hrefs).must_include "/projects/"
+      expect(hrefs).must_include "/speaking/"
+    end
+
+    it "derives the hero ledger from the collections" do
+      ledger = document.query_selector("main section p.font-mono").text
+
+      expect(ledger).must_match(/\d+ posts/)
+      expect(ledger).must_match(/\d+ projects/)
     end
   end
 
@@ -55,10 +68,11 @@ class TestPages < Bridgetown::Test
   describe "a CFP detail page" do
     before { html get "/cfps/perfectionism-the-death-of-progress/" }
 
-    it "keeps the Speaking nav item active" do
-      speaking_link = document.query_selector("header a[href='/speaking/']")
+    it "keeps the Speaking view current in the source list" do
+      current = document.query_selector("nav[aria-label='Primary'] a[aria-current='page']")
 
-      expect(speaking_link["class"]).must_include "text-sage-12"
+      expect(current).wont_be_nil
+      expect(current["href"]).must_equal "/speaking/"
     end
   end
 
@@ -106,8 +120,12 @@ class TestPages < Bridgetown::Test
   describe "404" do
     before { html get "/404.html" }
 
-    it "renders the not-found heading" do
-      expect(document.query_selector("h1").text.strip).must_equal "404"
+    it "renders the not-found heading in words, not a status code" do
+      expect(document.query_selector("h1").text.strip).must_equal "Not found"
+    end
+
+    it "offers a real way onward rather than a dead end" do
+      expect(document.query_selector_all("a[href^='/p/']").size).must_equal 5
     end
 
     it "is marked noindex" do

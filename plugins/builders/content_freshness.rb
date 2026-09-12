@@ -2,6 +2,15 @@ class Builders::ContentFreshness < SiteBuilder
   STALE_AFTER_SECONDS = 2 * 365 * 24 * 60 * 60
 
   def build
+    hook :site, :post_read do |site|
+      %w[posts cfps].each do |label|
+        site.collections[label].resources.each do |resource|
+          # Keep sitemap dates aligned with article metadata instead of Git import dates.
+          resource.data.last_modified_at ||= resource.updated_at
+        end
+      end
+    end
+
     define_resource_method :updated_at do
       raw = data.last_modified_at || data.updated || date
       coerce_time(raw)

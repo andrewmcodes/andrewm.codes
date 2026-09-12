@@ -80,7 +80,7 @@ module Util
     end
 
     # The dimension/type triplet below only describes our generated OG cards
-    # (1200×630 PNG). A custom/Cloudinary `image:` may be any size or format, so
+    # (1200×630 PNG). A custom/ImageKit `image:` may be any size or format, so
     # we must not assert those values for it.
     # @return [Boolean] whether the OG image is a generated /og/*.png
     def og_generated_image?
@@ -121,15 +121,20 @@ module Util
       @metadata ||= @site.metadata
     end
 
+    # Posts and CFPs are both dated, authored, single-subject documents —
+    # Util::StructuredData types them BlogPosting and Article respectively, so
+    # Open Graph has to agree or the two describe different things.
+    ARTICLE_COLLECTIONS = %w[posts cfps].freeze
+
     # @param res [Bridgetown::Resource::Base] a resource
-    # @return [Boolean] whether +res+ belongs to the posts collection
-    def post?(res)
-      res.respond_to?(:collection) && res.collection&.label == "posts"
+    # @return [Boolean] whether +res+ belongs to an article-like collection
+    def article_collection?(res)
+      res.respond_to?(:collection) && ARTICLE_COLLECTIONS.include?(res.collection&.label)
     end
 
     # @return ["article", "website"] the Open Graph object type
     def page_type
-      post?(resource) ? "article" : "website"
+      article_collection?(resource) ? "article" : "website"
     end
 
     # @return [Boolean] whether the page is an article (og:type article)

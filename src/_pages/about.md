@@ -6,6 +6,8 @@ permalink: /about/
 description: Ruby on Rails software engineer, podcaster, and creator based in Phoenix, Arizona.
 ---
 
+<img src="/images/main-avatar.png" alt="Andrew Mason" width="112" height="112" class="rounded-full" />
+
 Hey, I'm Andrew. I'm a full stack Ruby on Rails engineer, podcaster, and creator working remotely from Phoenix, Arizona.
 
 I work at [Podia](https://podia.com), where I spend a lot of time thinking about Rails, developer tooling, CI, and fast feedback loops. I've been doing the Rails thing for about a decade now.
@@ -26,4 +28,4 @@ If you'd like me at your conference, on your podcast, or generally in a room wit
 
 ## Colophon
 
-This site is built with [Bridgetown](https://www.bridgetownrb.com) (ERB + Bridgetown::Component), Tailwind v4, and [Radix UI Colors](https://www.radix-ui.com/colors). Inter and JetBrains Mono. Search is powered by [Pagefind](https://pagefind.app). Deployed to Cloudflare Pages. Source is on [GitHub](https://github.com/andrewmcodes/andrewm.codes).
+This site is built with [Bridgetown](https://www.bridgetownrb.com) (ERB + Bridgetown::Component), Tailwind v4, and [Radix UI Colors](https://www.radix-ui.com/colors). Geist Sans and Geist Mono, with a Mauve and Ruby palette. Search uses a static index. Deployed to Cloudflare Workers Static Assets. Source is on [GitHub](https://github.com/andrewmcodes/andrewm.codes).

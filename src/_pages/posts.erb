@@ -1,6 +1,7 @@
 ---
 layout: default
-title: Posts
+title: Writing
+seo_title: Ruby & Rails Articles
 permalink: /posts/
 description: Notes on Rails, podcasting, and the long unglamorous middle. Occasionally proofread.
 ---
@@ -16,15 +17,30 @@ description: Notes on Rails, podcasting, and the long unglamorous middle. Occasi
 
 <% years = posts.group_by { |p| p.date.year }.sort.reverse %>
 
-<%= render PageShell.new do %>
-  <%= render Ui::PageHeader.new(title: "Posts", description: data.description) %>
+<%= render PageShell.new("data-archive": "posts") do %>
+  <%= render Stack.new(space: :xxl) do %>
+    <%= render Ui::PageHeader.new(title: "Writing", description: data.description) %>
 
-  <%= render TagCloud.new(tags: tag_counts.map(&:first)) %>
+    <%= render PageSection.new(label: "Popular topics", description: "The 12 most-used topics across the archive, from #{posts.map(&:date).min.year} to #{posts.map(&:date).max.year}.") do %>
+      <%= render TagCloud.new(tags: tag_counts.map(&:first)) %>
+    <% end %>
 
-  <% years.each do |year, year_posts| %>
-    <%= render CollectionGroup.new(title: year) do %>
-      <% year_posts.each do |post| %>
-        <%= render PostRow.new(post: post) %>
+    <%= render ArchiveFilter.new(kind: "posts", count: posts.size) %>
+
+    <%= render Stack.new(space: :xl) do %>
+      <% years.each do |year, year_posts| %>
+        <div data-archive-group>
+          <%= render CollectionGroup.new(title: year) do %>
+            <% year_posts.each do |post| %>
+              <div
+                data-archive-item
+                data-search="<%= [post.data.title, post.data.description, *Array(post.data.tags), year].join(' ') %>"
+              >
+                <%= render PostRow.new(post: post) %>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
       <% end %>
     <% end %>
   <% end %>

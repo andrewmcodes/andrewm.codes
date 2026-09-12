@@ -2,7 +2,9 @@
 series: webpacker-6
 featured: false
 title: "Webpacker 6: Tutorial Setup"
-description: Before we start the upgrade process for Webpacker 6, we are going to create a small demo application...
+description: "Set up a demo Rails 6.1 app to follow along with the archived Webpacker 6 upgrade series, from new app to root route."
+canonical_url: https://andrewm.codes/p/webpacker-6/
+sitemap: false
 urls:
   dev_to: https://dev.to/andrewmcodes/webpacker-6-tutorial-setup-281k
 tags:
