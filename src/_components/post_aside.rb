@@ -31,5 +31,11 @@ class PostAside < Bridgetown::Component
 
   def tags = Array(@resource.data.tags)
 
+  def tag_url(tag)
+    slug = Bridgetown::Utils.slugify(tag)
+    path = "/tag/#{slug}/"
+    path if Bridgetown::Current.site.generated_pages.any? { |page| page.url == path }
+  end
+
   def show_toc? = @show_toc
 end

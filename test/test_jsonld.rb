@@ -42,7 +42,7 @@ class TestJsonLd < Bridgetown::Test
       expect(website["publisher"]["@id"]).must_equal PERSON_ID
     end
 
-    it "exposes a SearchAction for the sitelinks search box" do
+    it "describes the site search with a SearchAction" do
       website = jsonld_of_type(document, "WebSite").first
       action = website["potentialAction"]
       expect(action["@type"]).must_equal "SearchAction"
@@ -181,11 +181,8 @@ class TestJsonLd < Bridgetown::Test
   describe "/speaking/" do
     before { html get "/speaking/" }
 
-    it "emits a VideoObject per recorded talk" do
-      videos = jsonld_of_type(document, "VideoObject")
-      expect(videos).wont_be_empty
-      expect(videos.first["uploadDate"]).wont_be_nil
-      expect(videos.first["contentUrl"]).wont_be_nil
+    it "does not describe linked recordings as videos embedded on the page" do
+      expect(jsonld_of_type(document, "VideoObject")).must_be_empty
     end
 
     it "emits PodcastSeries for hosted shows" do

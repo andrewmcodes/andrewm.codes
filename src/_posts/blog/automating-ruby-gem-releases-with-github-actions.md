@@ -23,7 +23,7 @@ Whether you are a gem maintaining machine or new to the world of authoring gems,
 
 ## Conventional Commits
 
-This article will assume you are familiar with [Conventional Commits](<(https://www.conventionalcommits.org/en/v1.0.0/)>). Here is a brief overview of the important prefixes, pulled from [the action's README](https://github.com/google-github-actions/release-please-action#whats-a-release-pr)
+This article will assume you are familiar with [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/). Here is a brief overview of the important prefixes, pulled from [the action's README](https://github.com/google-github-actions/release-please-action#whats-a-release-pr)
 
 The most important prefixes you should have in mind are:
 

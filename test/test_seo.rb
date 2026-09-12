@@ -53,6 +53,32 @@ end
 
 class TestSeo < Bridgetown::Test
   describe "rendered SEO metadata" do
+    it "links article tags only to existing archives" do
+      destination = File.expand_path("../output", __dir__)
+      links = Dir.glob(File.join(destination, "{p,cfps}/**/index.html")).flat_map do |file|
+        Nokolexbor::HTML(File.read(file)).css("a[href^='/tag/']").map { |link| link["href"] }
+      end.uniq
+
+      expect(links).must_include "/tag/ci/"
+      missing = links.reject { |path| File.file?(File.join(destination, path.delete_prefix("/"), "index.html")) }
+      expect(missing).must_equal []
+    end
+
+    it "renders repaired article and appearance links" do
+      {
+        "/p/automating-ruby-gem-releases-with-github-actions/" => "https://www.conventionalcommits.org/en/v1.0.0/",
+        "/p/rails-coverage-tools-codefactor/" => "https://codefactor.io",
+        "/p/webpacker-6-css-loaders/" => "https://webpack.js.org/loaders/style-loader/",
+        "/p/webpacker-6-upgrade-guide/" => "/p/webpacker-6-css-loaders/",
+        "/speaking/" => "https://www.youtube.com/watch?v=Y6QVKq3iM5s"
+      }.each do |path, target|
+        html get path
+        hrefs = document.css("a").map { |link| link["href"] }
+        expect(hrefs).must_include target
+        expect(hrefs.grep(/\A(?:\(|codefactor\.io|youtube\.com)/)).must_be_empty
+      end
+    end
+
     it "keeps titles, descriptions, and h1s within expected bounds" do
       failures = []
       destination = File.expand_path("../output", __dir__)

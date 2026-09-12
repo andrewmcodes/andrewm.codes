@@ -1,4 +1,6 @@
 require "minitest_helper"
+require "json"
+require "uri"
 
 class TestSitemapAndFeeds < Bridgetown::Test
   describe "/sitemap.xml" do
@@ -18,6 +20,20 @@ class TestSitemapAndFeeds < Bridgetown::Test
     it "includes substantial tag pages and excludes thin noindexed tags" do
       expect(@body).must_match %r{<loc>https://andrewm\.codes/tag/rails/</loc>}
       expect(@body).wont_match %r{<loc>https://andrewm\.codes/tag/unix/</loc>}
+    end
+
+    it "uses article modification dates rather than Git import dates" do
+      entries = @body.scan(%r{<url>(.*?)</url>}m)
+      entries.each do |(entry)|
+        url = entry[%r{<loc>(.*?)</loc>}, 1]
+        next unless url&.match?(%r{/(p|cfps)/})
+
+        modified = entry[%r{<lastmod>(.*?)</lastmod>}, 1]
+        html get URI(url).path
+        script = document.css("script[type='application/ld+json']").first
+        article = JSON.parse(script.inner_html)
+        expect(Time.parse(modified)).must_equal Time.parse(article.fetch("dateModified"))
+      end
     end
 
     it "excludes the 404 page" do

@@ -5,7 +5,13 @@
     sits under the title rather than over it — a reader who just tapped a
     headline meets the thing they opened, not its machinery.
   %>
-  <dl class="m-0 flex flex-wrap items-center gap-x-3 gap-y-1 font-mono text-meta text-mauve-11">
+
+  <dl
+    class="
+      m-0 flex flex-wrap items-center gap-x-3 gap-y-1 font-mono text-meta
+      text-mauve-11
+    "
+  >
     <div>
       <dt class="sr-only">Published</dt>
 
@@ -30,8 +36,14 @@
         <a
           href="/about/"
           rel="author"
-          class="inline-block py-1 -my-1 underline decoration-mauve-7 underline-offset-4 hover:text-mauve-12 hover:decoration-ruby-11 transition-colors"
-        ><%= author_name %></a>
+          class="
+            inline-block py-1 -my-1 underline decoration-mauve-7
+            underline-offset-4 hover:text-mauve-12 hover:decoration-ruby-11
+            transition-colors
+          "
+        >
+          <%= author_name %>
+        </a>
       </dd>
     </div>
 
@@ -43,8 +55,12 @@
 
         <% tags.each do |tag| %>
           <dd class="m-0">
-            <%= render Link.new(href: "/tag/#{tag}/", variant: :post_tag) do %>
-              #<%= tag %>
+            <% if (url = tag_url(tag)) %>
+              <%= render Link.new(href: url, variant: :post_tag) do %>
+                #<%= tag %>
+              <% end %>
+            <% else %>
+              <span>#<%= tag %></span>
             <% end %>
           </dd>
         <% end %>

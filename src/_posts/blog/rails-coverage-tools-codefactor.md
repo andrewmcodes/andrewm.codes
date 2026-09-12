@@ -62,7 +62,7 @@ Your code should now be online in your repo.
 
 ### Configuration
 
-Navigate to [codefactor.io](codefactor.io) and log in with your preferred method. I chose to use my GitHub account.
+Navigate to [codefactor.io](https://codefactor.io) and log in with your preferred method. I chose to use my GitHub account.
 
 ![codefactor_landing_page_1](<%= imagekit_url 'posts/rails-coverage-tools-codefactor/codefactor-landing-page-1.jpg', :medium %>)
 

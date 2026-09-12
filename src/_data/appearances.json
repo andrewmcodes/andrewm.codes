@@ -4,7 +4,7 @@
     "icon": "avatar",
     "title": "Start Your Ruby Podcast Today!",
     "date": "2022-05-19",
-    "url": "youtube.com/watch?v=Y6QVKq3iM5s",
+    "url": "https://www.youtube.com/watch?v=Y6QVKq3iM5s",
     "cta": "Watch video",
     "event": "RailsConf 2022",
     "description": "Talk I gave with Jason Charnes and Chris Oliver going through the lessons and advice we had for starting and maintaining a successful podcast."
