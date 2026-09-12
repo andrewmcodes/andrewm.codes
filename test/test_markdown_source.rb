@@ -14,6 +14,9 @@ class TestMarkdownSource < Bridgetown::Test
   end
 
   KILL_MD = read_output("p", "kill-process-on-port.md")
+  INDEX_MD = read_output("index.md")
+  ABOUT_MD = read_output("about.md")
+  PROJECTS_MD = read_output("projects.md")
   LLMS = read_output("llms.txt")
   LLMS_FULL = read_output("llms-full.txt")
 
@@ -24,10 +27,27 @@ class TestMarkdownSource < Bridgetown::Test
     expect(KILL_MD).must_include "lsof -ti tcp:4000"
   end
 
+  it "writes Markdown twins for the homepage and Markdown-authored pages" do
+    refute_nil INDEX_MD, "Expected output/index.md to exist after build"
+    expect(INDEX_MD).must_match(/\A# Andrew Mason/)
+    expect(INDEX_MD).must_include "## Selected writing"
+
+    refute_nil ABOUT_MD, "Expected output/about.md to exist after build"
+    expect(ABOUT_MD).must_match(/\A# About/)
+    expect(ABOUT_MD).must_include "Hey, I'm Andrew."
+
+    refute_nil PROJECTS_MD, "Expected output/projects.md to exist after build"
+    expect(PROJECTS_MD).must_match(/\A# Projects/)
+    expect(PROJECTS_MD).must_include "https://github.com/andrewmcodes/"
+  end
+
   it "writes an llms.txt index linking to the .md twins" do
     refute_nil LLMS, "Expected output/llms.txt to exist after build"
     expect(LLMS).must_match(/^# Andrew Mason/)
-    expect(LLMS).must_include "## Posts"
+    expect(LLMS).must_include "## Writing"
+    expect(LLMS).must_include "https://andrewm.codes/index.md"
+    expect(LLMS).must_include "https://andrewm.codes/about.md"
+    expect(LLMS).must_include "https://andrewm.codes/projects.md"
     expect(LLMS).must_include "https://andrewm.codes/p/kill-process-on-port.md"
   end
 
@@ -44,6 +64,15 @@ class TestMarkdownSource < Bridgetown::Test
       actions = document.query_selector(".md-actions")
       expect(actions).wont_be_nil
       expect(actions["data-md-url"]).must_equal "/p/kill-process-on-port.md"
+    end
+
+    it "advertises the Markdown twin in the document head and body" do
+      alternate = document.query_selector("link[rel='alternate'][type='text/markdown']")
+      expect(alternate).wont_be_nil
+      expect(alternate["href"]).must_equal "/p/kill-process-on-port.md"
+
+      pointer = document.query_selector("body .sr-only[aria-hidden='true']")
+      expect(pointer.text.strip).must_include "https://andrewm.codes/p/kill-process-on-port.md"
     end
 
     it "offers View as Markdown plus assistant deep links" do
