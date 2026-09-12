@@ -51,6 +51,10 @@
     <%= render Util::Seo.new(resource: resource) %>
     <%= render Util::StructuredData.new(resource: resource) %>
 
+    <% if (markdown_path = markdown_source_path(resource)) %>
+      <link rel="alternate" type="text/markdown" href="<%= markdown_path %>">
+    <% end %>
+
     <link
       rel="alternate"
       type="application/atom+xml"
@@ -119,6 +123,13 @@
   </head>
 
   <body class="bg-chrome text-mauve-12 font-sans text-body min-h-screen">
+    <% if markdown_path %>
+      <div class="sr-only" aria-hidden="true">
+        A Markdown version of this page is available at
+        <%= absolute_url(markdown_path) %>.
+      </div>
+    <% end %>
+
     <!--
   THESIS: The site is an application you navigate, not a document you scroll.
   It refuses the centred blog column under a topbar, the hairline-ruled list,

@@ -27,7 +27,19 @@ class TestHeaders < Bridgetown::Test
     expect(HEADERS).must_match %r{Referrer-Policy: strict-origin-when-cross-origin}
   end
 
+  it "allows search and AI input but not training" do
+    expect(HEADERS).must_include "Content-Signal: search=yes, ai-input=yes, ai-train=no"
+  end
+
   it "ships a Content-Security-Policy with a default-src directive" do
     expect(HEADERS).must_match %r{Content-Security-Policy(-Report-Only)?: .*default-src 'self'}
+  end
+
+  it "links HTML and Markdown representations in both directions" do
+    expect(HEADERS).must_include "/p/*/\n  Link: </p/:splat.md>; rel=\"alternate\"; type=\"text/markdown\""
+    expect(HEADERS).must_include "/p/*.md\n  Link: </p/:splat/>; rel=\"alternate\"; type=\"text/html\""
+    expect(HEADERS).must_include "/about/\n  Link: </about.md>; rel=\"alternate\"; type=\"text/markdown\""
+    expect(HEADERS).must_include "/about.md\n  Link: </about/>; rel=\"alternate\"; type=\"text/html\""
+    expect(HEADERS).must_include "/projects/\n  Link: </projects.md>; rel=\"alternate\"; type=\"text/markdown\""
   end
 end
