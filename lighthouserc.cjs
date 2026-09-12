@@ -3,7 +3,9 @@
 //
 // Runs against the already-built static output (./output), so CI can reuse the
 // `site-output` artifact from the production build job rather than rebuilding.
-// Performance is a soft warning; accessibility and SEO are enforced as errors.
+// Performance is a soft warning; accessibility is enforced as an error. SEO keeps
+// a strict floor but allows the known 0.08 deduction from the nonstandard
+// `Content-Signal` directive in robots.txt.
 //
 // `numberOfRuns: 1` — this job is informational (it does not gate the deploy)
 // and a11y/SEO scores are deterministic on static HTML, so the median-of-3
@@ -27,7 +29,7 @@ module.exports = {
     },
     assert: {
       assertions: {
-        "categories:seo": ["error", { minScore: 1 }],
+        "categories:seo": ["error", { minScore: 0.92 }],
         "categories:performance": ["warn", { minScore: 0.87 }],
         "categories:accessibility": ["error", { minScore: 0.9 }],
       },
