@@ -210,27 +210,13 @@ Our current setup is great if we just want to automate changelog creation and ve
 
 You may have noticed we gave our first step an id of `release`. By doing this, we can check the output of that step in other steps and act accordingly.
 
-When this article was first written, publishing meant stashing a long-lived RubyGems API token in a repository secret and hand-rolling a `~/.gem/credentials` file in the workflow. RubyGems now supports [Trusted Publishing](https://guides.rubygems.org/trusted-publishing/), which uses OpenID Connect (OIDC) to hand your workflow a short-lived token at publish time — no API key to create, rotate, or leak. This is the approach I'd recommend today.
+### Setup Steps
 
-### One-time RubyGems setup
-
-You configure a trusted publisher once, per gem, on RubyGems.org. For a brand-new gem that hasn't been published yet, add a [pending trusted publisher](https://guides.rubygems.org/trusted-publishing/) from your profile instead; the first successful publish claims the gem name. From the gem's **Trusted publishers** page, click **Create** and provide:
-
-- **Repository owner** and **repository name** (e.g. `andrewmcodes` / `release-please-demo`)
-- **Workflow filename** (`release.yml`)
-- **Environment** (optional) — RubyGems suggests naming it `release`
-
-That's the entire credential setup. There is no secret to add to GitHub.
-
-### Publish steps
-
-The [`rubygems/release-gem`](https://github.com/rubygems/release-gem) action does the build-and-push, authenticating via trusted publishing. It assumes your workflow has already checked out the repo and set up Ruby with Bundler, and that your gem uses Bundler's release tasks (the default `Rakefile` from `bundler gem` does).
-
-Guarded on `release_created`, we check out the code, set up Ruby, then run the action:
+If the output of our release step is `release_created`, we will checkout the repo, install Ruby, and install dependencies:
 
 ```yaml
       # Checkout code if release was created
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         if: ${{ steps.release.outputs.release_created }}
       # Setup ruby if a release was created
       - uses: ruby/setup-ruby@v1
@@ -238,16 +224,37 @@ Guarded on `release_created`, we check out the code, set up Ruby, then run the a
           bundler-cache: true
           ruby-version: .ruby-version
         if: ${{ steps.release.outputs.release_created }}
-      # Build and push to RubyGems via trusted publishing
-      - uses: rubygems/release-gem@v1
-        if: ${{ steps.release.outputs.release_created }}
 ```
 
-For this to work, the job needs the `id-token: write` permission so GitHub can mint the OIDC token RubyGems trusts. As of `v1.1.0`, `release-gem` also generates a build provenance [attestation](https://github.com/rubygems/release-gem#attestations) by default.
+### Publish Step
+
+If a release was created, we will setup gem credentials, build the gem, and push it to RubyGems.
+
+You will **need** to [get an API token from RubyGems](https://guides.rubygems.org/api-key-scopes/) and [add it to your repository secrets](https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions). I named mine `RUBYGEMS_AUTH_TOKEN` but you can set the name to whatever you'd like.
+
+```yaml
+- name: publish gem
+  run: |
+    mkdir -p $HOME/.gem
+    touch $HOME/.gem/credentials
+    chmod 0600 $HOME/.gem/credentials
+    printf -- "---\n:rubygems_api_key: ${GEM_HOST_API_KEY}\n" > $HOME/.gem/credentials
+    gem build *.gemspec
+    gem push *.gem
+  env:
+    # Make sure to update the secret name
+    # if yours isn't named RUBYGEMS_AUTH_TOKEN
+    GEM_HOST_API_KEY: "${{secrets.RUBYGEMS_AUTH_TOKEN}}"
+  if: ${{ steps.release.outputs.release_created }}
+```
+
+Note: I got this code straight from [GitHub's action documentation](https://docs.github.com/en/actions/how-tos/use-cases-and-examples/building-and-testing/building-and-testing-ruby#publishing-gems).
+
+If you'd rather not manage a long-lived API token, RubyGems now supports [Trusted Publishing](https://guides.rubygems.org/trusted-publishing/), which uses OpenID Connect (OIDC) to mint a short-lived token at publish time. You configure a trusted publisher once on RubyGems.org, add the `id-token: write` permission to the job, and swap the manual `publish gem` step for the [`rubygems/release-gem`](https://github.com/rubygems/release-gem) action — no secret to store. It's worth a look for a new gem.
 
 ## Release and Publish
 
-Our final action, with the added `id-token: write` permission:
+Our final action:
 
 ```yaml
 # .github/workflows/release.yml
@@ -262,7 +269,6 @@ on:
 permissions:
   contents: write
   pull-requests: write
-  id-token: write
 
 jobs:
   release-please:
@@ -273,7 +279,7 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
       # Checkout code if release was created
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         if: ${{ steps.release.outputs.release_created }}
       # Setup ruby if a release was created
       - uses: ruby/setup-ruby@v1
@@ -281,8 +287,19 @@ jobs:
           bundler-cache: true
           ruby-version: .ruby-version
         if: ${{ steps.release.outputs.release_created }}
-      # Build and push to RubyGems via trusted publishing
-      - uses: rubygems/release-gem@v1
+      # Publish
+      - name: publish gem
+        run: |
+          mkdir -p $HOME/.gem
+          touch $HOME/.gem/credentials
+          chmod 0600 $HOME/.gem/credentials
+          printf -- "---\n:rubygems_api_key: ${GEM_HOST_API_KEY}\n" > $HOME/.gem/credentials
+          gem build *.gemspec
+          gem push *.gem
+        env:
+          # Make sure to update the secret name
+          # if yours isn't named RUBYGEMS_AUTH_TOKEN
+          GEM_HOST_API_KEY: "${{secrets.RUBYGEMS_AUTH_TOKEN}}"
         if: ${{ steps.release.outputs.release_created }}
 ```
 
