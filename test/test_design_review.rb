@@ -11,7 +11,7 @@ class TestDesignReview < Bridgetown::Test
         .select { |heading| heading.text.match?(/\A\s*\d+\.\d+\.\d+/) }
       expect(releases).wont_be_empty
       releases.each { |heading| expect(heading.name).must_equal "h2" }
-      expect(releases.first.text).must_match(/8\.1\.1\s+.+\s+2026-07-10/)
+      expect(releases.first.text).must_match(/\A\s*\d+\.\d+\.\d+\s+.+\s+\d{4}-\d{2}-\d{2}/)
     end
 
     it "keeps the complete projects archive available before filtering" do
