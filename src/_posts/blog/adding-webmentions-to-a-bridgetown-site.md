@@ -185,7 +185,7 @@ Note: the `workflow_dispatch` trigger is there so I can click "Run workflow" and
 
 ## Step 5: Render them under the post
 
-Now for the part that actually shows up on the page. I built a [`Webmentions` ViewComponent](https://github.com/andrewmcodes/andrewm.codes/blob/main/src/_components/webmentions.rb) that reads the data file and filters it down to the mentions for the current post.
+Now for the part that actually shows up on the page. I built a [`Webmentions` component](https://github.com/andrewmcodes/andrewm.codes/blob/main/src/_components/webmentions.rb), a [`Bridgetown::Component`](https://www.bridgetownrb.com/docs/components/ruby), that reads the data file and filters it down to the mentions for the current post.
 
 The matching is simple. Every entry in the feed has a `wm-target`, and I keep the ones whose target is this post's absolute URL:
 
