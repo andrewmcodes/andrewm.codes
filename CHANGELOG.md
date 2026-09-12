@@ -1,5 +1,18 @@
 # Changelog
 
+## [9.1.1](https://github.com/andrewmcodes/andrewm.codes/compare/v9.1.0...v9.1.1) (2026-09-12)
+
+
+### Bug Fixes
+
+* **ci:** ignore copilot planning commits in commitlint ([#602](https://github.com/andrewmcodes/andrewm.codes/issues/602)) ([605f529](https://github.com/andrewmcodes/andrewm.codes/commit/605f529520798d4000152e13d1ae72b932366c2a))
+
+
+### Documentation
+
+* **blog:** add webmentions tutorial ([#598](https://github.com/andrewmcodes/andrewm.codes/issues/598)) ([c066e78](https://github.com/andrewmcodes/andrewm.codes/commit/c066e78c13b3a0f6c9bfefd043fb21220d466876))
+* **post:** update gem release tutorial for release-please v4 and trusted publishing ([#601](https://github.com/andrewmcodes/andrewm.codes/issues/601)) ([bbcd078](https://github.com/andrewmcodes/andrewm.codes/commit/bbcd07835ed70721bd968229ca0d1a15298973be))
+
 ## [9.1.0](https://github.com/andrewmcodes/andrewm.codes/compare/v9.0.0...v9.1.0) (2026-09-12)
 
 
