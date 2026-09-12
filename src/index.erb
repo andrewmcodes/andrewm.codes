@@ -6,11 +6,14 @@ title: andrewm.codes
 <%#
   A selection, not a feed — see src/_data/selected_posts.yml. Order comes from
   the data file rather than from the dates, and a slug that no longer resolves
-  drops out instead of raising.
+  drops out instead of raising. The newest post always leads the list, ahead of
+  the curated slugs, and is de-duplicated if it also appears among them.
 %>
 <% all_posts = collections.posts.resources %>
 <% by_slug = all_posts.to_h { |p| [p.relative_url.to_s.split("/").reject(&:empty?).last, p] } %>
-<% selected_posts = Array(site.data.selected_posts).filter_map { |slug| by_slug[slug.to_s] } %>
+<% curated_posts = Array(site.data.selected_posts).filter_map { |slug| by_slug[slug.to_s] } %>
+<% latest_post = all_posts.max_by { |p| p.date } %>
+<% selected_posts = ([latest_post] + curated_posts).compact.uniq.first(5) %>
 
 <%#
   The four most recently worked-on repositories, from the same GitHub data
