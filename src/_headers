@@ -1,6 +1,9 @@
 /_bridgetown/static/*
   Cache-Control: public, max-age=31536000, immutable
 
+/images/main-avatar-*
+  Cache-Control: public, max-age=31536000, immutable
+
 /og/*
   Cache-Control: public, max-age=31536000, immutable
   Content-Type: image/png

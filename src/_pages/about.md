@@ -7,8 +7,8 @@ description: Ruby on Rails software engineer, podcaster, and creator based in Ph
 ---
 
 <img
-  src="/images/main-avatar-112.webp"
-  srcset="/images/main-avatar-28.webp 28w, /images/main-avatar-56.webp 56w, /images/main-avatar-112.webp 112w, /images/main-avatar-224.webp 224w"
+  src="/images/main-avatar-112.a70aa686.webp"
+  srcset="/images/main-avatar-28.81a23e39.webp 28w, /images/main-avatar-56.266c347e.webp 56w, /images/main-avatar-112.a70aa686.webp 112w, /images/main-avatar-224.214c61e3.webp 224w"
   sizes="112px"
   alt="Andrew Mason"
   width="112"

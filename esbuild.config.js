@@ -28,6 +28,8 @@ import build from "./config/esbuild.defaults.js";
 // }
 // ```
 
+const production = process.argv.includes("--minify");
+
 /**
  * @typedef { import("esbuild").BuildOptions } BuildOptions
  * @type {BuildOptions}
@@ -35,6 +37,11 @@ import build from "./config/esbuild.defaults.js";
 const esbuildOptions = {
   format: "esm",
   splitting: true,
+  target: "es2022",
+  sourcemap: production ? false : true,
+  legalComments: "none",
+  charset: "utf8",
+  drop: production ? ["console", "debugger"] : [],
   plugins: [
     // add new plugins here...
   ],
