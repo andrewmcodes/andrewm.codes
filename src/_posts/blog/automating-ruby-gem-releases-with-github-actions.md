@@ -216,7 +216,6 @@ Trusted publishing needs a one-time configuration on RubyGems.org. From the gem'
       - uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
-          ruby-version: ruby
         if: ${{ steps.release.outputs.release_created }}
 ```
 
@@ -267,7 +266,6 @@ jobs:
       - uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
-          ruby-version: ruby
         if: ${{ steps.release.outputs.release_created }}
       # Build and push to RubyGems via trusted publishing
       - uses: rubygems/release-gem@v1
