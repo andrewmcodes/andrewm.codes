@@ -197,15 +197,13 @@ As we can see, none were features or fixes, so the action did not create a relea
 I'm going to cheat and an empty commit for a feature:
 
 ```bash
-git commit --allow-empty -m "feat: add a feature"
+git commit --allow-empty -m "feat!: add a feature"
 git push -u origin main
 ```
 
 Our release action should run and this time find a user facing commit and open a new release PR. The PR will increment the version number and create a new, or edit an existing, Changelog.
 
 ![Generated release pr](<%= imagekit_url 'posts/automating-ruby-gem-releases-with-github-actions/generated-release-pr.png', :medium %>)
-
-Note: For a gem without prior releases, I wasn't able to find a way to prevent a full point release. You _could_ get around this by editing the release PR to match the inital version number you'd like before merging. This is not an issue with projects with prior releases.
 
 ## Publish to RubyGems
 
