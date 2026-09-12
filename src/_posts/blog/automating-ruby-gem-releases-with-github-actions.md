@@ -9,7 +9,7 @@ tags:
   - CI
   - gem
 date: 2021-02-20 00:33:07.000000000 Z
-last_modified_at: 2022-01-29 17:01:41.562000000 Z
+last_modified_at: 2026-09-11 00:00:00.000000000 Z
 categories:
   - tutorials
 featured: true
@@ -19,11 +19,11 @@ Whether you are a gem maintaining machine or new to the world of authoring gems,
 
 ## Release Please
 
-[Release Please Action](https://github.com/google-github-actions/release-please-action) is a GitHub action created by Google to automate releases with [Conventional Commit Messages](https://www.conventionalcommits.org/en/v1.0.0/). As you merge PR's into your main branch, the action will create/update a new release branch that automatically adds your commits to a changelog and bumps the version according to your commits. When you're ready to release your changes, merging the PR will cause a new GitHub release to be created and released. We can even automate publishing to package registries like [RubyGems](https://rubygems.org)!
+[Release Please Action](https://github.com/googleapis/release-please-action) is a GitHub action created by Google to automate releases with [Conventional Commit Messages](https://www.conventionalcommits.org/en/v1.0.0/). As you merge PR's into your main branch, the action will create/update a new release branch that automatically adds your commits to a changelog and bumps the version according to your commits. When you're ready to release your changes, merging the PR will cause a new GitHub release to be created and released. We can even automate publishing to package registries like [RubyGems](https://rubygems.org)!
 
 ## Conventional Commits
 
-This article will assume you are familiar with [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/). Here is a brief overview of the important prefixes, pulled from [the action's README](https://github.com/google-github-actions/release-please-action#whats-a-release-pr)
+This article will assume you are familiar with [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/). Here is a brief overview of the important prefixes, pulled from [the action's README](https://github.com/googleapis/release-please-action#whats-a-release-pr)
 
 The most important prefixes you should have in mind are:
 
@@ -107,25 +107,56 @@ on:
       - main
 ```
 
-Next we need to setup a job for the [Release Please Action](https://github.com/google-github-actions/release-please-action). Option descriptions are annotated with comments, but please [view the official configuration documentation](https://github.com/google-github-actions/release-please-action#configuration) to learn more.
+Next we need to setup a job for the [Release Please Action](https://github.com/googleapis/release-please-action). As of `v4`, configuration moved out of the workflow's `with:` block and into two files that live at the root of your repo: a `release-please-config.json` that describes each package, and a `.release-please-manifest.json` that tracks the current version. Please [view the official configuration documentation](https://github.com/googleapis/release-please/blob/main/docs/manifest-releaser.md) to learn more.
+
+Here is `release-please-config.json` for our gem. Options are annotated with comments (real JSON can't have comments, so strip these before committing):
+
+```jsonc
+{
+  "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json",
+  "packages": {
+    // "." means the package lives at the repo root
+    ".": {
+      // The release type
+      "release-type": "ruby",
+      // The name of our gem
+      "package-name": "release-please-demo",
+      // Path to the version file to increment
+      "version-file": "lib/release/please/demo/version.rb",
+      // Where the changelog is written
+      "changelog-path": "CHANGELOG.md",
+      // Should breaking changes before 1.0.0 produce minor bumps?
+      "bump-minor-pre-major": true,
+      // Tag releases as v1.2.3 rather than 1.2.3
+      "include-v-in-tag": true
+    }
+  }
+}
+```
+
+And `.release-please-manifest.json`, seeded with your current version:
+
+```json
+{
+  ".": "0.1.0"
+}
+```
+
+Now the workflow itself. It needs `contents: write` and `pull-requests: write` permissions so the action can push the release branch and open the PR, and we pass the built-in `GITHUB_TOKEN`:
 
 ```yaml
+permissions:
+  contents: write
+  pull-requests: write
+
 jobs:
   release-please:
     runs-on: ubuntu-latest
     steps:
-      - uses: GoogleCloudPlatform/release-please-action@v2
+      - uses: googleapis/release-please-action@v4
         id: release
         with:
-          # The release type
-          release-type: ruby
-          # A name for the artifact releases are being created for
-          # which is the name of our gem
-          package-name: release-please-demo
-          # Should breaking changes before 1.0.0 produce minor bumps?
-          bump-minor-pre-major: true
-          # Path to our version file to increment
-          version-file: "lib/release/please/demo/version.rb"
+          token: ${{ secrets.GITHUB_TOKEN }}
 ```
 
 We are going to do some more cool things in a second but lets go ahead and see what this produces. Create a new GitHub repo, commit everything, and push it up. As a note, Bundler adds a failing test condition by default when you scaffold the gem, so if you added the `--ci=github` flag when you created the gem, the generated `.github/workflows/main.yml` action will fail unless you remove the failing test. I'll let you debug that on your own for now.
@@ -133,7 +164,7 @@ We are going to do some more cool things in a second but lets go ahead and see w
 The release action will run once you push your changes to the main branch. Your initial run output should look like this:
 
 ```
-Run GoogleCloudPlatform/release-please-action@v2
+Run googleapis/release-please-action@v4
 ✖ No merged release PR found
 ✖ Unable to build candidate
 ✔ found 4 commits since beginning of time
@@ -179,62 +210,44 @@ Our current setup is great if we just want to automate changelog creation and ve
 
 You may have noticed we gave our first step an id of `release`. By doing this, we can check the output of that step in other steps and act accordingly.
 
-### Setup Steps
+When this article was first written, publishing meant stashing a long-lived RubyGems API token in a repository secret and hand-rolling a `~/.gem/credentials` file in the workflow. RubyGems now supports [Trusted Publishing](https://guides.rubygems.org/trusted-publishing/), which uses OpenID Connect (OIDC) to hand your workflow a short-lived token at publish time — no API key to create, rotate, or leak. This is the approach I'd recommend today.
 
-If the output of our release step is `release_created`, we will checkout the repo, install Ruby, and run `bundle install`:
+### One-time RubyGems setup
+
+You configure a trusted publisher once, per gem, on RubyGems.org. For a brand-new gem that hasn't been published yet, add a [pending trusted publisher](https://guides.rubygems.org/trusted-publishing/) from your profile instead; the first successful publish claims the gem name. From the gem's **Trusted publishers** page, click **Create** and provide:
+
+- **Repository owner** and **repository name** (e.g. `andrewmcodes` / `release-please-demo`)
+- **Workflow filename** (`release.yml`)
+- **Environment** (optional) — RubyGems suggests naming it `release`
+
+That's the entire credential setup. There is no secret to add to GitHub.
+
+### Publish steps
+
+The [`rubygems/release-gem`](https://github.com/rubygems/release-gem) action does the build-and-push, authenticating via trusted publishing. It assumes your workflow has already checked out the repo and set up Ruby with Bundler, and that your gem uses Bundler's release tasks (the default `Rakefile` from `bundler gem` does).
+
+Guarded on `release_created`, we check out the code, set up Ruby, then run the action:
 
 ```yaml
-jobs:
-  release-please:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: GoogleCloudPlatform/release-please-action@v2
-        id: release
-        with:
-          release-type: ruby
-          package-name: release-please-demo
-          bump-minor-pre-major: true
-          version-file: "lib/release/please/demo/version.rb"
       # Checkout code if release was created
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
         if: ${{ steps.release.outputs.release_created }}
       # Setup ruby if a release was created
       - uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 3.0.0
+          bundler-cache: true
+          ruby-version: .ruby-version
         if: ${{ steps.release.outputs.release_created }}
-      # Bundle install
-      - run: bundle install
+      # Build and push to RubyGems via trusted publishing
+      - uses: rubygems/release-gem@v1
         if: ${{ steps.release.outputs.release_created }}
 ```
 
-### Publish Step
-
-If a release was created, we will setup gem credentials, build the gem, and push it to RubyGems.
-
-You will **need** to [get an API token from RubyGems](https://guides.rubygems.org/api-key-scopes/) and [add it to your repository secrets](https://docs.github.com/en/actions/reference/encrypted-secrets#creating-encrypted-secrets-for-an-environment). I named mine `RUBYGEMS_AUTH_TOKEN` but you can set the name to whatever you'd like.
-
-```yaml
-- name: publish gem
-  run: |
-    mkdir -p $HOME/.gem
-    touch $HOME/.gem/credentials
-    chmod 0600 $HOME/.gem/credentials
-    printf -- "---\n:rubygems_api_key: ${GEM_HOST_API_KEY}\n" > $HOME/.gem/credentials
-    gem build *.gemspec
-    gem push *.gem
-  env:
-    # Make sure to update the secret name
-    # if yours isn't named RUBYGEMS_AUTH_TOKEN
-    GEM_HOST_API_KEY: "${{secrets.RUBYGEMS_AUTH_TOKEN}}"
-  if: ${{ steps.release.outputs.release_created }}
-```
-
-Note: I got this code straight from [GitHub's action documentation](https://docs.github.com/en/actions/guides/building-and-testing-ruby#publishing-gems).
+For this to work, the job needs the `id-token: write` permission so GitHub can mint the OIDC token RubyGems trusts. As of `v1.1.0`, `release-gem` also generates a build provenance [attestation](https://github.com/rubygems/release-gem#attestations) by default.
 
 ## Release and Publish
 
-Our final action:
+Our final action, with the added `id-token: write` permission:
 
 ```yaml
 # .github/workflows/release.yml
@@ -246,41 +259,30 @@ on:
     branches:
       - main
 
+permissions:
+  contents: write
+  pull-requests: write
+  id-token: write
+
 jobs:
   release-please:
     runs-on: ubuntu-latest
     steps:
-      - uses: GoogleCloudPlatform/release-please-action@v2
+      - uses: googleapis/release-please-action@v4
         id: release
         with:
-          release-type: ruby
-          package-name: release-please-demo
-          bump-minor-pre-major: true
-          version-file: "lib/release/please/demo/version.rb"
+          token: ${{ secrets.GITHUB_TOKEN }}
       # Checkout code if release was created
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
         if: ${{ steps.release.outputs.release_created }}
       # Setup ruby if a release was created
       - uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 3.0.0
+          bundler-cache: true
+          ruby-version: .ruby-version
         if: ${{ steps.release.outputs.release_created }}
-      # Bundle install
-      - run: bundle install
-        if: ${{ steps.release.outputs.release_created }}
-      # Publish
-      - name: publish gem
-        run: |
-          mkdir -p $HOME/.gem
-          touch $HOME/.gem/credentials
-          chmod 0600 $HOME/.gem/credentials
-          printf -- "---\n:rubygems_api_key: ${GEM_HOST_API_KEY}\n" > $HOME/.gem/credentials
-          gem build *.gemspec
-          gem push *.gem
-        env:
-          # Make sure to update the secret name
-          # if yours isn't named RUBYGEMS_AUTH_TOKEN
-          GEM_HOST_API_KEY: "${{secrets.RUBYGEMS_AUTH_TOKEN}}"
+      # Build and push to RubyGems via trusted publishing
+      - uses: rubygems/release-gem@v1
         if: ${{ steps.release.outputs.release_created }}
 ```
 
