@@ -6,6 +6,123 @@
       "type": "entry",
       "author": {
         "type": "card",
+        "name": "David W",
+        "photo": "https://cdn.bsky.app/img/avatar/plain/did:plc:4bhxdazznzwlira5di45lv36/bafkreidsu5aenrseg54mwnwg4xczs4pnzp3ombrcxzauefbsykk2wfasui",
+        "url": "https://bsky.app/profile/davidwes.bsky.social"
+      },
+      "url": "https://bsky.app/profile/andrewm.codes/post/3mvbwgmg6xc2r#liked_by_did:plc:4bhxdazznzwlira5di45lv36",
+      "published": null,
+      "wm-received": "2026-09-13T02:44:05Z",
+      "wm-id": 2031596,
+      "wm-source": "https://brid.gy/like/bluesky/did:plc:dnnzvi5274e3gol3rbkk63u6/at%253A%252F%252Fdid%253Aplc%253Adnnzvi5274e3gol3rbkk63u6%252Fapp.bsky.feed.post%252F3mvbwgmg6xc2r/did%253Aplc%253A4bhxdazznzwlira5di45lv36",
+      "wm-target": "https://andrewm.codes/p/exporting-my-pieces-code-snippets-to-obsidian/",
+      "wm-protocol": "webmention",
+      "like-of": "https://andrewm.codes/p/exporting-my-pieces-code-snippets-to-obsidian/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Angel",
+        "photo": "https://cdn.bsky.app/img/avatar/plain/did:plc:7imqdzehieyyj2ixo6lbof7h/bafkreifupfde3lmwtli74paxbkqe2jvdvjvq25osgm4ktewohejjpn356q",
+        "url": "https://bsky.app/profile/angellozan.live"
+      },
+      "url": "https://bsky.app/profile/andrewm.codes/post/3mvbwgmg6xc2r#liked_by_did:plc:7imqdzehieyyj2ixo6lbof7h",
+      "published": null,
+      "wm-received": "2026-09-13T02:44:05Z",
+      "wm-id": 2031595,
+      "wm-source": "https://brid.gy/like/bluesky/did:plc:dnnzvi5274e3gol3rbkk63u6/at%253A%252F%252Fdid%253Aplc%253Adnnzvi5274e3gol3rbkk63u6%252Fapp.bsky.feed.post%252F3mvbwgmg6xc2r/did%253Aplc%253A7imqdzehieyyj2ixo6lbof7h",
+      "wm-target": "https://andrewm.codes/p/exporting-my-pieces-code-snippets-to-obsidian/",
+      "wm-protocol": "webmention",
+      "like-of": "https://andrewm.codes/p/exporting-my-pieces-code-snippets-to-obsidian/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "David W",
+        "photo": "https://cdn.bsky.app/img/avatar/plain/did:plc:4bhxdazznzwlira5di45lv36/bafkreidsu5aenrseg54mwnwg4xczs4pnzp3ombrcxzauefbsykk2wfasui",
+        "url": "https://bsky.app/profile/davidwes.bsky.social"
+      },
+      "url": "https://bsky.app/profile/andrewm.codes/post/3mvcl5yeiwc2a#liked_by_did:plc:4bhxdazznzwlira5di45lv36",
+      "published": null,
+      "wm-received": "2026-09-13T02:44:04Z",
+      "wm-id": 2031594,
+      "wm-source": "https://brid.gy/like/bluesky/did:plc:dnnzvi5274e3gol3rbkk63u6/at%253A%252F%252Fdid%253Aplc%253Adnnzvi5274e3gol3rbkk63u6%252Fapp.bsky.feed.post%252F3mvcl5yeiwc2a/did%253Aplc%253A4bhxdazznzwlira5di45lv36",
+      "wm-target": "https://andrewm.codes/p/automating-ruby-gem-releases-with-github-actions/",
+      "wm-protocol": "webmention",
+      "like-of": "https://andrewm.codes/p/automating-ruby-gem-releases-with-github-actions/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Wakelog",
+        "photo": "https://cdn.bsky.app/img/avatar/plain/did:plc:qm23kiv2r677mm6zg6ssjcgc/bafkreigp2ngenntc2mitkdildn4c7whezxvhzosqwq7lxnejt3hly443wa",
+        "url": "https://bsky.app/profile/wakelog.bsky.social"
+      },
+      "url": "https://bsky.app/profile/wakelog.bsky.social/post/3mvd362bwcd23",
+      "published": "2026-09-12T12:24:23+00:00",
+      "wm-received": "2026-09-13T02:44:03Z",
+      "wm-id": 2031593,
+      "wm-source": "https://brid.gy/comment/bluesky/did:plc:dnnzvi5274e3gol3rbkk63u6/at%253A%252F%252Fdid%253Aplc%253Adnnzvi5274e3gol3rbkk63u6%252Fapp.bsky.feed.post%252F3mvcl5yeiwc2a/at%253A%252F%252Fdid%253Aplc%253Aqm23kiv2r677mm6zg6ssjcgc%252Fapp.bsky.feed.post%252F3mvd362bwcd23",
+      "wm-target": "https://andrewm.codes/p/automating-ruby-gem-releases-with-github-actions/",
+      "wm-protocol": "webmention",
+      "content": {
+        "text": "Release Please is great plumbing — the caveat I keep seeing is the generated changelog is only as good as the conventional commits feeding it; sloppy messages get auto-published as noise. Do you edit the generated notes before cutting the release, or ship as-is?"
+      },
+      "in-reply-to": "https://andrewm.codes/p/automating-ruby-gem-releases-with-github-actions/",
+      "wm-property": "in-reply-to",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Wakelog",
+        "photo": "https://cdn.bsky.app/img/avatar/plain/did:plc:qm23kiv2r677mm6zg6ssjcgc/bafkreigp2ngenntc2mitkdildn4c7whezxvhzosqwq7lxnejt3hly443wa",
+        "url": "https://bsky.app/profile/wakelog.bsky.social"
+      },
+      "url": "https://bsky.app/profile/andrewm.codes/post/3mvcl5yeiwc2a#liked_by_did:plc:qm23kiv2r677mm6zg6ssjcgc",
+      "published": null,
+      "wm-received": "2026-09-13T02:44:03Z",
+      "wm-id": 2031592,
+      "wm-source": "https://brid.gy/like/bluesky/did:plc:dnnzvi5274e3gol3rbkk63u6/at%253A%252F%252Fdid%253Aplc%253Adnnzvi5274e3gol3rbkk63u6%252Fapp.bsky.feed.post%252F3mvcl5yeiwc2a/did%253Aplc%253Aqm23kiv2r677mm6zg6ssjcgc",
+      "wm-target": "https://andrewm.codes/p/automating-ruby-gem-releases-with-github-actions/",
+      "wm-protocol": "webmention",
+      "like-of": "https://andrewm.codes/p/automating-ruby-gem-releases-with-github-actions/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Rachael Wright-Munn",
+        "photo": "https://cdn.bsky.app/img/avatar/plain/did:plc:hft2eguvzetsoohtpnl5l6jv/bafkreibyimu5fkujj3m3ipkpvggtmxyfo3hk4n6xi6ytlnbcwas46bxmgu",
+        "url": "https://bsky.app/profile/chael.codes"
+      },
+      "url": "https://bsky.app/profile/andrewm.codes/post/3mvcl5yeiwc2a#liked_by_did:plc:hft2eguvzetsoohtpnl5l6jv",
+      "published": null,
+      "wm-received": "2026-09-13T02:44:02Z",
+      "wm-id": 2031591,
+      "wm-source": "https://brid.gy/like/bluesky/did:plc:dnnzvi5274e3gol3rbkk63u6/at%253A%252F%252Fdid%253Aplc%253Adnnzvi5274e3gol3rbkk63u6%252Fapp.bsky.feed.post%252F3mvcl5yeiwc2a/did%253Aplc%253Ahft2eguvzetsoohtpnl5l6jv",
+      "wm-target": "https://andrewm.codes/p/automating-ruby-gem-releases-with-github-actions/",
+      "wm-protocol": "webmention",
+      "like-of": "https://andrewm.codes/p/automating-ruby-gem-releases-with-github-actions/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
         "name": "Andrea Fomera",
         "photo": "https://cdn.bsky.app/img/avatar/plain/did:plc:7fl7mfk3dyowoiawxysu4z6f/bafkreig2ptzw7vhqhmoz7zcspazr3zqenoe7sbiwya2oc6ihngyi6f7f4m",
         "url": "https://bsky.app/profile/afomera.dev"
@@ -180,6 +297,25 @@
         "photo": "https://avatars.webmention.io/pbs.twimg.com/93c487e64e9195a2e2416a86bfae22757771f1b0849aa7ea2bc4b61092e84ebb.jpg",
         "url": "https://twitter.com/jdorfman"
       },
+      "url": "https://twitter.com/andrewmcodes/status/1607091992617521152#favorited-by-14139773",
+      "published": null,
+      "wm-received": "2022-12-26T02:59:53Z",
+      "wm-id": 1587153,
+      "wm-source": "https://brid.gy/like/twitter/andrewmcodes/1607091992617521152/14139773",
+      "wm-target": "https://andrewm.codes/blog/how-to-install-ruby-on-rails-6-1-with-asdf-on-macos-big-sur/",
+      "wm-protocol": "webmention",
+      "like-of": "https://andrewm.codes/blog/how-to-install-ruby-on-rails-6-1-with-asdf-on-macos-big-sur/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Justin Dorfman 🐀",
+        "photo": "https://avatars.webmention.io/pbs.twimg.com/93c487e64e9195a2e2416a86bfae22757771f1b0849aa7ea2bc4b61092e84ebb.jpg",
+        "url": "https://twitter.com/jdorfman"
+      },
       "url": "https://twitter.com/jdorfman/status/1607119367757795328",
       "published": "2022-12-25T21:01:30+00:00",
       "wm-received": "2022-12-26T02:59:53Z",
@@ -192,25 +328,6 @@
       ],
       "in-reply-to": "https://andrewm.codes/blog/how-to-install-ruby-on-rails-6-1-with-asdf-on-macos-big-sur/",
       "wm-property": "in-reply-to",
-      "wm-private": false
-    },
-    {
-      "type": "entry",
-      "author": {
-        "type": "card",
-        "name": "Justin Dorfman 🐀",
-        "photo": "https://avatars.webmention.io/pbs.twimg.com/93c487e64e9195a2e2416a86bfae22757771f1b0849aa7ea2bc4b61092e84ebb.jpg",
-        "url": "https://twitter.com/jdorfman"
-      },
-      "url": "https://twitter.com/andrewmcodes/status/1607091992617521152#favorited-by-14139773",
-      "published": null,
-      "wm-received": "2022-12-26T02:59:53Z",
-      "wm-id": 1587153,
-      "wm-source": "https://brid.gy/like/twitter/andrewmcodes/1607091992617521152/14139773",
-      "wm-target": "https://andrewm.codes/blog/how-to-install-ruby-on-rails-6-1-with-asdf-on-macos-big-sur/",
-      "wm-protocol": "webmention",
-      "like-of": "https://andrewm.codes/blog/how-to-install-ruby-on-rails-6-1-with-asdf-on-macos-big-sur/",
-      "wm-property": "like-of",
       "wm-private": false
     },
     {
@@ -328,25 +445,6 @@
       "type": "entry",
       "author": {
         "type": "card",
-        "name": "Phil Reynolds",
-        "photo": "https://avatars.webmention.io/pbs.twimg.com/a61cca26c156d231a1b11e6971be1b54518f55f55f1e2581a3d1cd974506b5e8.jpg",
-        "url": "https://twitter.com/PurpleRiver_Dev"
-      },
-      "url": "https://twitter.com/andrewmcodes/status/1534956340182781952#favorited-by-30277940",
-      "published": null,
-      "wm-received": "2022-06-09T21:28:57Z",
-      "wm-id": 1412341,
-      "wm-source": "https://brid.gy/like/twitter/andrewmcodes/1534956340182781952/30277940",
-      "wm-target": "https://andrewm.codes/",
-      "wm-protocol": "webmention",
-      "like-of": "https://andrewm.codes/",
-      "wm-property": "like-of",
-      "wm-private": false
-    },
-    {
-      "type": "entry",
-      "author": {
-        "type": "card",
         "name": "Gustavo Valenzuela",
         "photo": "https://avatars.webmention.io/pbs.twimg.com/9acb623d40a2d6c9d2fa0218db426f7f6f3ecb13698b187a7509b766d68f423d.jpg",
         "url": "https://twitter.com/GV1180"
@@ -366,15 +464,15 @@
       "type": "entry",
       "author": {
         "type": "card",
-        "name": "Jason Charnes",
-        "photo": "https://avatars.webmention.io/pbs.twimg.com/1f855af99240c9c2d0a04f777fe1b98f246b47bcaf70025132c882a976308bc8.jpg",
-        "url": "https://twitter.com/jmcharnes"
+        "name": "Phil Reynolds",
+        "photo": "https://avatars.webmention.io/pbs.twimg.com/a61cca26c156d231a1b11e6971be1b54518f55f55f1e2581a3d1cd974506b5e8.jpg",
+        "url": "https://twitter.com/PurpleRiver_Dev"
       },
-      "url": "https://twitter.com/andrewmcodes/status/1534956340182781952#favorited-by-1213233189990195201",
+      "url": "https://twitter.com/andrewmcodes/status/1534956340182781952#favorited-by-30277940",
       "published": null,
-      "wm-received": "2022-06-09T21:28:56Z",
-      "wm-id": 1412339,
-      "wm-source": "https://brid.gy/like/twitter/andrewmcodes/1534956340182781952/1213233189990195201",
+      "wm-received": "2022-06-09T21:28:57Z",
+      "wm-id": 1412341,
+      "wm-source": "https://brid.gy/like/twitter/andrewmcodes/1534956340182781952/30277940",
       "wm-target": "https://andrewm.codes/",
       "wm-protocol": "webmention",
       "like-of": "https://andrewm.codes/",
@@ -404,6 +502,25 @@
       "type": "entry",
       "author": {
         "type": "card",
+        "name": "Jason Charnes",
+        "photo": "https://avatars.webmention.io/pbs.twimg.com/1f855af99240c9c2d0a04f777fe1b98f246b47bcaf70025132c882a976308bc8.jpg",
+        "url": "https://twitter.com/jmcharnes"
+      },
+      "url": "https://twitter.com/andrewmcodes/status/1534956340182781952#favorited-by-1213233189990195201",
+      "published": null,
+      "wm-received": "2022-06-09T21:28:56Z",
+      "wm-id": 1412339,
+      "wm-source": "https://brid.gy/like/twitter/andrewmcodes/1534956340182781952/1213233189990195201",
+      "wm-target": "https://andrewm.codes/",
+      "wm-protocol": "webmention",
+      "like-of": "https://andrewm.codes/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
         "name": "Kasper Timm Hansen",
         "photo": "https://avatars.webmention.io/pbs.twimg.com/7aeb6470e4b7d93c045860b4c76fae93ae4f159ebf5a8c200dce4ef265127f48.jpg",
         "url": "https://twitter.com/kaspth"
@@ -423,15 +540,15 @@
       "type": "entry",
       "author": {
         "type": "card",
-        "name": "Andrea Fomera",
-        "photo": "https://avatars.webmention.io/pbs.twimg.com/00ddb653d504f8f81b4ab6654228d97f08280c0dfa82669e6936de1df6723822.jpg",
-        "url": "https://twitter.com/afomera"
+        "name": "Thiago Araujo",
+        "photo": "https://avatars.webmention.io/pbs.twimg.com/8b17fcc942e8f3b58dce3a46f12187fcb456d8fadd27b2b9c7025df706d50a9f.jpg",
+        "url": "https://twitter.com/thdaraujo"
       },
-      "url": "https://twitter.com/andrewmcodes/status/1534956340182781952#favorited-by-100948653",
+      "url": "https://twitter.com/andrewmcodes/status/1534956340182781952#favorited-by-3077377534",
       "published": null,
       "wm-received": "2022-06-09T21:28:54Z",
-      "wm-id": 1412336,
-      "wm-source": "https://brid.gy/like/twitter/andrewmcodes/1534956340182781952/100948653",
+      "wm-id": 1412337,
+      "wm-source": "https://brid.gy/like/twitter/andrewmcodes/1534956340182781952/3077377534",
       "wm-target": "https://andrewm.codes/",
       "wm-protocol": "webmention",
       "like-of": "https://andrewm.codes/",
@@ -442,15 +559,15 @@
       "type": "entry",
       "author": {
         "type": "card",
-        "name": "Thiago Araujo",
-        "photo": "https://avatars.webmention.io/pbs.twimg.com/8b17fcc942e8f3b58dce3a46f12187fcb456d8fadd27b2b9c7025df706d50a9f.jpg",
-        "url": "https://twitter.com/thdaraujo"
+        "name": "Andrea Fomera",
+        "photo": "https://avatars.webmention.io/pbs.twimg.com/00ddb653d504f8f81b4ab6654228d97f08280c0dfa82669e6936de1df6723822.jpg",
+        "url": "https://twitter.com/afomera"
       },
-      "url": "https://twitter.com/andrewmcodes/status/1534956340182781952#favorited-by-3077377534",
+      "url": "https://twitter.com/andrewmcodes/status/1534956340182781952#favorited-by-100948653",
       "published": null,
       "wm-received": "2022-06-09T21:28:54Z",
-      "wm-id": 1412337,
-      "wm-source": "https://brid.gy/like/twitter/andrewmcodes/1534956340182781952/3077377534",
+      "wm-id": 1412336,
+      "wm-source": "https://brid.gy/like/twitter/andrewmcodes/1534956340182781952/100948653",
       "wm-target": "https://andrewm.codes/",
       "wm-protocol": "webmention",
       "like-of": "https://andrewm.codes/",
@@ -533,28 +650,6 @@
       "type": "entry",
       "author": {
         "type": "card",
-        "name": "Andrew Mason",
-        "photo": "https://avatars.webmention.io/pbs.twimg.com/ff0a8b98feb95ff85ed18d37c148c69b6d1f57ebabbb29064f0c153e1717e4b0.png",
-        "url": "https://twitter.com/andrewmcodes"
-      },
-      "url": "https://twitter.com/andrewmcodes/status/1534985912714555392",
-      "published": "2022-06-09T19:48:54+00:00",
-      "wm-received": "2022-06-09T21:28:32Z",
-      "wm-id": 1412331,
-      "wm-source": "https://brid.gy/comment/twitter/andrewmcodes/1534956340182781952/1534985912714555392",
-      "wm-target": "https://andrewm.codes/",
-      "wm-protocol": "webmention",
-      "video": [
-        "https://video.twimg.com/tweet_video/FU1djKLUsAAp7Yo.mp4"
-      ],
-      "in-reply-to": "https://andrewm.codes/",
-      "wm-property": "in-reply-to",
-      "wm-private": false
-    },
-    {
-      "type": "entry",
-      "author": {
-        "type": "card",
         "name": "Kasper Timm Hansen",
         "photo": "https://avatars.webmention.io/pbs.twimg.com/7aeb6470e4b7d93c045860b4c76fae93ae4f159ebf5a8c200dce4ef265127f48.jpg",
         "url": "https://twitter.com/kaspth"
@@ -570,6 +665,28 @@
         "html": "you extend andrea’s offer too? I’m not sure that’s allowed 😂\n\nok ok, i will reach out! to see what the right course of action is\n<a class=\"u-mention\" href=\"https://andrewm.codes/\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/afomera\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/andrewmcodes\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/code\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/jmcharnes\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/podia\"></a>",
         "text": "you extend andrea’s offer too? I’m not sure that’s allowed 😂\n\nok ok, i will reach out! to see what the right course of action is"
       },
+      "in-reply-to": "https://andrewm.codes/",
+      "wm-property": "in-reply-to",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Andrew Mason",
+        "photo": "https://avatars.webmention.io/pbs.twimg.com/ff0a8b98feb95ff85ed18d37c148c69b6d1f57ebabbb29064f0c153e1717e4b0.png",
+        "url": "https://twitter.com/andrewmcodes"
+      },
+      "url": "https://twitter.com/andrewmcodes/status/1534985912714555392",
+      "published": "2022-06-09T19:48:54+00:00",
+      "wm-received": "2022-06-09T21:28:32Z",
+      "wm-id": 1412331,
+      "wm-source": "https://brid.gy/comment/twitter/andrewmcodes/1534956340182781952/1534985912714555392",
+      "wm-target": "https://andrewm.codes/",
+      "wm-protocol": "webmention",
+      "video": [
+        "https://video.twimg.com/tweet_video/FU1djKLUsAAp7Yo.mp4"
+      ],
       "in-reply-to": "https://andrewm.codes/",
       "wm-property": "in-reply-to",
       "wm-private": false
@@ -716,6 +833,28 @@
       "type": "entry",
       "author": {
         "type": "card",
+        "name": "Andrew Mason",
+        "photo": "https://avatars.webmention.io/pbs.twimg.com/ff0a8b98feb95ff85ed18d37c148c69b6d1f57ebabbb29064f0c153e1717e4b0.png",
+        "url": "https://twitter.com/andrewmcodes"
+      },
+      "url": "https://twitter.com/andrewmcodes/status/1534983784600248320",
+      "published": "2022-06-09T19:40:27+00:00",
+      "wm-received": "2022-06-09T21:28:24Z",
+      "wm-id": 1412323,
+      "wm-source": "https://brid.gy/comment/twitter/andrewmcodes/1534956340182781952/1534983784600248320",
+      "wm-target": "https://andrewm.codes/",
+      "wm-protocol": "webmention",
+      "video": [
+        "https://video.twimg.com/tweet_video/FU1bnVDVEAAUhaU.mp4"
+      ],
+      "in-reply-to": "https://andrewm.codes/",
+      "wm-property": "in-reply-to",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
         "name": "Kasper Timm Hansen",
         "photo": "https://avatars.webmention.io/pbs.twimg.com/7aeb6470e4b7d93c045860b4c76fae93ae4f159ebf5a8c200dce4ef265127f48.jpg",
         "url": "https://twitter.com/kaspth"
@@ -734,28 +873,6 @@
         "html": "damn this looks 🔥\n\ni clicked every box 😂\n<a class=\"u-mention\" href=\"https://andrewm.codes/\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/afomera\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/andrewmcodes\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/code\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/jmcharnes\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/podia\"></a>",
         "text": "damn this looks 🔥\n\ni clicked every box 😂"
       },
-      "in-reply-to": "https://andrewm.codes/",
-      "wm-property": "in-reply-to",
-      "wm-private": false
-    },
-    {
-      "type": "entry",
-      "author": {
-        "type": "card",
-        "name": "Andrew Mason",
-        "photo": "https://avatars.webmention.io/pbs.twimg.com/ff0a8b98feb95ff85ed18d37c148c69b6d1f57ebabbb29064f0c153e1717e4b0.png",
-        "url": "https://twitter.com/andrewmcodes"
-      },
-      "url": "https://twitter.com/andrewmcodes/status/1534983784600248320",
-      "published": "2022-06-09T19:40:27+00:00",
-      "wm-received": "2022-06-09T21:28:24Z",
-      "wm-id": 1412323,
-      "wm-source": "https://brid.gy/comment/twitter/andrewmcodes/1534956340182781952/1534983784600248320",
-      "wm-target": "https://andrewm.codes/",
-      "wm-protocol": "webmention",
-      "video": [
-        "https://video.twimg.com/tweet_video/FU1bnVDVEAAUhaU.mp4"
-      ],
       "in-reply-to": "https://andrewm.codes/",
       "wm-property": "in-reply-to",
       "wm-private": false
@@ -810,29 +927,6 @@
       "type": "entry",
       "author": {
         "type": "card",
-        "name": "Kasper Timm Hansen",
-        "photo": "https://avatars.webmention.io/pbs.twimg.com/7aeb6470e4b7d93c045860b4c76fae93ae4f159ebf5a8c200dce4ef265127f48.jpg",
-        "url": "https://twitter.com/kaspth"
-      },
-      "url": "https://twitter.com/kaspth/status/1534976706787917851",
-      "published": "2022-06-09T19:12:20+00:00",
-      "wm-received": "2022-06-09T21:28:20Z",
-      "wm-id": 1412318,
-      "wm-source": "https://brid.gy/comment/twitter/andrewmcodes/1534956340182781952/1534976706787917851",
-      "wm-target": "https://andrewm.codes/",
-      "wm-protocol": "webmention",
-      "content": {
-        "html": "I thought about picking this up too, any of you tried it? <a href=\"https://makevscodeawesome.com\">makevscodeawesome.com</a>\n<a class=\"u-mention\" href=\"https://andrewm.codes/\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/afomera\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/andrewmcodes\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/code\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/jmcharnes\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/podia\"></a>",
-        "text": "I thought about picking this up too, any of you tried it? makevscodeawesome.com"
-      },
-      "in-reply-to": "https://andrewm.codes/",
-      "wm-property": "in-reply-to",
-      "wm-private": false
-    },
-    {
-      "type": "entry",
-      "author": {
-        "type": "card",
         "name": "Andrew Mason",
         "photo": "https://avatars.webmention.io/pbs.twimg.com/ff0a8b98feb95ff85ed18d37c148c69b6d1f57ebabbb29064f0c153e1717e4b0.png",
         "url": "https://twitter.com/andrewmcodes"
@@ -847,6 +941,29 @@
       "content": {
         "html": "I have it - I will DM you my thoughts on it\n<a class=\"u-mention\" href=\"https://twitter.com/afomera\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/code\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/jmcharnes\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/kaspth\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/podia\"></a>",
         "text": "I have it - I will DM you my thoughts on it"
+      },
+      "in-reply-to": "https://andrewm.codes/",
+      "wm-property": "in-reply-to",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Kasper Timm Hansen",
+        "photo": "https://avatars.webmention.io/pbs.twimg.com/7aeb6470e4b7d93c045860b4c76fae93ae4f159ebf5a8c200dce4ef265127f48.jpg",
+        "url": "https://twitter.com/kaspth"
+      },
+      "url": "https://twitter.com/kaspth/status/1534976706787917851",
+      "published": "2022-06-09T19:12:20+00:00",
+      "wm-received": "2022-06-09T21:28:20Z",
+      "wm-id": 1412318,
+      "wm-source": "https://brid.gy/comment/twitter/andrewmcodes/1534956340182781952/1534976706787917851",
+      "wm-target": "https://andrewm.codes/",
+      "wm-protocol": "webmention",
+      "content": {
+        "html": "I thought about picking this up too, any of you tried it? <a href=\"https://makevscodeawesome.com\">makevscodeawesome.com</a>\n<a class=\"u-mention\" href=\"https://andrewm.codes/\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/afomera\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/andrewmcodes\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/code\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/jmcharnes\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/podia\"></a>",
+        "text": "I thought about picking this up too, any of you tried it? makevscodeawesome.com"
       },
       "in-reply-to": "https://andrewm.codes/",
       "wm-property": "in-reply-to",
@@ -879,29 +996,6 @@
       "type": "entry",
       "author": {
         "type": "card",
-        "name": "Andrew Mason",
-        "photo": "https://avatars.webmention.io/pbs.twimg.com/ff0a8b98feb95ff85ed18d37c148c69b6d1f57ebabbb29064f0c153e1717e4b0.png",
-        "url": "https://twitter.com/andrewmcodes"
-      },
-      "url": "https://twitter.com/andrewmcodes/status/1534985790064689153",
-      "published": "2022-06-09T19:48:25+00:00",
-      "wm-received": "2022-06-09T21:28:17Z",
-      "wm-id": 1412314,
-      "wm-source": "https://brid.gy/comment/twitter/andrewmcodes/1534956340182781952/1534985790064689153",
-      "wm-target": "https://andrewm.codes/",
-      "wm-protocol": "webmention",
-      "content": {
-        "html": "idt this tweet created the internal response you were hoping for. \n\nIf anything it’s backfired bc no matter how much I try not to be, I am an instigator. \n\nMy first thought wasn’t “dang I should make this”, it was “I’ve never seen Jason mad, this could be fun”\n<a class=\"u-mention\" href=\"https://twitter.com/afomera\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/code\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/jmcharnes\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/kaspth\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/podia\"></a>",
-        "text": "idt this tweet created the internal response you were hoping for. \n\nIf anything it’s backfired bc no matter how much I try not to be, I am an instigator. \n\nMy first thought wasn’t “dang I should make this”, it was “I’ve never seen Jason mad, this could be fun”"
-      },
-      "in-reply-to": "https://andrewm.codes/",
-      "wm-property": "in-reply-to",
-      "wm-private": false
-    },
-    {
-      "type": "entry",
-      "author": {
-        "type": "card",
         "name": "Andrea Fomera",
         "photo": "https://avatars.webmention.io/pbs.twimg.com/00ddb653d504f8f81b4ab6654228d97f08280c0dfa82669e6936de1df6723822.jpg",
         "url": "https://twitter.com/afomera"
@@ -916,6 +1010,29 @@
       "content": {
         "html": "I'm missing out on VSCode setup stuff being off?!? nooooo\n<a class=\"u-mention\" href=\"https://andrewm.codes/\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/andrewmcodes\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/code\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/jmcharnes\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/kaspth\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/podia\"></a>",
         "text": "I'm missing out on VSCode setup stuff being off?!? nooooo"
+      },
+      "in-reply-to": "https://andrewm.codes/",
+      "wm-property": "in-reply-to",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Andrew Mason",
+        "photo": "https://avatars.webmention.io/pbs.twimg.com/ff0a8b98feb95ff85ed18d37c148c69b6d1f57ebabbb29064f0c153e1717e4b0.png",
+        "url": "https://twitter.com/andrewmcodes"
+      },
+      "url": "https://twitter.com/andrewmcodes/status/1534985790064689153",
+      "published": "2022-06-09T19:48:25+00:00",
+      "wm-received": "2022-06-09T21:28:17Z",
+      "wm-id": 1412314,
+      "wm-source": "https://brid.gy/comment/twitter/andrewmcodes/1534956340182781952/1534985790064689153",
+      "wm-target": "https://andrewm.codes/",
+      "wm-protocol": "webmention",
+      "content": {
+        "html": "idt this tweet created the internal response you were hoping for. \n\nIf anything it’s backfired bc no matter how much I try not to be, I am an instigator. \n\nMy first thought wasn’t “dang I should make this”, it was “I’ve never seen Jason mad, this could be fun”\n<a class=\"u-mention\" href=\"https://twitter.com/afomera\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/code\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/jmcharnes\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/kaspth\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/podia\"></a>",
+        "text": "idt this tweet created the internal response you were hoping for. \n\nIf anything it’s backfired bc no matter how much I try not to be, I am an instigator. \n\nMy first thought wasn’t “dang I should make this”, it was “I’ve never seen Jason mad, this could be fun”"
       },
       "in-reply-to": "https://andrewm.codes/",
       "wm-property": "in-reply-to",
@@ -948,6 +1065,29 @@
       "type": "entry",
       "author": {
         "type": "card",
+        "name": "Andrea Fomera",
+        "photo": "https://avatars.webmention.io/pbs.twimg.com/00ddb653d504f8f81b4ab6654228d97f08280c0dfa82669e6936de1df6723822.jpg",
+        "url": "https://twitter.com/afomera"
+      },
+      "url": "https://twitter.com/afomera/status/1534957003528802304",
+      "published": "2022-06-09T17:54:02+00:00",
+      "wm-received": "2022-06-09T21:28:15Z",
+      "wm-id": 1412312,
+      "wm-source": "https://brid.gy/comment/twitter/andrewmcodes/1534956340182781952/1534957003528802304",
+      "wm-target": "https://andrewm.codes/",
+      "wm-protocol": "webmention",
+      "content": {
+        "html": "I would 100% buy that course.\n\nreminds me of my <a href=\"http://learnrails.dev\">learnrails.dev</a> domain I should do something more with one day\n<a class=\"u-mention\" href=\"https://andrewm.codes/\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/andrewmcodes\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/code\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/kaspth\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/podia\"></a>",
+        "text": "I would 100% buy that course.\n\nreminds me of my learnrails.dev domain I should do something more with one day"
+      },
+      "in-reply-to": "https://andrewm.codes/",
+      "wm-property": "in-reply-to",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
         "name": "Kasper Timm Hansen",
         "photo": "https://avatars.webmention.io/pbs.twimg.com/7aeb6470e4b7d93c045860b4c76fae93ae4f159ebf5a8c200dce4ef265127f48.jpg",
         "url": "https://twitter.com/kaspth"
@@ -971,20 +1111,23 @@
       "type": "entry",
       "author": {
         "type": "card",
-        "name": "Andrea Fomera",
-        "photo": "https://avatars.webmention.io/pbs.twimg.com/00ddb653d504f8f81b4ab6654228d97f08280c0dfa82669e6936de1df6723822.jpg",
-        "url": "https://twitter.com/afomera"
+        "name": "Kasper Timm Hansen",
+        "photo": "https://avatars.webmention.io/pbs.twimg.com/7aeb6470e4b7d93c045860b4c76fae93ae4f159ebf5a8c200dce4ef265127f48.jpg",
+        "url": "https://twitter.com/kaspth"
       },
-      "url": "https://twitter.com/afomera/status/1534957003528802304",
-      "published": "2022-06-09T17:54:02+00:00",
-      "wm-received": "2022-06-09T21:28:15Z",
-      "wm-id": 1412312,
-      "wm-source": "https://brid.gy/comment/twitter/andrewmcodes/1534956340182781952/1534957003528802304",
+      "url": "https://twitter.com/kaspth/status/1534986637570195465",
+      "published": "2022-06-09T19:51:47+00:00",
+      "wm-received": "2022-06-09T21:28:14Z",
+      "wm-id": 1412310,
+      "wm-source": "https://brid.gy/comment/twitter/andrewmcodes/1534956340182781952/1534986637570195465",
       "wm-target": "https://andrewm.codes/",
       "wm-protocol": "webmention",
+      "video": [
+        "https://video.twimg.com/tweet_video/FU1eNTVXwA49fKs.mp4"
+      ],
       "content": {
-        "html": "I would 100% buy that course.\n\nreminds me of my <a href=\"http://learnrails.dev\">learnrails.dev</a> domain I should do something more with one day\n<a class=\"u-mention\" href=\"https://andrewm.codes/\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/andrewmcodes\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/code\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/kaspth\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/podia\"></a>",
-        "text": "I would 100% buy that course.\n\nreminds me of my learnrails.dev domain I should do something more with one day"
+        "html": "I'm in awe, A+ extension, 14/10\n\nseal of approval ✅\n<a class=\"u-mention\" href=\"https://andrewm.codes/\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/afomera\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/andrewmcodes\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/code\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/jmcharnes\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/podia\"></a>",
+        "text": "I'm in awe, A+ extension, 14/10\n\nseal of approval ✅"
       },
       "in-reply-to": "https://andrewm.codes/",
       "wm-property": "in-reply-to",
@@ -1021,19 +1164,16 @@
         "photo": "https://avatars.webmention.io/pbs.twimg.com/7aeb6470e4b7d93c045860b4c76fae93ae4f159ebf5a8c200dce4ef265127f48.jpg",
         "url": "https://twitter.com/kaspth"
       },
-      "url": "https://twitter.com/kaspth/status/1534986637570195465",
-      "published": "2022-06-09T19:51:47+00:00",
-      "wm-received": "2022-06-09T21:28:14Z",
-      "wm-id": 1412310,
-      "wm-source": "https://brid.gy/comment/twitter/andrewmcodes/1534956340182781952/1534986637570195465",
+      "url": "https://twitter.com/kaspth/status/1534986958941962252",
+      "published": "2022-06-09T19:53:04+00:00",
+      "wm-received": "2022-06-09T21:28:13Z",
+      "wm-id": 1412308,
+      "wm-source": "https://brid.gy/comment/twitter/andrewmcodes/1534956340182781952/1534986958941962252",
       "wm-target": "https://andrewm.codes/",
       "wm-protocol": "webmention",
-      "video": [
-        "https://video.twimg.com/tweet_video/FU1eNTVXwA49fKs.mp4"
-      ],
       "content": {
-        "html": "I'm in awe, A+ extension, 14/10\n\nseal of approval ✅\n<a class=\"u-mention\" href=\"https://andrewm.codes/\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/afomera\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/andrewmcodes\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/code\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/jmcharnes\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/podia\"></a>",
-        "text": "I'm in awe, A+ extension, 14/10\n\nseal of approval ✅"
+        "html": "except if you're wearing a vest, then you're legally obliged to call yourself an investigator\n<a class=\"u-mention\" href=\"https://andrewm.codes/\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/afomera\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/andrewmcodes\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/code\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/jmcharnes\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/podia\"></a>",
+        "text": "except if you're wearing a vest, then you're legally obliged to call yourself an investigator"
       },
       "in-reply-to": "https://andrewm.codes/",
       "wm-property": "in-reply-to",
@@ -1057,52 +1197,6 @@
       "content": {
         "html": "My title at The company I founded has been, for year, ‘chief instigator’\n<a class=\"u-mention\" href=\"https://andrewm.codes/\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/afomera\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/andrewmcodes\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/code\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/jmcharnes\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/kaspth\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/podia\"></a>",
         "text": "My title at The company I founded has been, for year, ‘chief instigator’"
-      },
-      "in-reply-to": "https://andrewm.codes/",
-      "wm-property": "in-reply-to",
-      "wm-private": false
-    },
-    {
-      "type": "entry",
-      "author": {
-        "type": "card",
-        "name": "Kasper Timm Hansen",
-        "photo": "https://avatars.webmention.io/pbs.twimg.com/7aeb6470e4b7d93c045860b4c76fae93ae4f159ebf5a8c200dce4ef265127f48.jpg",
-        "url": "https://twitter.com/kaspth"
-      },
-      "url": "https://twitter.com/kaspth/status/1534986958941962252",
-      "published": "2022-06-09T19:53:04+00:00",
-      "wm-received": "2022-06-09T21:28:13Z",
-      "wm-id": 1412308,
-      "wm-source": "https://brid.gy/comment/twitter/andrewmcodes/1534956340182781952/1534986958941962252",
-      "wm-target": "https://andrewm.codes/",
-      "wm-protocol": "webmention",
-      "content": {
-        "html": "except if you're wearing a vest, then you're legally obliged to call yourself an investigator\n<a class=\"u-mention\" href=\"https://andrewm.codes/\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/afomera\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/andrewmcodes\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/code\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/jmcharnes\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/podia\"></a>",
-        "text": "except if you're wearing a vest, then you're legally obliged to call yourself an investigator"
-      },
-      "in-reply-to": "https://andrewm.codes/",
-      "wm-property": "in-reply-to",
-      "wm-private": false
-    },
-    {
-      "type": "entry",
-      "author": {
-        "type": "card",
-        "name": "Andrew Mason",
-        "photo": "https://avatars.webmention.io/pbs.twimg.com/ff0a8b98feb95ff85ed18d37c148c69b6d1f57ebabbb29064f0c153e1717e4b0.png",
-        "url": "https://twitter.com/andrewmcodes"
-      },
-      "url": "https://twitter.com/andrewmcodes/status/1534990869840818177",
-      "published": "2022-06-09T20:08:36+00:00",
-      "wm-received": "2022-06-09T21:28:12Z",
-      "wm-id": 1412305,
-      "wm-source": "https://brid.gy/comment/twitter/andrewmcodes/1534956340182781952/1534990869840818177",
-      "wm-target": "https://andrewm.codes/",
-      "wm-protocol": "webmention",
-      "content": {
-        "html": "Never a dull moment bc if there is, we will start shit lol\n<a class=\"u-mention\" href=\"https://twitter.com/afomera\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/code\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/jmcharnes\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/kaspth\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/podia\"></a>",
-        "text": "Never a dull moment bc if there is, we will start shit lol"
       },
       "in-reply-to": "https://andrewm.codes/",
       "wm-property": "in-reply-to",
@@ -1138,20 +1232,20 @@
       "type": "entry",
       "author": {
         "type": "card",
-        "name": "Kasper Timm Hansen",
-        "photo": "https://avatars.webmention.io/pbs.twimg.com/7aeb6470e4b7d93c045860b4c76fae93ae4f159ebf5a8c200dce4ef265127f48.jpg",
-        "url": "https://twitter.com/kaspth"
+        "name": "Andrew Mason",
+        "photo": "https://avatars.webmention.io/pbs.twimg.com/ff0a8b98feb95ff85ed18d37c148c69b6d1f57ebabbb29064f0c153e1717e4b0.png",
+        "url": "https://twitter.com/andrewmcodes"
       },
-      "url": "https://twitter.com/kaspth/status/1534988973839466519",
-      "published": "2022-06-09T20:01:04+00:00",
-      "wm-received": "2022-06-09T21:28:11Z",
-      "wm-id": 1412303,
-      "wm-source": "https://brid.gy/comment/twitter/andrewmcodes/1534956340182781952/1534988973839466519",
+      "url": "https://twitter.com/andrewmcodes/status/1534990869840818177",
+      "published": "2022-06-09T20:08:36+00:00",
+      "wm-received": "2022-06-09T21:28:12Z",
+      "wm-id": 1412305,
+      "wm-source": "https://brid.gy/comment/twitter/andrewmcodes/1534956340182781952/1534990869840818177",
       "wm-target": "https://andrewm.codes/",
       "wm-protocol": "webmention",
       "content": {
-        "html": "Fomera &amp; Mason: a one-two punch whirlwind knockout 🥊😄\n\nlooking forward to it to be honest 😂\n<a class=\"u-mention\" href=\"https://andrewm.codes/\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/afomera\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/andrewmcodes\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/code\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/jmcharnes\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/podia\"></a>",
-        "text": "Fomera & Mason: a one-two punch whirlwind knockout 🥊😄\n\nlooking forward to it to be honest 😂"
+        "html": "Never a dull moment bc if there is, we will start shit lol\n<a class=\"u-mention\" href=\"https://twitter.com/afomera\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/code\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/jmcharnes\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/kaspth\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/podia\"></a>",
+        "text": "Never a dull moment bc if there is, we will start shit lol"
       },
       "in-reply-to": "https://andrewm.codes/",
       "wm-property": "in-reply-to",
@@ -1178,6 +1272,29 @@
       "content": {
         "html": "my reaction when I read this.\n<a class=\"u-mention\" href=\"https://andrewm.codes/\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/andrewmcodes\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/jmcharnes\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/kaspth\"></a>",
         "text": "my reaction when I read this."
+      },
+      "in-reply-to": "https://andrewm.codes/",
+      "wm-property": "in-reply-to",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Kasper Timm Hansen",
+        "photo": "https://avatars.webmention.io/pbs.twimg.com/7aeb6470e4b7d93c045860b4c76fae93ae4f159ebf5a8c200dce4ef265127f48.jpg",
+        "url": "https://twitter.com/kaspth"
+      },
+      "url": "https://twitter.com/kaspth/status/1534988973839466519",
+      "published": "2022-06-09T20:01:04+00:00",
+      "wm-received": "2022-06-09T21:28:11Z",
+      "wm-id": 1412303,
+      "wm-source": "https://brid.gy/comment/twitter/andrewmcodes/1534956340182781952/1534988973839466519",
+      "wm-target": "https://andrewm.codes/",
+      "wm-protocol": "webmention",
+      "content": {
+        "html": "Fomera &amp; Mason: a one-two punch whirlwind knockout 🥊😄\n\nlooking forward to it to be honest 😂\n<a class=\"u-mention\" href=\"https://andrewm.codes/\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/afomera\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/andrewmcodes\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/code\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/jmcharnes\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/podia\"></a>",
+        "text": "Fomera & Mason: a one-two punch whirlwind knockout 🥊😄\n\nlooking forward to it to be honest 😂"
       },
       "in-reply-to": "https://andrewm.codes/",
       "wm-property": "in-reply-to",
@@ -1229,22 +1346,19 @@
       "type": "entry",
       "author": {
         "type": "card",
-        "name": "Ayush Newatia",
-        "photo": "https://avatars.webmention.io/pbs.twimg.com/d714369c14253b6da2a1fb4ac7f099620f56fbab7bfeeb6b2a199f976440b85e.jpg",
-        "url": "https://twitter.com/ayushn21"
+        "name": "Joe Masilotti 📗",
+        "photo": "https://avatars.webmention.io/pbs.twimg.com/eab19abe2b29a307a993b2024d77ca80405ae1b57236d0cd177a443945f049e5.jpg",
+        "url": "https://twitter.com/joemasilotti"
       },
-      "url": "https://twitter.com/ayushn21/status/1506630177798901769",
-      "published": "2022-03-23T13:53:20+00:00",
+      "url": "https://twitter.com/andrewmcodes/status/1506604989984112646#favorited-by-105224601",
+      "published": null,
       "wm-received": "2022-03-23T15:40:24Z",
-      "wm-id": 1368146,
-      "wm-source": "https://brid.gy/repost/twitter/andrewmcodes/1506604989984112646/1506630177798901769",
+      "wm-id": 1368148,
+      "wm-source": "https://brid.gy/like/twitter/andrewmcodes/1506604989984112646/105224601",
       "wm-target": "https://andrewm.codes/deploy-bridgetown-to-github-pages/",
       "wm-protocol": "webmention",
-      "content": {
-        "text": "Shoutout to @ayushn21 for adding a bundled configuration for @github pages deployment to @bridgetownrb v1.0🔥 Here’s how to use it and why you should migrate off my old action 🤘\n\nandrewm.codes/deploy-bridget…"
-      },
-      "repost-of": "https://andrewm.codes/deploy-bridgetown-to-github-pages/",
-      "wm-property": "repost-of",
+      "like-of": "https://andrewm.codes/deploy-bridgetown-to-github-pages/",
+      "wm-property": "like-of",
       "wm-private": false
     },
     {
@@ -1273,19 +1387,22 @@
       "type": "entry",
       "author": {
         "type": "card",
-        "name": "Joe Masilotti 📗",
-        "photo": "https://avatars.webmention.io/pbs.twimg.com/eab19abe2b29a307a993b2024d77ca80405ae1b57236d0cd177a443945f049e5.jpg",
-        "url": "https://twitter.com/joemasilotti"
+        "name": "Ayush Newatia",
+        "photo": "https://avatars.webmention.io/pbs.twimg.com/d714369c14253b6da2a1fb4ac7f099620f56fbab7bfeeb6b2a199f976440b85e.jpg",
+        "url": "https://twitter.com/ayushn21"
       },
-      "url": "https://twitter.com/andrewmcodes/status/1506604989984112646#favorited-by-105224601",
-      "published": null,
+      "url": "https://twitter.com/ayushn21/status/1506630177798901769",
+      "published": "2022-03-23T13:53:20+00:00",
       "wm-received": "2022-03-23T15:40:24Z",
-      "wm-id": 1368148,
-      "wm-source": "https://brid.gy/like/twitter/andrewmcodes/1506604989984112646/105224601",
+      "wm-id": 1368146,
+      "wm-source": "https://brid.gy/repost/twitter/andrewmcodes/1506604989984112646/1506630177798901769",
       "wm-target": "https://andrewm.codes/deploy-bridgetown-to-github-pages/",
       "wm-protocol": "webmention",
-      "like-of": "https://andrewm.codes/deploy-bridgetown-to-github-pages/",
-      "wm-property": "like-of",
+      "content": {
+        "text": "Shoutout to @ayushn21 for adding a bundled configuration for @github pages deployment to @bridgetownrb v1.0🔥 Here’s how to use it and why you should migrate off my old action 🤘\n\nandrewm.codes/deploy-bridget…"
+      },
+      "repost-of": "https://andrewm.codes/deploy-bridgetown-to-github-pages/",
+      "wm-property": "repost-of",
       "wm-private": false
     },
     {
@@ -1524,15 +1641,15 @@
       "type": "entry",
       "author": {
         "type": "card",
-        "name": "Drew Bragg",
-        "photo": "https://avatars.webmention.io/pbs.twimg.com/5c4a7bf92843c0a10318fd3d7a14ab30a2d7e0e1f63f3692c7904b5cd721a1ae.jpg",
-        "url": "https://twitter.com/DRBragg"
+        "name": "solnic",
+        "photo": "https://avatars.webmention.io/pbs.twimg.com/4dacc4cacd655f50ebc68b4f80177d3a6e50fb600e7f36059b1c0f0c832eaeb9.jpg",
+        "url": "https://twitter.com/solnic29a"
       },
-      "url": "https://twitter.com/andrewmcodes/status/1492644665685807104#favorited-by-25107816",
+      "url": "https://twitter.com/andrewmcodes/status/1492644665685807104#favorited-by-14698700",
       "published": null,
       "wm-received": "2022-02-13T09:38:37Z",
-      "wm-id": 1351106,
-      "wm-source": "https://brid.gy/like/twitter/andrewmcodes/1492644665685807104/25107816",
+      "wm-id": 1351108,
+      "wm-source": "https://brid.gy/like/twitter/andrewmcodes/1492644665685807104/14698700",
       "wm-target": "https://andrewm.codes/stop-hoarding-notes/",
       "wm-protocol": "webmention",
       "like-of": "https://andrewm.codes/stop-hoarding-notes/",
@@ -1562,37 +1679,18 @@
       "type": "entry",
       "author": {
         "type": "card",
-        "name": "solnic",
-        "photo": "https://avatars.webmention.io/pbs.twimg.com/4dacc4cacd655f50ebc68b4f80177d3a6e50fb600e7f36059b1c0f0c832eaeb9.jpg",
-        "url": "https://twitter.com/solnic29a"
+        "name": "Drew Bragg",
+        "photo": "https://avatars.webmention.io/pbs.twimg.com/5c4a7bf92843c0a10318fd3d7a14ab30a2d7e0e1f63f3692c7904b5cd721a1ae.jpg",
+        "url": "https://twitter.com/DRBragg"
       },
-      "url": "https://twitter.com/andrewmcodes/status/1492644665685807104#favorited-by-14698700",
+      "url": "https://twitter.com/andrewmcodes/status/1492644665685807104#favorited-by-25107816",
       "published": null,
       "wm-received": "2022-02-13T09:38:37Z",
-      "wm-id": 1351108,
-      "wm-source": "https://brid.gy/like/twitter/andrewmcodes/1492644665685807104/14698700",
+      "wm-id": 1351106,
+      "wm-source": "https://brid.gy/like/twitter/andrewmcodes/1492644665685807104/25107816",
       "wm-target": "https://andrewm.codes/stop-hoarding-notes/",
       "wm-protocol": "webmention",
       "like-of": "https://andrewm.codes/stop-hoarding-notes/",
-      "wm-property": "like-of",
-      "wm-private": false
-    },
-    {
-      "type": "entry",
-      "author": {
-        "type": "card",
-        "name": "Robby Russell",
-        "photo": "https://avatars.webmention.io/pbs.twimg.com/413faaf20c1edef2c40a654b3ff47ffcbafe85df62f19e3ad6aceacd58ca7e50.jpg",
-        "url": "https://twitter.com/robbyrussell"
-      },
-      "url": "https://twitter.com/andrewmcodes/status/1488901548369346561#favorited-by-54793",
-      "published": null,
-      "wm-received": "2022-02-02T20:31:06Z",
-      "wm-id": 1344821,
-      "wm-source": "https://brid.gy/like/twitter/andrewmcodes/1488901548369346561/54793",
-      "wm-target": "https://andrewm.codes/podcasts/",
-      "wm-protocol": "webmention",
-      "like-of": "https://andrewm.codes/podcasts/",
       "wm-property": "like-of",
       "wm-private": false
     },
@@ -1609,6 +1707,25 @@
       "wm-received": "2022-02-02T20:31:06Z",
       "wm-id": 1344822,
       "wm-source": "https://brid.gy/like/twitter/andrewmcodes/1488901548369346561/233527250",
+      "wm-target": "https://andrewm.codes/podcasts/",
+      "wm-protocol": "webmention",
+      "like-of": "https://andrewm.codes/podcasts/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Robby Russell",
+        "photo": "https://avatars.webmention.io/pbs.twimg.com/413faaf20c1edef2c40a654b3ff47ffcbafe85df62f19e3ad6aceacd58ca7e50.jpg",
+        "url": "https://twitter.com/robbyrussell"
+      },
+      "url": "https://twitter.com/andrewmcodes/status/1488901548369346561#favorited-by-54793",
+      "published": null,
+      "wm-received": "2022-02-02T20:31:06Z",
+      "wm-id": 1344821,
+      "wm-source": "https://brid.gy/like/twitter/andrewmcodes/1488901548369346561/54793",
       "wm-target": "https://andrewm.codes/podcasts/",
       "wm-protocol": "webmention",
       "like-of": "https://andrewm.codes/podcasts/",
@@ -1688,15 +1805,15 @@
       "type": "entry",
       "author": {
         "type": "card",
-        "name": "Matheus Richard",
-        "photo": "https://avatars.webmention.io/pbs.twimg.com/63439a708b692c7af964e1744cae37117fad3f373bbf86a10cecc4aaa9dca147.jpg",
-        "url": "https://twitter.com/matheusrich"
+        "name": "Drew Bragg",
+        "photo": "https://avatars.webmention.io/pbs.twimg.com/5c4a7bf92843c0a10318fd3d7a14ab30a2d7e0e1f63f3692c7904b5cd721a1ae.jpg",
+        "url": "https://twitter.com/DRBragg"
       },
-      "url": "https://twitter.com/andrewmcodes/status/1488901548369346561#favorited-by-889904850351292417",
+      "url": "https://twitter.com/andrewmcodes/status/1488901548369346561#favorited-by-25107816",
       "published": null,
       "wm-received": "2022-02-02T18:47:45Z",
-      "wm-id": 1344731,
-      "wm-source": "https://brid.gy/like/twitter/andrewmcodes/1488901548369346561/889904850351292417",
+      "wm-id": 1344732,
+      "wm-source": "https://brid.gy/like/twitter/andrewmcodes/1488901548369346561/25107816",
       "wm-target": "https://andrewm.codes/podcasts/",
       "wm-protocol": "webmention",
       "like-of": "https://andrewm.codes/podcasts/",
@@ -1707,15 +1824,15 @@
       "type": "entry",
       "author": {
         "type": "card",
-        "name": "Drew Bragg",
-        "photo": "https://avatars.webmention.io/pbs.twimg.com/5c4a7bf92843c0a10318fd3d7a14ab30a2d7e0e1f63f3692c7904b5cd721a1ae.jpg",
-        "url": "https://twitter.com/DRBragg"
+        "name": "Matheus Richard",
+        "photo": "https://avatars.webmention.io/pbs.twimg.com/63439a708b692c7af964e1744cae37117fad3f373bbf86a10cecc4aaa9dca147.jpg",
+        "url": "https://twitter.com/matheusrich"
       },
-      "url": "https://twitter.com/andrewmcodes/status/1488901548369346561#favorited-by-25107816",
+      "url": "https://twitter.com/andrewmcodes/status/1488901548369346561#favorited-by-889904850351292417",
       "published": null,
       "wm-received": "2022-02-02T18:47:45Z",
-      "wm-id": 1344732,
-      "wm-source": "https://brid.gy/like/twitter/andrewmcodes/1488901548369346561/25107816",
+      "wm-id": 1344731,
+      "wm-source": "https://brid.gy/like/twitter/andrewmcodes/1488901548369346561/889904850351292417",
       "wm-target": "https://andrewm.codes/podcasts/",
       "wm-protocol": "webmention",
       "like-of": "https://andrewm.codes/podcasts/",
@@ -1885,25 +2002,6 @@
       "type": "entry",
       "author": {
         "type": "card",
-        "name": "Emily Giurleo",
-        "photo": "https://avatars.webmention.io/pbs.twimg.com/b995e110fc733011eb02900caae009ba1ff7db316dda078cf1979fe62a8ef6a8.jpg",
-        "url": "https://twitter.com/EmilyGiurleo"
-      },
-      "url": "https://twitter.com/andrewmcodes/status/1481989624620748802#favorited-by-1061600461898309632",
-      "published": null,
-      "wm-received": "2022-01-14T15:37:31Z",
-      "wm-id": 1331610,
-      "wm-source": "https://brid.gy/like/twitter/andrewmcodes/1481989624620748802/1061600461898309632",
-      "wm-target": "https://andrewm.codes/getting-started-with-obsidian/",
-      "wm-protocol": "webmention",
-      "like-of": "https://andrewm.codes/getting-started-with-obsidian/",
-      "wm-property": "like-of",
-      "wm-private": false
-    },
-    {
-      "type": "entry",
-      "author": {
-        "type": "card",
         "name": "freiden",
         "photo": "https://avatars.webmention.io/pbs.twimg.com/d02bacd7e06a5551dbc587f08e81dbab7cb0dc0e7cde3b729a8f63736b369865.jpg",
         "url": "https://twitter.com/freiden"
@@ -1920,6 +2018,25 @@
       },
       "repost-of": "https://andrewm.codes/getting-started-with-obsidian/",
       "wm-property": "repost-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Emily Giurleo",
+        "photo": "https://avatars.webmention.io/pbs.twimg.com/b995e110fc733011eb02900caae009ba1ff7db316dda078cf1979fe62a8ef6a8.jpg",
+        "url": "https://twitter.com/EmilyGiurleo"
+      },
+      "url": "https://twitter.com/andrewmcodes/status/1481989624620748802#favorited-by-1061600461898309632",
+      "published": null,
+      "wm-received": "2022-01-14T15:37:31Z",
+      "wm-id": 1331610,
+      "wm-source": "https://brid.gy/like/twitter/andrewmcodes/1481989624620748802/1061600461898309632",
+      "wm-target": "https://andrewm.codes/getting-started-with-obsidian/",
+      "wm-protocol": "webmention",
+      "like-of": "https://andrewm.codes/getting-started-with-obsidian/",
+      "wm-property": "like-of",
       "wm-private": false
     },
     {
@@ -2090,15 +2207,15 @@
       "type": "entry",
       "author": {
         "type": "card",
-        "name": "Roman",
-        "photo": "https://avatars.webmention.io/pbs.twimg.com/e8456ab7f2a41ac764fd95ed1665e7a3c81a2b6992f8f9fbb585750c3129cd23.jpg",
-        "url": "https://twitter.com/schmope"
+        "name": "Drew Bragg",
+        "photo": "https://avatars.webmention.io/pbs.twimg.com/5c4a7bf92843c0a10318fd3d7a14ab30a2d7e0e1f63f3692c7904b5cd721a1ae.jpg",
+        "url": "https://twitter.com/DRBragg"
       },
-      "url": "https://twitter.com/andrewmcodes/status/1480699545398833154#favorited-by-2915271638",
+      "url": "https://twitter.com/andrewmcodes/status/1480699545398833154#favorited-by-25107816",
       "published": null,
       "wm-received": "2022-01-12T22:34:22Z",
-      "wm-id": 1330509,
-      "wm-source": "https://brid.gy/like/twitter/andrewmcodes/1480699545398833154/2915271638",
+      "wm-id": 1330510,
+      "wm-source": "https://brid.gy/like/twitter/andrewmcodes/1480699545398833154/25107816",
       "wm-target": "https://andrewm.codes/reading-list/",
       "wm-protocol": "webmention",
       "like-of": "https://andrewm.codes/reading-list/",
@@ -2109,15 +2226,15 @@
       "type": "entry",
       "author": {
         "type": "card",
-        "name": "Drew Bragg",
-        "photo": "https://avatars.webmention.io/pbs.twimg.com/5c4a7bf92843c0a10318fd3d7a14ab30a2d7e0e1f63f3692c7904b5cd721a1ae.jpg",
-        "url": "https://twitter.com/DRBragg"
+        "name": "Roman",
+        "photo": "https://avatars.webmention.io/pbs.twimg.com/e8456ab7f2a41ac764fd95ed1665e7a3c81a2b6992f8f9fbb585750c3129cd23.jpg",
+        "url": "https://twitter.com/schmope"
       },
-      "url": "https://twitter.com/andrewmcodes/status/1480699545398833154#favorited-by-25107816",
+      "url": "https://twitter.com/andrewmcodes/status/1480699545398833154#favorited-by-2915271638",
       "published": null,
       "wm-received": "2022-01-12T22:34:22Z",
-      "wm-id": 1330510,
-      "wm-source": "https://brid.gy/like/twitter/andrewmcodes/1480699545398833154/25107816",
+      "wm-id": 1330509,
+      "wm-source": "https://brid.gy/like/twitter/andrewmcodes/1480699545398833154/2915271638",
       "wm-target": "https://andrewm.codes/reading-list/",
       "wm-protocol": "webmention",
       "like-of": "https://andrewm.codes/reading-list/",
@@ -2391,29 +2508,6 @@
       "type": "entry",
       "author": {
         "type": "card",
-        "name": "Frankyston Lins (FlyntTv)",
-        "photo": "https://avatars.webmention.io/pbs.twimg.com/1ebb248c1b4899b359171add14f08f6f87b195e67287bf0e7df0fffef45cd820.jpg",
-        "url": "https://twitter.com/frankyston"
-      },
-      "url": "https://twitter.com/frankyston/status/1364927956284497926",
-      "published": "2021-02-25T13:19:18+00:00",
-      "wm-received": "2021-02-25T19:41:25Z",
-      "wm-id": 1047317,
-      "wm-source": "https://brid.gy/repost/twitter/andrewmcodes/1364923863482646528/1364927956284497926",
-      "wm-target": "https://andrewm.codes/blog/how-to-install-ruby-on-rails-6-1-with-asdf-on-macos-big-sur/",
-      "wm-protocol": "webmention",
-      "content": {
-        "html": "📝\n\nI went all in on asdf and wrote up a quick tutorial showing how easy it is to get a Rails 6.1 app with Ruby 3, Webpacker, &amp; Postgres",
-        "text": "📝\n\nI went all in on asdf and wrote up a quick tutorial showing how easy it is to get a Rails 6.1 app with Ruby 3, Webpacker, & Postgres"
-      },
-      "repost-of": "https://andrewm.codes/blog/how-to-install-ruby-on-rails-6-1-with-asdf-on-macos-big-sur/",
-      "wm-property": "repost-of",
-      "wm-private": false
-    },
-    {
-      "type": "entry",
-      "author": {
-        "type": "card",
         "name": "Pascal Wengerter",
         "photo": "https://avatars.webmention.io/pbs.twimg.com/cf614c0f773153b1a0d6615b184940444bd34365fbd5ff0a3f8180a6f4fdfc05.jpg",
         "url": "https://twitter.com/pascalwengerter"
@@ -2431,6 +2525,29 @@
       },
       "mention-of": "https://andrewm.codes/blog/how-to-install-ruby-on-rails-6-1-with-asdf-on-macos-big-sur/",
       "wm-property": "mention-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Frankyston Lins (FlyntTv)",
+        "photo": "https://avatars.webmention.io/pbs.twimg.com/1ebb248c1b4899b359171add14f08f6f87b195e67287bf0e7df0fffef45cd820.jpg",
+        "url": "https://twitter.com/frankyston"
+      },
+      "url": "https://twitter.com/frankyston/status/1364927956284497926",
+      "published": "2021-02-25T13:19:18+00:00",
+      "wm-received": "2021-02-25T19:41:25Z",
+      "wm-id": 1047317,
+      "wm-source": "https://brid.gy/repost/twitter/andrewmcodes/1364923863482646528/1364927956284497926",
+      "wm-target": "https://andrewm.codes/blog/how-to-install-ruby-on-rails-6-1-with-asdf-on-macos-big-sur/",
+      "wm-protocol": "webmention",
+      "content": {
+        "html": "📝\n\nI went all in on asdf and wrote up a quick tutorial showing how easy it is to get a Rails 6.1 app with Ruby 3, Webpacker, &amp; Postgres",
+        "text": "📝\n\nI went all in on asdf and wrote up a quick tutorial showing how easy it is to get a Rails 6.1 app with Ruby 3, Webpacker, & Postgres"
+      },
+      "repost-of": "https://andrewm.codes/blog/how-to-install-ruby-on-rails-6-1-with-asdf-on-macos-big-sur/",
+      "wm-property": "repost-of",
       "wm-private": false
     },
     {
@@ -2475,25 +2592,6 @@
       "type": "entry",
       "author": {
         "type": "card",
-        "name": "Srinath",
-        "photo": "https://avatars.webmention.io/pbs.twimg.com/cde26d40acce6165f7a8d7b227a3d660b11a451bad564f2a287cf92e57756935.jpg",
-        "url": "https://twitter.com/vsrnth"
-      },
-      "url": "https://twitter.com/andrewmcodes/status/1364923863482646528#favorited-by-2870452211",
-      "published": null,
-      "wm-received": "2021-02-25T19:41:22Z",
-      "wm-id": 1047313,
-      "wm-source": "https://brid.gy/like/twitter/andrewmcodes/1364923863482646528/2870452211",
-      "wm-target": "https://andrewm.codes/blog/how-to-install-ruby-on-rails-6-1-with-asdf-on-macos-big-sur/",
-      "wm-protocol": "webmention",
-      "like-of": "https://andrewm.codes/blog/how-to-install-ruby-on-rails-6-1-with-asdf-on-macos-big-sur/",
-      "wm-property": "like-of",
-      "wm-private": false
-    },
-    {
-      "type": "entry",
-      "author": {
-        "type": "card",
         "name": "Gustavo Valenzuela",
         "photo": "https://avatars.webmention.io/pbs.twimg.com/9acb623d40a2d6c9d2fa0218db426f7f6f3ecb13698b187a7509b766d68f423d.jpg",
         "url": "https://twitter.com/GV1180"
@@ -2513,15 +2611,15 @@
       "type": "entry",
       "author": {
         "type": "card",
-        "name": "Jared White",
-        "photo": "https://avatars.webmention.io/pbs.twimg.com/48e06d3378c3c9228498f6ec2a0eab9d7db8e8f58bf45a4e03f7bc3dfd948e6b.jpg",
-        "url": "https://twitter.com/jaredcwhite"
+        "name": "Srinath",
+        "photo": "https://avatars.webmention.io/pbs.twimg.com/cde26d40acce6165f7a8d7b227a3d660b11a451bad564f2a287cf92e57756935.jpg",
+        "url": "https://twitter.com/vsrnth"
       },
-      "url": "https://twitter.com/andrewmcodes/status/1364923863482646528#favorited-by-18657020",
+      "url": "https://twitter.com/andrewmcodes/status/1364923863482646528#favorited-by-2870452211",
       "published": null,
-      "wm-received": "2021-02-25T19:41:21Z",
-      "wm-id": 1047311,
-      "wm-source": "https://brid.gy/like/twitter/andrewmcodes/1364923863482646528/18657020",
+      "wm-received": "2021-02-25T19:41:22Z",
+      "wm-id": 1047313,
+      "wm-source": "https://brid.gy/like/twitter/andrewmcodes/1364923863482646528/2870452211",
       "wm-target": "https://andrewm.codes/blog/how-to-install-ruby-on-rails-6-1-with-asdf-on-macos-big-sur/",
       "wm-protocol": "webmention",
       "like-of": "https://andrewm.codes/blog/how-to-install-ruby-on-rails-6-1-with-asdf-on-macos-big-sur/",
@@ -2551,15 +2649,15 @@
       "type": "entry",
       "author": {
         "type": "card",
-        "name": "Collin",
-        "photo": "https://avatars.webmention.io/pbs.twimg.com/e9f021ce092a61efff42e60dd585656620168ab3fad922ff83d22c1062c51931.jpg",
-        "url": "https://twitter.com/collin_jilbert"
+        "name": "Jared White",
+        "photo": "https://avatars.webmention.io/pbs.twimg.com/48e06d3378c3c9228498f6ec2a0eab9d7db8e8f58bf45a4e03f7bc3dfd948e6b.jpg",
+        "url": "https://twitter.com/jaredcwhite"
       },
-      "url": "https://twitter.com/andrewmcodes/status/1364923863482646528#favorited-by-1199000473807867904",
+      "url": "https://twitter.com/andrewmcodes/status/1364923863482646528#favorited-by-18657020",
       "published": null,
-      "wm-received": "2021-02-25T19:41:20Z",
-      "wm-id": 1047309,
-      "wm-source": "https://brid.gy/like/twitter/andrewmcodes/1364923863482646528/1199000473807867904",
+      "wm-received": "2021-02-25T19:41:21Z",
+      "wm-id": 1047311,
+      "wm-source": "https://brid.gy/like/twitter/andrewmcodes/1364923863482646528/18657020",
       "wm-target": "https://andrewm.codes/blog/how-to-install-ruby-on-rails-6-1-with-asdf-on-macos-big-sur/",
       "wm-protocol": "webmention",
       "like-of": "https://andrewm.codes/blog/how-to-install-ruby-on-rails-6-1-with-asdf-on-macos-big-sur/",
@@ -2579,6 +2677,25 @@
       "wm-received": "2021-02-25T19:41:20Z",
       "wm-id": 1047310,
       "wm-source": "https://brid.gy/like/twitter/andrewmcodes/1364923863482646528/19677959",
+      "wm-target": "https://andrewm.codes/blog/how-to-install-ruby-on-rails-6-1-with-asdf-on-macos-big-sur/",
+      "wm-protocol": "webmention",
+      "like-of": "https://andrewm.codes/blog/how-to-install-ruby-on-rails-6-1-with-asdf-on-macos-big-sur/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Collin",
+        "photo": "https://avatars.webmention.io/pbs.twimg.com/e9f021ce092a61efff42e60dd585656620168ab3fad922ff83d22c1062c51931.jpg",
+        "url": "https://twitter.com/collin_jilbert"
+      },
+      "url": "https://twitter.com/andrewmcodes/status/1364923863482646528#favorited-by-1199000473807867904",
+      "published": null,
+      "wm-received": "2021-02-25T19:41:20Z",
+      "wm-id": 1047309,
+      "wm-source": "https://brid.gy/like/twitter/andrewmcodes/1364923863482646528/1199000473807867904",
       "wm-target": "https://andrewm.codes/blog/how-to-install-ruby-on-rails-6-1-with-asdf-on-macos-big-sur/",
       "wm-protocol": "webmention",
       "like-of": "https://andrewm.codes/blog/how-to-install-ruby-on-rails-6-1-with-asdf-on-macos-big-sur/",
@@ -2627,25 +2744,6 @@
       "type": "entry",
       "author": {
         "type": "card",
-        "name": "Mikel Kew",
-        "photo": "https://avatars.webmention.io/pbs.twimg.com/097cea5a9bc95a937ba7673a8fcf4a25e1c176a837e257af788eeda8ad4df76e.jpg",
-        "url": "https://twitter.com/MikelKew"
-      },
-      "url": "https://twitter.com/andrewmcodes/status/1364923863482646528#favorited-by-2326234676",
-      "published": null,
-      "wm-received": "2021-02-25T19:41:17Z",
-      "wm-id": 1047305,
-      "wm-source": "https://brid.gy/like/twitter/andrewmcodes/1364923863482646528/2326234676",
-      "wm-target": "https://andrewm.codes/blog/how-to-install-ruby-on-rails-6-1-with-asdf-on-macos-big-sur/",
-      "wm-protocol": "webmention",
-      "like-of": "https://andrewm.codes/blog/how-to-install-ruby-on-rails-6-1-with-asdf-on-macos-big-sur/",
-      "wm-property": "like-of",
-      "wm-private": false
-    },
-    {
-      "type": "entry",
-      "author": {
-        "type": "card",
         "name": "Marco Roth",
         "photo": "https://avatars.webmention.io/pbs.twimg.com/131924fd18f25e31faeb6ee1b51d0df1b857c48f87f8e5556cfaf0e07d051d13.jpg",
         "url": "https://twitter.com/marcoroth_"
@@ -2665,15 +2763,34 @@
       "type": "entry",
       "author": {
         "type": "card",
-        "name": "Dean",
-        "photo": "https://avatars.webmention.io/pbs.twimg.com/ca07470c9b1f6ec2650c52eff52b997981dfb93ea1627a2f659e143596139d91.jpg",
-        "url": "https://twitter.com/deanpcmad"
+        "name": "Mikel Kew",
+        "photo": "https://avatars.webmention.io/pbs.twimg.com/097cea5a9bc95a937ba7673a8fcf4a25e1c176a837e257af788eeda8ad4df76e.jpg",
+        "url": "https://twitter.com/MikelKew"
       },
-      "url": "https://twitter.com/andrewmcodes/status/1364923863482646528#favorited-by-5489202",
+      "url": "https://twitter.com/andrewmcodes/status/1364923863482646528#favorited-by-2326234676",
+      "published": null,
+      "wm-received": "2021-02-25T19:41:17Z",
+      "wm-id": 1047305,
+      "wm-source": "https://brid.gy/like/twitter/andrewmcodes/1364923863482646528/2326234676",
+      "wm-target": "https://andrewm.codes/blog/how-to-install-ruby-on-rails-6-1-with-asdf-on-macos-big-sur/",
+      "wm-protocol": "webmention",
+      "like-of": "https://andrewm.codes/blog/how-to-install-ruby-on-rails-6-1-with-asdf-on-macos-big-sur/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Nate Hopkins",
+        "photo": "https://avatars.webmention.io/pbs.twimg.com/c65a19227d5e9b15bc0faaf3508eadc8342c8f5a051107c34e504aab46217221.jpg",
+        "url": "https://twitter.com/hopsoft"
+      },
+      "url": "https://twitter.com/andrewmcodes/status/1364923863482646528#favorited-by-24274695",
       "published": null,
       "wm-received": "2021-02-25T19:41:16Z",
-      "wm-id": 1047302,
-      "wm-source": "https://brid.gy/like/twitter/andrewmcodes/1364923863482646528/5489202",
+      "wm-id": 1047304,
+      "wm-source": "https://brid.gy/like/twitter/andrewmcodes/1364923863482646528/24274695",
       "wm-target": "https://andrewm.codes/blog/how-to-install-ruby-on-rails-6-1-with-asdf-on-macos-big-sur/",
       "wm-protocol": "webmention",
       "like-of": "https://andrewm.codes/blog/how-to-install-ruby-on-rails-6-1-with-asdf-on-macos-big-sur/",
@@ -2703,15 +2820,15 @@
       "type": "entry",
       "author": {
         "type": "card",
-        "name": "Nate Hopkins",
-        "photo": "https://avatars.webmention.io/pbs.twimg.com/c65a19227d5e9b15bc0faaf3508eadc8342c8f5a051107c34e504aab46217221.jpg",
-        "url": "https://twitter.com/hopsoft"
+        "name": "Dean",
+        "photo": "https://avatars.webmention.io/pbs.twimg.com/ca07470c9b1f6ec2650c52eff52b997981dfb93ea1627a2f659e143596139d91.jpg",
+        "url": "https://twitter.com/deanpcmad"
       },
-      "url": "https://twitter.com/andrewmcodes/status/1364923863482646528#favorited-by-24274695",
+      "url": "https://twitter.com/andrewmcodes/status/1364923863482646528#favorited-by-5489202",
       "published": null,
       "wm-received": "2021-02-25T19:41:16Z",
-      "wm-id": 1047304,
-      "wm-source": "https://brid.gy/like/twitter/andrewmcodes/1364923863482646528/24274695",
+      "wm-id": 1047302,
+      "wm-source": "https://brid.gy/like/twitter/andrewmcodes/1364923863482646528/5489202",
       "wm-target": "https://andrewm.codes/blog/how-to-install-ruby-on-rails-6-1-with-asdf-on-macos-big-sur/",
       "wm-protocol": "webmention",
       "like-of": "https://andrewm.codes/blog/how-to-install-ruby-on-rails-6-1-with-asdf-on-macos-big-sur/",
@@ -2760,25 +2877,6 @@
       "type": "entry",
       "author": {
         "type": "card",
-        "name": "Andy Esbeer",
-        "photo": "https://avatars.webmention.io/pbs.twimg.com/3721b85e27071c4ad2d8771c1c7d0d8dd6c80387d29d7bc263daa34cb712d947.png",
-        "url": "https://twitter.com/bensisva"
-      },
-      "url": "https://twitter.com/andrewmcodes/status/1364923863482646528#favorited-by-172310357",
-      "published": null,
-      "wm-received": "2021-02-25T19:41:13Z",
-      "wm-id": 1047298,
-      "wm-source": "https://brid.gy/like/twitter/andrewmcodes/1364923863482646528/172310357",
-      "wm-target": "https://andrewm.codes/blog/how-to-install-ruby-on-rails-6-1-with-asdf-on-macos-big-sur/",
-      "wm-protocol": "webmention",
-      "like-of": "https://andrewm.codes/blog/how-to-install-ruby-on-rails-6-1-with-asdf-on-macos-big-sur/",
-      "wm-property": "like-of",
-      "wm-private": false
-    },
-    {
-      "type": "entry",
-      "author": {
-        "type": "card",
         "name": "David Jones",
         "photo": "https://avatars.webmention.io/pbs.twimg.com/5c753c27ca769c01fd4c431172adfdd8b6bba4c771cc42619978a9092bd7a438.jpg",
         "url": "https://twitter.com/unixmonkey"
@@ -2798,15 +2896,15 @@
       "type": "entry",
       "author": {
         "type": "card",
-        "name": "Daniel Tello",
-        "photo": "https://avatars.webmention.io/pbs.twimg.com/b034eb8ffee481c6500631276ade53ee130415b9928ded3ad3092aba06806b4f.jpg",
-        "url": "https://twitter.com/tello_io"
+        "name": "Andy Esbeer",
+        "photo": "https://avatars.webmention.io/pbs.twimg.com/3721b85e27071c4ad2d8771c1c7d0d8dd6c80387d29d7bc263daa34cb712d947.png",
+        "url": "https://twitter.com/bensisva"
       },
-      "url": "https://twitter.com/andrewmcodes/status/1364923863482646528#favorited-by-1334606468688080906",
+      "url": "https://twitter.com/andrewmcodes/status/1364923863482646528#favorited-by-172310357",
       "published": null,
-      "wm-received": "2021-02-25T19:41:12Z",
-      "wm-id": 1047296,
-      "wm-source": "https://brid.gy/like/twitter/andrewmcodes/1364923863482646528/1334606468688080906",
+      "wm-received": "2021-02-25T19:41:13Z",
+      "wm-id": 1047298,
+      "wm-source": "https://brid.gy/like/twitter/andrewmcodes/1364923863482646528/172310357",
       "wm-target": "https://andrewm.codes/blog/how-to-install-ruby-on-rails-6-1-with-asdf-on-macos-big-sur/",
       "wm-protocol": "webmention",
       "like-of": "https://andrewm.codes/blog/how-to-install-ruby-on-rails-6-1-with-asdf-on-macos-big-sur/",
@@ -2836,15 +2934,15 @@
       "type": "entry",
       "author": {
         "type": "card",
-        "name": "Ruberto Paulo",
-        "photo": "https://avatars.webmention.io/pbs.twimg.com/eb11c8c219e1d9139510ffcc60cbde9960c44e4818003fb60bca2c7189fad1c2.jpg",
-        "url": "https://twitter.com/legend_rob"
+        "name": "Daniel Tello",
+        "photo": "https://avatars.webmention.io/pbs.twimg.com/b034eb8ffee481c6500631276ade53ee130415b9928ded3ad3092aba06806b4f.jpg",
+        "url": "https://twitter.com/tello_io"
       },
-      "url": "https://twitter.com/andrewmcodes/status/1364923863482646528#favorited-by-484554542",
+      "url": "https://twitter.com/andrewmcodes/status/1364923863482646528#favorited-by-1334606468688080906",
       "published": null,
-      "wm-received": "2021-02-25T19:41:10Z",
-      "wm-id": 1047294,
-      "wm-source": "https://brid.gy/like/twitter/andrewmcodes/1364923863482646528/484554542",
+      "wm-received": "2021-02-25T19:41:12Z",
+      "wm-id": 1047296,
+      "wm-source": "https://brid.gy/like/twitter/andrewmcodes/1364923863482646528/1334606468688080906",
       "wm-target": "https://andrewm.codes/blog/how-to-install-ruby-on-rails-6-1-with-asdf-on-macos-big-sur/",
       "wm-protocol": "webmention",
       "like-of": "https://andrewm.codes/blog/how-to-install-ruby-on-rails-6-1-with-asdf-on-macos-big-sur/",
@@ -2874,15 +2972,15 @@
       "type": "entry",
       "author": {
         "type": "card",
-        "name": "Trinity Takei",
-        "photo": "https://avatars.webmention.io/pbs.twimg.com/85d942dc2b0b44f843e6975f18d789681ce1747eaa854bedc1caaeebd269d2ad.jpg",
-        "url": "https://twitter.com/TrinityTakei"
+        "name": "Ruberto Paulo",
+        "photo": "https://avatars.webmention.io/pbs.twimg.com/eb11c8c219e1d9139510ffcc60cbde9960c44e4818003fb60bca2c7189fad1c2.jpg",
+        "url": "https://twitter.com/legend_rob"
       },
-      "url": "https://twitter.com/andrewmcodes/status/1364923863482646528#favorited-by-865877185369968640",
+      "url": "https://twitter.com/andrewmcodes/status/1364923863482646528#favorited-by-484554542",
       "published": null,
-      "wm-received": "2021-02-25T19:41:09Z",
-      "wm-id": 1047292,
-      "wm-source": "https://brid.gy/like/twitter/andrewmcodes/1364923863482646528/865877185369968640",
+      "wm-received": "2021-02-25T19:41:10Z",
+      "wm-id": 1047294,
+      "wm-source": "https://brid.gy/like/twitter/andrewmcodes/1364923863482646528/484554542",
       "wm-target": "https://andrewm.codes/blog/how-to-install-ruby-on-rails-6-1-with-asdf-on-macos-big-sur/",
       "wm-protocol": "webmention",
       "like-of": "https://andrewm.codes/blog/how-to-install-ruby-on-rails-6-1-with-asdf-on-macos-big-sur/",
@@ -2912,15 +3010,15 @@
       "type": "entry",
       "author": {
         "type": "card",
-        "name": "James Garcia",
-        "photo": "https://avatars.webmention.io/pbs.twimg.com/c47e22e725159013a7a9fec20441d42ed78736532e762dd19ec8fb0ce6dc2bf0.jpg",
-        "url": "https://twitter.com/jamgar2020"
+        "name": "Trinity Takei",
+        "photo": "https://avatars.webmention.io/pbs.twimg.com/85d942dc2b0b44f843e6975f18d789681ce1747eaa854bedc1caaeebd269d2ad.jpg",
+        "url": "https://twitter.com/TrinityTakei"
       },
-      "url": "https://twitter.com/andrewmcodes/status/1364923863482646528#favorited-by-856948370648203265",
+      "url": "https://twitter.com/andrewmcodes/status/1364923863482646528#favorited-by-865877185369968640",
       "published": null,
-      "wm-received": "2021-02-25T19:41:08Z",
-      "wm-id": 1047290,
-      "wm-source": "https://brid.gy/like/twitter/andrewmcodes/1364923863482646528/856948370648203265",
+      "wm-received": "2021-02-25T19:41:09Z",
+      "wm-id": 1047292,
+      "wm-source": "https://brid.gy/like/twitter/andrewmcodes/1364923863482646528/865877185369968640",
       "wm-target": "https://andrewm.codes/blog/how-to-install-ruby-on-rails-6-1-with-asdf-on-macos-big-sur/",
       "wm-protocol": "webmention",
       "like-of": "https://andrewm.codes/blog/how-to-install-ruby-on-rails-6-1-with-asdf-on-macos-big-sur/",
@@ -2948,6 +3046,25 @@
       },
       "in-reply-to": "https://andrewm.codes/blog/how-to-install-ruby-on-rails-6-1-with-asdf-on-macos-big-sur/",
       "wm-property": "in-reply-to",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "James Garcia",
+        "photo": "https://avatars.webmention.io/pbs.twimg.com/c47e22e725159013a7a9fec20441d42ed78736532e762dd19ec8fb0ce6dc2bf0.jpg",
+        "url": "https://twitter.com/jamgar2020"
+      },
+      "url": "https://twitter.com/andrewmcodes/status/1364923863482646528#favorited-by-856948370648203265",
+      "published": null,
+      "wm-received": "2021-02-25T19:41:08Z",
+      "wm-id": 1047290,
+      "wm-source": "https://brid.gy/like/twitter/andrewmcodes/1364923863482646528/856948370648203265",
+      "wm-target": "https://andrewm.codes/blog/how-to-install-ruby-on-rails-6-1-with-asdf-on-macos-big-sur/",
+      "wm-protocol": "webmention",
+      "like-of": "https://andrewm.codes/blog/how-to-install-ruby-on-rails-6-1-with-asdf-on-macos-big-sur/",
+      "wm-property": "like-of",
       "wm-private": false
     },
     {
@@ -2992,6 +3109,29 @@
       "type": "entry",
       "author": {
         "type": "card",
+        "name": "Konnor Rogers",
+        "photo": "https://avatars.webmention.io/pbs.twimg.com/82f9c472b2a904c1fc6228b92dfff0a3c4721473a14eefd79c8b829e178a4ef4.jpg",
+        "url": "https://twitter.com/RogersKonnor"
+      },
+      "url": "https://twitter.com/RogersKonnor/status/1364948255021404164",
+      "published": "2021-02-25T14:39:58+00:00",
+      "wm-received": "2021-02-25T19:41:04Z",
+      "wm-id": 1047287,
+      "wm-source": "https://brid.gy/comment/twitter/andrewmcodes/1364923863482646528/1364948255021404164",
+      "wm-target": "https://andrewm.codes/blog/how-to-install-ruby-on-rails-6-1-with-asdf-on-macos-big-sur/",
+      "wm-protocol": "webmention",
+      "content": {
+        "html": "nvm...*shudders*\n\nthe speed of nvm killed me\n<a class=\"u-mention\" href=\"https://andrewm.codes/\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/andrewmcodes\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/stevepolitodsgn\"></a>",
+        "text": "nvm...*shudders*\n\nthe speed of nvm killed me"
+      },
+      "in-reply-to": "https://andrewm.codes/blog/how-to-install-ruby-on-rails-6-1-with-asdf-on-macos-big-sur/",
+      "wm-property": "in-reply-to",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
         "name": "Andrew Mason",
         "photo": "https://avatars.webmention.io/pbs.twimg.com/b01e55445ec9b850c04ccd90c8963da32092903fc2e80ba0fe7a3d5abb6f9e41.jpg",
         "url": "https://twitter.com/andrewmcodes"
@@ -3015,20 +3155,20 @@
       "type": "entry",
       "author": {
         "type": "card",
-        "name": "Konnor Rogers",
-        "photo": "https://avatars.webmention.io/pbs.twimg.com/82f9c472b2a904c1fc6228b92dfff0a3c4721473a14eefd79c8b829e178a4ef4.jpg",
-        "url": "https://twitter.com/RogersKonnor"
+        "name": "Andrew Mason",
+        "photo": "https://avatars.webmention.io/pbs.twimg.com/b01e55445ec9b850c04ccd90c8963da32092903fc2e80ba0fe7a3d5abb6f9e41.jpg",
+        "url": "https://twitter.com/andrewmcodes"
       },
-      "url": "https://twitter.com/RogersKonnor/status/1364948255021404164",
-      "published": "2021-02-25T14:39:58+00:00",
-      "wm-received": "2021-02-25T19:41:04Z",
-      "wm-id": 1047287,
-      "wm-source": "https://brid.gy/comment/twitter/andrewmcodes/1364923863482646528/1364948255021404164",
+      "url": "https://twitter.com/andrewmcodes/status/1364948234297368578",
+      "published": "2021-02-25T14:39:53+00:00",
+      "wm-received": "2021-02-25T19:41:00Z",
+      "wm-id": 1047285,
+      "wm-source": "https://brid.gy/comment/twitter/andrewmcodes/1364923863482646528/1364948234297368578",
       "wm-target": "https://andrewm.codes/blog/how-to-install-ruby-on-rails-6-1-with-asdf-on-macos-big-sur/",
       "wm-protocol": "webmention",
       "content": {
-        "html": "nvm...*shudders*\n\nthe speed of nvm killed me\n<a class=\"u-mention\" href=\"https://andrewm.codes/\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/andrewmcodes\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/stevepolitodsgn\"></a>",
-        "text": "nvm...*shudders*\n\nthe speed of nvm killed me"
+        "html": "Me too 😉 I go over that in the article\n<a class=\"u-mention\" href=\"https://twitter.com/TrinityTakei\"></a>",
+        "text": "Me too 😉 I go over that in the article"
       },
       "in-reply-to": "https://andrewm.codes/blog/how-to-install-ruby-on-rails-6-1-with-asdf-on-macos-big-sur/",
       "wm-property": "in-reply-to",
@@ -3068,16 +3208,16 @@
         "photo": "https://avatars.webmention.io/pbs.twimg.com/b01e55445ec9b850c04ccd90c8963da32092903fc2e80ba0fe7a3d5abb6f9e41.jpg",
         "url": "https://twitter.com/andrewmcodes"
       },
-      "url": "https://twitter.com/andrewmcodes/status/1364948234297368578",
-      "published": "2021-02-25T14:39:53+00:00",
-      "wm-received": "2021-02-25T19:41:00Z",
-      "wm-id": 1047285,
-      "wm-source": "https://brid.gy/comment/twitter/andrewmcodes/1364923863482646528/1364948234297368578",
+      "url": "https://twitter.com/andrewmcodes/status/1364948017204383753",
+      "published": "2021-02-25T14:39:01+00:00",
+      "wm-received": "2021-02-25T19:40:56Z",
+      "wm-id": 1047283,
+      "wm-source": "https://brid.gy/comment/twitter/andrewmcodes/1364923863482646528/1364948017204383753",
       "wm-target": "https://andrewm.codes/blog/how-to-install-ruby-on-rails-6-1-with-asdf-on-macos-big-sur/",
       "wm-protocol": "webmention",
       "content": {
-        "html": "Me too 😉 I go over that in the article\n<a class=\"u-mention\" href=\"https://twitter.com/TrinityTakei\"></a>",
-        "text": "Me too 😉 I go over that in the article"
+        "html": "I didn’t use it for a long time bc of some poor reviews but I finally lost it with nvm and tried asdf for node and slowly began moving off all my other version managers. \n\nThen I discovered it could also version PG, elastic, and imagemagick and went all in and gave up rbenv\n<a class=\"u-mention\" href=\"https://twitter.com/stevepolitodsgn\"></a>",
+        "text": "I didn’t use it for a long time bc of some poor reviews but I finally lost it with nvm and tried asdf for node and slowly began moving off all my other version managers. \n\nThen I discovered it could also version PG, elastic, and imagemagick and went all in and gave up rbenv"
       },
       "in-reply-to": "https://andrewm.codes/blog/how-to-install-ruby-on-rails-6-1-with-asdf-on-macos-big-sur/",
       "wm-property": "in-reply-to",
@@ -3101,29 +3241,6 @@
       "content": {
         "html": "If you enable legacy_version_file it will read the version files used by other version managers (like .ruby-version) but I didn’t try the gemfile because I’ve only seen that once in a much older rails app so wasn’t aware it was a common pattern to add it there. It might!\n<a class=\"u-mention\" href=\"https://twitter.com/armahillo\"></a>",
         "text": "If you enable legacy_version_file it will read the version files used by other version managers (like .ruby-version) but I didn’t try the gemfile because I’ve only seen that once in a much older rails app so wasn’t aware it was a common pattern to add it there. It might!"
-      },
-      "in-reply-to": "https://andrewm.codes/blog/how-to-install-ruby-on-rails-6-1-with-asdf-on-macos-big-sur/",
-      "wm-property": "in-reply-to",
-      "wm-private": false
-    },
-    {
-      "type": "entry",
-      "author": {
-        "type": "card",
-        "name": "Andrew Mason",
-        "photo": "https://avatars.webmention.io/pbs.twimg.com/b01e55445ec9b850c04ccd90c8963da32092903fc2e80ba0fe7a3d5abb6f9e41.jpg",
-        "url": "https://twitter.com/andrewmcodes"
-      },
-      "url": "https://twitter.com/andrewmcodes/status/1364948017204383753",
-      "published": "2021-02-25T14:39:01+00:00",
-      "wm-received": "2021-02-25T19:40:56Z",
-      "wm-id": 1047283,
-      "wm-source": "https://brid.gy/comment/twitter/andrewmcodes/1364923863482646528/1364948017204383753",
-      "wm-target": "https://andrewm.codes/blog/how-to-install-ruby-on-rails-6-1-with-asdf-on-macos-big-sur/",
-      "wm-protocol": "webmention",
-      "content": {
-        "html": "I didn’t use it for a long time bc of some poor reviews but I finally lost it with nvm and tried asdf for node and slowly began moving off all my other version managers. \n\nThen I discovered it could also version PG, elastic, and imagemagick and went all in and gave up rbenv\n<a class=\"u-mention\" href=\"https://twitter.com/stevepolitodsgn\"></a>",
-        "text": "I didn’t use it for a long time bc of some poor reviews but I finally lost it with nvm and tried asdf for node and slowly began moving off all my other version managers. \n\nThen I discovered it could also version PG, elastic, and imagemagick and went all in and gave up rbenv"
       },
       "in-reply-to": "https://andrewm.codes/blog/how-to-install-ruby-on-rails-6-1-with-asdf-on-macos-big-sur/",
       "wm-property": "in-reply-to",
@@ -3351,29 +3468,6 @@
       "type": "entry",
       "author": {
         "type": "card",
-        "name": "Konnor Rogers",
-        "photo": "https://avatars.webmention.io/pbs.twimg.com/82f9c472b2a904c1fc6228b92dfff0a3c4721473a14eefd79c8b829e178a4ef4.jpg",
-        "url": "https://twitter.com/RogersKonnor"
-      },
-      "url": "https://twitter.com/RogersKonnor/status/1344815580113735680",
-      "published": "2021-01-01T01:19:54+00:00",
-      "wm-received": "2021-01-01T01:59:18Z",
-      "wm-id": 970903,
-      "wm-source": "https://brid-gy.appspot.com/post/twitter/andrewmcodes/1344815580113735680",
-      "wm-target": "https://andrewm.codes/",
-      "wm-protocol": "webmention",
-      "content": {
-        "html": "<a href=\"https://twitter.com/HamptonMakes\">@HamptonMakes</a> you have a true believer right here!\n<a class=\"u-mention\" href=\"https://andrewm.codes/\"></a>",
-        "text": "@HamptonMakes you have a true believer right here!"
-      },
-      "mention-of": "https://andrewm.codes/",
-      "wm-property": "mention-of",
-      "wm-private": false
-    },
-    {
-      "type": "entry",
-      "author": {
-        "type": "card",
         "name": "Andrea Fomera",
         "photo": "https://avatars.webmention.io/pbs.twimg.com/87bc4f1b24fbe7edea936ab8e4871d01deaf21d2b0ce71bfeae8d71af5883cec.jpg",
         "url": "https://twitter.com/afomera"
@@ -3394,6 +3488,29 @@
       },
       "in-reply-to": "https://andrewm.codes/",
       "wm-property": "in-reply-to",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Konnor Rogers",
+        "photo": "https://avatars.webmention.io/pbs.twimg.com/82f9c472b2a904c1fc6228b92dfff0a3c4721473a14eefd79c8b829e178a4ef4.jpg",
+        "url": "https://twitter.com/RogersKonnor"
+      },
+      "url": "https://twitter.com/RogersKonnor/status/1344815580113735680",
+      "published": "2021-01-01T01:19:54+00:00",
+      "wm-received": "2021-01-01T01:59:18Z",
+      "wm-id": 970903,
+      "wm-source": "https://brid-gy.appspot.com/post/twitter/andrewmcodes/1344815580113735680",
+      "wm-target": "https://andrewm.codes/",
+      "wm-protocol": "webmention",
+      "content": {
+        "html": "<a href=\"https://twitter.com/HamptonMakes\">@HamptonMakes</a> you have a true believer right here!\n<a class=\"u-mention\" href=\"https://andrewm.codes/\"></a>",
+        "text": "@HamptonMakes you have a true believer right here!"
+      },
+      "mention-of": "https://andrewm.codes/",
+      "wm-property": "mention-of",
       "wm-private": false
     },
     {
@@ -3464,15 +3581,15 @@
       "type": "entry",
       "author": {
         "type": "card",
-        "name": "k. rainbolt-greene",
-        "photo": "https://avatars.webmention.io/pbs.twimg.com/06bdb0551e6bec7ef9b059c3f100b236534f0437f1fffc81a57094e9b5b01411.jpg",
-        "url": "https://twitter.com/krainboltgreene"
+        "name": "Aaron Soules",
+        "photo": "https://avatars.webmention.io/pbs.twimg.com/b136ebb9e03d37c1bce8171af6870e1ee8f090e151b691b8661fd798c664cebc.jpg",
+        "url": "https://twitter.com/a10s_code"
       },
-      "url": "https://twitter.com/andrewmcodes/status/1344805166906814465#favorited-by-55137522",
+      "url": "https://twitter.com/andrewmcodes/status/1344805166906814465#favorited-by-1192454993640644608",
       "published": null,
       "wm-received": "2021-01-01T01:18:01Z",
-      "wm-id": 970817,
-      "wm-source": "https://brid-gy.appspot.com/like/twitter/andrewmcodes/1344805166906814465/55137522",
+      "wm-id": 970818,
+      "wm-source": "https://brid-gy.appspot.com/like/twitter/andrewmcodes/1344805166906814465/1192454993640644608",
       "wm-target": "https://andrewm.codes/",
       "wm-protocol": "webmention",
       "like-of": "https://andrewm.codes/",
@@ -3483,15 +3600,15 @@
       "type": "entry",
       "author": {
         "type": "card",
-        "name": "Aaron Soules",
-        "photo": "https://avatars.webmention.io/pbs.twimg.com/b136ebb9e03d37c1bce8171af6870e1ee8f090e151b691b8661fd798c664cebc.jpg",
-        "url": "https://twitter.com/a10s_code"
+        "name": "k. rainbolt-greene",
+        "photo": "https://avatars.webmention.io/pbs.twimg.com/06bdb0551e6bec7ef9b059c3f100b236534f0437f1fffc81a57094e9b5b01411.jpg",
+        "url": "https://twitter.com/krainboltgreene"
       },
-      "url": "https://twitter.com/andrewmcodes/status/1344805166906814465#favorited-by-1192454993640644608",
+      "url": "https://twitter.com/andrewmcodes/status/1344805166906814465#favorited-by-55137522",
       "published": null,
       "wm-received": "2021-01-01T01:18:01Z",
-      "wm-id": 970818,
-      "wm-source": "https://brid-gy.appspot.com/like/twitter/andrewmcodes/1344805166906814465/1192454993640644608",
+      "wm-id": 970817,
+      "wm-source": "https://brid-gy.appspot.com/like/twitter/andrewmcodes/1344805166906814465/55137522",
       "wm-target": "https://andrewm.codes/",
       "wm-protocol": "webmention",
       "like-of": "https://andrewm.codes/",
@@ -3540,23 +3657,19 @@
       "type": "entry",
       "author": {
         "type": "card",
-        "name": "Jason Swett",
-        "photo": "https://avatars.webmention.io/pbs.twimg.com/1dd4bd5ca6e8eba37ef44d4964e381493d58a465db910e9c04eab7d52817311c.png",
-        "url": "https://twitter.com/JasonSwett"
+        "name": "Nicolas Maloeuvre",
+        "photo": "https://avatars.webmention.io/pbs.twimg.com/2e93857bc30d8fdd4461a52a2d5baee20aceac418a3bfbc1c3f079d34eb3a80b.png",
+        "url": "https://twitter.com/NicolasMLV"
       },
-      "url": "https://twitter.com/JasonSwett/status/1342534741250158593",
-      "published": "2020-12-25T18:16:40+00:00",
+      "url": "https://twitter.com/andrewmcodes/status/1342525838688923654#favorited-by-462428943",
+      "published": null,
       "wm-received": "2020-12-25T18:29:59Z",
-      "wm-id": 963853,
-      "wm-source": "https://brid-gy.appspot.com/comment/twitter/andrewmcodes/1342525838688923654/1342534741250158593",
+      "wm-id": 963855,
+      "wm-source": "https://brid-gy.appspot.com/like/twitter/andrewmcodes/1342525838688923654/462428943",
       "wm-target": "https://andrewm.codes/posts/webpacker-6/tailwindcss-integration/",
       "wm-protocol": "webmention",
-      "content": {
-        "html": "\"Error: Cannot find module 'tailwindcss'\"\n\nI'm gonna get off the computer before my wife murders me for working on Christmas but I'll give it another swing tomorrow.\n<a class=\"u-mention\" href=\"https://andrewm.codes/\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/andrewmcodes\"></a>",
-        "text": "\"Error: Cannot find module 'tailwindcss'\"\n\nI'm gonna get off the computer before my wife murders me for working on Christmas but I'll give it another swing tomorrow."
-      },
-      "in-reply-to": "https://andrewm.codes/posts/webpacker-6/tailwindcss-integration/",
-      "wm-property": "in-reply-to",
+      "like-of": "https://andrewm.codes/posts/webpacker-6/tailwindcss-integration/",
+      "wm-property": "like-of",
       "wm-private": false
     },
     {
@@ -3586,19 +3699,23 @@
       "type": "entry",
       "author": {
         "type": "card",
-        "name": "Nicolas Maloeuvre",
-        "photo": "https://avatars.webmention.io/pbs.twimg.com/2e93857bc30d8fdd4461a52a2d5baee20aceac418a3bfbc1c3f079d34eb3a80b.png",
-        "url": "https://twitter.com/NicolasMLV"
+        "name": "Jason Swett",
+        "photo": "https://avatars.webmention.io/pbs.twimg.com/1dd4bd5ca6e8eba37ef44d4964e381493d58a465db910e9c04eab7d52817311c.png",
+        "url": "https://twitter.com/JasonSwett"
       },
-      "url": "https://twitter.com/andrewmcodes/status/1342525838688923654#favorited-by-462428943",
-      "published": null,
+      "url": "https://twitter.com/JasonSwett/status/1342534741250158593",
+      "published": "2020-12-25T18:16:40+00:00",
       "wm-received": "2020-12-25T18:29:59Z",
-      "wm-id": 963855,
-      "wm-source": "https://brid-gy.appspot.com/like/twitter/andrewmcodes/1342525838688923654/462428943",
+      "wm-id": 963853,
+      "wm-source": "https://brid-gy.appspot.com/comment/twitter/andrewmcodes/1342525838688923654/1342534741250158593",
       "wm-target": "https://andrewm.codes/posts/webpacker-6/tailwindcss-integration/",
       "wm-protocol": "webmention",
-      "like-of": "https://andrewm.codes/posts/webpacker-6/tailwindcss-integration/",
-      "wm-property": "like-of",
+      "content": {
+        "html": "\"Error: Cannot find module 'tailwindcss'\"\n\nI'm gonna get off the computer before my wife murders me for working on Christmas but I'll give it another swing tomorrow.\n<a class=\"u-mention\" href=\"https://andrewm.codes/\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/andrewmcodes\"></a>",
+        "text": "\"Error: Cannot find module 'tailwindcss'\"\n\nI'm gonna get off the computer before my wife murders me for working on Christmas but I'll give it another swing tomorrow."
+      },
+      "in-reply-to": "https://andrewm.codes/posts/webpacker-6/tailwindcss-integration/",
+      "wm-property": "in-reply-to",
       "wm-private": false
     },
     {
@@ -3624,29 +3741,6 @@
       "type": "entry",
       "author": {
         "type": "card",
-        "name": "Andrew Mason",
-        "photo": "https://avatars.webmention.io/pbs.twimg.com/b01e55445ec9b850c04ccd90c8963da32092903fc2e80ba0fe7a3d5abb6f9e41.jpg",
-        "url": "https://twitter.com/andrewmcodes"
-      },
-      "url": "https://twitter.com/andrewmcodes/status/1342534427390439424",
-      "published": "2020-12-25T18:15:25+00:00",
-      "wm-received": "2020-12-25T18:29:56Z",
-      "wm-id": 963850,
-      "wm-source": "https://brid-gy.appspot.com/comment/twitter/andrewmcodes/1342525838688923654/1342534427390439424",
-      "wm-target": "https://andrewm.codes/posts/webpacker-6/tailwindcss-integration/",
-      "wm-protocol": "webmention",
-      "content": {
-        "html": "Got an error?\n<a class=\"u-mention\" href=\"https://twitter.com/JasonSwett\"></a>",
-        "text": "Got an error?"
-      },
-      "in-reply-to": "https://andrewm.codes/posts/webpacker-6/tailwindcss-integration/",
-      "wm-property": "in-reply-to",
-      "wm-private": false
-    },
-    {
-      "type": "entry",
-      "author": {
-        "type": "card",
         "name": "Jason Swett",
         "photo": "https://avatars.webmention.io/pbs.twimg.com/1dd4bd5ca6e8eba37ef44d4964e381493d58a465db910e9c04eab7d52817311c.png",
         "url": "https://twitter.com/JasonSwett"
@@ -3661,6 +3755,29 @@
       "content": {
         "html": "Hmm, looks identical to what I tried although for some reason mine didn't work.\n<a class=\"u-mention\" href=\"https://andrewm.codes/\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/andrewmcodes\"></a>",
         "text": "Hmm, looks identical to what I tried although for some reason mine didn't work."
+      },
+      "in-reply-to": "https://andrewm.codes/posts/webpacker-6/tailwindcss-integration/",
+      "wm-property": "in-reply-to",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Andrew Mason",
+        "photo": "https://avatars.webmention.io/pbs.twimg.com/b01e55445ec9b850c04ccd90c8963da32092903fc2e80ba0fe7a3d5abb6f9e41.jpg",
+        "url": "https://twitter.com/andrewmcodes"
+      },
+      "url": "https://twitter.com/andrewmcodes/status/1342534427390439424",
+      "published": "2020-12-25T18:15:25+00:00",
+      "wm-received": "2020-12-25T18:29:56Z",
+      "wm-id": 963850,
+      "wm-source": "https://brid-gy.appspot.com/comment/twitter/andrewmcodes/1342525838688923654/1342534427390439424",
+      "wm-target": "https://andrewm.codes/posts/webpacker-6/tailwindcss-integration/",
+      "wm-protocol": "webmention",
+      "content": {
+        "html": "Got an error?\n<a class=\"u-mention\" href=\"https://twitter.com/JasonSwett\"></a>",
+        "text": "Got an error?"
       },
       "in-reply-to": "https://andrewm.codes/posts/webpacker-6/tailwindcss-integration/",
       "wm-property": "in-reply-to",
@@ -3693,15 +3810,15 @@
       "type": "entry",
       "author": {
         "type": "card",
-        "name": "Mikel Kew",
-        "photo": "https://avatars.webmention.io/pbs.twimg.com/097cea5a9bc95a937ba7673a8fcf4a25e1c176a837e257af788eeda8ad4df76e.jpg",
-        "url": "https://twitter.com/MikelKew"
+        "name": "Naoufal El hassnaoui",
+        "photo": "https://avatars.webmention.io/pbs.twimg.com/f8f2d7930486e24b963908c26f4b41f8060d4312bd25eeccd502517cd7592ddc.jpg",
+        "url": "https://twitter.com/naoufal_elh"
       },
-      "url": "https://twitter.com/andrewmcodes/status/1342144257478504454#favorited-by-2326234676",
+      "url": "https://twitter.com/andrewmcodes/status/1342144257478504454#favorited-by-313439936",
       "published": null,
       "wm-received": "2020-12-24T18:35:28Z",
-      "wm-id": 962327,
-      "wm-source": "https://brid-gy.appspot.com/like/twitter/andrewmcodes/1342144257478504454/2326234676",
+      "wm-id": 962328,
+      "wm-source": "https://brid-gy.appspot.com/like/twitter/andrewmcodes/1342144257478504454/313439936",
       "wm-target": "https://andrewm.codes/posts/webpacker-6/",
       "wm-protocol": "webmention",
       "like-of": "https://andrewm.codes/posts/webpacker-6/",
@@ -3712,15 +3829,15 @@
       "type": "entry",
       "author": {
         "type": "card",
-        "name": "Naoufal El hassnaoui",
-        "photo": "https://avatars.webmention.io/pbs.twimg.com/f8f2d7930486e24b963908c26f4b41f8060d4312bd25eeccd502517cd7592ddc.jpg",
-        "url": "https://twitter.com/naoufal_elh"
+        "name": "Mikel Kew",
+        "photo": "https://avatars.webmention.io/pbs.twimg.com/097cea5a9bc95a937ba7673a8fcf4a25e1c176a837e257af788eeda8ad4df76e.jpg",
+        "url": "https://twitter.com/MikelKew"
       },
-      "url": "https://twitter.com/andrewmcodes/status/1342144257478504454#favorited-by-313439936",
+      "url": "https://twitter.com/andrewmcodes/status/1342144257478504454#favorited-by-2326234676",
       "published": null,
       "wm-received": "2020-12-24T18:35:28Z",
-      "wm-id": 962328,
-      "wm-source": "https://brid-gy.appspot.com/like/twitter/andrewmcodes/1342144257478504454/313439936",
+      "wm-id": 962327,
+      "wm-source": "https://brid-gy.appspot.com/like/twitter/andrewmcodes/1342144257478504454/2326234676",
       "wm-target": "https://andrewm.codes/posts/webpacker-6/",
       "wm-protocol": "webmention",
       "like-of": "https://andrewm.codes/posts/webpacker-6/",
