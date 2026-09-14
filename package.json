@@ -16,14 +16,14 @@
     "@andrewmcodes/prettier-config": "^3.0.0",
     "@commitlint/cli": "^21.2.2",
     "@fontsource-variable/geist-mono": "^5.3.0",
-    "@herb-tools/formatter": "^0.10.3",
+    "@herb-tools/formatter": "^0.10.4",
     "@lhci/cli": "^0.15.1",
     "@resvg/resvg-js": "^2.6.2",
     "@storybook/html-vite": "^10.6.0",
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/cli": "^4.3.3",
     "@tailwindcss/typography": "^0.5.20",
-    "@types/node": "^26.5.0",
+    "@types/node": "^26.5.1",
     "esbuild": "^0.28.2",
     "gray-matter": "^4.0.3",
     "node-html-parser": "^9.0.4",
@@ -39,7 +39,7 @@
     "svgo": "4.1.0",
     "tailwindcss": "^4.3.3",
     "typescript": "^7.0.2",
-    "wrangler": "^4.130.0"
+    "wrangler": "^4.131.0"
   },
   "dependencies": {
     "@fontsource-variable/geist": "^5.3.0",
