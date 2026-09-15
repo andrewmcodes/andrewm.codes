@@ -6,6 +6,26 @@
       "type": "entry",
       "author": {
         "type": "card",
+        "name": "startyparty",
+        "photo": "https://cdn.bsky.app/img/avatar/plain/did:plc:n5rvzal42653bux7x2mt65gy/bafkreieshf3u5u7wdw6zffl7vv43txm4rniye3iewjrbjfitab4d4jogd4",
+        "url": "https://bsky.app/profile/startyparty.dev"
+      },
+      "url": "https://bsky.app/profile/andrewm.codes/post/3mvcl5yeiwc2a#liked_by_did:plc:n5rvzal42653bux7x2mt65gy",
+      "published": null,
+      "published_ts": null,
+      "wm-received": "2026-09-15T19:18:37Z",
+      "wm-id": 2032475,
+      "wm-source": "https://brid.gy/like/bluesky/did:plc:dnnzvi5274e3gol3rbkk63u6/at%253A%252F%252Fdid%253Aplc%253Adnnzvi5274e3gol3rbkk63u6%252Fapp.bsky.feed.post%252F3mvcl5yeiwc2a/did%253Aplc%253An5rvzal42653bux7x2mt65gy",
+      "wm-target": "https://andrewm.codes/p/automating-ruby-gem-releases-with-github-actions/",
+      "wm-protocol": "webmention",
+      "like-of": "https://andrewm.codes/p/automating-ruby-gem-releases-with-github-actions/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
         "name": "Patrick Donahue",
         "photo": "https://cdn.bsky.app/img/avatar/plain/did:plc:zimtdz7ncrw5526rdlthpdhc/bafkreibuatchsuekqykbuye75a6epuxcd7k77gs7r2ixogbpdevsdk5rj4",
         "url": "https://bsky.app/profile/levelbrook.bsky.social"
