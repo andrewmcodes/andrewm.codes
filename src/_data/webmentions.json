@@ -6,6 +6,219 @@
       "type": "entry",
       "author": {
         "type": "card",
+        "name": "Rachael Wright-Munn",
+        "photo": "https://cdn.bsky.app/img/avatar/plain/did:plc:hft2eguvzetsoohtpnl5l6jv/bafkreibyimu5fkujj3m3ipkpvggtmxyfo3hk4n6xi6ytlnbcwas46bxmgu",
+        "url": "https://bsky.app/profile/chael.codes"
+      },
+      "url": "https://bsky.app/profile/andrewm.codes/post/3mvlrfiqsxs2n#liked_by_did:plc:hft2eguvzetsoohtpnl5l6jv",
+      "published": null,
+      "published_ts": null,
+      "wm-received": "2026-09-16T15:29:45Z",
+      "wm-id": 2032829,
+      "wm-source": "https://brid.gy/like/bluesky/did:plc:dnnzvi5274e3gol3rbkk63u6/at%253A%252F%252Fdid%253Aplc%253Adnnzvi5274e3gol3rbkk63u6%252Fapp.bsky.feed.post%252F3mvlrfiqsxs2n/did%253Aplc%253Ahft2eguvzetsoohtpnl5l6jv",
+      "wm-target": "https://andrewm.codes/p/adding-webmentions-to-a-bridgetown-site/",
+      "wm-protocol": "webmention",
+      "like-of": "https://andrewm.codes/p/adding-webmentions-to-a-bridgetown-site/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Tynan Purdy ⁂",
+        "photo": "https://cdn.bsky.app/img/avatar/plain/did:plc:6ayddqghxhciedbaofoxkcbs/bafkreie56qtqmtp5iu56zqqjkvwhvzqcudtsbetgs2joaowvuljbcluvze",
+        "url": "https://bsky.app/profile/tynanpurdy.com"
+      },
+      "url": "https://bsky.app/profile/andrewm.codes/post/3mvlrfiqsxs2n#liked_by_did:plc:6ayddqghxhciedbaofoxkcbs",
+      "published": null,
+      "published_ts": null,
+      "wm-received": "2026-09-16T13:56:19Z",
+      "wm-id": 2032764,
+      "wm-source": "https://brid.gy/like/bluesky/did:plc:dnnzvi5274e3gol3rbkk63u6/at%253A%252F%252Fdid%253Aplc%253Adnnzvi5274e3gol3rbkk63u6%252Fapp.bsky.feed.post%252F3mvlrfiqsxs2n/did%253Aplc%253A6ayddqghxhciedbaofoxkcbs",
+      "wm-target": "https://andrewm.codes/p/adding-webmentions-to-a-bridgetown-site/",
+      "wm-protocol": "webmention",
+      "like-of": "https://andrewm.codes/p/adding-webmentions-to-a-bridgetown-site/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Tynan Purdy ⁂",
+        "photo": "https://cdn.bsky.app/img/avatar/plain/did:plc:6ayddqghxhciedbaofoxkcbs/bafkreie56qtqmtp5iu56zqqjkvwhvzqcudtsbetgs2joaowvuljbcluvze",
+        "url": "https://bsky.app/profile/tynanpurdy.com"
+      },
+      "url": "https://bsky.app/profile/tynanpurdy.com/post/3mvnbwagjlk2r",
+      "published": "2026-09-16T13:51:55+00:00",
+      "published_ts": 1789566715,
+      "wm-received": "2026-09-16T13:56:18Z",
+      "wm-id": 2032763,
+      "wm-source": "https://brid.gy/comment/bluesky/did:plc:dnnzvi5274e3gol3rbkk63u6/at%253A%252F%252Fdid%253Aplc%253Adnnzvi5274e3gol3rbkk63u6%252Fapp.bsky.feed.post%252F3mvlrfiqsxs2n/at%253A%252F%252Fdid%253Aplc%253A6ayddqghxhciedbaofoxkcbs%252Fapp.bsky.feed.post%252F3mvnbwagjlk2r",
+      "wm-target": "https://andrewm.codes/p/adding-webmentions-to-a-bridgetown-site/",
+      "wm-protocol": "webmention",
+      "content": {
+        "text": "ohhhhh snap this is really good"
+      },
+      "in-reply-to": "https://andrewm.codes/p/adding-webmentions-to-a-bridgetown-site/",
+      "wm-property": "in-reply-to",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "David W",
+        "photo": "https://cdn.bsky.app/img/avatar/plain/did:plc:4bhxdazznzwlira5di45lv36/bafkreidsu5aenrseg54mwnwg4xczs4pnzp3ombrcxzauefbsykk2wfasui",
+        "url": "https://bsky.app/profile/davidwes.bsky.social"
+      },
+      "url": "https://bsky.app/profile/andrewm.codes/post/3mvlrfiqsxs2n#liked_by_did:plc:4bhxdazznzwlira5di45lv36",
+      "published": null,
+      "published_ts": null,
+      "wm-received": "2026-09-16T10:56:35Z",
+      "wm-id": 2032627,
+      "wm-source": "https://brid.gy/like/bluesky/did:plc:dnnzvi5274e3gol3rbkk63u6/at%253A%252F%252Fdid%253Aplc%253Adnnzvi5274e3gol3rbkk63u6%252Fapp.bsky.feed.post%252F3mvlrfiqsxs2n/did%253Aplc%253A4bhxdazznzwlira5di45lv36",
+      "wm-target": "https://andrewm.codes/p/adding-webmentions-to-a-bridgetown-site/",
+      "wm-protocol": "webmention",
+      "like-of": "https://andrewm.codes/p/adding-webmentions-to-a-bridgetown-site/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "jamie",
+        "photo": "https://cdn.bsky.app/img/avatar/plain/did:plc:wu2l6vx2ahoo7v56gyig3vot/bafkreidp2cnri3vwderjys77pxing2mlku3wpepkwgda37lvebwhhlnruq",
+        "url": "https://bsky.app/profile/jamie.ideasasylum.com"
+      },
+      "url": "https://bsky.app/profile/jamie.ideasasylum.com/post/3mvmuftogms2x",
+      "published": "2026-09-16T09:50:06+00:00",
+      "published_ts": 1789552206,
+      "wm-received": "2026-09-16T10:23:07Z",
+      "wm-id": 2032623,
+      "wm-source": "https://brid.gy/comment/bluesky/did:plc:dnnzvi5274e3gol3rbkk63u6/at%253A%252F%252Fdid%253Aplc%253Adnnzvi5274e3gol3rbkk63u6%252Fapp.bsky.feed.post%252F3mvlrfiqsxs2n/at%253A%252F%252Fdid%253Aplc%253Awu2l6vx2ahoo7v56gyig3vot%252Fapp.bsky.feed.post%252F3mvmuftogms2x",
+      "wm-target": "https://andrewm.codes/p/adding-webmentions-to-a-bridgetown-site/",
+      "wm-protocol": "webmention",
+      "photo": [
+        "https://bsky.social/xrpc/com.atproto.sync.getBlob?did=did:plc:wu2l6vx2ahoo7v56gyig3vot&cid=bafkreigzifxnameejpkirobneavi67hwsytrbe434paedcc7zbgr2uhdji",
+        "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:wu2l6vx2ahoo7v56gyig3vot/bafkreigzifxnameejpkirobneavi67hwsytrbe434paedcc7zbgr2uhdji"
+      ],
+      "content": {
+        "text": "I put Claude to work…"
+      },
+      "in-reply-to": "https://andrewm.codes/p/adding-webmentions-to-a-bridgetown-site/",
+      "wm-property": "in-reply-to",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "jamie",
+        "photo": "https://cdn.bsky.app/img/avatar/plain/did:plc:wu2l6vx2ahoo7v56gyig3vot/bafkreidp2cnri3vwderjys77pxing2mlku3wpepkwgda37lvebwhhlnruq",
+        "url": "https://bsky.app/profile/jamie.ideasasylum.com"
+      },
+      "url": "https://bsky.app/profile/andrewm.codes/post/3mvlrfiqsxs2n#reposted_by_did:plc:wu2l6vx2ahoo7v56gyig3vot",
+      "published": null,
+      "published_ts": null,
+      "wm-received": "2026-09-16T10:23:07Z",
+      "wm-id": 2032622,
+      "wm-source": "https://brid.gy/repost/bluesky/did:plc:dnnzvi5274e3gol3rbkk63u6/at%253A%252F%252Fdid%253Aplc%253Adnnzvi5274e3gol3rbkk63u6%252Fapp.bsky.feed.post%252F3mvlrfiqsxs2n/did%253Aplc%253Awu2l6vx2ahoo7v56gyig3vot",
+      "wm-target": "https://andrewm.codes/p/adding-webmentions-to-a-bridgetown-site/",
+      "wm-protocol": "webmention",
+      "repost-of": "https://andrewm.codes/p/adding-webmentions-to-a-bridgetown-site/",
+      "wm-property": "repost-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "jamie",
+        "photo": "https://cdn.bsky.app/img/avatar/plain/did:plc:wu2l6vx2ahoo7v56gyig3vot/bafkreidp2cnri3vwderjys77pxing2mlku3wpepkwgda37lvebwhhlnruq",
+        "url": "https://bsky.app/profile/jamie.ideasasylum.com"
+      },
+      "url": "https://bsky.app/profile/andrewm.codes/post/3mvlrfiqsxs2n#liked_by_did:plc:wu2l6vx2ahoo7v56gyig3vot",
+      "published": null,
+      "published_ts": null,
+      "wm-received": "2026-09-16T09:48:22Z",
+      "wm-id": 2032615,
+      "wm-source": "https://brid.gy/like/bluesky/did:plc:dnnzvi5274e3gol3rbkk63u6/at%253A%252F%252Fdid%253Aplc%253Adnnzvi5274e3gol3rbkk63u6%252Fapp.bsky.feed.post%252F3mvlrfiqsxs2n/did%253Aplc%253Awu2l6vx2ahoo7v56gyig3vot",
+      "wm-target": "https://andrewm.codes/p/adding-webmentions-to-a-bridgetown-site/",
+      "wm-protocol": "webmention",
+      "like-of": "https://andrewm.codes/p/adding-webmentions-to-a-bridgetown-site/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Matthew Brewer",
+        "photo": "https://cdn.bsky.app/img/avatar/plain/did:plc:h4z2z77u2dqenxrvt47i7kta/bafkreidtbtr4mabmtqnj5pkxxmopitimfaofzix5sg3eoarhsykqo3xgj4",
+        "url": "https://bsky.app/profile/mbrewer.org"
+      },
+      "url": "https://bsky.app/profile/mbrewer.org/post/3mvmqmrn6ys2x",
+      "published": "2026-09-16T08:42:24+00:00",
+      "published_ts": 1789548144,
+      "wm-received": "2026-09-16T09:14:49Z",
+      "wm-id": 2032605,
+      "wm-source": "https://brid.gy/comment/bluesky/did:plc:dnnzvi5274e3gol3rbkk63u6/at%253A%252F%252Fdid%253Aplc%253Adnnzvi5274e3gol3rbkk63u6%252Fapp.bsky.feed.post%252F3mvlrfiqsxs2n/at%253A%252F%252Fdid%253Aplc%253Ah4z2z77u2dqenxrvt47i7kta%252Fapp.bsky.feed.post%252F3mvmqmrn6ys2x",
+      "wm-target": "https://andrewm.codes/p/adding-webmentions-to-a-bridgetown-site/",
+      "wm-protocol": "webmention",
+      "content": {
+        "text": "This post is a great read, and the webmentions look great, too! What a nifty system you put together."
+      },
+      "in-reply-to": "https://andrewm.codes/p/adding-webmentions-to-a-bridgetown-site/",
+      "wm-property": "in-reply-to",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Matthew Brewer",
+        "photo": "https://cdn.bsky.app/img/avatar/plain/did:plc:h4z2z77u2dqenxrvt47i7kta/bafkreidtbtr4mabmtqnj5pkxxmopitimfaofzix5sg3eoarhsykqo3xgj4",
+        "url": "https://bsky.app/profile/mbrewer.org"
+      },
+      "url": "https://bsky.app/profile/andrewm.codes/post/3mvlrfiqsxs2n#liked_by_did:plc:h4z2z77u2dqenxrvt47i7kta",
+      "published": null,
+      "published_ts": null,
+      "wm-received": "2026-09-16T08:40:36Z",
+      "wm-id": 2032596,
+      "wm-source": "https://brid.gy/like/bluesky/did:plc:dnnzvi5274e3gol3rbkk63u6/at%253A%252F%252Fdid%253Aplc%253Adnnzvi5274e3gol3rbkk63u6%252Fapp.bsky.feed.post%252F3mvlrfiqsxs2n/did%253Aplc%253Ah4z2z77u2dqenxrvt47i7kta",
+      "wm-target": "https://andrewm.codes/p/adding-webmentions-to-a-bridgetown-site/",
+      "wm-protocol": "webmention",
+      "like-of": "https://andrewm.codes/p/adding-webmentions-to-a-bridgetown-site/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Boris",
+        "photo": "https://cdn.bsky.app/img/avatar/plain/did:plc:2cxgdrgtsmrbqnjkwyplmp43/bafkreiaq7kk6kl7fqqskgan56jldqphvumxrlfviqbhx2rxcgmgtyc7iri",
+        "url": "https://bsky.app/profile/bmann.ca"
+      },
+      "url": "https://bsky.app/profile/andrewm.codes/post/3mvlrfiqsxs2n#liked_by_did:plc:2cxgdrgtsmrbqnjkwyplmp43",
+      "published": null,
+      "published_ts": null,
+      "wm-received": "2026-09-16T05:43:35Z",
+      "wm-id": 2032544,
+      "wm-source": "https://brid.gy/like/bluesky/did:plc:dnnzvi5274e3gol3rbkk63u6/at%253A%252F%252Fdid%253Aplc%253Adnnzvi5274e3gol3rbkk63u6%252Fapp.bsky.feed.post%252F3mvlrfiqsxs2n/did%253Aplc%253A2cxgdrgtsmrbqnjkwyplmp43",
+      "wm-target": "https://andrewm.codes/p/adding-webmentions-to-a-bridgetown-site/",
+      "wm-protocol": "webmention",
+      "like-of": "https://andrewm.codes/p/adding-webmentions-to-a-bridgetown-site/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
         "name": "Janko Marohnić",
         "photo": "https://cdn.bsky.app/img/avatar/plain/did:plc:mfgqka5ttt3dzmoqictnzw2n/bafkreifcckgoh73vs5czmsvaa4l3lku73brfweeois7vxdzo2esfvgoysq",
         "url": "https://bsky.app/profile/janko.io"
